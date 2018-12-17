@@ -1,0 +1,145 @@
+/*
+
+Estilos personalizados para indicadores
+#45ACE0 azul
+#8CBE3B verde
+#F3B400 amarillo
+#ED6F55 rojo
+#B868A5 morado
+*/
+
+.grupo-indicador-1{
+
+   background-color:  #062a7a;
+}
+.grupo-indicador-2{
+    background-color:  #062a7a;
+ }
+ .grupo-indicador-3{
+    background-color:  #062a7a;
+ }
+ .grupo-indicador-4{
+    background-color:  #062a7a;
+ }
+ .grupo-indicador-5{
+    background-color:  #062a7a;
+ }
+.menu_direct.active{
+  display: none;
+}
+ .area-indicador{
+    margin: 10px;
+    width: 100%;
+    opacity: 0.9;
+    text-transform: uppercase;
+}
+.grupo-indicador{
+
+    padding: 20px 10px;
+
+}
+.tarjeta{
+    height: 170px;
+    border-radius: 6% !important;
+    background: white;
+
+
+}
+.tarjeta p{
+   color: black !important;
+   text-transform: capitalize;
+   font-size: 20px;
+}
+.tarjeta h5{
+    text-align: center;
+    min-height: 50px;
+    color: black;
+ }
+.area-indicador .breadcrumbs{
+    background-color: #fff;
+}
+.portada{
+    background: #272C33 !important;
+}
+.page-header-2{
+    color: white;
+    min-height: 50px;
+    margin: 0px;
+    padding: 15px 15px;
+    background: #272C33;
+    border-bottom: 0px;
+    padding-top: 14px;
+
+  }
+  legend.legend-indicador {
+    width:inherit; /* Or auto */
+    padding:0 10px; /* To give a bit of padding on the left and right */
+    border-bottom:none;
+    font-size: 20px;
+}
+fieldset.legend-indicador {
+    border: 1px solid #ddd !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+
+    -webkit-box-shadow:  0px 0px 0px 0px #ced4da !important;
+            box-shadow:  0px 0px 0px 0px #ced4da !important;
+}
+.fielset-indicador-2{
+    width: 100%;
+}
+@media (min-width: 576px){
+    .modal-dialog {
+        max-width: unset !important;
+    }
+
+}
+.modal-content{
+    margin: auto !important;
+    width: 50% !important;
+    padding: 10px !important;
+}
+.modal-dialog {
+    width: 100% !important;
+}
+.modal-body {
+    max-height: calc(100vh - 210px);
+    overflow-y: auto;
+}
+.right-panel{
+    max-width: 100%;
+    width: 100%;
+}
+.link-titulo{
+    font-weight: bold;
+    color: black;
+}
+/* autocomplete input dropdown */
+.autocomplete {
+    position: relative;
+  }
+
+  .autocomplete-results {
+    padding: 0;
+    margin: 0;
+    border: 1px solid #eeeeee;
+    height: 120px;
+    overflow: auto;
+    width: 100%;
+  }
+
+  .autocomplete-result {
+    list-style: none;
+    text-align: left;
+    padding: 4px 2px;
+    cursor: pointer;
+  }
+
+  .autocomplete-result.is-active,
+  .autocomplete-result:hover {
+    background-color: #4AAE9B;
+    color: white;
+  }
+.footer-text{
+    text-align: center;
+}
