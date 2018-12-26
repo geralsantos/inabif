@@ -1,5 +1,5 @@
 Vue.component('ppd-datos-actividades-tecnico-productivas', {
-    template: '#ppd-datos-actividades-tecnico-productivas',
+    template:'#ppd-datos-actividades-tecnico-productivas',
     data:()=>({
         CarNumBiohuerto:null,
         CarNumManualidades:null,
@@ -21,17 +21,17 @@ Vue.component('ppd-datos-actividades-tecnico-productivas', {
     },
     methods:{
         guardar(){
-            let valores = { CarNumBiohuerto: CarNumBiohuerto,
-                CarNumManualidades: CarNumManualidades,
-                CarNumReposteria: CarNumReposteria,
-                CarNumPaseos: CarNumPaseos,
-                CarNumCulturales: CarNumCulturales,
-                CarNumCivicas: CarNumCivicas,
-                CarNumFutbol: CarNumFutbol,
-                CarNumNatacion: CarNumNatacion,
-                CarNumDeportes: CarNumDeportes,
-                CArNumDinero: CArNumDinero,
-                CarNumDecisiones: CarNumDecisiones
+            let valores = { CarNumBiohuerto: this.CarNumBiohuerto,
+                CarNumManualidades: this.CarNumManualidades,
+                CarNumReposteria: this.CarNumReposteria,
+                CarNumPaseos: this.CarNumPaseos,
+                CarNumCulturales: this.CarNumCulturales,
+                CarNumCivicas: this.CarNumCivicas,
+                CarNumFutbol: this.CarNumFutbol,
+                CarNumNatacion: this.CarNumNatacion,
+                CarNumDeportes: this.CarNumDeportes,
+                CArNumDinero: this.CArNumDinero,
+                CarNumDecisiones: this.CarNumDecisiones
                         }
             this.$http.post('insertar_datos?view',{tabla:'', valores:valores}).then(function(response){
 

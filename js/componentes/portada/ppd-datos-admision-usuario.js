@@ -1,5 +1,5 @@
 Vue.component('ppd-datos-admision-usuario', {
-    template: '#ppd-datos-admision-usuario',
+    template:'#ppd-datos-admision-usuario',
     data:()=>({
         CarMPoblacional:null,
         CarFIngreso:null,
@@ -18,13 +18,13 @@ Vue.component('ppd-datos-admision-usuario', {
     },
     methods:{
         guardar(){
-            let valores = { CarMPoblacional: CarMPoblacional,
-                CarFIngreso: CarFIngreso,
-                CarFReingreso: CarFReingreso,
-                CarIDerivo: CarIDerivo,
-                CarMotivoI: CarMotivoI,
-                CarTipoDoc: CarTipoDoc,
-                CarNumDoc: CarNumDoc
+            let valores = { CarMPoblacional: this.CarMPoblacional,
+                CarFIngreso: this.CarFIngreso,
+                CarFReingreso: this.CarFReingreso,
+                CarIDerivo: this.CarIDerivo,
+                CarMotivoI: this.CarMotivoI,
+                CarTipoDoc: this.CarTipoDoc,
+                CarNumDoc: this.CarNumDoc
 
                         }
             this.$http.post('insertar_datos?view',{tabla:'', valores:valores}).then(function(response){

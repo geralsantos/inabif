@@ -18,11 +18,11 @@ Vue.component('ppd-datos-atencion-psicologica', {
     },
     methods:{
         guardar(){
-            let valores = { CarNumHabilidadesBasicas: CarNumHabilidadesBasicas,
-                CarNumHabilidadesConceptuales: CarNumHabilidadesConceptuales,
-                CarNumHabilidadesSociales: CarNumHabilidadesSociales,
-                CarNumHablidadesPracticas: CarNumHablidadesPracticas,
-                CarNumModificacionConducta: CarNumModificacionConducta
+            let valores = { CarNumHabilidadesBasicas: this.CarNumHabilidadesBasicas,
+                CarNumHabilidadesConceptuales: this.CarNumHabilidadesConceptuales,
+                CarNumHabilidadesSociales: this.CarNumHabilidadesSociales,
+                CarNumHablidadesPracticas: this.CarNumHablidadesPracticas,
+                CarNumModificacionConducta: this.CarNumModificacionConducta
                         }
             this.$http.post('insertar_datos?view',{tabla:'', valores:valores}).then(function(response){
 
