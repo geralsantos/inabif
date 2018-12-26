@@ -17,7 +17,7 @@ Vue.component('ppd-datos-admision-usuario', {
     updated:function(){
     },
     methods:{
-        insertar_datos(){
+        guardar(){
             let valores = { CarMPoblacional: CarMPoblacional,
                 CarFIngreso: CarFIngreso,
                 CarFReingreso: CarFReingreso,

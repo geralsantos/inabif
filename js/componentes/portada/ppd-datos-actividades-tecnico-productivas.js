@@ -20,7 +20,7 @@ Vue.component('ppd-datos-actividades-tecnico-productivas', {
     updated:function(){
     },
     methods:{
-        insertar_datos(){
+        guardar(){
             let valores = { CarNumBiohuerto: CarNumBiohuerto,
                 CarNumManualidades: CarNumManualidades,
                 CarNumReposteria: CarNumReposteria,

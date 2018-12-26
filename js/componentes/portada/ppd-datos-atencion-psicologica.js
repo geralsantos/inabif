@@ -17,7 +17,7 @@ Vue.component('ppd-datos-atencion-psicologica', {
     updated:function(){
     },
     methods:{
-        insertar_datos(){
+        guardar(){
             let valores = { CarNumHabilidadesBasicas: CarNumHabilidadesBasicas,
                 CarNumHabilidadesConceptuales: CarNumHabilidadesConceptuales,
                 CarNumHabilidadesSociales: CarNumHabilidadesSociales,
