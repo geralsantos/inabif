@@ -38,7 +38,7 @@ Vue.component('ppd-datos-actividades-tecnico-productivas', {
                 Num_otrosDe: this.CarNumDeportes,
                 Num_ManejoDinero: this.CArNumDinero,
                 Num_decisiones: this.CarNumDecisiones,
-                id_residente: this.id_residente,
+                Residente_Id: this.id_residente,
                 Periodo_Mes: this.mes,
                 Periodo_Anio:this.anio
 
