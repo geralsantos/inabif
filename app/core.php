@@ -48,8 +48,6 @@ if (file_exists(APP . DS . 'modulo' . DS . $modulo . DS . "controlador." . $modu
     include_once (APP . DS . 'libreria' . DS . 'funcion.php');
     require_once (APP . DS . 'core' . DS . 'app.class.php');
     require_once (APP . DS . 'core' . DS . 'mysql.class.php');
-    require_once (APP . DS . 'core' . DS . 'sqlserver.class.php');
-    require_once (APP . DS . 'core' . DS . 'postgres.class.php');
     require_once (APP . DS . 'core' . DS . 'plantilla.class.php');
     require_once (APP . DS . 'modulo' . DS . $modulo . DS . "controlador." . $modulo . ".php");
     //UBICAR MODELO

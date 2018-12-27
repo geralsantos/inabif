@@ -4,16 +4,15 @@ class PG extends PDO
 {
 public function __construct() {
     try {
-        $host = "172.16.40.102";
-        $dbname = "citas";
-        $dbuser = "user_readonly";
-        $userpass = "c1i3nT32018";
 
-       // $con = pg_connect("host=$host port=5432 dbname=$dbname user=$dbuser password=$userpass");
-       $con = "pgsql:host=$host;port=5432;dbname=$dbname;user=$dbuser;password=$userpass";
-
-
-          parent::__construct($con);
+$db1 = "(DESCRIPTION=(ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 172.19.0.35)(PORT = 1521)))(CONNECT_DATA=(SID=xe)))" ;
+        $host = "172.19.0.35";
+        $dbname = "orcl";
+        $dbuser = "INABIF_UPP";
+        $userpass = "UPP";
+        $port= 1521;
+         //parent::__construct("oci:dbname=//$host:$port/$dbname;charset=utf8",$dbuser,$userpass);
+         parent::__construct("oci:dbname=$db1",$dbuser,$userpass);
       parent::setAttribute(parent::ATTR_ERRMODE, parent::ERRMODE_EXCEPTION);
 
       parent::setAttribute(parent::ATTR_DEFAULT_FETCH_MODE, parent::FETCH_ASSOC);
@@ -27,7 +26,7 @@ public function __construct() {
       }
 
     }
-    public function executeQuery($query, $params=NULL){
+public function executeQuery($query, $params=NULL){
 
       try{
 
@@ -53,7 +52,7 @@ public function __construct() {
     }
 
 $x = new PG();
-print_r($x->executeQuery("SELECT * FROM citas limit 10;"));
+print_r($x->executeQuery("select * from carterapia"));
 
  ?>
 

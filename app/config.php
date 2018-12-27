@@ -17,7 +17,7 @@ define( "PUBLICO", ROOT );
 
 //UBICACIONES PUBLICAS
 //define( "BASE", "/deincon/portal/" );
-define( "BASE", "/portal-kpi/" );
+define( "BASE", "/inabif/" );
 
 define( "IMG", BASE . 'img' );
 define( "JS", BASE . 'js' );
