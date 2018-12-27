@@ -8,8 +8,8 @@ public function __construct() {
 $db1 = "(DESCRIPTION=(ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)))(CONNECT_DATA=(SID=xe)))" ;
         $host = "172.19.0.35";
         $dbname = "orcl";
-        $dbuser = "INABIF";
-        $userpass = "inabif";
+        $dbuser = "INABIF.UPP";
+        $userpass = "UPP";
         $port= 1521;
          //parent::__construct("oci:dbname=//$host:$port/$dbname;charset=utf8",$dbuser,$userpass);
          parent::__construct("oci:dbname=$db1",$dbuser,$userpass);
@@ -52,7 +52,7 @@ public function executeQuery($query, $params=NULL){
     }
 
 $x = new PG();
-print_r($x->executeQuery("select * from carterapia"));
+print_r($x->executeQuery("select * from CarActividades"));
 
  ?>
 
