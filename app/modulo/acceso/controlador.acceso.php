@@ -6,9 +6,9 @@ class acceso extends App{
         if(isset($_SESSION["usuario"])){
             $this->vista->reenviar("index", "portada");
         }
-        if(isset($_POST["usuario"]) and $_POST["usuario"]!="" and isset($_POST["contrasena"]) and $_POST["contrasena"]!=""){
+        if(isset($_POST["usuario"]) and $_POST["usuario"]!="" and isset($_POST["clave"]) and $_POST["clave"]!=""){
             $modelo = new modeloAcceso();
-            $usuario = $modelo->getSesion($_POST["usuario"], $_POST["contrasena"]);
+            $usuario = $modelo->getSesion($_POST["usuario"], $_POST["clave"]);
             if(!empty($usuario)){
                 $_SESSION["usuario"] = $usuario;
                 $this->vista->reenviar("index", "portada");

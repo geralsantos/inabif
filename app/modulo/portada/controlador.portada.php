@@ -92,14 +92,14 @@ class portada extends App{
 
       if( $_POST['tabla'] && $_POST['valores'] ){
         $modelo = new modeloPortada();
-        $_POST['valores']['id_residente'] = $_SESSION["usuario"][0]["id"];
-        $_POST['valores']['Tipo_Centro_Id'] = $_SESSION["usuario"][0]["tipo_centro_id"];
-        $_POST['valores']['Fecha_Creacion'] = date("Y-m-d H:i:s");
-        $_POST['valores']['Fecha_Edicion'] = date("Y-m-d H:i:s");
-        $_POST['valores']['Usuario_Crea'] =$_SESSION["usuario"][0]["id"];
-        $_POST['valores']['Usuario_Edita'] =$_SESSION["usuario"][0]["id"];
+        $_POST['valores']['id_residente'] = $_SESSION["usuario"][0]["ID"];
+        $_POST['valores']['Tipo_Centro_Id'] = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+        $_POST['valores']['Fecha_Creacion'] = "18-DEC-27";
+        //$_POST['valores']['Fecha_Edicion'] = date("Y-m-d H:i:s");
+        $_POST['valores']['Usuario_Crea'] =$_SESSION["usuario"][0]["ID"];
+        $_POST['valores']['Usuario_Edita'] =$_SESSION["usuario"][0]["ID"];
         //aqui tu ejecutas la consulta
-       // $res = $modelo->selectRowDataAll( $_POST['tabla'], $_POST['campos'], $_POST['where'], $_POST['groupby'] );
+        $res = $modelo->insertData( $_POST['tabla'],$_POST["valores"]);
         if ($res) {
           echo json_encode(array("resultado"=>true )) ;
         }else{

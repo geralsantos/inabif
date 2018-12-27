@@ -79,7 +79,7 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">N° de veces que participa de Actividades cívicas y protocolares</label>
-                                <input type="number" v-model="CarNumACivicas" name="CarNumACivicas" placeholder="" class="form-control">
+                                <input type="number" v-model="CarNumCivicas" name="CarNumCivicas" placeholder="" class="form-control">
                             </div>
                         </div>
                         <div class="row">

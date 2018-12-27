@@ -14,7 +14,7 @@
                         </div>
                         <div class="form-group">
                             <label>Contraseña</label>
-                            <input type="password" class="form-control" name="contrasena" placeholder="Ingrese su clave">
+                            <input type="password" class="form-control" name="clave" placeholder="Ingrese su clave">
                         </div>
 
                         <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Entrar</button>
