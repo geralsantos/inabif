@@ -10,9 +10,9 @@
                     <form  class="form-horizontal" v-on:submit.prevent="guardar">
                         <div class="row">
                             <div class="form-group col-md-7">
-                                <label for="text-input" class=" form-control-label">Acción Programada</label>
+                                <label for="text-input" class=" form-control-label">Nombre Residente</label>
                                 <div class="autocomplete">
-                                    <input type="text"  v-model="nombre_accion" class="form-control" @keyup="buscar_residente()"/>
+                                    <input type="text"  v-model="nombre_residente" class="form-control" @keyup="buscar_residente()"/>
                                     <ul  id="autocomplete-results" class="autocomplete-results" v-if="bloque_busqueda">
                                         <li class="loading" v-if="isLoading">
                                             Loading results...
