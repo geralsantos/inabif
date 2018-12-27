@@ -89,7 +89,7 @@
 
                 <div class="language-select dropdown" id="language-select">
                     <a class="dropdown-toggle" href="#" data-toggle="dropdown"  id="language" aria-haspopup="true" aria-expanded="true">
-                        <i class="fa-fa-user-circle"><?php echo $_SESSION["usuario"][0]["apellido"]." ".$_SESSION["usuario"][0]["nombre"]." (".$_SESSION["usuario"][0]["nombre_nivel"].")"; ?> </i>
+                        <i class="fa-fa-user-circle"><?php echo $_SESSION["usuario"][0]["APELLIDO"]." ".$_SESSION["usuario"][0]["NOMBRE"]; ?> </i>
                     </a>
 
                 </div>
@@ -105,7 +105,7 @@
             <div class="page-header float-left">
                 <div class="page-title">
                     <h1>TABLERO INDICADORES MAC - Reporte Consolidado</h1>
-                    <p><?php echo $_SESSION["usuario"][0]["nombre_sede"] ?></p>
+                    <p><?php /*echo $_SESSION["usuario"][0]["nombre_sede"] */?></p>
 
                 </div>
             </div>
