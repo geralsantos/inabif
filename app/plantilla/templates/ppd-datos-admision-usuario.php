@@ -64,7 +64,7 @@
                                     </select>
                             </div>
                             <div class="form-group col-md-6">
-                                <div class=" "><label for="text-input" class=" form-control-label">Fecha de Reingreso del usuario</label>
+                                <div class=" "><label for="text-input" class=" form-control-label">Fecha de Ingreso del usuario</label>
                                 <input type="date" v-model="CarFIngreso" name="CarFIngreso" placeholder="" class="form-control"> </div>
                             </div>
                         </div>
@@ -76,10 +76,8 @@
                             <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">Institución que lo derivó</label>
                                 <select name="CarIDerivo" v-model="CarIDerivo" class="form-control">
-                                <option value="Fiscalia">Fiscalía</option>
-                                        <option value="Juzgado">Juzgado</option>
-                                        <option value="Unidad de Protección Especial">Unidad de Protección Especial</option>
-                                        <option value="Otros"> Otros</option>
+                                <option v-for="institucion in instituciones" :value="institucion.id">{{institucion.nombre}}</option>
+
                                 </select>
                             </div>
                         </div>
@@ -95,10 +93,7 @@
                             <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">Tipo de documento de ingreso al CAR</label>
                                 <select name="CarTipoDoc" v-model="CarTipoDoc" class="form-control">
-                                    <option value="Oficio">Oficio</option>
-                                    <option value="Acta">Acta</option>
-                                    <option value="Resolución">Resolución</option>
-                                    <option value="Otros">Otros</option>
+                                <option v-for="documento in documentos" :value="documento.id">{{documento.nombre}}</option>
                                 </select>
                             </div>
                         </div>
