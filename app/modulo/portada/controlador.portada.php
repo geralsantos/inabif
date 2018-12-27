@@ -92,7 +92,7 @@ class portada extends App{
 
       if( $_POST['tabla'] && $_POST['valores'] ){
         $modelo = new modeloPortada();
-        $_POST['valores']['id_residente'] = $_SESSION["usuario"][0]["ID"];
+        $_POST['valores']['Residente_Id'] = $_SESSION["usuario"][0]["ID"];
         $_POST['valores']['Tipo_Centro_Id'] = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
         $_POST['valores']['Fecha_Creacion'] = "18-DEC-27";
         //$_POST['valores']['Fecha_Edicion'] = date("Y-m-d H:i:s");
