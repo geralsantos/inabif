@@ -116,18 +116,18 @@ Vue.component('ppd-datos-condicion-ingreso', {
                 if( response.body.atributos != undefined){
 
                     this.CarDocIngreso = response.body.atributos[0]["DNI"];
-                    this.CarTipoDoc = response.body.atributos[0]["Tipo_Documento"];
-                    this.CarNumDoc = response.body.atributos[0]["Numero_Documento"];
-                    this.CarPoseePension = response.body.atributos[0]["Posee_Pension"];
-                    this.CarTipoPension = response.body.atributos[0]["Tipo_Pension"];
-                    this.CarULeeEscribe = response.body.atributos[0]["Lee_Escribe"];
-                    this.CarNivelEducativo = response.body.atributos[0]["Nivel_Educativo"];
-                    this.CarInstitucionEducativa = response.body.atributos[0]["Institucion_Educativa"];
-                    this.CarTipoSeguro = response.body.atributos[0]["Tipo_Seguro"];
-                    this.CarCSocioeconomica = response.body.atributos[0]["Clasficacion_Socioeconomica"];
-                    this.CarFamiliaresUbicados = response.body.atributos[0]["Familiares"];
-                    this.CarTipoParentesco = response.body.atributos[0]["Parentesco"];
-                    this.CarProblematicaFam = response.body.atributos[0]["Problematica_Familiar"];
+                    this.CarTipoDoc = response.body.atributos[0]["TIPO_DOCUMENTO"];
+                    this.CarNumDoc = response.body.atributos[0]["NUMERO_DOCUMENTO"];
+                    this.CarPoseePension = response.body.atributos[0]["POSEE_PENSION"];
+                    this.CarTipoPension = response.body.atributos[0]["TIPO_PENSION"];
+                    this.CarULeeEscribe = response.body.atributos[0]["LEE_ESCRIBE"];
+                    this.CarNivelEducativo = response.body.atributos[0]["NIVEL_EDUCATIVO"];
+                    this.CarInstitucionEducativa = response.body.atributos[0]["INSTITUCION_EDUCATIVA"];
+                    this.CarTipoSeguro = response.body.atributos[0]["TIPO_SEGURO"];
+                    this.CarCSocioeconomica = response.body.atributos[0]["CLASFICACION_SOCIOECONOMICA"];
+                    this.CarFamiliaresUbicados = response.body.atributos[0]["FAMILIARES"];
+                    this.CarTipoParentesco = response.body.atributos[0]["PARENTESCO"];
+                    this.CarProblematicaFam = response.body.atributos[0]["PROBLEMATICA_FAMILIAR"];
 
                 }
              });
@@ -148,7 +148,7 @@ Vue.component('ppd-datos-condicion-ingreso', {
             });
         },
         institucion_educativa(){
-            this.$http.post('buscar?view',{tabla:'instituciones'}).then(function(response){
+            this.$http.post('buscar?view',{tabla:''}).then(function(response){
                 if( response.body.data ){
                     this.instituciones= response.body.data;
                 }
