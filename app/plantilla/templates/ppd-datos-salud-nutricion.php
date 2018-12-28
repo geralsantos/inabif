@@ -145,7 +145,7 @@
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Dificultad que presenta para movimiento de brazos y cuerpo</label>
                                 <select name="CarDificultadBrazoCuerpo" v-model="CarDificultadBrazoCuerpo" class="form-control">
-                                    <option v-for="dificultad in dificultades" value="dificultad.ID">{{dificultad.NOMBRE}}</option>
+                                    <option v-for="dificultad in dificultades" :value="dificultad.ID">{{dificultad.NOMBRE}}</option>
                                 </select>
                             </div>
                         </div>
@@ -163,7 +163,7 @@
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Tipo de patología</label>
                                 <select name="CarTipoPatologia1" v-model="CarTipoPatologia1" class="form-control">
-                                    <option v-for="patologia in patologias" value="patologia.ID">{{patologia.NOMBRE}}</option>
+                                    <option v-for="patologia in patologias" :value="patologia.ID">{{patologia.NOMBRE}}</option>
 
                                 </select>
                             </div>
@@ -187,7 +187,7 @@
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Tipo de patología</label>
                                 <select name="CarTipoPatologia2" v-model="CarTipoPatologia2" class="form-control">
-                                    <option v-for="patologia2 in patologias2" value="patologia2.ID">{{patologia2.NOMBRE}}</option>
+                                    <option v-for="patologia2 in patologias2" :value="patologia2.ID">{{patologia2.NOMBRE}}</option>
                                 </select>
                             </div>
 
@@ -227,7 +227,7 @@
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Estado nutricional (imc) </label>
                                 <select name="CarEstadoNutricional" v-model="CarEstadoNutricional" class="form-control">
-                                    <option v-for="nutricional in nutricionales" value="nutricional.ID">{{nutricional.NOMBRE}}</option>
+                                    <option v-for="nutricional in nutricionales" :value="nutricional.ID">{{nutricional.NOMBRE}}</option>
                                 </select>
                             </div>
                         </div>
