@@ -42,7 +42,7 @@ Vue.component('ppd-datos-centro-servicios', {
                 return false;
             }
             let valores = {
-                Identificaion_Id:1,
+                Identificacion_Id:1,
                 Cod_Entidad:this.CarCodEntidad,
                 Nom_Entidad:this.CarNomEntidad,
                 Cod_Linea:this.CarCodLinea,
