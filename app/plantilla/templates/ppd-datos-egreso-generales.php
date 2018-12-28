@@ -8,17 +8,17 @@
                 </div>
                 <div class="card-body card-block">
                     <form class="form-horizontal" v-on:submit.prevent="guardar">
-                    <div class="row">
+                        <div class="row">
                             <div class="form-group col-md-7">
                                 <label for="text-input" class=" form-control-label">Nombre Residente</label>
                                 <div class="autocomplete">
-                                    <input type="text"  v-model="nombre_residente" class="form-control" @keyup="buscar_residente()"/>
+                                    <input type="text"  v-model="nombre_residente" class="form-control" @keyup="buscar_residente()" placeholder="Nombre, Apellido o DNI"/>
                                     <ul  id="autocomplete-results" class="autocomplete-results" v-if="bloque_busqueda">
                                         <li class="loading" v-if="isLoading">
                                             Loading results...
                                         </li>
-                                        <li  @click="actualizar(coincidencia.id)" class="autocomplete-result" v-for="coincidencia in coincidencias">
-                                            {{coincidencia.nombre}}
+                                        <li  @click="actualizar(coincidencia)" class="autocomplete-result" v-for="coincidencia in coincidencias">
+                                            {{coincidencia.NOMBRE}} {{coincidencia.APELLIDO}} - {{coincidencia.DOCUMENTO}}
                                         </li>
 
                                     </ul>
@@ -26,7 +26,7 @@
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="text-input" class=" form-control-label">Año</label>
-                                <select name="select" id="anio"  v-model="anio" class="form-control">
+                                <select name="select" disabled="disabled" id="anio"  v-model="anio" class="form-control">
                                 <option value="2018">2018</option>
                                 <option value="2019">2019</option>
                                 <option value="2020">2020</option>
@@ -36,7 +36,7 @@
                             </div>
                             <div class="form-group col-md-3">
                                 <div class=""><label for="text-input" class=" form-control-label">Mes</label>
-                                <select id="mes" v-model="mes" class="form-control" >
+                                <select id="mes" v-model="mes" disabled="disabled" class="form-control" >
                                         <option value="1">Enero</option>
                                         <option value="2">Febrero</option>
                                         <option value="3">Marzo</option>
@@ -61,20 +61,15 @@
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Motivo del egreso</label>
                                 <select name="CarMotivoEgreso" v-model="CarMotivoEgreso" class="form-control">
-                                    <option value="Traslado a otro CAR">Traslado a otro CAR</option>
-                                    <option value="Fallecimiento">Fallecimiento</option>
-                                    <option value="Reinserción Familiar">Reinserción Familiar</option>
-                                    <option value="Vida Independiente">Vida Independiente</option>
-                                    <option value="Otro">Otro</option>
+                                    <option v-for="motivo in motivos" value="motivo.ID">{{motivo.NOMBRE}}</option>
+
                                 </select>
                             </div>
 
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Traslado</label>
                                 <select name="CarTrasladoCar" v-model="CarTrasladoCar" class="form-control">
-                                    <option value="ESSALU">ESSALUD</option>
-                                    <option value="MINSA">MINSA</option>
-                                    <option value="Otros">Otros</option>
+                                    <option v-for="traslado in traslados" value="traslado.ID">{{traslado.NOMBRE}}</option>
                                 </select>
                             </div>
 
@@ -83,9 +78,7 @@
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Traslado a un establecimiento de salud por un periodo prolongado</label>
                                 <select name="CarTrasladoEstablecimiento" v-model="CarTrasladoEstablecimiento" class="form-control">
-                                    <option value="ESSALUD">ESSALUD</option>
-                                    <option value="MINSA">MINSA</option>
-                                    <option value="Otros">Otros</option>
+                                    <option v-for="establecimiento in establecimientos" value="establecimiento.ID">{{establecimiento.NOMBRE}}</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-4">
