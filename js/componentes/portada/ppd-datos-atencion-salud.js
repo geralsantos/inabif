@@ -33,6 +33,14 @@ Vue.component('ppd-datos-atencion-salud', {
         CarNumHospitalizaciones:null,
         CarMotivoHospitalizacion:null,
 
+        nombre_residente:null,
+        isLoading:false,
+        mes:moment().format("MM"),
+        anio:(new Date()).getFullYear(),
+        coincidencias:[],
+        bloque_busqueda:false,
+        id_residente:null
+
     }),
     created:function(){
     },
@@ -42,7 +50,9 @@ Vue.component('ppd-datos-atencion-salud', {
     },
     methods:{
         guardar(){
-            let valores = { CarNumAtencionesMG:this.CarNumAtencionesMG,
+            let valores = {
+
+                CarNumAtencionesMG:this.CarNumAtencionesMG,
                 CarSalidaMes:this.CarSalidaMes,
                 CarNunSalidas:this.CarNunSalidas,
                 CarNumACardiovascular:this.CarNumACardiovascular,

@@ -19,7 +19,7 @@ Vue.component('ppd-datos-admision-usuario', {
         coincidencias:[],
         bloque_busqueda:false,
         id_residente:null
-    
+
 
     }),
     created:function(){
@@ -32,13 +32,21 @@ Vue.component('ppd-datos-admision-usuario', {
     },
     methods:{
         guardar(){
-            let valores = { Mov_Poblacional: this.CarMPoblacional,
+            if (this.id_residente==null) {
+                swal('Error', 'Residente no existe', 'success');
+                return false;
+            }
+            let valores = {
+                Mov_Poblacional: this.CarMPoblacional,
                 Fecha_Ingreso: this.CarFIngreso,
                 Fecha_Reingreso: this.CarFReingreso,
                 Institucion_derivado: this.CarIDerivo,
                 Motivo_Ingreso: this.CarMotivoI,
                 Tipo_Documento: this.CarTipoDoc,
-                Numero_Documento: this.CarNumDoc
+                Numero_Documento: this.CarNumDoc,
+                Residente_Id: this.id_residente,
+                Periodo_Mes: moment().format("MM"),
+                Periodo_Anio:moment().format("YYYY")
 
                         }
             this.$http.post('insertar_datos?view',{tabla:'CarDatosAdmision', valores:valores}).then(function(response){
@@ -54,12 +62,13 @@ Vue.component('ppd-datos-admision-usuario', {
         buscar_residente(){
             this.id_residente = null;
 
-            let word = this.nombre_residente;
+            var word = this.nombre_residente;
             if( word.length >= 4){
                 this.coincidencias = [];
                 this.bloque_busqueda = true;
                 this.isLoading = true;
-                this.$http.post('ejecutar_consulta?view',{tabla:'', campo:'coincidencia', like:word }).then(function(response){
+
+                this.$http.post('ejecutar_consulta?view',{like:word }).then(function(response){
 
                     if( response.body.data != undefined){
                         this.isLoading = false;
@@ -76,22 +85,23 @@ Vue.component('ppd-datos-admision-usuario', {
                 this.coincidencias = [];
             }
         },
-        actualizar(id){
-            this.id_residente = id;
+        actualizar(coincidencia){
+            this.id_residente = coincidencia.ID;
+            this.nombre_residente=coincidencia.NOMBRE;
             this.coincidencias = [];
             this.bloque_busqueda = false;
-            let where = {"residente_id": this.id_residente, "estado": 1}
-            this.$http.post('cargar_datos_residente?view',{tabla:'CarDatosAdmision', where:where }).then(function(response){
+
+            this.$http.post('cargar_datos_residente?view',{tabla:'CarDatosAdmision', residente_id:this.id_residente }).then(function(response){
 
                 if( response.body.atributos != undefined){
 
-                    this.CarMPoblacional= response.body.atributos[0]["Mov_Poblacional"];
-                    this.CarFIngreso= response.body.atributos[0]["Mov_Poblacional"];
-                    this.CarFReingreso= response.body.atributos[0]["Fecha_Reingreso"];
-                    this.CarIDerivo= response.body.atributos[0]["Institucion_derivado"];
-                    this.CarMotivoI= response.body.atributos[0]["Motivo_Ingreso"];
-                    this.CarTipoDoc= response.body.atributos[0]["Tipo_Documento"];
-                    this.CarNumDoc= response.body.atributos[0]["Numero_Documento"];
+                    this.CarMPoblacional = response.body.atributos[0]["MOV_POBLACIONAL"];
+                    this.CarFIngreso = response.body.atributos[0]["FECHA_INGRESO"];
+                    this.CarFReingreso = response.body.atributos[0]["FECHA_REINGRESO"];
+                    this.CarIDerivo = response.body.atributos[0]["INSTITUCION_DERIVADO"];
+                    this.CarMotivoI = response.body.atributos[0]["INSTITUCION_DERIVADO"];
+                    this.CarTipoDoc = response.body.atributos[0]["MOTIVO_INGRESO"];
+                    this.CarNumDoc = response.body.atributos[0]["NUMERO_DOCUMENTO"];
 
                 }
              });
