@@ -119,7 +119,32 @@ function hora_min_seg(time){
         var type = window.location.hash.substr(1);
         appVue.changeview(type);
       }
-      
+      // just mocking history back
+var historyHashArray = [
+  "push-mowers",
+  "equipment",
+  "gardening",
+  "moss-control",
+];
+
+var currentHistoryIndex = 0;
+
+// get reverse order of $ elements
+jQuery.fn.reverse = [].reverse;
+
+function expandTree() {
+  if (currentHistoryIndex < historyHashArray.length) {
+    console.log(historyHashArray[currentHistoryIndex]);
+    $('.collapse').removeClass('show'); // resets
+    $('#' + historyHashArray[currentHistoryIndex])
+      .parents('.collapse')
+      .reverse()
+      .collapse('show');
+    currentHistoryIndex++;
+  }
+}
+
+document.getElementById('back-btn').onclick = expandTree;
       
   });
     var isempty = function (str){

@@ -47,9 +47,55 @@
                     <a href="#portada-index" @click="changeview('portada-index')"> <i class="menu-icon fa fa-dashboard"></i>Pantalla Principal </a>
                 </li>
                 <h3 class="menu-title">INABIF</h3><!-- /.menu-title -->
-                <modulos :changeviewevent="changeview">
+                
+<style>
+  .leve-0 {
+    padding-left: 15px;
+  }
+  .level-1 {
+    padding-left: 30px;
+  }
+  .level-2 {
+    padding-left: 45px;
+  }
+  .level-3 {
+    padding-left: 60px;
+  }
+</style>
 
-                </modulos>
+<button type="button" id="back-btn" class="mb-3">History Back</button>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="text-nowrap">
+      <div id="sidebar">
+        <div class="list-group panel">
+          <a href="#node11" class="list-group-item level-0" data-toggle="collapse"
+             aria-expanded="true" id="gardening">Gardening <i class="fa fa-caret-down"></i></a>
+          <div class="collapse" id="node11">
+            <a href="#node13" class="list-group-item level-1" data-toggle="collapse"
+            id="lawn-chemicals">Lawn Chemicals <i class="fa fa-caret-down"></i></a>
+            <div class="collapse" id="node13">
+              <a href="gardening/lawn-chemicals/moss-control/" class="list-group-item level-2" id="moss-control">Moss Control</a>
+            </div>
+            <a href="#node14" class="list-group-item level-1" data-toggle="collapse" id="equipment">Equipment <i class="fa fa-caret-down"></i></a>
+            <div class="collapse" id="node14">
+
+              <a href="/" class="list-group-item level-2" data-toggle="collapse" id="lawn-mowers">Lawn Mowers <i class="fa fa-caret-down"></i></a>
+              <div class="collapse" id="node15">
+                <a href="/" class="list-group-item level-3" id="push-mowers">Push Mowers</a>
+                <a href="/" class="list-group-item level-3" id="riding-mowers">Riding Mowers</a>
+            </div>
+              <a href="gardening/equipment/weed-wackers/" class="list-group-item level-2" id="weed-wackers">Weed Wackers</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+                <!--<modulos :changeviewevent="changeview">
+
+                </modulos> -->
 
             </ul>
         </div><!-- /.navbar-collapse -->
