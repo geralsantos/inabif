@@ -133,32 +133,36 @@ if (isset($_GET["deletedata"])) {
     $x->deleteDataNoWhere("CarAtencionSalud");
     $x->deleteDataNoWhere("CarActividades");
     $x->deleteDataNoWhere("CarTrabajoSocial");
+    $x->deleteDataNoWhere("CarIdentificacionUsuario");
     
 }
 //$mdl->createTable("DESCRIBE modulos"); 
-/*$x->dropTable("drop table CarSaludMental");
-$mdl->createTable ("Create table CarSaludMental
+$x->dropTable("drop table CarIdentificacionUsuario");
+$mdl->createTable ("create table CarIdentificacionUsuario
 (
-Salud_Mental_Id int not null primary key,
+Identificacion_Id int not null primary key,
 Tipo_Centro_Id  int,
 Residente_Id	int,
 Periodo_Mes int,
-Periodo_Anio	int,
-Transtorno_Neurologico	char(20),
-Des_Transtorno		int,
-Tipo_Transtorno		int,
-Dificultad_habla	varchar(100),
-Metodo_comunicarse	varchar(100),
-Comprension		char(2),
-Tipo_Dificultad		varchar(100),
-Actividades_Diarias	int,
-Especificar		long,
-Estado			int,
-Fecha_Creacion		date,
-Fecha_Edicion		TIMESTAMP DEFAULT SYSDATE,
-Usuario_Crea		int,
-Usuario_Edita		int
-)");*/
+Periodo_Anio   int,
+Ape_Paterno varchar2(50),
+Ape_Materno varchar2(50),
+Nom_Usuario varchar2(50),
+Pais_Procencia   int,
+Depatamento_Procedencia int,
+Provincia_Procedencia  int,
+Distrito_Procedencia   int,
+Sexo          	char(2),
+Fecha_Nacimiento date,
+Edad          	int,
+Lengua_Materna     	int,
+Estado             	int default 1,
+Fecha_Creacion     	date,
+Fecha_Edicion      	TIMESTAMP DEFAULT SYSDATE,
+Usuario_Crea       	int,
+Usuario_Edita      	int
+)
+");
   //$mdl->createTable ("Create sequence seq_paises");
    /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
     */
