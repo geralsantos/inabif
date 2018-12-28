@@ -120,7 +120,7 @@ function hora_min_seg(time){
         appVue.changeview(type);
       }
       $('#geral').click(function(){
-        console.log("click");
+        console.log($(".menu-item-has-children").hmtl());
         if ($(this).children('ul').hasClass('show')) {
           $(this).children('ul').find("ul").removeClass('show')
         }else{
