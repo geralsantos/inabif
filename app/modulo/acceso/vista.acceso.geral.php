@@ -117,29 +117,17 @@ $x = new PG();
 $mdl = new mdl();
 //$mdl->createTable("DESCRIBE modulos"); 
 $x->dropTable("drop table CarCondicionIngreso");
-$mdl->createTable ("create table CarCondicionIngreso
-(
-Condicion_Id int not null primary key,
-Tipo_Centro_Id  int,
-DNI	char(2),
-Tipo_Documento 		int,
-Numero_Documento	int,
-Lee_Escribe		char(2),
-Nivel_Educativo		int,
-Institucion_Educativa	int,
-Tipo_Seguro		int,
-Clasficacion_Socioeconomica	int,
-Familiares		char(2),
-Parentesco		int,
-Posee_Pension char(2),
-Tipo_Pension INT,
-Problematica_Familiar int,
- Estado			int,
-Fecha_Creacion		TIMESTAMP DEFAULT SYSDATE,
-Fecha_Edicion		TIMESTAMP DEFAULT SYSDATE,
-Usuario_Crea		int,
-Usuario_Edita		int
-)");/*
+$mdl->createTable (" Create table Carproblematica_familiar(
+    Id int,
+    Nombre varchar(250),
+    Estado			int default 1,
+    Fecha_Creacion		date,
+    Fecha_Edicion		TIMESTAMP DEFAULT SYSDATE,
+    Usuario_Crea		int,
+    Usuario_Edita		int
+    )");
+    $mdl->createTable ("Create sequence seq_Carproblematica_familiar");
+        /*
 print_r($x->executeQuery("delete from modulos"));
 $arr = ["insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)
 values(1,1,1,0,'ppd-datos-actividades-tecnico-productivas','fa fa-laptop','ACOGIDA',0,1,'18-DEC-28',1,1)",
