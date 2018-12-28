@@ -97,6 +97,7 @@ class portada extends App{
         $_POST['valores']['Residente_Id'] = $_SESSION["usuario"][0]["ID"];
         $_POST['valores']['Tipo_Centro_Id'] = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
         $_POST['valores']['Fecha_Creacion'] = "18-DEC-27";
+        $_POST['valores']['Estado'] = 1;
         //$_POST['valores']['Fecha_Edicion'] = date("Y-m-d H:i:s");
         $_POST['valores']['Usuario_Crea'] =$_SESSION["usuario"][0]["ID"];
         $_POST['valores']['Usuario_Edita'] =$_SESSION["usuario"][0]["ID"];
