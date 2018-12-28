@@ -121,10 +121,7 @@ function hora_min_seg(time){
       }
       
       
-  })
-  document.querySelectorAll(".navbar-nav").addEventListener('click',function(){
-    console.log($(".menu-item-has-children").html());
-  })
+  });
     var isempty = function (str){
       return str ==0 || str=="0"|| str === '' || str === undefined || str === null || typeof str === undefined || typeof str == undefined || typeof str === null || str.length === 0 || str === Infinity;
     }
