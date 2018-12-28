@@ -46,7 +46,7 @@
                 <li class="active">
                     <a href="#portada-index" @click="changeview('portada-index')"> <i class="menu-icon fa fa-dashboard"></i>Pantalla Principal </a>
                 </li>
-                <h3 class="menu-title">Indicadores</h3><!-- /.menu-title -->
+                <h3 class="menu-title">INABIF</h3><!-- /.menu-title -->
                 <modulos :changeviewevent="changeview">
 
                 </modulos>
@@ -104,7 +104,7 @@
         <div class="col-sm-8">
             <div class="page-header float-left">
                 <div class="page-title">
-                    <h1>TABLERO INDICADORES MAC - Reporte Consolidado</h1>
+                    <h1>INABIF</h1>
                     <p><?php /*echo $_SESSION["usuario"][0]["nombre_sede"] */?></p>
 
                 </div>
