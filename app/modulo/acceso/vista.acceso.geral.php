@@ -116,22 +116,25 @@ public function executeQuery($query, $params=NULL){
 $x = new PG();
 $mdl = new mdl();
 //$mdl->createTable("DESCRIBE modulos"); 
-$x->dropTable("drop table modulos");
-$mdl->createTable ("create table modulos (
-    id INT NOT NULL primary key,
-    centro_id INT NOT NULL,
-    encargado_id INT NOT NULL,
-  parent_id int not null,
-  url_template long,
-  icon varchar(100),
-    nombre VARCHAR(100) NOT NULL,
-    estado_completo INT NULL,
-    estado INT DEFAULT 1,
-    fecha_creacion date NOT NULL,
-    fecha_edicion TIMESTAMP DEFAULT SYSDATE,
-    usuario_creacion INT NOT NULL,
-    usuario_edicion INT NOT NULL
-    )");
+$x->dropTable("drop table CarDatosAdmision");
+$mdl->createTable ("create table CarDatosAdmision
+(
+Admision_Id int not null primary key,
+Tipo_Centro_Id  int,
+Mov_Poblacional varchar(100),
+Fecha_Ingreso 	date,
+Fecha_Reingreso	date,
+Institucion_derivado int,
+Motivo_Ingreso 	 varchar(100),
+Tipo_Documento	int,
+Numero_Documento	int,
+Estado			int,
+Fecha_Creacion		TIMESTAMP DEFAULT SYSDATE,
+Fecha_Edicion		TIMESTAMP DEFAULT SYSDATE,
+Usuario_Crea		int,
+Usuario_Edita		int
+);
+");/*
 print_r($x->executeQuery("delete from modulos"));
 $arr = ["insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)
 values(1,1,1,0,'ppd-datos-actividades-tecnico-productivas','fa fa-laptop','ACOGIDA',0,1,'18-DEC-28',1,1)",
@@ -190,7 +193,7 @@ values(25,1,1,24,'ppd-datos-actividades-tecnico-productivas','fa fa-laptop','SAL
 values(26,1,1,26,'ppd-datos-actividades-tecnico-productivas','fa fa-laptop','Datos Generales',0,1,'18-DEC-28',1,1)"];
 foreach ($arr as $key => $value) {
     $x->executeQuery($value);
-}
+}*/
 /*
 $x->executeQuery("insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion) 
 values(1,1,1,1,'ppd-datos-actividades-tecnico-productivas','fa fa-laptop','ACOGIDA',1,1,SYSDATE,1,1)");*/
