@@ -116,16 +116,18 @@ public function executeQuery($query, $params=NULL){
 $x = new PG();
 $mdl = new mdl();
 //$mdl->createTable("DESCRIBE modulos"); 
-$x->dropTable("drop table Carproblematica_familiar");
-$mdl->createTable ("Create table Carproblematica_familiar(
-    Id int not null primary key,
-    Nombre varchar(250),
-    Estado			int default 1,
-    Fecha_Creacion		date,
-    Fecha_Edicion		TIMESTAMP DEFAULT SYSDATE,
-    Usuario_Crea		int,
-    Usuario_Edita		int
-    )
+$x->dropTable("drop table Cardesempeno_academico");
+$mdl->createTable ("Create table Cardesempeno_academico
+(
+Id int not null primary key,
+Nombre varchar(250),
+Estado			int default 1,
+Fecha_Creacion		date,
+Fecha_Edicion		TIMESTAMP DEFAULT SYSDATE,
+Usuario_Crea		int,
+Usuario_Edita		int
+)
+
     ");
    /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
     $mdl->createTable ("Create sequence seq_Carproblematica_familiar");*/
