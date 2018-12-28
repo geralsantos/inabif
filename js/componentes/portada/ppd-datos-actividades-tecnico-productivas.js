@@ -28,7 +28,7 @@ Vue.component('ppd-datos-actividades-tecnico-productivas', {
     },
     methods:{
         guardar(){
-            if (residente_id==null) {
+            if (this.residente_id==null) {
                 swal('Error', 'Residente no existe', 'success');
                 return false;
             }
