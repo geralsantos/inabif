@@ -39,6 +39,14 @@ Vue.component('modulos',{
         this.$http.post('list_modulos?view',{}).then(function(response){
           this.htmlrender = response.body;
           this.rowsmodulos=response.body;
+          $('.menu-item-has-children').click(function(){
+            console.log("click");
+            if ($(this).children('ul').hasClass('show')) {
+              $(this).children('ul').find("ul").removeClass('show')
+            }else{
+              $(this).children('ul').addClass('show')
+            }
+          })
           console.log(response.body);
         });
   	}
