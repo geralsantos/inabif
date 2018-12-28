@@ -63,23 +63,10 @@
   }
 </style>
 
-
-    <a href="#node11" class="list-group-item level-0" data-toggle="collapse"
-    aria-expanded="true" id="gardening">Gardening 
-        <i class="fa fa-caret-down"></i>
-    </a>
-    <div class="collapse" id="node11">
-        <a href="#node13" class="list-group-item level-1" data-toggle="collapse" id="lawn-chemicals">Lawn Chemicals 
-        <i class="fa fa-caret-down"></i>
-        </a>
-        <div class="collapse" id="node13">
-            <a href="gardening/lawn-chemicals/moss-control/" class="list-group-item level-2" id="moss-control">Moss Control</a>
-        </div>
-    </div>
      
-                <!--<modulos :changeviewevent="changeview">
+                <modulos :changeviewevent="changeview">
 
-                </modulos> -->
+                </modulos> 
 
             </ul>
         </div><!-- /.navbar-collapse -->
