@@ -55,32 +55,31 @@
                         </div>
                         <div class="row">
                         <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Fecha_egreso</label>
+                                <label for="text-input" class=" form-control-label">Fecha Egreso</label>
                                 <input type="date" v-model="CarFEgreso" name="CarFEgreso" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Motivo del egreso</label>
                                 <select name="CarMotivoEgreso" v-model="CarMotivoEgreso" class="form-control">
-                                    <option v-for="motivo in motivos" value="motivo.ID">{{motivo.NOMBRE}}</option>
-
+                                        <option value="Traslado a otro CAR">Traslado a otro CAR</option>
+                                        <option value="Fallecimiento">Fallecimiento</option>
+                                        <option value="Reinsercion Familiar">Reinserción Familiar</option>
+                                        <option value="Vida Independiente">Vida Independiente</option>
+                                        <option value="Otro">Otro</option>
                                 </select>
                             </div>
 
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Traslado</label>
                                 <select name="CarTrasladoCar" v-model="CarTrasladoCar" class="form-control">
-                                    <option v-for="traslado in traslados" value="traslado.ID">{{traslado.NOMBRE}}</option>
+                                    <option value="ESSALUD">ESSALUD</option>
+                                    <option value="MINSA">MINSA</option>
+                                    <option value="Otros">Otros</option>
                                 </select>
                             </div>
 
                         </div>
                         <div class="row">
-                            <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Traslado a un establecimiento de salud por un periodo prolongado</label>
-                                <select name="CarTrasladoEstablecimiento" v-model="CarTrasladoEstablecimiento" class="form-control">
-                                    <option v-for="establecimiento in establecimientos" value="establecimiento.ID">{{establecimiento.NOMBRE}}</option>
-                                </select>
-                            </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Defunción </label>
                                 <select name="CarDefuncion" v-model="CarDefuncion" class="form-control">
@@ -92,13 +91,10 @@
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Reinserción familiar</label>
                                 <select name="CarReinsercionFamiliar" v-model="CarReinsercionFamiliar" class="form-control">
-                                    <option value="Padre">Padre</option>
-                                    <option value="Madre">Madre</option>
-                                    <option value="Hermano/a">Hermano/a</option>
-                                    <option value="Tío/a">Tío/a</option>
-                                    <option value="primos/as">primos/as</option>
-                                    <option value="Abuelos/as">Abuelos/as</option>
-                                    <option value="Otros">Otros</option>
+                                    <option value="Familiar Directo">Familiar directo</option>
+                                    <option value="Familiar Indirecto">Familiar indirecto</option>
+                                    <option value="Voluntario">Voluntario</option>
+
                                 </select>
                             </div>
                         </div>

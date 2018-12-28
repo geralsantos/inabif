@@ -5,7 +5,6 @@ Vue.component('ppd-datos-egreso-generales', {
         CarFEgreso:null,
         CarMotivoEgreso:null,
         CarTrasladoCar:null,
-        CarTrasladoEstablecimiento:null,
         CarDefuncion:null,
         CarReinsercionFamiliar:null,
         CarRetiroVoluntario:null,
@@ -16,12 +15,6 @@ Vue.component('ppd-datos-egreso-generales', {
         CarRestitucionF:null,
         CarCumResDerEgreso:null,
         CarAus:null,
-
-        motivos:[],
-        traslados:[],
-        establecimientos:[],
-        defunciones:[],
-        reinserciones:[],
 
         nombre_residente:null,
         isLoading:false,
@@ -36,11 +29,7 @@ Vue.component('ppd-datos-egreso-generales', {
     created:function(){
     },
     mounted:function(){
-        this.motivos_egresos();
-        this.buscar_traslados();
-        this.buscar_establecimientos();
-        this.buscar_defuncion();
-        this.buscar_reinsercion_familiar();
+
     },
     updated:function(){
     },
@@ -55,7 +44,6 @@ Vue.component('ppd-datos-egreso-generales', {
                 Fecha_Egreso: moment(this.CarFEgreso).format("YY-MMM-DD"),
                 Motivo_Egreso:this.CarMotivoEgreso,
                 Traslado_CAR:this.CarTrasladoCar,
-                Traslado_Prolongado:this.CarTrasladoEstablecimiento,
                 Defuncion:this.CarDefuncion,
                 Reinsercion:this.CarReinsercionFamiliar,
                 Retiro_Voluntario:this.CarRetiroVoluntario,
@@ -121,7 +109,6 @@ Vue.component('ppd-datos-egreso-generales', {
                     this.CarFEgreso = response.body.atributos[0]["FECHA_EGRESO"];
                     this.CarMotivoEgreso = response.body.atributos[0]["MOTIVO_EGRESO"];
                     this.CarTrasladoCar = response.body.atributos[0]["TRASLADO_CAR"];
-                    this.CarTrasladoEstablecimiento = response.body.atributos[0]["TRASLADO_PROLONGADO"];
                     this.CarDefuncion = response.body.atributos[0]["DEFUNCION"];
                     this.CarReinsercionFamiliar = response.body.atributos[0]["REINSERCION"];
                     this.CarRetiroVoluntario = response.body.atributos[0]["RETIRO_VOLUNTARIO"];
@@ -136,48 +123,8 @@ Vue.component('ppd-datos-egreso-generales', {
                 }
              });
 
-        },
-        motivos_egresos(){
-            this.$http.post('buscar?view',{tabla:''}).then(function(response){
-                if( response.body.data ){
-                    this.motivos= response.body.data;
-                }
+        }
 
-            });
-        },
-
-        buscar_traslados(){
-            this.$http.post('buscar?view',{tabla:''}).then(function(response){
-                if( response.body.data ){
-                    this.traslados= response.body.data;
-                }
-
-            });
-        },
-        buscar_establecimientos(){
-            this.$http.post('buscar?view',{tabla:''}).then(function(response){
-                if( response.body.data ){
-                    this.establecimientos= response.body.data;
-                }
-
-            });
-        },
-        buscar_defuncion(){
-            this.$http.post('buscar?view',{tabla:''}).then(function(response){
-                if( response.body.data ){
-                    this.defunciones= response.body.data;
-                }
-
-            });
-        },
-        buscar_reinsercion_familiar(){
-            this.$http.post('buscar?view',{tabla:''}).then(function(response){
-                if( response.body.data ){
-                    this.reinserciones= response.body.data;
-                }
-
-            });
-        },
 
     }
   })
