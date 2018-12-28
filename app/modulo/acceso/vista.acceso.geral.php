@@ -114,7 +114,7 @@ public function executeQuery($query, $params=NULL){
 
 $x = new PG();
 $mdl = new mdl();
-$mdl->createTable("DESCRIBE modulos"); 
+//$mdl->createTable("DESCRIBE modulos"); 
 //$x->dropTable("drop table modulos");
 /*$mdl->createTable ("create table modulos (
     id INT NOT NULL primary key,
@@ -132,7 +132,7 @@ $mdl->createTable("DESCRIBE modulos");
     usuario_edicion INT NOT NULL
     )");*/
 //print_r($x->executeQuery("delete from CarActividades"));
-/*$x->insertData('modulos', array("id"=>1,"centro_id"=>1,"encargado_id"=>1,"parent_id"=>1,"url_template"=>'ppd-datos-actividades',"icon"=>'fa fa-laptop',"nombre"=>'ACOGIDA',"estado_completo"=>0,"estado"=>1,"fecha_creacion"=>'18-DEC-28',"usuario_creacion"=>1,"usuario_edicion"));*/
+$x->insertData('modulos', array("id"=>1,"centro_id"=>1,"encargado_id"=>1,"parent_id"=>1,"url_template"=>'ppd-datos-actividades',"icon"=>'fa fa-laptop',"nombre"=>'ACOGIDA',"estado_completo"=>0,"estado"=>1,"fecha_creacion"=>'18-DEC-28',"usuario_creacion"=>1,"usuario_edicion"));
 /*$x->executeQuery("drop table modulos");
 $x->executeQuery("drop SEQUENCE seq_modulos");
 $x->executeQuery("create table modulos (
