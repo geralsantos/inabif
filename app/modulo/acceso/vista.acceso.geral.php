@@ -99,6 +99,7 @@ public function executeQuery($query, $params=NULL){
                 $coma = ',';
             }
             $query .= '('.$queryKeys.') VALUES ('.$queryValues.')';
+            print_r($query);
             $stmt = parent::prepare($query);
             $stmt->execute($params);
             if($stmt->rowCount()>0){
