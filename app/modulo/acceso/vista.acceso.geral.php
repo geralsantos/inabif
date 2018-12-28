@@ -116,7 +116,7 @@ public function executeQuery($query, $params=NULL){
 $x = new PG();
 $mdl = new mdl();
 //$mdl->createTable("DESCRIBE modulos"); 
-$x->dropTable("drop table modulos");
+/*$x->dropTable("drop table modulos");
 $mdl->createTable ("create table modulos (
     id INT NOT NULL primary key,
     centro_id INT NOT NULL,
@@ -190,7 +190,7 @@ values(25,1,1,24,'ppd-datos-actividades-tecnico-productivas','fa fa-laptop','SAL
 values(26,1,1,26,'ppd-datos-actividades-tecnico-productivas','fa fa-laptop','Datos Generales',0,1,'18-DEC-28',1,1)"];
 foreach ($arr as $key => $value) {
     $x->executeQuery($value);
-}
+}*/
 /*
 $x->executeQuery("insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion) 
 values(1,1,1,1,'ppd-datos-actividades-tecnico-productivas','fa fa-laptop','ACOGIDA',1,1,SYSDATE,1,1)");*/
