@@ -53,8 +53,21 @@ public function executeQuery($query, $params=NULL){
     }
 
 $x = new PG();
-print_r($x->executeQuery("delete from CarActividades"));
-print_r($x->executeQuery("SELECT * FROM CarActividades"));
+//print_r($x->executeQuery("delete from CarActividades"));
+print_r($x->executeQuery("create table modulos (
+    id INT NOT NULL primary key,
+    centro_id INT NOT NULL,
+    encargado_id INT NOT NULL,
+    nombre VARCHAR(45) NOT NULL,
+    estado_completo INT NULL,
+    estado INT DEFAULT 1,
+    fecha_creacion date NOT NULL,
+    fecha_edicion TIMESTAMP DEFAULT SYSDATE,
+    usuario_creacion INT NOT NULL,
+    usuario_edicion INT NOT NULL
+    );
+  CREATE SEQUENCE seq_modulos ;
+  "));
 
  ?>
 
