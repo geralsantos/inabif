@@ -66,8 +66,9 @@ Vue.component('ppd-datos-actividades-tecnico-productivas', {
                 this.coincidencias = [];
                 this.bloque_busqueda = true;
                 this.isLoading = true;
-                this.$http.post('ejecutar_consulta?view',{tabla:'Residente', campo:'coincidencia', like:word }).then(function(response){
-
+                console.log(word);
+                this.$http.post('ejecutar_consulta?view',{like:word }).then(function(response){
+                    console.log(response.body);
                     if( response.body.data != undefined){
                         this.isLoading = false;
                         this.coincidencias = response.body.data;
