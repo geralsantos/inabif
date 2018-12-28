@@ -53,6 +53,7 @@ public function executeQuery($query, $params=NULL){
     }
 
 $x = new PG();
+print_r($x->executeQuery("delete from CarActividades"));
 print_r($x->executeQuery("SELECT * FROM CARACTIVIDADES"));
 
  ?>
