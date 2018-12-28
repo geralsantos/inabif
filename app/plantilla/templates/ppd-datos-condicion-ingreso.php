@@ -8,66 +8,64 @@
                     </div>
                     <div class="card-body card-block">
                         <form class="form-horizontal" v-on:submit.prevent="guardar">
-                        <div class="row">
-                            <div class="form-group col-md-7">
-                                <label for="text-input" class=" form-control-label">Nombre Residente</label>
-                                <div class="autocomplete">
-                                    <input type="text"  v-model="nombre_residente" class="form-control" @keyup="buscar_residente()"/>
-                                    <ul  id="autocomplete-results" class="autocomplete-results" v-if="bloque_busqueda">
-                                        <li class="loading" v-if="isLoading">
-                                            Loading results...
-                                        </li>
-                                        <li  @click="actualizar(coincidencia.id)" class="autocomplete-result" v-for="coincidencia in coincidencias">
-                                            {{coincidencia.nombre}}
-                                        </li>
+                            <div class="row">
+                                <div class="form-group col-md-7">
+                                    <label for="text-input" class=" form-control-label">Nombre Residente</label>
+                                    <div class="autocomplete">
+                                        <input type="text"  v-model="nombre_residente" class="form-control" @keyup="buscar_residente()" placeholder="Nombre, Apellido o DNI"/>
+                                        <ul  id="autocomplete-results" class="autocomplete-results" v-if="bloque_busqueda">
+                                            <li class="loading" v-if="isLoading">
+                                                Loading results...
+                                            </li>
+                                            <li  @click="actualizar(coincidencia)" class="autocomplete-result" v-for="coincidencia in coincidencias">
+                                                {{coincidencia.NOMBRE}} {{coincidencia.APELLIDO}} - {{coincidencia.DOCUMENTO}}
+                                            </li>
 
-                                    </ul>
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group col-md-2">
-                                <label for="text-input" class=" form-control-label">Año</label>
-                                <select name="select" id="anio"  v-model="anio" class="form-control">
-                                <option value="2018">2018</option>
-                                <option value="2019">2019</option>
-                                <option value="2020">2020</option>
-                                <option value="2021">2021</option>
-                                </select>
+                                <div class="form-group col-md-2">
+                                    <label for="text-input" class=" form-control-label">Año</label>
+                                    <select name="select" disabled="disabled" id="anio"  v-model="anio" class="form-control">
+                                    <option value="2018">2018</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2020">2020</option>
+                                    <option value="2021">2021</option>
+                                    </select>
+
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <div class=""><label for="text-input" class=" form-control-label">Mes</label>
+                                    <select id="mes" v-model="mes" disabled="disabled" class="form-control" >
+                                            <option value="1">Enero</option>
+                                            <option value="2">Febrero</option>
+                                            <option value="3">Marzo</option>
+                                            <option value="4">Abril</option>
+                                            <option value="5">Mayo</option>
+                                            <option value="6">Junio</option>
+                                            <option value="7">Julio</option>
+                                            <option value="8">Agosto</option>
+                                            <option value="9">Septiembre</option>
+                                            <option value="10">Octubre</option>
+                                            <option value="11">Noviembre</option>
+                                            <option value="12">Diciembre</option>
+                                        </select> </div>
+                                </div>
 
                             </div>
-                            <div class="form-group col-md-3">
-                                <div class=""><label for="text-input" class=" form-control-label">Mes</label>
-                                <select id="mes" v-model="mes" class="form-control" >
-                                        <option value="1">Enero</option>
-                                        <option value="2">Febrero</option>
-                                        <option value="3">Marzo</option>
-                                        <option value="4">Abril</option>
-                                        <option value="5">Mayo</option>
-                                        <option value="6">Junio</option>
-                                        <option value="7">Julio</option>
-                                        <option value="8">Agosto</option>
-                                        <option value="9">Septiembre</option>
-                                        <option value="10">Octubre</option>
-                                        <option value="11">Noviembre</option>
-                                        <option value="12">Diciembre</option>
-                                    </select> </div>
-                            </div>
-
-                        </div>
                             <div class="row">
                             <div class="form-group col-md-4">
                                     <label for="text-input" class=" form-control-label">Documento de Identidad al ingreso</label>
                                     <select name="CarDocIngreso" v-model="CarDocIngreso" class="form-control">
-                                        <option value="">Si</option>
-                                        <option value="">No</option>
+                                        <option value="Si">Si</option>
+                                        <option value="No">No</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-md-4">
                                     <div class=" "><label for="text-input" class=" form-control-label">Tipo de documento identidad AL INGRESO</label>
                                     <select name="CarTipoDoc" v-model="CarTipoDoc" class="form-control">
-                                        <option value="">DNI/L.E</option>
-                                        <option value="">carné de extranjería</option>
-                                        <option value="">Partida Nacimiento</option>
-                                        <option value="">No tiene</option>
+                                        <option v-for="tidoDocumento in tidoDocumentos" value=""></option>
+
                                     </select>
                                     </div>
                                 </div>
@@ -88,12 +86,8 @@
                                 </div>
                                 <div class="form-group col-md-6">
                                     <div class=" "><label for="text-input" class=" form-control-label">Tipo de pensión que percibe</label>
-                                    <select name="CarTipoPension" id="CarTipoPension" class="form-control">
-                                        <option value="ONP">ONP</option>
-                                        <option value="AFP">AFP</option>
-                                        <option value="Otros">Otros</option>
-                                        <option value="No se sabe">No se sabe</option>
-                                        <option value="Ninguna">Ninguna</option>
+                                    <select name="CarTipoPension" v-model="CarTipoPension" class="form-control">
+                                        <option v-for="pension in pensiones" :value="pension.ID">{{pension.NOMBRE}}</option>
                                     </select>
                                     </div>
                                 </div>
@@ -109,24 +103,13 @@
                                 <div class="form-group col-md-4">
                                     <label for="text-input" class=" form-control-label">Nivel Educativo</label>
                                     <select name="CarNivelEducativo" v-model="CarNivelEducativo" class="form-control">
-                                        <option value="Sin nivel">Sin nivel</option>
-                                        <option value="Inicial">Inicial</option>
-                                        <option value="Primaria incompleta">Primaria incompleta</option>
-                                        <option value="Primaria completa">Primaria completa</option>
-                                        <option value="Secundaria incompleta">Secundaria incompleta</option>
-                                        <option value="Secundaria completa">Secundaria completa</option>
-                                        <option value="Se desconoce">Se desconoce </option>
+                                        <option v-for="educativo in educativos" :value="educativo.ID">{{educativo.NOMBRE}}</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="text-input" class=" form-control-label">Intitución Educativa de Procedencia</label>
                                     <select name="CarInstitucionEducativa" v-model="CarInstitucionEducativa" class="form-control">
-                                        <option value="Centro de Educación Básica Regular">Centro de Educación Básica Regular</option>
-                                        <option value="Centro de Educación Basica Regular Inclusiva">Centro de Educación Basica Regular Inclusiva</option>
-                                        <option value="Centros de Educación Básica Alternativa- CEBA">Centros de Educación Básica Alternativa- CEBA</option>
-                                        <option value="Centros de Educación Básica Especial- CEBE">Centros de Educación Básica Especial- CEBE</option>
-                                        <option value="Centros de Educación Técnico Productivo- CETPRO">Centros de Educación Técnico Productivo- CETPRO</option>
-                                        <option value="Otro">Otro</option>
+                                        <option v-for="institucion in instituciones" :value="institucion.ID">{{institucion.NOMBRE}}</option>
                                     </select>
                                 </div>
                             </div>
@@ -134,21 +117,13 @@
                                 <div class="form-group col-md-4">
                                     <label for="text-input" class=" form-control-label">Tipo de seguro de salud</label>
                                     <select name="CarTipoSeguro" v-model="CarTipoSeguro" class="form-control">
-                                        <option value="ESSALUD">ESSALUD</option>
-                                        <option value="FFAA_PNP">FFAA_PNP</option>
-                                        <option value="Seguro Privado">Seguro Privado</option>
-                                        <option value="Seguro Integral de Salud(SIS)">Seguro Integral de Salud(SIS)</option>
-                                        <option value="Otro">Otro</option>
-                                        <option value="No tiene">No tiene</option>
+                                        <option v-for="seguro in seguros" :value="seguro.ID">{{seguro.NOMBRE}}</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="text-input" class=" form-control-label">Clasificación Socioeconómica</label>
                                     <select name="CarCSocioeconomica" v-model="CarCSocioeconomica" class="form-control">
-                                        <option value="Sin clasificación socioeconomica">Sin clasificación socioeconomica</option>
-                                        <option value="Pobre extremo">Pobre extremo</option>
-                                        <option value="Pobre no extremo">Pobre no extremo</option>
-                                        <option value="No pobre">No pobre</option>
+                                        <option v-for="socioeconomico in socioeconomicos" :value="socioeconomico.ID">{{socioeconomico.NOMBRE}}</option>
                                     </select>
                                 </div>
                             </div>
@@ -164,35 +139,14 @@
                                 <div class="form-group col-md-4">
                                     <label for="text-input" class=" form-control-label">Tipo de parentesco</label>
                                     <select name="CarTipoParentesco" v-model="CarTipoParentesco" class="form-control">
-                                        <option value="Padre">Padre</option>
-                                        <option value="Madre">Madre</option>
-                                        <option value="Hermano/a">Hermano/a</option>
-                                        <option value="Tio/a">Tío/a</option>
-                                        <option value="Primos/as">primos/as</option>
-                                        <option value="Abuelos/as">Abuelos/as</option>
-                                        <option value="Otros/as">Otro</option>
+                                        <option v-for="parentesco in parentescos" :value="parentesco.ID">{{parentesco.NOMBRE}}</option>
                                     </select>
 
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="text-input" class=" form-control-label">Problemática familiar</label>
-                                    <select name="CarProblematicaFam" id="CarProblematicaFam" class="form-control">
-                                        <option value="Ausentismo de madre por trabajo">Ausentismo de madre por trabajo</option>
-                                        <option value="Conductual/experiencia en calle">Conductual/experiencia en calle</option>
-                                        <option value="Violencia sexual">Violencia sexual</option>
-                                        <option value="Desintegrada e incompleta">Desintegrada e incompleta</option>
-                                        <option value="Desinterés rol parental/ disfuncional / Disgregada">Desinterés rol parental/ disfuncional / Disgregada</option>
-                                        <option value="Drogadicción">Drogadicción</option>
-                                        <option value="Escasa preocupación">Escasa preocupación</option>
-                                        <option value="Inadecuada forma de crianza">Inadecuada forma de crianza</option>
-                                        <option value="Maltrato físico">Maltrato físico</option>
-                                        <option value="Experiencia en calle Multi problemática">Experiencia en calle Multi problemática</option>
-                                        <option value="Negligencia">Negligencia</option>
-                                        <option value="Orfandad">Orfandad</option>
-                                        <option value="Privado de su libertad">Privado de su libertad</option>
-                                        <option value="Prostitución">Prostitución</option>
-                                        <option value="Salud mental">Salud mental </option>
-                                        <option value="Otros">Otros</option>
+                                    <select name="CarProblematicaFam" v-model="CarProblematicaFam" class="form-control">
+                                        <option v-for="familiar in familiares" :value="familiar.ID">{{familiar.NOMBRE}}</option>
                                     </select>
                                 </div>
                             </div>
