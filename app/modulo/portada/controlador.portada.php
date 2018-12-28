@@ -67,7 +67,7 @@ class portada extends App{
     '. $this->buildTreeHtml($element['children'],'childs').'
     </div>
       ') :
-        ('<div class="collapse" id="node13">
+        ('<div class="collapse" id="'.$element['URL_TEMPLATE'].'">
         <a href="'.$element['URL_TEMPLATE'].'" class="list-group-item level-2" id="moss-control">'.$element['NOMBRE'].'</a>
     </div>') ) ;
      // if (in_array($_SESSION["nivelusuario"],(explode(',',$element["niveles"])))) {
