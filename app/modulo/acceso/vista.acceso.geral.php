@@ -116,7 +116,7 @@ public function executeQuery($query, $params=NULL){
 $x = new PG();
 $mdl = new mdl();
 //$mdl->createTable("DESCRIBE modulos"); 
-$x->dropTable("drop table CarSaludMental");
+/*$x->dropTable("drop table CarSaludMental");
 $mdl->createTable ("Create table CarSaludMental
 (
 Salud_Mental_Id int not null primary key,
@@ -138,7 +138,7 @@ Fecha_Creacion		date,
 Fecha_Edicion		TIMESTAMP DEFAULT SYSDATE,
 Usuario_Crea		int,
 Usuario_Edita		int
-)");
+)");*/
   //$mdl->createTable ("Create sequence seq_paises");
    /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
     */
