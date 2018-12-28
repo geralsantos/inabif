@@ -93,17 +93,17 @@ Vue.component('ppd-datos-actividades-tecnico-productivas', {
                 console.log(response.body);
                 if( response.body.atributos != undefined){
 
-                    this.CarNumBiohuerto = response.body.atributos[0]["Num_Biohuerto"];
-                    this.CarNumManualidades = response.body.atributos[0]["Num_Manualidades"];
-                    this.CarNumReposteria = response.body.atributos[0]["Num_Panaderia"];
-                    this.CarNumPaseos = response.body.atributos[0]["Num_Paseos"];
-                    this.CarNumCulturales = response.body.atributos[0]["Num_Culturales"];
-                    this.CarNumCivicas = response.body.atributos[0]["Num_Civicas"];
-                    this.CarNumFutbol = response.body.atributos[0]["Num_Futbol"];
-                    this.CarNumNatacion = response.body.atributos[0]["Num_Natacion"];
-                    this.CarNumDeportes = response.body.atributos[0]["Num_otrosDe"];
-                    this.CArNumDinero = response.body.atributos[0]["Num_ManejoDinero"];
-                    this.CarNumDecisiones = response.body.atributos[0]["Num_decisiones"];
+                    this.CarNumBiohuerto = response.body.atributos[0]["NUM_BIOHUERTO"];
+                    this.CarNumManualidades = response.body.atributos[0]["NUM_MANUALIDADES"];
+                    this.CarNumReposteria = response.body.atributos[0]["NUM_PANADERIA"];
+                    this.CarNumPaseos = response.body.atributos[0]["NUM_PASEOS"];
+                    this.CarNumCulturales = response.body.atributos[0]["NUM_CULTURALES"];
+                    this.CarNumCivicas = response.body.atributos[0]["NUM_CIVICAS"];
+                    this.CarNumFutbol = response.body.atributos[0]["NUM_FUTBOL"];
+                    this.CarNumNatacion = response.body.atributos[0]["NUM_NATACION"];
+                    this.CarNumDeportes = response.body.atributos[0]["NUM_OTROSDE"];
+                    this.CArNumDinero = response.body.atributos[0]["NUM_MANEJODINERO"];
+                    this.CarNumDecisiones = response.body.atributos[0]["NUM_DECISIONES"];
                 }
              });
 
