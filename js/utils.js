@@ -121,10 +121,10 @@ function hora_min_seg(time){
       }
       $('#geral').click(function(){
         console.log($(".menu-item-has-children").html());
-        if ($(this).children('.menu-item-has-children').children('ul').hasClass('show')) {
-          $(this).children('.menu-item-has-children').children('ul').find("ul").removeClass('show')
+        if ($(this).children('.menu-item-has-children').children('ul.sub-menu').hasClass('show')) {
+          $(this).children('.menu-item-has-children').find('ul.sub-menu').removeClass('show')
         }else{
-          $(this).children('.menu-item-has-children').children('ul').find("ul").addClass('show')
+          $(this).children('.menu-item-has-children').find("ul.sub-menu").addClass('show')
         }
       })
   })
