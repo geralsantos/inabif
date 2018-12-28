@@ -52,7 +52,7 @@ public function executeQuery($query, $params=NULL){
     }
 
 $x = new PG();
-print_r($x->executeQuery("select * from CarActividades"));
+print_r($x->executeQuery("select * from usuarios"));
 
  ?>
 
