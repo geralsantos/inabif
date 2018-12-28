@@ -47,8 +47,31 @@ class portada extends App{
     $li = '';
     foreach ($elements as $element)
     {
+      /*<a href="#node11" class="list-group-item level-0" data-toggle="collapse"
+    aria-expanded="true" id="gardening">Gardening 
+        <i class="fa fa-caret-down"></i>
+    </a>
+    <div class="collapse" id="node11">
+        <a href="#node13" class="list-group-item level-1" data-toggle="collapse" id="lawn-chemicals">Lawn Chemicals 
+        <i class="fa fa-caret-down"></i>
+        </a>
+        <div class="collapse" id="node13">
+            <a href="gardening/lawn-chemicals/moss-control/" class="list-group-item level-2" id="moss-control">Moss Control</a>
+        </div>
+    </div>*/ 
+    $li = $li  . (isset($element['children']) ? ('
+    <a href="#node'.$element['PARENT_ID'].'" class="list-group-item level-0" data-toggle="collapse" aria-expanded="true" id="gardening">'.$element['NOMBRE'].' 
+        <i class="fa fa-caret-down"></i>
+    </a>
+    <div class="collapse" id="node'.$element['PARENT_ID'].'">
+    '. $this->buildTreeHtml($element['children'],'childs').'
+    </div>
+      ') :
+        ('<div class="collapse" id="node'.$element['ID'].'">
+        <a href="'.$element['URL_TEMPLATE'].'" class="list-group-item level-2" id="moss-control">'.$element['NOMBRE'].'</a>
+    </div>') ) ;
      // if (in_array($_SESSION["nivelusuario"],(explode(',',$element["niveles"])))) {
-        $li = $li  . (isset($element['children']) ? ('
+       /* $li = $li  . (isset($element['children']) ? ('
                       <li class="menu-item-has-children dropdown">
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
                             <i class="menu-icon ' . $element["ICON"] . '"></i>' . $element['NOMBRE'] .'
@@ -61,7 +84,7 @@ class portada extends App{
                           ('<li data-url="'.$element['URL_TEMPLATE'].'">
                             <i class="'.$element["ICON"].'"></i>
                             <a style="font-size:1em;" href="#'.$element['URL_TEMPLATE'].'" class=""> '.$element['NOMBRE'].'</a>
-                          </li>') ) ;
+                          </li>') ) ;*/
      // }
 
 
