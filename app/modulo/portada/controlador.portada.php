@@ -23,7 +23,6 @@ class portada extends App{
       //$_SESSION["nivelusuario"] = $usuario[0]['kpi_roles_id'];
       $modulos = "SELECT * FROM modulos WHERE estado = 1";
       $modulos = $modelo->executeQuery( $modulos );
-      print_r($modulos);
       $tree = $this->buildTree($modulos);
       $treeHtml = $this->buildTreeHtml($tree);
       print_r($treeHtml);
@@ -54,16 +53,16 @@ class portada extends App{
         $li = $li  . (isset($element['children']) ? ('
                       <li class="menu-item-has-children dropdown">
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
-                            <i class="menu-icon ' . $element["icon"] . '"></i>' . $element['nombre'] .'
+                            <i class="menu-icon ' . $element["ICON"] . '"></i>' . $element['NOMBRE'] .'
                           </a>
                           <ul class="sub-menu children dropdown-menu">
                           '. $this->buildTreeHtml($element['children'],'childs').'
                           </ul>
                           </li>
                         ') :
-                          ('<li data-url="'.$element['url'].'">
-                            <i class="'.$element["icon"].'"></i>
-                            <a style="font-size:1em;" href="#'.$element['url'].'" class="menu_direct"> '.$element['nombre'].'</a>
+                          ('<li data-url="'.$element['URL_TEMPLATE'].'">
+                            <i class="'.$element["ICON"].'"></i>
+                            <a style="font-size:1em;" href="#'.$element['URL_TEMPLATE'].'" class="menu_direct"> '.$element['nombre'].'</a>
                           </li>') ) ;
      // }
 
