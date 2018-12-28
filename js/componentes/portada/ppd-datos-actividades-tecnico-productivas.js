@@ -61,7 +61,7 @@ Vue.component('ppd-datos-actividades-tecnico-productivas', {
         buscar_residente(){
             this.id_residente = null;
 
-            let word = this.nombre_residente;
+            var word = this.nombre_residente;
             if( word.length >= 4){
                 this.coincidencias = [];
                 this.bloque_busqueda = true;
