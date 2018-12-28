@@ -116,21 +116,15 @@ public function executeQuery($query, $params=NULL){
 $x = new PG();
 $mdl = new mdl();
 //$mdl->createTable("DESCRIBE modulos"); 
-$x->dropTable("drop table Cardesempeno_academico");
-$mdl->createTable ("Create table Cardesempeno_academico
-(
-Id int not null primary key,
-Nombre varchar(250),
-Estado			int default 1,
-Fecha_Creacion		date,
-Fecha_Edicion		TIMESTAMP DEFAULT SYSDATE,
-Usuario_Crea		int,
-Usuario_Edita		int
-)
-
-    ");
+$x->dropTable("drop table paises");
+$mdl->createTable ("CREATE TABLE paises (
+    id int primary key,
+    iso char(2) default NULL,
+    nombre varchar(128) default NULL
+  )");
+  $mdl->createTable ("Create sequence seq_paises");
    /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
-    $mdl->createTable ("Create sequence seq_Carproblematica_familiar");*/
+    */
         /*
 print_r($x->executeQuery("delete from modulos"));
 $arr = ["insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)
