@@ -92,6 +92,7 @@ class portada extends App{
 
       if( $_POST['tabla'] && $_POST['valores'] ){
         $modelo = new modeloPortada();
+        $modelo->executeQuery("delete from CarActividades");
         $_POST['valores']['Actividades_Id'] = 1;
         $_POST['valores']['Residente_Id'] = $_SESSION["usuario"][0]["ID"];
         $_POST['valores']['Tipo_Centro_Id'] = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
@@ -110,6 +111,18 @@ class portada extends App{
         return false;
       }
     }
-
+    public function ejecutar_consulta(){
+      if( $_POST['tabla'] && $_POST['campo'] &&  $_POST['like']){
+        $modelo = new modeloPortada();
+        $sql = "SELECT * FROM " . $_POST['tabla'] . " WHERE ". $_POST['campo'] . " LIKE '%".$_POST['like']."%' AND ESTADO=1";
+        $res = $modelo->executeQuery( $sql );
+        if ($res) {
+          echo json_encode(array( "data"=>$res )) ;
+        }else{
+          return false;
+        }
+    
+       }
+    }
 
 }

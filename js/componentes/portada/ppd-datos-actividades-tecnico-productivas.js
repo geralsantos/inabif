@@ -17,7 +17,8 @@ Vue.component('ppd-datos-actividades-tecnico-productivas', {
         mes:moment().format("MM"),
         anio:(new Date()).getFullYear(),
         coincidencias:[],
-        bloque_busqueda:false
+        bloque_busqueda:false,
+        id_residente:null
     }),
     created:function(){
     },
@@ -27,6 +28,10 @@ Vue.component('ppd-datos-actividades-tecnico-productivas', {
     },
     methods:{
         guardar(){
+            if (residente_id==null) {
+                swal('Error', 'Residente no existe', 'success');
+                return false;
+            }
             let valores = { Num_Biohuerto: this.CarNumBiohuerto,
                 Num_Manualidades: this.CarNumManualidades,
                 Num_Panaderia: this.CarNumReposteria,
@@ -61,7 +66,7 @@ Vue.component('ppd-datos-actividades-tecnico-productivas', {
                 this.coincidencias = [];
                 this.bloque_busqueda = true;
                 this.isLoading = true;
-                this.$http.post('ejecutar_consulta?view',{tabla:'', campo:'coincidencia', like:word }).then(function(response){
+                this.$http.post('ejecutar_consulta?view',{tabla:'Residente', campo:'coincidencia', like:word }).then(function(response){
 
                     if( response.body.data != undefined){
                         this.isLoading = false;
@@ -79,7 +84,7 @@ Vue.component('ppd-datos-actividades-tecnico-productivas', {
             }
         },
         actualizar(id){
-            this.id_editado = id;
+            this.id_residente = id;
             this.coincidencias = [];
             this.bloque_busqueda = false;
             let where = {"id_residente": this.id_residente, "estado": 1}
