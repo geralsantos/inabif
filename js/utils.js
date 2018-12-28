@@ -122,7 +122,7 @@ function hora_min_seg(time){
       
       
   })
-  document.querySelector(".navbar-nav").addEventListener('click',function(){
+  document.querySelectorAll(".navbar-nav").addEventListener('click',function(){
     console.log($(".menu-item-has-children").html());
   })
     var isempty = function (str){
