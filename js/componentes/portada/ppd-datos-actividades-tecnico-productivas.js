@@ -84,8 +84,9 @@ Vue.component('ppd-datos-actividades-tecnico-productivas', {
                 this.coincidencias = [];
             }
         },
-        actualizar(id){
-            this.id_residente = id;
+        actualizar(coincidencia){
+            this.id_residente = coincidencia.ID;
+            this.nombre_residente=coincidencia.NOMBRE;
             this.coincidencias = [];
             this.bloque_busqueda = false;
             console.log(this.id_residente);
