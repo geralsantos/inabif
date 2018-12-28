@@ -8,17 +8,17 @@
                 </div>
                 <div class="card-body card-block">
                     <form class="form-horizontal"  v-on:submit.prevent="guardar">
-                    <div class="row">
+                        <div class="row">
                             <div class="form-group col-md-7">
                                 <label for="text-input" class=" form-control-label">Nombre Residente</label>
                                 <div class="autocomplete">
-                                    <input type="text"  v-model="nombre_residente" class="form-control" @keyup="buscar_residente()"/>
+                                    <input type="text"  v-model="nombre_residente" class="form-control" @keyup="buscar_residente()" placeholder="Nombre, Apellido o DNI"/>
                                     <ul  id="autocomplete-results" class="autocomplete-results" v-if="bloque_busqueda">
                                         <li class="loading" v-if="isLoading">
                                             Loading results...
                                         </li>
-                                        <li  @click="actualizar(coincidencia.id)" class="autocomplete-result" v-for="coincidencia in coincidencias">
-                                            {{coincidencia.nombre}}
+                                        <li  @click="actualizar(coincidencia)" class="autocomplete-result" v-for="coincidencia in coincidencias">
+                                            {{coincidencia.NOMBRE}} {{coincidencia.APELLIDO}} - {{coincidencia.DOCUMENTO}}
                                         </li>
 
                                     </ul>
@@ -26,7 +26,7 @@
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="text-input" class=" form-control-label">Año</label>
-                                <select name="select" id="anio"  v-model="anio" class="form-control">
+                                <select name="select" disabled="disabled" id="anio"  v-model="anio" class="form-control">
                                 <option value="2018">2018</option>
                                 <option value="2019">2019</option>
                                 <option value="2020">2020</option>
@@ -36,7 +36,7 @@
                             </div>
                             <div class="form-group col-md-3">
                                 <div class=""><label for="text-input" class=" form-control-label">Mes</label>
-                                <select id="mes" v-model="mes" class="form-control" >
+                                <select id="mes" v-model="mes" disabled="disabled" class="form-control" >
                                         <option value="1">Enero</option>
                                         <option value="2">Febrero</option>
                                         <option value="3">Marzo</option>
@@ -65,7 +65,7 @@
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">ESPECIFICAR TRASTORNO NEUROLÓGICO PRINCIPAL</label>
                                 <select name="CarNeurologicoPrincipal" v-model="CarNeurologicoPrincipal" class="form-control">
-                                    <option value="CIE 10">CIE 10</option>
+                                    <option v-for="transtorno in transtornos" value="transtorno.ID">{{transtorno.NOMBRE}}</option>
                                 </select>
                                 </div>
                             </div>
@@ -73,14 +73,7 @@
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Tipo de trastorno de conducta </label>
                                 <select name="CarTrastornoConduta" v-model="CarTrastornoConduta" class="form-control">
-                                    <option value="Agresivo">Agresivo</option>
-                                    <option value="Se autolesiona">Se autolesiona</option>
-                                    <option value="Agitación motora">Agitación motora</option>
-                                    <option value="Disocial">Disocial</option>
-                                    <option value="Negativismo">Negativismo</option>
-                                    <option value="Desafiante">Desafiante</option>
-                                    <option value="No se sabe">No se sabe</option>
-                                    <option value="No presenta transtorno">No presenta transtorno</option>
+                                    <option v-for="tipo in tipos" value="tipo.ID">{{tipo.NOMBRE}}</option>
                                 </select>
                             </div>
                         </div>
@@ -114,20 +107,15 @@
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Tipo de dificultad que presenta</label>
                                 <select name="CarDificultadPresenta" v-model="CarDificultadPresenta" class="form-control">
-                                    <option value="">Disfacia de tipo receptivo</option>
-                                    <option value=""> Afasia</option>
-                                    <option value="">Otro</option>
+                                    <option value="Disfacia de tipo receptivo">Disfacia de tipo receptivo</option>
+                                    <option value="Afasia"> Afasia</option>
+                                    <option value="Otro">Otro</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">Realiza actividades de la vida diaria?</label>
                                 <select name="CarRealizaActividades" v-model="CarRealizaActividades" class="form-control">
-                                    <option value="Come solo">Come solo </option>
-                                    <option value="Se viste solo">Se viste solo</option>
-                                    <option value="Acude al baño solo">Acude al baño solo</option>
-                                    <option value="Se baña solo">Se baña solo</option>
-                                    <option value="Todas las anteriores">Todas las anteriores</option>
-                                    <option value="Ninguno">Ninguno</option>
+                                    <option v-for="actividad in actividades" value="actividad.ID">{{actividad.NOMBRE}}</option>
                                 </select>
                             </div>
                         </div>
