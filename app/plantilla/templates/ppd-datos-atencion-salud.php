@@ -100,7 +100,7 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Nº Atenciones en ENDOCRINOLOGÍA</label>
-                                <input type="number" v-model="CarAEncornologia" name="CarAEncornologia" placeholder="" class="form-control">
+                                <input type="number" v-model="CarAEndocrinologia" name="CarAEndocrinologia" placeholder="" class="form-control">
                             </div>
 
                         </div>
@@ -122,7 +122,7 @@
                         <div class="row">
                             <div class="form-group col-md-4">
                                     <label for="text-input" class=" form-control-label">Nº Atenciones en HEMATOLOGIA</label>
-                                    <input type="number" id="CarAHematologia" name="CarAHematologia" placeholder="" class="form-control">
+                                    <input type="number" v-model="CarAHematologia" name="CarAHematologia" placeholder="" class="form-control">
                                 </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Nº Atenciones en INMUNOLOGIA</label>
