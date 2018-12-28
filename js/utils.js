@@ -120,11 +120,11 @@ function hora_min_seg(time){
         appVue.changeview(type);
       }
       $('#geral').click(function(){
-        console.log($(".menu-item-has-children").hmtl());
-        if ($(this).children('ul').hasClass('show')) {
-          $(this).children('ul').find("ul").removeClass('show')
+        console.log($(".menu-item-has-children").html());
+        if ($(this).children('.menu-item-has-children').children('ul').hasClass('show')) {
+          $(this).children('.menu-item-has-children').children('ul').find("ul").removeClass('show')
         }else{
-          $(this).children('ul').addClass('show')
+          $(this).children('.menu-item-has-children').children('ul').find("ul").addClass('show')
         }
       })
   })
