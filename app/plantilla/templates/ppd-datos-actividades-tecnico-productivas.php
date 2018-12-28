@@ -12,13 +12,13 @@
                             <div class="form-group col-md-7">
                                 <label for="text-input" class=" form-control-label">Nombre Residente</label>
                                 <div class="autocomplete">
-                                    <input type="text"  v-model="nombre_residente" class="form-control" @keyup="buscar_residente()"/>
+                                    <input type="text"  v-model="nombre_residente" class="form-control" @keyup="buscar_residente()" placeholder="Nombre, Apellido o DNI"/>
                                     <ul  id="autocomplete-results" class="autocomplete-results" v-if="bloque_busqueda">
                                         <li class="loading" v-if="isLoading">
                                             Loading results...
                                         </li>
                                         <li  @click="actualizar(coincidencia.id)" class="autocomplete-result" v-for="coincidencia in coincidencias">
-                                            {{coincidencia.NOMBRE}}
+                                            {{coincidencia.NOMBRE}} {{coincidencia.APELLIDO}} - {{coincidencia.DOCUMENTO}}
                                         </li>
 
                                     </ul>
