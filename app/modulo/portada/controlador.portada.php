@@ -56,7 +56,9 @@ class portada extends App{
                             <i class="menu-icon ' . $element["ICON"] . '"></i>' . $element['NOMBRE'] .'
                           </a>
                           <ul class="sub-menu children dropdown-menu">
+                            <li class="menu-item-has-children dropdown">
                           '. $this->buildTreeHtml($element['children'],'childs').'
+                          </li>
                           </ul>
                           </li>
                         ') :
