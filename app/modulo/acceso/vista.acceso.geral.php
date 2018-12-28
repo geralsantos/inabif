@@ -116,13 +116,13 @@ public function executeQuery($query, $params=NULL){
 $x = new PG();
 $mdl = new mdl();
 //$mdl->createTable("DESCRIBE modulos"); 
-//$x->dropTable("drop table modulos");
-/*$mdl->createTable ("create table modulos (
+$x->dropTable("drop table modulos");
+$mdl->createTable ("create table modulos (
     id INT NOT NULL primary key,
     centro_id INT NOT NULL,
     encargado_id INT NOT NULL,
   parent_id int not null,
-  url_template clob,
+  url_template long,
   icon varchar(100),
     nombre VARCHAR(100) NOT NULL,
     estado_completo INT NULL,
@@ -131,11 +131,11 @@ $mdl = new mdl();
     fecha_edicion TIMESTAMP DEFAULT SYSDATE,
     usuario_creacion INT NOT NULL,
     usuario_edicion INT NOT NULL
-    )");*/
+    )");
 print_r($x->executeQuery("delete from modulos"));
 $arr = ["insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)
 values(1,1,1,0,'ppd-datos-actividades-tecnico-productivas','fa fa-laptop','ACOGIDA',0,1,'18-DEC-28',1,1)",
-"insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion) 
+"insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)
 values(2,1,1,1,'ppd-datos-actividades-tecnico-productivas','fa fa-laptop','DIAGNÓSTICO',0,1,'18-DEC-28',1,1)",
 "insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)
 values(3,1,1,2,'ppd-datos-actividades-tecnico-productivas','fa fa-laptop','DATOS DEL CENTRO DE SERVICIOS',0,1,'18-DEC-28',1,1)",
