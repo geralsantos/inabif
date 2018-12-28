@@ -64,7 +64,6 @@
 </style>
 
 
-        <div class="list-group panel">
           <a href="#node11" class="list-group-item level-0" data-toggle="collapse"
              aria-expanded="true" id="gardening">Gardening <i class="fa fa-caret-down"></i></a>
           <div class="collapse" id="node11">
@@ -83,7 +82,6 @@
             </div>
               <a href="gardening/equipment/weed-wackers/" class="list-group-item level-2" id="weed-wackers">Weed Wackers</a>
           </div>
-        </div>
      
                 <!--<modulos :changeviewevent="changeview">
 
