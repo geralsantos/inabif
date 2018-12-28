@@ -5,7 +5,7 @@ class PG extends PDO
 public function __construct() {
     try {
 
-$db1 = "(DESCRIPTION=(ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)))(CONNECT_DATA=(SID=xe)))" ;
+$db1 = "(DESCRIPTION=(ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 172.19.0.35)(PORT = 1521)))(CONNECT_DATA=(SID=xe)))" ;
         $host = "172.19.0.35";
         $dbname = "orcl";
         $dbuser = "INABIF.UPP";
