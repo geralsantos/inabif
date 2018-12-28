@@ -119,7 +119,14 @@ function hora_min_seg(time){
         var type = window.location.hash.substr(1);
         appVue.changeview(type);
       }
-      
+      $('#geral .menu-item-has-children').click(function(){
+        console.log("click");
+        if ($(this).children('ul').hasClass('show')) {
+          $(this).children('ul').find("ul").removeClass('show')
+        }else{
+          $(this).children('ul').addClass('show')
+        }
+      })
   })
     var isempty = function (str){
       return str ==0 || str=="0"|| str === '' || str === undefined || str === null || typeof str === undefined || typeof str == undefined || typeof str === null || str.length === 0 || str === Infinity;
