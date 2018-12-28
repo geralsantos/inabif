@@ -1,15 +1,11 @@
-Vue.component('ppd-datos-egreso-nutricion', {
-    template:'#ppd-datos-egreso-nutricion',
+Vue.component('ppd-datos-egreso-psicologica', {
+    template:'#ppd-datos-egreso-psicologica',
     data:()=>({
         CarPlanIntervencion:null,
         CarDesMetaPII:null,
         CarInformeTecnico:null,
-        CarDesInformEvolutivo:null,
+        CarDesInforme:null,
         CarCumplePlan:null,
-        CarEstadoNutricional:null,
-        CarPeso:null,
-        CarTalla:null,
-        CarHemoglobina:null,
 
         nombre_residente:null,
         isLoading:false,
@@ -35,22 +31,19 @@ Vue.component('ppd-datos-egreso-nutricion', {
                 return false;
             }
             let valores = {
-                Nutricion_Id: 1,
-                CarPlanIntervencion:this.CarPlanIntervencion,
-                CarDesMetaPII:this.CarDesMetaPII,
-                CarInformeTecnico:this.CarInformeTecnico,
-                CarDesInformEvolutivo:this.CarDesInformEvolutivo,
-                CarCumplePlan:this.CarCumplePlan,
-                CarEstadoNutricional:this.CarEstadoNutricional,
-                CarPeso:this.CarPeso,
-                CarTalla:this.CarTalla,
-                CarHemoglobina:thisCarHemoglobina,
+                Psicologico_Egreso_Id: 1,
+                Plan_Psicologico: this.CarPlanIntervencion,
+                Meta_PII: this.CarDesMetaPII,
+                Informe_Tecnico: this.CarInformeTecnico,
+                Des_Informe: this.CarDesInforme,
+                Cumple_Plan: this.CarCumplePlan,
+
                 Residente_Id: this.id_residente,
                 Periodo_Mes: moment().format("MM"),
                 Periodo_Anio:moment().format("YYYY")
 
                         }
-            this.$http.post('insertar_datos?view',{tabla:'CarEgresoNutricion', valores:valores}).then(function(response){
+            this.$http.post('insertar_datos?view',{tabla:'CarEgresoPsicologico', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
                     swal('', 'Registro Guardado', 'success');
@@ -92,20 +85,15 @@ Vue.component('ppd-datos-egreso-nutricion', {
             this.coincidencias = [];
             this.bloque_busqueda = false;
 
-            this.$http.post('cargar_datos_residente?view',{tabla:'CarEgresoNutricion', residente_id:this.id_residente }).then(function(response){
+            this.$http.post('cargar_datos_residente?view',{tabla:'CarEgresoPsicologico', residente_id:this.id_residente }).then(function(response){
 
                 if( response.body.atributos != undefined){
 
-                    this.CarPlanIntervencion = response.body.atributos[0]["CARPLANINTERVENCION"];
-                    this.CarDesMetaPII = response.body.atributos[0]["CARDESMETAPII"];
-                    this.CarInformeTecnico = response.body.atributos[0]["CARINFORMETECNICO"];
-                    this.CarDesInformEvolutivo = response.body.atributos[0]["CARDESINFORMEVOLUTIVO"];
-                    this.CarCumplePlan = response.body.atributos[0]["CARCUMPLEPLAN"];
-                    this.CarEstadoNutricional = response.body.atributos[0]["CARESTADONUTRICIONAL"];
-                    this.CarPeso = response.body.atributos[0]["CARPESO"];
-                    this.CarTalla = response.body.atributos[0]["CARTALLA"];
-                    this.CarHemoglobina = response.body.atributos[0]["CARHEMOGLOBINA"];
-
+                    this.CarPlanIntervencion = response.body.atributos[0]["Plan_Psicologico"];
+                    this.CarDesMetaPII = response.body.atributos[0]["Meta_PII"];
+                    this.CarInformeTecnico = response.body.atributos[0]["Informe_Tecnico"];
+                    this.CarDesInforme = response.body.atributos[0]["Des_Informe"];
+                    this.CarCumplePlan = response.body.atributos[0]["Cumple_Plan"];
                 }
              });
 
