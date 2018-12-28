@@ -138,7 +138,7 @@ if (isset($_GET["deletedata"])) {
 }
 //$mdl->createTable("DESCRIBE modulos"); 
 $x->dropTable("drop table CarCentroServicio");
-$mdl->createTable (" create table CarCentroServicio
+$mdl->createTable ("create table CarCentroServicio
 (
 Id_Car_CentroServicio int not null primary key,
 Tipo_Centro_Id  int,
@@ -165,8 +165,7 @@ Fecha_Creacion     	date,
 Fecha_Edicion      	TIMESTAMP DEFAULT SYSDATE,
 Usuario_Crea       	int,
 Usuario_Edita      	int
-)
-");
+)");
   //$mdl->createTable ("Create sequence seq_paises");
    /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
     */
