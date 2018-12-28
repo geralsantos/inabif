@@ -25,8 +25,8 @@ Vue.component('ppd-datos-admision-usuario', {
     created:function(){
     },
     mounted:function(){
-        buscar_instituciones();
-        buscar_tipo_documento_ingreso();
+        this.buscar_instituciones();
+        this.buscar_tipo_documento_ingreso();
     },
     updated:function(){
     },
