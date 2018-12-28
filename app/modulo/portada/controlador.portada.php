@@ -23,9 +23,6 @@ class portada extends App{
       //$_SESSION["nivelusuario"] = $usuario[0]['kpi_roles_id'];
       $modulos = "SELECT * FROM modulos WHERE estado = 1";
       $modulos = $modelo->executeQuery( $modulos );
-      foreach ($modulos as $key => $value) {
-        echo utf8_encode($value["NOMBRE"]);
-      }
       $tree = $this->buildTree($modulos);
       $treeHtml = $this->buildTreeHtml($tree);
       print_r($treeHtml);

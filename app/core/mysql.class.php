@@ -12,7 +12,7 @@ class MySQL extends PDO
         $userpass = "UPP";
         $port= 1521;
          //parent::__construct("oci:dbname=//$host:$port/$dbname;charset=utf8",$dbuser,$userpass);
-         parent::__construct("oci:dbname=$db1",$dbuser,$userpass,array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
+         parent::__construct("oci:dbname=$db1".";charset=UTF8",$dbuser,$userpass,array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
 
 
     try {
