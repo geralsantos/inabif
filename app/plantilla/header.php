@@ -37,8 +37,8 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand" href="./"><img style="max-width:200px;" src="<?php echo IMAGES ?>/logo.png" alt="Logo"></a>
-            <a class="navbar-brand hidden" href="./"><img src="<?php echo IMAGES ?>/logo2.png" alt="Logo"></a>
+            <a class="navbar-brand" href="./"><img style="max-width:200px;" src="<?php echo IMAGES ?>/logo.jpg" alt="Logo"></a>
+            <!--<a class="navbar-brand hidden" href="./"><img src="<?php echo IMAGES ?>/logo2.png" alt="Logo"></a>-->
         </div>
 
         <div id="main-menu" class="main-menu collapse navbar-collapse">
