@@ -138,6 +138,44 @@ class portada extends App{
     
        }
     }
+    public function cargar_departamentos(){
+      if( $_POST['tabla'] && $_POST['residente_id']){
+        $modelo = new modeloPortada();
+        $sql = "SELECT * FROM Ubigeo WHERE ESTADO=1";
+        $res = $modelo->executeQuery( $sql );
+        if ($res) {
+          echo json_encode(array( "atributos"=>$res )) ;
+        }else{
+          return false;
+        }
     
+       }
+    }
+    public function cargar_provincias(){
+      if( $_POST['tabla'] && $_POST['residente_id']){
+        $modelo = new modeloPortada();
+        $sql = "SELECT * FROM Ubigeo WHERE  ESTADO=1";
+        $res = $modelo->executeQuery( $sql );
+        if ($res) {
+          echo json_encode(array( "atributos"=>$res )) ;
+        }else{
+          return false;
+        }
+    
+       }
+    }
+    public function cargar_distritos(){
+      if( $_POST['tabla'] && $_POST['residente_id']){
+        $modelo = new modeloPortada();
+        $sql = "SELECT * FROM Ubigeo WHERE ESTADO=1";
+        $res = $modelo->executeQuery( $sql );
+        if ($res) {
+          echo json_encode(array( "atributos"=>$res )) ;
+        }else{
+          return false;
+        }
+    
+       }
+    }
 
 }

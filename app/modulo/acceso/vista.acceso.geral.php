@@ -116,13 +116,31 @@ public function executeQuery($query, $params=NULL){
 $x = new PG();
 $mdl = new mdl();
 //$mdl->createTable("DESCRIBE modulos"); 
-$x->dropTable("drop table paises");
-$mdl->createTable ("CREATE TABLE paises (
-    id int primary key,
-    iso char(2) default NULL,
-    nombre varchar(128) default NULL
-  )");
-  $mdl->createTable ("Create sequence seq_paises");
+$x->dropTable("drop table CarEgresoGeneral");
+$mdl->createTable ("Create table CarEgresoGeneral
+(
+Egreso_General_Id	int not null primary key,
+Tipo_Centro_Id		int,
+Fecha_Egreso		date,
+Motivo_Egreso		int,
+Traslado_CAR		int,
+Traslado_Prolongado	int,
+Defuncion		int,
+Reinsercion		int,
+Retiro_Coluntario	varchar(180),
+Aseguramiento		char(2),
+Constancia_Naci		char(2),
+Carner_CONADIS		char(2),
+DNI			char(2),
+Restitucion		varchar(180),
+Aus char(2),
+Restitucion_Derechos char(2),
+Estado			int default 1,
+Fecha_Creacion		date,
+Fecha_Edicion		TIMESTAMP DEFAULT SYSDATE,
+Usuario_Crea		int,
+Usuario_Edicion int)");
+  //$mdl->createTable ("Create sequence seq_paises");
    /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
     */
         /*
