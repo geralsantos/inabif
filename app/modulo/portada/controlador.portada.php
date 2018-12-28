@@ -37,6 +37,9 @@ class portada extends App{
               }
               $branch[] = $element;
           }
+          if (count($branch)>10) {
+            break;
+          }
       }
       return $branch;
   }
