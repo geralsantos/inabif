@@ -111,10 +111,25 @@ public function executeQuery($query, $params=NULL){
             return FALSE;
         }
     }
+    public function deleteDataNoWhere($tabla) {
+        $query = 'DELETE FROM ' . $tabla;
+        $params = array();
+        $stmt = parent::prepare($query);
+        $stmt->execute($params);
+        if($stmt->rowCount()>0){
+            return TRUE;
+        }else{
+            return FALSE;
+        }
+
+}
     }
 
 $x = new PG();
 $mdl = new mdl();
+if (isset($_GET["deletedata"])) {
+    $x->deleteDataNoWhere("CarDatosAdmision");
+}
 //$mdl->createTable("DESCRIBE modulos"); 
 /*$x->dropTable("drop table CarSaludMental");
 $mdl->createTable ("Create table CarSaludMental
