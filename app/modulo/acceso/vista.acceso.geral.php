@@ -121,6 +121,9 @@ $mdl->createTable ("create table CarDatosAdmision
 (
 Admision_Id int not null primary key,
 Tipo_Centro_Id  int,
+Periodo_Mes int,
+Periodo_Anio int,
+Residente_Id int,
 Mov_Poblacional varchar(100),
 Fecha_Ingreso 	date,
 Fecha_Reingreso	date,
