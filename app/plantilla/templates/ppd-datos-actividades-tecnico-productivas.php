@@ -18,7 +18,7 @@
                                             Loading results...
                                         </li>
                                         <li  @click="actualizar(coincidencia.id)" class="autocomplete-result" v-for="coincidencia in coincidencias">
-                                            {{coincidencia.nombre}}
+                                            {{coincidencia.NOMBRE}}
                                         </li>
 
                                     </ul>
