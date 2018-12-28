@@ -33,6 +33,7 @@ Vue.component('ppd-datos-atencion-salud', {
         CarNumHospitalizaciones:null,
         CarMotivoHospitalizacion:null,
         CarAEndocrinologia :null,
+        CarAHematologia:null,
         nombre_residente:null,
         isLoading:false,
         mes:moment().format("MM"),
