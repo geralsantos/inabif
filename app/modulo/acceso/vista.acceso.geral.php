@@ -131,6 +131,7 @@ if (isset($_GET["deletedata"])) {
     $x->deleteDataNoWhere("CarDatosAdmision");
     $x->deleteDataNoWhere("CarAtencionPsicologica");
     $x->deleteDataNoWhere("CarAtencionSalud");
+    $x->deleteDataNoWhere("CarActividades");
     
 }
 //$mdl->createTable("DESCRIBE modulos"); 
