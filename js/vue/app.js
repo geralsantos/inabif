@@ -22,6 +22,27 @@
       }
     },
     methods: {
+      form_submit:function(){
+        var data = new FormData(document.querySelector('#login-form'));
+        this.$http.post('captcha?view',data).then(function(response){
+            if (response.body.success) {
+              document.querySelector('#login-form').submit();
+            }else{
+              let _error = {_code:response.body['error-codes'][0]},error_default=[["missing-input-response","Tiene que completar el CAPTCHA"],["timeout-or-duplicate","Ha duplicado o expirado el CAPTCHA, actualice su navegador."]],response_=[];
+              for (var i = 0; i < error_default.length; i++) {
+                if (error_default[i][0]==_error._code) {
+                  response_ = error_default[i][1];
+                }
+              }
+              swal({
+                title: "Ha ocurrido un problema!",
+                text: response_+"\ncode_error: "+_error._code,
+                icon: "warning",
+                button: "Aceptar",
+              });
+            }
+        });
+      },
       modulos_sidenav:function(){
         document.getElementById('geral').innerHTML = '<li class="menu-item-has-children dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-laptop"></i>Elaboración del Plan de Acción del Centro</a><ul class="sub-menu children dropdown-menu"><li><i class="fa fa-bar-chart"></i><a href="indicador-1.php">Nivel de ejecución del plan de acción del centro MAC</a></li></ul></li>'
         /*this.$http.post('list_modulos?view',{}).then(function(response){

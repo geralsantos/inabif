@@ -7,7 +7,7 @@
                     </a>
                 </div>
                 <div class="login-form">
-                    <form class="" action="<?php $this->url('index') ?>" method="post">
+                    <form id="login-form" v-on:submit.prevent="form_submit()" action="<?php $this->url('index') ?>" method="post">
                         <div class="form-group">
                             <label>Usuario</label>
                             <input type="text" class="form-control" name="usuario" placeholder="Ingrese su usuario">
@@ -16,7 +16,10 @@
                             <label>Contraseña</label>
                             <input type="password" class="form-control" name="clave" placeholder="Ingrese su clave">
                         </div>
-
+                        <div class="form-group">
+                            <label>Captcha</label>
+                            <div class="g-recaptcha" data-sitekey="6LfEQIUUAAAAAECD9TC9MWDVq92BVvIuGm16xVrz"></div>
+                        </div>
                         <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Entrar</button>
 
 

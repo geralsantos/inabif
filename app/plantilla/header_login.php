@@ -25,6 +25,8 @@
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
     <?php echo $this->getReferencia(); ?>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
     </head>
 <body class="bg-dark">
   <!-- Left Panel -->
