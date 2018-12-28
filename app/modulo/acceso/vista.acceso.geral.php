@@ -129,6 +129,8 @@ $x = new PG();
 $mdl = new mdl();
 if (isset($_GET["deletedata"])) {
     $x->deleteDataNoWhere("CarDatosAdmision");
+    $x->deleteDataNoWhere("CarAtencionPsicologica");
+    
 }
 //$mdl->createTable("DESCRIBE modulos"); 
 /*$x->dropTable("drop table CarSaludMental");
