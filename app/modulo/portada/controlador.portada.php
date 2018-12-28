@@ -130,8 +130,8 @@ class portada extends App{
       print_r($_POST['tabla'] && $_POST['residente_id']);
       if( $_POST['tabla'] && $_POST['residente_id']){
         $modelo = new modeloPortada();
-        $sql = "SELECT * FROM ".$_POST["tabla"]." WHERE Residente_Id = ".$_POST["residente_id"]." AND ESTADO=1";
-
+        $sql = "SELECT * FROM ".strtoupper($_POST["tabla"])." WHERE RESIDENTE_ID = ".$_POST["residente_id"]." AND ESTADO=1";
+        print_r($sql);
         $res = $modelo->executeQuery( $sql );
         if ($res) {
           echo json_encode(array( "atributos"=>$res )) ;
