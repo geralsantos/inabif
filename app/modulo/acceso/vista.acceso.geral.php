@@ -3,9 +3,7 @@
 class PG extends PDO
 {
 public function __construct() {
-    try {
-
-$db1 = "(DESCRIPTION=(ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 172.19.0.35)(PORT = 1521)))(CONNECT_DATA=(SID=xe)))" ;
+    $db1 = "(DESCRIPTION=(ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 172.19.0.35)(PORT = 1521)))(CONNECT_DATA=(SID=xe)))" ;
         $host = "172.19.0.35";
         $dbname = "orcl";
         $dbuser = "INABIF.UPP";
@@ -13,6 +11,9 @@ $db1 = "(DESCRIPTION=(ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 172.19.0
         $port= 1521;
          //parent::__construct("oci:dbname=//$host:$port/$dbname;charset=utf8",$dbuser,$userpass);
          parent::__construct("oci:dbname=$db1",$dbuser,$userpass);
+    try {
+
+ 
       parent::setAttribute(parent::ATTR_ERRMODE, parent::ERRMODE_EXCEPTION);
 
       parent::setAttribute(parent::ATTR_DEFAULT_FETCH_MODE, parent::FETCH_ASSOC);
