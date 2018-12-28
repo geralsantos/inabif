@@ -25,6 +25,7 @@
       form_submit:function(){
         var data = new FormData(document.querySelector('#login-form'));
         this.$http.post('captcha?view',data).then(function(response){
+          console.log(response.body);
             if (response.body.success) {
               document.querySelector('#login-form').submit();
             }else{
