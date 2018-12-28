@@ -133,7 +133,7 @@ Fecha_Creacion		date,
 Fecha_Edicion		TIMESTAMP DEFAULT SYSDATE,
 Usuario_Crea		int,
 Usuario_Edita		int
-
+)
 ");/*
 print_r($x->executeQuery("delete from modulos"));
 $arr = ["insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)
