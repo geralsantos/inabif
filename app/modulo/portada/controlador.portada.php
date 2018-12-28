@@ -24,8 +24,6 @@ class portada extends App{
       $modulos = "SELECT * FROM modulos WHERE estado = 1";
       $modulos = $modelo->executeQuery( $modulos );
       $tree = $this->buildTree($modulos);
-      print_r($tree);
-
       $treeHtml = $this->buildTreeHtml($tree);
       print_r($treeHtml);
     }
@@ -50,20 +48,16 @@ class portada extends App{
     foreach ($elements as $element)
     {
      // if (in_array($_SESSION["nivelusuario"],(explode(',',$element["niveles"])))) {
-        $li = $li  . (isset($element['children']) ? ($element['PARENT_ID']==0?('<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
-        <i class="menu-icon ' . $element["ICON"] . '"></i>' . $element['NOMBRE'] .'
-      </a>
-      <ul class="sub-menu children dropdown-menu">
-      '. $this->buildTreeHtml($element['children'],'childs').'
-      </ul>'):('<li class="menu-item-has-children dropdown">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
-        <i class="menu-icon ' . $element["ICON"] . '"></i>' . $element['NOMBRE'] .'
-      </a>
-      <ul class="sub-menu children dropdown-menu">
-      '. $this->buildTreeHtml($element['children'],'childs').'
-      </ul>
-      </li>
-    ')):
+        $li = $li  . (isset($element['children']) ? ('
+                      <li class="menu-item-has-children dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
+                            <i class="menu-icon ' . $element["ICON"] . '"></i>' . $element['NOMBRE'] .'
+                          </a>
+                          <ul class="sub-menu children dropdown-menu">
+                          '. $this->buildTreeHtml($element['children'],'childs').'
+                          </ul>
+                          </li>
+                        ') :
                           ('<li data-url="'.$element['URL_TEMPLATE'].'">
                             <i class="'.$element["ICON"].'"></i>
                             <a style="font-size:1em;" href="#'.$element['URL_TEMPLATE'].'" class=""> '.$element['NOMBRE'].'</a>
