@@ -24,7 +24,7 @@ class portada extends App{
       $modulos = "SELECT * FROM modulos WHERE estado = 1";
       $modulos = $modelo->executeQuery( $modulos );
       foreach ($modulos as $key => $value) {
-        echo utf8_encode($value);
+        echo utf8_encode($value["NOMBRE"]);
       }
       $tree = $this->buildTree($modulos);
       $treeHtml = $this->buildTreeHtml($tree);
