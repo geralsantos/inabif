@@ -125,6 +125,8 @@ class portada extends App{
        }
     }
     public function cargar_datos_residente(){
+      print_r($_POST['tabla']."t");
+      print_r($_POST['residente_id']."t2");
       if( $_POST['tabla'] && $_POST['residente_id']){
         $modelo = new modeloPortada();
         $sql = "SELECT * FROM ".$_POST["tabla"]." WHERE Residente_Id = ".$_POST["residente_id"]." AND ESTADO=1";
