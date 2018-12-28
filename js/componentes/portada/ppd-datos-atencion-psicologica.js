@@ -26,11 +26,16 @@ Vue.component('ppd-datos-atencion-psicologica', {
     },
     methods:{
         guardar(){
-            let valores = { Num_HBasicas: this.CarNumHabilidadesBasicas,
+            let valores = {
+
+                Num_HBasicas: this.CarNumHabilidadesBasicas,
                 Num_HConceptuales: this.CarNumHabilidadesConceptuales,
                 Num_HSociales: this.CarNumHabilidadesSociales,
                 Num_HPracticas: this.CarNumHablidadesPracticas,
-                Num_HModificacion: this.CarNumModificacionConducta
+                Num_HModificacion: this.CarNumModificacionConducta,
+                Residente_Id: this.id_residente,
+                Periodo_Mes: moment().format("MM"),
+                Periodo_Anio:moment().format("YYYY")
                         }
             this.$http.post('insertar_datos?view',{tabla:'CarAtencionPsicologica', valores:valores}).then(function(response){
 
@@ -50,9 +55,9 @@ Vue.component('ppd-datos-atencion-psicologica', {
                 this.coincidencias = [];
                 this.bloque_busqueda = true;
                 this.isLoading = true;
-                console.log(word);
+
                 this.$http.post('ejecutar_consulta?view',{like:word }).then(function(response){
-                    console.log(response.body);
+
                     if( response.body.data != undefined){
                         this.isLoading = false;
                         this.coincidencias = response.body.data;
@@ -68,21 +73,22 @@ Vue.component('ppd-datos-atencion-psicologica', {
                 this.coincidencias = [];
             }
         },
-        actualizar(id){
-            this.id_residente = id;
+        actualizar(coincidencia){
+            this.id_residente = coincidencia.ID;
+            this.nombre_residente=coincidencia.NOMBRE;
             this.coincidencias = [];
             this.bloque_busqueda = false;
-            let where = {"id_residente": this.id_residente, "estado": 1}
-            this.$http.post('cargar_datos_residente?view',{tabla:'CarAtencionPsicologica', where:where }).then(function(response){
+
+            this.$http.post('cargar_datos_residente?view',{tabla:'CarAtencionPsicologica', residente_id:this.id_residente }).then(function(response){
 
                 if( response.body.atributos != undefined){
 
-                    this.CarNumHabilidadesBasicas = response.body.atributos[0]["Num_HBasicas"];
-                    this.CarNumHabilidadesConceptuales = response.body.atributos[0]["Num_HConceptuales"];
-                    this.CarNumHabilidadesSociales = response.body.atributos[0]["Num_HSociales"];
-                    this.CarNumHablidadesPracticas = response.body.atributos[0]["Num_HPracticas"];
-                    this.CarNumModificacionConducta = response.body.atributos[0]["Num_HModificacion"];
-                
+                    this.CarNumHabilidadesBasicas = response.body.atributos[0]["NUM_HBASICAS"];
+                    this.CarNumHabilidadesConceptuales = response.body.atributos[0]["NUM_HCONCEPTUALES"];
+                    this.CarNumHabilidadesSociales = response.body.atributos[0]["NUM_HSOCIALES"];
+                    this.CarNumHablidadesPracticas = response.body.atributos[0]["NUM_HPRACTICAS"];
+                    this.CarNumModificacionConducta = response.body.atributos[0]["NUM_HMODIFICACION"];
+
                 }
              });
 
