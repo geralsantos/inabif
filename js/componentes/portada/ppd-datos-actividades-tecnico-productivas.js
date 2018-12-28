@@ -32,7 +32,9 @@ Vue.component('ppd-datos-actividades-tecnico-productivas', {
                 swal('Error', 'Residente no existe', 'success');
                 return false;
             }
-            let valores = { Num_Biohuerto: this.CarNumBiohuerto,
+            let valores = {
+                Actividades_Id: 1,
+                Num_Biohuerto: this.CarNumBiohuerto,
                 Num_Manualidades: this.CarNumManualidades,
                 Num_Panaderia: this.CarNumReposteria,
                 Num_Paseos: this.CarNumPaseos,
