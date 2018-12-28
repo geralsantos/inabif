@@ -88,7 +88,7 @@ Vue.component('ppd-datos-atencion-salud', {
                 Tratamiento_Psicofarmaco:this.CarTratamientoPsicofarmaco,
                 Hopitalizado_Periodo:this.CarHopitalizadoP,
                 Numero_Hospitalizaciones:this.CarNumHospitalizaciones,
-                Motivo_Hospitalizacion:this.CarMotivoHospitalizacion,
+                MotivoHospitalizacion:this.CarMotivoHospitalizacion,
                 Residente_Id: this.id_residente,
                 Periodo_Mes: moment().format("MM"),
                 Periodo_Anio:moment().format("YYYY")
