@@ -49,7 +49,7 @@ class portada extends App{
     {
      // if (in_array($_SESSION["nivelusuario"],(explode(',',$element["niveles"])))) {
         $li = $li  . (isset($element['children']) ? ('
-                      <li class="menu-item-has-children dropdown show">
+                      <li class="menu-item-has-children dropdown">
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
                             <i class="menu-icon ' . $element["ICON"] . '"></i>' . $element['NOMBRE'] .'
                           </a>

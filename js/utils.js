@@ -119,14 +119,14 @@ function hora_min_seg(time){
         var type = window.location.hash.substr(1);
         appVue.changeview(type);
       }
-      /*$('#menuToggle').click(function(){
-        if ($(this).hasClass('active')) {
-          $('.menu_direct').css('display','none')
-
+      $('.menu-item-has-children').click(function(){
+        console.log("click");
+        if ($(this).children('ul').hasClass('show')) {
+          $(this).children('ul').removeClass('show')
         }else{
-          $('.menu_direct').css('display','')
+          $(this).children('ul').addClass('show')
         }
-      })*/
+      })
   })
     var isempty = function (str){
       return str ==0 || str=="0"|| str === '' || str === undefined || str === null || typeof str === undefined || typeof str == undefined || typeof str === null || str.length === 0 || str === Infinity;
