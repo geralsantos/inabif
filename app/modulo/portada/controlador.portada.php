@@ -114,7 +114,7 @@ class portada extends App{
     public function ejecutar_consulta(){
       if( $_POST['like']){
         $modelo = new modeloPortada();
-        $sql = "SELECT * FROM Residente WHERE (NOMBRE LIKE '%".$_POST['like']."%' OR APELLIDO LIKE '%".$_POST['like']."%' OR DOCUMENTO LIKE '%".$_POST['like']."%') AND ESTADO=1";
+        $sql = "SELECT * FROM Residente WHERE (NOMBRE LIKE '%".$_POST['like']."%' OR APELLIDO LIKE '%".$_POST['like']."%' OR DOCUMENTO LIKE '%".$_POST['like']."%') AND ESTADO=1;";
         $res = $modelo->executeQuery( $sql );
         if ($res) {
           echo json_encode(array( "data"=>$res )) ;

@@ -26,7 +26,7 @@
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="text-input" class=" form-control-label">Año</label>
-                                <select name="select" id="anio"  v-model="anio" class="form-control">
+                                <select name="select" disabled="disabled" id="anio"  v-model="anio" class="form-control">
                                 <option value="2018">2018</option>
                                 <option value="2019">2019</option>
                                 <option value="2020">2020</option>
@@ -36,7 +36,7 @@
                             </div>
                             <div class="form-group col-md-3">
                                 <div class=""><label for="text-input" class=" form-control-label">Mes</label>
-                                <select id="mes" v-model="mes" class="form-control" >
+                                <select id="mes" v-model="mes" disabled="disabled" class="form-control" >
                                         <option value="1">Enero</option>
                                         <option value="2">Febrero</option>
                                         <option value="3">Marzo</option>

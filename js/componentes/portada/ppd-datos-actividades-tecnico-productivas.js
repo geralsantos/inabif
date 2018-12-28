@@ -44,8 +44,8 @@ Vue.component('ppd-datos-actividades-tecnico-productivas', {
                 Num_ManejoDinero: this.CArNumDinero,
                 Num_decisiones: this.CarNumDecisiones,
                 Residente_Id: this.id_residente,
-                Periodo_Mes: this.mes,
-                Periodo_Anio:this.anio
+                Periodo_Mes: moment().format("MM"),
+                Periodo_Anio:moment().format("YYYY")
 
                         }
             this.$http.post('insertar_datos?view',{tabla:'CarActividades', valores:valores}).then(function(response){
@@ -88,7 +88,7 @@ Vue.component('ppd-datos-actividades-tecnico-productivas', {
             this.id_residente = id;
             this.coincidencias = [];
             this.bloque_busqueda = false;
-            let where = {"id_residente": this.id_residente, "estado": 1}
+            let where = {"Residente_Id": this.id_residente, "estado": 1}
             this.$http.post('cargar_datos_residente?view',{tabla:'CarActividades', where:where }).then(function(response){
 
                 if( response.body.atributos != undefined){
