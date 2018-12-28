@@ -8,7 +8,7 @@ class MySQL extends PDO
     $db1 = "(DESCRIPTION=(ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 172.19.0.35)(PORT = 1521)))(CONNECT_DATA=(SID=xe)))" ;
         $host = "172.19.0.35";
         $dbname = "orcl";
-        $dbuser = "INABIF_UPP";
+        $dbuser = "INABIF.UPP";
         $userpass = "UPP";
         $port= 1521;
          //parent::__construct("oci:dbname=//$host:$port/$dbname;charset=utf8",$dbuser,$userpass);
