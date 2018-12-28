@@ -23,6 +23,9 @@ class portada extends App{
       //$_SESSION["nivelusuario"] = $usuario[0]['kpi_roles_id'];
       $modulos = "SELECT * FROM modulos WHERE estado = 1";
       $modulos = $modelo->executeQuery( $modulos );
+      foreach ($modulos as $key => $value) {
+        echo utf8_encode($value);
+      }
       $tree = $this->buildTree($modulos);
       $treeHtml = $this->buildTreeHtml($tree);
       print_r($treeHtml);
@@ -68,7 +71,7 @@ class portada extends App{
     </div>
       ') :
         ('
-        <a href="'.$element['URL_TEMPLATE'].'" class="list-group-item level-2" id="moss-control">'.$element['NOMBRE'].'</a>') ) ;
+        <a href="#'.$element['URL_TEMPLATE'].'" class="list-group-item level-2" id="moss-control">'.$element['NOMBRE'].'</a>') ) ;
      // if (in_array($_SESSION["nivelusuario"],(explode(',',$element["niveles"])))) {
        /* $li = $li  . (isset($element['children']) ? ('
                       <li class="menu-item-has-children dropdown">
