@@ -92,7 +92,7 @@ class portada extends App{
 
       if( $_POST['tabla'] && $_POST['valores'] ){
         $modelo = new modeloPortada();
-        $modelo->executeQuery("delete from CarActividades");
+        //$modelo->executeQuery("delete from CarActividades");
         $_POST['valores']['Actividades_Id'] = 1;
         $_POST['valores']['Residente_Id'] = $_SESSION["usuario"][0]["ID"];
         $_POST['valores']['Tipo_Centro_Id'] = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
