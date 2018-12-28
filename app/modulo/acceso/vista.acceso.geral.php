@@ -54,7 +54,7 @@ public function executeQuery($query, $params=NULL){
 
 $x = new PG();
 //print_r($x->executeQuery("delete from CarActividades"));
-print_r($x->executeQuery("delete from modulos;
+print_r($x->executeQuery("drop table modulos;
 create table modulos (
   id INT NOT NULL primary key,
   centro_id INT NOT NULL,
