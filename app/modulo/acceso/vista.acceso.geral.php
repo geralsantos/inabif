@@ -50,24 +50,38 @@ public function executeQuery($query, $params=NULL){
       }
 
     }
+    public function insertData($tabla, $values) {
+        if(count($values)>0){
+            $query = 'INSERT INTO '.$tabla;
+            $queryKeys = '';
+            $queryValues = '';
+            $params = array();
+            $coma = '';
+            foreach($values as $key => $val){
+                $queryKeys .= $coma.$key;
+                $queryValues .= $coma.':'.$key;
+                $params[':'.$key] = $val;
+                $coma = ',';
+            }
+            $query .= '('.$queryKeys.') VALUES ('.$queryValues.')';
+            $stmt = parent::prepare($query);
+            $stmt->execute($params);
+            if($stmt->rowCount()>0){
+                return TRUE;
+            }else{
+                return FALSE;
+            }
+        }else{
+            return FALSE;
+        }
+    }
     }
 
 $x = new PG();
 //print_r($x->executeQuery("delete from CarActividades"));
-print_r($x->executeQuery("create table modulos (
-    id INT NOT NULL primary key,
-    centro_id INT NOT NULL,
-    encargado_id INT NOT NULL,
-    nombre VARCHAR(45) NOT NULL,
-    estado_completo INT NULL,
-    estado INT DEFAULT 1,
-    fecha_creacion date NOT NULL,
-    fecha_edicion TIMESTAMP DEFAULT SYSDATE,
-    usuario_creacion INT NOT NULL,
-    usuario_edicion INT NOT NULL
-    );
-  CREATE SEQUENCE seq_modulos ;
-  "));
+$x->insertData('modulos', array("id"=>1,"centro_id"=>1,"encargado_id"=>1,"parent_id"=>1,"url_template"=>'ppd-datos-actividades-tecnico-productivas',"icon"=>'fa fa-laptop',"nombre"=>'ACOGIDA',"estado_completo"=>0,"estado"=>1,"fecha_creacion"=>'18-DEC-28',"usuario_creacion"=>1,"usuario_edicion"));
+print_r($x->executeQuery("select * from modulos"));
+//print_r($x->executeQuery("insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)values(1,1,1,0,'ppd-datos-actividades-tecnico-productivas','fa fa-laptop','ACOGIDA',0,1,'18-DEC-28',1,1);"));
 
  ?>
 
