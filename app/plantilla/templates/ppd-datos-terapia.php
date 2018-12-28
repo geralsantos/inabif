@@ -8,7 +8,7 @@
                 </div>
                 <div class="card-body card-block">
                     <form class="form-horizontal" v-on:submit.prevent="guardar">
-                    <div class="row">
+                        <div class="row">
                             <div class="form-group col-md-7">
                                 <label for="text-input" class=" form-control-label">Nombre Residente</label>
                                 <div class="autocomplete">

@@ -8,17 +8,17 @@
                 </div>
                 <div class="card-body card-block">
                     <form  class="form-horizontal" v-on:submit.prevent="guardar">
-                    <div class="row">
+                        <div class="row">
                             <div class="form-group col-md-7">
                                 <label for="text-input" class=" form-control-label">Nombre Residente</label>
                                 <div class="autocomplete">
-                                    <input type="text"  v-model="nombre_residente" class="form-control" @keyup="buscar_residente()"/>
+                                    <input type="text"  v-model="nombre_residente" class="form-control" @keyup="buscar_residente()" placeholder="Nombre, Apellido o DNI"/>
                                     <ul  id="autocomplete-results" class="autocomplete-results" v-if="bloque_busqueda">
                                         <li class="loading" v-if="isLoading">
                                             Loading results...
                                         </li>
-                                        <li  @click="actualizar(coincidencia.id)" class="autocomplete-result" v-for="coincidencia in coincidencias">
-                                            {{coincidencia.nombre}}
+                                        <li  @click="actualizar(coincidencia)" class="autocomplete-result" v-for="coincidencia in coincidencias">
+                                            {{coincidencia.NOMBRE}} {{coincidencia.APELLIDO}} - {{coincidencia.DOCUMENTO}}
                                         </li>
 
                                     </ul>
@@ -26,7 +26,7 @@
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="text-input" class=" form-control-label">Año</label>
-                                <select name="select" id="anio"  v-model="anio" class="form-control">
+                                <select name="select" disabled="disabled" id="anio"  v-model="anio" class="form-control">
                                 <option value="2018">2018</option>
                                 <option value="2019">2019</option>
                                 <option value="2020">2020</option>
@@ -36,7 +36,7 @@
                             </div>
                             <div class="form-group col-md-3">
                                 <div class=""><label for="text-input" class=" form-control-label">Mes</label>
-                                <select id="mes" v-model="mes" class="form-control" >
+                                <select id="mes" v-model="mes" disabled="disabled" class="form-control" >
                                         <option value="1">Enero</option>
                                         <option value="2">Febrero</option>
                                         <option value="3">Marzo</option>
@@ -145,13 +145,7 @@
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Dificultad que presenta para movimiento de brazos y cuerpo</label>
                                 <select name="CarDificultadBrazoCuerpo" v-model="CarDificultadBrazoCuerpo" class="form-control">
-                                    <option value="Monoplejia(afecta un solo miembro del cuerpo)">Monoplejia(afecta un solo miembro del cuerpo)</option>
-                                    <option value="Diplejia  (Afecta las extremidades inferiores-Piernas)">Diplejia  (Afecta las extremidades inferiores-Piernas)</option>
-                                    <option value="Hermano/a">Hermano/a</option>
-                                    <option value="Triplejia(Afecta un miembro superior-brazo, y las extremidades inferiores-piernas)">Triplejia(Afecta un miembro superior-brazo, y las extremidades inferiores-piernas)</option>
-                                    <option value="Hemiplejia (afecta el lado izquierdo o derecho del cuerpo)">Hemiplejia (afecta el lado izquierdo o derecho del cuerpo)</option>
-                                    <option value="Cuadriplejia (afecta las cuatro extremidades del cuerpo)">Cuadriplejia (afecta las cuatro extremidades del cuerpo)</option>
-                                    <option value="Ninguna">Ninguna</option>
+                                    <option v-for="dificultad in dificultades" value="dificultad.ID">{{dificultad.NOMBRE}}</option>
                                 </select>
                             </div>
                         </div>
@@ -169,19 +163,8 @@
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Tipo de patología</label>
                                 <select name="CarTipoPatologia1" v-model="CarTipoPatologia1" class="form-control">
-                                <option value="Enfermedad pulmonar crónica tal como asma, bronquitis o enfisema">Enfermedad pulmonar crónica tal como asma, bronquitis o enfisema</option>
-                                <option value="Hipertensión">Hipertensión</option>
-                                <option value="Diabetes">Diabetes</option>
-                                <option value="Depresión">Depresión </option>
-                                <option value="Cáncer o un tumor maligno">Cáncer o un tumor maligno</option>
-                                <option value="Enfermedad cardiaca congestiva u otros problemas del corazón">Enfermedad cardiaca congestiva u otros problemas del corazón</option>
-                                <option value="Derrame o hemorragia cerebral">Derrame o hemorragia cerebral</option>
-                                <option value="Artritis, reumatismo o artrosis">Artritis, reumatismo o artrosis</option>
-                                <option value="Osteoporosis (perdida de calcio en los huesos)">Osteoporosis (perdida de calcio en los huesos)</option>
-                                <option value="Insuficiencia renal crónica (problemas de riñón)">Insuficiencia renal crónica (problemas de riñón)</option>
-                                <option value="Enfermedades del sistema nervioso, Alzheimer o pérdida de memoria">Enfermedades del sistema nervioso, Alzheimer o pérdida de memoria</option>
-                                <option value="TBC">TBC</option>
-                                <option value="Otro (Especifique)">Otro (Especifique)</option>
+                                    <option v-for="patologia in patologias" value="patologia.ID">{{patologia.NOMBRE}}</option>
+
                                 </select>
                             </div>
 
@@ -204,19 +187,7 @@
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Tipo de patología</label>
                                 <select name="CarTipoPatologia2" v-model="CarTipoPatologia2" class="form-control">
-                                <option value="Enfermedad pulmonar crónica tal como asma, bronquitis o enfisema">Enfermedad pulmonar crónica tal como asma, bronquitis o enfisema</option>
-                                <option value="Hipertensión">Hipertensión</option>
-                                <option value="Diabetes">Diabetes</option>
-                                <option value="Depresión">Depresión </option>
-                                <option value="Cáncer o un tumor maligno">Cáncer o un tumor maligno</option>
-                                <option value="Enfermedad cardiaca congestiva u otros problemas del corazón">Enfermedad cardiaca congestiva u otros problemas del corazón</option>
-                                <option value="Derrame o hemorragia cerebral">Derrame o hemorragia cerebral</option>
-                                <option value="Artritis, reumatismo o artrosis"></option>
-                                <option value="Osteoporosis (perdida de calcio en los huesos)">Osteoporosis (perdida de calcio en los huesos)</option>
-                                <option value="Insuficiencia renal crónica (problemas de riñón)">Insuficiencia renal crónica (problemas de riñón)</option>
-                                <option value="Enfermedades del sistema nervioso, Alzheimer o pérdida de memoria">Enfermedades del sistema nervioso, Alzheimer o pérdida de memoria</option>
-                                <option value="TBC">TBC</option>
-                                <option value="Otro (Especifique)">Otro (Especifique)</option>
+                                    <option v-for="patologia2 in patologias2" value="patologia2.ID">{{patologia2.NOMBRE}}</option>
                                 </select>
                             </div>
 
@@ -256,10 +227,7 @@
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Estado nutricional (imc) </label>
                                 <select name="CarEstadoNutricional" v-model="CarEstadoNutricional" class="form-control">
-                                <option value="Bajo peso">Bajo peso</option>
-                                <option value="Normal">Normal</option>
-                                <option value="Sobre peso">Sobre peso</option>
-                                <option value="Obesidad">Obesidad</option>
+                                    <option v-for="nutricional in nutricionales" value="nutricional.ID">{{nutricional.NOMBRE}}</option>
                                 </select>
                             </div>
                         </div>
