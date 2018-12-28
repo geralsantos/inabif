@@ -62,7 +62,7 @@ class portada extends App{
                         ') :
                           ('<li data-url="'.$element['URL_TEMPLATE'].'">
                             <i class="'.$element["ICON"].'"></i>
-                            <a style="font-size:1em;" href="#'.$element['URL_TEMPLATE'].'" class="menu_direct"> '.$element['nombre'].'</a>
+                            <a style="font-size:1em;" href="#'.$element['URL_TEMPLATE'].'" class="menu_direct"> '.$element['NOMBRE'].'</a>
                           </li>') ) ;
      // }
 
