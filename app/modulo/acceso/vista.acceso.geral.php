@@ -116,30 +116,29 @@ public function executeQuery($query, $params=NULL){
 $x = new PG();
 $mdl = new mdl();
 //$mdl->createTable("DESCRIBE modulos"); 
-$x->dropTable("drop table CarEgresoGeneral");
-$mdl->createTable ("Create table CarEgresoGeneral
+$x->dropTable("drop table CarSaludMental");
+$mdl->createTable ("Create table CarSaludMental
 (
-Egreso_General_Id	int not null primary key,
-Tipo_Centro_Id		int,
-Fecha_Egreso		date,
-Motivo_Egreso		int,
-Traslado_CAR		int,
-Traslado_Prolongado	int,
-Defuncion		int,
-Reinsercion		int,
-Retiro_Voluntario	varchar(180),
-Aseguramiento		char(2),
-Constancia_Naci		char(2),
-Carner_CONADIS		char(2),
-DNI			char(2),
-Restitucion		varchar(180),
-Aus char(2),
-Restitucion_Derechos char(2),
-Estado			int default 1,
+Salud_Mental_Id int not null primary key,
+Tipo_Centro_Id  int,
+Residente_Id	int,
+Periodo_Mes int,
+Periodo_Anio	int,
+Transtorno_Neurologico	char(20),
+Des_Transtorno		int,
+Tipo_Transtorno		int,
+Dificultad_habla	varchar(100),
+Metodo_comunicarse	varchar(100),
+Comprension		char(2),
+Tipo_Dificultad		varchar(100),
+Actividades_Diarias	int,
+Especificar		long,
+Estado			int,
 Fecha_Creacion		date,
 Fecha_Edicion		TIMESTAMP DEFAULT SYSDATE,
 Usuario_Crea		int,
-Usuario_Edicion int)");
+Usuario_Edita		int
+)");
   //$mdl->createTable ("Create sequence seq_paises");
    /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
     */
