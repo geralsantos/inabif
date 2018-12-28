@@ -119,7 +119,7 @@ function hora_min_seg(time){
         var type = window.location.hash.substr(1);
         appVue.changeview(type);
       }
-      $('#geral .menu-item-has-children').click(function(){
+      $('#geral').click(function(){
         console.log("click");
         if ($(this).children('ul').hasClass('show')) {
           $(this).children('ul').find("ul").removeClass('show')
