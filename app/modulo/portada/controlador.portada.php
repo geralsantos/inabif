@@ -60,14 +60,14 @@ class portada extends App{
         </div>
     </div>*/ 
     $li = $li  . (isset($element['children']) ? ('
-    <a href="#'.$element['URL_TEMPLATE'].'" class="list-group-item level-0" data-toggle="collapse" aria-expanded="true" id="gardening">'.$element['NOMBRE'].' 
+    <a href="#'.$element['PARENT_ID'].'" class="list-group-item level-0" data-toggle="collapse" aria-expanded="true" id="gardening">'.$element['NOMBRE'].' 
         <i class="fa fa-caret-down"></i>
     </a>
-    <div class="collapse" id="'.$element['URL_TEMPLATE'].'">
+    <div class="collapse" id="'.$element['PARENT_ID'].'">
     '. $this->buildTreeHtml($element['children'],'childs').'
     </div>
       ') :
-        ('<div class="collapse" id="'.$element['URL_TEMPLATE'].'">
+        ('<div class="collapse" id="'.$element['PARENT_ID'].'">
         <a href="'.$element['URL_TEMPLATE'].'" class="list-group-item level-2" id="moss-control">'.$element['NOMBRE'].'</a>
     </div>') ) ;
      // if (in_array($_SESSION["nivelusuario"],(explode(',',$element["niveles"])))) {
