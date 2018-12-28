@@ -48,7 +48,9 @@ class portada extends App{
     foreach ($elements as $element)
     {
      // if (in_array($_SESSION["nivelusuario"],(explode(',',$element["niveles"])))) {
-        $li = $li  . (isset($element['children']) ? ($element['PARENT_ID']!=0?:('
+        $li = $li  . (isset($element['children']) ? ($element['PARENT_ID']==0?'<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
+        <i class="menu-icon ' . $element["ICON"] . '"></i>' . $element['NOMBRE'] .'
+      </a>':('
         <li class="menu-item-has-children dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
               <i class="menu-icon ' . $element["ICON"] . '"></i>' . $element['NOMBRE'] .'
