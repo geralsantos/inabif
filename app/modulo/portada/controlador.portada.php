@@ -60,10 +60,10 @@ class portada extends App{
         </div>
     </div>*/ 
     $li = $li  . (isset($element['children']) ? ('
-    <a href="#node'.$element['PARENT_ID'].'" class="list-group-item level-0" data-toggle="collapse" aria-expanded="true" id="gardening">'.$element['NOMBRE'].' 
+    <a href="#node'.$element['ID'].'" class="list-group-item level-0" data-toggle="collapse" aria-expanded="true" id="gardening">'.$element['NOMBRE'].' 
         <i class="fa fa-caret-down"></i>
     </a>
-    <div class="collapse" id="node'.$element['PARENT_ID'].'">
+    <div class="collapse" id="node'.$element['ID'].'">
     '. $this->buildTreeHtml($element['children'],'childs').'
     </div>
       ') :
