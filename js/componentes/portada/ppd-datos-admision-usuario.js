@@ -17,7 +17,9 @@ Vue.component('ppd-datos-admision-usuario', {
         mes:moment().format("MM"),
         anio:(new Date()).getFullYear(),
         coincidencias:[],
-        bloque_busqueda:false
+        bloque_busqueda:false,
+        id_residente:null
+    
 
     }),
     created:function(){
@@ -75,10 +77,10 @@ Vue.component('ppd-datos-admision-usuario', {
             }
         },
         actualizar(id){
-            this.id_editado = id;
+            this.id_residente = id;
             this.coincidencias = [];
             this.bloque_busqueda = false;
-            let where = {"id_residente": this.id_residente, "estado": 1}
+            let where = {"residente_id": this.id_residente, "estado": 1}
             this.$http.post('cargar_datos_residente?view',{tabla:'CarDatosAdmision', where:where }).then(function(response){
 
                 if( response.body.atributos != undefined){
