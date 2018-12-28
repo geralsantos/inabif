@@ -80,7 +80,7 @@ public function executeQuery($query, $params=NULL){
 $x = new PG();
 //print_r($x->executeQuery("delete from CarActividades"));
 /*$x->insertData('modulos', array("id"=>1,"centro_id"=>1,"encargado_id"=>1,"parent_id"=>1,"url_template"=>'ppd-datos-actividades',"icon"=>'fa fa-laptop',"nombre"=>'ACOGIDA',"estado_completo"=>0,"estado"=>1,"fecha_creacion"=>'18-DEC-28',"usuario_creacion"=>1,"usuario_edicion"));*/
-$x->executeQuery("drop table modulos");
+/*$x->executeQuery("drop table modulos");
 $x->executeQuery("drop SEQUENCE seq_modulos");
 $x->executeQuery("create table modulos (
     id INT NOT NULL primary key,
@@ -97,8 +97,8 @@ $x->executeQuery("create table modulos (
     usuario_creacion INT NOT NULL,
     usuario_edicion INT NOT NULL
     )");
-$x->executeQuery("DESCRIBE modulos");
-$x->executeQuery("insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)values(1,1,1,0,'ppd-datos-actividades','fa fa-laptop','ACOGIDA',0,1,SYSDATE,1,1);");
+$x->executeQuery("DESCRIBE modulos");*/
+$x->executeQuery("insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion) values(1,1,1,0,'ppd-datos-actividades','fa fa-laptop','ACOGIDA',0,1,SYSDATE,1,1);");
 print_r($x->executeQuery("select * from modulos"));
 /*
 print_r($x->executeQuery("insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)values(1,1,1,0,'ppd-datos-actividades','fa fa-laptop','ACOGIDA',0,1,SYSDATE,1,1);"));
