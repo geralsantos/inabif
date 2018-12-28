@@ -88,8 +88,7 @@ Vue.component('ppd-datos-actividades-tecnico-productivas', {
             this.id_residente = id;
             this.coincidencias = [];
             this.bloque_busqueda = false;
-            let where = {"Residente_Id": this.id_residente, "estado": 1}
-            this.$http.post('cargar_datos_residente?view',{tabla:'CarActividades', where:where }).then(function(response){
+            this.$http.post('cargar_datos_residente?view',{tabla:'CarActividades', residente_id:this.id_residente }).then(function(response){
 
                 if( response.body.atributos != undefined){
 
