@@ -55,7 +55,7 @@
 
   </div> <!-- final -->
   <footer>
-  <div class="footer-text"> <p>Copyright PCM-MAC & Developed by Colonias.com</p>
+  <div class="footer-text"> <p>Copyright INABIF & Developed by Colonias.com</p>
   </div>
     </footer>
   </body>
