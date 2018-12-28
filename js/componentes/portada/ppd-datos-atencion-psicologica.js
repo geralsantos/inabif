@@ -26,6 +26,10 @@ Vue.component('ppd-datos-atencion-psicologica', {
     },
     methods:{
         guardar(){
+            if (this.id_residente==null) {
+                swal('Error', 'Residente no existe', 'success');
+                return false;
+            }
             let valores = {
 
                 Num_HBasicas: this.CarNumHabilidadesBasicas,

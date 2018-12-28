@@ -50,6 +50,10 @@ Vue.component('ppd-datos-atencion-salud', {
     },
     methods:{
         guardar(){
+            if (this.id_residente==null) {
+                swal('Error', 'Residente no existe', 'success');
+                return false;
+            }
             let valores = {
 
                 CarNumAtencionesMG:this.CarNumAtencionesMG,
@@ -82,9 +86,12 @@ Vue.component('ppd-datos-atencion-salud', {
                 CarTratamientoPsicofarmaco:this.CarTratamientoPsicofarmaco,
                 CarHopitalizadoP:this.CarHopitalizadoP,
                 CarNumHospitalizaciones:this.CarNumHospitalizaciones,
-                CarMotivoHospitalizacion:this.CarMotivoHospitalizacion
+                CarMotivoHospitalizacion:this.CarMotivoHospitalizacion,
+                Residente_Id: this.id_residente,
+                Periodo_Mes: moment().format("MM"),
+                Periodo_Anio:moment().format("YYYY")
                         }
-            this.$http.post('insertar_datos?view',{tabla:'', valores:valores}).then(function(response){
+            this.$http.post('insertar_datos?view',{tabla:'CarAtencionSalud', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
                     swal('', 'Registro Guardado', 'success');
