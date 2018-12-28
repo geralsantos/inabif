@@ -1,11 +1,13 @@
-Vue.component('ppd-datos-egreso-psicologica', {
-    template:'#ppd-datos-egreso-psicologica',
+Vue.component('ppd-datos-egreso-salud', {
+    template:'#ppd-datos-egreso-salud',
     data:()=>({
         CarPlanIntervencion:null,
         CarDesMetaPII:null,
         CarInformeTecnico:null,
         CarDesInforme:null,
         CarCumplePlan:null,
+        CarEnfermedadesCronicas:null,
+        CarEspecificarEnfermedad:null,
 
         nombre_residente:null,
         isLoading:false,
@@ -31,19 +33,22 @@ Vue.component('ppd-datos-egreso-psicologica', {
                 return false;
             }
             let valores = {
-                Psicologico_Egreso_Id: 1,
-                Plan_Psicologico: this.CarPlanIntervencion,
+                Salud_Egreso_Id: 1,
+                Plan_Medico: this.CarPlanIntervencion,
                 Meta_PII: this.CarDesMetaPII,
                 Informe_Tecnico: this.CarInformeTecnico,
                 Des_Informe: this.CarDesInforme,
                 Cumple_Plan: this.CarCumplePlan,
+                Enfermedades_Cronicas: this.CarEnfermedadesCronicas,
+                Especificar: this.CarEspecificarEnfermedad,
 
                 Residente_Id: this.id_residente,
                 Periodo_Mes: moment().format("MM"),
                 Periodo_Anio:moment().format("YYYY")
 
-                        }
-            this.$http.post('insertar_datos?view',{tabla:'CarEgresoPsicologico', valores:valores}).then(function(response){
+            }
+
+            this.$http.post('insertar_datos?view',{tabla:'CarEgresoSalud', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
                     swal('', 'Registro Guardado', 'success');
@@ -85,15 +90,19 @@ Vue.component('ppd-datos-egreso-psicologica', {
             this.coincidencias = [];
             this.bloque_busqueda = false;
 
-            this.$http.post('cargar_datos_residente?view',{tabla:'CarEgresoPsicologico', residente_id:this.id_residente }).then(function(response){
+            this.$http.post('cargar_datos_residente?view',{tabla:'CarEgresoSalud', residente_id:this.id_residente }).then(function(response){
 
                 if( response.body.atributos != undefined){
 
-                    this.CarPlanIntervencion = response.body.atributos[0]["PLAN_PSICOLOGICO"];
+                    this.CarPlanIntervencion = response.body.atributos[0]["PLAN_MEDICO"];
                     this.CarDesMetaPII = response.body.atributos[0]["META_PII"];
                     this.CarInformeTecnico = response.body.atributos[0]["INFORME_TECNICO"];
                     this.CarDesInforme = response.body.atributos[0]["DES_INFORME"];
                     this.CarCumplePlan = response.body.atributos[0]["CUMPLE_PLAN"];
+                    this.CarEnfermedadesCronicas = response.body.atributos[0]["ENFERMEDADES_CRONICAS"];
+                    this.CarEspecificarEnfermedad = response.body.atributos[0]["ESPECIFICAR"];
+
+
                 }
              });
 
