@@ -147,7 +147,7 @@ if (isset($_GET["deletedata"])) {
     $x->deleteDataNoWhere("CarEgresoEducacion");
     $x->deleteDataNoWhere("CarEgresoGeneral");
     $x->deleteDataNoWhere("CarEgresoSalud");
-    
+    die();
 }
 if (isset($_POST["nombretabla"]) && $_POST["nombretabla"]!="") {
     echo "SELECT * FROM ".$_POST["nombretabla"]." WHERE ESTADO=1";
