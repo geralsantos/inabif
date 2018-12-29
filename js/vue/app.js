@@ -15,7 +15,9 @@
     }),
     created:function(){
     },mounted:function(){
-      //this.modulos_sidenav();
+      alert()
+
+      this.modulos_sidenav();
     },
     watch:{
       currentView:function(val){
