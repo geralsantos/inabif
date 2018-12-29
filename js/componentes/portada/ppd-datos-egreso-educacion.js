@@ -34,13 +34,14 @@ Vue.component('ppd-datos-egreso-educacion', {
             }
 
             let valores = {
+                Educacion_Egreso_Id : 1,
                 Plan_Educacion: this.CarIntervencion,
                 Meta_PII: this.CarDesMeta,
                 Informe_Tecnico: this.CarInformeEvolutivo,
                 Des_Informe: this.CarDesInfome,
                 Cumple_Plan: this.CarCumplimientoPlan,
                 Asistencia_Escolar: this.CarAsistenciaEscolar,
-                Desenpeno: this.CarDesempeAcademico,
+                Desempeno: this.CarDesempeAcademico,
                 Residente_Id: this.id_residente,
                 Periodo_Mes: moment().format("MM"),
                 Periodo_Anio:moment().format("YYYY")
@@ -98,7 +99,7 @@ Vue.component('ppd-datos-egreso-educacion', {
                     this.CarDesInfome = response.body.atributos[0]["DES_INFORME"];
                     this.CarCumplimientoPlan = response.body.atributos[0]["CUMPLE_PLAN"];
                     this.CarAsistenciaEscolar = response.body.atributos[0]["ASISTENCIA_ESCOLAR"];
-                    this.CarDesempeAcademico = response.body.atributos[0]["DESENPENO"];
+                    this.CarDesempeAcademico = response.body.atributos[0]["DESEMPENO"];
 
                 }
              });
