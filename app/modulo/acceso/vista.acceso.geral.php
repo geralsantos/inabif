@@ -156,19 +156,19 @@ if (isset($_POST["nombretabla"]) && $_POST["nombretabla"]!="") {
     echo "<br>";
     print_r($x->executeQuery($_POST["nombretabla"]));
     die();
-}else{/*
+}else{
 $x->dropTable('drop table pam_lengua_materna ');
 $mdl->createTable("CREATE TABLE pam_lengua_materna
 ( id int NOT NULL,
   nombre varchar(200) NOT NULL,
   Estado                            	int default 1,
-Fecha_Registro            	date,
+fecha_creacion            	date,
 Fecha_Edicion              	timestamp DEFAULT (sysdate),
 Usuario_Crea                	int,
 Usuario_Edita               	int
 )
 
-  "); */
+  "); 
   print_r($x->executeQuery("insert into pam_lengua_materna (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(1,'Quechua',sysdate,1,1)"));
   print_r($x->executeQuery("insert into pam_lengua_materna (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'Aymará',sysdate,1,1)"));
   print_r($x->executeQuery("insert into pam_lengua_materna (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'Ashaninka',sysdate,1,1)"));
