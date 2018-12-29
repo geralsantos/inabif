@@ -141,34 +141,33 @@ if (isset($_GET["deletedata"])) {
     
 }
 //$mdl->createTable("DESCRIBE modulos"); 
-/*$x->dropTable("drop table CarCondicionIngreso");
-$mdl->createTable("create table CarCondicionIngreso
+$x->dropTable("drop table CarIdentificacionUsuario");
+$mdl->createTable("create table CarIdentificacionUsuario
 (
-Condicion_Id int not null primary key,
+Identificaion_Id int not null primary key,
 Tipo_Centro_Id  int,
 Residente_Id	int,
 Periodo_Mes int,
 Periodo_Anio   int,
-DNI   char(2),
-Tipo_Documento     	int,
-Numero_Documento int,
-Lee_Escribe  	char(2),
-Nivel_Educativo    	int,
-Institucion_Educativa  int,
-Tipo_Seguro  	int,
-Clasficacion_Socioeconomica int,
-Familiares   	char(2),
-Parentesco   	int,
-Posee_Pension char(2),
-Tipo_Pension INT,
-Problematica_Familiar int,
- Estado            	int default 1,
+Ape_Paterno varchar2(50),
+Ape_Materno varchar2(50),
+Nom_Usuario varchar2(50),
+Pais_Procencia   int,
+Depatamento_Procedencia int,
+Provincia_Procedencia  int,
+Distrito_Procedencia   int,
+Sexo          	char(2),
+Fecha_Nacimiento date,
+Edad          	int,
+Lengua_Materna     	int,
+Estado             	int default 1,
 Fecha_Creacion     	date,
 Fecha_Edicion      	TIMESTAMP DEFAULT SYSDATE,
 Usuario_Crea       	int,
 Usuario_Edita      	int
 )
-");*/
+
+");
   //$mdl->createTable ("Create sequence seq_paises");
    /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
     */
