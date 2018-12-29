@@ -137,7 +137,7 @@ Vue.component('ppd-datos-condicion-ingreso', {
 
         },
         tipo_pension(){
-            this.$http.post('buscar?view',{tabla:'tipo_pension'}).then(function(response){
+            this.$http.post('buscar?view',{tabla:'pam_tipo_pension'}).then(function(response){
                 if( response.body.data ){
                     this.pensiones= response.body.data;
                 }
