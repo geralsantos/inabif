@@ -1,4 +1,4 @@
-<form action="acceso/geral" method="POST">
+<form action="geral" method="POST">
 <input type="text" value="" name="nombretabla" placeholder="tabla">
 <button type="submit">mostrar resultados</button></form>
 <?php 
