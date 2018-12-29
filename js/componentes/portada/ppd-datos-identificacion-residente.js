@@ -136,6 +136,10 @@ Vue.component('ppd-datos-identificacion-residente', {
             this.$http.post('buscar_departamentos?view',{tabla:'ubigeo'}).then(function(response){
                 if( response.body.data ){
                     this.departamentos= response.body.data;
+                    this.Depatamento_Procedencia = response.body.data[0]["CODDEPT"];
+                    alert(this.Depatamento_Procedencia);
+                    this.buscar_provincias();
+
                 }
 
             });
@@ -144,6 +148,7 @@ Vue.component('ppd-datos-identificacion-residente', {
             this.$http.post('buscar_provincia?view',{tabla:'ubigeo', coddept:this.Depatamento_Procedencia}).then(function(response){
                 if( response.body.data ){
                     this.provincias= response.body.data;
+                    //this.buscar_distritos();
                 }
 
             });
