@@ -190,7 +190,7 @@ class portada extends App{
     public function buscar_provincia(){
       if( $_POST['tabla']){
         $modelo = new modeloPortada();
-        $sql = "select codprov ,nomprov from ".$_POST['tabla']." where estado = 1 and SUBSTR(codprov,0,2)='".$_POST["cod"]."'";
+        $sql = "select codprov ,nomprov from ".$_POST['tabla']." where estado = 1 and SUBSTR(codprov,0,2)='".$_POST["cod"]."' group by codprov ,nomprov";
         $res = $modelo->executeQuery( $sql );
         if ($res) {
           echo json_encode(array( "data"=>$res )) ;
@@ -203,7 +203,7 @@ class portada extends App{
     public function buscar_distritos(){
       if( $_POST['tabla']){
         $modelo = new modeloPortada();
-        $sql = "select coddist, nomdist  from ".$_POST['tabla']." where estado = 1 and SUBSTR(coddist,0,4)= concat('".$_POST["dep"].$_POST["prov"]."')";
+        $sql = "select coddist, nomdist  from ".$_POST['tabla']." where estado = 1 and SUBSTR(coddist,0,4)= concat('".$_POST["dep"].$_POST["prov"]."') group by coddist, nomdist";
         $res = $modelo->executeQuery( $sql );
         if ($res) {
           echo json_encode(array( "data"=>$res )) ;
