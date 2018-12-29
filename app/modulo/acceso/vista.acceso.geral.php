@@ -177,7 +177,7 @@ print_r($x->executeQuery("insert into pam_tipo_documento_identidad (id,nombre,fe
 print_r($x->executeQuery("insert into pam_tipo_documento_identidad (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(2,'Carné de Extranjería',sysdate,1,1)"));
 print_r($x->executeQuery("insert into pam_tipo_documento_identidad (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(3,'Partida Nacimiento',sysdate,1,1)"));
 print_r($x->executeQuery("insert into pam_tipo_documento_identidad (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(4,'No tiene',sysdate,1,1)"));     
-print_r($x->executeQuery("pam_tipo_documento_identidad"));
+print_r($x->executeQuery("select * from pam_tipo_documento_identidad"));
 die();
 /*
 print_r($x->executeQuery("delete from modulos"));
