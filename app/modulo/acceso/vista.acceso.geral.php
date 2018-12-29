@@ -157,28 +157,27 @@ if (isset($_POST["nombretabla"]) && $_POST["nombretabla"]!="") {
     print_r($x->executeQuery($_POST["nombretabla"]));
     die();
 }else{
-$x->dropTable('drop table pam_lengua_materna ');
-$mdl->createTable("CREATE TABLE pam_lengua_materna
-( id int NOT NULL,
+$x->dropTable('drop table pam_tipo_transtorno_conducta ');
+$mdl->createTable("CREATE TABLE pam_tipo_transtorno_conducta
+( id number(10) NOT NULL,
   nombre varchar(200) NOT NULL,
-  Estado                            	int default 1,
-fecha_creacion            	date,
-Fecha_Edicion              	timestamp DEFAULT (sysdate),
-Usuario_Crea                	int,
-Usuario_Edita               	int
+  Estado                            	number(10) default 1,
+  fecha_creacion            	DATE DEFAULT (sysdate),
+Fecha_Edicion              	DATE DEFAULT (sysdate),
+Usuario_Crea                	number(10),
+Usuario_Edita               	number(10)
 )
-
   "); 
-  print_r($x->executeQuery("insert into pam_lengua_materna (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(1,'Quechua',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_lengua_materna (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'Aymará',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_lengua_materna (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'Ashaninka',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_lengua_materna (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'Otra lengua Nativa',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_lengua_materna (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(5,'Castellano',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_lengua_materna (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(6,'Portugués',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_lengua_materna (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(7,'Otra lengua extranjera',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_lengua_materna (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(8,'Lengua de señas peruana',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_lengua_materna (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(9,'No escucha/ni habla',sysdate,1,1)"));
-  print_r($x->executeQuery("SELECT * FROM pam_lengua_materna WHERE RESIDENTE_ID = 1 AND ESTADO=1"));
+  print_r($x->executeQuery("insert into pam_tipo_transtorno_conducta (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(1,'Agresivo',sysdate,1,1)"));
+  print_r($x->executeQuery("insert into pam_tipo_transtorno_conducta (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'Se autolesiona',sysdate,1,1)"));
+  print_r($x->executeQuery("insert into pam_tipo_transtorno_conducta (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'Hiperactivo',sysdate,1,1)"));
+  print_r($x->executeQuery("insert into pam_tipo_transtorno_conducta (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'Agitación motora',sysdate,1,1)"));
+  print_r($x->executeQuery("insert into pam_tipo_transtorno_conducta (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(5,'Disocial',sysdate,1,1)"));
+  print_r($x->executeQuery("insert into pam_tipo_transtorno_conducta (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(6,'Negativismo',sysdate,1,1)"));
+  print_r($x->executeQuery("insert into pam_tipo_transtorno_conducta (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(7,'Desafiante',sysdate,1,1)"));
+  print_r($x->executeQuery("insert into pam_tipo_transtorno_conducta (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(8,'No se sabe',sysdate,1,1)"));
+  print_r($x->executeQuery("insert into pam_tipo_transtorno_conducta (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(9,'No presenta transtorno',sysdate,1,1)"));
+  print_r($x->executeQuery("SELECT * FROM pam_tipo_transtorno_conducta WHERE ESTADO=1"));
 /*
 $tabla="CarEgresoSalud";
 $x->dropTable("drop table ".$tabla);
