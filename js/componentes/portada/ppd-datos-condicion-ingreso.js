@@ -174,14 +174,14 @@ Vue.component('ppd-datos-condicion-ingreso', {
             });
         },
         clasificacion_socioeconomica(){
-            this.$http.post('buscar?view',{tabla:'clasificacion_socioeconomico',codigo:'ppd'}).then(function(response){
+            this.$http.post('buscar?view',{tabla:'pam_clasif_socioeconomico',codigo:'ppd'}).then(function(response){
                 if( response.body.data ){
                     this.socioeconomicos= response.body.data;
                 }
             });
         },
         tipo_parentesco(){
-            this.$http.post('buscar?view',{tabla:'tipo_parentesco',codigo:'ppd'}).then(function(response){
+            this.$http.post('buscar?view',{tabla:'tipo_parentesco'}).then(function(response){
                 if( response.body.data ){
                     this.parentescos= response.body.data;
                 }
