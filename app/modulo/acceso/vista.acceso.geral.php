@@ -1,4 +1,4 @@
-<form action="./">
+<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
 <input type="text" value="" name="nombretabla" placeholder="tabla">
 <button type="submit">mostrar resultados</button></form>
 <?php 
@@ -141,8 +141,6 @@ if (isset($_GET["deletedata"])) {
     $x->deleteDataNoWhere("CarIdentificacionUsuario");
     $x->deleteDataNoWhere("CarCondicionIngreso");
     $x->deleteDataNoWhere("CarEgresoEducacion");
-    
-    
 }
 if (isset($_POST["nombretabla"]) && $_POST["nombretabla"]!="") {
     echo "SELECT * FROM ".$_POST["nombretabla"]." WHERE ESTADO=1";
