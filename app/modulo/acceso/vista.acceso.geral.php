@@ -142,7 +142,7 @@ if (isset($_GET["deletedata"])) {
     
 }
 //$mdl->createTable("DESCRIBE modulos"); 
-
+/*
 $x->dropTable("drop table Cardesempeno_academico");
 $mdl->createTable("Create table Cardesempeno_academico
  (
@@ -157,16 +157,17 @@ Fecha_Edicion      	TIMESTAMP DEFAULT SYSDATE,
 Usuario_Crea       	int,
 Usuario_Edita      	int
 )
-");
+");*/
  //$mdl->createTable ("Create sequence seq_Cardesempeno_academico");
    /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
     */
     //$x->deleteDataNoWhere("pam_nivel_educativo");
+    /*
 print_r($x->executeQuery("insert into Cardesempeno_academico (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(1,'SI, sobresaliente',sysdate,1,1)"));
 print_r($x->executeQuery("insert into Cardesempeno_academico (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'Si, satisfactorio',sysdate,1,1)"));
 print_r($x->executeQuery("insert into Cardesempeno_academico (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'NO',sysdate,1,1)"));
-print_r($x->executeQuery("insert into Cardesempeno_academico (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'No, insatisfactorio',sysdate,1,1)"));
-print_r($x->executeQuery("select * from Cardesempeno_academico"));
+print_r($x->executeQuery("insert into Cardesempeno_academico (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'No, insatisfactorio',sysdate,1,1)"));*/
+print_r($x->executeQuery("select * from CarEgresoEducacion"));
 die();
 /*
 print_r($x->executeQuery("delete from modulos"));
