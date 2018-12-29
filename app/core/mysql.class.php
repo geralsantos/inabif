@@ -180,6 +180,7 @@ class MySQL extends PDO
             $query .= '('.$queryKeys.') VALUES ('.$queryValues.')';
             $stmt = parent::prepare($query);
             print_r($query);
+            print_r($params);
             $stmt->execute($params);
             if($stmt->rowCount()>0){
                 return TRUE;
