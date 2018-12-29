@@ -166,11 +166,11 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="form-group col-md-2">
+                            <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nivel de Hemoglobina</label>
                                 <input type="number" v-model="nivel_hemoglobina" name="nivel_hemoglobina" placeholder="" class="form-control">
                             </div>
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-2">
                                 <label for="text-input" class=" form-control-label">Presenta Anemia</label>
                                     <select name="presenta_anema" v-model="presenta_anema" class="form-control">
                                     <option value="No">No</option>
