@@ -170,7 +170,7 @@ class MySQL extends PDO
             $queryKeys = '';
             $queryKeys .= 'Id, ';
             $queryValues = '';
-            $queryValues .= $tabla.'.NEXTVAL, ';
+            $queryValues .= "seq_".$tabla.'.NEXTVAL, ';
 
             $params = array();
             $coma = '';
