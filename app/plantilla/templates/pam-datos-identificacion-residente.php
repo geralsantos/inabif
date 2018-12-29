@@ -68,14 +68,14 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-6">
                                 <div class=" "><label for="text-input" class=" form-control-label">País de Procedencia</label>
                                 <select name="pais_procedente_id" v-model="pais_procedente_id" class="form-control" @change="buscar_departamentos()">
                                     <option v-for="pais in paises" :value="pais.ID">{{pais.NOMBRE}}</option>
                                 </select>
                                 </div>
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-6">
                                 <div class=" "><label for="text-input" class=" form-control-label">Departamento de Procedencia</label>
                                 <select name="departamento_procedente_id" v-model="departamento_procedente_id" @change="buscar_provincias()" class="form-control">
                                     <option v-for="departamento in departamentos" :value="departamento.ID">{{departamento.NOMBRE}}</option>
@@ -105,7 +105,10 @@
                                 </select>
                                 </div>
                             </div>
-                            <div class="form-group col-md-4">
+                            
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-2">
                                 <div class=" "><label for="text-input" class=" form-control-label">Sexo</label>
                                 <select name="Sexo" v-model="Sexo" class="form-control">
                                 <option value="h">Hombre</option>
@@ -113,14 +116,12 @@
                                 </select>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                        <div class="form-group col-md-4">
+                            <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Fecha de Nacimiento</label>
                                 <input type="date" class="form-control" v-model="Fecha_Nacimiento"  placeholder="DD-MM-YYYY"  data-language='es'  />
                                 </div>
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-2">
                                 <div class=" "><label for="text-input" class=" form-control-label">Edad</label>
                                 <input type="text" v-model="Edad" name="Edad" placeholder="" class="form-control">
                                 </div>
