@@ -1,15 +1,31 @@
 Vue.component('pam-atenciones-salud', {
     template:'#pam-atenciones-salud',
     data:()=>({
-        Terapia_Fisica_Rehabilitacion:null,
-        Arte:null,
-        Nro_Arte:null,
-        Dibujo_Pintura:null,
-        Nro_Arte_Dibujo_Pintura:null,
-        Manualidades:null,
-        Nro_Arte_Manualidades:null,
-        Otros:null,
-        Nro_Arte_Otros:null,
+        Residente_Salida:null,
+        Salidas:null,
+        Atenciones_Cardiovascular:null,
+        Atenciones_Nefrologia:null,
+        Atenciones_Oncologia:null,
+        Atenciones_Neurocirugia:null,
+        Atenciones_Dermatologia:null,
+        Atenciones_Endocrinologo:null,
+        Atenciones_Gastroenterologia:null,
+        Atenciones_Hematologia:null,
+        Atenciones_Inmunologia:null,
+        AtencionesMedicFisiRehabilita:null,
+        Atenciones_Neumologia:null,
+        Atenciones_Nutricion:null,
+        Atenciones_Neurologia:null,
+        Atenciones_Oftalmologia:null,
+        AtencionOtorrinolaringologia:null,
+        Atenciones_Psiquiatria:null,
+        Atenciones_Traumatologia:null,
+        Atenciones_Urologia:null,
+        Atenciones_Odontologia:null,
+        MedicinaGeneral_Geriatrica:null,
+        Nro_Atenciones_OtrosServicios:null,
+        ResidenteHospitalizadoPeriodo:null,
+        Motivo_Hospitalizacion:null,
             
         nombre_residente:null,
         isLoading:false,
@@ -36,15 +52,31 @@ Vue.component('pam-atenciones-salud', {
             }
             let valores = {
                 Id: 1,
-                Terapia_Fisica_Rehabilitacion:this.Terapia_Fisica_Rehabilitacion,
-                Arte:this.Arte,
-                Nro_Arte:this.Nro_Arte,
-                Dibujo_Pintura:this.Dibujo_Pintura,
-                Nro_Arte_Dibujo_Pintura:this.Nro_Arte_Dibujo_Pintura,
-                Manualidades:this.Manualidades,
-                Nro_Arte_Manualidades:this.Nro_Arte_Manualidades,
-                Otros:this.Otros,
-                Nro_Arte_Otros:this.Nro_Arte_Otros,
+                Residente_Salida:this.Residente_Salida,
+                Salidas:this.Salidas,
+                Atenciones_Cardiovascular:this.Atenciones_Cardiovascular,
+                Atenciones_Nefrologia:this.Atenciones_Nefrologia,
+                Atenciones_Oncologia:this.Atenciones_Oncologia,
+                Atenciones_Neurocirugia:this.Atenciones_Neurocirugia,
+                Atenciones_Dermatologia:this.Atenciones_Dermatologia,
+                Atenciones_Endocrinologo:this.Atenciones_Endocrinologo,
+                Atenciones_Gastroenterologia:this.Atenciones_Gastroenterologia,
+                Atenciones_Hematologia:this.Atenciones_Hematologia,
+                Atenciones_Inmunologia:this.Atenciones_Inmunologia,
+                AtencionesMedicFisiRehabilita:this.AtencionesMedicFisiRehabilita,
+                Atenciones_Neumologia:this.Atenciones_Neumologia,
+                Atenciones_Nutricion:this.Atenciones_Nutricion,
+                Atenciones_Neurologia:this.Atenciones_Neurologia,
+                Atenciones_Oftalmologia:this.Atenciones_Oftalmologia,
+                AtencionOtorrinolaringologia:this.AtencionOtorrinolaringologia,
+                Atenciones_Psiquiatria:this.Atenciones_Psiquiatria,
+                Atenciones_Traumatologia:this.Atenciones_Traumatologia,
+                Atenciones_Urologia:this.Atenciones_Urologia,
+                Atenciones_Odontologia:this.Atenciones_Odontologia,
+                MedicinaGeneral_Geriatrica:this.MedicinaGeneral_Geriatrica,
+                Nro_Atenciones_OtrosServicios:this.Nro_Atenciones_OtrosServicios,
+                ResidenteHospitalizadoPeriodo:this.ResidenteHospitalizadoPeriodo,
+                Motivo_Hospitalizacion:this.Motivo_Hospitalizacion,
            
                 Residente_Id: this.id_residente,
                 Periodo_Mes: moment().format("MM"),
@@ -98,17 +130,32 @@ Vue.component('pam-atenciones-salud', {
 
                 if( response.body.atributos != undefined){
 
-                    this.Terapia_Fisica_Rehabilitacion = response.body.atributos[0]["Terapia_Fisica_Rehabilitacion"];
-                    this.Arte = response.body.atributos[0]["Arte"];
-                    this.Nro_Arte = response.body.atributos[0]["Nro_Arte"];
-                    this.Dibujo_Pintura = response.body.atributos[0]["Dibujo_Pintura"];
-                    this.Nro_Arte_Dibujo_Pintura = response.body.atributos[0]["Nro_Arte_Dibujo_Pintura"];
-                    this.Manualidades = response.body.atributos[0]["Manualidades"];
-                    this.Nro_Arte_Manualidades = response.body.atributos[0]["Nro_Arte_Manualidades"];
-                    this.Otros = response.body.atributos[0]["Otros"];
-                    this.Nro_Arte_Otros = response.body.atributos[0]["Nro_Arte_Otros"];
+                    this.Residente_Salida = response.body.atributos[0]["RESIDENTE_SALIDA"];
+                    this.Salidas = response.body.atributos[0]["SALIDAS"];
+                    this.Atenciones_Cardiovascular = response.body.atributos[0]["ATENCIONES_CARDIOVASCULAR"];
+                    this.Atenciones_Nefrologia = response.body.atributos[0]["ATENCIONES_NEFROLOGIA"];
+                    this.Atenciones_Oncologia = response.body.atributos[0]["ATENCIONES_ONCOLOGIA"];
+                    this.Atenciones_Neurocirugia = response.body.atributos[0]["ATENCIONES_NEUROCIRUGIA"];
+                    this.Atenciones_Dermatologia = response.body.atributos[0]["ATENCIONES_DERMATOLOGIA"];
+                    this.Atenciones_Endocrinologo = response.body.atributos[0]["ATENCIONES_ENDOCRINOLOGO"];
+                    this.Atenciones_Gastroenterologia = response.body.atributos[0]["ATENCIONES_GASTROENTEROLOGIA"];
+                    this.Atenciones_Hematologia = response.body.atributos[0]["ATENCIONES_HEMATOLOGIA"];
+                    this.Atenciones_Inmunologia = response.body.atributos[0]["ATENCIONES_INMUNOLOGIA"];
+                    this.AtencionesMedicFisiRehabilita = response.body.atributos[0]["ATENCIONESMEDICFISIREHABILITA"];
+                    this.Atenciones_Neumologia = response.body.atributos[0]["ATENCIONES_NEUMOLOGIA"];
+                    this.Atenciones_Nutricion = response.body.atributos[0]["ATENCIONES_NUTRICION"];
+                    this.Atenciones_Neurologia = response.body.atributos[0]["ATENCIONES_NEUROLOGIA"];
+                    this.Atenciones_Oftalmologia = response.body.atributos[0]["ATENCIONES_OFTALMOLOGIA"];
+                    this.AtencionOtorrinolaringologia = response.body.atributos[0]["ATENCIONOTORRINOLARINGOLOGIA"];
+                    this.Atenciones_Psiquiatria = response.body.atributos[0]["ATENCIONES_PSIQUIATRIA"];
+                    this.Atenciones_Traumatologia = response.body.atributos[0]["ATENCIONES_TRAUMATOLOGIA"];
+                    this.Atenciones_Urologia = response.body.atributos[0]["ATENCIONES_UROLOGIA"];
+                    this.Atenciones_Odontologia = response.body.atributos[0]["ATENCIONES_ODONTOLOGIA"];
+                    this.MedicinaGeneral_Geriatrica = response.body.atributos[0]["MEDICINAGENERAL_GERIATRICA"];
+                    this.Nro_Atenciones_OtrosServicios = response.body.atributos[0]["NRO_ATENCIONES_OTROSSERVICIOS"];
+                    this.ResidenteHospitalizadoPeriodo = response.body.atributos[0]["RESIDENTEHOSPITALIZADOPERIODO"];
+                    this.Motivo_Hospitalizacion = response.body.atributos[0]["MOTIVO_HOSPITALIZACION"];
 
-        
                 }
              });
 

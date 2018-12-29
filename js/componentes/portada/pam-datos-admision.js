@@ -1,17 +1,15 @@
-Vue.component('pam-actividades-sociales', {
-    template:'#pam-actividades-sociales',
+Vue.component('pam-datos-admision', {
+    template:'#pam-datos-admision',
     data:()=>({
-        Atencion_Social:null,
-        Visita_Familiares:null,
-        Nro_Visitas:null,
-        Visitas_Amigos:null,
-        Nro_Visitas_Amigos:null,
-        Descriptivo_Persona_Visita:null,
-        Aseguramiento_Universal_Salud:null,
-        Fecha_Emision_Obtencion_Seguro:null,
-        DNI:null,
-        Fecha_Emision_DNI:null,
-       
+        movimiento_poblacional:null,
+        fecha_ingreso_usuario:null,
+        institucion_deriva:null,
+        motivo_ingreso_principal:null,
+        motivo_ingreso_secundario:null,
+        perfil_ingreso:null,
+        tipo_documento_ingreo_car:null,
+        numero_documento_ingreo_car:null,
+              
         nombre_residente:null,
         isLoading:false,
         mes:moment().format("MM"),
@@ -37,23 +35,22 @@ Vue.component('pam-actividades-sociales', {
             }
             let valores = {
                 Id: 1,
-                Atencion_Social:this.Atencion_Social,
-                Visita_Familiares:this.Visita_Familiares,
-                Nro_Visitas:this.Nro_Visitas,
-                Nro_Visitas_Amigos:this.Nro_Visitas_Amigos,
-                Descriptivo_Persona_Visita:this.Descriptivo_Persona_Visita,
-                Aseguramiento_Universal_Salud:this.Aseguramiento_Universal_Salud,
-                Fecha_Emision_Obtencion_Seguro:this.Fecha_Emision_Obtencion_Seguro,
-                DNI:this.DNI,
-                Fecha_Emision_DNI:this.Fecha_Emision_DNI,
-           
+                movimiento_poblacional:this.movimiento_poblacional,
+                fecha_ingreso_usuario:this.fecha_ingreso_usuario,
+                institucion_deriva:this.institucion_deriva,
+                motivo_ingreso_principal:this.motivo_ingreso_principal,
+                motivo_ingreso_secundario:this.motivo_ingreso_secundario,
+                perfil_ingreso:this.perfil_ingreso,
+                tipo_documento_ingreo_car:this.tipo_documento_ingreo_car,
+                numero_documento_ingreo_car:this.numero_documento_ingreo_car,
+                
                 Residente_Id: this.id_residente,
                 Periodo_Mes: moment().format("MM"),
                 Periodo_Anio:moment().format("YYYY")
 
-                        }
-                        console.log(valores)
-            this.$http.post('insertar_datos?view',{tabla:'pam_ActividadesSociales', valores:valores}).then(function(response){
+            }
+                     
+            this.$http.post('insertar_datos?view',{tabla:'pam_datos_admision_usuario', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
                     swal('', 'Registro Guardado', 'success');
@@ -95,20 +92,19 @@ Vue.component('pam-actividades-sociales', {
             this.coincidencias = [];
             this.bloque_busqueda = false;
 
-            this.$http.post('cargar_datos_residente?view',{tabla:'pam_ActividadesSociales', residente_id:this.id_residente }).then(function(response){
+            this.$http.post('cargar_datos_residente?view',{tabla:'pam_datos_admision_usuario', residente_id:this.id_residente }).then(function(response){
 
                 if( response.body.atributos != undefined){
 
-                    this.Atencion_Social = response.body.atributos[0]["ATENCION_SOCIAL"];
-                    this.Visita_Familiares = response.body.atributos[0]["VISITA_FAMILIARES"];
-                    this.Nro_Visitas = response.body.atributos[0]["NRO_VISITAS"];
-                    this.Nro_Visitas_Amigos = response.body.atributos[0]["NRO_VISITAS_AMIGOS"];
-                    this.Descriptivo_Persona_Visita = response.body.atributos[0]["DESCRIPTIVO_PERSONA_VISITA"];
-                    this.Aseguramiento_Universal_Salud = response.body.atributos[0]["ASEGURAMIENTO_UNIVERSAL_SALUD"];
-                    this.Fecha_Emision_Obtencion_Seguro = response.body.atributos[0]["FECHA_EMISION_OBTENCION_SEGURO"];
-                    this.DNI = response.body.atributos[0]["DNI"];
-                    this.Fecha_Emision_DNI = response.body.atributos[0]["FECHA_EMISION_DNI"];
-            
+                    this.movimiento_poblacional = response.body.atributos[0]["MOVIMIENTO_POBLACIONAL"];
+                    this.fecha_ingreso_usuario = response.body.atributos[0]["FECHA_INGRESO_USUARIO"];
+                    this.institucion_deriva = response.body.atributos[0]["INSTITUCION_DERIVA"];
+                    this.motivo_ingreso_principal = response.body.atributos[0]["MOTIVO_INGRESO_PRINCIPAL"];
+                    this.motivo_ingreso_secundario = response.body.atributos[0]["MOTIVO_INGRESO_SECUNDARIO"];
+                    this.perfil_ingreso = response.body.atributos[0]["PERFIL_INGRESO"];
+                    this.tipo_documento_ingreo_car = response.body.atributos[0]["TIPO_DOCUMENTO_INGREO_CAR"];
+                    this.numero_documento_ingreo_car = response.body.atributos[0]["NUMERO_DOCUMENTO_INGREO_CAR"];
+
                 }
              });
 

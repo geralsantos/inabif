@@ -98,15 +98,15 @@ Vue.component('pam-actividades-sociorecreativas', {
 
                 if( response.body.atributos != undefined){
 
-                    this.Terapia_Fisica_Rehabilitacion = response.body.atributos[0]["Terapia_Fisica_Rehabilitacion"];
-                    this.Arte = response.body.atributos[0]["Arte"];
-                    this.Nro_Arte = response.body.atributos[0]["Nro_Arte"];
-                    this.Dibujo_Pintura = response.body.atributos[0]["Dibujo_Pintura"];
-                    this.Nro_Arte_Dibujo_Pintura = response.body.atributos[0]["Nro_Arte_Dibujo_Pintura"];
-                    this.Manualidades = response.body.atributos[0]["Manualidades"];
-                    this.Nro_Arte_Manualidades = response.body.atributos[0]["Nro_Arte_Manualidades"];
-                    this.Otros = response.body.atributos[0]["Otros"];
-                    this.Nro_Arte_Otros = response.body.atributos[0]["Nro_Arte_Otros"];
+                    this.Terapia_Fisica_Rehabilitacion = response.body.atributos[0]["TERAPIA_FISICA_REHABILITACION"];
+                    this.Arte = response.body.atributos[0]["ARTE"];
+                    this.Nro_Arte = response.body.atributos[0]["NRO_ARTE"];
+                    this.Dibujo_Pintura = response.body.atributos[0]["DIBUJO_PINTURA"];
+                    this.Nro_Arte_Dibujo_Pintura = response.body.atributos[0]["NRO_ARTE_DIBUJO_PINTURA"];
+                    this.Manualidades = response.body.atributos[0]["MANUALIDADES"];
+                    this.Nro_Arte_Manualidades = response.body.atributos[0]["NRO_ARTE_MANUALIDADES"];
+                    this.Otros = response.body.atributos[0]["OTROS"];
+                    this.Nro_Arte_Otros = response.body.atributos[0]["NRO_ARTE_OTROS"];
 
         
                 }

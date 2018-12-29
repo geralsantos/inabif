@@ -106,19 +106,19 @@ Vue.component('pam-actividades-prevencion', {
 
                 if( response.body.atributos != undefined){
 
-                    this.Atencion_Psicologica = response.body.atributos[0]["Atencion_Psicologica"];
-                    this.Habilidades_Sociales = response.body.atributos[0]["Habilidades_Sociales"];
-                    this.Nro_Participa = response.body.atributos[0]["Nro_Participa"];
-                    this.Taller_Autoestima = response.body.atributos[0]["Taller_Autoestima"];
-                    this.Nro_Participa_Autoestima = response.body.atributos[0]["Nro_Participa_Autoestima"];
-                    this.ManejoSituacionesDivergentes = response.body.atributos[0]["ManejoSituacionesDivergentes"];
-                    this.Nro_Participa_Divergentes = response.body.atributos[0]["Nro_Participa_Divergentes"];
-                    this.Taller_Control_Emociones = response.body.atributos[0]["Taller_Control_Emociones"];
-                    this.Nro_Participa_Emociones = response.body.atributos[0]["Nro_Participa_Emociones"];
-                    this.ConservacionHabilidadCognitiva = response.body.atributos[0]["ConservacionHabilidadCognitiva"];
-                    this.Nro_Participa_Cognitivas = response.body.atributos[0]["Nro_Participa_Cognitivas"];
-                    this.Otros = response.body.atributos[0]["Otros"];
-                    this.Nro_Participa_Otros = response.body.atributos[0]["Nro_Participa_Otros"];
+                    this.Atencion_Psicologica = response.body.atributos[0]["ATENCION_PSICOLOGICA"];
+                    this.Habilidades_Sociales = response.body.atributos[0]["HABILIDADES_SOCIALES"];
+                    this.Nro_Participa = response.body.atributos[0]["NRO_PARTICIPA"];
+                    this.Taller_Autoestima = response.body.atributos[0]["TALLER_AUTOESTIMA"];
+                    this.Nro_Participa_Autoestima = response.body.atributos[0]["NRO_PARTICIPA_AUTOESTIMA"];
+                    this.ManejoSituacionesDivergentes = response.body.atributos[0]["MANEJOSITUACIONESDIVERGENTES"];
+                    this.Nro_Participa_Divergentes = response.body.atributos[0]["NRO_PARTICIPA_DIVERGENTES"];
+                    this.Taller_Control_Emociones = response.body.atributos[0]["TALLER_CONTROL_EMOCIONES"];
+                    this.Nro_Participa_Emociones = response.body.atributos[0]["NRO_PARTICIPA_EMOCIONES"];
+                    this.ConservacionHabilidadCognitiva = response.body.atributos[0]["CONSERVACIONHABILIDADCOGNITIVA"];
+                    this.Nro_Participa_Cognitivas = response.body.atributos[0]["NRO_PARTICIPA_COGNITIVAS"];
+                    this.Otros = response.body.atributos[0]["OTROS"];
+                    this.Nro_Participa_Otros = response.body.atributos[0]["NRO_PARTICIPA_OTROS"];
 
 
                 }
