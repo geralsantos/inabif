@@ -136,7 +136,6 @@ Vue.component('ppd-datos-identificacion-residente', {
             this.$http.post('buscar_departamentos?view',{tabla:'ubigeo'}).then(function(response){
                 if( response.body.data ){
                     this.departamentos= response.body.data;
-                    this.Depatamento_Procedencia = response.body.data[0]["CODDEPT"];
                     this.buscar_provincias();
 
                 }
@@ -147,7 +146,6 @@ Vue.component('ppd-datos-identificacion-residente', {
             this.$http.post('buscar_provincia?view',{tabla:'ubigeo', cod:this.Depatamento_Procedencia}).then(function(response){
                 if( response.body.data ){
                     this.provincias= response.body.data;
-                    this.Provincia_Procedencia = response.body.data[0]["CODPROV"];
                     this.buscar_distritos();
                 }
 
@@ -157,7 +155,6 @@ Vue.component('ppd-datos-identificacion-residente', {
             this.$http.post('buscar_distritos?view',{tabla:'ubigeo', cod:this.Provincia_Procedencia}).then(function(response){
                 if( response.body.data ){
                     this.distritos= response.body.data;
-                    this.Distrito_Procedencia = response.body.data[0]["CODDIST"];
                 }
 
             });
