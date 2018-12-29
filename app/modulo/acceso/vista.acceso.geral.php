@@ -137,10 +137,26 @@ if (isset($_GET["deletedata"])) {
     
 }
 //$mdl->createTable("DESCRIBE modulos"); 
-$x->dropTable("drop table CarCentroServicio");
-$mdl->createTable("create table CarCentroServicio
+$x->dropTable("drop table CarDatosAdmision");
+$mdl->createTable("create table CarDatosAdmision
 (
-id int primary key
+Admision_Id int not null primary key,
+Tipo_Centro_Id  int,
+Residente_Id	int,
+Periodo_Mes int,
+Periodo_Anio   int,
+Mov_Poblacional varchar(100),
+Fecha_Ingreso    date,
+Fecha_Reingreso  date,
+Institucion_derivado int,
+Motivo_Ingreso    varchar(100),
+Tipo_Documento   int,
+Numero_Documento int,
+Estado             	int,
+Fecha_Creacion     	TIMESTAMP DEFAULT SYSDATE,
+Fecha_Edicion      	TIMESTAMP DEFAULT SYSDATE,
+Usuario_Crea       	int,
+Usuario_Edita      	int
 )");
   //$mdl->createTable ("Create sequence seq_paises");
    /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
