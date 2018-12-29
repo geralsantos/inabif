@@ -158,7 +158,12 @@ if (isset($_POST["nombretabla"]) && $_POST["nombretabla"]!="") {
     die();
 }else{
 
-//$mdl->createTable("DESCRIBE modulos"); 
+$mdl->createTable("CREATE TABLE paises (
+    id int primary key,
+    iso char(2) default NULL,
+    nombre varchar(128) default NULL,
+    estado int default 1
+  )"); 
 /*
 $paises = ["INSERT INTO paises VALUES(1, 'AF', 'Afganistán')","
 ","INSERT INTO paises VALUES(2, 'AX', 'Islas Gland')","
