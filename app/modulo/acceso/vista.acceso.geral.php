@@ -884,7 +884,7 @@ foreach ($arr as $key => $value) {
     $x->dropTable($arrdrop[$key]);
     $mdl->createTable($arrdropseq[$key]);
     $mdl->createTable($value);
-    $mdl->createTable($arrcreateseq[$key]);
+    $mdl->createTable($arrcreateseq[0]);
 }
 /*
 print_r($x->executeQuery("delete from modulos"));
