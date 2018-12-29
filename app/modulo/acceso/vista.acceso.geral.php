@@ -160,7 +160,7 @@ $mdl->createTable("create table pam_clasif_socioeconomico (
 print_r($x->executeQuery("insert into pam_clasif_socioeconomico (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(1,'Sin clasificación socioeconomica',sysdate,1,1)"));
 print_r($x->executeQuery("insert into pam_clasif_socioeconomico (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'Pobre extremo',sysdate,1,1)"));
 print_r($x->executeQuery("insert into pam_clasif_socioeconomico (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'Pobre no extremo',sysdate,1,1)"));
-print_r($x->executeQuery("insert into pam_clasif_socioeconomico (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'No pobre,sysdate,1,1)"));    
+print_r($x->executeQuery("insert into pam_clasif_socioeconomico (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'No pobre',sysdate,1,1)"));    
 print_r($x->executeQuery("select * from pam_clasif_socioeconomico"));
 die();
 /*
