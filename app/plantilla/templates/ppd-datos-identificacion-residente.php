@@ -78,7 +78,7 @@
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Departamento de Procedencia</label>
                                 <select name="Depatamento_Procedencia" v-model="Depatamento_Procedencia" @change="buscar_provincias()" class="form-control">
-                                    <option v-for="departamento in departamentos" :value="departamento.ID">{{departamento.NOMBRE}}</option>
+                                    <option v-for="departamento in departamentos" :value="departamento.ID">{{departamento.NOMDEPT}}</option>
                                 </select>
                                 </div>
                             </div>

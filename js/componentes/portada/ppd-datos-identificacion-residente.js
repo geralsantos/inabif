@@ -34,6 +34,7 @@ Vue.component('ppd-datos-identificacion-residente', {
     mounted:function(){
         this.buscar_paises();
         this.buscar_lenguas();
+        this.buscar_departamentos();
     },
     updated:function(){
     },
@@ -132,7 +133,7 @@ Vue.component('ppd-datos-identificacion-residente', {
         },
 
         buscar_departamentos(){
-            this.$http.post('buscar?view',{tabla:''}).then(function(response){
+            this.$http.post('buscar?view',{tabla:'ubigeo',groupby:'CodDept'}).then(function(response){
                 if( response.body.data ){
                     this.departamentos= response.body.data;
                 }
