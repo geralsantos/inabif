@@ -147,7 +147,7 @@ $mdl->createTable(" CREATE TABLE pam_tipo_seguro_salud
 ( id int not null primary key,
   nombre varchar(100) NOT NULL,
   Estado                            	int default 1,
-Fecha_Registro            	DATE,
+  fecha_creacion            	DATE,
 Fecha_Edicion              	timestamp DEFAULT (sysdate),
 Usuario_Crea                	int,
 Usuario_Edita               	int
@@ -157,12 +157,12 @@ Usuario_Edita               	int
    /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
     */
     //$x->deleteDataNoWhere("pam_nivel_educativo");
-print_r($x->executeQuery("insert into pam_tipo_seguro_salud (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(1,'ESSALUD',sysdate,1,1)"));
-print_r($x->executeQuery("insert into pam_tipo_seguro_salud (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(2,'FFAA_PNP',sysdate,1,1)"));
-print_r($x->executeQuery("insert into pam_tipo_seguro_salud (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(3,'Seguro Privado',sysdate,1,1)"));
-print_r($x->executeQuery("insert into pam_tipo_seguro_salud (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(4,'Seguro Integral de Salud(SIS)',sysdate,1,1)"));    
-print_r($x->executeQuery("insert into pam_tipo_seguro_salud (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(5,'Otro',sysdate,1,1)"));
-print_r($x->executeQuery("insert into pam_tipo_seguro_salud (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(6,'No tiene',sysdate,1,1)")); 
+print_r($x->executeQuery("insert into pam_tipo_seguro_salud (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(1,'ESSALUD',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_tipo_seguro_salud (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'FFAA_PNP',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_tipo_seguro_salud (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'Seguro Privado',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_tipo_seguro_salud (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'Seguro Integral de Salud(SIS)',sysdate,1,1)"));    
+print_r($x->executeQuery("insert into pam_tipo_seguro_salud (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(5,'Otro',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_tipo_seguro_salud (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(6,'No tiene',sysdate,1,1)")); 
 print_r($x->executeQuery("select * from pam_tipo_seguro_salud"));
 die();
 /*
