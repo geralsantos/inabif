@@ -1,4 +1,4 @@
-<template id="pam-datos-centro-servicios">
+<template id="pam-centro-servicios">
     <div class="content mt-3">
         <div class="col-lg-12">
             <div class="card">

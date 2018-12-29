@@ -19,6 +19,7 @@ Vue.component('pam-datos-identificacion-residente', {
         provincias:[],
         distritos:[],
         lenguas:[],
+        departamentos2:[],
 
         nombre_residente:null,
         isLoading:false,
@@ -35,6 +36,7 @@ Vue.component('pam-datos-identificacion-residente', {
     mounted:function(){
         this.buscar_paises();
         this.buscar_lenguas();
+        this.buscar_departamentos2();
     },
     updated:function(){
     },
@@ -139,6 +141,14 @@ Vue.component('pam-datos-identificacion-residente', {
             this.$http.post('buscar?view',{tabla:''}).then(function(response){
                 if( response.body.data ){
                     this.departamentos= response.body.data;
+                }
+
+            });
+        },
+        buscar_departamentos2(){
+            this.$http.post('buscar?view',{tabla:''}).then(function(response){
+                if( response.body.data ){
+                    this.departamentos2= response.body.data;
                 }
 
             });
