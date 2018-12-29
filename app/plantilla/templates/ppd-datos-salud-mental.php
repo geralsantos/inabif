@@ -65,7 +65,7 @@
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">ESPECIFICAR TRASTORNO NEUROLÓGICO PRINCIPAL</label>
                                 <select name="CarNeurologicoPrincipal" v-model="CarNeurologicoPrincipal" class="form-control">
-                                    <option value="CIE 10" selected="selected">CIE 10</option>
+                                    <option value="CIE 10" >CIE 10</option>
                                 </select>
                                 </div>
                             </div>
