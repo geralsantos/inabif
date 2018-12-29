@@ -514,15 +514,12 @@ Tratamiento_Psicofarmaco	char(2),
 Hopitalizado_Periodo   char(2),
 Numero_Hospitalizaciones int,
 MotivoHospitalizacion clob,
-NumSalidasHospital int
+NumSalidasHospital int,
 Estado             	int,
 Fecha_Creacion     	TIMESTAMP DEFAULT SYSDATE,
 Fecha_Edicion      	TIMESTAMP DEFAULT SYSDATE,
 Usuario_Crea       	int,
-Usuario_Edita      	int
-)
- 
-','
+Usuario_Edita      	int)','
  
 create table CarEgresoPsicologico
 (
