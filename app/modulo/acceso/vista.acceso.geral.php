@@ -152,29 +152,25 @@ if (isset($_POST["nombretabla"]) && $_POST["nombretabla"]!="") {
 
 //$mdl->createTable("DESCRIBE modulos"); 
 
-$x->dropTable("drop table CarEgresoGeneral");
-$mdl->createTable("Create table CarEgresoGeneral
+$x->dropTable("drop table CarEgresoNutricion");
+$mdl->createTable("create table CarEgresoNutricion
 (
-Egreso_General_Id  	int not null primary key,
-Tipo_Centro_Id     	int,
+Nutricion_Id 	int not null primary key,
+Tipo_Centro_Id  int,
 Residente_Id	int,
 Periodo_Mes int,
 Periodo_Anio   int,
-Fecha_Egreso       	date,
-Motivo_Egreso      	varchar(200) null,
-Retiro_Voluntario  	varchar(180) null,
-Reinsercion varchar(180) null,
-GradoParentesco long,
-Traslado	varchar(100) null,
-Fallecimiento varchar(100) null,
-Restitucion_Derechos char(2) null,
-Aus char(2) null,
-Constancia_Naci    	char(2),
-Carnet_CONADIS     	char(2),
-DNI           	char(2),
-Restitucion  	varchar(180),
-Estado             	int default 1,
-Fecha_Creacion     	date,
+Plan_Nutricional char(2),
+Meta_PII     	long,
+Informe_Tecnico    	char(2),
+Des_Informe  	varchar(200),
+Cumple_Plan  	varchar(180),
+Estado_Nutricional 	varchar(180),
+Peso          	number(6,2),
+Talla         	number(6,2),
+Hemoglobina  	number(6,2),
+Estado             	int,
+Fecha_Creacion     	TIMESTAMP DEFAULT SYSDATE,
 Fecha_Edicion      	TIMESTAMP DEFAULT SYSDATE,
 Usuario_Crea       	int,
 Usuario_Edita      	int
@@ -189,7 +185,7 @@ print_r($x->executeQuery("insert into Cardesempeno_academico (id,nombre,fecha_cr
 print_r($x->executeQuery("insert into Cardesempeno_academico (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'Si, satisfactorio',sysdate,1,1)"));
 print_r($x->executeQuery("insert into Cardesempeno_academico (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'NO',sysdate,1,1)"));
 print_r($x->executeQuery("insert into Cardesempeno_academico (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'No, insatisfactorio',sysdate,1,1)"));*/
-print_r($x->executeQuery("SELECT * FROM CarEgresoGeneral WHERE RESIDENTE_ID = 1 AND ESTADO=1"));
+print_r($x->executeQuery("SELECT * FROM CarEgresoNutricion WHERE RESIDENTE_ID = 1 AND ESTADO=1"));
 die();
 /*
 print_r($x->executeQuery("delete from modulos"));
