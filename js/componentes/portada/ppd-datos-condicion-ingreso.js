@@ -52,6 +52,7 @@ Vue.component('ppd-datos-condicion-ingreso', {
                 return false;
             }
             let valores = {
+                Condicion_Id :1,
                 DNI:this.CarDocIngreso,
                 Tipo_Documento:this.CarTipoDoc,
                 Numero_Documento:this.CarNumDoc,
