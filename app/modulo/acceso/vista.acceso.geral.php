@@ -879,10 +879,10 @@ create sequence Carproblematica_familiar
 ','
 create sequence Cardesempeno_academico'];
 foreach ($arr as $key => $value) {
-    $mdl->createTable($arrdrop[$key]);
+    $x->dropTable($arrdrop[$key]);
     $mdl->createTable($arrdropseq[$key]);
     $mdl->createTable($value);
-    $mdl->createTable($arrcreateseq);
+    $mdl->createTable($arrcreateseq[$key]);
 }
 /*
 print_r($x->executeQuery("delete from modulos"));
