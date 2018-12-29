@@ -40,7 +40,6 @@ Vue.component('ppd-datos-salud-mental', {
                 return false;
             }
             let valores = {
-                Salud_Mental_Id: 1,
                 Transtorno_Neurologico: this.CarTrastornosNeurologico,
                 Des_Transtorno: this.CarNeurologicoPrincipal,
                 Tipo_Transtorno: this.CarTrastornoConduta,
