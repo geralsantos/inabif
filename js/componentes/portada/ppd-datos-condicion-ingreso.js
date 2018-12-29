@@ -181,7 +181,7 @@ Vue.component('ppd-datos-condicion-ingreso', {
             });
         },
         tipo_parentesco(){
-            this.$http.post('buscar?view',{tabla:'tipo_parentesco'}).then(function(response){
+            this.$http.post('buscar?view',{tabla:'tipo_parentesco',codigo:'ppd'}).then(function(response){
                 if( response.body.data ){
                     this.parentescos= response.body.data;
                 }

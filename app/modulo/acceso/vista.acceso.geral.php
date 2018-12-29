@@ -142,26 +142,37 @@ if (isset($_GET["deletedata"])) {
 }
 //$mdl->createTable("DESCRIBE modulos"); 
 
-$x->dropTable("drop table pam_clasif_socioeconomico");
-$mdl->createTable("create table pam_clasif_socioeconomico (
+$x->dropTable("drop table pam_tipo_parentesco");
+$mdl->createTable("create table pam_tipo_parentesco (
     id INT NOT NULL primary key,
+    codigo VARCHAR(20) NOT NULL,
     nombre VARCHAR(150) NOT NULL,
     estado INT DEFAULT 1,
     fecha_creacion date NOT NULL,
     fecha_edicion TIMESTAMP  DEFAULT SYSDATE,
     Usuario_Crea INT NOT NULL,
     Usuario_Edita INT NOT NULL
-    )  
+    )
 ");
-  $mdl->createTable ("Create sequence pam_seq_clasif_socioeconomico");
+  $mdl->createTable ("Create sequence pam_seq_tipo_parentesco");
    /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
     */
     //$x->deleteDataNoWhere("pam_nivel_educativo");
-print_r($x->executeQuery("insert into pam_clasif_socioeconomico (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(1,'Sin clasificación socioeconomica',sysdate,1,1)"));
-print_r($x->executeQuery("insert into pam_clasif_socioeconomico (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'Pobre extremo',sysdate,1,1)"));
-print_r($x->executeQuery("insert into pam_clasif_socioeconomico (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'Pobre no extremo',sysdate,1,1)"));
-print_r($x->executeQuery("insert into pam_clasif_socioeconomico (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'No pobre',sysdate,1,1)"));    
-print_r($x->executeQuery("select * from pam_clasif_socioeconomico"));
+print_r($x->executeQuery("insert into pam_tipo_parentesco (id,codigo,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(1,'ppd','Padre',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_tipo_parentesco (id,codigo,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'ppd','Madre',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_tipo_parentesco (id,codigo,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'ppd','Hermano/a',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_tipo_parentesco (id,codigo,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'ppd','Tío/a',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_tipo_parentesco (id,codigo,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(5,'ppd','Primos/as',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_tipo_parentesco (id,codigo,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(6,'ppd','Abuelos/as',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_tipo_parentesco (id,codigo,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(7,'ppd','Otros/as',sysdate,1,1)"));
+
+print_r($x->executeQuery("insert into pam_tipo_parentesco (id,codigo,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(8,'pam','Padre/Madre',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_tipo_parentesco (id,codigo,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(9,'pam','Hermano(a)',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_tipo_parentesco (id,codigo,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(10,'pam','Primos(a)',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_tipo_parentesco (id,codigo,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(11,'pam','Hijo(a)',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_tipo_parentesco (id,codigo,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(12,'pam','Nieto',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_tipo_parentesco (id,codigo,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(13,'pam','Otros(as)',sysdate,1,1)"));
+print_r($x->executeQuery("select * from pam_tipo_parentesco"));
 die();
 /*
 print_r($x->executeQuery("delete from modulos"));
