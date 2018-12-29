@@ -173,11 +173,11 @@ Usuario_Edita               	int
   print_r($x->executeQuery("insert into pam_lengua_materna (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'Aymará',sysdate,1,1)"));
   print_r($x->executeQuery("insert into pam_lengua_materna (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'Ashaninka',sysdate,1,1)"));
   print_r($x->executeQuery("insert into pam_lengua_materna (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'Otra lengua Nativa',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_lengua_materna (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'Castellano',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_lengua_materna (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'Portugués',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_lengua_materna (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'Otra lengua extranjera',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_lengua_materna (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'Lengua de señas peruana',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_lengua_materna (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'No escucha/ni habla',sysdate,1,1)"));
+  print_r($x->executeQuery("insert into pam_lengua_materna (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(5,'Castellano',sysdate,1,1)"));
+  print_r($x->executeQuery("insert into pam_lengua_materna (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(6,'Portugués',sysdate,1,1)"));
+  print_r($x->executeQuery("insert into pam_lengua_materna (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(7,'Otra lengua extranjera',sysdate,1,1)"));
+  print_r($x->executeQuery("insert into pam_lengua_materna (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(8,'Lengua de señas peruana',sysdate,1,1)"));
+  print_r($x->executeQuery("insert into pam_lengua_materna (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(9,'No escucha/ni habla',sysdate,1,1)"));
   print_r($x->executeQuery("SELECT * FROM pam_lengua_materna WHERE RESIDENTE_ID = 1 AND ESTADO=1"));
 /*
 $tabla="CarEgresoSalud";
