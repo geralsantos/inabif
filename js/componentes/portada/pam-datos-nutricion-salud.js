@@ -1,6 +1,7 @@
 Vue.component('pam-datos-nutricion-salud', {
     template:'#pam-datos-nutricion-salud',
     data:()=>({
+        
         discapacidad:null,
         discapacidad_fisica:null,
         discapacidad_intelectual:null,
