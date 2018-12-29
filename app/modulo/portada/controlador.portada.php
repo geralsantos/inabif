@@ -177,7 +177,7 @@ class portada extends App{
     public function buscar_departamentos(){
       if( $_POST['tabla']){
         $modelo = new modeloPortada();
-        $sql = "SELECT * FROM ".$_POST['tabla']." WHERE ".$codigo." ESTADO=1 group by ".$_POST["groupby"];
+        $sql = "SELECT * FROM ".$_POST['tabla']." WHERE ESTADO=1 group by ".$_POST["groupby"];
         $res = $modelo->executeQuery( $sql );
         if ($res) {
           echo json_encode(array( "data"=>$res )) ;
