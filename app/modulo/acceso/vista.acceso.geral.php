@@ -141,6 +141,7 @@ if (isset($_GET["deletedata"])) {
     $x->deleteDataNoWhere("CarIdentificacionUsuario");
     $x->deleteDataNoWhere("CarCondicionIngreso");
     $x->deleteDataNoWhere("CarEgresoEducacion");
+    $x->deleteDataNoWhere("CarEgresoGeneral");
 }
 if (isset($_POST["nombretabla"]) && $_POST["nombretabla"]!="") {
     echo "SELECT * FROM ".$_POST["nombretabla"]." WHERE ESTADO=1";
@@ -151,28 +152,33 @@ if (isset($_POST["nombretabla"]) && $_POST["nombretabla"]!="") {
 
 //$mdl->createTable("DESCRIBE modulos"); 
 
-$x->dropTable("drop table CarEgresoEducacion");
-$mdl->createTable("create table CarEgresoEducacion
+$x->dropTable("drop table CarEgresoGeneral");
+$mdl->createTable("Create table CarEgresoGeneral
 (
-Educacion_Egreso_Id int not null primary key,
-Tipo_Centro_Id  int,
+Egreso_General_Id  	int not null primary key,
+Tipo_Centro_Id     	int,
 Residente_Id	int,
 Periodo_Mes int,
 Periodo_Anio   int,
-Plan_Educacion     	char(2),
-Meta_PII     	varchar(250),
-Informe_Tecnico    	char(2),
-Des_Informe  	varchar(200),
-Cumple_Plan  	varchar(180),
-Asistencia_Escolar 	char(2),
-Desempeno    	int,
+Fecha_Egreso       	date,
+Motivo_Egreso      	varchar(200) null,
+Retiro_Voluntario  	varchar(180) null,
+Reinsercion_Familiar varchar(180) null,
+Grado_Parentesco varchar(180) null,
+Traslado	varchar(100) null,
+Fallecimiento varchar(100) null,
+Restitucion_Derechos char(2) null,
+Aus char(2) null,
+Constancia_Naci    	char(2),
+Carner_CONADIS     	char(2),
+DNI           	char(2),
+Restitucion_Familiar  	varchar(180),
 Estado             	int default 1,
 Fecha_Creacion     	date,
 Fecha_Edicion      	TIMESTAMP DEFAULT SYSDATE,
 Usuario_Crea       	int,
 Usuario_Edita      	int
 )
-
 ");
  //$mdl->createTable ("Create sequence seq_Cardesempeno_academico");
    /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
@@ -183,7 +189,7 @@ print_r($x->executeQuery("insert into Cardesempeno_academico (id,nombre,fecha_cr
 print_r($x->executeQuery("insert into Cardesempeno_academico (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'Si, satisfactorio',sysdate,1,1)"));
 print_r($x->executeQuery("insert into Cardesempeno_academico (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'NO',sysdate,1,1)"));
 print_r($x->executeQuery("insert into Cardesempeno_academico (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'No, insatisfactorio',sysdate,1,1)"));*/
-print_r($x->executeQuery("SELECT * FROM CAREGRESOEDUCACION WHERE RESIDENTE_ID = 1 AND ESTADO=1"));
+print_r($x->executeQuery("SELECT * FROM CarEgresoGeneral WHERE RESIDENTE_ID = 1 AND ESTADO=1"));
 die();
 /*
 print_r($x->executeQuery("delete from modulos"));
