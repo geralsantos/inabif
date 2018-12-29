@@ -44,7 +44,7 @@ Vue.component('ppd-datos-egreso-nutricion', {
                 CarEstadoNutricional:this.CarEstadoNutricional,
                 CarPeso:this.CarPeso,
                 CarTalla:this.CarTalla,
-                CarHemoglobina:thisCarHemoglobina,
+                CarHemoglobina:this.CarHemoglobina,
                 Residente_Id: this.id_residente,
                 Periodo_Mes: moment().format("MM"),
                 Periodo_Anio:moment().format("YYYY")
