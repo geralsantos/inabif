@@ -80,14 +80,7 @@
 
                         </div>
                         <div class="row">
-                            <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Defunción </label>
-                                <select name="CarDefuncion" v-model="CarDefuncion" class="form-control">
-                                    <option value="Muerte natural">Muerte natural</option>
-                                    <option value="Muerte violenta">Muerte violenta</option>
-                                    <option value="Muerte súbita">Muerte súbita</option>
-                                </select>
-                            </div>
+                            
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Reinserción familiar</label>
                                 <select name="CarReinsercionFamiliar" v-model="CarReinsercionFamiliar" class="form-control">
@@ -97,6 +90,11 @@
 
                                 </select>
                             </div>
+                            <div class="form-group col-md-4">
+                                    <div class=" "><label for="text-input" class=" form-control-label">Grado de Parentesco</label>
+                                    <input type="text" v-model="GradoParentesco" value="" name="GradoParentesco" placeholder="" class="form-control">
+                                    </div>
+                                </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-4">
@@ -107,11 +105,13 @@
                                     <option value="Otros">Otros</option>
                                 </select>
                             </div>
-                            <div class="form-group col-md-6">
-                                <label for="text-input" class=" form-control-label">ASEGURAMIENTO A SALUD</label>
-                                <select name="CarAseguramiento" v-model="CarAseguramiento" class="form-control">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
+                             
+                            <div class="form-group col-md-4">
+                                <label for="text-input" class=" form-control-label">Fallecimiento</label>
+                                <select name="CarFallecimiento" v-model="CarFallecimiento" class="form-control">
+                                    <option value="Muerte Natural">Muerte Natural</option>
+                                    <option value="Muerte Violenta">Muerte Violenta</option>
+                                    <option value="Muerte Subita">Muerte Súbita</option>
                                 </select>
                             </div>
                         </div>

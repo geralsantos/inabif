@@ -29,11 +29,10 @@ Vue.component('ppd-datos-egreso-salud', {
     methods:{
         guardar(){
             if (this.id_residente==null) {
-                swal('Error', 'Residente no existe', 'success');
+                swal('Error', 'Residente no existe', 'warning');
                 return false;
             }
             let valores = {
-                Salud_Egreso_Id: 1,
                 Plan_Medico: this.CarPlanIntervencion,
                 Meta_PII: this.CarDesMetaPII,
                 Informe_Tecnico: this.CarInformeTecnico,

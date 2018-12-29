@@ -15,6 +15,8 @@ Vue.component('ppd-datos-egreso-generales', {
         CarRestitucionF:null,
         CarCumResDerEgreso:null,
         CarAus:null,
+        CarFallecimiento:null,
+        GradoParentesco:null,
 
         nombre_residente:null,
         isLoading:false,
@@ -40,26 +42,26 @@ Vue.component('ppd-datos-egreso-generales', {
                 return false;
             }
             let valores = {
-
+                Egreso_General_Id :1,
                 Fecha_Egreso: moment(this.CarFEgreso).format("YY-MMM-DD"),
                 Motivo_Egreso:this.CarMotivoEgreso,
-                Traslado_CAR:this.CarTrasladoCar,
-                Defuncion:this.CarDefuncion,
+                Traslado:this.CarTrasladoCar,
                 Reinsercion:this.CarReinsercionFamiliar,
                 Retiro_Voluntario:this.CarRetiroVoluntario,
-                Aseguramiento:this.CarAseguramiento,
                 Constancia_Naci:this.CarConstanciaNacimiento,
-                Carner_CONADIS:this.CarCarnetConadis,
+                Carnet_CONADIS:this.CarCarnetConadis,
                 DNI:this.CarTieneDni,
                 Restitucion:this.CarRestitucionF,
                 Restitucion_Derechos:this.CarCumResDerEgreso,
                 Aus:this.CarAus,
-
+                Fallecimiento:this.CarFallecimiento,
+                GradoParentesco:this.GradoParentesco,
                 Residente_Id: this.id_residente,
                 Periodo_Mes: moment().format("MM"),
                 Periodo_Anio:moment().format("YYYY")
 
                         }
+                        console.log(valores);
             this.$http.post('insertar_datos?view',{tabla:'CarEgresoGeneral', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
@@ -108,18 +110,17 @@ Vue.component('ppd-datos-egreso-generales', {
 
                     this.CarFEgreso = response.body.atributos[0]["FECHA_EGRESO"];
                     this.CarMotivoEgreso = response.body.atributos[0]["MOTIVO_EGRESO"];
-                    this.CarTrasladoCar = response.body.atributos[0]["TRASLADO_CAR"];
-                    this.CarDefuncion = response.body.atributos[0]["DEFUNCION"];
+                    this.CarTrasladoCar = response.body.atributos[0]["TRASLADO"];
                     this.CarReinsercionFamiliar = response.body.atributos[0]["REINSERCION"];
                     this.CarRetiroVoluntario = response.body.atributos[0]["RETIRO_VOLUNTARIO"];
-                    this.CarAseguramiento = response.body.atributos[0]["ASEGURAMIENTO"];
                     this.CarConstanciaNacimiento = response.body.atributos[0]["CONSTANCIA_NACI"];
-                    this.CarCarnetConadis = response.body.atributos[0]["CARNER_CONADIS"];
+                    this.CarCarnetConadis = response.body.atributos[0]["CARNET_CONADIS"];
                     this.CarTieneDni = response.body.atributos[0]["DNI"];
                     this.CarRestitucionF = response.body.atributos[0]["RESTITUCION"];
                     this.CarCumResDerEgreso = response.body.atributos[0]["RESTITUCION_DERECHOS"];
                     this.CarAus = response.body.atributos[0]["AUS"];
-
+                    this.CarFallecimiento = response.body.atributos[0]["FALLECIMIENTO"];
+                    this.GradoParentesco = response.body.atributos[0]["GRADOPARENTESCO"];
                 }
              });
 

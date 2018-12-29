@@ -35,7 +35,6 @@ Vue.component('ppd-datos-egreso-terapiaFisica', {
                 return false;
             }
             let valores = {
-                Terapia_Id: 1,
                 Plan_Medico: this.CarPlanIntervension,
                 Meta_PII: this.CarDesMetaPII,
                 Informe_Tecnico: this.CarinformeEvolutivo,
