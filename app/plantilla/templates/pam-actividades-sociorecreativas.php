@@ -73,7 +73,7 @@
                                     </select> </div>
                             </div>
                             <div class="form-group col-md-6">
-                                <div class=" "><label for="text-input" class=" form-control-label">N° de Veces que Participa Arte en el Mes</label>
+                                <div class=" "><label for="text-input" class=" form-control-label">N° de Veces que Participa</label>
                                 <select name="Nro_Arte" v-model="Nro_Arte" class="form-control">
                                 <option v-for="i in 30" :value="i">{{i}}</option>
                                     </select> </div>

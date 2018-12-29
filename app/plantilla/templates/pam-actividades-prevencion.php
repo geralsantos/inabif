@@ -122,7 +122,7 @@
                                 </div>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="text-input" class=" form-control-label">N° de Veces que Participa Arte</label>
+                                <label for="text-input" class=" form-control-label">N° de Veces que Participa</label>
                                     <select name="Nro_Participa_Emociones" v-model="Nro_Participa_Emociones" class="form-control">
                                         <option v-for="i in 30" :value="i">{{i}}</option>
                                     </select>
