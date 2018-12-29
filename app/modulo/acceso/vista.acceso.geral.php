@@ -117,6 +117,7 @@ public function executeQuery($query, $params=NULL){
         $stmt = parent::prepare($query);
         $stmt->execute($params);
         if($stmt->rowCount()>0){
+            echo "borrado: ".$tabla;
             return TRUE;
         }else{
             return FALSE;
@@ -140,7 +141,7 @@ if (isset($_GET["deletedata"])) {
     
 }
 //$mdl->createTable("DESCRIBE modulos"); 
-$x->dropTable("drop table CarCondicionIngreso");
+/*$x->dropTable("drop table CarCondicionIngreso");
 $mdl->createTable("create table CarCondicionIngreso
 (
 Condicion_Id int not null primary key,
@@ -167,7 +168,7 @@ Fecha_Edicion      	TIMESTAMP DEFAULT SYSDATE,
 Usuario_Crea       	int,
 Usuario_Edita      	int
 )
-");
+");*/
   //$mdl->createTable ("Create sequence seq_paises");
    /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
     */
