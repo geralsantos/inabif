@@ -188,7 +188,7 @@ Vue.component('ppd-datos-condicion-ingreso', {
             });
         },
         problematica_familiar(){
-            this.$http.post('buscar?view',{tabla:'problematica_familiar',codigo:'ppd'}).then(function(response){
+            this.$http.post('buscar?view',{tabla:'Carproblematica_familiar'}).then(function(response){
                 if( response.body.data ){
                     this.familiares= response.body.data;
                 }
