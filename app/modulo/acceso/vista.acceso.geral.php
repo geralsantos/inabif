@@ -157,7 +157,7 @@ if (isset($_POST["nombretabla"]) && $_POST["nombretabla"]!="") {
     print_r($x->executeQuery("SELECT * FROM ".$_POST["nombretabla"]." "));
     die();
 }else{
-
+    $x->dropTable('drop table paises');
 $mdl->createTable("CREATE TABLE paises (
     id int primary key,
     iso char(2) default NULL,
