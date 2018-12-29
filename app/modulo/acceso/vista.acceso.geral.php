@@ -1,5 +1,5 @@
 <form action="geral" method="POST">
-<input type="text" value="" name="nombretabla" placeholder="tabla">
+<input type="text" value="<?php echo $_POST["nombretabla"]?>" name="nombretabla" placeholder="tabla">
 <button type="submit">mostrar resultados</button></form>
 <?php 
 //  Configure DB Parameters
