@@ -36,15 +36,15 @@ Vue.component('ppd-datos-egreso-nutricion', {
             }
             let valores = {
                 Nutricion_Id: 1,
-                CarPlanIntervencion:this.CarPlanIntervencion,
-                CarDesMetaPII:this.CarDesMetaPII,
-                CarInformeTecnico:this.CarInformeTecnico,
-                CarDesInformEvolutivo:this.CarDesInformEvolutivo,
-                CarCumplePlan:this.CarCumplePlan,
-                CarEstadoNutricional:this.CarEstadoNutricional,
-                CarPeso:this.CarPeso,
-                CarTalla:this.CarTalla,
-                CarHemoglobina:this.CarHemoglobina,
+                PlanIntervencion:this.CarPlanIntervencion,
+                DesMetaPII:this.CarDesMetaPII,
+                InformeTecnico:this.CarInformeTecnico,
+                DesInformEvolutivo:this.CarDesInformEvolutivo,
+                CumplePlan:this.CarCumplePlan,
+                EstadoNutricional:this.CarEstadoNutricional,
+                Peso:this.CarPeso,
+                Talla:this.CarTalla,
+                Hemoglobina:this.CarHemoglobina,
                 Residente_Id: this.id_residente,
                 Periodo_Mes: moment().format("MM"),
                 Periodo_Anio:moment().format("YYYY")
@@ -96,15 +96,15 @@ Vue.component('ppd-datos-egreso-nutricion', {
 
                 if( response.body.atributos != undefined){
 
-                    this.CarPlanIntervencion = response.body.atributos[0]["CARPLANINTERVENCION"];
-                    this.CarDesMetaPII = response.body.atributos[0]["CARDESMETAPII"];
-                    this.CarInformeTecnico = response.body.atributos[0]["CARINFORMETECNICO"];
-                    this.CarDesInformEvolutivo = response.body.atributos[0]["CARDESINFORMEVOLUTIVO"];
-                    this.CarCumplePlan = response.body.atributos[0]["CARCUMPLEPLAN"];
-                    this.CarEstadoNutricional = response.body.atributos[0]["CARESTADONUTRICIONAL"];
-                    this.CarPeso = response.body.atributos[0]["CARPESO"];
-                    this.CarTalla = response.body.atributos[0]["CARTALLA"];
-                    this.CarHemoglobina = response.body.atributos[0]["CARHEMOGLOBINA"];
+                    this.CarPlanIntervencion = response.body.atributos[0]["PLANINTERVENCION"];
+                    this.CarDesMetaPII = response.body.atributos[0]["DESMETAPII"];
+                    this.CarInformeTecnico = response.body.atributos[0]["INFORMETECNICO"];
+                    this.CarDesInformEvolutivo = response.body.atributos[0]["DESINFORMEVOLUTIVO"];
+                    this.CarCumplePlan = response.body.atributos[0]["CUMPLEPLAN"];
+                    this.CarEstadoNutricional = response.body.atributos[0]["ESTADONUTRICIONAL"];
+                    this.CarPeso = response.body.atributos[0]["PESO"];
+                    this.CarTalla = response.body.atributos[0]["TALLA"];
+                    this.CarHemoglobina = response.body.atributos[0]["HEMOGLOBINA"];
 
                 }
              });
