@@ -149,6 +149,7 @@ if (isset($_GET["deletedata"])) {
     $x->deleteDataNoWhere("CarEgresoSalud");
     $x->deleteDataNoWhere("CarTerapiaFisica");
     $x->deleteDataNoWhere("pam_tipo_transtorno_conducta");
+    $x->deleteDataNoWhere("CarSaludMental");
     
     
     die();
@@ -159,16 +160,30 @@ if (isset($_POST["nombretabla"]) && $_POST["nombretabla"]!="") {
     print_r($x->executeQuery($_POST["nombretabla"]));
     die();
 }else{
-$x->dropTable('drop table pam_actividades_diaria ');
-$mdl->createTable("CREATE TABLE pam_actividades_diaria
-( id int NOT NULL primary key,
-  nombre varchar(200) NOT NULL,
-  Estado                            	number(10) default 1,
-  fecha_creacion            	DATE DEFAULT (sysdate),
-Fecha_Edicion              	DATE DEFAULT (sysdate),
-Usuario_Crea                	number(10),
-Usuario_Edita               	number(10)
-)"); 
+$x->dropTable('drop table CarSaludMental ');
+$mdl->createTable("Create table CarSaludMental
+(
+Id int not null primary key,
+Tipo_Centro_Id  int,
+Residente_Id	int,
+Periodo_Mes int,
+Periodo_Anio   int,
+Transtorno_Neurologico char(20),
+Des_Transtorno     	int,
+Tipo_Transtorno    	int,
+Dificultad_habla varchar(100),
+Metodo_comunicarse 	varchar(100),
+Comprension  	char(2),
+Tipo_Dificultad    	varchar(100),
+Actividades_Diarias	int,
+Especificar  	varchar(250),
+Estado             	int,
+Fecha_Creacion     	TIMESTAMP DEFAULT SYSDATE,
+Fecha_Edicion      	TIMESTAMP DEFAULT SYSDATE,
+Usuario_Crea       	int,
+Usuario_Edita      	int
+)
+"); 
   print_r($x->executeQuery("insert into pam_actividades_diaria (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(1,'Come solo',sysdate,1,1)"));
   print_r($x->executeQuery("insert into pam_actividades_diaria (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'Se viste solo',sysdate,1,1)"));
   print_r($x->executeQuery("insert into pam_actividades_diaria (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'Acude al baño solo',sysdate,1,1)"));

@@ -73,7 +73,7 @@
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Tipo de trastorno de conducta </label>
                                 <select name="CarTrastornoConduta" v-model="CarTrastornoConduta" class="form-control">
-                                    <option v-for="tipo in tipos" value="tipo.ID">{{tipo.NOMBRE}}</option>
+                                    <option v-for="tipo in tipos" :value="tipo.ID">{{tipo.NOMBRE}}</option>
                                 </select>
                             </div>
                         </div>
