@@ -140,31 +140,7 @@ if (isset($_GET["deletedata"])) {
 $x->dropTable("drop table CarCentroServicio");
 $mdl->createTable ("create table CarCentroServicio
 (
-Id_Car_CentroServicio int not null primary key,
-Tipo_Centro_Id  int,
-Residente_Id	int,
-Periodo_Mes int,
-Periodo_Anio   int,
-Cod_Entidad char(6),
-Nom_Entidad varchar(50),
-Cod_Linea  char(6),
-Linea_Intervencion clob,
-Cod_Servicio 	char(6),
-Nom_Servicio 	clob,
-Ubigeo_Ine int,
-Departamento_CAtencion int,
-Provincia_CAtencion int,
-Distrito_CAtencion 	int,
-Centro_Poblado     	varchar(100),
-Centro_Residencia  	varchar(10),
-Cod_CentroAtencion 	char(6),
-Nom_CentroAtencion 	clob,
-Fecha_Registro     	date,
-Estado             	int default 1,
-Fecha_Creacion     	date,
-Fecha_Edicion      	TIMESTAMP DEFAULT SYSDATE,
-Usuario_Crea       	int,
-Usuario_Edita      	int
+Id_Car_CentroServicio int primary key
 )");
   //$mdl->createTable ("Create sequence seq_paises");
    /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
