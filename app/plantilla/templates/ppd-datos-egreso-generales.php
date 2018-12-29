@@ -80,14 +80,7 @@
 
                         </div>
                         <div class="row">
-                            <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Defunción </label>
-                                <select name="CarDefuncion" v-model="CarDefuncion" class="form-control">
-                                    <option value="Muerte natural">Muerte natural</option>
-                                    <option value="Muerte violenta">Muerte violenta</option>
-                                    <option value="Muerte súbita">Muerte súbita</option>
-                                </select>
-                            </div>
+                            
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Reinserción familiar</label>
                                 <select name="CarReinsercionFamiliar" v-model="CarReinsercionFamiliar" class="form-control">
