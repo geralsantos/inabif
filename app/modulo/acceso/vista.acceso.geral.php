@@ -137,11 +137,14 @@ if (isset($_GET["deletedata"])) {
     $x->deleteDataNoWhere("CarCentroServicio");
     $x->deleteDataNoWhere("CarIdentificacionUsuario");
     $x->deleteDataNoWhere("CarCondicionIngreso");
+    //$x->deleteDataNoWhere("seq_Carproblematica_familiar");
     
     
 }
 //$mdl->createTable("DESCRIBE modulos"); 
+print_r($x->executeQuery("select * from pam_institucion_educativa "));
 
+/*
 $x->dropTable("drop table Carproblematica_familiar");
 $mdl->createTable(" Create table Carproblematica_familiar(
     Id int not null primary key,
@@ -157,7 +160,7 @@ $mdl->createTable(" Create table Carproblematica_familiar(
    /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
     */
     //$x->deleteDataNoWhere("pam_nivel_educativo");
-print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(1,'Ausentismo de madre por trabajo',sysdate,1,1)"));
+/*print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(1,'Ausentismo de madre por trabajo',sysdate,1,1)"));
 print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'Conductual/experiencia en calle',sysdate,1,1)"));
 print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'Conductual/violencia sexual',sysdate,1,1)"));
 print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'Desintegrada e incompleta, Desinterés rol parental',sysdate,1,1)"));
@@ -173,7 +176,7 @@ print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_
 print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(14,'Prostitución',sysdate,1,1)"));
 print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(15,'Salud mental',sysdate,1,1)"));
 print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(16,'Otros',sysdate,1,1)"));
-print_r($x->executeQuery("select * from Carproblematica_familiar"));
+print_r($x->executeQuery("select * from Carproblematica_familiar"));*/
 die();
 /*
 print_r($x->executeQuery("delete from modulos"));
