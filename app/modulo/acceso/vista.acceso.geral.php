@@ -7,8 +7,8 @@ class mdl
 {
     public function createTable ($sql){
         try {
-            echo "creando tabla...<br>";
-            echo $sql;
+            echo "creando tabla...\n";
+            echo $sql."\n";
             $db1 = "(DESCRIPTION=(ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 172.19.0.35)(PORT = 1521)))(CONNECT_DATA=(SID=xe)))" ;
             $host = "172.19.0.35";
             $dbname = "orcl";
