@@ -24,7 +24,6 @@ Vue.component('ppd-datos-educacion-participacionLaboral', {
     created:function(){
     },
     mounted:function(){
-        this.tipo_institucion();
     },
     updated:function(){
     },
@@ -35,6 +34,7 @@ Vue.component('ppd-datos-educacion-participacionLaboral', {
                 return false;
             }
             let valores = {
+                Educacion_Id :1,
                 Tipo_Institucion:this.CarTipoIIEE,
                 Insertado_labora:this.CarInsertadoLaboralmente,
                 Des_labora:this.CarDesParticipacionLa,
@@ -105,13 +105,6 @@ Vue.component('ppd-datos-educacion-participacionLaboral', {
                 }
              });
 
-        },
-        tipo_institucion(){
-            this.$http.post('buscar?view',{tabla:''}).then(function(response){
-                if( response.body.data ){
-                    this.instituciones= response.body.data;
-                }
-            });
-        },
+        }
     }
   })
