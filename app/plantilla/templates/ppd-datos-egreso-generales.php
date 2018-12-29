@@ -121,7 +121,7 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Fallecimiento</label>
-                                <select name="CarRetiroVoluntario" v-model="CarRetiroVoluntario" class="form-control">
+                                <select name="CarFallecimiento" v-model="CarFallecimiento" class="form-control">
                                     <option value="Muerte Natural">Muerte Natural</option>
                                     <option value="Muerte Violenta">Muerte Violenta</option>
                                     <option value="Muerte Subita">Muerte Súbita</option>
