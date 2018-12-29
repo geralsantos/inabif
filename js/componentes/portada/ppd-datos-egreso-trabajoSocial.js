@@ -35,7 +35,6 @@ Vue.component('ppd-datos-egreso-trabajoSocial', {
                 return false;
             }
             let valores = {
-                Trabajo_Id: 1,
                 Plan_Social: this.CarIntervencionNutricional,
                 Meta_PII: this.CarDesMetaPII,
                 Informe_Tecnico: this.CarInformeEvolutivo,
