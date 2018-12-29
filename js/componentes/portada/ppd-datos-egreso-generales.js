@@ -16,7 +16,7 @@ Vue.component('ppd-datos-egreso-generales', {
         CarCumResDerEgreso:null,
         CarAus:null,
         CarFallecimiento:null,
-        CarGrado_Parentesco:null,
+        CarGradoParentesco:null,
 
         nombre_residente:null,
         isLoading:false,
@@ -57,7 +57,7 @@ Vue.component('ppd-datos-egreso-generales', {
                 Restitucion_Derechos:this.CarCumResDerEgreso,
                 Aus:this.CarAus,
                 CarFallecimiento:this.CarFallecimiento,
-                CarGrado_Parentesco:this.CarGrado_Parentesco,
+                CarGradoParentesco:this.CarGradoParentesco,
                 Residente_Id: this.id_residente,
                 Periodo_Mes: moment().format("MM"),
                 Periodo_Anio:moment().format("YYYY")
@@ -124,7 +124,7 @@ Vue.component('ppd-datos-egreso-generales', {
                     this.CarCumResDerEgreso = response.body.atributos[0]["RESTITUCION_DERECHOS"];
                     this.CarAus = response.body.atributos[0]["AUS"];
                     this.CarFallecimiento = response.body.atributos[0]["CARFALLECIMIENTO"];
-                    this.CarGrado_Parentesco = response.body.atributos[0]["CARGRADO_PARENTESCO"];
+                    this.CarGradoParentesco = response.body.atributos[0]["CARGRADOPARENTESCO"];
                 }
              });
 
