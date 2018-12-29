@@ -1,5 +1,5 @@
-Vue.component('ppd-datos-admision-usuario', {
-    template:'#ppd-datos-admision-usuario',
+Vue.component('ppd-datos-terapia', {
+    template:'#ppd-datos-terapia',
     data:()=>({
         CarNumReeducaion:null,
         CarParticipaPsicomotricidad:null,
@@ -33,7 +33,7 @@ Vue.component('ppd-datos-admision-usuario', {
     created:function(){
     },
     mounted:function(){
-        //this.buscar_lenguajes();
+        this.buscar_lenguajes();
     },
     updated:function(){
     },
