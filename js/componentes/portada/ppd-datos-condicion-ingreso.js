@@ -22,6 +22,7 @@ Vue.component('ppd-datos-condicion-ingreso', {
         socioeconomicos:[],
         parentescos:[],
         familiares:[],
+        tipoDocumentos:[],
 
         nombre_residente:null,
         isLoading:false,
@@ -42,6 +43,7 @@ Vue.component('ppd-datos-condicion-ingreso', {
         this.clasificacion_socioeconomica();
         this.tipo_parentesco();
         this.problematica_familiar();
+        this.tipo_documento_ingreso();
     },
     updated:function(){
     },
@@ -138,6 +140,13 @@ Vue.component('ppd-datos-condicion-ingreso', {
             this.$http.post('buscar?view',{tabla:'tipo_pension'}).then(function(response){
                 if( response.body.data ){
                     this.pensiones= response.body.data;
+                }
+            });
+        },
+        tipo_documento_ingreso(){
+            this.$http.post('buscar?view',{tabla:'tipo_documento_ingreso'}).then(function(response){
+                if( response.body.data ){
+                    this.tipoDocumentos= response.body.data;
                 }
             });
         },

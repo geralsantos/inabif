@@ -64,7 +64,7 @@
                                 <div class="form-group col-md-4">
                                     <div class=" "><label for="text-input" class=" form-control-label">Tipo de documento identidad AL INGRESO</label>
                                     <select name="CarTipoDoc" v-model="CarTipoDoc" class="form-control">
-                                        <option v-for="tidoDocumento in tidoDocumentos" value=""></option>
+                                        <option v-for="tipoDocumento in tipoDocumentos" value=""></option>
 
                                     </select>
                                     </div>
