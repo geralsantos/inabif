@@ -138,9 +138,9 @@ if (isset($_GET["deletedata"])) {
 }
 //$mdl->createTable("DESCRIBE modulos"); 
 $x->dropTable("drop table CarCentroServicio");
-$mdl->createTable ("create table CarCentroServicio
+$mdl->createTable("create table CarCentroServicio
 (
-Id_Car_CentroServicio int primary key
+id int primary key
 )");
   //$mdl->createTable ("Create sequence seq_paises");
    /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
