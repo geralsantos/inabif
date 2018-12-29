@@ -140,35 +140,34 @@ if (isset($_GET["deletedata"])) {
     
 }
 //$mdl->createTable("DESCRIBE modulos"); 
-/*$x->dropTable("drop table CarCentroServicio");
-$mdl->createTable("create table CarCentroServicio
+$x->dropTable("drop table CarCondicionIngreso");
+$mdl->createTable("create table CarCondicionIngreso
 (
-Id_Car_CentroServicio int not null primary key,
+Condicion_Id int not null primary key,
 Tipo_Centro_Id  int,
 Residente_Id	int,
 Periodo_Mes int,
 Periodo_Anio   int,
-Cod_Entidad char(6),
-Nom_Entidad varchar(50),
-Cod_Linea  char(6),
-Linea_Intervencion clob,
-Cod_Servicio 	char(6),
-Nom_Servicio 	clob,
-Ubigeo_Ine int,
-Departamento_CAtencion int,
-Provincia_CAtencion int,
-Distrito_CAtencion 	int,
-Centro_Poblado     	varchar(100),
-Centro_Residencia  	varchar(10),
-Cod_CentroAtencion 	char(10),
-Nom_CentroAtencion 	clob,
-Fecha_Registro     	date,
-Estado             	int,
-Fecha_Creacion     	TIMESTAMP DEFAULT SYSDATE,
+DNI   char(2),
+Tipo_Documento     	int,
+Numero_Documento int,
+Lee_Escribe  	char(2),
+Nivel_Educativo    	int,
+Institucion_Educativa  int,
+Tipo_Seguro  	int,
+Clasficacion_Socioeconomica int,
+Familiares   	char(2),
+Parentesco   	int,
+Posee_Pension char(2),
+Tipo_Pension INT,
+Problematica_Familiar int,
+ Estado            	int default 1,
+Fecha_Creacion     	date,
 Fecha_Edicion      	TIMESTAMP DEFAULT SYSDATE,
 Usuario_Crea       	int,
 Usuario_Edita      	int
-)");*/
+)
+");
   //$mdl->createTable ("Create sequence seq_paises");
    /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
     */
