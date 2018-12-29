@@ -133,6 +133,7 @@ if (isset($_GET["deletedata"])) {
     $x->deleteDataNoWhere("CarAtencionSalud");
     $x->deleteDataNoWhere("CarActividades");
     $x->deleteDataNoWhere("CarTrabajoSocial");
+    $x->deleteDataNoWhere("CarCentroServicio");
     $x->deleteDataNoWhere("CarIdentificacionUsuario");
     
 }
