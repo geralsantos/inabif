@@ -152,9 +152,9 @@ if (isset($_GET["deletedata"])) {
     die();
 }
 if (isset($_POST["nombretabla"]) && $_POST["nombretabla"]!="") {
-    echo "SELECT * FROM ".$_POST["nombretabla"]." WHERE ESTADO=1";
+    echo $_POST["nombretabla"];
     echo "<br>";
-    print_r($x->executeQuery("SELECT * FROM ".$_POST["nombretabla"]." "));
+    print_r($x->executeQuery(""));
     die();
 }else{/*
 $x->dropTable('drop table ubigeo ');
