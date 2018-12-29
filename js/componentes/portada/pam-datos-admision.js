@@ -11,6 +11,7 @@ Vue.component('pam-datos-admision', {
         numero_documento_ingreo_car:null,
               
         instituciones:[],
+        motivos:[],
 
         nombre_residente:null,
         isLoading:false,
@@ -26,6 +27,7 @@ Vue.component('pam-datos-admision', {
     },
     mounted:function(){
         this.buscar_instituciones();
+        this.buscar_motivos();
     },
     updated:function(){
     },
@@ -119,7 +121,16 @@ Vue.component('pam-datos-admision', {
                 }
 
             });
+        },
+        buscar_motivos(){
+            this.$http.post('buscar?view',{tabla:''}).then(function(response){
+                if( response.body.data ){
+                    this.motivos= response.body.data;
+                }
+
+            });
         }
+
         
     }
   })
