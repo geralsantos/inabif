@@ -146,7 +146,7 @@ Vue.component('ppd-datos-condicion-ingreso', {
         tipo_documento_identidad(){
             this.$http.post('buscar?view',{tabla:'pam_tipo_documento_identidad'}).then(function(response){
                 console.log("tipo_documento_identidad");
-                console.log(response);
+                console.log(response.body);
                 if( response.body.data ){
                     this.tipoDocumentos= response.body.data;
                 }
