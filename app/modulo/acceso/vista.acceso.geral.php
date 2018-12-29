@@ -167,7 +167,7 @@ print_r($x->executeQuery("insert into Cardesempeno_academico (id,nombre,fecha_cr
 print_r($x->executeQuery("insert into Cardesempeno_academico (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'Si, satisfactorio',sysdate,1,1)"));
 print_r($x->executeQuery("insert into Cardesempeno_academico (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'NO',sysdate,1,1)"));
 print_r($x->executeQuery("insert into Cardesempeno_academico (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'No, insatisfactorio',sysdate,1,1)"));*/
-print_r($x->executeQuery("select * from CarEgresoEducacion"));
+print_r($x->executeQuery("SELECT * FROM CAREGRESOEDUCACION WHERE RESIDENTE_ID = 1 AND ESTADO=1"));
 die();
 /*
 print_r($x->executeQuery("delete from modulos"));
