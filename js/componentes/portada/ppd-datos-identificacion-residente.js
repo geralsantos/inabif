@@ -133,7 +133,7 @@ Vue.component('ppd-datos-identificacion-residente', {
         },
 
         buscar_departamentos(){
-            this.$http.post('buscar?view',{tabla:'ubigeo'}).then(function(response){
+            this.$http.post('buscar_departamentos?view',{tabla:'ubigeo'}).then(function(response){
                 if( response.body.data ){
                     this.departamentos= response.body.data;
                 }
