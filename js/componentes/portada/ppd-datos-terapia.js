@@ -33,7 +33,7 @@ Vue.component('ppd-datos-admision-usuario', {
     created:function(){
     },
     mounted:function(){
-        this.buscar_lenguajes();
+        //this.buscar_lenguajes();
     },
     updated:function(){
     },

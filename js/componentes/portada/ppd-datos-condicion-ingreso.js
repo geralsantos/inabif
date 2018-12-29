@@ -143,8 +143,8 @@ Vue.component('ppd-datos-condicion-ingreso', {
                 }
             });
         },
-        tipo_documento_ingreso(){
-            this.$http.post('buscar?view',{tabla:'tipo_documento_ingreso'}).then(function(response){
+        tipo_documento_identidad(){
+            this.$http.post('buscar?view',{tabla:'tipo_documento_identidad'}).then(function(response){
                 if( response.body.data ){
                     this.tipoDocumentos= response.body.data;
                 }
