@@ -33,7 +33,7 @@ Vue.component('ppd-datos-egreso-salud', {
                 return false;
             }
             let valores = {
-                Salud_Egreso_Id: 1,
+                Salud_Egreso_Id: 'CarEgresoSaludS.NEXTVAL',
                 Plan_Medico: this.CarPlanIntervencion,
                 Meta_PII: this.CarDesMetaPII,
                 Informe_Tecnico: this.CarInformeTecnico,

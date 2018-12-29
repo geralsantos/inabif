@@ -154,6 +154,8 @@ if (isset($_POST["nombretabla"]) && $_POST["nombretabla"]!="") {
 }else{
 
 //$mdl->createTable("DESCRIBE modulos"); 
+
+/*
 $tabla="CarEgresoSalud";
 $x->dropTable("drop table ".$tabla);
 $mdl->createTable("create table CarEgresoSalud
@@ -176,8 +178,8 @@ Fecha_Edicion      	TIMESTAMP DEFAULT SYSDATE,
 Usuario_Crea       	int,
 Usuario_Edita      	int
 )
-");
- //$mdl->createTable ("Create sequence seq_Cardesempeno_academico");
+");*/
+ $mdl->createTable ("Create sequence CarEgresoSaludS");
    /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
     */
     //$x->deleteDataNoWhere("pam_nivel_educativo");
