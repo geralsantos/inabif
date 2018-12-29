@@ -153,7 +153,7 @@ Vue.component('ppd-datos-condicion-ingreso', {
             });
         },
         nivel_educativo(){
-            this.$http.post('buscar?view',{tabla:'nivel_educativo'}).then(function(response){
+            this.$http.post('buscar?view',{tabla:'pam_instituciones'}).then(function(response){
                 if( response.body.data ){
                     this.educativos= response.body.data;
                 }
