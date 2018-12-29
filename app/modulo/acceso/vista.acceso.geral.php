@@ -116,8 +116,8 @@ public function executeQuery($query, $params=NULL){
         $params = array();
         $stmt = parent::prepare($query);
         $stmt->execute($params);
+        echo "borrado: ".$tabla;
         if($stmt->rowCount()>0){
-            echo "borrado: ".$tabla;
             return TRUE;
         }else{
             return FALSE;
