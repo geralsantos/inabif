@@ -7,6 +7,7 @@ class mdl
 {
     public function createTable ($sql){
         try {
+            echo "creando tabla...<br>";
             $db1 = "(DESCRIPTION=(ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 172.19.0.35)(PORT = 1521)))(CONNECT_DATA=(SID=xe)))" ;
             $host = "172.19.0.35";
             $dbname = "orcl";
@@ -18,7 +19,7 @@ class mdl
             $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );//Error Handling
          
             $db->exec($sql);
-            print("ejecutado.\n");
+            print("tabla creada.<br>");
        
        } catch(PDOException $e) {
            echo $e->getMessage();//Remove or change message in production code
@@ -55,12 +56,14 @@ public function __construct() {
     public function dropTable($query){
 
         try{
+            echo "ELIMINANDO...<br>";
           $stmt = parent::prepare($query);
           if($stmt->execute()){
             echo "borrado";
           }else{
             echo "no borrado";
           }
+        echo "<br>";
         } catch (PDOException $e) {
           echo 'Error BD: ' . $e->getMessage();
         }
