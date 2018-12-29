@@ -45,7 +45,7 @@ Vue.component('pam-datos-identificacion-residente', {
                 return false;
             }
             let valores = {
-                id: 1,
+               
                 residente_apellido_paterno: this.Ape_Paterno,
                 residente_apellido_materno: this.Ape_Materno,
                 residente_nombre: this.Nom_Usuario,

@@ -36,7 +36,7 @@ Vue.component('pam-actividades-sociales', {
                 return false;
             }
             let valores = {
-                Id: 1,
+               
                 Atencion_Social:this.Atencion_Social,
                 Visita_Familiares:this.Visita_Familiares,
                 Nro_Visitas:this.Nro_Visitas,

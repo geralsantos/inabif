@@ -42,7 +42,7 @@ Vue.component('pam-centro-servicios', {
                 return false;
             }
             let valores = {
-                Id_Car_CentroServicio :1,
+               
                 Cod_Entidad:this.CarCodEntidad,
                 Nom_Entidad:this.CarNomEntidad,
                 Cod_Linea:this.CarCodLinea,

@@ -34,7 +34,7 @@ Vue.component('pam-datos-admision', {
                 return false;
             }
             let valores = {
-                Id: 1,
+               
                 movimiento_poblacional:this.movimiento_poblacional,
                 fecha_ingreso_usuario:this.fecha_ingreso_usuario,
                 institucion_deriva:this.institucion_deriva,

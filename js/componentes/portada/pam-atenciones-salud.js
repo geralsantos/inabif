@@ -51,7 +51,7 @@ Vue.component('pam-atenciones-salud', {
                 return false;
             }
             let valores = {
-                Id: 1,
+                
                 Residente_Salida:this.Residente_Salida,
                 Salidas:this.Salidas,
                 Atenciones_Cardiovascular:this.Atenciones_Cardiovascular,

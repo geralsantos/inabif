@@ -39,7 +39,7 @@ Vue.component('pam-actividades-prevencion', {
                 return false;
             }
             let valores = {
-                Id: 1,
+               
                 Atencion_Psicologica:this.Atencion_Psicologica,
                 Habilidades_Sociales:this.Habilidades_Sociales,
                 Nro_Participa:this.Nro_Participa,

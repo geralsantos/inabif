@@ -35,7 +35,7 @@ Vue.component('pam-actividades-sociorecreativas', {
                 return false;
             }
             let valores = {
-                Id: 1,
+             
                 Terapia_Fisica_Rehabilitacion:this.Terapia_Fisica_Rehabilitacion,
                 Arte:this.Arte,
                 Nro_Arte:this.Nro_Arte,
