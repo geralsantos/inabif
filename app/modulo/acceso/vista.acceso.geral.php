@@ -142,37 +142,38 @@ if (isset($_GET["deletedata"])) {
 }
 //$mdl->createTable("DESCRIBE modulos"); 
 
-$x->dropTable("drop table pam_tipo_parentesco");
-$mdl->createTable("create table pam_tipo_parentesco (
-    id INT NOT NULL primary key,
-    codigo VARCHAR(20) NOT NULL,
-    nombre VARCHAR(150) NOT NULL,
-    estado INT DEFAULT 1,
-    fecha_creacion date NOT NULL,
-    fecha_edicion TIMESTAMP  DEFAULT SYSDATE,
-    Usuario_Crea INT NOT NULL,
-    Usuario_Edita INT NOT NULL
+$x->dropTable("drop table Carproblematica_familiar");
+$mdl->createTable(" Create table Carproblematica_familiar(
+    Id int not null primary key,
+    Nombre varchar(250),
+    Estado             	int default 1,
+    Fecha_Creacion     	date,
+    Fecha_Edicion      	TIMESTAMP DEFAULT SYSDATE,
+    Usuario_Crea       	int,
+    Usuario_Edita      	int
     )
 ");
-  $mdl->createTable ("Create sequence pam_seq_tipo_parentesco");
+  $mdl->createTable ("Create sequence seq_Carproblematica_familiar");
    /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
     */
     //$x->deleteDataNoWhere("pam_nivel_educativo");
-print_r($x->executeQuery("insert into pam_tipo_parentesco (id,codigo,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(1,'ppd','Padre',sysdate,1,1)"));
-print_r($x->executeQuery("insert into pam_tipo_parentesco (id,codigo,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'ppd','Madre',sysdate,1,1)"));
-print_r($x->executeQuery("insert into pam_tipo_parentesco (id,codigo,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'ppd','Hermano/a',sysdate,1,1)"));
-print_r($x->executeQuery("insert into pam_tipo_parentesco (id,codigo,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'ppd','Tío/a',sysdate,1,1)"));
-print_r($x->executeQuery("insert into pam_tipo_parentesco (id,codigo,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(5,'ppd','Primos/as',sysdate,1,1)"));
-print_r($x->executeQuery("insert into pam_tipo_parentesco (id,codigo,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(6,'ppd','Abuelos/as',sysdate,1,1)"));
-print_r($x->executeQuery("insert into pam_tipo_parentesco (id,codigo,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(7,'ppd','Otros/as',sysdate,1,1)"));
-
-print_r($x->executeQuery("insert into pam_tipo_parentesco (id,codigo,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(8,'pam','Padre/Madre',sysdate,1,1)"));
-print_r($x->executeQuery("insert into pam_tipo_parentesco (id,codigo,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(9,'pam','Hermano(a)',sysdate,1,1)"));
-print_r($x->executeQuery("insert into pam_tipo_parentesco (id,codigo,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(10,'pam','Primos(a)',sysdate,1,1)"));
-print_r($x->executeQuery("insert into pam_tipo_parentesco (id,codigo,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(11,'pam','Hijo(a)',sysdate,1,1)"));
-print_r($x->executeQuery("insert into pam_tipo_parentesco (id,codigo,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(12,'pam','Nieto',sysdate,1,1)"));
-print_r($x->executeQuery("insert into pam_tipo_parentesco (id,codigo,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(13,'pam','Otros(as)',sysdate,1,1)"));
-print_r($x->executeQuery("select * from pam_tipo_parentesco"));
+print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(1,'Ausentismo de madre por trabajo',sysdate,1,1)"));
+print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'Conductual/experiencia en calle',sysdate,1,1)"));
+print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'Conductual/violencia sexual',sysdate,1,1)"));
+print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'Desintegrada e incompleta, Desinterés rol parental',sysdate,1,1)"));
+print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(5,'Disgregada, Drogadicción',sysdate,1,1)"));
+print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(6,'Disfuncional',sysdate,1,1)"));
+print_r($x->executeQuery("insert into Carproblematica_familiar (id,,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(7,'Escasa preocupación',sysdate,1,1)"));
+print_r($x->executeQuery("insert into Carproblematica_familiar (id,,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(8,'Inadecuada forma de crianza',sysdate,1,1)"));
+print_r($x->executeQuery("insert into Carproblematica_familiar (id,,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(9,'Maltrato físico, Violencia -sexual',sysdate,1,1)"));
+print_r($x->executeQuery("insert into Carproblematica_familiar (id,,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(10,'Experiencia en calle Multi problemática',sysdate,1,1)"));
+print_r($x->executeQuery("insert into Carproblematica_familiar (id,,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(11,'Negligencia',sysdate,1,1)"));
+print_r($x->executeQuery("insert into Carproblematica_familiar (id,,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(12,'Orfandad',sysdate,1,1)"));
+print_r($x->executeQuery("insert into Carproblematica_familiar (id,,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(13,'Privado de su libertad',sysdate,1,1)"));
+print_r($x->executeQuery("insert into Carproblematica_familiar (id,,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(14,'Prostitución',sysdate,1,1)"));
+print_r($x->executeQuery("insert into Carproblematica_familiar (id,,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(15,'Salud mental',sysdate,1,1)"));
+print_r($x->executeQuery("insert into Carproblematica_familiar (id,,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(16,'Otros',sysdate,1,1)"));
+print_r($x->executeQuery("select * from Carproblematica_familiar"));
 die();
 /*
 print_r($x->executeQuery("delete from modulos"));
