@@ -95,32 +95,32 @@
                                 <input type="number" min="0"  v-model="Atenciones_Endocrinologo" name="Atenciones_Endocrinologo" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Nº atenciones en GASTROENTEROLOGIA</label>
+                                <label for="text-input" class=" form-control-label">Nº atenciones en GASTROENTEROLOGÍA</label>
                                 <input type="number" min="0"  v-model="Atenciones_Gastroenterologia" name="Atenciones_Gastroenterologia" placeholder="" class="form-control">
                                     
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label"> Nº atenciones en HEMATOLOGIA</label>
+                                <label for="text-input" class=" form-control-label"> Nº atenciones en HEMATOLOGÍA</label>
                                 <input type="number" min="0"  v-model="Atenciones_Hematologia" name="Atenciones_Hematologia" placeholder="" class="form-control">
                             </div>
                         
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Nº atenciones en INMUNOLOGIA</label>
+                                <label for="text-input" class=" form-control-label">Nº atenciones en INMUNOLOGÍA</label>
                                 <input type="number" min="0"  v-model="Atenciones_Inmunologia" name="Atenciones_Inmunologia" placeholder="" class="form-control">
                                     
                             </div>
                             
                         
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Nº atenciones en MEDICINA FISICA Y REHABILITACION</label>
+                                <label for="text-input" class=" form-control-label">Nº atenciones en MEDICINA FÍSICA Y REHABILITACION</label>
                                 <input type="number" min="0"  v-model="AtencionesMedicFisiRehabilita" name="AtencionesMedicFisiRehabilita" placeholder="" class="form-control">
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Nº atenciones en NEUMOLOGIA</label>
+                                <label for="text-input" class=" form-control-label">Nº atenciones en NEUMOLOGÍA</label>
                                 <input type="number" min="0"  v-model="Atenciones_Neumologia" name="Atenciones_Neumologia" placeholder="" class="form-control">
                             </div>
 
@@ -129,60 +129,61 @@
                                 <input type="number" min="0"  v-model="Atenciones_Nutricion" name="Atenciones_Nutricion" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Nº atenciones en NEUROLOGIA</label>
+                                <label for="text-input" class=" form-control-label">Nº atenciones en NEUROLOGÍA</label>
                                 <input type="number" min="0"  v-model="Atenciones_Neurologia" name="Atenciones_Neurologia" placeholder="" class="form-control">
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Nº atenciones en OFTALMOLIGIA</label>
+                                <label for="text-input" class=" form-control-label">Nº atenciones en OFTALMOLIGÍA</label>
                                 <input type="number" min="0"  v-model="Atenciones_Oftalmologia" name="Atenciones_Oftalmologia" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Nº atenciones en OTORRINOLARINGOLOGIA</label>
+                                <label for="text-input" class=" form-control-label">Nº atenciones en OTORRINOLARINGOLOGÍA</label>
                                 <input type="number" min="0"  v-model="AtencionOtorrinolaringologia" name="AtencionOtorrinolaringologia" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Nº Atenciones en PSIQUIATRIA</label>
+                                <label for="text-input" class=" form-control-label">Nº Atenciones en PSIQUÍATRÍA</label>
                                     <input type="number" min="0"  v-model="Atenciones_Psiquiatria" name="Atenciones_Psiquiatria" placeholder="" class="form-control">
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Nº Atenciones en TRAUMATOLOGIA</label>
+                                <label for="text-input" class=" form-control-label">Nº Atenciones en TRAUMATOLOGÍA</label>
                                 <input type="number" min="0"  v-model="Atenciones_Traumatologia" name="Atenciones_Traumatologia" placeholder="" class="form-control">
                             </div>
                         
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Nº Atenciones en UROLOGIA</label>
+                                <label for="text-input" class=" form-control-label">Nº Atenciones en UROLOGÍA</label>
                                 <input type="number" min="0"  v-model="Atenciones_Urologia" name="Atenciones_Urologia" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Nº Atenciones en ODONTOLOGIA</label>
+                                <label for="text-input" class=" form-control-label">Nº Atenciones en ODONTOLOGÍA</label>
                                 <input type="number" min="0"  v-model="Atenciones_Odontologia" name="Atenciones_Odontologia" placeholder="" class="form-control">
                             </div>
                         </div>
                         <div class="row">
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Medicina general y/o Geriatrica</label>
                                 <input type="number" min="0"  v-model="MedicinaGeneral_Geriatrica" name="MedicinaGeneral_Geriatrica" placeholder="" class="form-control">
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Nº Atenciones en Otros servicios</label>
                                 <input type="number" min="0"  v-model="Nro_Atenciones_OtrosServicios" name="Nro_Atenciones_OtrosServicios" placeholder="" class="form-control">
                             </div>
                             
-                        </div>
-
-                        <div class='row'>
-                        <div class="form-group col-md-3">
+                        
+                            <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Residente fue hospitalizado en el periodo</label>
                                 <select name="ResidenteHospitalizadoPeriodo" v-model="ResidenteHospitalizadoPeriodo" class="form-control">
                                     <option value="Si">Si</option>
                                     <option value="No">No</option>
                                 </select> 
                             </div>
-                            <div class="form-group col-md-3">
+                        </div>
+
+                        <div class='row'>
+                            <div class="form-group col-md-12">
                                 <label for="text-input" class=" form-control-label">Motivo de la hospitalización</label>
                                 <input type="text" v-model="Motivo_Hospitalizacion" name="Motivo_Hospitalizacion" placeholder="" class="form-control">
                             </div>
