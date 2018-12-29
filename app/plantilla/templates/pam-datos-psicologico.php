@@ -61,11 +61,13 @@
                                 <option value="No">No</option>
                                 </select> </div>
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-8">
                                 <div class=" "><label for="text-input" class=" form-control-label">Descripción de la meta trazada en el pai </label>
                                 <input type="text" v-model="Des_Meta" name="Des_Meta" placeholder="" class="form-control">
                                 </div>        
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Posee informe técnico evolutivo</label>
                                 <select name="Informe_Tecnico" v-model="Informe_Tecnico" class="form-control">
@@ -74,13 +76,14 @@
                                 </select>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-md-3">
+                        
+                            <div class="form-group col-md-8">
                                 <label for="text-input" class=" form-control-label">Descripción del informe evolutivo </label>
                                 <input type="text" v-model="Des_Informe_Tecnico" name="Des_Informe_Tecnico" placeholder="" class="form-control">
                             </div>
-                            <div class="form-group col-md-3">
+                            </div>
+                        <div class="row">
+                            <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">Cumplimiento del plan de intervención</label>
                                 <select name="Cumple_Intervencion" v-model="Cumple_Intervencion" class="form-control">
                                 <option value="Residente logra el objetivo trazado">Residente logra el objetivo trazado </option>
@@ -89,7 +92,7 @@
                                 </select>
                             </div>
                             
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">Deteriorio del área cognitiva</label>
                                 <select name="Deterioro_Cognitivo" v-model="Deterioro_Cognitivo" class="form-control">
                                 <option value="Leve">Leve </option>
@@ -97,18 +100,17 @@
                                 <option value="Severa">Severa</option>
                                 </select>
                             </div>
-                            
-                            <div class="form-group col-md-3">
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">Presencia de transtorno depresivo</label>
                                 <select name="Transtorno_Depresivo" v-model="Transtorno_Depresivo" class="form-control">
                                 <option value="Si">Si</option>
                                 <option value="No">No</option>
                                 </select>
                             </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="form-group col-md-3">
+                        
+                            <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">Severidad del transtorno depresivo</label>
                                 <select name="Severidad_Trans_Depresivo" v-model="Severidad_Trans_Depresivo" class="form-control">
                                 <option value="Leve">Leve </option>
@@ -120,7 +122,7 @@
                         <div class="row">
                             <div class="col-md-12 text-center" >
                                 <button type="submit" class="btn btn-success btn-sm">
-                                    <i class="fa fa-send"></i> Cargar Datos
+                                    <i class="fa fa-send"></i> Guardar Datos
                                 </button>
                             </div>
                         </div>
