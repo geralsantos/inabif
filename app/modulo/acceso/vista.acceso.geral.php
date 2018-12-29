@@ -172,7 +172,7 @@ Usuario_Edita      	int
    /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
     */
 
-
+    $x->deleteDataNoWhere("pam_tipo_documento_identidad");
 print_r($x->executeQuery("insert into pam_tipo_documento_identidad (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(1,'DNI/L.E',sysdate,1,1)"));
 print_r($x->executeQuery("insert into pam_tipo_documento_identidad (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(2,'Carné de Extranjería',sysdate,1,1)"));
 print_r($x->executeQuery("insert into pam_tipo_documento_identidad (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(3,'Partida Nacimiento',sysdate,1,1)"));
