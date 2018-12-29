@@ -1,15 +1,10 @@
-Vue.component('pam-datos-psicologico', {
-    template:'#pam-datos-psicologico',
+Vue.component('pam-datos-salud-mental', {
+    template:'#pam-datos-salud-mental',
     data:()=>({
         
-        Plan_Intervencion:null,
-        Des_Meta:null,
-        Informe_Tecnico:null,
-        Des_Informe_Tecnico:null,
-        Cumple_Intervencion:null,
-        Deterioro_Cognitivo:null,
-        Transtorno_Depresivo:null,
-        Severidad_Trans_Depresivo:null,
+        trastorno_disociales:null,
+        tipo_trastorno:null,
+       
 
         nombre_residente:null,
         isLoading:false,
@@ -36,21 +31,15 @@ Vue.component('pam-datos-psicologico', {
             }
             let valores = {
                 
-                Plan_Intervencion:this.Plan_Intervencion,
-                Des_Meta:this.Des_Meta,
-                Informe_Tecnico:this.Informe_Tecnico,
-                Des_Informe_Tecnico:this.Des_Informe_Tecnico,
-                Cumple_Intervencion:this.Cumple_Intervencion,
-                Deterioro_Cognitivo:this.Deterioro_Cognitivo,
-                Transtorno_Depresivo:this.Transtorno_Depresivo,
-                Severidad_Trans_Depresivo:this.Severidad_Trans_Depresivo,
+                trastorno_disociales:this.trastorno_disociales,
+                tipo_trastorno:this.tipo_trastorno,
                 Residente_Id: this.id_residente,
                 Periodo_Mes: moment().format("MM"),
                 Periodo_Anio:moment().format("YYYY")
-    
+                
             }
              
-            this.$http.post('insertar_datos?view',{tabla:'pam_nutricion', valores:valores}).then(function(response){
+            this.$http.post('insertar_datos?view',{tabla:'pam_salud_mental', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
                     swal('', 'Registro Guardado', 'success');
@@ -92,19 +81,13 @@ Vue.component('pam-datos-psicologico', {
             this.coincidencias = [];
             this.bloque_busqueda = false;
 
-            this.$http.post('cargar_datos_residente?view',{tabla:'pam_nutricion', residente_id:this.id_residente }).then(function(response){
+            this.$http.post('cargar_datos_residente?view',{tabla:'pam_salud_mental', residente_id:this.id_residente }).then(function(response){
 
                 if( response.body.atributos != undefined){
 
-                    this.Plan_Intervencion = response.body.atributos[0]["Plan_Intervencion"];
-                    this.Des_Meta = response.body.atributos[0]["Des_Meta"];
-                    this.Informe_Tecnico = response.body.atributos[0]["Informe_Tecnico"];
-                    this.Des_Informe_Tecnico = response.body.atributos[0]["Des_Informe_Tecnico"];
-                    this.Cumple_Intervencion = response.body.atributos[0]["Cumple_Intervencion"];
-                    this.Deterioro_Cognitivo = response.body.atributos[0]["Deterioro_Cognitivo"];
-                    this.Transtorno_Depresivo = response.body.atributos[0]["Transtorno_Depresivo"];
-                    this.Severidad_Trans_Depresivo = response.body.atributos[0]["Severidad_Trans_Depresivo"];
-                  
+                    this.trastorno_disociales = response.body.atributos[0]["TRASTORNO_DISOCIALES"];
+                    this.tipo_trastorno = response.body.atributos[0]["TIPO_TRASTORNO"];
+                                      
                 }
              });
 

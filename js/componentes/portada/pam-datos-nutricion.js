@@ -45,6 +45,9 @@ Vue.component('pam-datos-nutricion', {
                 Peso:this.Peso,
                 Talla:this.Talla,
                 Hemoglobina:this.Hemoglobina,
+                Residente_Id: this.id_residente,
+                Periodo_Mes: moment().format("MM"),
+                Periodo_Anio:moment().format("YYYY")
     
             }
              

@@ -66,7 +66,10 @@ Vue.component('pam-datos-nutricion-salud', {
                         presenta_anema:this.presenta_anema,
                         peso:this.peso,
                         talla:this.talla,
-                        estado_nutricional:this.estado_nutricional
+                        estado_nutricional:this.estado_nutricional,
+                        Residente_Id: this.id_residente,
+                        Periodo_Mes: moment().format("MM"),
+                        Periodo_Anio:moment().format("YYYY")
     
                     }
                         console.log(valores)
