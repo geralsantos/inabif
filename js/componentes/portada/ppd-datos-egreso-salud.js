@@ -29,7 +29,7 @@ Vue.component('ppd-datos-egreso-salud', {
     methods:{
         guardar(){
             if (this.id_residente==null) {
-                swal('Error', 'Residente no existe', 'success');
+                swal('Error', 'Residente no existe', 'warning');
                 return false;
             }
             let valores = {
