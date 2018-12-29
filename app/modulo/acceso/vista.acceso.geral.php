@@ -156,7 +156,7 @@ if (isset($_POST["nombretabla"]) && $_POST["nombretabla"]!="") {
     echo "<br>";
     print_r($x->executeQuery($_POST["nombretabla"]));
     die();
-}else{
+}else{/*
 $x->dropTable('drop table pam_lengua_materna ');
 $mdl->createTable("CREATE TABLE pam_lengua_materna
 ( id int NOT NULL,
@@ -168,8 +168,17 @@ Usuario_Crea                	int,
 Usuario_Edita               	int
 )
 
-  "); 
-
+  "); */
+  print_r($x->executeQuery("insert into pam_lengua_materna (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(1,'Quechua',sysdate,1,1)"));
+  print_r($x->executeQuery("insert into pam_lengua_materna (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'Aymará',sysdate,1,1)"));
+  print_r($x->executeQuery("insert into pam_lengua_materna (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'Ashaninka',sysdate,1,1)"));
+  print_r($x->executeQuery("insert into pam_lengua_materna (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'Otra lengua Nativa',sysdate,1,1)"));
+  print_r($x->executeQuery("insert into pam_lengua_materna (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'Castellano',sysdate,1,1)"));
+  print_r($x->executeQuery("insert into pam_lengua_materna (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'Portugués',sysdate,1,1)"));
+  print_r($x->executeQuery("insert into pam_lengua_materna (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'Otra lengua extranjera',sysdate,1,1)"));
+  print_r($x->executeQuery("insert into pam_lengua_materna (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'Lengua de señas peruana',sysdate,1,1)"));
+  print_r($x->executeQuery("insert into pam_lengua_materna (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'No escucha/ni habla',sysdate,1,1)"));
+  print_r($x->executeQuery("SELECT * FROM pam_lengua_materna WHERE RESIDENTE_ID = 1 AND ESTADO=1"));
 /*
 $tabla="CarEgresoSalud";
 $x->dropTable("drop table ".$tabla);
