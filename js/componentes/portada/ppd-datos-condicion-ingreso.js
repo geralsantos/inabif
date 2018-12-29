@@ -160,7 +160,7 @@ Vue.component('ppd-datos-condicion-ingreso', {
             });
         },
         institucion_educativa(){
-            this.$http.post('buscar?view',{tabla:'pam_instituciones',codigo:'ppd'}).then(function(response){
+            this.$http.post('buscar?view',{tabla:'pam_institucion_educativa'}).then(function(response){
                 if( response.body.data ){
                     this.instituciones= response.body.data;
                 }
