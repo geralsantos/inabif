@@ -116,23 +116,23 @@ Vue.component('pam-datos-nutricion-salud', {
 
                 if( response.body.atributos != undefined){
 
-                    this.discapacidad = response.body.atributos[0]["discapacidad"];
-                    this.discapacidad_fisica = response.body.atributos[0]["discapacidad_fisica"];
-                    this.discapacidad_intelectual = response.body.atributos[0]["discapacidad_intelectual"];
-                    this.discapacidad_sensorial = response.body.atributos[0]["discapacidad_sensorial"];
-                    this.presenta_discapacidad_mental = response.body.atributos[0]["presenta_discapacidad_mental"];
-                    this.dx_certificado = response.body.atributos[0]["dx_certificado"];
-                    this.carnet_conadis = response.body.atributos[0]["carnet_conadis"];
-                    this.grado_dependencia_pam = response.body.atributos[0]["grado_dependencia_pam"];
-                    this.motivo_dif_desplazamiento = response.body.atributos[0]["motivo_dif_desplazamiento"];
-                    this.enfermedad_ingreso_1 = response.body.atributos[0]["enfermedad_ingreso_1"];
-                    this.tipo_patologia = response.body.atributos[0]["tipo_patologia"];
-                    this.enfermedad_ingreso_2 = response.body.atributos[0]["enfermedad_ingreso_2"];
-                    this.nivel_hemoglobina = response.body.atributos[0]["nivel_hemoglobina"];
-                    this.presenta_anema = response.body.atributos[0]["presenta_anema"];
-                    this.peso = response.body.atributos[0]["peso"];
-                    this.talla = response.body.atributos[0]["talla"];
-                    this.estado_nutricional = response.body.atributos[0]["estado_nutricional"];
+                    this.discapacidad = response.body.atributos[0]["DISCAPACIDAD"];
+                    this.discapacidad_fisica = response.body.atributos[0]["DISCAPACIDAD_FISICA"];
+                    this.discapacidad_intelectual = response.body.atributos[0]["DISCAPACIDAD_INTELECTUAL"];
+                    this.discapacidad_sensorial = response.body.atributos[0]["DISCAPACIDAD_SENSORIAL"];
+                    this.presenta_discapacidad_mental = response.body.atributos[0]["PRESENTA_DISCAPACIDAD_MENTAL"];
+                    this.dx_certificado = response.body.atributos[0]["DX_CERTIFICADO"];
+                    this.carnet_conadis = response.body.atributos[0]["CARNET_CONADIS"];
+                    this.grado_dependencia_pam = response.body.atributos[0]["GRADO_DEPENDENCIA_PAM"];
+                    this.motivo_dif_desplazamiento = response.body.atributos[0]["MOTIVO_DIF_DESPLAZAMIENTO"];
+                    this.enfermedad_ingreso_1 = response.body.atributos[0]["ENFERMEDAD_INGRESO_1"];
+                    this.tipo_patologia = response.body.atributos[0]["TIPO_PATOLOGIA"];
+                    this.enfermedad_ingreso_2 = response.body.atributos[0]["ENFERMEDAD_INGRESO_2"];
+                    this.nivel_hemoglobina = response.body.atributos[0]["NIVEL_HEMOGLOBINA"];
+                    this.presenta_anema = response.body.atributos[0]["PRESENTA_ANEMA"];
+                    this.peso = response.body.atributos[0]["PESO"];
+                    this.talla = response.body.atributos[0]["TALLA"];
+                    this.estado_nutricional = response.body.atributos[0]["ESTADO_NUTRICIONAL"];
                 }
              });
 

@@ -1,16 +1,16 @@
-Vue.component('pam-datos-nutricion', {
-    template:'#pam-datos-nutricion',
+Vue.component('pam-datos-psicologico', {
+    template:'#pam-datos-psicologico',
     data:()=>({
+        
         Plan_Intervencion:null,
-        Meta_PAI:null,
+        Des_Meta:null,
         Informe_Tecnico:null,
         Des_Informe_Tecnico:null,
         Cumple_Intervencion:null,
-        Estado_Nutricional_IMC:null,
-        Peso:null,
-        Talla:null,
-        Hemoglobina:null,
-             
+        Deterioro_Cognitivo:null,
+        Transtorno_Depresivo:null,
+        Severidad_Trans_Depresivo:null,
+
         nombre_residente:null,
         isLoading:false,
         mes:moment().format("MM"),
@@ -37,14 +37,13 @@ Vue.component('pam-datos-nutricion', {
             let valores = {
                 
                 Plan_Intervencion:this.Plan_Intervencion,
-                Meta_PAI:this.Meta_PAI,
+                Des_Meta:this.Des_Meta,
                 Informe_Tecnico:this.Informe_Tecnico,
                 Des_Informe_Tecnico:this.Des_Informe_Tecnico,
                 Cumple_Intervencion:this.Cumple_Intervencion,
-                Estado_Nutricional_IMC:this.Estado_Nutricional_IMC,
-                Peso:this.Peso,
-                Talla:this.Talla,
-                Hemoglobina:this.Hemoglobina,
+                Deterioro_Cognitivo:this.Deterioro_Cognitivo,
+                Transtorno_Depresivo:this.Transtorno_Depresivo,
+                Severidad_Trans_Depresivo:this.Severidad_Trans_Depresivo,
     
             }
              
@@ -94,16 +93,15 @@ Vue.component('pam-datos-nutricion', {
 
                 if( response.body.atributos != undefined){
 
-                    this.Plan_Intervencion = response.body.atributos[0]["PLAN_INTERVENCION"];
-                    this.Meta_PAI = response.body.atributos[0]["META_PAI"];
-                    this.Informe_Tecnico = response.body.atributos[0]["INFORME_TECNICO"];
-                    this.Des_Informe_Tecnico = response.body.atributos[0]["DES_INFORME_TECNICO"];
-                    this.Cumple_Intervencion = response.body.atributos[0]["CUMPLE_INTERVENCION"];
-                    this.Estado_Nutricional_IMC = response.body.atributos[0]["ESTADO_NUTRICIONAL_IMC"];
-                    this.Peso = response.body.atributos[0]["PESO"];
-                    this.Talla = response.body.atributos[0]["TALLA"];
-                    this.Hemoglobina = response.body.atributos[0]["HEMOGLOBINA"];
-                    
+                    this.Plan_Intervencion = response.body.atributos[0]["Plan_Intervencion"];
+                    this.Des_Meta = response.body.atributos[0]["Des_Meta"];
+                    this.Informe_Tecnico = response.body.atributos[0]["Informe_Tecnico"];
+                    this.Des_Informe_Tecnico = response.body.atributos[0]["Des_Informe_Tecnico"];
+                    this.Cumple_Intervencion = response.body.atributos[0]["Cumple_Intervencion"];
+                    this.Deterioro_Cognitivo = response.body.atributos[0]["Deterioro_Cognitivo"];
+                    this.Transtorno_Depresivo = response.body.atributos[0]["Transtorno_Depresivo"];
+                    this.Severidad_Trans_Depresivo = response.body.atributos[0]["Severidad_Trans_Depresivo"];
+                  
                 }
              });
 
