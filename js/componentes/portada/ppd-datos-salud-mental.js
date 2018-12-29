@@ -28,7 +28,6 @@ Vue.component('ppd-datos-salud-mental', {
     created:function(){
     },
     mounted:function(){
-        this.buscar_transtornos();
         this.buscar_tipos();
         this.buscar_actividades();
     },
@@ -118,14 +117,6 @@ Vue.component('ppd-datos-salud-mental', {
              });
 
         },
-        buscar_transtornos(){
-            this.$http.post('buscar?view',{tabla:'pam_tipo_transtorno_conducta '}).then(function(response){
-                if( response.body.data ){
-                    this.transtornos= response.body.data;
-                }
-
-            });
-        },
         buscar_tipos(){
             this.$http.post('buscar?view',{tabla:'pam_tipo_transtorno_conducta'}).then(function(response){
                 if( response.body.data ){
@@ -135,7 +126,7 @@ Vue.component('ppd-datos-salud-mental', {
             });
         },
         buscar_actividades(){
-            this.$http.post('buscar?view',{tabla:''}).then(function(response){
+            this.$http.post('buscar?view',{tabla:'pam_actividades_diaria'}).then(function(response){
                 if( response.body.data ){
                     this.actividades= response.body.data;
                 }
