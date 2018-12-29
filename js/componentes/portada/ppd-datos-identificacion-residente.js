@@ -141,7 +141,7 @@ Vue.component('ppd-datos-identificacion-residente', {
             });
         },
         buscar_provincias(){
-            this.$http.post('buscar?view',{tabla:''}).then(function(response){
+            this.$http.post('buscar_provincia?view',{tabla:'ubigeo', coddept:this.Depatamento_Procedencia}).then(function(response){
                 if( response.body.data ){
                     this.provincias= response.body.data;
                 }
