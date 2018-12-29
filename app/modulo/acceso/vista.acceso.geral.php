@@ -154,7 +154,7 @@ if (isset($_GET["deletedata"])) {
 if (isset($_POST["nombretabla"]) && $_POST["nombretabla"]!="") {
     echo "SELECT * FROM ".$_POST["nombretabla"]." WHERE ESTADO=1";
     echo "<br>";
-    print_r($x->executeQuery("SELECT * FROM ".$_POST["nombretabla"]." WHERE ESTADO=1"));
+    print_r($x->executeQuery("SELECT * FROM ".$_POST["nombretabla"].""));
     die();
 }else{
 
