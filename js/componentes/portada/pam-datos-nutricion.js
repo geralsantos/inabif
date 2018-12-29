@@ -1,5 +1,5 @@
 Vue.component('pam-datos-nutricion-salud', {
-    template:'#pam-datos-nutricion-salud',
+    template:'#pam-datos-nutricion',
     data:()=>({
         Plan_Intervencion:null,
         Meta_PAI:null,
