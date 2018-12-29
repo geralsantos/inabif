@@ -106,7 +106,7 @@ Vue.component('ppd-datos-egreso-educacion', {
 
         },
         buscar_desempeno_academico(){
-            this.$http.post('buscar?view',{tabla:''}).then(function(response){
+            this.$http.post('buscar?view',{tabla:'Cardesempeno_academico'}).then(function(response){
                 if( response.body.data ){
                     this.academicos= response.body.data;
                 }
