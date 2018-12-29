@@ -160,13 +160,13 @@ $mdl->createTable("create table pam_nivel_educativo (
     */
 
     $x->deleteDataNoWhere("pam_nivel_educativo");
-print_r($x->executeQuery("insert into pam_nivel_educativo (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(1,'ppd','Sin nivel',sysdate,1,1)"));
-print_r($x->executeQuery("insert into pam_nivel_educativo (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(2,'ppd','Inicial',sysdate,1,1)"));
-print_r($x->executeQuery("insert into pam_nivel_educativo (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(3,'ppd','Primaria incompleta Especial',sysdate,1,1)"));
-print_r($x->executeQuery("insert into pam_nivel_educativo (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(4,'ppd','Primaria completa',sysdate,1,1)"));    
-print_r($x->executeQuery("insert into pam_nivel_educativo (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(5,'ppd','Secundaria incompleta',sysdate,1,1)"));
-print_r($x->executeQuery("insert into pam_nivel_educativo (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(6,'ppd','Secundaria completa',sysdate,1,1)")); 
-print_r($x->executeQuery("insert into pam_nivel_educativo (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(7,'ppd','Se desconoce',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_nivel_educativo (id,codigo,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(1,'ppd','Sin nivel',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_nivel_educativo (id,codigo,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(2,'ppd','Inicial',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_nivel_educativo (id,codigo,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(3,'ppd','Primaria incompleta Especial',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_nivel_educativo (id,codigo,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(4,'ppd','Primaria completa',sysdate,1,1)"));    
+print_r($x->executeQuery("insert into pam_nivel_educativo (id,codigo,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(5,'ppd','Secundaria incompleta',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_nivel_educativo (id,codigo,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(6,'ppd','Secundaria completa',sysdate,1,1)")); 
+print_r($x->executeQuery("insert into pam_nivel_educativo (id,codigo,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(7,'ppd','Se desconoce',sysdate,1,1)"));
 print_r($x->executeQuery("select * from pam_nivel_educativo"));
 die();
 /*
