@@ -112,13 +112,7 @@
                                     <option value="Otros">Otros</option>
                                 </select>
                             </div>
-                            <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">ASEGURAMIENTO A SALUD</label>
-                                <select name="CarAseguramiento" v-model="CarAseguramiento" class="form-control">
-                                    <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                            </div>
+                             
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Fallecimiento</label>
                                 <select name="CarFallecimiento" v-model="CarFallecimiento" class="form-control">

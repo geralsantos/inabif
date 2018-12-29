@@ -49,7 +49,6 @@ Vue.component('ppd-datos-egreso-generales', {
                 Defuncion:this.CarDefuncion,
                 Reinsercion:this.CarReinsercionFamiliar,
                 Retiro_Voluntario:this.CarRetiroVoluntario,
-                Aseguramiento:this.CarAseguramiento,
                 Constancia_Naci:this.CarConstanciaNacimiento,
                 Carner_CONADIS:this.CarCarnetConadis,
                 DNI:this.CarTieneDni,
@@ -116,7 +115,6 @@ Vue.component('ppd-datos-egreso-generales', {
                     this.CarDefuncion = response.body.atributos[0]["DEFUNCION"];
                     this.CarReinsercionFamiliar = response.body.atributos[0]["REINSERCION"];
                     this.CarRetiroVoluntario = response.body.atributos[0]["RETIRO_VOLUNTARIO"];
-                    this.CarAseguramiento = response.body.atributos[0]["ASEGURAMIENTO"];
                     this.CarConstanciaNacimiento = response.body.atributos[0]["CONSTANCIA_NACI"];
                     this.CarCarnetConadis = response.body.atributos[0]["CARNER_CONADIS"];
                     this.CarTieneDni = response.body.atributos[0]["DNI"];
