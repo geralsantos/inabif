@@ -166,7 +166,7 @@ class portada extends App{
         $sql = "SELECT * FROM ".$_POST['tabla']." WHERE ESTADO=1";
         $res = $modelo->executeQuery( $sql );
         if ($res) {
-          echo json_encode(array( "atributos"=>$res )) ;
+          echo json_encode($res) ;
         }else{
           return false;
         }
