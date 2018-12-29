@@ -141,45 +141,30 @@ if (isset($_GET["deletedata"])) {
     
 }
 //$mdl->createTable("DESCRIBE modulos"); 
-/*
-$x->dropTable("drop table CarIdentificacionUsuario");
-$mdl->createTable("create table CarIdentificacionUsuario
-(
-Identificaion_Id int not null primary key,
-Tipo_Centro_Id  int,
-Residente_Id	int,
-Periodo_Mes int,
-Periodo_Anio   int,
-Ape_Paterno varchar2(50),
-Ape_Materno varchar2(50),
-Nom_Usuario varchar2(50),
-Pais_Procencia   int,
-Depatamento_Procedencia int,
-Provincia_Procedencia  int,
-Distrito_Procedencia   int,
-Sexo          	char(2),
-Fecha_Nacimiento date,
-Edad          	int,
-Lengua_Materna     	int,
-Estado             	int default 1,
-Fecha_Creacion     	date,
-Fecha_Edicion      	TIMESTAMP DEFAULT SYSDATE,
-Usuario_Crea       	int,
-Usuario_Edita      	int
-)
-");*/
-  //$mdl->createTable ("Create sequence seq_paises");
+
+$x->dropTable("drop table pam_tipo_pension");
+$mdl->createTable("create table pam_tipo_pension (
+    id INT NOT NULL primary key,
+    nombre VARCHAR(150) NOT NULL,
+    estado INT DEFAULT 1,
+    fecha_creacion date NOT NULL,
+    fecha_edicion TIMESTAMP DEFAULT SYSDATE,
+    usuario_creacion INT NOT NULL,
+    usuario_edicion INT NOT NULL
+    )
+");
+  $mdl->createTable ("Create sequence pam_seq_tipo_pension ");
    /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
     */
-/*
-    $x->deleteDataNoWhere("pam_tipo_documento_identidad");
-print_r($x->executeQuery("insert into pam_tipo_documento_identidad (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(1,'DNI/L.E',sysdate,1,1)"));
-print_r($x->executeQuery("insert into pam_tipo_documento_identidad (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(2,'Carné de Extranjería',sysdate,1,1)"));
-print_r($x->executeQuery("insert into pam_tipo_documento_identidad (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(3,'Partida Nacimiento',sysdate,1,1)"));
-print_r($x->executeQuery("insert into pam_tipo_documento_identidad (
-    id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(4,'No tiene',sysdate,1,1)"));     
-print_r($x->executeQuery("select * from pam_tipo_documento_identidad"));
-die();*/
+
+    $x->deleteDataNoWhere("pam_tipo_pension");
+print_r($x->executeQuery("insert into pam_tipo_pension (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(1,'ONP',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_tipo_pension (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(2,'AFP',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_tipo_pension (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(3,'Otros',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_tipo_pension (
+    id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(4,'No recibe',sysdate,1,1)"));     
+print_r($x->executeQuery("select * from pam_tipo_pension"));
+die();
 /*
 print_r($x->executeQuery("delete from modulos"));
 $arr = ["insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)
