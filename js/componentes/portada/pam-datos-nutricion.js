@@ -1,4 +1,4 @@
-Vue.component('pam-datos-nutricion-salud', {
+Vue.component('pam-datos-nutricion', {
     template:'#pam-datos-nutricion',
     data:()=>({
         Plan_Intervencion:null,
