@@ -69,7 +69,7 @@ public function executeQuery($query, $params=NULL){
         $stmt = parent::prepare($query);
 
         if($stmt->execute($params)){
-
+            echo "executeQuery";
           return $stmt->fetchAll();
 
         }else{
@@ -177,6 +177,7 @@ print_r($x->executeQuery("insert into pam_tipo_documento_identidad (id,nombre,fe
 print_r($x->executeQuery("insert into pam_tipo_documento_identidad (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(2,'Carné de Extranjería',sysdate,1,1)"));
 print_r($x->executeQuery("insert into pam_tipo_documento_identidad (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(3,'Partida Nacimiento',sysdate,1,1)"));
 print_r($x->executeQuery("insert into pam_tipo_documento_identidad (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(4,'No tiene',sysdate,1,1)"));     
+die();
 /*
 print_r($x->executeQuery("delete from modulos"));
 $arr = ["insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)
