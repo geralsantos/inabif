@@ -97,6 +97,11 @@
 
                                 </select>
                             </div>
+                            <div class="form-group col-md-4">
+                                    <div class=" "><label for="text-input" class=" form-control-label">Grado de Parentesco</label>
+                                    <input type="text" v-model="CarGrado_Parentesco" name="CarGrado_Parentesco" placeholder="" class="form-control">
+                                    </div>
+                                </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-4">
@@ -107,11 +112,19 @@
                                     <option value="Otros">Otros</option>
                                 </select>
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">ASEGURAMIENTO A SALUD</label>
                                 <select name="CarAseguramiento" v-model="CarAseguramiento" class="form-control">
                                     <option value="Si">Si</option>
                                     <option value="No">No</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="text-input" class=" form-control-label">Fallecimiento</label>
+                                <select name="CarRetiroVoluntario" v-model="CarRetiroVoluntario" class="form-control">
+                                    <option value="Muerte Natural">Muerte Natural</option>
+                                    <option value="Muerte Violenta">Muerte Violenta</option>
+                                    <option value="Muerte Subita">Muerte Súbita</option>
                                 </select>
                             </div>
                         </div>
