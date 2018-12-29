@@ -56,7 +56,7 @@ public function __construct() {
     public function dropTable($query){
 
         try{
-            echo "ELIMINANDO...<br>";
+            echo "ELIMINANDO..."."</br>";
           $stmt = parent::prepare($query);
           if($stmt->execute()){
             echo "borrado";
