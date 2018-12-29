@@ -154,7 +154,7 @@ Vue.component('ppd-datos-identificacion-residente', {
             });
         },
         buscar_distritos(){
-            this.$http.post('buscar?view',{tabla:''}).then(function(response){
+            this.$http.post('buscar_provincia?view',{tabla:'ubigeo', coddept:this.Provincia_Procedencia}).then(function(response){
                 if( response.body.data ){
                     this.distritos= response.body.data;
                     this.Distrito_Procedencia = response.body.data[0]["CODDIST"];
