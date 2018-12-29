@@ -148,6 +148,8 @@ if (isset($_GET["deletedata"])) {
     $x->deleteDataNoWhere("CarEgresoGeneral");
     $x->deleteDataNoWhere("CarEgresoSalud");
     $x->deleteDataNoWhere("CarTerapiaFisica");
+    $x->deleteDataNoWhere("pam_tipo_transtorno_conducta");
+    
     
     die();
 }
@@ -157,27 +159,23 @@ if (isset($_POST["nombretabla"]) && $_POST["nombretabla"]!="") {
     print_r($x->executeQuery($_POST["nombretabla"]));
     die();
 }else{
-$x->dropTable('drop table pam_tipo_transtorno_conducta ');
-$mdl->createTable("CREATE TABLE pam_tipo_transtorno_conducta
-( id number(10) NOT NULL,
+$x->dropTable('drop table pam_actividades_diaria ');
+$mdl->createTable("CREATE TABLE pam_actividades_diaria
+( id int NOT NULL primary key,
   nombre varchar(200) NOT NULL,
   Estado                            	number(10) default 1,
   fecha_creacion            	DATE DEFAULT (sysdate),
 Fecha_Edicion              	DATE DEFAULT (sysdate),
 Usuario_Crea                	number(10),
 Usuario_Edita               	number(10)
-)
-  "); 
-  print_r($x->executeQuery("insert into pam_tipo_transtorno_conducta (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(1,'Agresivo',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_tipo_transtorno_conducta (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'Se autolesiona',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_tipo_transtorno_conducta (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'Hiperactivo',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_tipo_transtorno_conducta (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'Agitación motora',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_tipo_transtorno_conducta (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(5,'Disocial',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_tipo_transtorno_conducta (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(6,'Negativismo',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_tipo_transtorno_conducta (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(7,'Desafiante',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_tipo_transtorno_conducta (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(8,'No se sabe',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_tipo_transtorno_conducta (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(9,'No presenta transtorno',sysdate,1,1)"));
-  print_r($x->executeQuery("SELECT * FROM pam_tipo_transtorno_conducta WHERE ESTADO=1"));
+)"); 
+  print_r($x->executeQuery("insert into pam_actividades_diaria (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(1,'Come solo',sysdate,1,1)"));
+  print_r($x->executeQuery("insert into pam_actividades_diaria (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'Se viste solo',sysdate,1,1)"));
+  print_r($x->executeQuery("insert into pam_actividades_diaria (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'Acude al baño solo',sysdate,1,1)"));
+  print_r($x->executeQuery("insert into pam_actividades_diaria (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'Se baña solo',sysdate,1,1)"));
+  print_r($x->executeQuery("insert into pam_actividades_diaria (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(5,'Todas las anteriores',sysdate,1,1)"));
+  print_r($x->executeQuery("insert into pam_actividades_diaria (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(6,'Ninguno',sysdate,1,1)"));
+  print_r($x->executeQuery("SELECT * FROM pam_actividades_diaria WHERE ESTADO=1"));
 /*
 $tabla="CarEgresoSalud";
 $x->dropTable("drop table ".$tabla);

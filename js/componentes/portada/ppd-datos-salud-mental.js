@@ -127,7 +127,7 @@ Vue.component('ppd-datos-salud-mental', {
             });
         },
         buscar_tipos(){
-            this.$http.post('buscar?view',{tabla:''}).then(function(response){
+            this.$http.post('buscar?view',{tabla:'pam_tipo_transtorno_conducta'}).then(function(response){
                 if( response.body.data ){
                     this.tipos= response.body.data;
                 }
