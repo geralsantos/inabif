@@ -168,9 +168,9 @@ class MySQL extends PDO
         if(count($values)>0){
             $query = 'INSERT INTO '.$tabla;
             $queryKeys = '';
-            $queryKeys .= 'Salud_Egreso_Id ';
+            $queryKeys .= 'Salud_Egreso_Id, ';
             $queryValues = '';
-            $queryValues .= 'CarEgresoSaludS.NEXTVAL ';
+            $queryValues .= 'CarEgresoSaludS.NEXTVAL, ';
 
             $params = array();
             $coma = '';
