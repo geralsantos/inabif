@@ -57,7 +57,7 @@
                         <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Posee plan de intervención nutricional  individual?</label>
                                 <select name="CarIntervencionNutricional" v-model="CarIntervencionNutricional" class="form-control">
-                                    <option value="Si">Si</option>
+                                    <option value="Sí">Sí</option>
                                     <option value="No">No</option>
                                 </select>
                             </div>

@@ -57,7 +57,7 @@
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Residente recibe visitas de Familiares?</label>
                                 <select name="CarVisitaF" v-model="CarVisitaF" class="form-control">
-                                    <option value="Sí">Sí</option>
+                                    <option value="Si">Si</option>
                                     <option value="No">No</option>
                                 </select>
                             </div>
