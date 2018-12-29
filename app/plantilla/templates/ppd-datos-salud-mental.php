@@ -115,7 +115,7 @@
                             <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">Realiza actividades de la vida diaria?</label>
                                 <select name="CarRealizaActividades" v-model="CarRealizaActividades" class="form-control">
-                                    <option v-for="actividad in actividades" value="actividad.ID">{{actividad.NOMBRE}}</option>
+                                    <option v-for="actividad in actividades" :value="actividad.ID">{{actividad.NOMBRE}}</option>
                                 </select>
                             </div>
                         </div>
