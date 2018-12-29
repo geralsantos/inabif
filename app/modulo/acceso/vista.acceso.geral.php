@@ -143,29 +143,28 @@ if (isset($_GET["deletedata"])) {
 }
 //$mdl->createTable("DESCRIBE modulos"); 
 
-$x->dropTable("drop table CarEducacionCapacidades");
-$mdl->createTable("create table CarEducacionCapacidades
+$x->dropTable("drop table CarEgresoEducacion");
+$mdl->createTable("create table CarEgresoEducacion
 (
-Educacion_Id int not null primary key,
+Educacion_Egreso_Id int not null primary key,
 Tipo_Centro_Id  int,
 Residente_Id	int,
 Periodo_Mes int,
 Periodo_Anio   int,
-Tipo_Institucion varchar(100),
-Insertado_labora char(2),
-Des_labora   	long,
-Participa_Actividades  char(2),
-Fecha_InicionA     	date,
-Fecha_FinA   	date,
-Culmino_Actividades	char(2),
-Logro_Actividades  	char(2),
+Plan_Educacion     	char(2),
+Meta_PII     	clob,
+Informe_Tecnico    	char(2),
+Des_Informe  	clob,
+Cumple_Plan  	varchar(180),
+Asistencia_Escolar 	char(2),
+Desempeno    	int,
 Estado             	int,
 Fecha_Creacion     	TIMESTAMP DEFAULT SYSDATE,
 Fecha_Edicion      	TIMESTAMP DEFAULT SYSDATE,
 Usuario_Crea       	int,
 Usuario_Edita      	int
 )");
- // $mdl->createTable ("Create sequence seq_Carproblematica_familiar");
+ //$mdl->createTable ("Create sequence seq_Cardesempeno_academico");
    /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
     */
     //$x->deleteDataNoWhere("pam_nivel_educativo");
