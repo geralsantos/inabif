@@ -177,7 +177,7 @@ class portada extends App{
     public function buscar_departamentos(){
       if( $_POST['tabla']){
         $modelo = new modeloPortada();
-        $sql = "select distinct coddept,nomdept  from ".$_POST['tabla']." where estado = 1";
+        $sql = "select distinct coddept,nomdept,codprov,coddist  from ".$_POST['tabla']." where estado = 1";
         $res = $modelo->executeQuery( $sql );
         if ($res) {
           echo json_encode(array( "data"=>$res )) ;
@@ -190,7 +190,7 @@ class portada extends App{
     public function buscar_provincia(){
       if( $_POST['tabla']){
         $modelo = new modeloPortada();
-        $sql = "select distinct concat('".$_POST["cod"]."',codprov),nomprov  from ".$_POST['tabla']." where estado = 1";
+        $sql = "select distinct concat('".$_POST["cod"]."',codprov),nomprov,coddist  from ".$_POST['tabla']." where estado = 1";
         $res = $modelo->executeQuery( $sql );
         if ($res) {
           echo json_encode(array( "data"=>$res )) ;
