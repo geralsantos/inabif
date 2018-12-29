@@ -167,7 +167,7 @@ Vue.component('ppd-datos-condicion-ingreso', {
             });
         },
         tipo_seguro(){
-            this.$http.post('buscar?view',{tabla:'aseguramiento_salud',codigo:'ppd'}).then(function(response){
+            this.$http.post('buscar?view',{tabla:'pam_tipo_seguro_salud'}).then(function(response){
                 if( response.body.data ){
                     this.seguros= response.body.data;
                 }
