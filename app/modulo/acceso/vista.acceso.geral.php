@@ -182,7 +182,7 @@ Usuario_Crea       	int,
 Usuario_Edita      	int
 )
 ");*/
- $mdl->createTable ("Create sequence CarEgresoSaludS");
+ //$mdl->createTable ("Create sequence CarEgresoSaludS");
    /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
     */
     //$x->deleteDataNoWhere("pam_nivel_educativo");
@@ -190,9 +190,9 @@ Usuario_Edita      	int
 print_r($x->executeQuery("insert into Cardesempeno_academico (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(1,'SI, sobresaliente',sysdate,1,1)"));
 print_r($x->executeQuery("insert into Cardesempeno_academico (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'Si, satisfactorio',sysdate,1,1)"));
 print_r($x->executeQuery("insert into Cardesempeno_academico (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'NO',sysdate,1,1)"));
-print_r($x->executeQuery("insert into Cardesempeno_academico (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'No, insatisfactorio',sysdate,1,1)"));*/
+print_r($x->executeQuery("insert into Cardesempeno_academico (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'No, insatisfactorio',sysdate,1,1)"))
 print_r($x->executeQuery("SELECT * FROM CarEgresoPsicologico WHERE RESIDENTE_ID = 1 AND ESTADO=1"));
-die();
+die();*/
 $arr = ['create table CarCentroServicio
 (
 Id int not null primary key,
@@ -881,10 +881,10 @@ create sequence Carproblematica_familiar
 create sequence Cardesempeno_academico'];
 foreach ($arr as $key => $value) {
     echo $key;
-    $x->dropTable($arrdrop[$key]);/*
+    $x->dropTable($arrdrop[$key]);
     $mdl->createTable($arrdropseq[$key]);
     $mdl->createTable($value);
-    $mdl->createTable($arrcreateseq[$key]);*/
+    $mdl->createTable($arrcreateseq[$key]);
 }
 /*
 print_r($x->executeQuery("delete from modulos"));
