@@ -7,7 +7,7 @@ class mdl
 {
     public function createTable ($sql){
         try {
-            echo "creando tabla..."."</br>";
+            echo "creando..."."</br>";
             echo $sql."</br>";
             $db1 = "(DESCRIPTION=(ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 172.19.0.35)(PORT = 1521)))(CONNECT_DATA=(SID=xe)))" ;
             $host = "172.19.0.35";
@@ -769,122 +769,122 @@ drop table CarEgresoGeneral
 drop table Carproblematica_familiar
 ','
 drop table Cardesempeno_academico'];
-$arrdropseq = ['drop sequence CarCentroServicio','
-drop sequence CarIdentificacionUsuario','drop sequence CarDatosAdmision
+$arrdropseq = ['drop sequence seq_CarCentroServicio','
+drop sequence seq_CarIdentificacionUsuario','drop sequence seq_CarDatosAdmision
 ','
  
-drop sequence CarCondicionIngreso
+drop sequence seq_CarCondicionIngreso
 ','
-drop sequence CarSaludNutricion
-','
- 
-drop sequence CarSaludMental
+drop sequence seq_CarSaludNutricion
 ','
  
-drop sequence CarTerapia
+drop sequence seq_CarSaludMental
 ','
  
-drop sequence CarActividades
+drop sequence seq_CarTerapia
 ','
  
-drop sequence CarAtencionPsicologica
+drop sequence seq_CarActividades
 ','
  
-drop sequence CarEducacionCapacidades
- 
-','
-drop sequence CarTrabajoSocial
- 
-','
-drop sequence CarAtencionSalud
- 
+drop sequence seq_CarAtencionPsicologica
 ','
  
-drop sequence CarEgresoPsicologico
+drop sequence seq_CarEducacionCapacidades
+ 
+','
+drop sequence seq_CarTrabajoSocial
+ 
+','
+drop sequence seq_CarAtencionSalud
  
 ','
  
-drop sequence CarEgresoEducacion
-','
- 
-drop sequence CarEgresoSalud
-','
- 
-drop sequence CarTerapiaFisica
-','
- 
-drop sequence CarEgresoNutricion
-','
- 
-drop sequence CarEgresoTrabajoSocial
-','
- 
-drop sequence CarEgresoGeneral
-','
-drop sequence Carproblematica_familiar
-','
-drop sequence Cardesempeno_academico'];
-$arrcreateseq = ['create sequence CarCentroServicio','
-create sequence CarIdentificacionUsuario','create sequence CarDatosAdmision
-','
- 
-create sequence CarCondicionIngreso
-','
-create sequence CarSaludNutricion
-','
- 
-create sequence CarSaludMental
-','
- 
-create sequence CarTerapia
-','
- 
-create sequence CarActividades
-','
- 
-create sequence CarAtencionPsicologica
-','
- 
-create sequence CarEducacionCapacidades
- 
-','
-create sequence CarTrabajoSocial
- 
-','
-create sequence CarAtencionSalud
+drop sequence seq_CarEgresoPsicologico
  
 ','
  
-create sequence CarEgresoPsicologico
+drop sequence seq_CarEgresoEducacion
+','
+ 
+drop sequence seq_CarEgresoSalud
+','
+ 
+drop sequence seq_CarTerapiaFisica
+','
+ 
+drop sequence seq_CarEgresoNutricion
+','
+ 
+drop sequence seq_CarEgresoTrabajoSocial
+','
+ 
+drop sequence seq_CarEgresoGeneral
+','
+drop sequence seq_Carproblematica_familiar
+','
+drop sequence seq_Cardesempeno_academico'];
+$arrcreateseq = ['create sequence seq_CarCentroServicio','
+create sequence seq_CarIdentificacionUsuario','create sequence seq_CarDatosAdmision
+','
+ 
+create sequence seq_CarCondicionIngreso
+','
+create sequence seq_CarSaludNutricion
+','
+ 
+create sequence seq_CarSaludMental
+','
+ 
+create sequence seq_CarTerapia
+','
+ 
+create sequence seq_CarActividades
+','
+ 
+create sequence seq_CarAtencionPsicologica
+','
+ 
+create sequence seq_CarEducacionCapacidades
+ 
+','
+create sequence seq_CarTrabajoSocial
+ 
+','
+create sequence seq_CarAtencionSalud
  
 ','
  
-create sequence CarEgresoEducacion
+create sequence seq_CarEgresoPsicologico
+ 
 ','
  
-create sequence CarEgresoSalud
+create sequence seq_CarEgresoEducacion
 ','
  
-create sequence CarTerapiaFisica
+create sequence seq_CarEgresoSalud
 ','
  
-create sequence CarEgresoNutricion
+create sequence seq_CarTerapiaFisica
 ','
  
-create sequence CarEgresoTrabajoSocial
+create sequence seq_CarEgresoNutricion
 ','
  
-create sequence CarEgresoGeneral
+create sequence seq_CarEgresoTrabajoSocial
 ','
-create sequence Carproblematica_familiar
+ 
+create sequence seq_CarEgresoGeneral
 ','
-create sequence Cardesempeno_academico'];
+create sequence seq_Carproblematica_familiar
+','
+create sequence seq_Cardesempeno_academico'];
 foreach ($arr as $key => $value) {
     echo $key;
     $x->dropTable($arrdrop[$key]);
     $mdl->createTable($arrdropseq[$key]);
     $mdl->createTable($value);
-    $mdl->createTable($arrcreateseq[0]);
+    $mdl->createTable($arrcreateseq[$key]);
 }
 /*
 print_r($x->executeQuery("delete from modulos"));
