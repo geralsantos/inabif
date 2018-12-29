@@ -87,7 +87,7 @@
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Provincia de Procedencia</label>
                                 <select name="Provincia_Procedencia" v-model="Provincia_Procedencia" @change="buscar_distritos()" class="form-control">
-                                    <option v-for="provincia in provincias" :value="provincia.ID">{{provincia.NOMBRE}}</option>
+                                    <option v-for="provincia in provincias" :value="provincia.CODPROV">{{provincia.NOMPROV}}</option>
                                 </select>
                                 </div>
                             </div>
