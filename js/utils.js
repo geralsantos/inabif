@@ -112,6 +112,7 @@ function hora_min_seg(time){
   return result;
 }
   document.addEventListener('DOMContentLoaded', function() {
+    alert()
     var type = window.location.hash.substr(1) || 'portada-index';
       appVue.changeview(type);
       window.location.hash='#'+type;
