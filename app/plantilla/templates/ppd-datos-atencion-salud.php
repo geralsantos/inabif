@@ -227,7 +227,7 @@
                         <div class="row">
                             <div class="col-md-12 text-center" >
                                 <button type="submit" class="btn btn-success btn-sm">
-                                    <i class="fa fa-send"></i> Cargar Datos
+                                    <i class="fa fa-send"></i> Grabar datos
                                 </button>
                             </div>
                         </div>
