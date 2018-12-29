@@ -164,7 +164,7 @@ $mdl->createTable("CREATE TABLE paises (
     nombre varchar(128) default NULL,
     estado int default 1
   )"); 
-/*
+
 $paises = ["INSERT INTO paises VALUES(1, 'AF', 'Afganistán')","
 ","INSERT INTO paises VALUES(2, 'AX', 'Islas Gland')","
 ","INSERT INTO paises VALUES(3, 'AL', 'Albania')","
@@ -407,7 +407,7 @@ $paises = ["INSERT INTO paises VALUES(1, 'AF', 'Afganistán')","
 ","INSERT INTO paises VALUES(240, 'ZW', 'Zimbabue')"];
 foreach ($paises as $key => $value) {
     $x->executeQuery($value);
-}*/
+}
 /*
 $tabla="CarEgresoSalud";
 $x->dropTable("drop table ".$tabla);
