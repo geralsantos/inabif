@@ -123,7 +123,7 @@ Vue.component('ppd-datos-identificacion-residente', {
 
         },
         buscar_paises(){
-            this.$http.post('buscar?view',{tabla:''}).then(function(response){
+            this.$http.post('buscar?view',{tabla:'paises'}).then(function(response){
                 if( response.body.data ){
                     this.paises= response.body.data;
                 }

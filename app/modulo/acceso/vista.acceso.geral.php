@@ -154,11 +154,12 @@ if (isset($_GET["deletedata"])) {
 if (isset($_POST["nombretabla"]) && $_POST["nombretabla"]!="") {
     echo "SELECT * FROM ".$_POST["nombretabla"]." WHERE ESTADO=1";
     echo "<br>";
-    print_r($x->executeQuery("SELECT * FROM ".$_POST["nombretabla"].""));
+    print_r($x->executeQuery("SELECT * FROM ".$_POST["nombretabla"]." WHERE ESTADO=1"));
     die();
 }else{
 
 //$mdl->createTable("DESCRIBE modulos"); 
+/*
 $paises = ["INSERT INTO paises VALUES(1, 'AF', 'Afganistán')","
 ","INSERT INTO paises VALUES(2, 'AX', 'Islas Gland')","
 ","INSERT INTO paises VALUES(3, 'AL', 'Albania')","
@@ -401,7 +402,7 @@ $paises = ["INSERT INTO paises VALUES(1, 'AF', 'Afganistán')","
 ","INSERT INTO paises VALUES(240, 'ZW', 'Zimbabue')"];
 foreach ($paises as $key => $value) {
     $x->executeQuery($value);
-}
+}*/
 /*
 $tabla="CarEgresoSalud";
 $x->dropTable("drop table ".$tabla);
