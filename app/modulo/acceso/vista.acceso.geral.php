@@ -156,19 +156,19 @@ if (isset($_POST["nombretabla"]) && $_POST["nombretabla"]!="") {
     echo "<br>";
     print_r($x->executeQuery($_POST["nombretabla"]));
     die();
-}else{/*
-$x->dropTable('drop table ubigeo ');
-$mdl->createTable("create table ubigeo (
-    id INT NOT NULL primary key,
-    CodDept VARCHAR(10) NOT NULL,
-    NomDept VARCHAR(150) NOT NULL,
-    CodProv VARCHAR(10) NOT NULL,
-    NomProv VARCHAR(150) NOT NULL,
-    CodDist VARCHAR(10) NOT NULL,
-    NomDist VARCHAR(150) NOT NULL,
-    estado INT DEFAULT 1
-    )
-  "); */
+}else{
+$x->dropTable('drop table pam_lengua_materna ');
+$mdl->createTable("CREATE TABLE pam_lengua_materna
+( id int NOT NULL,
+  nombre varchar(200) NOT NULL,
+  Estado                            	int default 1,
+Fecha_Registro            	date,
+Fecha_Edicion              	timestamp DEFAULT (sysdate),
+Usuario_Crea                	int,
+Usuario_Edita               	int
+)
+
+  "); 
 
 /*
 $tabla="CarEgresoSalud";
