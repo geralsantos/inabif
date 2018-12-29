@@ -190,7 +190,7 @@ class portada extends App{
     public function buscar_provincia(){
       if( $_POST['tabla']){
         $modelo = new modeloPortada();
-        $sql = "select max(codprov),max(nomprov),max(coddist)  from ".$_POST['tabla']." where estado = 1 group by concat('".$_POST["cod"]."',codprov)";
+        $sql = "select max(codprov) as codprov,max(nomprov) as nomprov,max(coddist) as coddist  from ".$_POST['tabla']." where estado = 1 group by concat('".$_POST["cod"]."',codprov)";
         $res = $modelo->executeQuery( $sql );
         if ($res) {
           echo json_encode(array( "data"=>$res )) ;
