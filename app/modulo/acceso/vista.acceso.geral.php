@@ -142,28 +142,28 @@ if (isset($_GET["deletedata"])) {
 }
 //$mdl->createTable("DESCRIBE modulos"); 
 
-$x->dropTable("drop table pam_instituciones");
-$mdl->createTable("create table pam_institucion_educativa (
-    id INT NOT NULL primary key,
-    nombre VARCHAR(150) NOT NULL,
-    estado INT DEFAULT 1,
-    fecha_creacion date NOT NULL,
-    fecha_edicion TIMESTAMP DEFAULT SYSDATE,
-    usuario_creacion INT NOT NULL,
-    usuario_edicion INT NOT NULL
-    )  
+$x->dropTable("drop table pam_tipo_seguro_salud");
+$mdl->createTable(" CREATE TABLE pam_tipo_seguro_salud
+( id int not null primary key,
+  nombre varchar(100) NOT NULL,
+  Estado                            	int default 1,
+Fecha_Registro            	DATE,
+Fecha_Edicion              	timestamp DEFAULT (sysdate),
+Usuario_Crea                	int,
+Usuario_Edita               	int
+)
 ");
-  $mdl->createTable ("Create sequence pam_seq_institucion_educativa  ");
+  $mdl->createTable ("Create sequence pam_seq_tipo_seguro_salud  ");
    /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
     */
     //$x->deleteDataNoWhere("pam_nivel_educativo");
-print_r($x->executeQuery("insert into pam_institucion_educativa (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(1,'Centro de Educación Básica Regular',sysdate,1,1)"));
-print_r($x->executeQuery("insert into pam_institucion_educativa (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(2,'Centro de Educación Basica Regular Inclusiva',sysdate,1,1)"));
-print_r($x->executeQuery("insert into pam_institucion_educativa (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(3,'Centros de Educación Básica Alternativa- CEBA',sysdate,1,1)"));
-print_r($x->executeQuery("insert into pam_institucion_educativa (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(4,'Centros de Educación Básica Especial- CEBE',sysdate,1,1)"));    
-print_r($x->executeQuery("insert into pam_institucion_educativa (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(5,'Centros de Educación Técnico Productivo- CETPRO',sysdate,1,1)"));
-print_r($x->executeQuery("insert into pam_institucion_educativa (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(6,'Otro',sysdate,1,1)")); 
-print_r($x->executeQuery("select * from pam_institucion_educativa"));
+print_r($x->executeQuery("insert into pam_tipo_seguro_salud (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(1,'ESSALUD',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_tipo_seguro_salud (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(2,'FFAA_PNP',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_tipo_seguro_salud (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(3,'Seguro Privado',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_tipo_seguro_salud (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(4,'Seguro Integral de Salud(SIS)',sysdate,1,1)"));    
+print_r($x->executeQuery("insert into pam_tipo_seguro_salud (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(5,'Otro',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_tipo_seguro_salud (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(6,'No tiene',sysdate,1,1)")); 
+print_r($x->executeQuery("select * from pam_tipo_seguro_salud"));
 die();
 /*
 print_r($x->executeQuery("delete from modulos"));
