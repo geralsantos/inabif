@@ -90,7 +90,7 @@
                             <div class="form-group col-md-6">
                                 <div class=" "><label for="text-input" class=" form-control-label">N°  de visitas al mes</label>
                                 <select name="Nro_Visitas_Amigos" v-model="Nro_Visitas_Amigos" class="form-control">
-                                <option v-for="i in (1 to 30)" :value="i">{{i}}</option>
+                               
                                     </select> </div>
                             </div>
                             <div class="form-group col-md-6">
