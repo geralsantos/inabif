@@ -12,6 +12,7 @@ Vue.component('pam-datos-admision', {
               
         instituciones:[],
         motivos:[],
+        motivos2:[],
 
         nombre_residente:null,
         isLoading:false,
@@ -28,6 +29,7 @@ Vue.component('pam-datos-admision', {
     mounted:function(){
         this.buscar_instituciones();
         this.buscar_motivos();
+        this.buscar_motivos2();
     },
     updated:function(){
     },
@@ -129,7 +131,16 @@ Vue.component('pam-datos-admision', {
                 }
 
             });
+        },
+        buscar_motivos2(){
+            this.$http.post('buscar?view',{tabla:''}).then(function(response){
+                if( response.body.data ){
+                    this.motivos2= response.body.data;
+                }
+
+            });
         }
+
 
         
     }
