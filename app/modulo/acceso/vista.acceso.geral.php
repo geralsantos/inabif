@@ -152,29 +152,26 @@ if (isset($_POST["nombretabla"]) && $_POST["nombretabla"]!="") {
 
 //$mdl->createTable("DESCRIBE modulos"); 
 
-$x->dropTable("drop table CarEgresoNutricion");
-$mdl->createTable("create table CarEgresoNutricion
+$x->dropTable("drop table CarEgresoPsicologico");
+$mdl->createTable("create table CarEgresoPsicologico
 (
-Nutricion_Id 	int not null primary key,
+Psicologico_Egreso_Id int not null primary key ,
 Tipo_Centro_Id  int,
 Residente_Id	int,
 Periodo_Mes int,
 Periodo_Anio   int,
-Plan_Nutricional char(2),
+Plan_Psicologico char(2),
 Meta_PII     	long,
 Informe_Tecnico    	char(2),
-Des_Informe  	varchar(200),
+Des_Informe  	varchar(),
 Cumple_Plan  	varchar(180),
-Estado_Nutricional 	varchar(180),
-Peso          	number(6,2),
-Talla         	number(6,2),
-Hemoglobina  	number(6,2),
 Estado             	int,
 Fecha_Creacion     	TIMESTAMP DEFAULT SYSDATE,
 Fecha_Edicion      	TIMESTAMP DEFAULT SYSDATE,
 Usuario_Crea       	int,
 Usuario_Edita      	int
 )
+
 ");
  //$mdl->createTable ("Create sequence seq_Cardesempeno_academico");
    /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
@@ -185,7 +182,7 @@ print_r($x->executeQuery("insert into Cardesempeno_academico (id,nombre,fecha_cr
 print_r($x->executeQuery("insert into Cardesempeno_academico (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'Si, satisfactorio',sysdate,1,1)"));
 print_r($x->executeQuery("insert into Cardesempeno_academico (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'NO',sysdate,1,1)"));
 print_r($x->executeQuery("insert into Cardesempeno_academico (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'No, insatisfactorio',sysdate,1,1)"));*/
-print_r($x->executeQuery("SELECT * FROM CarEgresoNutricion WHERE RESIDENTE_ID = 1 AND ESTADO=1"));
+print_r($x->executeQuery("SELECT * FROM CarEgresoPsicologico WHERE RESIDENTE_ID = 1 AND ESTADO=1"));
 die();
 /*
 print_r($x->executeQuery("delete from modulos"));
