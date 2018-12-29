@@ -881,10 +881,10 @@ create sequence Carproblematica_familiar
 create sequence Cardesempeno_academico'];
 foreach ($arr as $key => $value) {
     echo $key;
-    $x->dropTable($arrdrop[$key]);
+    $x->dropTable($arrdrop[$key]);/*
     $mdl->createTable($arrdropseq[$key]);
     $mdl->createTable($value);
-    $mdl->createTable($arrcreateseq[$key]);
+    $mdl->createTable($arrcreateseq[$key]);*/
 }
 /*
 print_r($x->executeQuery("delete from modulos"));
