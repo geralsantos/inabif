@@ -141,9 +141,9 @@ if (isset($_GET["deletedata"])) {
     
 }
 //$mdl->createTable("DESCRIBE modulos"); 
-/*
-$x->dropTable("drop table pam_tipo_pension");
-$mdl->createTable("create table pam_tipo_pension (
+
+$x->dropTable("drop table pam_instituciones");
+$mdl->createTable("create table pam_instituciones (
     id INT NOT NULL primary key,
     nombre VARCHAR(150) NOT NULL,
     estado INT DEFAULT 1,
@@ -151,20 +151,20 @@ $mdl->createTable("create table pam_tipo_pension (
     fecha_edicion TIMESTAMP DEFAULT SYSDATE,
     usuario_creacion INT NOT NULL,
     usuario_edicion INT NOT NULL
-    )
+    )  
 ");
-  $mdl->createTable ("Create sequence pam_seq_tipo_pension ");
+  $mdl->createTable ("Create sequence pam_instituciones ");
    /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
     */
-/*
-    $x->deleteDataNoWhere("pam_tipo_pension");
-print_r($x->executeQuery("insert into pam_tipo_pension (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(1,'ONP',sysdate,1,1)"));
-print_r($x->executeQuery("insert into pam_tipo_pension (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(2,'AFP',sysdate,1,1)"));
-print_r($x->executeQuery("insert into pam_tipo_pension (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(3,'Otros',sysdate,1,1)"));
-print_r($x->executeQuery("insert into pam_tipo_pension (
-    id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(4,'No recibe',sysdate,1,1)"));     
-print_r($x->executeQuery("select * from pam_tipo_pension"));
-die();*/
+
+    $x->deleteDataNoWhere("pam_instituciones");
+print_r($x->executeQuery("insert into pam_instituciones (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(1,'Fiscalía',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_instituciones (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(2,'Juzgado',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_instituciones (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(3,'Unidad de protección Especial',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_instituciones (
+    id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(4,'Otros',sysdate,1,1)"));     
+print_r($x->executeQuery("select * from pam_instituciones"));
+die();
 /*
 print_r($x->executeQuery("delete from modulos"));
 $arr = ["insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)
