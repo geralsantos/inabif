@@ -26,7 +26,7 @@
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="text-input" class=" form-control-label">Año</label>
-                                <select name="select" disabled="disabled" id="anio"  v-model="anio" class="form-control">
+                                <select name="anio" disabled="disabled" id="anio"  v-model="anio" class="form-control">
                                 <option value="2018">2018</option>
                                 <option value="2019">2019</option>
                                 <option value="2020">2020</option>
@@ -74,7 +74,7 @@
                             <div class="form-group col-md-6">
                                 <div class=" "><label for="text-input" class=" form-control-label">N°  de visitas al mes</label>
                                 <select name="Nro_Visitas" v-model="Nro_Visitas" class="form-control">
-                             
+                                <option v-for="i in (1 to 30)" :value="i">{{i}}</option>
                                     </select> </div>
                             </div>
                             <div class="form-group col-md-6">
@@ -90,7 +90,7 @@
                             <div class="form-group col-md-6">
                                 <div class=" "><label for="text-input" class=" form-control-label">N°  de visitas al mes</label>
                                 <select name="Nro_Visitas_Amigos" v-model="Nro_Visitas_Amigos" class="form-control">
-                               
+                                <option v-for="i in (1 to 30)" :value="i">{{i}}</option>
                                     </select> </div>
                             </div>
                             <div class="form-group col-md-6">
@@ -102,7 +102,7 @@
                             
                             <div class="form-group col-md-6">
                                 <div class=" "><label for="text-input" class=" form-control-label">Aseguramiento de la Universidad</label>
-                                <select name="select" v-model="select" class="form-control">
+                                <select name="Aseguramiento_Universal_Salud" v-model="Aseguramiento_Universal_Salud" class="form-control">
                                 <option value="Si">Si</option>
                                     <option value="No">No</option>
                                 </select>
