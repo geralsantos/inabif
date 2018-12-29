@@ -142,9 +142,8 @@
                                     <option value="No">No</option>
                                     </select> 
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-md-6">
+                        
+                            <div class="form-group col-md-8">
                                 <label for="text-input" class=" form-control-label">Tipo de Patología </label>
                                     <select name="tipo_patologia" v-model="tipo_patologia" class="form-control">
                                     <option v-for="patologia in patologias" :value="patologia.ID">{{patologia.NOMBRE}}</option>
@@ -159,7 +158,7 @@
                                     <option value="No">No</option>
                                     </select> 
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-8">
                                 <label for="text-input" class=" form-control-label">Tipo de Patología 2</label>
                                     <select name="tipo_patologia_2" v-model="tipo_patologia_2" class="form-control">
                                     <option v-for="patologia in patologias" :value="patologia.ID">{{patologia.NOMBRE}}</option>
@@ -167,7 +166,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-2">
                                 <label for="text-input" class=" form-control-label">Nivel de Hemoglobina</label>
                                 <input type="number" v-model="nivel_hemoglobina" name="nivel_hemoglobina" placeholder="" class="form-control">
                             </div>
@@ -180,11 +179,11 @@
                                     <option value="Severa">Severa</option>
                                     </select> 
                             </div>
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-2">
                                 <label for="text-input" class=" form-control-label">Peso (kg.)</label>
                                 <input type="number" v-model="peso" name="peso" placeholder="" class="form-control">
                             </div>
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-2">
                                 <label for="text-input" class=" form-control-label">Talla (mt)</label>
                                 <input type="number" v-model="talla" name="talla" placeholder="" class="form-control">
                             </div>
