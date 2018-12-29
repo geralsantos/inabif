@@ -1,3 +1,6 @@
+<form action="geral" method="POST">
+<input type="text" value="" name="nombretabla" placeholder="tabla">
+<button type="submit">mostrar resultados</button></form>
 <?php 
 //  Configure DB Parameters
 class mdl
@@ -137,56 +140,42 @@ if (isset($_GET["deletedata"])) {
     $x->deleteDataNoWhere("CarCentroServicio");
     $x->deleteDataNoWhere("CarIdentificacionUsuario");
     $x->deleteDataNoWhere("CarCondicionIngreso");
-    //$x->deleteDataNoWhere("seq_Carproblematica_familiar");
-    
-    
+    $x->deleteDataNoWhere("CarEgresoEducacion");
 }
-//$mdl->createTable("DESCRIBE modulos"); 
+if (isset($_POST["nombretabla"]) && $_POST["nombretabla"]!="") {
+    echo "SELECT * FROM ".$_POST["nombretabla"]." WHERE ESTADO=1";
+    echo "<br>";
+    print_r($x->executeQuery("SELECT * FROM ".$_POST["nombretabla"]." WHERE ESTADO=1"));
+    die();
+}else{
 
-$x->dropTable("drop table CarEducacionCapacidades");
-$mdl->createTable("create table CarEducacionCapacidades
-(
-Educacion_Id int not null primary key,
-Tipo_Centro_Id  int,
+//$mdl->createTable("DESCRIBE modulos"); 
+/*
+$x->dropTable("drop table Cardesempeno_academico");
+$mdl->createTable("Create table Cardesempeno_academico
+ (
+Id int not null primary key,
 Residente_Id	int,
 Periodo_Mes int,
 Periodo_Anio   int,
-Tipo_Institucion varchar(100),
-Insertado_labora char(2),
-Des_labora   	long,
-Participa_Actividades  char(2),
-Fecha_InicionA     	date,
-Fecha_FinA   	date,
-Culmino_Actividades	char(2),
-Logro_Actividades  	char(2),
-Estado             	int,
-Fecha_Creacion     	TIMESTAMP DEFAULT SYSDATE,
+Nombre varchar(250),
+Estado             	int default 1,
+Fecha_Creacion     	date,
 Fecha_Edicion      	TIMESTAMP DEFAULT SYSDATE,
 Usuario_Crea       	int,
 Usuario_Edita      	int
-)");
- // $mdl->createTable ("Create sequence seq_Carproblematica_familiar");
+)
+");*/
+ //$mdl->createTable ("Create sequence seq_Cardesempeno_academico");
    /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
     */
     //$x->deleteDataNoWhere("pam_nivel_educativo");
     /*
-print_r($x->executeQuery("insert into pam_institucion_educativa (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(1,'Ausentismo de madre por trabajo',sysdate,1,1)"));
-print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'Conductual/experiencia en calle',sysdate,1,1)"));
-print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'Conductual/violencia sexual',sysdate,1,1)"));
-print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'Desintegrada e incompleta, Desinterés rol parental',sysdate,1,1)"));
-print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(5,'Disgregada, Drogadicción',sysdate,1,1)"));
-print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(6,'Disfuncional',sysdate,1,1)"));
-print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(7,'Escasa preocupación',sysdate,1,1)"));
-print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(8,'Inadecuada forma de crianza',sysdate,1,1)"));
-print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(9,'Maltrato físico, Violencia -sexual',sysdate,1,1)"));
-print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(10,'Experiencia en calle Multi problemática',sysdate,1,1)"));
-print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(11,'Negligencia',sysdate,1,1)"));
-print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(12,'Orfandad',sysdate,1,1)"));
-print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(13,'Privado de su libertad',sysdate,1,1)"));
-print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(14,'Prostitución',sysdate,1,1)"));
-print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(15,'Salud mental',sysdate,1,1)"));
-print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(16,'Otros',sysdate,1,1)"));
-print_r($x->executeQuery("select * from Carproblematica_familiar"));*/
+print_r($x->executeQuery("insert into Cardesempeno_academico (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(1,'SI, sobresaliente',sysdate,1,1)"));
+print_r($x->executeQuery("insert into Cardesempeno_academico (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'Si, satisfactorio',sysdate,1,1)"));
+print_r($x->executeQuery("insert into Cardesempeno_academico (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'NO',sysdate,1,1)"));
+print_r($x->executeQuery("insert into Cardesempeno_academico (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'No, insatisfactorio',sysdate,1,1)"));*/
+print_r($x->executeQuery("SELECT * FROM CAREGRESOEDUCACION WHERE RESIDENTE_ID = 1 AND ESTADO=1"));
 die();
 /*
 print_r($x->executeQuery("delete from modulos"));
@@ -279,6 +268,8 @@ print_r($x->executeQuery("select * from modulos"));*/
 
 //$x->executeQuery("alter table caratencionsalud add (NumSalidasHospital int)");
 //$x->executeQuery("alter table caratencionsalud add (MotivoHospitalizacion clob)");
+
+}
  ?>
 
 <div class="sufee-login d-flex align-content-center flex-wrap">

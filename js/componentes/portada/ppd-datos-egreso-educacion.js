@@ -34,13 +34,14 @@ Vue.component('ppd-datos-egreso-educacion', {
             }
 
             let valores = {
+                Educacion_Egreso_Id : 1,
                 Plan_Educacion: this.CarIntervencion,
                 Meta_PII: this.CarDesMeta,
                 Informe_Tecnico: this.CarInformeEvolutivo,
                 Des_Informe: this.CarDesInfome,
                 Cumple_Plan: this.CarCumplimientoPlan,
                 Asistencia_Escolar: this.CarAsistenciaEscolar,
-                Desenpeno: this.CarDesempeAcademico,
+                Desempeno: this.CarDesempeAcademico,
                 Residente_Id: this.id_residente,
                 Periodo_Mes: moment().format("MM"),
                 Periodo_Anio:moment().format("YYYY")
@@ -89,7 +90,7 @@ Vue.component('ppd-datos-egreso-educacion', {
             this.bloque_busqueda = false;
 
             this.$http.post('cargar_datos_residente?view',{tabla:'CarEgresoEducacion', residente_id:this.id_residente }).then(function(response){
-
+                console.log(response.body);
                 if( response.body.atributos != undefined){
 
                     this.CarIntervencion = response.body.atributos[0]["PLAN_EDUCACION"];
@@ -98,14 +99,14 @@ Vue.component('ppd-datos-egreso-educacion', {
                     this.CarDesInfome = response.body.atributos[0]["DES_INFORME"];
                     this.CarCumplimientoPlan = response.body.atributos[0]["CUMPLE_PLAN"];
                     this.CarAsistenciaEscolar = response.body.atributos[0]["ASISTENCIA_ESCOLAR"];
-                    this.CarDesempeAcademico = response.body.atributos[0]["DESENPENO"];
+                    this.CarDesempeAcademico = response.body.atributos[0]["DESEMPENO"];
 
                 }
              });
 
         },
         buscar_desempeno_academico(){
-            this.$http.post('buscar?view',{tabla:''}).then(function(response){
+            this.$http.post('buscar?view',{tabla:'Cardesempeno_academico'}).then(function(response){
                 if( response.body.data ){
                     this.academicos= response.body.data;
                 }
