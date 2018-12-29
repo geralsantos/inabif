@@ -1,4 +1,4 @@
-<template id="pam-datos-generales-egreso">
+<template id="">
     <div class="content mt-3">
         <div class="col-lg-12">
             <div class="card">
