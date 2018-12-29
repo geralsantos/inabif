@@ -163,7 +163,8 @@ class portada extends App{
     public function buscar(){
       if( $_POST['tabla']){
         $modelo = new modeloPortada();
-        $sql = "SELECT * FROM ".$_POST['tabla']." WHERE ESTADO=1";
+        $codigo = isset($_POST['codigo']) ? " CODIGO='".$_POST['codigo']."' AND " : "";
+        $sql = "SELECT * FROM ".$_POST['tabla']." WHERE ".$codigo." ESTADO=1";
         $res = $modelo->executeQuery( $sql );
         if ($res) {
           echo json_encode(array( "data"=>$res )) ;

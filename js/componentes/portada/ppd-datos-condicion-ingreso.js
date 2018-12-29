@@ -153,42 +153,42 @@ Vue.component('ppd-datos-condicion-ingreso', {
             });
         },
         nivel_educativo(){
-            this.$http.post('buscar?view',{tabla:'pam_instituciones'}).then(function(response){
+            this.$http.post('buscar?view',{tabla:'pam_nivel_educativo',codigo:'ppd'}).then(function(response){
                 if( response.body.data ){
                     this.educativos= response.body.data;
                 }
             });
         },
         institucion_educativa(){
-            this.$http.post('buscar?view',{tabla:'pam_instituciones'}).then(function(response){
+            this.$http.post('buscar?view',{tabla:'pam_instituciones',codigo:'ppd'}).then(function(response){
                 if( response.body.data ){
                     this.instituciones= response.body.data;
                 }
             });
         },
         tipo_seguro(){
-            this.$http.post('buscar?view',{tabla:'aseguramiento_salud'}).then(function(response){
+            this.$http.post('buscar?view',{tabla:'aseguramiento_salud',codigo:'ppd'}).then(function(response){
                 if( response.body.data ){
                     this.seguros= response.body.data;
                 }
             });
         },
         clasificacion_socioeconomica(){
-            this.$http.post('buscar?view',{tabla:'clasificacion_socioeconomico'}).then(function(response){
+            this.$http.post('buscar?view',{tabla:'clasificacion_socioeconomico',codigo:'ppd'}).then(function(response){
                 if( response.body.data ){
                     this.socioeconomicos= response.body.data;
                 }
             });
         },
         tipo_parentesco(){
-            this.$http.post('buscar?view',{tabla:'tipo_parentesco'}).then(function(response){
+            this.$http.post('buscar?view',{tabla:'tipo_parentesco',codigo:'ppd'}).then(function(response){
                 if( response.body.data ){
                     this.parentescos= response.body.data;
                 }
             });
         },
         problematica_familiar(){
-            this.$http.post('buscar?view',{tabla:'problematica_familiar'}).then(function(response){
+            this.$http.post('buscar?view',{tabla:'problematica_familiar',codigo:'ppd'}).then(function(response){
                 if( response.body.data ){
                     this.familiares= response.body.data;
                 }
