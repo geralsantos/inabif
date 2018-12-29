@@ -112,9 +112,9 @@
                                 </select>
                                 </div>
                             </div>
-                            <div class="form-group col-md-4">
-                                <div class=" "><label for="text-input" class=" form-control-label">Número de documento Ingreso CAR</label>
-                                <input type="text" v-model="numero_documento_ingreo_car" name="numero_documento_ingreo_car">
+                            <div class="form-group col-md-8">
+                                <div class=" "><label for="text-input" class="form-control-label">Número de documento Ingreso CAR</label>
+                                <input type="text" v-model="numero_documento_ingreo_car" class="form-control" name="numero_documento_ingreo_car">
                                 </div>
                             </div>
                         </div>
