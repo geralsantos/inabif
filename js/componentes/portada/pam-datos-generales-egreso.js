@@ -36,7 +36,7 @@ Vue.component('pam-datos-generales-egreso', {
                 return false;
             }
             let valores = {
-                Id: 1,
+              
                 Fecha_Egreso:this.Fecha_Egreso,
                 MotivoEgreso:this.MotivoEgreso,
                 Retiro_Voluntario:this.Retiro_Voluntario,
