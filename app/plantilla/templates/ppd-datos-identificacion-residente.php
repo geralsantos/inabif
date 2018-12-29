@@ -94,7 +94,7 @@
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Distrito de Procedencia</label>
                                 <select name="Distrito_Procedencia" v-model="Distrito_Procedencia" class="form-control">
-                                    <option v-for="distrito in distritos" :value="distrito.ID">{{distrito.NOMBRE}}</option>
+                                    <option v-for="distrito in distritos" :value="distrito.CODDIST">{{distrito.NOMDIST}}</option>
                                 </select>
                                 </div>
                             </div>
