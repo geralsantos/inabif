@@ -1,5 +1,5 @@
-Vue.component('pam-actividades_prevencion', {
-    template:'#pam-actividades_prevencion',
+Vue.component('pam-actividades-prevencion', {
+    template:'#pam-actividades-prevencion',
     data:()=>({
         Atencion_Psicologica:null,
         Habilidades_Sociales:null,
