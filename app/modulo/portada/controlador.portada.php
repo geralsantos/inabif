@@ -177,7 +177,7 @@ class portada extends App{
     public function buscar_departamentos(){
       if( $_POST['tabla']){
         $modelo = new modeloPortada();
-        $sql = "select coddept,nomdept,codprov from ".$_POST['tabla']." where estado = 1 group by coddept";
+        $sql = "select coddept,nomdept from ".$_POST['tabla']." where estado = 1 group by coddept,nomdept";
         $res = $modelo->executeQuery( $sql );
         if ($res) {
           echo json_encode(array( "data"=>$res )) ;
@@ -190,7 +190,7 @@ class portada extends App{
     public function buscar_provincia(){
       if( $_POST['tabla']){
         $modelo = new modeloPortada();
-        $sql = "select codprov ,nomprov, coddist from ".$_POST['tabla']." where estado = 1 group by concat('".$_POST["cod"]."',codprov)";
+        $sql = "select codprov ,nomprov from ".$_POST['tabla']." where estado = 1 and SUBSTR(codprov,0,2)='".$_POST["cod"]."'";
         $res = $modelo->executeQuery( $sql );
         if ($res) {
           echo json_encode(array( "data"=>$res )) ;
@@ -203,7 +203,7 @@ class portada extends App{
     public function buscar_distritos(){
       if( $_POST['tabla']){
         $modelo = new modeloPortada();
-        $sql = "select coddist, coddist  from ".$_POST['tabla']." where estado = 1 group by concat(concat('".$_POST["dep"].$_POST["prov"]."'),coddist)";
+        $sql = "select coddist, nomdist  from ".$_POST['tabla']." where estado = 1 and SUBSTR(coddist,0,4)= concat('".$_POST["dep"].$_POST["prov"]."')";
         $res = $modelo->executeQuery( $sql );
         if ($res) {
           echo json_encode(array( "data"=>$res )) ;
