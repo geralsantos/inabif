@@ -163,7 +163,7 @@ Vue.component('ppd-datos-identificacion-residente', {
             });
         },
         buscar_lenguas(){
-            this.$http.post('buscar?view',{tabla:''}).then(function(response){
+            this.$http.post('buscar?view',{tabla:'pam_lengua_materna'}).then(function(response){
                 if( response.body.data ){
                     this.lenguas= response.body.data;
                 }
