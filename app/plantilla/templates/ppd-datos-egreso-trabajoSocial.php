@@ -57,7 +57,7 @@
                         <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Posee plan de intervención nutricional  individual?</label>
                                 <select name="CarIntervencionNutricional" v-model="CarIntervencionNutricional" class="form-control">
-                                    <option value="Sí">Sí</option>
+                                    <option value="SI">Si</option>
                                     <option value="No">No</option>
                                 </select>
                             </div>
@@ -85,7 +85,7 @@
                                 <label for="text-input" class=" form-control-label">Cumplimiento del plan de intervención</label>
                                 <select name="CarCumplePlan" v-model="CarCumplePlan" class="form-control">
                                     <option value="Residente logra el objetivo trazado">Residente logra el objetivo trazado</option>
-                                    <option value="En proceso">En proceso</option>
+                                    <option value="En procesó">En proceso</option>
                                     <option value="Residente no logra el objetivo trazado">Residente no logra el objetivo trazado</option>
                                 </select>
                             </div>
