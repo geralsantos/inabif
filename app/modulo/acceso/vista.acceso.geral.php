@@ -154,9 +154,9 @@ if (isset($_POST["nombretabla"]) && $_POST["nombretabla"]!="") {
 }else{
 
 //$mdl->createTable("DESCRIBE modulos"); 
-
-$x->dropTable("drop table CarEgresoPsicologico");
-$mdl->createTable("create table CarEgresoPsicologico
+$tabla="CarEgresoPsicologico";
+$x->dropTable("drop table ".$tabla);
+$mdl->createTable("create table ".$tabla."
 (
 Psicologico_Egreso_Id int not null primary key ,
 Tipo_Centro_Id  int,
