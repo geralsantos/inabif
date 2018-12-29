@@ -51,11 +51,11 @@ Vue.component('ppd-datos-salud-mental', {
                 Especificar: this.CarEspeficicarActividades,
 
                 Residente_Id: this.id_residente,
-                Periodo_Mes: moment().format("MM"),
-                Periodo_Anio:moment().format("YYYY")
+                Periodo_Mes: parseFloat(moment().format("MM")),
+                Periodo_Anio:parseFloat(moment().format("YYYY"))
 
             }
-
+console.log(valores);
             this.$http.post('insertar_datos?view',{tabla:'CarSaludMental', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
