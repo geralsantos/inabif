@@ -133,25 +133,34 @@ if (isset($_GET["deletedata"])) {
     $x->deleteDataNoWhere("CarAtencionSalud");
     $x->deleteDataNoWhere("CarActividades");
     $x->deleteDataNoWhere("CarTrabajoSocial");
+    $x->deleteDataNoWhere("CarCentroServicio");
     $x->deleteDataNoWhere("CarIdentificacionUsuario");
     
 }
 //$mdl->createTable("DESCRIBE modulos"); 
-$x->dropTable("drop table CarDatosAdmision");
-$mdl->createTable("create table CarDatosAdmision
+$x->dropTable("drop table CarCentroServicio");
+$mdl->createTable("create table CarCentroServicio
 (
-Admision_Id int not null primary key,
+Id_Car_CentroServicio int not null primary key,
 Tipo_Centro_Id  int,
 Residente_Id	int,
 Periodo_Mes int,
 Periodo_Anio   int,
-Mov_Poblacional varchar(100),
-Fecha_Ingreso    date,
-Fecha_Reingreso  date,
-Institucion_derivado int,
-Motivo_Ingreso    varchar(100),
-Tipo_Documento   int,
-Numero_Documento int,
+Cod_Entidad char(6),
+Nom_Entidad varchar(50),
+Cod_Linea  char(6),
+Linea_Intervencion clob,
+Cod_Servicio 	char(6),
+Nom_Servicio 	clob,
+Ubigeo_Ine int,
+Departamento_CAtencion int,
+Provincia_CAtencion int,
+Distrito_CAtencion 	int,
+Centro_Poblado     	varchar(100),
+Centro_Residencia  	varchar(10),
+Cod_CentroAtencion 	char(10),
+Nom_CentroAtencion 	clob,
+Fecha_Registro     	date,
 Estado             	int,
 Fecha_Creacion     	TIMESTAMP DEFAULT SYSDATE,
 Fecha_Edicion      	TIMESTAMP DEFAULT SYSDATE,
