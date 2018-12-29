@@ -1,4 +1,4 @@
-<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+<form action="acceso/geral" method="POST">
 <input type="text" value="" name="nombretabla" placeholder="tabla">
 <button type="submit">mostrar resultados</button></form>
 <?php 
