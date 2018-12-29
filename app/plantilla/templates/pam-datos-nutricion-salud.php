@@ -55,7 +55,7 @@
                         <div class="row">
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Discapacidad</label>
-                                <select name="select" v-model="select" class="form-control">
+                                <select name="discapacidad" v-model="discapacidad" class="form-control">
                                     <option value="Si">Si</option>
                                     <option value="No">No</option>
                                 </select> </div>
