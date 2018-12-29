@@ -99,7 +99,7 @@
                             </div>
                             <div class="form-group col-md-4">
                                     <div class=" "><label for="text-input" class=" form-control-label">Grado de Parentesco</label>
-                                    <input type="text" v-model="CarGradoParentesco" name="CarGradoParentesco" placeholder="" class="form-control">
+                                    <input type="text" v-model="GradoParentesco" value="" name="GradoParentesco" placeholder="" class="form-control">
                                     </div>
                                 </div>
                         </div>
