@@ -203,7 +203,7 @@ class portada extends App{
     public function buscar_distritos(){
       if( $_POST['tabla']){
         $modelo = new modeloPortada();
-        $sql = "select coddist, nomdist  from ".$_POST['tabla']." where estado = 1 and SUBSTR(coddist,0,4)= concat('".$_POST["cod"]."') group by coddist, nomdist";
+        $sql = "select coddist, nomdist  from ".$_POST['tabla']." where estado = 1 and SUBSTR(coddist,0,4)= '".$_POST["cod"]."' group by coddist, nomdist";
         $res = $modelo->executeQuery( $sql );
         if ($res) {
           echo json_encode(array( "data"=>$res )) ;
