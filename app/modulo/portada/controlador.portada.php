@@ -177,7 +177,7 @@ class portada extends App{
     public function buscar_departamentos(){
       if( $_POST['tabla']){
         $modelo = new modeloPortada();
-        $sql = "SELECT DISTINCT CODDEPT,NOMDEPT,ID FROM ".$_POST['tabla']." WHERE ESTADO=1";
+        $sql = "SELECT distinct CODDEPT,NOMDEPT,ID FROM ".$_POST['tabla']." WHERE ESTADO=1";
         $res = $modelo->executeQuery( $sql );
         if ($res) {
           echo json_encode(array( "data"=>$res )) ;
