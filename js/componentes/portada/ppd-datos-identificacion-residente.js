@@ -147,7 +147,7 @@ Vue.component('ppd-datos-identificacion-residente', {
             this.$http.post('buscar_provincia?view',{tabla:'ubigeo', cod:this.Depatamento_Procedencia}).then(function(response){
                 if( response.body.data ){
                     this.provincias= response.body.data;
-                    this.Provincia_Procedencia = response.body.data[0]["CODPROV"];
+                    //this.Provincia_Procedencia = response.body.data[0]["CODPROV"];
                     this.buscar_distritos();
                 }
 
