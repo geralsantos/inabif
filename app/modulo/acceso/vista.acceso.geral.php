@@ -163,16 +163,16 @@ print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_
 print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'Desintegrada e incompleta, Desinterés rol parental',sysdate,1,1)"));
 print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(5,'Disgregada, Drogadicción',sysdate,1,1)"));
 print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(6,'Disfuncional',sysdate,1,1)"));
-print_r($x->executeQuery("insert into Carproblematica_familiar (id,,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(7,'Escasa preocupación',sysdate,1,1)"));
-print_r($x->executeQuery("insert into Carproblematica_familiar (id,,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(8,'Inadecuada forma de crianza',sysdate,1,1)"));
-print_r($x->executeQuery("insert into Carproblematica_familiar (id,,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(9,'Maltrato físico, Violencia -sexual',sysdate,1,1)"));
-print_r($x->executeQuery("insert into Carproblematica_familiar (id,,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(10,'Experiencia en calle Multi problemática',sysdate,1,1)"));
-print_r($x->executeQuery("insert into Carproblematica_familiar (id,,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(11,'Negligencia',sysdate,1,1)"));
-print_r($x->executeQuery("insert into Carproblematica_familiar (id,,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(12,'Orfandad',sysdate,1,1)"));
-print_r($x->executeQuery("insert into Carproblematica_familiar (id,,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(13,'Privado de su libertad',sysdate,1,1)"));
-print_r($x->executeQuery("insert into Carproblematica_familiar (id,,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(14,'Prostitución',sysdate,1,1)"));
-print_r($x->executeQuery("insert into Carproblematica_familiar (id,,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(15,'Salud mental',sysdate,1,1)"));
-print_r($x->executeQuery("insert into Carproblematica_familiar (id,,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(16,'Otros',sysdate,1,1)"));
+print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(7,'Escasa preocupación',sysdate,1,1)"));
+print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(8,'Inadecuada forma de crianza',sysdate,1,1)"));
+print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(9,'Maltrato físico, Violencia -sexual',sysdate,1,1)"));
+print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(10,'Experiencia en calle Multi problemática',sysdate,1,1)"));
+print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(11,'Negligencia',sysdate,1,1)"));
+print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(12,'Orfandad',sysdate,1,1)"));
+print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(13,'Privado de su libertad',sysdate,1,1)"));
+print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(14,'Prostitución',sysdate,1,1)"));
+print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(15,'Salud mental',sysdate,1,1)"));
+print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(16,'Otros',sysdate,1,1)"));
 print_r($x->executeQuery("select * from Carproblematica_familiar"));
 die();
 /*
