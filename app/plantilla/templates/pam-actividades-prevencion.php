@@ -1,13 +1,13 @@
-<template id="pam-actividades_sociales">
+<template id="pam-actividades-prevencion">
     <div class="content mt-3">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <strong>Actividades Sociales</strong>
+                    <strong>Actividades de Prevención (Psicólogo)</strong>
                     <h6>Formulario de Carga de Datos</h6>
                 </div>
                 <div class="card-body card-block">
-                    <form class="form-horizontal" v-on:submit.prevent="guardar">
+                    <form  class="form-horizontal" v-on:submit.prevent="guardar">
                         <div class="row">
                             <div class="form-group col-md-7">
                                 <label for="text-input" class=" form-control-label">Nombre Residente</label>
@@ -52,83 +52,113 @@
                             </div>
 
                         </div>
-
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <div class=" "><label for="text-input" class="form-control-label">Atención Social  </label>
-                                    <select name="Atencion_Social" v-model="Atencion_Social" class="form-control">
+                                <div class=" "><label for="text-input" class=" form-control-label">Atención Psicológica  </label>
+                                    <select name="Atencion_Psicologica" v-model="Atencion_Psicologica" class="form-control">
                                         <option value="Si">Si</option>
                                         <option value="No">No</option>
                                     </select>
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="form-group col-md-6">
-                                <div class=" "><label for="text-input" class="form-control-label">Visitas de Familiares</label>
-                                <select name="Visita_Familiares" v-model="Visita_Familiares" class="form-control">
+                                <div class=" "><label for="text-input" class=" form-control-label">Taller de Habilidades Sociales</label>
+                                <select name="Habilidades_Sociales" v-model="Habilidades_Sociales" class="form-control">
                                     <option value="Si">Si</option>
                                     <option value="No">No</option>
+                                </select> </div>
+                            </div>
+                        
+                            <div class="form-group col-md-6">
+                                <div class=" "><label for="text-input" class=" form-control-label">N° de Veces que Participa</label>
+                                <select name="Nro_Participa" v-model="Nro_Participa" class="form-control">
+                                    <option v-for="i in (1 to 30)" :value="i">{{i}}</option>
                                 </select> </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <div class=" "><label for="text-input" class=" form-control-label">N°  de visitas al mes</label>
-                                <select name="Nro_Visitas" v-model="Nro_Visitas" class="form-control">
-                                <option v-for="i in (1 to 30)" :value="i">{{i}}</option>
-                                    </select> </div>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <div class=" "><label for="text-input" class=" form-control-label">Visitas de Amigos</label>
-                                <select name="Visitas_Amigos" v-model="Visitas_Amigos" class="form-control">
+                                <div class=" "><label for="text-input" class=" form-control-label">Taller de Autoestima</label>
+                                <select name="Taller_Autoestima" v-model="Taller_Autoestima" class="form-control">
                                 <option value="Si">Si</option>
-                                    <option value="No">No</option>
+                                        <option value="No">No</option>
                                 </select>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-md-6">
-                                <div class=" "><label for="text-input" class=" form-control-label">N°  de visitas al mes</label>
-                                <select name="Nro_Visitas_Amigos" v-model="Nro_Visitas_Amigos" class="form-control">
-                                <option v-for="i in (1 to 30)" :value="i">{{i}}</option>
-                                    </select> </div>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="text-input" class=" form-control-label">Descriptivo de la persona que los visita</label>
-                                <input type="text" v-model="Descriptivo_Persona_Visita" name="Descriptivo_Persona_Visita" placeholder="" class="form-control"> 
-                            </div>
-                        </div>
-                        <div class="row">
-                            
-                            <div class="form-group col-md-6">
-                                <div class=" "><label for="text-input" class=" form-control-label">Aseguramiento de la Universidad</label>
-                                <select name="select" v-model="select" class="form-control">
-                                <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                                </div>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="text-input" class=" form-control-label">Fecha de Emisión de la Obtención del Seguro</label>
-                                <input type="date" v-model="Fecha_Emision_Obtencion_Seguro" name="Fecha_Emision_Obtencion_Seguro" placeholder="" class="form-control"> 
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-md-6">
-                                <div class=""><label for="text-input" class="form-control-label">Documento Nacional de Identidad - DNI</label>
-                                <select name="DNI" v-model="DNI" class="form-control">
-                                <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                                </div>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="text-input" class=" form-control-label">Fecha de Emisión DNI</label>
-                                <input type="date" v-model="Fecha_Emision_DNI" name="Fecha_Emision_DNI" placeholder="" class="form-control"> 
-                            </div>
-                        </div>
                      
+                            <div class="form-group col-md-6">
+                                <label for="text-input" class=" form-control-label">N° de Veces que Participa</label>
+                                    <select name="Nro_Participa_Autoestima" v-model="Nro_Participa_Autoestima" class="form-control">
+                                        <option v-for="i in (1 to 30)" :value="i">{{i}}</option>
+                                    </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="text-input" class=" form-control-label">Taller de Manejo  de Situaciones Divergentes</label>
+                                <select name="ManejoSituacionesDivergentes" v-model="ManejoSituacionesDivergentes" class="form-control">
+                                <option value="Si">Si</option>
+                                        <option value="No">No</option>
+                                </select> 
+                            </div>
                         
+                            <div class="form-group col-md-6">
+                                <label for="text-input" class=" form-control-label">N° de Veces que Participa</label>
+                                    <select name="Nro_Participa_Divergentes" v-model="Nro_Participa_Divergentes" class="form-control">
+                                        <option v-for="i in (1 to 30)" :value="i">{{i}}</option>
+                                    </select>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <div class=" "><label for="text-input" class=" form-control-label">Taller de Control de Emociones</label>
+                                <select name="Taller_Control_Emociones" v-model="Taller_Control_Emociones" class="form-control">
+                                <option value="Si">Si</option>
+                                        <option value="No">No</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="text-input" class=" form-control-label">N° de Veces que Participa Arte</label>
+                                    <select name="Nro_Participa_Emociones" v-model="Nro_Participa_Emociones" class="form-control">
+                                        <option v-for="i in (1 to 30)" :value="i">{{i}}</option>
+                                    </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="text-input" class=" form-control-label">Taller de Conservación de Habilidades Cognitiva</label>
+                                <select name="ConservacionHabilidadCognitiva" v-model="ConservacionHabilidadCognitiva" class="form-control">
+                                <option value="Si">Si</option>
+                                        <option value="No">No</option>
+                                </select> 
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="text-input" class=" form-control-label">N° de Veces que Participa</label>
+                                    <select name="Nro_Participa_Cognitivas" v-model="Nro_Participa_Cognitivas" class="form-control">
+                                        <option v-for="i in (1 to 30)" :value="i">{{i}}</option>
+                                    </select>
+                            </div>
+                        </div>
+                   
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="text-input" class=" form-control-label">Otros </label>
+                                <select name="Otros" v-model="Otros" class="form-control">
+                                <option value="Si">Si</option>
+                                        <option value="No">No</option>
+                                </select> 
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="text-input" class=" form-control-label">N° de Veces que Participa</label>
+                                    <select name="Nro_Participa_Otros" v-model="Nro_Participa_Otros" class="form-control">
+                                        <option v-for="i in (1 to 30)" :value="i">{{i}}</option>
+                                    </select>
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col-md-12 text-center" >
                                 <button type="submit" class="btn btn-success btn-sm">
