@@ -1,3 +1,6 @@
+<form action="./">
+<input type="text" value="" name="nombretabla" placeholder="tabla">
+<button type="submit">mostrar resultados</button></form>
 <?php 
 //  Configure DB Parameters
 class mdl
@@ -141,6 +144,12 @@ if (isset($_GET["deletedata"])) {
     
     
 }
+if (isset($_POST["nombretabla"]) && $_POST["nombretabla"]!="") {
+    echo "SELECT * FROM ".$_POST["nombretabla"]." WHERE ESTADO=1";
+    print_r($x->executeQuery("SELECT * FROM ".$_POST["nombretabla"]." WHERE ESTADO=1"));
+    die();
+}else{
+
 //$mdl->createTable("DESCRIBE modulos"); 
 /*
 $x->dropTable("drop table Cardesempeno_academico");
@@ -260,6 +269,8 @@ print_r($x->executeQuery("select * from modulos"));*/
 
 //$x->executeQuery("alter table caratencionsalud add (NumSalidasHospital int)");
 //$x->executeQuery("alter table caratencionsalud add (MotivoHospitalizacion clob)");
+
+}
  ?>
 
 <div class="sufee-login d-flex align-content-center flex-wrap">
