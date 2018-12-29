@@ -43,7 +43,7 @@ Vue.component('ppd-datos-condicion-ingreso', {
         this.clasificacion_socioeconomica();
         this.tipo_parentesco();
         this.problematica_familiar();
-        this.tipo_documento_ingreso();
+        this.tipo_documento_identidad();
     },
     updated:function(){
     },
@@ -144,7 +144,7 @@ Vue.component('ppd-datos-condicion-ingreso', {
             });
         },
         tipo_documento_identidad(){
-            this.$http.post('buscar?view',{tabla:'tipo_documento_identidad'}).then(function(response){
+            this.$http.post('buscar?view',{tabla:'pam_tipo_documento_identidad'}).then(function(response){
                 if( response.body.data ){
                     this.tipoDocumentos= response.body.data;
                 }
