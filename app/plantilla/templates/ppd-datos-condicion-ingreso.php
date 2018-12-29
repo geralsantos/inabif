@@ -72,7 +72,7 @@
 
                                 <div class="form-group col-md-4">
                                     <label for="text-input" class=" form-control-label">Número del documento </label>
-                                    <input type="number" v-model="CarNumDoc" name="CarNumDoc" placeholder="" class="form-control">
+                                    <input type="number" min="0"  v-model="CarNumDoc" name="CarNumDoc" placeholder="" class="form-control">
                                 </div>
 
                             </div>

@@ -1,13 +1,13 @@
-<template id="ppd-datos-admision-usuario">
+<template id="pam-actividades-sociorecreativas">
     <div class="content mt-3">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <strong>Datos de Admisión Del Usuario</strong>
+                    <strong>Salud Mental</strong>
                     <h6>Formulario de Carga de Datos</h6>
                 </div>
                 <div class="card-body card-block">
-                    <form  class="form-horizontal" v-on:submit.prevent="guardar">
+                    <form class="form-horizontal" v-on:submit.prevent="guardar">
                         <div class="row">
                             <div class="form-group col-md-7">
                                 <label for="text-input" class=" form-control-label">Nombre Residente</label>
@@ -32,7 +32,6 @@
                                 <option value="2020">2020</option>
                                 <option value="2021">2021</option>
                                 </select>
-
                             </div>
                             <div class="form-group col-md-3">
                                 <div class=""><label for="text-input" class=" form-control-label">Mes</label>
@@ -53,63 +52,89 @@
                             </div>
 
                         </div>
+                  
                         <div class="row">
-                            <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Movimiento Poblacional</label>
-                                <select name="CarMPoblacional" v-model="CarMPoblacional" class="form-control">
-                                    <option value="nuevo">NUEVO</option>
-                                    <option value="continuador">CONTINUADOR</option>
-                                    <option value="reingreso">REINGRESO</option>
-                                    <option value="transladod de otro car">TRASLADO DE OTRO CAR</option>
+                            <div class="form-group col-md-6">
+                                <div class=" "><label for="text-input" class=" form-control-label">Terapia Fisica y de Rehabilitación </label>
+                                    <select name="Terapia_Fisica_Rehabilitacion" v-model="Terapia_Fisica_Rehabilitacion" class="form-control">
+                                        <option value="Si">Si</option>
+                                        <option value="No">No</option>
                                     </select>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <div class=" "><label for="text-input" class=" form-control-label">Fecha de Ingreso del usuario</label>
-                                <input type="date" v-model="CarFIngreso" name="CarFIngreso" placeholder="" class="form-control"> </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-md-4">
-                                <div class=" "><label for="text-input" class=" form-control-label">Fecha de reingreso del usuario (en caso no aplique marcar 99/99/9999)</label>
-                                <input type="date" v-model="CarFReingreso" name="CarFReingreso" placeholder="" class="form-control"> </div>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="text-input" class=" form-control-label">Institución que lo derivó</label>
-                                <select name="CarIDerivo" v-model="CarIDerivo" class="form-control">
-                                <option v-for="institucion in instituciones" :value="institucion.ID">{{institucion.NOMBRE}}</option>
-
-                                </select>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Motivo de ingreso (acorde al expediente)</label>
-                                <select name="CarMotivoI" v-model="CarMotivoI" class="form-control">
-                                    <option value="Riesgo de desprotección">Riesgo de desprotección</option>
-                                    <option value="Situación de desprotección">Situación de desprotección</option>
-                                </select>
-
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="text-input" class=" form-control-label">Tipo de documento de ingreso al CAR</label>
-                                <select name="CarTipoDoc" v-model="CarTipoDoc" class="form-control">
-                                <option v-for="documento in documentos" :value="documento.ID">{{documento.NOMBRE}}</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-md-4">
-                                <div class=" "><label for="text-input" class=" form-control-label">Número del documento de ingreso al car</label>
-                                <input type="number" min="0"  v-model="CarNumDoc" name="CarNumDoc" placeholder="" class="form-control">
                                 </div>
                             </div>
-
+                           
                         </div>
-
+                        <div class="row">
+                        <div class="form-group col-md-6">
+                                <div class=" "><label for="text-input" class=" form-control-label">Arte (Música, Danza y Teatro)</label>
+                                <select name="Arte" v-model="Arte" class="form-control">
+                                    <option value="Si">Si</option>
+                                        <option value="No">No</option>
+                                    </select> </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <div class=" "><label for="text-input" class=" form-control-label">N° de Veces que Participa Arte en el Mes</label>
+                                <select name="Nro_Arte" v-model="Nro_Arte" class="form-control">
+                                <option v-for="i in (1 to 30)" :value="i">{{i}}</option>
+                                    </select> </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row">
+                        <div class="form-group col-md-6">
+                                <div class=" "><label for="text-input" class=" form-control-label">Dibujo y Pintura</label>
+                                <select name="Dibujo_Pintura" v-model="Dibujo_Pintura" class="form-control">
+                                <option value="Si">Si</option>
+                                        <option value="No">No</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="text-input" class=" form-control-label">N° de Veces que Participa </label>
+                                    <select name="Nro_Arte_Dibujo_Pintura" v-model="Nro_Arte_Dibujo_Pintura" class="form-control">
+                                    <option v-for="i in (1 to 30)" :value="i">{{i}}</option>
+                                    </select>
+                            </div>
+                           
+                        </div>
+                        <div class="row">
+                        <div class="form-group col-md-6">
+                                <label for="text-input" class=" form-control-label">Manualidades</label>
+                                <select name="Manualidades" v-model="Manualidades" class="form-control">
+                                <option value="Si">Si</option>
+                                        <option value="No">No</option>
+                                </select> 
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="text-input" class=" form-control-label">N° de Veces que Participa</label>
+                                    <select name="Nro_Arte_Manualidades" v-model="Nro_Arte_Manualidades" class="form-control">
+                                    <option v-for="i in (1 to 30)" :value="i">{{i}}</option>
+                                    </select>
+                            </div>
+                            
+                        </div>
+                        <div class="row">
+                        <div class="form-group col-md-6">
+                                <div class=" "><label for="text-input" class=" form-control-label">Otros</label>
+                                <select name="Otros" v-model="Otros" class="form-control">
+                                <option value="Si">Si</option>
+                                        <option value="No">No</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="text-input" class=" form-control-label">N° de Veces que Participa</label>
+                                    <select name="Nro_Arte_Otros" v-model="Nro_Arte_Otros" class="form-control">
+                                    <option v-for="i in (1 to 30)" :value="i">{{i}}</option>
+                                    </select>
+                            </div>
+                        </div>
+                   
+                        
                         <div class="row">
                             <div class="col-md-12 text-center" >
                                 <button type="submit" class="btn btn-success btn-sm">
-                                    <i class="fa fa-send"></i> Grabar datos
+                                    <i class="fa fa-send"></i> Cargar Datos
                                 </button>
                             </div>
                         </div>
@@ -117,5 +142,6 @@
                 </div>
             </div>
         </div>
+
     </div> <!-- .content -->
 </template>

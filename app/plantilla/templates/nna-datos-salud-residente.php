@@ -189,7 +189,7 @@
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Semanas de Gestación </label>
-                                <input type="number" v-model="NNASemanaGestacion" name="NNASemanaGestacion" placeholder="" class="form-control">
+                                <input type="number" min="0"  v-model="NNASemanaGestacion" name="NNASemanaGestacion" placeholder="" class="form-control">
                             </div>
                         </div>
                         <div class="row">
@@ -209,7 +209,7 @@
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Número de hijos de residentes en los CAR</label>
-                                <input type="number" v-model="NNANumHijos" name="NNANumHijos" placeholder="" class="form-control">
+                                <input type="number" min="0"  v-model="NNANumHijos" name="NNANumHijos" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nivel de Hemoglobina (gr./dl.) </label>
@@ -227,11 +227,11 @@
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Peso (kg.)</label>
-                                <input type="number" v-model="NNAPeso" name="NNAPeso" placeholder="" class="form-control">
+                                <input type="number" min="0"  v-model="NNAPeso" name="NNAPeso" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Talla (mt)</label>
-                                <input type="number" v-model="NNATalla" name="NNATalla" placeholder="" class="form-control">
+                                <input type="number" min="0"  v-model="NNATalla" name="NNATalla" placeholder="" class="form-control">
                             </div>
 
                         </div>
