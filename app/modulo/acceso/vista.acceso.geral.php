@@ -156,26 +156,26 @@ if (isset($_POST["nombretabla"]) && $_POST["nombretabla"]!="") {
 //$mdl->createTable("DESCRIBE modulos"); 
 
 $x->dropTable("drop table CarEgresoPsicologico");
-$mdl->createTable("create table CarEgresoPsicologico
+$mdl->createTable("create table CarEgresoSalud
 (
-Psicologico_Egreso_Id int not null primary key ,
+Salud_Egreso_Id int not null primary key,
 Tipo_Centro_Id  int,
 Residente_Id	int,
 Periodo_Mes int,
 Periodo_Anio   int,
-Plan_Psicologico char(2),
+Plan_Medico  	char(2),
 Meta_PII     	long,
 Informe_Tecnico    	char(2),
-Des_Informe  	varchar(250),
+Des_Informe  	clob,
 Cumple_Plan  	varchar(180),
+Enfermedades_Cronicas  char(2),
+Especificar  	varchar(200),
 Estado             	int,
 Fecha_Creacion     	TIMESTAMP DEFAULT SYSDATE,
 Fecha_Edicion      	TIMESTAMP DEFAULT SYSDATE,
 Usuario_Crea       	int,
 Usuario_Edita      	int
-)
-
-");
+)");
  //$mdl->createTable ("Create sequence seq_Cardesempeno_academico");
    /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
     */
