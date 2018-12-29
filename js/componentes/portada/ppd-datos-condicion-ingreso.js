@@ -160,35 +160,35 @@ Vue.component('ppd-datos-condicion-ingreso', {
             });
         },
         institucion_educativa(){
-            this.$http.post('buscar?view',{tabla:'pam_instituciones',codigo:'ppd'}).then(function(response){
+            this.$http.post('buscar?view',{tabla:'pam_institucion_educativa'}).then(function(response){
                 if( response.body.data ){
                     this.instituciones= response.body.data;
                 }
             });
         },
         tipo_seguro(){
-            this.$http.post('buscar?view',{tabla:'aseguramiento_salud',codigo:'ppd'}).then(function(response){
+            this.$http.post('buscar?view',{tabla:'pam_tipo_seguro_salud'}).then(function(response){
                 if( response.body.data ){
                     this.seguros= response.body.data;
                 }
             });
         },
         clasificacion_socioeconomica(){
-            this.$http.post('buscar?view',{tabla:'clasificacion_socioeconomico',codigo:'ppd'}).then(function(response){
+            this.$http.post('buscar?view',{tabla:'pam_clasif_socioeconomico'}).then(function(response){
                 if( response.body.data ){
                     this.socioeconomicos= response.body.data;
                 }
             });
         },
         tipo_parentesco(){
-            this.$http.post('buscar?view',{tabla:'tipo_parentesco',codigo:'ppd'}).then(function(response){
+            this.$http.post('buscar?view',{tabla:'pam_tipo_parentesco',codigo:'ppd'}).then(function(response){
                 if( response.body.data ){
                     this.parentescos= response.body.data;
                 }
             });
         },
         problematica_familiar(){
-            this.$http.post('buscar?view',{tabla:'problematica_familiar',codigo:'ppd'}).then(function(response){
+            this.$http.post('buscar?view',{tabla:'Carproblematica_familiar'}).then(function(response){
                 if( response.body.data ){
                     this.familiares= response.body.data;
                 }

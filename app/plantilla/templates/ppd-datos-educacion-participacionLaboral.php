@@ -56,9 +56,15 @@
                         <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Tipo de de IIEE a la que asiste</label>
                                 <select name="CarTipoIIEE" v-model="CarTipoIIEE" class="form-control">
-                                    <option v-for="institucion in instituciones" :value="institucion.ID">{{institucion.NOMBRE}}</option>
+                                <option value="CEBE">CEBE</option>
+                                <option value="CEBA">CEBA</option>
+                                <option value="CETPRO">CETPRO</option>
+                                <option value="CBR inclusivo">CBR inclusivo</option>
+                                <option value="Otro">Otro</option>
+                                <option value="No estudia">No estudia</option>
                                 </select>
                             </div>
+
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Residente se encuentra insertado laboralmente</label>
                                 <select name="CarInsertadoLaboralmente" v-model="CarInsertadoLaboralmente" class="form-control">
