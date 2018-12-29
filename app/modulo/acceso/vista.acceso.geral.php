@@ -142,25 +142,35 @@ if (isset($_GET["deletedata"])) {
     
 }
 //$mdl->createTable("DESCRIBE modulos"); 
-print_r($x->executeQuery("select * from pam_institucion_educativa "));
 
-/*
-$x->dropTable("drop table Carproblematica_familiar");
-$mdl->createTable(" Create table Carproblematica_familiar(
-    Id int not null primary key,
-    Nombre varchar(250),
-    Estado             	int default 1,
-    Fecha_Creacion     	date,
-    Fecha_Edicion      	TIMESTAMP DEFAULT SYSDATE,
-    Usuario_Crea       	int,
-    Usuario_Edita      	int
-    )
-");
-  $mdl->createTable ("Create sequence seq_Carproblematica_familiar");
+$x->dropTable("drop table CarEducacionCapacidades");
+$mdl->createTable("create table CarEducacionCapacidades
+(
+Educacion_Id int not null primary key,
+Tipo_Centro_Id  int,
+Residente_Id	int,
+Periodo_Mes int,
+Periodo_Anio   int,
+Tipo_Institucion varchar(100),
+Insertado_labora char(2),
+Des_labora   	long,
+Participa_Actividades  char(2),
+Fecha_InicionA     	date,
+Fecha_FinA   	date,
+Culmino_Actividades	char(2),
+Logro_Actividades  	char(2),
+Estado             	int,
+Fecha_Creacion     	TIMESTAMP DEFAULT SYSDATE,
+Fecha_Edicion      	TIMESTAMP DEFAULT SYSDATE,
+Usuario_Crea       	int,
+Usuario_Edita      	int
+)");
+ // $mdl->createTable ("Create sequence seq_Carproblematica_familiar");
    /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
     */
     //$x->deleteDataNoWhere("pam_nivel_educativo");
-/*print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(1,'Ausentismo de madre por trabajo',sysdate,1,1)"));
+    /*
+print_r($x->executeQuery("insert into pam_institucion_educativa (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(1,'Ausentismo de madre por trabajo',sysdate,1,1)"));
 print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'Conductual/experiencia en calle',sysdate,1,1)"));
 print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'Conductual/violencia sexual',sysdate,1,1)"));
 print_r($x->executeQuery("insert into Carproblematica_familiar (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'Desintegrada e incompleta, Desinterés rol parental',sysdate,1,1)"));
