@@ -11,7 +11,7 @@ class mdl
             $userpass = "UPP";
             $port= 1521;
     
-            $db = new PDO("oci:dbname=$db1.".";charset=UTF8",$dbuser,$userpass);
+            $db = new PDO("oci:dbname=$db1.",$dbuser,$userpass);
             $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );//Error Handling
          
             $db->exec($sql);
