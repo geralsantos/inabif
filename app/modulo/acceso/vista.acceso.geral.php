@@ -141,33 +141,29 @@ if (isset($_GET["deletedata"])) {
     
 }
 //$mdl->createTable("DESCRIBE modulos"); 
-/*
-$x->dropTable("drop table pam_nivel_educativo");
-$mdl->createTable("create table pam_nivel_educativo (
+
+$x->dropTable("drop table pam_instituciones");
+$mdl->createTable("create table pam_institucion_educativa (
     id INT NOT NULL primary key,
-    codigo VARCHAR(20) NULL,
     nombre VARCHAR(150) NOT NULL,
     estado INT DEFAULT 1,
     fecha_creacion date NOT NULL,
-    fecha_edicion TIMESTAMP  DEFAULT SYSDATE,
+    fecha_edicion TIMESTAMP DEFAULT SYSDATE,
     usuario_creacion INT NOT NULL,
     usuario_edicion INT NOT NULL
-    )
-  
+    )  
 ");
-  $mdl->createTable ("Create sequence pam_seq_nivel_educativo  ");*/
+  $mdl->createTable ("Create sequence pam_seq_institucion_educativa  ");
    /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
     */
     //$x->deleteDataNoWhere("pam_nivel_educativo");
-print_r($x->executeQuery("insert into pam_nivel_educativo (id,codigo,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(8,'pam','Sin educación',sysdate,1,1)"));
-print_r($x->executeQuery("insert into pam_nivel_educativo (id,codigo,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(9,'pam','Primaria incompleta',sysdate,1,1)"));
-print_r($x->executeQuery("insert into pam_nivel_educativo (id,codigo,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(10,'pam','Primaria completa Especial',sysdate,1,1)"));
-print_r($x->executeQuery("insert into pam_nivel_educativo (id,codigo,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(11,'pam','Secundaria incompleta',sysdate,1,1)"));    
-print_r($x->executeQuery("insert into pam_nivel_educativo (id,codigo,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(12,'pam','Secundaria completa',sysdate,1,1)"));
-print_r($x->executeQuery("insert into pam_nivel_educativo (id,codigo,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(13,'pam','Técnico incompleta',sysdate,1,1)")); 
-print_r($x->executeQuery("insert into pam_nivel_educativo (id,codigo,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(14,'pam','Técnico y superior incompleta',sysdate,1,1)"));
-print_r($x->executeQuery("insert into pam_nivel_educativo (id,codigo,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(15,'pam','Superior completa',sysdate,1,1)"));
-print_r($x->executeQuery("select * from pam_nivel_educativo"));
+print_r($x->executeQuery("insert into pam_institucion_educativa (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(1,'Centro de Educación Básica Regular',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_institucion_educativa (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(2,'Centro de Educación Basica Regular Inclusiva',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_institucion_educativa (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(3,'Centros de Educación Básica Alternativa- CEBA',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_institucion_educativa (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(4,'Centros de Educación Básica Especial- CEBE',sysdate,1,1)"));    
+print_r($x->executeQuery("insert into pam_institucion_educativa (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(5,'Centros de Educación Técnico Productivo- CETPRO',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_institucion_educativa (id,nombre,fecha_creacion,usuario_creacion,usuario_edicion) values(6,'Otro',sysdate,1,1)")); 
+print_r($x->executeQuery("select * from pam_institucion_educativa"));
 die();
 /*
 print_r($x->executeQuery("delete from modulos"));
