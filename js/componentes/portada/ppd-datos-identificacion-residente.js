@@ -44,7 +44,6 @@ Vue.component('ppd-datos-identificacion-residente', {
                 return false;
             }
             let valores = {
-                Identificaion_Id: 1,
                 Ape_Paterno: this.Ape_Paterno,
                 Ape_Materno: this.Ape_Materno,
                 Nom_Usuario: this.Nom_Usuario,
