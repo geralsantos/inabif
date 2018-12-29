@@ -187,8 +187,7 @@
                                 <label for="text-input" class=" form-control-label">Talla (mt)</label>
                                 <input type="number" v-model="talla" name="talla" placeholder="" class="form-control">
                             </div>
-                        </div>
-                        <div class="row">
+                 
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Estado Nutricional (IMC) </label>
                                 <select name="estado_nutricional" v-model="estado_nutricional" class="form-control">
