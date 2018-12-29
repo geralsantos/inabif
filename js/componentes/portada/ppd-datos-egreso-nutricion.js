@@ -36,12 +36,12 @@ Vue.component('ppd-datos-egreso-nutricion', {
             }
             let valores = {
                 Nutricion_Id: 1,
-                PlanIntervencion:this.CarPlanIntervencion,
-                DesMetaPII:this.CarDesMetaPII,
-                InformeTecnico:this.CarInformeTecnico,
-                DesInformEvolutivo:this.CarDesInformEvolutivo,
-                CumplePlan:this.CarCumplePlan,
-                EstadoNutricional:this.CarEstadoNutricional,
+                Plan_Nutricional:this.CarPlanIntervencion,
+                Meta_PII :this.CarDesMetaPII,
+                Informe_Tecnico :this.CarInformeTecnico,
+                Des_Informe :this.CarDesInformEvolutivo,
+                Cumple_Plan :this.CarCumplePlan,
+                Estado_Nutricional :this.CarEstadoNutricional,
                 Peso:this.CarPeso,
                 Talla:this.CarTalla,
                 Hemoglobina:this.CarHemoglobina,
@@ -95,13 +95,12 @@ Vue.component('ppd-datos-egreso-nutricion', {
             this.$http.post('cargar_datos_residente?view',{tabla:'CarEgresoNutricion', residente_id:this.id_residente }).then(function(response){
 
                 if( response.body.atributos != undefined){
-
-                    this.CarPlanIntervencion = response.body.atributos[0]["PLANINTERVENCION"];
-                    this.CarDesMetaPII = response.body.atributos[0]["DESMETAPII"];
-                    this.CarInformeTecnico = response.body.atributos[0]["INFORMETECNICO"];
-                    this.CarDesInformEvolutivo = response.body.atributos[0]["DESINFORMEVOLUTIVO"];
-                    this.CarCumplePlan = response.body.atributos[0]["CUMPLEPLAN"];
-                    this.CarEstadoNutricional = response.body.atributos[0]["ESTADONUTRICIONAL"];
+                    this.CarPlanIntervencion = response.body.atributos[0]["PLAN_NUTRICIONAL"];
+                    this.CarDesMetaPII = response.body.atributos[0]["META_PII"];
+                    this.CarInformeTecnico = response.body.atributos[0]["INFORME_TECNICO"];
+                    this.CarDesInformEvolutivo = response.body.atributos[0]["DES_INFORME"];
+                    this.CarCumplePlan = response.body.atributos[0]["CUMPLE_PLAN"];
+                    this.CarEstadoNutricional = response.body.atributos[0]["ESTADO_NUTRICIONAL"];
                     this.CarPeso = response.body.atributos[0]["PESO"];
                     this.CarTalla = response.body.atributos[0]["TALLA"];
                     this.CarHemoglobina = response.body.atributos[0]["HEMOGLOBINA"];
