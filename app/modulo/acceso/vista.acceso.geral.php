@@ -171,7 +171,7 @@ Fecha_Creacion     	date,
 Fecha_Edicion      	TIMESTAMP DEFAULT SYSDATE,
 Usuario_Crea       	int,
 Usuario_Edita      	int
-);
+)
 
 ");
  //$mdl->createTable ("Create sequence seq_Cardesempeno_academico");
