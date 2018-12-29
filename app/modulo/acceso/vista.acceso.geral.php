@@ -177,20 +177,20 @@ Comprension  	char(2),
 Tipo_Dificultad    	varchar(100),
 Actividades_Diarias	int,
 Especificar  	varchar(250),
-Estado             	int,
-Fecha_Creacion     	TIMESTAMP DEFAULT SYSDATE,
+Estado             	int default 1,
+Fecha_Creacion     	date,
 Fecha_Edicion      	TIMESTAMP DEFAULT SYSDATE,
 Usuario_Crea       	int,
 Usuario_Edita      	int
 )
-"); 
+"); /*
   print_r($x->executeQuery("insert into pam_actividades_diaria (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(1,'Come solo',sysdate,1,1)"));
   print_r($x->executeQuery("insert into pam_actividades_diaria (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'Se viste solo',sysdate,1,1)"));
   print_r($x->executeQuery("insert into pam_actividades_diaria (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'Acude al baño solo',sysdate,1,1)"));
   print_r($x->executeQuery("insert into pam_actividades_diaria (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'Se baña solo',sysdate,1,1)"));
   print_r($x->executeQuery("insert into pam_actividades_diaria (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(5,'Todas las anteriores',sysdate,1,1)"));
   print_r($x->executeQuery("insert into pam_actividades_diaria (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(6,'Ninguno',sysdate,1,1)"));
-  print_r($x->executeQuery("SELECT * FROM pam_actividades_diaria WHERE ESTADO=1"));
+  print_r($x->executeQuery("SELECT * FROM pam_actividades_diaria WHERE ESTADO=1"));*/
 /*
 $tabla="CarEgresoSalud";
 $x->dropTable("drop table ".$tabla);
