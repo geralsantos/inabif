@@ -157,7 +157,7 @@ if (isset($_POST["nombretabla"]) && $_POST["nombretabla"]!="") {
     print_r($x->executeQuery("SELECT * FROM ".$_POST["nombretabla"]." "));
     die();
 }else{
-    $x->dropTable('drop table paises ');
+   /* $x->dropTable('drop table paises ');
 $mdl->createTable("CREATE TABLE paises(
     id int primary key,
     iso char(2) default NULL,
@@ -407,7 +407,7 @@ $paises = ["INSERT INTO paises (id,iso,nombre) VALUES(1, 'AF', 'Afganistán')","
 ","INSERT INTO paises (id,iso,nombre) VALUES(240, 'ZW', 'Zimbabue')"];
 foreach ($paises as $key => $value) {
     $x->executeQuery($value);
-}
+}*/
 /*
 $tabla="CarEgresoSalud";
 $x->dropTable("drop table ".$tabla);
