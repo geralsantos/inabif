@@ -52,7 +52,6 @@
                             </div>
 
                         </div>
-
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <div class=" "><label for="text-input" class="form-control-label">Atención Social  </label>
@@ -62,6 +61,16 @@
                                     </select>
                                 </div>
                             </div>
+                            <div class="form-group col-md-6">
+                                <div class=""><label for="text-input" class="form-control-label">Documento Nacional de Identidad - DNI</label>
+                                <select name="DNI" v-model="DNI" class="form-control">
+                                <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
                             <div class="form-group col-md-6">
                                 <div class=" "><label for="text-input" class="form-control-label">Visitas de Familiares</label>
                                 <select name="Visita_Familiares" v-model="Visita_Familiares" class="form-control">
@@ -77,7 +86,10 @@
                                 <option v-for="i in 30" :value="i">{{i}}</option>
                                     </select> </div>
                             </div>
-                            <div class="form-group col-md-6">
+                            
+                        </div>
+                        <div class="row">
+                        <div class="form-group col-md-6">
                                 <div class=" "><label for="text-input" class=" form-control-label">Visitas de Amigos</label>
                                 <select name="Visitas_Amigos" v-model="Visitas_Amigos" class="form-control">
                                 <option value="Si">Si</option>
@@ -85,21 +97,19 @@
                                 </select>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="form-group col-md-6">
                                 <div class=" "><label for="text-input" class=" form-control-label">N°  de visitas al mes</label>
                                 <select name="Nro_Visitas_Amigos" v-model="Nro_Visitas_Amigos" class="form-control">
                                 <option v-for="i in 30" :value="i">{{i}}</option>
                                     </select> </div>
                             </div>
-                            <div class="form-group col-md-6">
+                            
+                        </div>
+                        <div class="row">
+                        <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">Descriptivo de la persona que los visita</label>
                                 <input type="text" v-model="Descriptivo_Persona_Visita" name="Descriptivo_Persona_Visita" placeholder="" class="form-control"> 
                             </div>
-                        </div>
-                        <div class="row">
-                            
                             <div class="form-group col-md-6">
                                 <div class=" "><label for="text-input" class=" form-control-label">Aseguramiento de la Universidad</label>
                                 <select name="Aseguramiento_Universal_Salud" v-model="Aseguramiento_Universal_Salud" class="form-control">
@@ -108,19 +118,12 @@
                                 </select>
                                 </div>
                             </div>
-                            <div class="form-group col-md-6">
-                                <label for="text-input" class=" form-control-label">Fecha de Emisión de la Obtención del Seguro</label>
-                                <input type="date" v-model="Fecha_Emision_Obtencion_Seguro" name="Fecha_Emision_Obtencion_Seguro" placeholder="" class="form-control"> 
-                            </div>
+                            
                         </div>
                         <div class="row">
-                            <div class="form-group col-md-6">
-                                <div class=""><label for="text-input" class="form-control-label">Documento Nacional de Identidad - DNI</label>
-                                <select name="DNI" v-model="DNI" class="form-control">
-                                <option value="Si">Si</option>
-                                    <option value="No">No</option>
-                                </select>
-                                </div>
+                        <div class="form-group col-md-6">
+                                <label for="text-input" class=" form-control-label">Fecha de Emisión de la Obtención del Seguro</label>
+                                <input type="date" v-model="Fecha_Emision_Obtencion_Seguro" name="Fecha_Emision_Obtencion_Seguro" placeholder="" class="form-control"> 
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">Fecha de Emisión DNI</label>
