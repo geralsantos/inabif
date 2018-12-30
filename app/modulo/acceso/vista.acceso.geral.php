@@ -165,7 +165,7 @@ $mdl->createTable("CREATE TABLE pam_tipo_lenguaje_alterna
 ( id int not null primary key,
   nombre varchar(100) NOT NULL,
   Estado                            	int default 1,
-Fecha_Registro            	DATE,
+  fecha_creacion            	DATE,
 Fecha_Edicion              	timestamp DEFAULT (sysdate),
 Usuario_Crea                	int,
 Usuario_Edita               	int
