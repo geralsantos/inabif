@@ -29,11 +29,12 @@ Vue.component('nna-datos-admision-residente', {
     created:function(){
     },
     mounted:function(){
-    },
-    updated:function(){
         this.buscar_nna_perfiles_ingreso();
         this.buscar_instituciones();
         this.buscar_motivosingreso();
+    },
+    updated:function(){
+        
     },
     methods:{
         guardar(){
