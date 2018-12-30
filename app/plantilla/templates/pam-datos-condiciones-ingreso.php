@@ -78,8 +78,8 @@
                             <div class="form-group col-md-3">
                                 <div class=" "><label for="text-input" class=" form-control-label">Saber Leer y Escribir</label>
                                 <select name="leer_escribir" v-model="leer_escribir" class="form-control">
-                                <option value="">Si</option>
-                                <option value="">No</option>
+                                <option value="Si">Si</option>
+                                <option value="No">No</option>
                                 </select>
                                 </div>
                             </div>
