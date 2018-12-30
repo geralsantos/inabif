@@ -14,7 +14,7 @@ Vue.component('nna-datos-admision-residente', {
         Situacion_Legal :null,
 
         instituciones:[],
-
+        motivosingreso:[],
         nombre_residente:null,
         isLoading:false,
         mes:moment().format("MM"),
@@ -116,10 +116,19 @@ Vue.component('nna-datos-admision-residente', {
              });
 
         },
+        
         buscar_instituciones(){
             this.$http.post('buscar?view',{tabla:'nna_instituciones'}).then(function(response){
                 if( response.body.data ){
                     this.instituciones= response.body.data;
+                }
+
+            });
+        },
+        buscar_motivosingreso(){
+            this.$http.post('buscar?view',{tabla:'nna_motivos_ingreso'}).then(function(response){
+                if( response.body.data ){
+                    this.motivosingreso= response.body.data;
                 }
 
             });

@@ -84,7 +84,7 @@
                             <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">Motivo de ingreso (acorde al expediente)</label>
                                 <select name="Motivo_Ingreso" v-model="Motivo_Ingreso" class="form-control">
-                                    <option v-for="motivo in motivos" :value="motivo.ID">{{motivo.NOMBRE}}</option>
+                                    <option v-for="motivo in motivosingreso" :value="motivo.ID">{{motivo.NOMBRE}}</option>
                                 </select>
 
                             </div>
