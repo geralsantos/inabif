@@ -54,7 +54,7 @@
                         </div>
                         
                         <div class="row">
-                            <div class="form-group col-md-2">
+                            <div class="form-group col-md-3">
                                 <div class=" "><label for="text-input" class=" form-control-label">Documento de Identidad</label>
                                 <select name="documento_entidad" v-model="documento_entidad" class="form-control">
                                     <option value="Si">Si</option>
@@ -75,7 +75,7 @@
                                 <div class=" "><label for="text-input" class=" form-control-label">Número de Documento de Identidad</label>
                                 <input type="text" v-model="numero_documento_ingreso" name="numero_documento_ingreso" placeholder="" class="form-control"> </div>
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-3">
                                 <div class=" "><label for="text-input" class=" form-control-label">Saber Leer y Escribir</label>
                                 <select name="leer_escribir" v-model="leer_escribir" class="form-control">
                                 <option value="">Si</option>
