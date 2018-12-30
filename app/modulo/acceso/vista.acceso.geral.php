@@ -1,6 +1,15 @@
 <form action="geral" method="POST">
 <input type="text" style="witdh:100%;" size="100" value="<?php echo $_POST["nombretabla"]?>" name="nombretabla" placeholder="tabla">
-<button type="submit">mostrar resultados</button></form>
+
+<button type="submit">mostrar resultados</button>
+</form>
+
+form crear tabla
+<form action="geral" method="POST">
+crear tabla
+    <input type="text" name="tablename" value="<?php echo $_POST["tablename"]?>" placeholder="tablename" >
+    <textarea name="campostabla" value="<?php echo $_POST["campostabla"]?>" id="" cols="30" rows="10"></textarea>
+    <button type="submit">borrar tabla,crear tabla y crear secuencia</button>
 <?php 
 //  Configure DB Parameters
 class mdl
@@ -160,37 +169,17 @@ if (isset($_POST["nombretabla"]) && $_POST["nombretabla"]!="") {
     print_r($x->executeQuery($_POST["nombretabla"]));
     die();
 }else{
-$tabla="pam_ActividadPrevencion";
-$x->dropTable("drop table ".$tabla);
-$mdl->createTable("Create table pam_ActividadPrevencion
-(
-Id int not null primary key ,
-Tipo_Centro_Id                                           	int,
-Residente_Id	int,
-Periodo_Mes int,
-Periodo_Anio   int,
-Atencion_Psicologica char(2),
-Habilidades_Sociales char(2),
-Nro_Participa int,
-Taller_Autoestima char(2),
-Nro_Participa_Autoestima                     	int,
-ManejoSituacionesDivergentes char(2),
-Nro_Participa_Divergentes    	int,
-Taller_Control_Emociones      	char(2),
-Nro_Participa_Emociones       	int,
-ConservacionHabilidadCognitiva          	char(2),
-Nro_Participa_Cognitivas        	int,
-Otros char(2),
-Nro_Participa_Otros int,
-Estado              	int default 1,
-Fecha_Creacion   	date,
-Fecha_Edicion  timestamp default sysdate,
-Usuario_Crea	int,
-Usuario_Edita   int
-)
-");
-$mdl->createTable ("drop sequence seq_pam_ActividadPrevencion");
-$mdl->createTable ("Create sequence seq_pam_ActividadPrevencion");
+    if (isset($_POST["tablename"]) && $_POST["tablename"]!="" && isset($_POST["campostabla"]) && $_POST["campostabla"]!="") {
+        $x->dropTable("drop table ".$_POST["tablename"]);
+        $mdl->createTable("Create table ".$_POST["tablename"]."
+        (
+        ".$_POST["campostabla"]."
+        )
+        ");
+        $mdl->createTable ("drop sequence seq_".$_POST["tablename"]);
+        $mdl->createTable ("Create sequence seq_".$_POST["tablename"]);
+    }else{
+
 /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
     */
     //$x->deleteDataNoWhere("pam_nivel_educativo");
@@ -949,6 +938,7 @@ print_r($x->executeQuery("select * from modulos"));*/
 
 //$x->executeQuery("alter table caratencionsalud add (NumSalidasHospital int)");
 //$x->executeQuery("alter table caratencionsalud add (MotivoHospitalizacion varchar(250))");
+}
 
 }
  ?>
