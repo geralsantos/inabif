@@ -5,14 +5,13 @@ Vue.component('pam-datos-condiciones-ingreso', {
         tipo_documento_entidad:null,
         numero_documento_ingreso:null,
         leer_escribir:null,
-        nivel_educativo:null,
         aseguramiento_salud:null,
         tipo_pension:null,
         SISFOH:null,
         familiar_ubicados:null,
         tipo_parentesco:null,
               
-        instituciones:[],
+        nivel_educativo:[],
         motivos:[],
         motivos2:[],
 
@@ -29,7 +28,7 @@ Vue.component('pam-datos-condiciones-ingreso', {
     created:function(){
     },
     mounted:function(){
-       
+       this.buscar_niveleducativo();
     },
     updated:function(){
     },
@@ -119,10 +118,10 @@ Vue.component('pam-datos-condiciones-ingreso', {
 
         },
 
-        buscar_instituciones(){
-            this.$http.post('buscar?view',{tabla:''}).then(function(response){
+        buscar_niveleducativo(){
+            this.$http.post('buscar?view',{tabla:'pam_nivel_educativo'}).then(function(response){
                 if( response.body.data ){
-                    this.instituciones= response.body.data;
+                    this.nivel_educativo= response.body.data;
                 }
 
             });
