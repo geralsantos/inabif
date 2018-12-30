@@ -72,7 +72,7 @@ Vue.component('pam-datos-identificacion-residente', {
                 Periodo_Anio:moment().format("YYYY")
 
                 }
-
+console.log(valores);
             this.$http.post('insertar_datos?view',{tabla:'pam_datos_identificacion', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
