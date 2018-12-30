@@ -88,9 +88,7 @@
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Nivel Educativo</label>
                                 <select name="nivel_educativo" v-model="nivel_educativo" class="form-control">
-                                <option value="Sin Educación">Sin Educación</option>
-                                <option value="Primaria Incompleta">Primaria Incompleta</option>
-                                <option value="Primaria Completa">Primaria Completa</option>
+                                    <option v-for="nivel in niveles_educativos" :value="nivel.ID">{{nivel.NOMBRE}}</option>
                                 </select>
                                 </div>
                             </div>
