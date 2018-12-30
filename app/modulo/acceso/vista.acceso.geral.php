@@ -171,7 +171,7 @@ $mdl->createTable("create table cie_10 (
     Usuario_Edita INT NOT NULL
     )
   
-"); */
+"); *//*
   print_r($x->executeQuery("insert into Carproblematica_familiar  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(1,'Violencia',sysdate,1,1)"));
   print_r($x->executeQuery("insert into Carproblematica_familiar  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'Prostitución',sysdate,1,1)"));
   print_r($x->executeQuery("insert into Carproblematica_familiar  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'Delincuencia',sysdate,1,1)"));
@@ -180,7 +180,7 @@ $mdl->createTable("create table cie_10 (
   print_r($x->executeQuery("insert into Carproblematica_familiar  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(6,'Multi problemática',sysdate,1,1)"));
   print_r($x->executeQuery("insert into Carproblematica_familiar  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(7,'Otros',sysdate,1,1)"));
   print_r($x->executeQuery("SELECT * FROM Carproblematica_familiar WHERE ESTADO=1"));
-  
+  */
   /*
 $tabla="pam_ActividadPrevencion";
 $x->dropTable("drop table ".$tabla);
