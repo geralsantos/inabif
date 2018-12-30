@@ -101,17 +101,17 @@
                         <div class="row">
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Peso (Kg.)</label>
-                                <input type="number" step=".02" v-model="CarPeso" name="CarPeso" placeholder="" class="form-control">
+                                <input type="number" step=".01" v-model="CarPeso" name="CarPeso" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">Talla (m)</label>
-                                <input type="number" step=".02" v-model="CarTalla" name="CarTalla" placeholder="" class="form-control">
+                                <input type="number" step=".01" v-model="CarTalla" name="CarTalla" placeholder="" class="form-control">
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Hemoglobina (gr./dl)</label>
-                                <input type="number" step=".02" v-model="CarHemoglobina" name="CarHemoglobina" placeholder="" class="form-control">
+                                <input type="number" step=".01" v-model="CarHemoglobina" name="CarHemoglobina" placeholder="" class="form-control">
                             </div>
 
                         </div>
