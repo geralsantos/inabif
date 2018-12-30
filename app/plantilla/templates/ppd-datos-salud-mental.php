@@ -55,7 +55,7 @@
                         </div>
                         <div class="row">
                         <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Trastornos neurologicos?</label>
+                                <label for="text-input" class=" form-control-label">¿Trastornos neurologicos?</label>
                                 <select name="CarTrastornosNeurologico" v-model="CarTrastornosNeurologico" class="form-control">
                                     <option value="Si">Si</option>
                                     <option value="No">No</option>
@@ -63,7 +63,7 @@
                                 </select>
                             </div>
                             <div class="form-group col-md-4">
-                                <div class=" "><label for="text-input" class=" form-control-label">ESPECIFICAR TRASTORNO NEUROLÓGICO PRINCIPAL</label>
+                                <div class=" "><label for="text-input" class=" form-control-label">Especificar trastorno neurológico principal</label>
                                 <select name="CarNeurologicoPrincipal" v-model="CarNeurologicoPrincipal" class="form-control">
                                     <option value="CIE 10" >CIE 10</option>
                                 </select>
@@ -87,7 +87,7 @@
                                 </select>
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Si no habla, que método utiliza para comunicarse?</label>
+                                <label for="text-input" class=" form-control-label">Si no habla, ¿Que método utiliza para comunicarse?</label>
                                 <select name="CarMetodoHabla" v-model="CarMetodoHabla" class="form-control">
                                     <option value="Gestos">Gestos</option>
                                     <option value="Sonidos">Sonidos</option>
@@ -104,7 +104,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Tipo de dificultad que presenta</label>
                                 <select name="CarDificultadPresenta" v-model="CarDificultadPresenta" class="form-control">
                                     <option value="Disfacia de tipo receptivo">Disfacia de tipo receptivo</option>
@@ -112,15 +112,14 @@
                                     <option value="Otro">Otro</option>
                                 </select>
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Realiza actividades de la vida diaria?</label>
                                 <select name="CarRealizaActividades" v-model="CarRealizaActividades" class="form-control">
                                     <option v-for="actividad in actividades" :value="actividad.ID">{{actividad.NOMBRE}}</option>
                                 </select>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-md-4">
+                        
+                            <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">Especificar (como, en qué forma, otros).</label>
                                 <input type="text" v-model="CarEspeficicarActividades" name="CarEspeficicarActividades" placeholder="" class="form-control">
                             </div>

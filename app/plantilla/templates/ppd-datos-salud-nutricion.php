@@ -151,7 +151,7 @@
 
                         <div class="row">
                             <div class="form-group col-md-2">
-                                <div class=" "><label for="text-input" class=" form-control-label">Patología 1</label>
+                                <div class=" "><label for="text-input" class=" form-control-label">Patología crónica 1</label>
                                 <select name="CarPatologica1" v-model="CarPatologica1" class="form-control">
                                     <option value="Si">Si</option>
                                     <option value="No">No</option>
@@ -168,14 +168,14 @@
                             </div>
 
                             <div class="form-group col-md-7">
-                                <label for="text-input" class=" form-control-label">Especifique</label>
+                                <label for="text-input" class=" form-control-label">Especifique tipo de patología</label>
                                 <input type="text" v-model="CarEspecifiquePato1" name="CarEspecifiquePato1" placeholder="" class="form-control">
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="form-group col-md-2">
-                                <div class=" "><label for="text-input" class=" form-control-label">Patología 2</label>
+                                <div class=" "><label for="text-input" class=" form-control-label">Patología crónica 2</label>
                                 <select name="CarPatologia2" v-model="CarPatologia2" class="form-control">
                                 <option value="Si">Si</option>
                                     <option value="No">No</option>
@@ -191,7 +191,7 @@
                             </div>
 
                             <div class="form-group col-md-7">
-                                <label for="text-input" class=" form-control-label">Especifique</label>
+                                <label for="text-input" class=" form-control-label">Especifique tipo de patología</label>
                                 <input type="text" v-model="CarEspecifiquePato2" name="CarEspecifiquePato2" placeholder="" class="form-control">
                             </div>
                         </div>
