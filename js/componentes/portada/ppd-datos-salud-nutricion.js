@@ -54,7 +54,6 @@ Vue.component('ppd-datos-salud-nutricion', {
                 return false;
             }
             let valores = {
-                Salud_id: 1,
                 Discapacidad: this.CarDiscapacidad,
                 Discapacidad_Fisica: this.CarDiscapacidadFisica,
                 Discapacidad_Intelectual: this.CarDiscapacidadIntelectual,
