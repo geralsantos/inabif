@@ -140,7 +140,7 @@ Vue.component('pam-datos-condiciones-ingreso', {
         buscar_tipoparentesco(){
             this.$http.post('buscar?view',{tabla:'pam_tipo_parentesco ',codigo:'pam'}).then(function(response){
                 if( response.body.data ){
-                    this.motivos2= response.body.data;
+                    this.tipos_parentescos= response.body.data;
                 }
 
             });
