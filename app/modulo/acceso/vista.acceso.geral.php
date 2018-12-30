@@ -11,7 +11,7 @@ crear tabla
 <br>
     campos tabla
     <br>
-    <textarea name="campostabla" value="<?php echo $_POST["campostabla"]?>" id="" cols="30" rows="10"></textarea>
+    <textarea name="campostabla" value="<?php echo $_POST["campostabla"]?>" id="" cols="100" rows="10"></textarea>
     <button type="submit">borrar tabla,crear tabla y crear secuencia</button>
     <br>
 <?php 
