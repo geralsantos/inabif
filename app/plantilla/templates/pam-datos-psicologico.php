@@ -63,7 +63,8 @@
                             </div>
                             <div class="form-group col-md-8">
                                 <div class=" "><label for="text-input" class=" form-control-label">Descripción de la meta trazada en el pai </label>
-                                <input type="text" v-model="Des_Meta" name="Des_Meta" placeholder="" class="form-control">
+                                <textarea class="form-control" v-model="Des_Meta" name="Des_Meta" cols="30" rows="2"></textarea>
+
                                 </div>        
                             </div>
                         </div>
