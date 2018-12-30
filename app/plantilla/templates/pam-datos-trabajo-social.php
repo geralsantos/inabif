@@ -80,7 +80,7 @@
                         
                             <div class="form-group col-md-8">
                                 <label for="text-input" class=" form-control-label">Descripción del informe evolutivo</label>
-                                <textarea class="form-control" v-model="Des_Informe_Tecnico" name="Des_Informe_Tecnico" cols="30" rows="10"></textarea>
+                                <textarea class="form-control" v-model="Des_Informe_Tecnico" name="Des_Informe_Tecnico" cols="30" rows="2"></textarea>
                             </div>
                             </div>
                         <div class="row">
