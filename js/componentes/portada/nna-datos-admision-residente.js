@@ -15,6 +15,8 @@ Vue.component('nna-datos-admision-residente', {
 
         instituciones:[],
         motivosingreso:[],
+        perfilesingreso1:[],
+        perfilesingreso2:[],
         nombre_residente:null,
         isLoading:false,
         mes:moment().format("MM"),
@@ -29,6 +31,9 @@ Vue.component('nna-datos-admision-residente', {
     mounted:function(){
     },
     updated:function(){
+        this.buscar_nna_perfiles_ingreso();
+        this.buscar_instituciones();
+        this.buscar_motivosingreso();
     },
     methods:{
         guardar(){
@@ -125,6 +130,7 @@ Vue.component('nna-datos-admision-residente', {
 
             });
         },
+        
         buscar_motivosingreso(){
             this.$http.post('buscar?view',{tabla:'nna_motivos_ingreso'}).then(function(response){
                 if( response.body.data ){
@@ -133,5 +139,14 @@ Vue.component('nna-datos-admision-residente', {
 
             });
         },
+        buscar_nna_perfiles_ingreso(){
+            this.$http.post('buscar?view',{tabla:'nna_perfiles_ingreso'}).then(function(response){
+                if( response.body.data ){
+                    this.perfilesingreso1= response.body.data;
+                    this.perfilesingreso2= response.body.data;
+                }
+
+            });
+        }
     }
   })

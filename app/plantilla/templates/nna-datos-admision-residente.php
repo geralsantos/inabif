@@ -93,14 +93,14 @@
                             <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">Principal Perfil de Ingreso (primario)</label>
                                 <select name="Perfil_Ingreso_P" v-model="Perfil_Ingreso_P" class="form-control">
-                                    <option v-for="perfil in perfiles" :value="perfil.ID">{{perfil.NOMBRE}}</option>
+                                    <option v-for="perfil in perfilesingreso1" :value="perfil.ID">{{perfil.NOMBRE}}</option>
                                 </select>
 
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">Principal Perfil de Ingreso (secundario)</label>
                                 <select name="Perfil_Ingreso_S" v-model="Perfil_Ingreso_S" class="form-control">
-                                    <option v-for="perfil in perfiles" :value="perfil.ID">{{perfil.NOMBRE}}</option>
+                                    <option v-for="perfil in perfilesingreso2" :value="perfil.ID">{{perfil.NOMBRE}}</option>
                                 </select>
 
                             </div>
