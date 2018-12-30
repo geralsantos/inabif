@@ -7,11 +7,13 @@
 form crear tabla
 <form action="geral" method="POST">
 crear tabla
-    <input type="text" name="tablename" value="<?php echo $_POST["tablename"]?>" placeholder="tablename" >
+    <input type="text" style="witdh:100%;" size="100" name="tablename" value="<?php echo $_POST["tablename"]?>" placeholder="tablename" >
 <br>
     campos tabla
+    <br>
     <textarea name="campostabla" value="<?php echo $_POST["campostabla"]?>" id="" cols="30" rows="10"></textarea>
     <button type="submit">borrar tabla,crear tabla y crear secuencia</button>
+    <br>
 <?php 
 //  Configure DB Parameters
 class mdl
