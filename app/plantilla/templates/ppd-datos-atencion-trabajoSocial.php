@@ -55,14 +55,14 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Residente recibe visitas de Familiares?</label>
+                                <label for="text-input" class=" form-control-label">¿El residente recibe visitas de Familiares?</label>
                                 <select name="CarVisitaF" v-model="CarVisitaF" class="form-control">
                                     <option value="Si">Si</option>
                                     <option value="No">No</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">n° de visitas en el mes</label>
+                                <label for="text-input" class=" form-control-label">Número de visitas en el mes</label>
                                 <input type="number" min="0"  v-model="CarNumVisitaMes" name="CarNumVisitaMes" placeholder="" class="form-control">
                             </div>
 
@@ -77,7 +77,7 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Familia accede a redes de soporte social?</label>
+                                <label for="text-input" class=" form-control-label">¿La familia accede a redes de soporte social?</label>
                                 <select name="CarFamiliaRSoporte" v-model="CarFamiliaRSoporte" class="form-control">
                                     <option value="Si">Si</option>
                                     <option value="No">No</option>
@@ -104,7 +104,7 @@
                                 </select>
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Residente cuenta con carnet del CONADIS?</label>
+                                <label for="text-input" class=" form-control-label">¿El residente cuenta con carnet del CONADIS?</label>
                                 <select name="CarRConadis" v-model="CarRConadis" class="form-control">
                                     <option value="Si">Si</option>
                                     <option value="No">No</option>
@@ -126,7 +126,7 @@
                                         </select>
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Cuenta con familiares ubicados?</label>
+                                <label for="text-input" class=" form-control-label">¿Cuenta con familiares ubicados?</label>
                                 <select name="CarFamiliaresUbicados" v-model="CarFamiliaresUbicados" class="form-control">
                                     <option value="Si">Si</option>
                                     <option value="No">No</option>
