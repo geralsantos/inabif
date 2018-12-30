@@ -164,7 +164,7 @@ $x->dropTable('drop table dificultades_cuerpo ');
 $mdl->createTable("CREATE TABLE dificultades_cuerpo
 ( id int NOT NULL primary key,
   nombre varchar(200) NOT NULL,
-  Estado                            	int,
+  Estado                            	int default 1,
 Fecha_Creacion            	DATE ,
 Fecha_Edicion              	timestamp DEFAULT (sysdate),
 Usuario_Crea                	int,
