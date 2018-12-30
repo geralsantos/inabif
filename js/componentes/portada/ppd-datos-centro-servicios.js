@@ -35,6 +35,11 @@ Vue.component('ppd-datos-centro-servicios', {
     },
     updated:function(){
     },
+    watch:{
+        Depatamento_Procedencia:function(val){ 
+            this.buscar_provincias();
+        }
+    },
     methods:{
         guardar(){
             if (this.id_residente==null) {
