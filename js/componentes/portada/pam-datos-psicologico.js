@@ -50,7 +50,7 @@ Vue.component('pam-datos-psicologico', {
     
             }
              
-            this.$http.post('insertar_datos?view',{tabla:'pam_nutricion', valores:valores}).then(function(response){
+            this.$http.post('insertar_datos?view',{tabla:'pam_Psicologico', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
                     swal('', 'Registro Guardado', 'success');
@@ -92,7 +92,7 @@ Vue.component('pam-datos-psicologico', {
             this.coincidencias = [];
             this.bloque_busqueda = false;
 
-            this.$http.post('cargar_datos_residente?view',{tabla:'pam_nutricion', residente_id:this.id_residente }).then(function(response){
+            this.$http.post('cargar_datos_residente?view',{tabla:'pam_Psicologico', residente_id:this.id_residente }).then(function(response){
 
                 if( response.body.atributos != undefined){
 
