@@ -119,21 +119,22 @@
                                 </div>
                         </div>
                         <div class="row">
-                        <div class="form-group col-md-4">
-                                    <label for="text-input" class=" form-control-label">Problemática familiar</label>
-                                    <select name="CarProblematicaFam" v-model="CarProblematicaFam" class="form-control">
-                                        <option v-for="familiar in familiares" :value="familiar.ID">{{familiar.NOMBRE}}</option>
-                                    </select>
+                            <div class="form-group col-md-4">
+                                        <label for="text-input" class=" form-control-label">Problemática familiar</label>
+                                        <select name="CarProblematicaFam" v-model="CarProblematicaFam" class="form-control">
+                                            <option v-for="familiar in familiares" :value="familiar.ID">{{familiar.NOMBRE}}</option>
+                                        </select>
+                                    </div>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <div class=" "><label for="text-input" class=" form-control-label">Cuenta con familiares ubicados?</label>
+                                <select name="CarFamiliaresUbicados" v-model="CarFamiliaresUbicados" class="form-control">
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                                </div>
                                 </div>
                         </div>
-                        <div class="form-group col-md-4">
-                                    <div class=" "><label for="text-input" class=" form-control-label">Cuenta con familiares ubicados?</label>
-                                    <select name="CarFamiliaresUbicados" v-model="CarFamiliaresUbicados" class="form-control">
-                                        <option value="Si">Si</option>
-                                        <option value="No">No</option>
-                                    </select>
-                                    </div>
-                                </div>
                         <div class="row">
                             <div class="col-md-12 text-center" >
                                 <button type="submit" class="btn btn-success btn-sm">
