@@ -63,8 +63,8 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Descripción de la meta trazada en el PII</label>
-                                <input type="text" v-model="CarDesMetaPII" name="CarDesMetaPII" placeholder="" class="form-control">
-
+                                
+                                <textarea v-model="CarDesMetaPII" name="CarDesMetaPII" id="CarDesMetaPII" cols="30" rows="2" class="form-control"></textarea>
                             </div>
 
                             <div class="form-group col-md-4">
@@ -79,7 +79,8 @@
                         <div class="row">
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Descripción del informe evolutivo</label>
-                                <input type="text" v-model="CarDesInformeEvolutivo" name="CarDesInformeEvolutivo" placeholder="" class="form-control">
+                              
+                                <textarea v-model="CarDesInformeEvolutivo" name="CarDesInformeEvolutivo" id="CarDesInformeEvolutivo" cols="30" rows="2" class="form-control"></textarea>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Cumplimiento del plan de intervención</label>
