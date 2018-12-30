@@ -136,7 +136,7 @@ Vue.component('ppd-datos-terapia', {
 
         },
         buscar_lenguajes(){
-            this.$http.post('buscar?view',{tabla:''}).then(function(response){
+            this.$http.post('buscar?view',{tabla:'pam_tipo_lenguaje_alterna'}).then(function(response){
                 if( response.body.data ){
                     this.lenguajes= response.body.data;
                 }
