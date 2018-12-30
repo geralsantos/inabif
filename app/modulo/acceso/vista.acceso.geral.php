@@ -159,7 +159,7 @@ if (isset($_POST["nombretabla"]) && $_POST["nombretabla"]!="") {
     echo "<br>";
     print_r($x->executeQuery($_POST["nombretabla"]));
     die();
-}else{
+}else{/*
 $x->dropTable('drop table CarSaludMental ');
 $mdl->createTable("Create table CarSaludMental
 (
@@ -183,7 +183,7 @@ Fecha_Edicion      	TIMESTAMP DEFAULT SYSDATE,
 Usuario_Crea       	int,
 Usuario_Edita      	int
 )
-"); /*
+");*/ /*
   print_r($x->executeQuery("insert into pam_actividades_diaria (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(1,'Come solo',sysdate,1,1)"));
   print_r($x->executeQuery("insert into pam_actividades_diaria (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'Se viste solo',sysdate,1,1)"));
   print_r($x->executeQuery("insert into pam_actividades_diaria (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'Acude al baño solo',sysdate,1,1)"));
