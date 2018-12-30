@@ -62,7 +62,7 @@
                                 </div>
                                 <div class="form-group col-md-4">
                                     <div class=" "><label for="text-input" class=" form-control-label">Descripción de la meta trazada en el PII</label>
-                                    <textarea name="CarDesMeta" class="form-control" v-model="CarDesMeta" id="" cols="30" rows="10"></textarea>
+                                    <textarea name="CarDesMeta" class="form-control" v-model="CarDesMeta" id="" cols="30" rows="2"></textarea>
                                     </div>
                                 </div>
 
