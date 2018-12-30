@@ -102,7 +102,7 @@
                                 </select>
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">El Dx es certtificado?</label>
+                                <label for="text-input" class=" form-control-label">¿El Dx es certtificado?</label>
                                 <select name="CarDxCertificado" v-model="CarDxCertificado" class="form-control">
                                     <option value="Si">Si</option>
                                     <option value="No">No</option>
@@ -110,7 +110,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-2">
                                 <label for="text-input" class=" form-control-label">Tiene carnet del CONADIS?</label>
                                 <select name="CarCarnetConadis" v-model="CarCarnetConadis" class="form-control">
                                 <option value="Si">Si</option>
@@ -118,7 +118,7 @@
                                     <option value="Se desconoce">Se desconoce</option>
                                 </select>
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Movilidad</label>
                                 <select name="CarMovilidad" v-model="CarMovilidad" class="form-control">
                                     <option value="Camina">Camina</option>
@@ -128,9 +128,8 @@
                                     <option value="Lo trasladan en silla de ruedas">Lo trasladan en silla de ruedas</option>
                                 </select>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-md-4">
+                        
+                            <div class="form-group col-md-3">
                                 <div class=" "><label for="text-input" class=" form-control-label">Motivo de dificultad con el desplazamiento</label>
                                 <select name="CarDificultadDesplazamiento" v-model="CarDificultadDesplazamiento" class="form-control">
                                     <option value="Músculo esqueléticas">Músculo esqueléticas</option>
@@ -151,7 +150,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-2">
                                 <div class=" "><label for="text-input" class=" form-control-label">Patología 1</label>
                                 <select name="CarPatologica1" v-model="CarPatologica1" class="form-control">
                                     <option value="Si">Si</option>
@@ -160,7 +159,7 @@
                                 </select>
                                 </div>
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Tipo de patología</label>
                                 <select name="CarTipoPatologia1" v-model="CarTipoPatologia1" class="form-control">
                                     <option v-for="patologia in patologias" :value="patologia.ID">{{patologia.NOMBRE}}</option>
@@ -168,14 +167,14 @@
                                 </select>
                             </div>
 
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-7">
                                 <label for="text-input" class=" form-control-label">Especifique</label>
                                 <input type="text" v-model="CarEspecifiquePato1" name="CarEspecifiquePato1" placeholder="" class="form-control">
                             </div>
                         </div>
 
                         <div class="row">
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-2">
                                 <div class=" "><label for="text-input" class=" form-control-label">Patología 2</label>
                                 <select name="CarPatologia2" v-model="CarPatologia2" class="form-control">
                                 <option value="Si">Si</option>
@@ -184,14 +183,14 @@
                                 </select>
                                 </div>
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Tipo de patología</label>
                                 <select name="CarTipoPatologia2" v-model="CarTipoPatologia2" class="form-control">
                                     <option v-for="patologia2 in patologias2" :value="patologia2.ID">{{patologia2.NOMBRE}}</option>
                                 </select>
                             </div>
 
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-7">
                                 <label for="text-input" class=" form-control-label">Especifique</label>
                                 <input type="text" v-model="CarEspecifiquePato2" name="CarEspecifiquePato2" placeholder="" class="form-control">
                             </div>
@@ -203,8 +202,8 @@
                                 <input type="number" step="0.1" v-model="CarNivelHemoglobina" name="CarNivelHemoglobina" placeholder="" class="form-control">
                                 </div>
                             </div>
-                            <div class="form-group col-md-3">
-                                <label for="text-input" class=" form-control-label">PRESENTA ANEMIA?</label>
+                            <div class="form-group col-md-2">
+                                <label for="text-input" class=" form-control-label">¿Presenta anemia?</label>
                                 <select name="CarAnemia" v-model="CarAnemia" class="form-control">
                                 <option value="Leve">Leve</option>
                                 <option value="Moderada">Moderada</option>
@@ -212,19 +211,17 @@
                                 </select>
                             </div>
 
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-2">
                                 <label for="text-input" class=" form-control-label">Peso (Kg.)</label>
                                 <input type="number" step="0.1" v-model="CarPeso" name="CarPeso" placeholder="" class="form-control">
                             </div>
 
-                                <div class="form-group col-md-3">
+                                <div class="form-group col-md-2">
                                 <label for="text-input" class=" form-control-label">Talla (m)</label>
                                 <input type="number" step="0.1" v-model="CarTalla" name="CarTalla" placeholder="" class="form-control">
                             </div>
-                        </div>
-
-                        <div class='row'>
-                            <div class="form-group col-md-4">
+                      
+                            <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Estado nutricional (imc) </label>
                                 <select name="CarEstadoNutricional" v-model="CarEstadoNutricional" class="form-control">
                                 <option value="Bajo Peso">Bajo Peso</option>
