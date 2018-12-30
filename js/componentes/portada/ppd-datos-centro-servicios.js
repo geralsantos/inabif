@@ -37,7 +37,7 @@ Vue.component('ppd-datos-centro-servicios', {
     },
     watch:{
         Depatamento_Procedencia:function(val){ 
-            this.buscar_provincias();
+            this.cargar_provincias();
         }
     },
     methods:{
