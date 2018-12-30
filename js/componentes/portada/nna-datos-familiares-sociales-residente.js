@@ -8,7 +8,7 @@ Vue.component('nna-datos-familiares-sociales-residente', {
         Problematica_Fami:null,
 
         problematicas:[],
-        
+        parentescos:[],
         nombre_residente:null,
         isLoading:false,
         mes:moment().format("MM"),
