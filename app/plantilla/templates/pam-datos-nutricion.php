@@ -77,8 +77,8 @@
                         <div class="row">
                             <div class="form-group col-md-12">
                                 <div class=" "><label for="text-input" class=" form-control-label">Informe evolutivo</label>
-                                <input type="text" v-model="Des_Informe_Tecnico" name="Des_Informe_Tecnico" placeholder="" class="form-control">
-                                    </div>
+                                <textarea v-model="Des_Informe_Tecnico" name="Des_Informe_Tecnico" class="form-control" id="Des_Informe_Tecnico" cols="30" rows="2"></textarea>
+                            </div>
                             </div>
                         </div>
                         <div class="row">
