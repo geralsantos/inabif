@@ -10,6 +10,10 @@ Vue.component('ppd-datos-atencion-trabajoSocial', {
         CarRAus:null,
         CarRConadis:null,
 
+        CarFamiliaresUbicados:null,
+        CarTipoParentesco:null,
+        CarProblematicaFam:null,
+
         nombre_residente:null,
         isLoading:false,
         mes:moment().format("MM"),
@@ -22,6 +26,8 @@ Vue.component('ppd-datos-atencion-trabajoSocial', {
     created:function(){
     },
     mounted:function(){
+        this.tipo_parentesco();
+        this.problematica_familiar();
     },
     updated:function(){
     },
@@ -104,6 +110,20 @@ Vue.component('ppd-datos-atencion-trabajoSocial', {
                 }
              });
 
+        },
+        tipo_parentesco(){
+            this.$http.post('buscar?view',{tabla:'pam_tipo_parentesco',codigo:'ppd'}).then(function(response){
+                if( response.body.data ){
+                    this.parentescos= response.body.data;
+                }
+            });
+        },
+        problematica_familiar(){
+            this.$http.post('buscar?view',{tabla:'Carproblematica_familiar'}).then(function(response){
+                if( response.body.data ){
+                    this.familiares= response.body.data;
+                }
+            });
         },
     }
   })
