@@ -78,7 +78,8 @@
                             <div class="row">
                                 <div class="form-group col-md-4">
                                     <label for="text-input" class=" form-control-label">Descripción del informe evolutivo</label>
-                                    <input type="text" v-model="CarDesInfome" name="CarDesInfome" placeholder="" class="form-control">
+                                    <textarea name="CarDesInfome" class="form-control" v-model="CarDesInfome" id="" cols="30" rows="2"></textarea>
+                                
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="text-input" class=" form-control-label">Cumplimiento del plan de intervención</label>
