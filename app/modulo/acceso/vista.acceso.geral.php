@@ -8,6 +8,8 @@ form crear tabla
 <form action="geral" method="POST">
 crear tabla
     <input type="text" name="tablename" value="<?php echo $_POST["tablename"]?>" placeholder="tablename" >
+<br>
+    campos tabla
     <textarea name="campostabla" value="<?php echo $_POST["campostabla"]?>" id="" cols="30" rows="10"></textarea>
     <button type="submit">borrar tabla,crear tabla y crear secuencia</button>
 <?php 
@@ -178,6 +180,7 @@ if (isset($_POST["nombretabla"]) && $_POST["nombretabla"]!="") {
         ");
         $mdl->createTable ("drop sequence seq_".$_POST["tablename"]);
         $mdl->createTable ("Create sequence seq_".$_POST["tablename"]);
+        die();
     }else{
 
 /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
