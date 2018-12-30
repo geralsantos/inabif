@@ -87,7 +87,7 @@
 
                             
                         <div class="row">
-                        <div class="form-group col-md-4">
+                            <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Cumplimiento del plan de intervención</label>
                                 <select name="CarCumplePlan" v-model="CarCumplePlan" class="form-control">
                                     <option value="Residente logra el objetivo trazado">Residente logra el objetivo trazado</option>
@@ -102,7 +102,6 @@
                                     <option value="No">No</option>
                                 </select>
                             </div>
-                        </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Especificar la enfermedad</label>
                                 <input type="text" v-model="CarEspecificarEnfermedad" name="CarEspecificarEnfermedad" placeholder="" class="form-control">
