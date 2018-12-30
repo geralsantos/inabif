@@ -63,25 +63,25 @@
                                     <option value="transladod de otro car">TRASLADO DE OTRO CAR</option>
                                     </select>
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Fecha de Ingreso del usuario</label>
                                 <input type="date" v-model="CarFIngreso" name="CarFIngreso" placeholder="" class="form-control"> </div>
                             </div>
-                        </div>
-                        <div class="row">
+                        
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Fecha de reingreso del usuario (en caso no aplique marcar 99/99/9999)</label>
                                 <input type="date" v-model="CarFReingreso" name="CarFReingreso" placeholder="" class="form-control"> </div>
                             </div>
-                            <div class="form-group col-md-6">
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Institución que lo derivó</label>
                                 <select name="CarIDerivo" v-model="CarIDerivo" class="form-control">
                                 <option v-for="institucion in instituciones" :value="institucion.ID">{{institucion.NOMBRE}}</option>
 
                                 </select>
                             </div>
-                        </div>
-                        <div class="row">
+                        
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Motivo de ingreso (acorde al expediente)</label>
                                 <select name="CarMotivoI" v-model="CarMotivoI" class="form-control">
@@ -90,7 +90,7 @@
                                 </select>
 
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Tipo de documento de ingreso al CAR</label>
                                 <select name="CarTipoDoc" v-model="CarTipoDoc" class="form-control">
                                 <option v-for="documento in documentos" :value="documento.ID">{{documento.NOMBRE}}</option>
