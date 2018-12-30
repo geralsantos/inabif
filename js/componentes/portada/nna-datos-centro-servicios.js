@@ -147,6 +147,7 @@ Vue.component('nna-datos-centro-servicios', {
             this.$http.post('buscar_provincia?view',{tabla:'ubigeo', cod:this.Depatamento_Procedencia}).then(function(response){
                 if( response.body.data ){
                     this.provincias= response.body.data;
+                    this.buscar_distritos();
                 }
 
             });
