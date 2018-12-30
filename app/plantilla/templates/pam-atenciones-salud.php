@@ -7,7 +7,7 @@
                     <h6>Formulario de Carga de Datos</h6>
                 </div>
                 <div class="card-body card-block">
-                    <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                    <form v-on:submit.prevent="guardar"  class="form-horizontal">
                         <div class="row">
                             <div class="form-group col-md-7">
                                 <label for="text-input" class=" form-control-label">Nombre Residente</label>
