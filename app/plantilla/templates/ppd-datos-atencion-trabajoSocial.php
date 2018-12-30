@@ -76,7 +76,7 @@
 
                         </div>
                         <div class="row">
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-5">
                                 <label for="text-input" class=" form-control-label">¿La familia accede a redes de soporte social?</label>
                                 <select name="CarFamiliaRSoporte" v-model="CarFamiliaRSoporte" class="form-control">
                                     <option value="Si">Si</option>
@@ -87,7 +87,7 @@
                                 <label for="text-input" class=" form-control-label">Descriptivo de la persona que los visita</label>
                                 <input type="text" v-model="CarDesPersonaV" name="CarDesPersonaV" placeholder="" class="form-control">
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Residente cuenta con DNI?</label>
                                 <select name="CarRDni" v-model="CarRDni" class="form-control">
                                     <option value="Si">Si</option>
@@ -96,14 +96,14 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Residente cuenta con AUS?</label>
                                 <select name="CarRAus" v-model="CarRAus" class="form-control">
                                     <option value="Si">Si</option>
                                     <option value="No">No</option>
                                 </select>
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-5">
                                 <label for="text-input" class=" form-control-label">¿El residente cuenta con carnet del CONADIS?</label>
                                 <select name="CarRConadis" v-model="CarRConadis" class="form-control">
                                     <option value="Si">Si</option>
