@@ -80,7 +80,7 @@
                                 <input type="number" min="0"  v-model="CarComunicacion" name="CarComunicacion" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">N° de veces que Partiicipa de terapia para la reeducación orofacial</label>
+                                <label for="text-input" class=" form-control-label">N° de veces que Participa de terapia para la reeducación orofacial</label>
                                 <input type="number" min="0"  v-model="CarReeducacionOrofacial" name="CarReeducacionOrofacial" placeholder="" class="form-control">
                             </div>
                         </div>
