@@ -106,11 +106,11 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Nº Atenciones en GASTROENTEROLOGIA</label>
+                                <label for="text-input" class=" form-control-label">Nº Atenciones en GASTROENTEROLOGÍA</label>
                                 <input type="number" min="0"  v-model="CarAGastroenterologia" name="CarAGastroenterologia" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Nº Atenciones en GINECO-OBSTETRICIA</label>
+                                <label for="text-input" class=" form-control-label">Nº Atenciones en GINECO-OBSTETRICÍA</label>
                                 <input type="number" min="0"  v-model="CarAGinecoObstretica" name="CarAGinecoObstretica" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
@@ -121,11 +121,11 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-md-4">
-                                    <label for="text-input" class=" form-control-label">Nº Atenciones en HEMATOLOGIA</label>
+                                    <label for="text-input" class=" form-control-label">Nº Atenciones en HEMATOLOGÍA</label>
                                     <input type="number" min="0"  v-model="CarAHematologia" name="CarAHematologia" placeholder="" class="form-control">
                                 </div>
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Nº Atenciones en INMUNOLOGIA</label>
+                                <label for="text-input" class=" form-control-label">Nº Atenciones en INMUNOLOGÍA</label>
                                 <input type="number" min="0"  v-model="CarAInmunologia" name="CarAInmunologia" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
@@ -137,7 +137,7 @@
 
                         <div class="row">
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Nº Atenciones en NEUMOLOGIA</label>
+                                <label for="text-input" class=" form-control-label">Nº Atenciones en NEUMOLOGÍA</label>
                                 <input type="number" min="0"  v-model="CarANeumologia" name="CarANeumologia" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
@@ -145,29 +145,29 @@
                                 <input type="number" min="0"  v-model="CarAnutricion" name="CarAnutricion" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Nº Atenciones en NEUROLOGIA</label>
+                                <label for="text-input" class=" form-control-label">Nº Atenciones en NEUROLOGÍA</label>
                                 <input type="number" min="0"  v-model="CarANeurologia" name="CarANeurologia" placeholder="" class="form-control">
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Nº Atenciones en OFTALMOLOGIA</label>
+                                <label for="text-input" class=" form-control-label">Nº Atenciones en OFTALMOLOGÍA</label>
                                 <input type="number" min="0"  v-model="CarAOftamologia" name="CarAOftamologia" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Nº Atenciones en OTORRINOLARINGOLOGIA</label>
+                                <label for="text-input" class=" form-control-label">Nº Atenciones en OTORRINOLARINGOLOGÍA</label>
                                 <input type="number" min="0"  v-model="CarAOtorrinoloringologia" name="CarAOtorrinoloringologia" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Nº Atenciones en PEDIATRIA</label>
+                                <label for="text-input" class=" form-control-label">Nº Atenciones en PEDÍATRÍA</label>
                                 <input type="number" min="0"  v-model="CarAPedriatria" name="CarAPedriatria" placeholder="" class="form-control">
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Nº Atenciones en PSIQUIATRIA</label>
+                                <label for="text-input" class=" form-control-label">Nº Atenciones en PSIQUÍATRÍA</label>
                                 <input type="number" min="0"  v-model="CarAPsiquiatria" name="CarAPsiquiatria" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
@@ -175,18 +175,18 @@
                                 <input type="number" min="0"  v-model="CarAQuirurgica" name="CarAQuirurgica" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Nº Atenciones en TRAUMATOLOGIA</label>
+                                <label for="text-input" class=" form-control-label">Nº Atenciones en TRAUMATOLOGÍA</label>
                                 <input type="number" min="0"  v-model="CarATraumologia" name="CarATraumologia" placeholder="" class="form-control">
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Nº Atenciones en UROLOGIA</label>
+                                <label for="text-input" class=" form-control-label">Nº Atenciones en UROLOGÍA</label>
                                 <input type="number" min="0"  v-model="CarAUrologia" name="CarAUrologia" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Nº Atenciones en ODONTOLOGIA</label>
+                                <label for="text-input" class=" form-control-label">Nº Atenciones en ODONTOLOGÍA</label>
                                 <input type="number" min="0"  v-model="CarAOdontologia" name="CarAOdontologia" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
@@ -217,7 +217,7 @@
                         </div>
 
                         <div class='row'>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-12">
                                 <label for="text-input" class=" form-control-label">Motivo de la hospitalización</label>
                                 <input type="text" v-model="CarMotivoHospitalizacion" name="CarMotivoHospitalizacion" placeholder="" class="form-control">
                             </div>
