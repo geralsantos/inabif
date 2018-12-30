@@ -3,7 +3,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <strong>Atención en educación, participación laboral y fortalecimiento de habilidades</strong>
+                    <strong>Atención en educación, inserción laboral y fortalecimiento de habilidades</strong>
                     <h6>Formulario de Carga de Datos</h6>
                 </div>
                 <div class="card-body card-block">
@@ -66,7 +66,7 @@
                             </div>
 
                             <div class="form-group col-md-4">
-                                <div class=" "><label for="text-input" class=" form-control-label">Residente se encuentra insertado laboralmente</label>
+                                <div class=" "><label for="text-input" class=" form-control-label">Residente se encuentra inserción labora</label>
                                 <select name="CarInsertadoLaboralmente" v-model="CarInsertadoLaboralmente" class="form-control">
                                     <option value="Si">Si</option>
                                     <option value="No">No</option>
