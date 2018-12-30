@@ -200,7 +200,7 @@
                             <div class="row">
                             <div class="form-group col-md-3">
                                 <div class=" "><label for="text-input" class=" form-control-label">Nivel de Hemoglobina</label>
-                                <input type="text" v-model="CarNivelHemoglobina" name="CarNivelHemoglobina" placeholder="" class="form-control">
+                                <input type="number" step="0.1" v-model="CarNivelHemoglobina" name="CarNivelHemoglobina" placeholder="" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group col-md-3">
@@ -214,12 +214,12 @@
 
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Peso (Kg.)</label>
-                                <input type="text" v-model="CarPeso" name="CarPeso" placeholder="" class="form-control">
+                                <input type="number" step="0.1" v-model="CarPeso" name="CarPeso" placeholder="" class="form-control">
                             </div>
 
                                 <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Talla (m)</label>
-                                <input type="text" v-model="CarTalla" name="CarTalla" placeholder="" class="form-control">
+                                <input type="number" step="0.1" v-model="CarTalla" name="CarTalla" placeholder="" class="form-control">
                             </div>
                         </div>
 
