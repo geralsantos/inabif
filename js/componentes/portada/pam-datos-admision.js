@@ -46,7 +46,7 @@ Vue.component('pam-datos-admision', {
                 institucion_deriva:this.institucion_deriva,
                 motivo_ingreso_principal:this.motivo_ingreso_principal,
                 motivo_ingreso_secundario:this.motivo_ingreso_secundario,
-                perfil_ingreso:this.perfil_ingreso,
+                perfil_ingreso:(this.perfil_ingreso).join(),
                 tipo_documento_ingreo_car:this.tipo_documento_ingreo_car,
                 numero_documento_ingreo_car:this.numero_documento_ingreo_car,
                 
