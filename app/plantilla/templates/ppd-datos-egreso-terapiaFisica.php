@@ -54,35 +54,39 @@
 
                         </div>
                         <div class="row">
-                        <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Posee plan de intervención médico  individual?</label>
+                        <div class="form-group col-md-5">
+                                <label for="text-input" class=" form-control-label">¿Posee plan de intervención médico  individual?</label>
                                 <select name="CarPlanIntervension" v-model="CarPlanIntervension" class="form-control">
                                     <option value="Si">Si</option>
                                     <option value="No">No</option>
                                 </select>
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-7">
                                 <label for="text-input" class=" form-control-label">Descripción de la meta trazada en el PII</label>
                                 
                                 <textarea v-model="CarDesMetaPII" name="CarDesMetaPII" id="CarDesMetaPII" cols="30" rows="2" class="form-control"></textarea>
                             </div>
 
-                            <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Posee informe técnico evolutivo</label>
+                            
+
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-5">
+                                <label for="text-input" class=" form-control-label">¿Posee informe técnico evolutivo'</label>
                                 <select name="CarinformeEvolutivo" v-model="CarinformeEvolutivo" class="form-control">
                                 <option value="Si">Si</option>
                                     <option value="No">No</option>
                                 </select>
                             </div>
-
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-7">
                                 <label for="text-input" class=" form-control-label">Descripción del informe evolutivo</label>
                               
                                 <textarea v-model="CarDesInformeEvolutivo" name="CarDesInformeEvolutivo" id="CarDesInformeEvolutivo" cols="30" rows="2" class="form-control"></textarea>
                             </div>
-                            <div class="form-group col-md-4">
+                            
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">Cumplimiento del plan de intervención</label>
                                 <select name="CarCumplePlan" v-model="CarCumplePlan" class="form-control">
                                     <option value="Residente logra el objetivo trazado">Residente logra el objetivo trazado</option>
@@ -90,7 +94,7 @@
                                     <option value="Residente no logra el objetivo trazado">Residente no logra el objetivo trazado</option>
                                 </select>
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">Desarrollo de capacidades básicas para el lenguaje</label>
                                 <select name="CarDesarrolloCapacidades" v-model="CarDesarrolloCapacidades" class="form-control">
                                     <option value="Respiración">Respiración</option>
@@ -107,15 +111,14 @@
                                     <option value="No">No</option>
                                 </select>
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Mejora del lenguaje comprensivo?</label>
                                 <select name="CarManejoLenguaje" v-model="CarManejoLenguaje" class="form-control">
                                 <option value="Si">Si</option>
                                     <option value="No">No</option>
                                 </select>
                             </div>
-                        </div>
-                        <div class="row">
+                        
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Construcción o elaboración de oraciones</label>
                                 <select name="CarElavoraOraciones" v-model="CarElavoraOraciones" class="form-control">
