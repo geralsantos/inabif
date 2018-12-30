@@ -168,7 +168,7 @@
                         <div class="row">
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nivel de Hemoglobina</label>
-                                <input type="number" v-model="nivel_hemoglobina" name="nivel_hemoglobina" placeholder="" class="form-control">
+                                <input type="number" step="0.01" v-model="nivel_hemoglobina" name="nivel_hemoglobina" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="text-input" class=" form-control-label">Presenta Anemia</label>
@@ -185,7 +185,7 @@
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="text-input" class=" form-control-label">Talla (mt)</label>
-                                <input type="number" v-model="talla" step="0.01" name="talla" placeholder="" class="form-control">
+                                <input type="number" v-model="talla" step="0.001" name="talla" placeholder="" class="form-control">
                             </div>
                  
                             <div class="form-group col-md-3">
