@@ -128,7 +128,7 @@ Vue.component('pam-centro-servicios', {
         },
         cargar_departamentos(){
             this.departamentos=[];
-            this.$http.post('cargar_departamentos?view',{}).then(function(response){
+            this.$http.post('buscar_departamentos?view',{tabla:'ubigeo'}).then(function(response){
                 if( response.body.data != undefined){
                     this.departamentos= response.body.data;
                     this.cargar_provincias();
@@ -139,7 +139,7 @@ Vue.component('pam-centro-servicios', {
 
             this.provincias=[];
             let cod = this.CarDepart;
-            this.$http.post('cargar_provincias?view',{cod:cod}).then(function(response){
+            this.$http.post('buscar_provincia?view',{tabla:'ubigeo', cod:this.CarDepart}).then(function(response){
                 if( response.body.data != undefined){
                     this.provincias= response.body.data;
                     this.cargar_distritos();
@@ -150,7 +150,7 @@ Vue.component('pam-centro-servicios', {
 
             this.distritos=[];
             let cod = this.CarProv;
-            this.$http.post('cargar_departamentos?view',{cod:cod}).then(function(response){
+            this.$http.post('buscar_distritos?view',{tabla:'ubigeo', cod:this.CarProv}).then(function(response){
                 if( response.body.data != undefined){
                     this.distritos= response.body.data;
                 }
