@@ -100,17 +100,20 @@ Vue.component('nna-datos-familiares-sociales-residente', {
              });
 
         },
-
+        tipo_parentesco(){
+            this.$http.post('buscar?view',{tabla:'pam_tipo_parentesco',codigo:'ppd'}).then(function(response){
+                if( response.body.data ){
+                    this.parentescos= response.body.data;
+                }
+            });
+        },
         cargar_problematicas(){
-            let codigo = 'nna';
-            this.$http.post('buscar?view',{tabla:'Carproblematica_familiar', codigo:codigo}).then(function(response){
+            this.$http.post('buscar?view',{tabla:'Nnaproblematica_familiar'}).then(function(response){
                 if( response.body.data ){
                     this.problematicas= response.body.data;
-                    
                 }
-
             });
-        }
+        },
         
     }
   })

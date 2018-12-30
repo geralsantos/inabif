@@ -200,23 +200,22 @@ if (isset($_GET["nombretabla"]) && $_GET["nombretabla"]!="") {
 /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
     */
     //$x->deleteDataNoWhere("pam_nivel_educativo");
-       
-    print_r($x->executeQuery("insert into nna_perfiles_ingreso  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(1,'Trastorno de comportamiento',sysdate,1,1)"));
-print_r($x->executeQuery("insert into nna_perfiles_ingreso  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'Consumidores de sustancias psicoactivas',sysdate,1,1)"));
-print_r($x->executeQuery("insert into nna_perfiles_ingreso  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'Experiencia Vida en Calle',sysdate,1,1)"));
-print_r($x->executeQuery("insert into nna_perfiles_ingreso  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'Víctima de Explotación sexual',sysdate,1,1)"));
-print_r($x->executeQuery("insert into nna_perfiles_ingreso  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(5,'Víctima de trata por explotación sexual',sysdate,1,1)"));
-print_r($x->executeQuery("insert into nna_perfiles_ingreso  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(6,'Víctima de trata por mendicidad',sysdate,1,1)"));
-print_r($x->executeQuery("insert into nna_perfiles_ingreso  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(7,'Víctima de trata por explotación laboral',sysdate,1,1)"));
-print_r($x->executeQuery("insert into nna_perfiles_ingreso  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(8,'Víctima de trata por comercialización de órganos',sysdate,1,1)"));
-print_r($x->executeQuery("insert into nna_perfiles_ingreso  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(9,'Víctima de trata por venta de niños/as',sysdate,1,1)"));
-print_r($x->executeQuery("insert into nna_perfiles_ingreso  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(10,'Trastorno disocial',sysdate,1,1)"));
-print_r($x->executeQuery("insert into nna_perfiles_ingreso  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(11,'Víctima de violencia sexual',sysdate,1,1)"));
-print_r($x->executeQuery("insert into nna_perfiles_ingreso  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(12,'Presunto infractor',sysdate,1,1)"));
-
-print_r($x->executeQuery("insert into nna_perfiles_ingreso  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(13,'Víctima de maltrato físico y/o psicológico',sysdate,1,1)"));
-print_r($x->executeQuery("insert into nna_perfiles_ingreso  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(14,'Abandono',sysdate,1,1)"));
-print_r($x->executeQuery("insert into nna_perfiles_ingreso  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(15,'Victimas de explotación sexual',sysdate,1,1)"));
+     
+    print_r($x->executeQuery("insert into Nnaproblematica_familiar  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(1,'Ausentismo de madre por trabajo',sysdate,1,1)"));
+    print_r($x->executeQuery("insert into Nnaproblematica_familiar  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'Conductual/experiencia en calle',sysdate,1,1)"));
+    print_r($x->executeQuery("insert into Nnaproblematica_familiar  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'Conductual/violencia sexual',sysdate,1,1)"));
+    print_r($x->executeQuery("insert into Nnaproblematica_familiar  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'Desintegrada e incompleta, Desinterés rol parental',sysdate,1,1)"));
+    print_r($x->executeQuery("insert into Nnaproblematica_familiar  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(5,'Disgregada, Drogadicción',sysdate,1,1)"));
+    print_r($x->executeQuery("insert into Nnaproblematica_familiar  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(6,'Escasa preocupación',sysdate,1,1)"));
+    print_r($x->executeQuery("insert into Nnaproblematica_familiar  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(7,'Inadecuada forma de crianza',sysdate,1,1)"));
+    print_r($x->executeQuery("insert into Nnaproblematica_familiar  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(8,'Maltrato físico, Violencia -sexual',sysdate,1,1)"));
+    print_r($x->executeQuery("insert into Nnaproblematica_familiar  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(9,'Experiencia en calle Multi problemática',sysdate,1,1)"));
+    print_r($x->executeQuery("insert into Nnaproblematica_familiar  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(10,'Negligencia',sysdate,1,1)"));
+    print_r($x->executeQuery("insert into Nnaproblematica_familiar  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(11,'Orfandad',sysdate,1,1)"));
+    print_r($x->executeQuery("insert into Nnaproblematica_familiar  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(12,'Privado de su libertad',sysdate,1,1)"));
+    print_r($x->executeQuery("insert into Nnaproblematica_familiar  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(13,'Prostitución',sysdate,1,1)"));
+    print_r($x->executeQuery("insert into Nnaproblematica_familiar  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(14,'Salud mental',sysdate,1,1)"));
+    print_r($x->executeQuery("insert into Nnaproblematica_familiar  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(15,'Otros',sysdate,1,1)"));
 print_r($x->executeQuery("SELECT * FROM nna_perfiles_ingreso  WHERE RESIDENTE_ID = 1 AND ESTADO=1"));
 die();
 
