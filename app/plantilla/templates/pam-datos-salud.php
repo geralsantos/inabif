@@ -64,7 +64,8 @@
                             </div>
                             <div class="form-group col-md-8">
                                 <div class=" "><label for="text-input" class=" form-control-label">Descripción de la meta trazada en el pai</label>
-                                <input type="text" v-model="Meta_PAI" name="Meta_PAI" placeholder="" class="form-control">
+                                <textarea class="form-control" v-model="Meta_PAI" name="Meta_PAI" cols="30" rows="2"></textarea>
+
                                 </div>
                             </div>
                             
@@ -79,7 +80,8 @@
                             </div>
                             <div class="form-group col-md-8">
                                 <label for="text-input" class=" form-control-label">Descripción del informe evolutivo</label>
-                                <input type="text" v-model="Des_Informe_Tecnico" name="Des_Informe_Tecnico" placeholder="" class="form-control">
+                                <textarea class="form-control" v-model="Des_Informe_Tecnico" name="Des_Informe_Tecnico" cols="30" rows="2"></textarea>
+                            
                             </div>
                         </div>
                         <div class="row">
