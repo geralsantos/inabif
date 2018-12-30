@@ -113,22 +113,22 @@ Vue.component('ppd-datos-terapia', {
 
                 if( response.body.atributos != undefined){
 
-                    this.CarNumReeducaion = response.body.atributos[0]["Num_TMotriz"];
-                    this.CarParticipaPsicomotricidad = response.body.atributos[0]["Num_TPsicomotricidad"];
-                    this.CarFisioterapia = response.body.atributos[0]["Num_TFisioterapia"];
-                    this.CarDeportesAdaptados = response.body.atributos[0]["Num_TDeportes"];
-                    this.CarComunicacion = response.body.atributos[0]["Num_TComunicacion"];
-                    this.CarReeducacionOrofacial = response.body.atributos[0]["Num_TOrofacial"];
-                    this.CarTerapiaLenguaje = response.body.atributos[0]["Num_TLenguaje"];
-                    this.CarDesarrolloLenguaje = response.body.atributos[0]["Num_TLenguajeA"];
-                    this.CarTipoLenguajeAlternativo = response.body.atributos[0]["Tipo_LenguajeA"];
-                    this.CarDesrrolloActividadesBasicas = response.body.atributos[0]["Num_TABVD"];
-                    this.CarInstrumentalesBasicas = response.body.atributos[0]["Num_TInstrumentalesB"];
-                    this.CarInstrumentalesComplejas = response.body.atributos[0]["Num_TInstrumentalesC"];
-                    this.CarIntervensionSensorial = response.body.atributos[0]["Num_TSensoriales"];
-                    this.CarSensoReceptivas = response.body.atributos[0]["Num_TReceptivas"];
-                    this.CarElavoracionOrteticos = response.body.atributos[0]["Num_TOrteticos"];
-                    this.CarAdaptacionSilla = response.body.atributos[0]["Num_TSoillaR"];
+                    this.CarNumReeducaion = response.body.atributos[0]["NUM_TMOTRIZ"];
+                    this.CarParticipaPsicomotricidad = response.body.atributos[0]["NUM_TPSICOMOTRICIDAD"];
+                    this.CarFisioterapia = response.body.atributos[0]["NUM_TFISIOTERAPIA"];
+                    this.CarDeportesAdaptados = response.body.atributos[0]["NUM_TDEPORTES"];
+                    this.CarComunicacion = response.body.atributos[0]["NUM_TCOMUNICACION"];
+                    this.CarReeducacionOrofacial = response.body.atributos[0]["NUM_TOROFACIAL"];
+                    this.CarTerapiaLenguaje = response.body.atributos[0]["NUM_TLENGUAJE"];
+                    this.CarDesarrolloLenguaje = response.body.atributos[0]["NUM_TLENGUAJEA"];
+                    this.CarTipoLenguajeAlternativo = response.body.atributos[0]["TIPO_LENGUAJEA"];
+                    this.CarDesrrolloActividadesBasicas = response.body.atributos[0]["NUM_TABVD"];
+                    this.CarInstrumentalesBasicas = response.body.atributos[0]["NUM_TINSTRUMENTALESB"];
+                    this.CarInstrumentalesComplejas = response.body.atributos[0]["NUM_TINSTRUMENTALESC"];
+                    this.CarIntervensionSensorial = response.body.atributos[0]["NUM_TSENSORIALES"];
+                    this.CarSensoReceptivas = response.body.atributos[0]["NUM_TRECEPTIVAS"];
+                    this.CarElavoracionOrteticos = response.body.atributos[0]["NUM_TORTETICOS"];
+                    this.CarAdaptacionSilla = response.body.atributos[0]["NUM_TSOILLAR"];
 
 
                 }
