@@ -160,59 +160,22 @@ if (isset($_POST["nombretabla"]) && $_POST["nombretabla"]!="") {
     print_r($x->executeQuery($_POST["nombretabla"]));
     die();
 }else{
-$x->dropTable('drop table CarSaludNutricion ');
-$mdl->createTable("create table CarSaludNutricion
-(
-Id int not null primary key ,
-Tipo_Centro_Id  int,
-Residente_Id	int,
-Periodo_Mes int,
-Periodo_Anio   int,
-Discapacidad       	char(2),
-Discapacidad_Fisica	varchar(40),
-Discapacidad_Intelectual varchar(40),
-Discapacidad_Sensorial varchar(40),
-Discapacidad_mental varchar(40),
-Certificacdo_Dx    	char(2),
-Carnet_CONADIS     	varchar(20),
-Movilidad    	varchar(50),
-Motivo_Movilidad varchar(100),
-Dificultad_Movilidad   int,
-Patologia1   	varchar(10),
-Tipo_Patologia1    	int,
-Especifique1       	varchar(250),
-Patologia2   	varchar(10),
-Tipo_Patologia2    	int,
-Especifique2       	varchar(200),
-Nivel_Hemoglobina  	number(6,2),
-Anemia             	varchar(10),
-Peso          	number(6,2),
-Talla         	number(6,2),
-Estado_Nutricional 	varchar(20),
-Estado             	int default 1,
-Fecha_Creacion     	TIMESTAMP DEFAULT SYSDATE,
-Fecha_Edicion      	TIMESTAMP DEFAULT SYSDATE,
-Usuario_Crea       	int,
-Usuario_Edita      	int
-)
-
-
-"); /*
-  print_r($x->executeQuery("insert into pam_tipo_patologia (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(1,'Enfermedad pulmonar crónica tal como asma, bronquitis o enfisema',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_tipo_patologia (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'Hipertensión',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_tipo_patologia (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'Diabetes',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_tipo_patologia (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'Depresión',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_tipo_patologia (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(5,'Cáncer o un tumor maligno',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_tipo_patologia (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(6,'enfermedad cardiaca congestiva u otros problemas del corazón',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_tipo_patologia (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(7,'Derrame o hemorragia cerebral',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_tipo_patologia (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(8,'Artritis, reumatismo o artrosis',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_tipo_patologia (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(9,'Osteoporosis (perdida de calcio en los huesos)',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_tipo_patologia (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(10,'Insuficiencia renal crónica (problemas de riñón)',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_tipo_patologia (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(11,'Enfermedades del sistema nervioso, Alzheimer o pérdida de memoria',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_tipo_patologia (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(12,'VIH',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_tipo_patologia (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(13,'TBC',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_tipo_patologia (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(14,'Otro (Especifique)',sysdate,1,1)"));
-  print_r($x->executeQuery("SELECT * FROM CarSaludNutricion WHERE ESTADO=1"));*/
+$x->dropTable('drop table pam_instituciones ');
+$mdl->createTable("create table pam_instituciones (
+    id INT NOT NULL primary key,
+    nombre VARCHAR(150) NOT NULL,
+    estado INT DEFAULT 1,
+    fecha_creacion date NOT NULL,
+    fecha_edicion TIMESTAMP DEFAULT SYSDATE,
+    Usuario_Crea INT NOT NULL,
+    Usuario_Edita INT NOT NULL
+    )
+"); 
+  print_r($x->executeQuery("insert into pam_instituciones (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(1,'Fiscalía',sysdate,1,1)"));
+  print_r($x->executeQuery("insert into pam_instituciones (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'Juzgado',sysdate,1,1)"));
+  print_r($x->executeQuery("insert into pam_instituciones (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'Unidad de Protección Especial',sysdate,1,1)"));
+  print_r($x->executeQuery("insert into pam_instituciones (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'Otros',sysdate,1,1)"));
+  print_r($x->executeQuery("SELECT * FROM CarSaludNutricion WHERE ESTADO=1"));
 /*
 $tabla="CarEgresoSalud";
 $x->dropTable("drop table ".$tabla);
