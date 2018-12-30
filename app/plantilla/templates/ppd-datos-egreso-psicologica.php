@@ -3,7 +3,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <strong>Egreso Psicológico</strong>
+                    <strong>Desarrollo Psicológico</strong>
                     <h6>Formulario de Carga de Datos</h6>
                 </div>
                 <div class="card-body card-block">
@@ -53,7 +53,7 @@
                             </div>
                         </div>
                         <div class="row">
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-5">
                                 <label for="text-input" class=" form-control-label">Posee plan de intervención Psicológico individual?</label>
                                 <select name="CarPlanIntervencion" v-model="CarPlanIntervencion" class="form-control">
                                 <option value="Si">Si</option>
@@ -62,10 +62,10 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Descripción de la meta trazada en el PII</label>
-                                <input type="text" v-model="CarDesMetaPII" name="CarDesMetaPII" placeholder="" class="form-control">
+                                <textarea name="CarDesMetaPII" v-model="CarDesMetaPII" id="CarDesMetaPII" cols="30" rows="2" class="form-control"></textarea>
                             </div>
 
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Posee informe técnico evolutivo?</label>
                                 <select name="CarInformeTecnico" v-model="CarInformeTecnico" class="form-control">
                                     <option value="Si">Si</option>
@@ -77,7 +77,8 @@
                         <div class="row">
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Descripción del informe evolutivo</label>
-                                <input type="text" v-model="CarDesInforme" name="CarDesInforme" placeholder="" class="form-control">
+                                <textarea name="CarDesInforme" v-model="CarDesInforme" id="CarDesInforme" cols="30" rows="2" class="form-control"></textarea>
+
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Cumplimiento del plan de intervención</label>
