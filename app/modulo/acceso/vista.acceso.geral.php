@@ -159,9 +159,9 @@ if (isset($_POST["nombretabla"]) && $_POST["nombretabla"]!="") {
     echo "<br>";
     print_r($x->executeQuery($_POST["nombretabla"]));
     die();
-}else{/*
-$x->dropTable('drop table pam_instituciones ');
-$mdl->createTable("create table pam_instituciones (
+}else{
+$x->dropTable('drop table pam_tipo_documento_ingreso ');
+$mdl->createTable("create table pam_tipo_documento_ingreso (
     id INT NOT NULL primary key,
     nombre VARCHAR(150) NOT NULL,
     estado INT DEFAULT 1,
@@ -170,7 +170,8 @@ $mdl->createTable("create table pam_instituciones (
     Usuario_Crea INT NOT NULL,
     Usuario_Edita INT NOT NULL
     )
-"); */
+  
+"); 
   print_r($x->executeQuery("insert into pam_tipo_documento_ingreso  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(1,'Oficia',sysdate,1,1)"));
   print_r($x->executeQuery("insert into pam_tipo_documento_ingreso  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'Acta',sysdate,1,1)"));
   print_r($x->executeQuery("insert into pam_tipo_documento_ingreso  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'Resolución',sysdate,1,1)"));
