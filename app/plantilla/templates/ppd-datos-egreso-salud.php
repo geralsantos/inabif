@@ -66,12 +66,9 @@
                                 <textarea v-model="CarDesMetaPII" name="CarDesMetaPII" id="CarDesMetaPII" cols="30" rows="2" class="form-control"></textarea>
                                 </div>
                             </div>
-
-                           
-
                         </div>
                         <div class="row">
-                        <div class="form-group col-md-5">
+                            <div class="form-group col-md-5">
                                 <label for="text-input" class=" form-control-label">Posee informe técnico evolutivo?</label>
                                 <select name="CarInformeTecnico" v-model="CarInformeTecnico" class="form-control">
                                 <option value="Si">Si</option>
@@ -84,7 +81,7 @@
 
                                 </div>
                             </div>
-
+                        </div>
                             
                         <div class="row">
                             <div class="form-group col-md-4">
