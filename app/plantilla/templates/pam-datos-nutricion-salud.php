@@ -193,6 +193,8 @@
                                 <select name="estado_nutricional" v-model="estado_nutricional" class="form-control">
                                     <option value="Normal">Normal</option>
                                     <option value="Desnutrición">Desnutrición</option>
+                                    <option value="Sobrepeso">Sobrepeso</option>
+                                    <option value="Obesidad">Obesidad</option>
                                     </select> 
                             </div>
                         </div>
