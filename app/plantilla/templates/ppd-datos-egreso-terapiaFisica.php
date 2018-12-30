@@ -105,14 +105,14 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Mejora de la emisión de fonemas?</label>
+                                <label for="text-input" class=" form-control-label">¿Mejora de la emisión de fonemas?</label>
                                 <select name="CarMejoraEmision" v-model="CarMejoraEmision" class="form-control">
                                 <option value="Si">Si</option>
                                     <option value="No">No</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Mejora del lenguaje comprensivo?</label>
+                                <label for="text-input" class=" form-control-label">¿Mejora del lenguaje comprensivo?</label>
                                 <select name="CarManejoLenguaje" v-model="CarManejoLenguaje" class="form-control">
                                 <option value="Si">Si</option>
                                     <option value="No">No</option>
