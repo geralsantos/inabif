@@ -44,7 +44,6 @@ Vue.component('ppd-datos-salud-nutricion', {
         this.buscar_dificultades();
         this.buscar_patologias();
         this.buscar_patologias2();
-        this.buscar_nutricionales();
     },
     updated:function(){
     },
@@ -164,7 +163,7 @@ Vue.component('ppd-datos-salud-nutricion', {
             });
         },
         buscar_patologias(){
-            this.$http.post('buscar?view',{tabla:''}).then(function(response){
+            this.$http.post('buscar?view',{tabla:'pam_tipo_patologia'}).then(function(response){
                 if( response.body.data ){
                     this.patologias= response.body.data;
                 }
@@ -172,17 +171,9 @@ Vue.component('ppd-datos-salud-nutricion', {
             });
         },
         buscar_patologias2(){
-            this.$http.post('buscar?view',{tabla:''}).then(function(response){
+            this.$http.post('buscar?view',{tabla:'pam_tipo_patologia'}).then(function(response){
                 if( response.body.data ){
                     this.patologias2= response.body.data;
-                }
-
-            });
-        },
-        buscar_nutricionales(){
-            this.$http.post('buscar?view',{tabla:''}).then(function(response){
-                if( response.body.data ){
-                    this.nutricionales= response.body.data;
                 }
 
             });

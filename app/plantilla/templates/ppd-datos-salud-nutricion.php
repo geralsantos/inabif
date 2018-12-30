@@ -227,7 +227,10 @@
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Estado nutricional (imc) </label>
                                 <select name="CarEstadoNutricional" v-model="CarEstadoNutricional" class="form-control">
-                                    <option v-for="nutricional in nutricionales" :value="nutricional.ID">{{nutricional.NOMBRE}}</option>
+                                <option value="Bajo Peso">Bajo Peso</option>
+                                <option value="Normal">Normal</option>
+                                <option value="Sobre Peso">Sobre Peso</option>
+                                <option value="Obesidad">Obesidad</option>
                                 </select>
                             </div>
                         </div>
