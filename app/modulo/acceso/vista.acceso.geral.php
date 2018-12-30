@@ -18,7 +18,7 @@ crear tabla
     <form action="geral" method="GET">
 <input type="text" style="witdh:100%;" size="100" value="<?php echo $_GET["deletefrom"]?>" name="deletefrom" placeholder="deletefrom">
 
-<button type="submit">borrar tabla</button>
+<button type="submit">borrar registros</button>
 </form>
 <?php 
 //  Configure DB Parameters
