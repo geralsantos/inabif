@@ -1,16 +1,25 @@
 Vue.component('nna-actividades-sociorecreativas', {
     template:'#nna-actividades-sociorecreativas',
     data:()=>({
-        NNAArte:null,
-        NNABiohuerto:null,
-        NNAZapateria:null,
-        NNACarpinteria:null,
-        NNACeramica:null,
-        NNACrianzaAnimales:null,
-        NNAPintura:null,
-        NNATejidos:null,
-        NNADeportes:null,
-        NNATalleres:null
+        
+        Nro_Arte:null,
+        Nro_BioHuerto:null,
+        Nro_Zapateria:null,
+        Nro_Carpinteria:null,
+        Nro_Ceramica :null,
+        Nro_Crianza:null,
+        Nro_Dibujo:null,
+        Nro_Tejido:null,
+        Nro_Deportes:null, 
+        Nro_Taller_Pro:null,
+
+        nombre_residente:null,
+        isLoading:false,
+        mes:moment().format("MM"),
+        anio:(new Date()).getFullYear(),
+        coincidencias:[],
+        bloque_busqueda:false,
+        id_residente:null
 
     }),
     created:function(){
@@ -21,19 +30,30 @@ Vue.component('nna-actividades-sociorecreativas', {
     },
     methods:{
         guardar(){
+            if (this.id_residente==null) {
+                swal('Error', 'Residente no existe', 'warning');
+                return false;
+            }
             let valores = {
-                Nro_Arte:this.NNAArte,
-                Nro_BioHuerto:this.NNABiohuerto,
-                Nro_Zapateria:this.NNAZapateria,
-                Nro_Carpinteria:this.NNACarpinteria,
-                Nro_Ceramica:this.NNACeramica,
-                Nro_Crianza:this.NNACrianzaAnimales,
-                Nro_Dibujo:this.NNAPintura,
-                Nro_Tejido:this.NNATejidos,
-                Nro_Deportes:this.NNADeportes,
-                Nro_Taller_Pro:this.NNATalleres
-                        }
-            this.$http.post('insertar_datos?view',{tabla:'ActividadesSociorecreativas', valores:valores}).then(function(response){
+               
+                Nro_Arte:this.Nro_Arte,
+                Nro_BioHuerto:this.Nro_BioHuerto,
+                Nro_Zapateria:this.Nro_Zapateria,
+                Nro_Carpinteria:this.Nro_Carpinteria,
+                Nro_Ceramica :this.Nro_Ceramica,
+                Nro_Crianza:this.Nro_Crianza,
+                Nro_Dibujo:this.Nro_Dibujo,
+                Nro_Tejido:this.Nro_Tejido,
+                Nro_Deportes:this.Nro_Deportes, 
+                Nro_Taller_Pro:this.Nro_Taller_Pro,
+                
+                Residente_Id: this.id_residente,
+                Periodo_Mes: moment().format("MM"),
+                Periodo_Anio:moment().format("YYYY")
+
+            }
+                
+            this.$http.post('insertar_datos?view',{tabla:'NNAActividadesSociorecrea', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
                     swal('', 'Registro Guardado', 'success');
@@ -42,6 +62,59 @@ Vue.component('nna-actividades-sociorecreativas', {
                   swal("", "Un error ha ocurrido", "error");
                 }
             });
-        }
+        },
+        buscar_residente(){
+            this.id_residente = null;
+
+            var word = this.nombre_residente;
+            if( word.length >= 4){
+                this.coincidencias = [];
+                this.bloque_busqueda = true;
+                this.isLoading = true;
+
+                this.$http.post('ejecutar_consulta?view',{like:word }).then(function(response){
+
+                    if( response.body.data != undefined){
+                        this.isLoading = false;
+                        this.coincidencias = response.body.data;
+                    }else{
+                        this.bloque_busqueda = false;
+                        this.isLoading = false;
+                        this.coincidencias = [];
+                    }
+                 });
+            }else{
+                this.bloque_busqueda = false;
+                this.isLoading = false;
+                this.coincidencias = [];
+            }
+        },
+        actualizar(coincidencia){
+            this.id_residente = coincidencia.ID;
+            this.nombre_residente=coincidencia.NOMBRE;
+            this.coincidencias = [];
+            this.bloque_busqueda = false;
+
+            this.$http.post('cargar_datos_residente?view',{tabla:'NNAActividadesSociorecrea', residente_id:this.id_residente }).then(function(response){
+
+                if( response.body.atributos != undefined){
+
+                    this.Nro_Arte = response.body.atributos[0]["NRO_ARTE"];
+                    this.Nro_BioHuerto = response.body.atributos[0]["NRO_BIOHUERTO"];
+                    this.Nro_Zapateria = response.body.atributos[0]["NRO_ZAPATERIA"];
+                    this.Nro_Carpinteria = response.body.atributos[0]["NRO_CARPINTERIA"];
+                    this.Nro_Ceramica = response.body.atributos[0]["NRO_CERAMICA"];
+                    this.Nro_Crianza = response.body.atributos[0]["NRO_CRIANZA"];
+                    this.Nro_Participa_Divergentes = response.body.atributos[0]["NRO_DIBUJO"];
+                    this.Nro_Tejido = response.body.atributos[0]["NRO_TEJIDO"];
+                    this.Nro_Deportes = response.body.atributos[0]["NRO_DEPORTES"];
+                    this.Nro_Taller_Pro = response.body.atributos[0]["NRO_TALLER_PRO"];
+
+
+                }
+             });
+
+        },
+        
     }
   })

@@ -9,24 +9,74 @@
                 <div class="card-body card-block">
                     <form class="form-horizontal" v-on:submit.prevent="guardar">
                         <div class="row">
+                            <div class="form-group col-md-7">
+                                <label for="text-input" class=" form-control-label">Nombre Residente</label>
+                                <div class="autocomplete">
+                                    <input type="text"  v-model="nombre_residente" class="form-control" @keyup="buscar_residente()" placeholder="Nombre, Apellido o DNI"/>
+                                    <ul  id="autocomplete-results" class="autocomplete-results" v-if="bloque_busqueda">
+                                        <li class="loading" v-if="isLoading">
+                                            Loading results...
+                                        </li>
+                                        <li  @click="actualizar(coincidencia)" class="autocomplete-result" v-for="coincidencia in coincidencias">
+                                            {{coincidencia.NOMBRE}} {{coincidencia.APELLIDO}} - {{coincidencia.DOCUMENTO}}
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label for="text-input" class=" form-control-label">Año</label>
+                                <select name="select" disabled="disabled" id="anio"  v-model="anio" class="form-control">
+                                <option value="2018">2018</option>
+                                <option value="2019">2019</option>
+                                <option value="2020">2020</option>
+                                <option value="2021">2021</option>
+                                </select>
+
+                            </div>
+                            <div class="form-group col-md-3">
+                                <div class=""><label for="text-input" class=" form-control-label">Mes</label>
+                                <select id="mes" v-model="mes" disabled="disabled" class="form-control" >
+                                        <option value="1">Enero</option>
+                                        <option value="2">Febrero</option>
+                                        <option value="3">Marzo</option>
+                                        <option value="4">Abril</option>
+                                        <option value="5">Mayo</option>
+                                        <option value="6">Junio</option>
+                                        <option value="7">Julio</option>
+                                        <option value="8">Agosto</option>
+                                        <option value="9">Septiembre</option>
+                                        <option value="10">Octubre</option>
+                                        <option value="11">Noviembre</option>
+                                        <option value="12">Diciembre</option>
+                                    </select> </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Tipo de Documento de Identidad</label>
-                                <select name="NNATipoDoc" v-model="NNATipoDoc" class="form-control">
-                                <option value="">Dni</option>
-                                <option value="">Carné de extranjeria</option>
-                                <option value="">Pasaporte</option>
+                                <select name="Tipo_Doc" v-model="Tipo_Doc" class="form-control">
+                                    <option value="Dni">Dni</option>
+                                    <option value="Carnet de extranjería">Carnet de extranjería</option>
+                                    <option value="Pasaporte">Pasaporte</option>
+                                    <option value="Documento de identidad extranjero">Documento de identidad extranjero</option>
+                                    <option value="Acta de Nacimiento">Acta de Nacimiento</option>
+                                    <option value="Código de registro de nacido vivo - CNV">Código de registro de nacido vivo - CNV</option>
+                                    <option value="No tiene">No tiene</option>
+                                    <option value="Otros">Otros</option>
                                 </select>
                                 </div>
                             </div>
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Número de Documento de Identidad</label>
-                                <input type="text" v-model="NNANumDoc" name="NNANumDoc" placeholder="" class="form-control"> </div>
+                                <input type="text" v-model="Numero_Doc" name="Numero_Doc" placeholder="" class="form-control"> </div>
                             </div>
                             <div class="form-group col-md-4">
-                                <div class=" "><label for="text-input" class=" form-control-label">Saber Leer y Escribir</label>
-                                <select name="NNALeeEscribe" v-model="NNALeeEscribe" class="form-control">
-                                <option value="">Si</option>
-                                <option value="">No</option>
+                                <div class=" "><label for="text-input" class=" form-control-label">¿Sabe leer y escribir?</label>
+                                <select name="Lee_Escribe" v-model="Lee_Escribe" class="form-control">
+                                <option value="Si">Si</option>
+                                <option value="No">No</option>
                                 </select>
                                 </div>
                             </div>
@@ -34,29 +84,37 @@
                         <div class="row">
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Nivel Educativo</label>
-                                <select name="NNANivelEducativo" v-model="NNANivelEducativo" class="form-control">
-                                <option value="">Sin Educación</option>
-                                <option value="">Primaria Incompleta</option>
-                                <option value="">Primaria Completa</option>
+                                <select name="Nivel_Educativo" v-model="Nivel_Educativo" class="form-control">
+                                <option value="Sin educación">Sin Educación</option>
+                                <option value="Primaria incompleta">Primaria Incompleta</option>
+                                <option value="Primaria completa">Primaria Completa</option>
+                                <option value="Secundaria incompleta">Secundaria Incompleta</option>
+                                <option value="Secundaria completa">Secundaria completa</option>
+                                <option value="Técnico incompleta">Técnico incompleta</option>
+                                <option value="Técnico y superior incompleta">Técnico y superior incompleta</option>
+                                <option value="superior completa">Superior completa</option>
                                 </select>
                                 </div>
                             </div>
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Tipo de Seguro de Salud</label>
-                                <select name="NNATipoSeguro" v-model="NNATipoSeguro" class="form-control">
-                                <option value="">ESSALUD</option>
-                                <option value="">FFAA_PNP</option>
-                                <option value="">Seguro Privado</option>
+                                <select name="Tipo_Seguro" v-model="Tipo_Seguro" class="form-control">
+                                <option value="ESSALUD">ESSALUD</option>
+                                <option value="FFAA_PNP">FFAA_PNP</option>
+                                <option value="Seguro Privado">Seguro Privado</option>
+                                <option value="Seguro Integral de Salud(SIS)">Seguro Integral de Salud(SIS)</option>
+                                <option value="Otro">Otro</option>
+                                <option value="No tiene">No tiene</option>
                                 </select>
                                 </div>
                             </div>
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Clasificación Socioeconómica (SISFOH)</label>
-                                <select name="NNAClasificacionSocioeconomica" v-model="NNAClasificacionSocioeconomica" class="form-control">
-                                <option value="">Sin Clasificación Socioeconómica</option>
-                                <option value="">Pobre Extremo</option>
-                                <option value="">Pobre no Extremo</option>
-                                <option value="">No Pobre</option>
+                                <select name="SISFOH" v-model="SISFOH" class="form-control">
+                                <option value="Sin Clasificación Socioeconómica">Sin Clasificación Socioeconómica</option>
+                                <option value="Pobre Extremo">Pobre Extremo</option>
+                                <option value="Pobre no Extremo">Pobre no Extremo</option>
+                                <option value="No Pobre">No Pobre</option>
                                 </select>
                                 </div>
                             </div>

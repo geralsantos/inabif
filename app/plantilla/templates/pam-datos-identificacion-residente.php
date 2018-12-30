@@ -78,7 +78,7 @@
                             <div class="form-group col-md-6">
                                 <div class=" "><label for="text-input" class=" form-control-label">Departamento de Procedencia</label>
                                 <select name="departamento_procedente_id" v-model="departamento_procedente_id" @change="buscar_provincias()" class="form-control">
-                                    <option v-for="departamento in departamentos" :value="departamento.CODDEPT">{{departamento.NOMDEPT}}</option>
+                                    <option v-for="departamento in departamentos" :value="departamento.ID">{{departamento.NOMBRE}}</option>
                                 </select>
                                 </div>
                             </div>
@@ -87,21 +87,21 @@
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Departamento de Nacimiento</label>
                                 <select name="departamento_nacimiento_id" v-model="departamento_nacimiento_id" @change="buscar_distritos()" class="form-control">
-                                    <option v-for="departamento in departamentos2" :value="departamento.CODDEPT">{{departamento.NOMDEPT}}</option>
+                                    <option v-for="departamento in departamentos2" :value="departamento.ID">{{departamento.NOMBRE}}</option>
                                 </select>
                                 </div>
                             </div>
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Provincia de Nacimiento</label>
                                 <select name="provincia_nacimiento_id" v-model="provincia_nacimiento_id" @change="buscar_distritos()" class="form-control">
-                                    <option v-for="provincia in provincias" :value="provincia.CODPROV">{{provincia.NOMPROV}}</option>
+                                    <option v-for="provincia in provincias" :value="provincia.ID">{{provincia.NOMBRE}}</option>
                                 </select>
                                 </div>
                             </div>
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Distrito de Nacimiento</label>
                                 <select name="distrito_nacimiento_id" v-model="distrito_nacimiento_id" class="form-control">
-                                    <option v-for="distrito in distritos" :value="distrito.CODDIST">{{distrito.NOMDIST}}</option>
+                                    <option v-for="distrito in distritos" :value="distrito.ID">{{distrito.NOMBRE}}</option>
                                 </select>
                                 </div>
                             </div>
@@ -123,7 +123,7 @@
                             </div>
                             <div class="form-group col-md-2">
                                 <div class=" "><label for="text-input" class=" form-control-label">Edad</label>
-                                <input type="number" v-model="Edad" name="Edad" placeholder="" class="form-control">
+                                <input type="text" v-model="Edad" name="Edad" placeholder="" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group col-md-4">
