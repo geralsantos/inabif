@@ -53,7 +53,93 @@
                             </div>
 
                         </div>
-                        
+                        <div class="row">
+                            <div class="form-group col-md-3">
+                                <label for="text-input" class=" form-control-label">Fecha_egreso</label>
+                                <input type="date" v-model="Fecha_Egreso" name="Fecha_Egreso" placeholder="" class="form-control">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="text-input" class=" form-control-label">Motivo del egreso</label>
+                                <select name="MotivoEgreso" v-model="MotivoEgreso" class="form-control">
+                                    <option value="Retiro voluntario">Retiro voluntario</option>
+                                    <option value="Reinserción en entorno familiar">Reinserción en entorno familiar</option>
+                                    <option value="Traslado a una entidad de salud">Traslado a una entidad de salud</option>
+                                    <option value="Traslado a otra Entidad">Traslado a otra Entidad</option>
+                                    <option value="Fallecimiento">Fallecimiento</option>
+                                    
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-3">
+                                <label for="text-input" class=" form-control-label">Retiro voluntario</label>
+                                <select name="Retiro_Voluntario" v-model="Retiro_Voluntario" class="form-control">
+                                    <option value="Independencia">Independencia</option>
+                                    <option value="Maltrato">Maltrato</option>
+                                    <option value="Otros">Otros</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                                <div class="form-group col-md-4">
+                                    <label for="text-input" class=" form-control-label">Reinserción familiar</label>
+                                    <select name="Reinsercion_Familiar" v-model="Reinsercion_Familiar" class="form-control">
+                                        <option value="Hiijo(a)">Hiijo(a)</option>
+                                        <option value="Hermano(a)">Hermano(a)</option>
+                                        <option value="Nieto(a)">Nieto(a)</option>
+                                        <option value="Otros">Otros</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="text-input" class=" form-control-label">Traslado a una entidad de salud  </label>
+                                    <select name="Traslado_Entidad_Salud" v-model="Traslado_Entidad_Salud" class="form-control">
+                                        <option value="ESSALUD">ESSALUD</option>
+                                        <option value="MINSA">MINSA</option>
+                                        <option value="Otros">Otros</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="text-input" class=" form-control-label">Traslado a otra Entidad </label>
+                                    <select name="Traslado_Otra_Entidad" v-model="Traslado_Otra_Entidad" class="form-control">
+                                        <option value="Otro CAR del INABIF">Otro CAR del INABIF</option>
+                                        <option value="Otro CAR público">Otro CAR público </option>
+                                        <option value="Otro CAR privado">Otro CAR privado</option>
+                                    </select>
+                                </div>
+                            </div>
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label for="text-input" class=" form-control-label">Fallecimiento</label>
+                                <select name="Fallecimiento" v-model="Fallecimiento" class="form-control">
+                                    <option value="Muerte natural">Muerte natural</option>
+                                    <option value="Muerte violenta">Muerte violenta</option>
+                                    <option value="Muerte súbita">Muerte súbita</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label for="text-input" class=" form-control-label">Cumplimiento de restitución de derechos Aseguramiento a Salud</label>
+                                <select name="RestitucionAseguramientoSaludo" v-model="RestitucionAseguramientoSaludo" class="form-control">
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="text-input" class=" form-control-label">Cumplimiento de restitución de derechos Documento Nacional de Identidad - DNI</label>
+                                <select name="Restitucion_Derechos_DNI" v-model="Restitucion_Derechos_DNI" class="form-control">
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="text-input" class=" form-control-label">Cumplimiento de restitución de derechos Reinserción Familiar</label>
+                                <select name="RestitucionReinsercionFamiliar" v-model="RestitucionReinsercionFamiliar" class="form-control">
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            
+                        </div>
                     </form>
                 </div>
             </div>
