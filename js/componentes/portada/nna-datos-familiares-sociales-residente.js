@@ -23,6 +23,7 @@ Vue.component('nna-datos-familiares-sociales-residente', {
     },
     mounted:function(){
         this.cargar_problematicas();
+        this.tipo_parentesco();
     },
     updated:function(){
     },
