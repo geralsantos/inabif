@@ -159,38 +159,26 @@ if (isset($_POST["nombretabla"]) && $_POST["nombretabla"]!="") {
     echo "<br>";
     print_r($x->executeQuery($_POST["nombretabla"]));
     die();
-}else{/*
-$x->dropTable('drop table CarSaludMental ');
-$mdl->createTable("Create table CarSaludMental
-(
-Id int not null primary key,
-Tipo_Centro_Id  int,
-Residente_Id	int,
-Periodo_Mes int,
-Periodo_Anio   int,
-Transtorno_Neurologico char(2),
-Des_Transtorno     	varchar(20),
-Tipo_Transtorno    	int,
-Dificultad_habla varchar(100),
-Metodo_comunicarse 	varchar(100),
-Comprension  	char(2),
-Tipo_Dificultad    	varchar(100),
-Actividades_Diarias	int,
-Especificar  	varchar(250),
-Estado             	int default 1,
-Fecha_Creacion     	date,
-Fecha_Edicion      	TIMESTAMP DEFAULT SYSDATE,
-Usuario_Crea       	int,
-Usuario_Edita      	int
+}else{
+$x->dropTable('drop table dificultades_cuerpo ');
+$mdl->createTable("CREATE TABLE dificultades_cuerpo
+( id int NOT NULL primary key,
+  nombre varchar(200) NOT NULL,
+  Estado                            	int,
+Fecha_Creacion            	DATE ,
+Fecha_Edicion              	timestamp DEFAULT (sysdate),
+Usuario_Crea                	int,
+Usuario_Edita               	int
 )
-");*/ /*
-  print_r($x->executeQuery("insert into pam_actividades_diaria (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(1,'Come solo',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_actividades_diaria (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'Se viste solo',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_actividades_diaria (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'Acude al baño solo',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_actividades_diaria (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'Se baña solo',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_actividades_diaria (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(5,'Todas las anteriores',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_actividades_diaria (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(6,'Ninguno',sysdate,1,1)"));
-  print_r($x->executeQuery("SELECT * FROM pam_actividades_diaria WHERE ESTADO=1"));*/
+
+"); 
+  print_r($x->executeQuery("insert into dificultades_cuerpo (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(1,'Monoplejia(afecta un solo miembro del cuerpo)',sysdate,1,1)"));
+  print_r($x->executeQuery("insert into dificultades_cuerpo (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'Diplejia  (Afecta las extremidades inferiores-Piernas)',sysdate,1,1)"));
+  print_r($x->executeQuery("insert into dificultades_cuerpo (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'Triplejia(Afecta un miembro superior-brazo, y las extremidades inferiores-piernas)',sysdate,1,1)"));
+  print_r($x->executeQuery("insert into dificultades_cuerpo (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'Hemiplejia (afecta el lado izquierdo o derecho del cuerpo)',sysdate,1,1)"));
+  print_r($x->executeQuery("insert into dificultades_cuerpo (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(5,'cuadriplejia (afecta las cuatro extremidades del cuerpo)',sysdate,1,1)"));
+  print_r($x->executeQuery("insert into dificultades_cuerpo (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(6,'Ninguna',sysdate,1,1)"));
+  print_r($x->executeQuery("SELECT * FROM dificultades_cuerpo WHERE ESTADO=1"));
 /*
 $tabla="CarEgresoSalud";
 $x->dropTable("drop table ".$tabla);
@@ -917,7 +905,7 @@ foreach ($arr as $key => $value) {
     $mdl->createTable($value);
     $mdl->createTable($arrcreateseq[$key]);
 }*/
-
+/*
 print_r($x->executeQuery("delete from modulos"));
 $arr = ["insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)
 values(1,1,1,0,'','fa fa-laptop','ACOGIDA',0,1,'18-DEC-28',1,1)",
@@ -976,7 +964,7 @@ values(25,1,1,24,'','fa fa-laptop','SALIDA',0,1,'18-DEC-28',1,1)",
 values(26,1,1,25,'ppd-datos-egreso-generales','fa fa-laptop','Datos Generales',0,1,'18-DEC-28',1,1)"];
 foreach ($arr as $key => $value) {
     $x->executeQuery($value);
-}
+}*/
 /*
 $x->executeQuery("insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion) 
 values(1,1,1,1,'ppd-datos-actividades-tecnico-productivas','fa fa-laptop','ACOGIDA',1,1,SYSDATE,1,1)");*/
