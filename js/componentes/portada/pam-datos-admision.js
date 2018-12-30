@@ -46,7 +46,7 @@ Vue.component('pam-datos-admision', {
                 institucion_deriva:this.institucion_deriva,
                 motivo_ingreso_principal:this.motivo_ingreso_principal,
                 motivo_ingreso_secundario:this.motivo_ingreso_secundario,
-                perfil_ingreso:(this.perfil_ingreso).join(),
+                perfil_ingreso:(this.perfil_ingreso).join("|"),
                 tipo_documento_ingreo_car:this.tipo_documento_ingreo_car,
                 numero_documento_ingreo_car:this.numero_documento_ingreo_car,
                 
@@ -107,7 +107,8 @@ Vue.component('pam-datos-admision', {
                     this.institucion_deriva = response.body.atributos[0]["INSTITUCION_DERIVA"];
                     this.motivo_ingreso_principal = response.body.atributos[0]["MOTIVO_INGRESO_PRINCIPAL"];
                     this.motivo_ingreso_secundario = response.body.atributos[0]["MOTIVO_INGRESO_SECUNDARIO"];
-                    this.perfil_ingreso = response.body.atributos[0]["PERFIL_INGRESO"];
+                    this.perfil_ingreso = (response.body.atributos[0]["PERFIL_INGRESO"]).split("|");
+                    console.log(perfil_ingreso);
                     this.tipo_documento_ingreo_car = response.body.atributos[0]["TIPO_DOCUMENTO_INGREO_CAR"];
                     this.numero_documento_ingreo_car = response.body.atributos[0]["NUMERO_DOCUMENTO_INGREO_CAR"];
 
