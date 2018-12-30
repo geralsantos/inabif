@@ -37,7 +37,7 @@ Vue.component('pam-datos-generales-egreso', {
             }
             let valores = {
               
-                Fecha_Egreso:this.Fecha_Egreso,
+                Fecha_Egreso:moment(this.Fecha_Egreso).format("YY-MMM-DD"),
                 MotivoEgreso:this.MotivoEgreso,
                 Retiro_Voluntario:this.Retiro_Voluntario,
                 Reinsercion_Familiar:this.Reinsercion_Familiar,
@@ -100,7 +100,7 @@ Vue.component('pam-datos-generales-egreso', {
 
                 if( response.body.atributos != undefined){
 
-                    this.Fecha_Egreso = response.body.atributos[0]["FECHA_EGRESO"];
+                    this.Fecha_Egreso = moment(response.body.atributos[0]["FECHA_EGRESO"]).format("YYYY-MM-DD");
                     this.MotivoEgreso = response.body.atributos[0]["MOTIVOEGRESO"];
                     this.Retiro_Voluntario = response.body.atributos[0]["RETIRO_VOLUNTARIO"];
                     this.Reinsercion_Familiar = response.body.atributos[0]["REINSERCION_FAMILIAR"];
