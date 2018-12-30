@@ -125,7 +125,7 @@ Vue.component('pam-datos-admision', {
             });
         },
         buscar_motivos(){
-            this.$http.post('buscar?view',{tabla:''}).then(function(response){
+            this.$http.post('buscar?view',{tabla:'pam_motivos_ingreso'}).then(function(response){
                 if( response.body.data ){
                     this.motivos= response.body.data;
                 }
@@ -133,7 +133,7 @@ Vue.component('pam-datos-admision', {
             });
         },
         buscar_motivos2(){
-            this.$http.post('buscar?view',{tabla:''}).then(function(response){
+            this.$http.post('buscar?view',{tabla:'pam_motivos_ingreso'}).then(function(response){
                 if( response.body.data ){
                     this.motivos2= response.body.data;
                 }
