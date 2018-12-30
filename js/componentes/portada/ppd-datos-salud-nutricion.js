@@ -156,7 +156,7 @@ Vue.component('ppd-datos-salud-nutricion', {
 
         },
         buscar_dificultades(){
-            this.$http.post('buscar?view',{tabla:''}).then(function(response){
+            this.$http.post('buscar?view',{tabla:'dificultades_cuerpo'}).then(function(response){
                 if( response.body.data ){
                     this.dificultades= response.body.data;
                 }
