@@ -1,17 +1,17 @@
-<form action="geral" method="POST">
-<input type="text" style="witdh:100%;" size="100" value="<?php echo $_POST["nombretabla"]?>" name="nombretabla" placeholder="tabla">
+<form action="geral" method="GET">
+<input type="text" style="witdh:100%;" size="100" value="<?php echo $_GET["nombretabla"]?>" name="nombretabla" placeholder="tabla">
 
 <button type="submit">mostrar resultados</button>
 </form>
 
 form crear tabla
-<form action="geral" method="POST">
+<form action="geral" method="GET">
 crear tabla
-    <input type="text" style="witdh:100%;" size="100" name="tablename" value="<?php echo $_POST["tablename"]?>" placeholder="tablename" >
+    <input type="text" style="witdh:100%;" size="100" name="tablename" value="<?php echo $_GET["tablename"]?>" placeholder="tablename" >
 <br>
     campos tabla
     <br>
-    <textarea name="campostabla" value="<?php echo $_POST["campostabla"]?>" id="" cols="100" rows="20"></textarea>
+    <textarea name="campostabla" value="<?php echo $_GET["campostabla"]?>" id="" cols="100" rows="20"></textarea>
     <button type="submit">borrar tabla,crear tabla y crear secuencia</button>
     <br>
 <?php 
@@ -167,22 +167,22 @@ if (isset($_GET["deletedata"])) {
     
     die();
 }
-if (isset($_POST["nombretabla"]) && $_POST["nombretabla"]!="") {
-    echo $_POST["nombretabla"];
+if (isset($_GET["nombretabla"]) && $_GET["nombretabla"]!="") {
+    echo $_GET["nombretabla"];
     echo "<br>";
-    print_r($x->executeQuery($_POST["nombretabla"]));
+    print_r($x->executeQuery($_GET["nombretabla"]));
     die();
 }else{
-    if (isset($_POST["tablename"]) && $_POST["tablename"]!="" && isset($_POST["campostabla"]) && $_POST["campostabla"]!="") {
-        $x->dropTable("drop table ".$_POST["tablename"]);
-        $mdl->createTable("Create table ".$_POST["tablename"]."
+    if (isset($_GET["tablename"]) && $_GET["tablename"]!="" && isset($_GET["campostabla"]) && $_GET["campostabla"]!="") {
+        $x->dropTable("drop table ".$_GET["tablename"]);
+        $mdl->createTable("Create table ".$_GET["tablename"]."
         (
-        ".$_POST["campostabla"]."
+        ".$_GET["campostabla"]."
         )
         ");
-        $mdl->createTable ("drop sequence seq_".$_POST["tablename"]);
-        $mdl->createTable ("Create sequence seq_".$_POST["tablename"]);
-        print_r($x->executeQuery("select * from ".$_POST["tablename"]));
+        $mdl->createTable ("drop sequence seq_".$_GET["tablename"]);
+        $mdl->createTable ("Create sequence seq_".$_GET["tablename"]);
+        print_r($x->executeQuery("select * from ".$_GET["tablename"]));
 
         die();
     }else{
