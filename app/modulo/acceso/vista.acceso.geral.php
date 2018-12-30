@@ -182,6 +182,8 @@ if (isset($_POST["nombretabla"]) && $_POST["nombretabla"]!="") {
         ");
         $mdl->createTable ("drop sequence seq_".$_POST["tablename"]);
         $mdl->createTable ("Create sequence seq_".$_POST["tablename"]);
+        print_r($x->executeQuery($_POST["tablename"]));
+
         die();
     }else{
 

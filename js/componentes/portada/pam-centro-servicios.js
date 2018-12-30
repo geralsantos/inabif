@@ -57,6 +57,7 @@ Vue.component('pam-centro-servicios', {
                 Centro_Residencia:this.areaResidencia,
                 Cod_CentroAtencion:this.codigoCentroAtencion,
                 Nom_CentroAtencion:this.nombreCentroAtencion,
+                Fecha_Registro : moment().format("YY-MMM-DD"),
                 Residente_Id: this.id_residente,
                 Periodo_Mes: moment().format("MM"),
                 Periodo_Anio:moment().format("YYYY")
