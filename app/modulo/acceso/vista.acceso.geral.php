@@ -190,13 +190,19 @@ if (isset($_POST["nombretabla"]) && $_POST["nombretabla"]!="") {
 /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
     */
     //$x->deleteDataNoWhere("pam_nivel_educativo");
-    /*
-print_r($x->executeQuery("insert into Cardesempeno_academico (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(1,'SI, sobresaliente',sysdate,1,1)"));
-print_r($x->executeQuery("insert into Cardesempeno_academico (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'Si, satisfactorio',sysdate,1,1)"));
-print_r($x->executeQuery("insert into Cardesempeno_academico (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'NO',sysdate,1,1)"));
-print_r($x->executeQuery("insert into Cardesempeno_academico (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'No, insatisfactorio',sysdate,1,1)"));
-print_r($x->executeQuery("SELECT * FROM CarEgresoPsicologico WHERE RESIDENTE_ID = 1 AND ESTADO=1"));
-die();*/
+print_r($x->executeQuery("insert into pam_instituciones_deriva (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(1,'CEM',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_instituciones_deriva (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'Comisarias',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_instituciones_deriva (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'Hospitales',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_instituciones_deriva (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'Fiscalía',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_instituciones_deriva (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(5,'Juzgado',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_instituciones_deriva (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(6,'Ministerios (MIMP; MINTRA, ETC)',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_instituciones_deriva (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(7,'Municipalidades',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_instituciones_deriva (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(8,'Reporte de la Sociedad Civil',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_instituciones_deriva (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(9,'Solicitud propia',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_instituciones_deriva (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(10,'Focalización',sysdate,1,1)"));
+print_r($x->executeQuery("insert into pam_instituciones_deriva (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(11,'Otros',sysdate,1,1)"));
+print_r($x->executeQuery("SELECT * FROM pam_instituciones_deriva WHERE RESIDENTE_ID = 1 AND ESTADO=1"));
+die();
 
 /*
 $arr = ['Create table pam_ActividadPrevencion
