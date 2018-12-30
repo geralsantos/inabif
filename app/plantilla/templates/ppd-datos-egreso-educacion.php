@@ -54,7 +54,7 @@
                             </div>
                             <div class="row">
                             <div class="form-group col-md-4">
-                                    <label for="text-input" class=" form-control-label">Posee plan de intervención Educación  individual?</label>
+                                    <label for="text-input" class=" form-control-label">Seguimiento semestral educación</label>
                                     <select name="CarIntervencion" v-model="CarIntervencion" class="form-control">
                                         <option value="Si">Si</option>
                                         <option value="No">No</option>
@@ -62,7 +62,7 @@
                                 </div>
                                 <div class="form-group col-md-4">
                                     <div class=" "><label for="text-input" class=" form-control-label">Descripción de la meta trazada en el PII</label>
-                                    <input type="text" v-model="CarDesMeta" name="CarDesMeta" placeholder="" class="form-control">
+                                    <textarea name="CarDesMeta" class="form-control" v-model="CarDesMeta" id="" cols="30" rows="10"></textarea>
                                     </div>
                                 </div>
 
