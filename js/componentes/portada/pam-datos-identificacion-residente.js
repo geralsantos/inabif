@@ -36,6 +36,7 @@ Vue.component('pam-datos-identificacion-residente', {
     mounted:function(){
         this.buscar_paises();
         this.buscar_lenguas();
+        this.buscar_departamentos();
         this.buscar_departamentos2();
     },
     updated:function(){
@@ -146,6 +147,17 @@ Vue.component('pam-datos-identificacion-residente', {
             this.$http.post('buscar_departamentos?view',{tabla:'ubigeo'}).then(function(response){
                 if( response.body.data ){
                     this.departamentos= response.body.data;
+                    //this.Depatamento_Procedencia = response.body.data[0]["CODDEPT"];
+                    //this.buscar_provincias();
+
+                }
+
+            });
+        },
+        buscar_departamentos2(){
+            this.$http.post('buscar_departamentos?view',{tabla:'ubigeo'}).then(function(response){
+                if( response.body.data ){
+                    this.departamentos2= response.body.data;
                     //this.Depatamento_Procedencia = response.body.data[0]["CODDEPT"];
                     //this.buscar_provincias();
 
