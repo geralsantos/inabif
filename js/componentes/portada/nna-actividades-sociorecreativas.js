@@ -105,7 +105,7 @@ Vue.component('nna-actividades-sociorecreativas', {
                     this.Nro_Carpinteria = response.body.atributos[0]["NRO_CARPINTERIA"];
                     this.Nro_Ceramica = response.body.atributos[0]["NRO_CERAMICA"];
                     this.Nro_Crianza = response.body.atributos[0]["NRO_CRIANZA"];
-                    this.Nro_Participa_Divergentes = response.body.atributos[0]["NRO_DIBUJO"];
+                    this.Nro_Dibujo = response.body.atributos[0]["NRO_DIBUJO"];
                     this.Nro_Tejido = response.body.atributos[0]["NRO_TEJIDO"];
                     this.Nro_Deportes = response.body.atributos[0]["NRO_DEPORTES"];
                     this.Nro_Taller_Pro = response.body.atributos[0]["NRO_TALLER_PRO"];
