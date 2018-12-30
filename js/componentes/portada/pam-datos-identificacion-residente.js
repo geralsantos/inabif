@@ -40,6 +40,11 @@ Vue.component('pam-datos-identificacion-residente', {
     },
     updated:function(){
     },
+    watch:{
+        departamento_procedente_id:function(val){ 
+            this.buscar_provincias();
+        }
+    },
     methods:{
         guardar(){
             if (this.id_residente==null) {
@@ -67,7 +72,7 @@ Vue.component('pam-datos-identificacion-residente', {
 
                 }
 
-            this.$http.post('insertar_datos?view',{tabla:'pam_datos_identificacion_usu', valores:valores}).then(function(response){
+            this.$http.post('insertar_datos?view',{tabla:'pam_datos_identificacion', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
                     swal('', 'Registro Guardado', 'success');
@@ -109,7 +114,7 @@ Vue.component('pam-datos-identificacion-residente', {
             this.coincidencias = [];
             this.bloque_busqueda = false;
 
-            this.$http.post('cargar_datos_residente?view',{tabla:'pam_datos_identificacion_usu', residente_id:this.id_residente }).then(function(response){
+            this.$http.post('cargar_datos_residente?view',{tabla:'pam_datos_identificacion', residente_id:this.id_residente }).then(function(response){
 
                 if( response.body.atributos != undefined){
                     this.Ape_Paterno = response.body.atributos[0]["RESIDENTE_APELLIDO_PATERNO"];
@@ -129,7 +134,7 @@ Vue.component('pam-datos-identificacion-residente', {
 
         },
         buscar_paises(){
-            this.$http.post('buscar?view',{tabla:''}).then(function(response){
+            this.$http.post('buscar?view',{tabla:'paises'}).then(function(response){
                 if( response.body.data ){
                     this.paises= response.body.data;
                 }
@@ -138,39 +143,37 @@ Vue.component('pam-datos-identificacion-residente', {
         },
 
         buscar_departamentos(){
-            this.$http.post('buscar?view',{tabla:''}).then(function(response){
+            this.$http.post('buscar_departamentos?view',{tabla:'ubigeo'}).then(function(response){
                 if( response.body.data ){
                     this.departamentos= response.body.data;
-                }
+                    //this.Depatamento_Procedencia = response.body.data[0]["CODDEPT"];
+                    //this.buscar_provincias();
 
-            });
-        },
-        buscar_departamentos2(){
-            this.$http.post('buscar?view',{tabla:''}).then(function(response){
-                if( response.body.data ){
-                    this.departamentos2= response.body.data;
                 }
 
             });
         },
         buscar_provincias(){
-            this.$http.post('buscar?view',{tabla:''}).then(function(response){
+            this.$http.post('buscar_provincia?view',{tabla:'ubigeo', cod:this.departamento_procedente_id}).then(function(response){
                 if( response.body.data ){
                     this.provincias= response.body.data;
+                    //this.Provincia_Procedencia = response.body.data[0]["CODPROV"];
+                    //this.buscar_distritos();
                 }
 
             });
         },
         buscar_distritos(){
-            this.$http.post('buscar?view',{tabla:''}).then(function(response){
+            this.$http.post('buscar_distritos?view',{tabla:'ubigeo', cod:this.provincia_nacimiento_id}).then(function(response){
                 if( response.body.data ){
                     this.distritos= response.body.data;
+                    //this.Distrito_Procedencia = response.body.data[0]["CODDIST"];
                 }
 
             });
         },
         buscar_lenguas(){
-            this.$http.post('buscar?view',{tabla:''}).then(function(response){
+            this.$http.post('buscar?view',{tabla:'pam_lengua_materna'}).then(function(response){
                 if( response.body.data ){
                     this.lenguas= response.body.data;
                 }
