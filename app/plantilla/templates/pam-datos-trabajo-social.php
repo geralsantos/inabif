@@ -1,9 +1,9 @@
-<template id="pam-datos-salud">
+<template id="pam-datos-trabajo-social">
     <div class="content mt-3">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <strong>Salud</strong>
+                    <strong>Trabajo Social</strong>
                     <h6>Formulario de Carga de Datos</h6>
                 </div>
                 <div class="card-body card-block">
@@ -53,67 +53,45 @@
                             </div>
 
                         </div>
-                       
+                        
                         <div class="row">
-                            <div class="form-group col-md-4">
-                                <div class=" "><label for="text-input" class=" form-control-label">Posee plan de intervención en Salud</label>
+                        <div class="form-group col-md-4">
+                                <label for="text-input" class=" form-control-label">Posee plan de intervención en Trabajo Social</label>
                                 <select name="Plan_Intervencion" v-model="Plan_Intervencion" class="form-control">
-                                <option value="Si">Si</option>
-                                <option value="No">No</option>
-                                </select> </div>
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
                             </div>
                             <div class="form-group col-md-8">
-                                <div class=" "><label for="text-input" class=" form-control-label">Descripción de la meta trazada en el pai</label>
+                                <label for="text-input" class=" form-control-label">Descripción de la meta trazada en el PAI</label>
                                 <input type="text" v-model="Meta_PAI" name="Meta_PAI" placeholder="" class="form-control">
-                                </div>
+                                
                             </div>
-                            
                         </div>
                         <div class="row">
                             <div class="form-group col-md-4">
-                                <div class=" "><label for="text-input" class=" form-control-label">Posee informe técnico evolutivo</label>
+                                <label for="text-input" class=" form-control-label">Posee informe técnico evolutivo?</label>
                                 <select name="Informe_Tecnico" v-model="Informe_Tecnico" class="form-control">
-                                <option value="">Si</option>
-                                <option value="">No</option>
-                                </select> </div>
+                                    <option value="Si">Si</option>
+                                    <option value="No">No</option>
+                                </select>
                             </div>
+                            
+                        
                             <div class="form-group col-md-8">
                                 <label for="text-input" class=" form-control-label">Descripción del informe evolutivo</label>
                                 <input type="text" v-model="Des_Informe_Tecnico" name="Des_Informe_Tecnico" placeholder="" class="form-control">
                             </div>
-                        </div>
+                            </div>
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">Cumplimiento del plan de intervención</label>
-                                <select name="Cumple_Intervencion" v-model="Cumple_Intervencion" class="form-control">
-                                <option value="Residente logra el objetivo trazado">Residente logra el objetivo trazado</option>
-                                <option value="En proceso">En proceso</option>
-                                <option value="Residente no logra el objetivo trazado">Residente no logra el objetivo trazado</option>
+                                <select name="CarCumplePlan" v-model="CarCumplePlan" class="form-control">
+                                    <option value="Residente logra el objetivo trazado">Residente logra el objetivo trazado</option>
+                                    <option value="En proceso">En proceso</option>
+                                    <option value="Residente no logra el objetivo trazado">Residente no logra el objetivo trazado</option>
                                 </select>
                             </div>
-                            <div class="form-group col-md-6">
-                                <label for="text-input" class=" form-control-label">Grado dependencia de las PAM</label>
-                                <select name="Grado_PAM" v-model="Grado_PAM" class="form-control">
-                                <option value="Autovalente">Autovalente</option>
-                                <option value="Frágil">Frágil</option>
-                                <option value="Postrada o geríatrica compleja">Postrada o geríatrica compleja</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="row">
-                            
-                            <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Enfermedades crónicas degeneraritvas</label>
-                                <select name="EnfermedaCronicasDegenerativas" v-model="EnfermedaCronicasDegenerativas" class="form-control">
-                                <option value="Si">Si</option>
-                                <option value="No">No</option>
-                                </select>
-                            </div>
-                            <div class="form-group col-md-8">
-                                <label for="text-input" class=" form-control-label">Especificar la enfermedad</label>
-                                <input type="text" v-model="Especificar_Enfermedad" name="Especificar_Enfermedad" placeholder="" class="form-control">
-                            </div>
-                            
                         </div>
                         <div class="row">
                             <div class="col-md-12 text-center" >
