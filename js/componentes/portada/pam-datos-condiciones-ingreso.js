@@ -119,7 +119,7 @@ Vue.component('pam-datos-condiciones-ingreso', {
         },
 
         buscar_niveleducativo(){
-            this.$http.post('buscar?view',{tabla:'pam_nivel_educativo'}).then(function(response){
+            this.$http.post('buscar?view',{tabla:'pam_nivel_educativo',codigo:'pam'}).then(function(response){
                 if( response.body.data ){
                     this.nivel_educativo= response.body.data;
                 }
