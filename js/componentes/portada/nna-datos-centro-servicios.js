@@ -144,7 +144,7 @@ Vue.component('nna-datos-centro-servicios', {
             });
         },
         buscar_provincias(){
-            this.$http.post('buscar_provincia?view',{tabla:'ubigeo', cod:this.Depatamento_Procedencia}).then(function(response){
+            this.$http.post('buscar_provincia?view',{tabla:'ubigeo', cod:this.Departamento_Centro}).then(function(response){
                 if( response.body.data ){
                     this.provincias= response.body.data;
                     this.buscar_distritos();
@@ -153,7 +153,7 @@ Vue.component('nna-datos-centro-servicios', {
             });
         },
         buscar_distritos(){
-            this.$http.post('buscar_distritos?view',{tabla:'ubigeo', cod:this.Provincia_Procedencia}).then(function(response){
+            this.$http.post('buscar_distritos?view',{tabla:'ubigeo', cod:this.Provincia_centro}).then(function(response){
                 if( response.body.data ){
                     this.distritos= response.body.data;
                 }
