@@ -31,6 +31,7 @@ Vue.component('nna-datos-centro-servicios', {
     created:function(){
     },
     mounted:function(){
+        this.buscar_departamentos();
     },
     updated:function(){
     },
