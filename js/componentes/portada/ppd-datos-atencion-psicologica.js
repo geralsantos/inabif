@@ -32,7 +32,6 @@ Vue.component('ppd-datos-atencion-psicologica', {
             }
             let valores = {
 
-                Atenciones_Id: 1,
                 Num_HBasicas: this.CarNumHabilidadesBasicas,
                 Num_HConceptuales: this.CarNumHabilidadesConceptuales,
                 Num_HSociales: this.CarNumHabilidadesSociales,

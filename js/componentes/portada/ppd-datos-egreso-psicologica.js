@@ -31,7 +31,6 @@ Vue.component('ppd-datos-egreso-psicologica', {
                 return false;
             }
             let valores = {
-                Psicologico_Egreso_Id: 1,
                 Plan_Psicologico: this.CarPlanIntervencion,
                 Meta_PII: this.CarDesMetaPII,
                 Informe_Tecnico: this.CarInformeTecnico,

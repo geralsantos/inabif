@@ -34,7 +34,6 @@ Vue.component('ppd-datos-educacion-participacionLaboral', {
                 return false;
             }
             let valores = {
-                Educacion_Id :1,
                 Tipo_Institucion:this.CarTipoIIEE,
                 Insertado_labora:this.CarInsertadoLaboralmente,
                 Des_labora:this.CarDesParticipacionLa,

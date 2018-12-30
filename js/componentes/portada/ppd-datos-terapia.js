@@ -44,7 +44,6 @@ Vue.component('ppd-datos-terapia', {
                 return false;
             }
             let valores = {
-                Terapia_Id: 1,
                 Num_TMotriz: this.CarNumReeducaion,
                 Num_TPsicomotricidad: this.CarParticipaPsicomotricidad,
                 Num_TFisioterapia: this.CarFisioterapia,

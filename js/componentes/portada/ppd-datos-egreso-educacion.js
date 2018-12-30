@@ -34,7 +34,6 @@ Vue.component('ppd-datos-egreso-educacion', {
             }
 
             let valores = {
-                Educacion_Egreso_Id : 1,
                 Plan_Educacion: this.CarIntervencion,
                 Meta_PII: this.CarDesMeta,
                 Informe_Tecnico: this.CarInformeEvolutivo,

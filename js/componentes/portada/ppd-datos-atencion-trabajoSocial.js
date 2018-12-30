@@ -33,7 +33,6 @@ Vue.component('ppd-datos-atencion-trabajoSocial', {
             }
             let valores = {
 
-                Trabajo_Id:1,
                 Visitas:this.CarVisitaF,
                 Num_Visitas:this.CarNumVisitaMes,
                 Reinsercion_Familiar:this.CarResinsercionF,

@@ -35,7 +35,6 @@ Vue.component('ppd-datos-egreso-nutricion', {
                 return false;
             }
             let valores = {
-                Nutricion_Id: 1,
                 Plan_Nutricional:this.CarPlanIntervencion,
                 Meta_PII :this.CarDesMetaPII,
                 Informe_Tecnico :this.CarInformeTecnico,
