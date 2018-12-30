@@ -42,7 +42,7 @@ Vue.component('pam-datos-identificacion-residente', {
     updated:function(){
     },
     watch:{
-        departamento_procedente_id:function(val){ 
+        departamento_nacimiento_id:function(val){ 
             this.buscar_provincias();
         }
     },
@@ -72,7 +72,6 @@ Vue.component('pam-datos-identificacion-residente', {
                 Periodo_Anio:moment().format("YYYY")
 
                 }
-console.log(valores);
             this.$http.post('insertar_datos?view',{tabla:'pam_datos_identificacion', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
