@@ -85,36 +85,22 @@
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Nivel Educativo</label>
                                 <select name="Nivel_Educativo" v-model="Nivel_Educativo" class="form-control">
-                                <option value="Sin educación">Sin Educación</option>
-                                <option value="Primaria incompleta">Primaria Incompleta</option>
-                                <option value="Primaria completa">Primaria Completa</option>
-                                <option value="Secundaria incompleta">Secundaria Incompleta</option>
-                                <option value="Secundaria completa">Secundaria completa</option>
-                                <option value="Técnico incompleta">Técnico incompleta</option>
-                                <option value="Técnico y superior incompleta">Técnico y superior incompleta</option>
-                                <option value="superior completa">Superior completa</option>
+                                <option v-for="nivel in niveles_educativos" :value="nivel.ID">{{nivel.NOMBRE}}</option>
                                 </select>
                                 </div>
                             </div>
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Tipo de Seguro de Salud</label>
                                 <select name="Tipo_Seguro" v-model="Tipo_Seguro" class="form-control">
-                                <option value="ESSALUD">ESSALUD</option>
-                                <option value="FFAA_PNP">FFAA_PNP</option>
-                                <option value="Seguro Privado">Seguro Privado</option>
-                                <option value="Seguro Integral de Salud(SIS)">Seguro Integral de Salud(SIS)</option>
-                                <option value="Otro">Otro</option>
-                                <option value="No tiene">No tiene</option>
+                                    <option v-for="seguro in tipos_seguros" :value="seguro.ID">{{seguro.NOMBRE}}</option>
+                                
                                 </select>
                                 </div>
                             </div>
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Clasificación Socioeconómica (SISFOH)</label>
                                 <select name="SISFOH" v-model="SISFOH" class="form-control">
-                                <option value="Sin Clasificación Socioeconómica">Sin Clasificación Socioeconómica</option>
-                                <option value="Pobre Extremo">Pobre Extremo</option>
-                                <option value="Pobre no Extremo">Pobre no Extremo</option>
-                                <option value="No Pobre">No Pobre</option>
+                                    <option v-for="socioeconomica in clasif_socioeconomica" :value="socioeconomica.ID">{{socioeconomica.NOMBRE}}</option> 
                                 </select>
                                 </div>
                             </div>

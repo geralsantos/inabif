@@ -9,6 +9,10 @@ Vue.component('nna-datos-condiciones-ingreso-residente', {
         Tipo_Seguro:null,
         SISFOH:null,
         
+        tipos_seguros:[],
+        niveles_educativos:[],
+        clasif_socioeconomica:[],
+
         nombre_residente:null,
         isLoading:false,
         mes:moment().format("MM"),
@@ -21,6 +25,9 @@ Vue.component('nna-datos-condiciones-ingreso-residente', {
     created:function(){
     },
     mounted:function(){
+        this.buscar_niveleducativo();
+        this.buscar_clasif_socioeconomica();
+        this.buscar_pam_tipo_seguro_salud();
     },
     updated:function(){
     },
@@ -102,6 +109,30 @@ Vue.component('nna-datos-condiciones-ingreso-residente', {
                 }
              });
 
+        },
+        buscar_niveleducativo(){
+            this.$http.post('buscar?view',{tabla:'pam_nivel_educativo',codigo:'pam'}).then(function(response){
+                if( response.body.data ){
+                    this.niveles_educativos= response.body.data;
+                }
+
+            });
+        },
+        buscar_clasif_socioeconomica(){
+            this.$http.post('buscar?view',{tabla:'pam_clasif_socioeconomico'}).then(function(response){
+                if( response.body.data ){
+                    this.clasif_socioeconomica= response.body.data;
+                }
+
+            });
+        },
+        buscar_pam_tipo_seguro_salud(){
+            this.$http.post('buscar?view',{tabla:'pam_tipo_seguro_salud'}).then(function(response){
+                if( response.body.data ){
+                    this.tipos_seguros= response.body.data;
+                }
+
+            });
         },
         
     }
