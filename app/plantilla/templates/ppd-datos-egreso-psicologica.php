@@ -60,21 +60,22 @@
                                     <option value="No">No</option>
                                 </select>
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-7">
                                 <label for="text-input" class=" form-control-label">Descripción de la meta trazada en el PII</label>
                                 <textarea name="CarDesMetaPII" v-model="CarDesMetaPII" id="CarDesMetaPII" cols="30" rows="2" class="form-control"></textarea>
                             </div>
 
-                            <div class="form-group col-md-3">
+                            
+
+                        </div>
+                        <div class="row">
+                        <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Posee informe técnico evolutivo?</label>
                                 <select name="CarInformeTecnico" v-model="CarInformeTecnico" class="form-control">
                                     <option value="Si">Si</option>
                                     <option value="No">No</option>
                                 </select>
                             </div>
-
-                        </div>
-                        <div class="row">
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Descripción del informe evolutivo</label>
                                 <textarea name="CarDesInforme" v-model="CarDesInforme" id="CarDesInforme" cols="30" rows="2" class="form-control"></textarea>
