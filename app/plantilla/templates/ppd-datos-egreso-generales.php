@@ -100,7 +100,7 @@
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Retiro Voluntario</label>
                                 <select name="CarRetiroVoluntario" v-model="CarRetiroVoluntario" class="form-control">
-                                    <option value="Vida Independencia">Vida Independencia</option>
+                                    <option value="Independencia">Independencia</option>
                                     <option value="Maltrato">Maltrato</option>
                                     <option value="Otros">Otros</option>
                                 </select>
