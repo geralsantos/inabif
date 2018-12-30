@@ -42,7 +42,7 @@ Vue.component('pam-datos-admision', {
             let valores = {
                
                 movimiento_poblacional:this.movimiento_poblacional,
-                fecha_ingreso_usuario:this.fecha_ingreso_usuario,
+                fecha_ingreso_usuario:moment(this.fecha_ingreso_usuario).format("YY-MMM-DD"),
                 institucion_deriva:this.institucion_deriva,
                 motivo_ingreso_principal:this.motivo_ingreso_principal,
                 motivo_ingreso_secundario:this.motivo_ingreso_secundario,
@@ -117,7 +117,7 @@ Vue.component('pam-datos-admision', {
         },
 
         buscar_instituciones(){
-            this.$http.post('buscar?view',{tabla:''}).then(function(response){
+            this.$http.post('buscar?view',{tabla:'pam_instituciones_deriva'}).then(function(response){
                 if( response.body.data ){
                     this.instituciones= response.body.data;
                 }
