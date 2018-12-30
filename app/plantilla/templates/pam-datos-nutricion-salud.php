@@ -181,11 +181,11 @@
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="text-input" class=" form-control-label">Peso (kg.)</label>
-                                <input type="number" v-model="peso" step="0.1" name="peso" placeholder="" class="form-control">
+                                <input type="number" v-model="peso" step="0.01" name="peso" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="text-input" class=" form-control-label">Talla (mt)</label>
-                                <input type="number" v-model="talla" step="0.1" name="talla" placeholder="" class="form-control">
+                                <input type="number" v-model="talla" step="0.01" name="talla" placeholder="" class="form-control">
                             </div>
                  
                             <div class="form-group col-md-3">

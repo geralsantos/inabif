@@ -53,7 +53,7 @@ Vue.component('ppd-datos-centro-servicios', {
                 Linea_Intervencion:this.CarLineaI,
                 Cod_Servicio:this.CarCodServicio,
                 Nom_Servicio:this.CarNomServicio,
-                Ubigeo_Ine: this.CarDepart+this.CarProv+this.CarDistrito,
+                Ubigeo_Ine: this.CarDistrito,
                 Departamento_CAtencion:this.CarDepart,
                 Provincia_CAtencion:this.CarProv,
                 Distrito_CAtencion:this.CarDistrito,
