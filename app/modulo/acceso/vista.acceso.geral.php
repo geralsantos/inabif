@@ -159,28 +159,25 @@ if (isset($_POST["nombretabla"]) && $_POST["nombretabla"]!="") {
     echo "<br>";
     print_r($x->executeQuery($_POST["nombretabla"]));
     die();
-}else{/*
-$x->dropTable('drop table cie_10 ');
-$mdl->createTable("create table cie_10 (
-    id INT NOT NULL primary key,
-    nombre VARCHAR(250) NOT NULL,
-    estado INT DEFAULT 1,
-    fecha_creacion date NOT NULL,
-    fecha_edicion TIMESTAMP DEFAULT SYSDATE,
-    Usuario_Crea INT NOT NULL,
-    Usuario_Edita INT NOT NULL
-    )
+}else{
+$x->dropTable('drop table pam_tipo_lenguaje_alterna ');
+$mdl->createTable("CREATE TABLE pam_tipo_lenguaje_alterna
+( id int not null primary key,
+  nombre varchar(100) NOT NULL,
+  Estado                            	int default 1,
+Fecha_Registro            	DATE,
+Fecha_Edicion              	timestamp DEFAULT (sysdate),
+Usuario_Crea                	int,
+Usuario_Edita               	int
+)
   
-"); *//*
-  print_r($x->executeQuery("insert into Carproblematica_familiar  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(1,'Violencia',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into Carproblematica_familiar  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'Prostitución',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into Carproblematica_familiar  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'Delincuencia',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into Carproblematica_familiar  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'Privado de su libertad',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into Carproblematica_familiar  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(5,'Salud mental',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into Carproblematica_familiar  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(6,'Multi problemática',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into Carproblematica_familiar  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(7,'Otros',sysdate,1,1)"));
-  print_r($x->executeQuery("SELECT * FROM Carproblematica_familiar WHERE ESTADO=1"));
-  */
+");
+  print_r($x->executeQuery("insert into pam_tipo_lenguaje_alterna  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(1,'Lenguaje de señas',sysdate,1,1)"));
+  print_r($x->executeQuery("insert into pam_tipo_lenguaje_alterna  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'Gestos',sysdate,1,1)"));
+  print_r($x->executeQuery("insert into pam_tipo_lenguaje_alterna  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'Lenguaje corporal',sysdate,1,1)"));
+  print_r($x->executeQuery("insert into pam_tipo_lenguaje_alterna  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'Tableros de comunicación',sysdate,1,1)"));
+  print_r($x->executeQuery("SELECT * FROM pam_tipo_lenguaje_alterna WHERE ESTADO=1"));
+  
   /*
 $tabla="pam_ActividadPrevencion";
 $x->dropTable("drop table ".$tabla);
@@ -216,13 +213,13 @@ $mdl->createTable ("Create sequence seq_pam_ActividadPrevencion");*/
 /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
     */
     //$x->deleteDataNoWhere("pam_nivel_educativo");
-    
+    /*
 print_r($x->executeQuery("insert into Cardesempeno_academico (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(1,'SI, sobresaliente',sysdate,1,1)"));
 print_r($x->executeQuery("insert into Cardesempeno_academico (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'Si, satisfactorio',sysdate,1,1)"));
 print_r($x->executeQuery("insert into Cardesempeno_academico (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'NO',sysdate,1,1)"));
 print_r($x->executeQuery("insert into Cardesempeno_academico (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'No, insatisfactorio',sysdate,1,1)"));
 print_r($x->executeQuery("SELECT * FROM CarEgresoPsicologico WHERE RESIDENTE_ID = 1 AND ESTADO=1"));
-die();
+die();*/
 
 /*
 $arr = ['Create table pam_ActividadPrevencion
