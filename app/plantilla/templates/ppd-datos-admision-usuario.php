@@ -64,8 +64,8 @@
                                     </select>
                             </div>
                             <div class="form-group col-md-4">
-                                <div class=" "><label for="text-input" class=" form-control-label">Fecha de reingreso del usuario (en caso no aplique marcar 99/99/9999)</label>
-                                <input type="date" v-model="CarFReingreso" name="CarFReingreso" placeholder="" class="form-control"> </div>
+                                <div class=" "><label for="text-input" class=" form-control-label">Fecha de reingreso (en caso no aplique marcar 99/99/9999)</label>
+                                <input type="date" v-model="CarFReingreso" name="CarFReingreso" placeholder="En caso no aplique marcar 99/99/9999" class="form-control"> </div>
                             </div>
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Fecha de Ingreso del usuario</label>
