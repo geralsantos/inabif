@@ -35,6 +35,11 @@ Vue.component('pam-centro-servicios', {
     },
     updated:function(){
     },
+    watch:{
+        CarDepart:function(val){ 
+            this.cargar_provincias();
+        }
+    },
     methods:{
         guardar(){
             if (this.id_residente==null) {
