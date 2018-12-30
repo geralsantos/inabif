@@ -83,8 +83,9 @@
                                 <div class="form-group col-md-4">
                                     <label for="text-input" class=" form-control-label">Reinserción familiar</label>
                                     <select name="Reinsercion_Familiar" v-model="Reinsercion_Familiar" class="form-control">
-                                        <option value="Hiijo(a)">Hiijo(a)</option>
+                                        <option value="Hijo(a)">Hijo(a)</option>
                                         <option value="Hermano(a)">Hermano(a)</option>
+                                        <option value="Primos(a)">Primos(a)</option>
                                         <option value="Nieto(a)">Nieto(a)</option>
                                         <option value="Otros">Otros</option>
                                     </select>
