@@ -161,9 +161,9 @@ if (isset($_POST["nombretabla"]) && $_POST["nombretabla"]!="") {
     die();
 }else{
 $x->dropTable('drop table pam_tipo_documento_ingreso ');
-$mdl->createTable("create table pam_tipo_documento_ingreso (
+$mdl->createTable("create table cie_10 (
     id INT NOT NULL primary key,
-    nombre VARCHAR(150) NOT NULL,
+    nombre VARCHAR(250) NOT NULL,
     estado INT DEFAULT 1,
     fecha_creacion date NOT NULL,
     fecha_edicion TIMESTAMP DEFAULT SYSDATE,
@@ -177,7 +177,7 @@ $mdl->createTable("create table pam_tipo_documento_ingreso (
   print_r($x->executeQuery("insert into pam_tipo_documento_ingreso  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'Resolución',sysdate,1,1)"));
   print_r($x->executeQuery("insert into pam_tipo_documento_ingreso  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'Otros',sysdate,1,1)"));
   print_r($x->executeQuery("SELECT * FROM CarSaludNutricion WHERE ESTADO=1"));
-  
+  */
   /*
 $tabla="pam_ActividadPrevencion";
 $x->dropTable("drop table ".$tabla);
