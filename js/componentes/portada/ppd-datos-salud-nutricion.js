@@ -128,27 +128,27 @@ Vue.component('ppd-datos-salud-nutricion', {
 
                 if( response.body.atributos != undefined){
 
-                    this.CarDiscapacidad = response.body.atributos[0]["Discapacidad"];
-                    this.CarDiscapacidadFisica = response.body.atributos[0]["Discapacidad_Fisica"];
-                    this.CarDiscapacidadIntelectual = response.body.atributos[0]["Discapacidad_Intelectual"];
-                    this.CarDiscapacidadSensorial = response.body.atributos[0]["Discapacidad_Sensorial"];
-                    this.CarDiscapacidadMental = response.body.atributos[0]["Discapacidad_mental"];
-                    this.CarDxCertificado = response.body.atributos[0]["Certificacdo_Dx"];
-                    this.CarCarnetConadis = response.body.atributos[0]["Carnet_CONADIS"];
-                    this.CarMovilidad = response.body.atributos[0]["Movilidad"];
-                    this.CarDificultadDesplazamiento = response.body.atributos[0]["Motivo_Movilidad"];
-                    this.CarDificultadBrazoCuerpo = response.body.atributos[0]["Dificultad_Movilidad"];
-                    this.CarPatologica1 = response.body.atributos[0]["Patologia1"];
-                    this.CarTipoPatologia1 = response.body.atributos[0]["Tipo_Patologia1"];
-                    this.CarEspecifiquePato1 = response.body.atributos[0]["Especifique1"];
-                    this.CarPatologia2 = response.body.atributos[0]["Patologia2"];
-                    this.CarTipoPatologia2 = response.body.atributos[0]["Tipo_Patologia2"];
-                    this.CarEspecifiquePato2 = response.body.atributos[0]["Especifique2"];
-                    this.CarNivelHemoglobina = response.body.atributos[0]["Nivel_Hemoglobina"];
-                    this.CarAnemia = response.body.atributos[0]["Anemia"];
-                    this.CarPeso = response.body.atributos[0]["Peso"];
-                    this.CarTalla = response.body.atributos[0]["Talla"];
-                    this.CarEstadoNutricional = response.body.atributos[0]["Estado_Nutricional"];
+                    this.CarDiscapacidad = response.body.atributos[0]["DISCAPACIDAD"];
+                    this.CarDiscapacidadFisica = response.body.atributos[0]["DISCAPACIDAD_FISICA"];
+                    this.CarDiscapacidadIntelectual = response.body.atributos[0]["DISCAPACIDAD_INTELECTUAL"];
+                    this.CarDiscapacidadSensorial = response.body.atributos[0]["DISCAPACIDAD_SENSORIAL"];
+                    this.CarDiscapacidadMental = response.body.atributos[0]["DISCAPACIDAD_MENTAL"];
+                    this.CarDxCertificado = response.body.atributos[0]["CERTIFICACDO_DX"];
+                    this.CarCarnetConadis = response.body.atributos[0]["CARNET_CONADIS"];
+                    this.CarMovilidad = response.body.atributos[0]["MOVILIDAD"];
+                    this.CarDificultadDesplazamiento = response.body.atributos[0]["MOTIVO_MOVILIDAD"];
+                    this.CarDificultadBrazoCuerpo = response.body.atributos[0]["DIFICULTAD_MOVILIDAD"];
+                    this.CarPatologica1 = response.body.atributos[0]["PATOLOGIA1"];
+                    this.CarTipoPatologia1 = response.body.atributos[0]["TIPO_PATOLOGIA1"];
+                    this.CarEspecifiquePato1 = response.body.atributos[0]["ESPECIFIQUE1"];
+                    this.CarPatologia2 = response.body.atributos[0]["PATOLOGIA2"];
+                    this.CarTipoPatologia2 = response.body.atributos[0]["TIPO_PATOLOGIA2"];
+                    this.CarEspecifiquePato2 = response.body.atributos[0]["ESPECIFIQUE2"];
+                    this.CarNivelHemoglobina = response.body.atributos[0]["NIVEL_HEMOGLOBINA"];
+                    this.CarAnemia = response.body.atributos[0]["ANEMIA"];
+                    this.CarPeso = response.body.atributos[0]["PESO"];
+                    this.CarTalla = response.body.atributos[0]["TALLA"];
+                    this.CarEstadoNutricional = response.body.atributos[0]["ESTADO_NUTRICIONAL"];
                 }
              });
 
