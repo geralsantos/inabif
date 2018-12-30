@@ -103,7 +103,7 @@ Vue.component('pam-datos-admision', {
                 if( response.body.atributos != undefined){
 
                     this.movimiento_poblacional = response.body.atributos[0]["MOVIMIENTO_POBLACIONAL"];
-                    this.fecha_ingreso_usuario = response.body.atributos[0]["FECHA_INGRESO_USUARIO"];
+                    this.fecha_ingreso_usuario = moment(response.body.atributos[0]["FECHA_INGRESO_USUARIO"]).format("YYYY-MM-DD");
                     this.institucion_deriva = response.body.atributos[0]["INSTITUCION_DERIVA"];
                     this.motivo_ingreso_principal = response.body.atributos[0]["MOTIVO_INGRESO_PRINCIPAL"];
                     this.motivo_ingreso_secundario = response.body.atributos[0]["MOTIVO_INGRESO_SECUNDARIO"];
