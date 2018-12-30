@@ -100,8 +100,8 @@ Vue.component('ppd-datos-admision-usuario', {
                     this.CarFIngreso = response.body.atributos[0]["FECHA_INGRESO"];
                     this.CarFReingreso = response.body.atributos[0]["FECHA_REINGRESO"];
                     this.CarIDerivo = response.body.atributos[0]["INSTITUCION_DERIVADO"];
-                    this.CarMotivoI = response.body.atributos[0]["INSTITUCION_DERIVADO"];
-                    this.CarTipoDoc = response.body.atributos[0]["MOTIVO_INGRESO"];
+                    this.CarMotivoI = response.body.atributos[0]["MOTIVO_INGRESO"];
+                    this.CarTipoDoc = response.body.atributos[0]["TIPO_DOCUMENTO"];
                     this.CarNumDoc = response.body.atributos[0]["NUMERO_DOCUMENTO"];
 
                 }
