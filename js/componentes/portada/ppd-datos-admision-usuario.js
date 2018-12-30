@@ -119,7 +119,7 @@ Vue.component('ppd-datos-admision-usuario', {
         },
 
         buscar_tipo_documento_ingreso(){
-            this.$http.post('buscar?view',{tabla:'tipo_documento_ingreso'}).then(function(response){
+            this.$http.post('buscar?view',{tabla:'pam_tipo_documento_ingreso '}).then(function(response){
                 if( response.body.data ){
                     this.documentos= response.body.data;
                 }

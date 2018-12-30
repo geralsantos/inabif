@@ -159,7 +159,7 @@ if (isset($_POST["nombretabla"]) && $_POST["nombretabla"]!="") {
     echo "<br>";
     print_r($x->executeQuery($_POST["nombretabla"]));
     die();
-}else{
+}else{/*
 $x->dropTable('drop table pam_instituciones ');
 $mdl->createTable("create table pam_instituciones (
     id INT NOT NULL primary key,
@@ -170,13 +170,14 @@ $mdl->createTable("create table pam_instituciones (
     Usuario_Crea INT NOT NULL,
     Usuario_Edita INT NOT NULL
     )
-"); 
-  print_r($x->executeQuery("insert into pam_instituciones (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(1,'Fiscalía',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_instituciones (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'Juzgado',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_instituciones (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'Unidad de Protección Especial',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_instituciones (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'Otros',sysdate,1,1)"));
+"); */
+  print_r($x->executeQuery("insert into pam_tipo_documento_ingreso  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(1,'Oficia',sysdate,1,1)"));
+  print_r($x->executeQuery("insert into pam_tipo_documento_ingreso  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'Acta',sysdate,1,1)"));
+  print_r($x->executeQuery("insert into pam_tipo_documento_ingreso  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'Resolución',sysdate,1,1)"));
+  print_r($x->executeQuery("insert into pam_tipo_documento_ingreso  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'Otros',sysdate,1,1)"));
   print_r($x->executeQuery("SELECT * FROM CarSaludNutricion WHERE ESTADO=1"));
-
+  
+  /*
 $tabla="pam_ActividadPrevencion";
 $x->dropTable("drop table ".$tabla);
 $mdl->createTable("Create table pam_ActividadPrevencion
@@ -207,7 +208,7 @@ Usuario_Edita   int
 )
 ");
 $mdl->createTable ("drop sequence seq_pam_ActividadPrevencion");
-$mdl->createTable ("Create sequence seq_pam_ActividadPrevencion");
+$mdl->createTable ("Create sequence seq_pam_ActividadPrevencion");*/
 /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
     */
     //$x->deleteDataNoWhere("pam_nivel_educativo");
