@@ -130,6 +130,7 @@ Vue.component('pam-datos-nutricion-salud', {
                     this.motivo_dif_desplazamiento = response.body.atributos[0]["MOTIVO_DIF_DESPLAZAMIENTO"];
                     this.enfermedad_ingreso_1 = response.body.atributos[0]["ENFERMEDAD_INGRESO_1"];
                     this.tipo_patologia = response.body.atributos[0]["TIPO_PATOLOGIA"];
+                    this.tipo_patologia_2 = response.body.atributos[0]["TIPO_PATOLOGIA_2"];
                     this.enfermedad_ingreso_2 = response.body.atributos[0]["ENFERMEDAD_INGRESO_2"];
                     this.nivel_hemoglobina = response.body.atributos[0]["NIVEL_HEMOGLOBINA"];
                     this.presenta_anema = response.body.atributos[0]["PRESENTA_ANEMA"];

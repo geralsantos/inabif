@@ -126,7 +126,7 @@
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Motivo de Dificultad con el Desplazamiento</label>
                                     <select name="motivo_dif_desplazamiento" v-model="motivo_dif_desplazamiento" class="form-control">
-                                    <option value="Musculoesqueléticas">Musculoesqueléticas,</option>
+                                    <option value="Musculoesqueléticas">Musculoesqueléticas</option>
                                     <option value="Neurológicas">Neurológicas</option>
                                     <option value="Cardiovasculares">Cardiovasculares</option>
                                     <option value="Pulmonares">Pulmonares</option>
@@ -181,11 +181,11 @@
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="text-input" class=" form-control-label">Peso (kg.)</label>
-                                <input type="number" v-model="peso" name="peso" placeholder="" class="form-control">
+                                <input type="number" v-model="peso" step="0.1" name="peso" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="text-input" class=" form-control-label">Talla (mt)</label>
-                                <input type="number" v-model="talla" name="talla" placeholder="" class="form-control">
+                                <input type="number" v-model="talla" step="0.1" name="talla" placeholder="" class="form-control">
                             </div>
                  
                             <div class="form-group col-md-3">
