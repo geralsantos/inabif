@@ -136,7 +136,7 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-md-2">
-                                <div class=" "><label for="text-input" class=" form-control-label">Vúmero o Código del documento</label>
+                                <div class=" "><label for="text-input" class=" form-control-label">Número o Código del documento</label>
                                 <input type="text" v-model="Numero_Doc" name="Numero_Doc" placeholder="" class="form-control">
                                 </div>
                             </div>
