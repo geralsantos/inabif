@@ -55,7 +55,7 @@
                         </div>
                         <div class="row">
                         <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Posee plan de intervención nutricional  individual?</label>
+                                <label for="text-input" class=" form-control-label">¿Posee plan de intervención nutricional  individual?</label>
                                 <select name="CarIntervencionNutricional" v-model="CarIntervencionNutricional" class="form-control">
                                     <option value="Si">Si</option>
                                     <option value="No">No</option>
@@ -68,7 +68,7 @@
                             </div>
 
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Posee informe técnico evolutivo?</label>
+                                <label for="text-input" class=" form-control-label">¿Posee informe técnico evolutivo?</label>
                                 <select name="CarInformeEvolutivo" v-model="CarInformeEvolutivo" class="form-control">
                                 <option value="Si">Si</option>
                                     <option value="No">No</option>
