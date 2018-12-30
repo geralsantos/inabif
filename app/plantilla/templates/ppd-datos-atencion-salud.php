@@ -110,7 +110,7 @@
                                 <input type="number" min="0"  v-model="CarAGastroenterologia" name="CarAGastroenterologia" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Nº Atenciones en GINECO-OBSTETRICÍA</label>
+                                <label for="text-input" class=" form-control-label">Nº Atenciones en GINECO-OBSTETRICIA</label>
                                 <input type="number" min="0"  v-model="CarAGinecoObstretica" name="CarAGinecoObstretica" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
@@ -129,7 +129,7 @@
                                 <input type="number" min="0"  v-model="CarAInmunologia" name="CarAInmunologia" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Nº Atenciones en MEDICINA FISICA Y REHABILITACION</label>
+                                <label for="text-input" class=" form-control-label">Nº Atenciones en MEDICINA FÍSICA Y REHABILITACIÓN</label>
                                 <input type="number" min="0"  v-model="CarAMedicinaFisica" name="CarAMedicinaFisica" placeholder="" class="form-control">
                             </div>
 
@@ -141,7 +141,7 @@
                                 <input type="number" min="0"  v-model="CarANeumologia" name="CarANeumologia" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Nº Atenciones en NUTRICION</label>
+                                <label for="text-input" class=" form-control-label">Nº Atenciones en NUTRICIÓN</label>
                                 <input type="number" min="0"  v-model="CarAnutricion" name="CarAnutricion" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
@@ -160,14 +160,14 @@
                                 <input type="number" min="0"  v-model="CarAOtorrinoloringologia" name="CarAOtorrinoloringologia" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Nº Atenciones en PEDÍATRÍA</label>
+                                <label for="text-input" class=" form-control-label">Nº Atenciones en PEDIATRÍA</label>
                                 <input type="number" min="0"  v-model="CarAPedriatria" name="CarAPedriatria" placeholder="" class="form-control">
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Nº Atenciones en PSIQUÍATRÍA</label>
+                                <label for="text-input" class=" form-control-label">Nº Atenciones en PSIQUIATRÍA</label>
                                 <input type="number" min="0"  v-model="CarAPsiquiatria" name="CarAPsiquiatria" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
@@ -204,7 +204,7 @@
                                 </select>
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Residente fue hospitalizado en el periodo</label>
+                                <label for="text-input" class=" form-control-label">Residente fue hospitalizado en el período</label>
                                 <select name="CarHopitalizadoP" v-model="CarHopitalizadoP" class="form-control">
                                     <option value="Si">Si</option>
                                     <option value="No">No</option>
