@@ -20,7 +20,9 @@ Vue.component('ppd-datos-atencion-trabajoSocial', {
         anio:(new Date()).getFullYear(),
         coincidencias:[],
         bloque_busqueda:false,
-        id_residente:null
+        id_residente:null,
+        parentescos:[],
+        familiares:[],
 
     }),
     created:function(){
