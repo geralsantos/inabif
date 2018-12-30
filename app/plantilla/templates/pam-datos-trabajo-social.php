@@ -86,7 +86,7 @@
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">Cumplimiento del plan de intervención</label>
-                                <select name="CarCumplePlan" v-model="CarCumplePlan" class="form-control">
+                                <select name="Cumple_Intervencion" v-model="Cumple_Intervencion" class="form-control">
                                     <option value="Residente logra el objetivo trazado">Residente logra el objetivo trazado</option>
                                     <option value="En proceso">En proceso</option>
                                     <option value="Residente no logra el objetivo trazado">Residente no logra el objetivo trazado</option>
