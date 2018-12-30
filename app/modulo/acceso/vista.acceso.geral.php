@@ -14,6 +14,12 @@ crear tabla
     <textarea name="campostabla" value="<?php echo $_GET["campostabla"]?>" id="" cols="100" rows="20"></textarea>
     <button type="submit">borrar tabla,crear tabla y crear secuencia</button>
     <br>
+    </form>
+    <form action="geral" method="GET">
+<input type="text" style="witdh:100%;" size="100" value="<?php echo $_GET["deletefrom"]?>" name="deletefrom" placeholder="deletefrom">
+
+<button type="submit">borrar tabla</button>
+</form>
 <?php 
 //  Configure DB Parameters
 class mdl
@@ -165,6 +171,10 @@ if (isset($_GET["deletedata"])) {
     $x->deleteDataNoWhere("CarSaludMental");
     
     
+    die();
+}
+if (isset($_GET["deletefrom"]) && $_GET["deletefrom"]!="") {
+    $x->deleteDataNoWhere("pam_nivel_educativo");
     die();
 }
 if (isset($_GET["nombretabla"]) && $_GET["nombretabla"]!="") {
