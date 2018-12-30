@@ -108,7 +108,7 @@ Vue.component('pam-datos-admision', {
                     this.motivo_ingreso_principal = response.body.atributos[0]["MOTIVO_INGRESO_PRINCIPAL"];
                     this.motivo_ingreso_secundario = response.body.atributos[0]["MOTIVO_INGRESO_SECUNDARIO"];
                     this.perfil_ingreso = (response.body.atributos[0]["PERFIL_INGRESO"]).split("|");
-                    console.log(perfil_ingreso);
+                    console.log(this.perfil_ingreso);
                     this.tipo_documento_ingreo_car = response.body.atributos[0]["TIPO_DOCUMENTO_INGREO_CAR"];
                     this.numero_documento_ingreo_car = response.body.atributos[0]["NUMERO_DOCUMENTO_INGREO_CAR"];
 
