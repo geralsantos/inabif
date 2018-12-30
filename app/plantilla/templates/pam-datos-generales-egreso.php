@@ -140,6 +140,13 @@
                             </div>
                             
                         </div>
+                        <div class="row">
+                            <div class="col-md-12 text-center" >
+                                <button type="submit" class="btn btn-success btn-sm">
+                                    <i class="fa fa-send"></i> Grabar Datos
+                                </button>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
