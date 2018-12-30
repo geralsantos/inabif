@@ -114,6 +114,13 @@ Vue.component('nna-datos-admision-residente', {
              });
 
         },
-        
+        buscar_instituciones(){
+            this.$http.post('buscar?view',{tabla:'nna_instituciones'}).then(function(response){
+                if( response.body.data ){
+                    this.instituciones= response.body.data;
+                }
+
+            });
+        },
     }
   })
