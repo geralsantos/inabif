@@ -159,7 +159,7 @@ if (isset($_POST["nombretabla"]) && $_POST["nombretabla"]!="") {
     echo "<br>";
     print_r($x->executeQuery($_POST["nombretabla"]));
     die();
-}else{
+}else{/*
 $x->dropTable('drop table CarSaludNutricion ');
 $mdl->createTable("create table CarSaludNutricion
 (
@@ -196,7 +196,7 @@ Usuario_Crea       	int,
 Usuario_Edita      	int
 )
 
-"); /*
+"); */
   print_r($x->executeQuery("insert into pam_tipo_patologia (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(1,'Enfermedad pulmonar crónica tal como asma, bronquitis o enfisema',sysdate,1,1)"));
   print_r($x->executeQuery("insert into pam_tipo_patologia (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'Hipertensión',sysdate,1,1)"));
   print_r($x->executeQuery("insert into pam_tipo_patologia (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'Diabetes',sysdate,1,1)"));
@@ -210,7 +210,7 @@ Usuario_Edita      	int
   print_r($x->executeQuery("insert into pam_tipo_patologia (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(11,'Enfermedades del sistema nervioso, Alzheimer o pérdida de memoria',sysdate,1,1)"));
   print_r($x->executeQuery("insert into pam_tipo_patologia (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(12,'VIH',sysdate,1,1)"));
   print_r($x->executeQuery("insert into pam_tipo_patologia (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(13,'TBC',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_tipo_patologia (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(14,'Otro (Especifique)',sysdate,1,1)"));*/
+  print_r($x->executeQuery("insert into pam_tipo_patologia (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(14,'Otro (Especifique)',sysdate,1,1)"));
   print_r($x->executeQuery("SELECT * FROM CarSaludNutricion WHERE ESTADO=1"));
 /*
 $tabla="CarEgresoSalud";
