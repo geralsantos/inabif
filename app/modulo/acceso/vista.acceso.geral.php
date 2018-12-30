@@ -159,44 +159,19 @@ if (isset($_POST["nombretabla"]) && $_POST["nombretabla"]!="") {
     echo "<br>";
     print_r($x->executeQuery($_POST["nombretabla"]));
     die();
-}else{/*
-$x->dropTable('drop table CarSaludNutricion ');
-$mdl->createTable("create table CarSaludNutricion
-(
-Id int not null primary key ,
-Tipo_Centro_Id  int,
-Residente_Id	int,
-Periodo_Mes int,
-Periodo_Anio   int,
-Discapacidad       	char(2),
-Discapacidad_Fisica	varchar(40),
-Discapacidad_Intelectual varchar(40),
-Discapacidad_Sensorial varchar(40),
-Discapacidad_mental varchar(40),
-Certificacdo_Dx    	char(2),
-Carnet_CONADIS     	char(20),
-Movilidad    	int,
-Motivo_Movilidad int,
-Dificultad_Movilidad   int,
-Patologia1   	char(20),
-Tipo_Patologia1    	int,
-Especifique1       	varchar(250),
-Patologia2   	char(20),
-Tipo_Patologia2    	int,
-Especifique2       	varchar(200),
-Nivel_Hemoglobina  	number(6,2),
-Anemia             	char(20),
-Peso          	number(6,2),
-Talla         	number(6,2),
-Estado_Nutricional 	varchar(20),
-Estado             	int,
-Fecha_Creacion     	TIMESTAMP DEFAULT SYSDATE,
-Fecha_Edicion      	TIMESTAMP DEFAULT SYSDATE,
-Usuario_Crea       	int,
-Usuario_Edita      	int
+}else{
+$x->dropTable('drop table pam_tipo_patologia ');
+$mdl->createTable("CREATE TABLE pam_tipo_patologia
+( id number(10) NOT NULL primary key,
+  nombre varchar(200) NOT NULL,
+  Estado                            	int default 1,
+  fecha_creacion            	DATE ,
+Fecha_Edicion              	DATE DEFAULT (sysdate),
+Usuario_Crea                	number(10),
+Usuario_Edita               	number(10)
 )
 
-"); */
+"); 
   print_r($x->executeQuery("insert into pam_tipo_patologia (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(1,'Enfermedad pulmonar crónica tal como asma, bronquitis o enfisema',sysdate,1,1)"));
   print_r($x->executeQuery("insert into pam_tipo_patologia (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'Hipertensión',sysdate,1,1)"));
   print_r($x->executeQuery("insert into pam_tipo_patologia (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'Diabetes',sysdate,1,1)"));
