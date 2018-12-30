@@ -13,6 +13,8 @@ Vue.component('nna-datos-admision-residente', {
         Numero_Doc:null,
         Situacion_Legal :null,
 
+        instituciones:[],
+
         nombre_residente:null,
         isLoading:false,
         mes:moment().format("MM"),
