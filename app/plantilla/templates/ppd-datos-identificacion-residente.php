@@ -82,8 +82,6 @@
                                 </select>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Provincia de Nacimiento</label>
                                 <select name="Provincia_Procedencia" v-model="Provincia_Procedencia" @change="buscar_distritos()" class="form-control">
@@ -91,6 +89,8 @@
                                 </select>
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Distrito de Nacimiento</label>
                                 <select name="Distrito_Procedencia" v-model="Distrito_Procedencia" class="form-control">
@@ -106,13 +106,14 @@
                                 </select>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                        <div class="form-group col-md-4">
+                            <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Fecha de Nacimiento</label>
                                 <input type="date" class="form-control" v-model="Fecha_Nacimiento"  placeholder="DD-MM-YYYY"  data-language='es'  />
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
+                            
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Edad</label>
                                 <input type="text" v-model="Edad" name="Edad" placeholder="" class="form-control">
