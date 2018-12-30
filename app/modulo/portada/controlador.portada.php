@@ -150,7 +150,7 @@ class portada extends App{
     public function cargar_datos_residente(){
       if( $_POST['tabla'] && $_POST['residente_id']){
         $modelo = new modeloPortada();
-        $sql = "SELECT * FROM ".strtoupper($_POST["tabla"])." WHERE RESIDENTE_ID = ".$_POST["residente_id"]." AND ESTADO=1 AND ROWNUM <= 1 order by ID asc";
+        $sql = "SELECT * FROM ".strtoupper($_POST["tabla"])." WHERE RESIDENTE_ID = ".$_POST["residente_id"]." AND ESTADO=1 AND ROWNUM <= 1 order by ID desc";
         $res = $modelo->executeQuery( $sql );
         if ($res) {
           echo json_encode(array( "atributos"=>$res )) ;
