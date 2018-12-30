@@ -134,7 +134,7 @@
                                 <input type="number" min="0"  v-model="CarElavoracionOrteticos" name="CarElavoracionOrteticos" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">N° de veces que Participa en actividades de adaptaciones de sillas de ruedasl</label>
+                                <label for="text-input" class=" form-control-label">N° de veces que Participa en actividades de adaptaciones de sillas de ruedas</label>
                                 <input type="number" min="0"  v-model="CarAdaptacionSilla" name="CarAdaptacionSilla" placeholder="" class="form-control">
                             </div>
 
