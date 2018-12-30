@@ -13,7 +13,7 @@ Vue.component('pam-datos-condiciones-ingreso', {
         tipo_parentesco:null,
               
         niveles_educativos:[],
-        motivos:[],
+        clasif_socioeconomica:[],
         motivos2:[],
 
         nombre_residente:null,
@@ -30,6 +30,7 @@ Vue.component('pam-datos-condiciones-ingreso', {
     },
     mounted:function(){
        this.buscar_niveleducativo();
+       this.buscar_clasif_socioeconomica();
     },
     updated:function(){
     },
@@ -127,10 +128,10 @@ Vue.component('pam-datos-condiciones-ingreso', {
 
             });
         },
-        buscar_motivos(){
-            this.$http.post('buscar?view',{tabla:''}).then(function(response){
+        buscar_clasif_socioeconomica(){
+            this.$http.post('buscar?view',{tabla:'pam_clasif_socioeconomico'}).then(function(response){
                 if( response.body.data ){
-                    this.motivos= response.body.data;
+                    this.clasif_socioeconomica= response.body.data;
                 }
 
             });

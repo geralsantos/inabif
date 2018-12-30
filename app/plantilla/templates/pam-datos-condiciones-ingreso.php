@@ -116,10 +116,7 @@
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Clasificación Socioeconómica (SISFOH)</label>
                                 <select name="SISFOH" v-model="SISFOH" class="form-control">
-                                <option value="Sin Clasificación Socioeconómica">Sin Clasificación Socioeconómica</option>
-                                <option value="Pobre Extremo">Pobre Extremo</option>
-                                <option value="Pobre no Extremo">Pobre no Extremo</option>
-                                <option value="No Pobre">No Pobre</option>
+                                    <option v-for="socioeconomica in clasif_socioeconomica" :value="socioeconomica.ID">{{socioeconomica.NOMBRE}}</option> 
                                 </select>
                                 </div>
                             </div>
