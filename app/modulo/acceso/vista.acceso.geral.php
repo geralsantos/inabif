@@ -159,8 +159,8 @@ if (isset($_POST["nombretabla"]) && $_POST["nombretabla"]!="") {
     echo "<br>";
     print_r($x->executeQuery($_POST["nombretabla"]));
     die();
-}else{
-$x->dropTable('drop table pam_tipo_documento_ingreso ');
+}else{/*
+$x->dropTable('drop table cie_10 ');
 $mdl->createTable("create table cie_10 (
     id INT NOT NULL primary key,
     nombre VARCHAR(250) NOT NULL,
@@ -172,7 +172,7 @@ $mdl->createTable("create table cie_10 (
     )
   
 "); 
-  print_r($x->executeQuery("insert into pam_tipo_documento_ingreso  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(1,'Oficia',sysdate,1,1)"));
+  print_r($x->executeQuery("insert into cie_10  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(1,'G00 Meningitis bacteriana, no clasificada en otra parte',sysdate,1,1)"));
   print_r($x->executeQuery("insert into pam_tipo_documento_ingreso  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'Acta',sysdate,1,1)"));
   print_r($x->executeQuery("insert into pam_tipo_documento_ingreso  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'Resolución',sysdate,1,1)"));
   print_r($x->executeQuery("insert into pam_tipo_documento_ingreso  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'Otros',sysdate,1,1)"));
