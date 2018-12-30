@@ -101,7 +101,7 @@
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Distrito del Centro de Atención</label>
                                 <select name="CarDistrito" v-model="CarDistrito" class="form-control">
-                                    <option v-for="distrito in distritos" :value="distrito.CODDIST">{{distrito.CODDIST}}</option>
+                                    <option v-for="distrito in distritos" :value="distrito.CODDIST">{{distrito.NOMDIST}}</option>
                                 </select>
                                 </div>
                             </div>
