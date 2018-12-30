@@ -160,25 +160,6 @@ if (isset($_POST["nombretabla"]) && $_POST["nombretabla"]!="") {
     print_r($x->executeQuery($_POST["nombretabla"]));
     die();
 }else{
-$x->dropTable('drop table pam_tipo_lenguaje_alterna ');
-$mdl->createTable("CREATE TABLE pam_tipo_lenguaje_alterna
-( id int not null primary key,
-  nombre varchar(100) NOT NULL,
-  Estado                            	int default 1,
-  fecha_creacion            	DATE,
-Fecha_Edicion              	timestamp DEFAULT (sysdate),
-Usuario_Crea                	int,
-Usuario_Edita               	int
-)
-  
-");
-  print_r($x->executeQuery("insert into pam_tipo_lenguaje_alterna  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(1,'Lenguaje de señas',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_tipo_lenguaje_alterna  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(2,'Gestos',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_tipo_lenguaje_alterna  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(3,'Lenguaje corporal',sysdate,1,1)"));
-  print_r($x->executeQuery("insert into pam_tipo_lenguaje_alterna  (id,nombre,fecha_creacion,Usuario_Crea,Usuario_Edita) values(4,'Tableros de comunicación',sysdate,1,1)"));
-  print_r($x->executeQuery("SELECT * FROM pam_tipo_lenguaje_alterna WHERE ESTADO=1"));
-  
-  /*
 $tabla="pam_ActividadPrevencion";
 $x->dropTable("drop table ".$tabla);
 $mdl->createTable("Create table pam_ActividadPrevencion
@@ -202,14 +183,14 @@ Nro_Participa_Cognitivas        	int,
 Otros char(2),
 Nro_Participa_Otros int,
 Estado              	int default 1,
-Fecha_Crea   	date,
+Fecha_Creacion   	date,
 Fecha_Edicion  timestamp default sysdate,
 Usuario_Crea	int,
 Usuario_Edita   int
 )
 ");
 $mdl->createTable ("drop sequence seq_pam_ActividadPrevencion");
-$mdl->createTable ("Create sequence seq_pam_ActividadPrevencion");*/
+$mdl->createTable ("Create sequence seq_pam_ActividadPrevencion");
 /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
     */
     //$x->deleteDataNoWhere("pam_nivel_educativo");
