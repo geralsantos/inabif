@@ -74,6 +74,19 @@
                                 </div>
                         </div>
                         <div class="row">
+                        <div class="form-group col-md-4">
+                                <div class=" "><label for="text-input" class=" form-control-label">Usuario</label>
+                                <input type="text" v-model="usuario" name="usuario" placeholder="" class="form-control"> 
+                                </div>
+                            </div>
+                            <div class="form-group col-md-4"><label for="text-input" class=" form-control-label">Clave</label>
+                                <input type="password" v-model="clave" name="clave" placeholder="" class="form-control"> 
+                            </div>
+                            <div class="form-group col-md-4"><label for="text-input" class=" form-control-label">Confirmar Clave</label>
+                                <input type="password" v-model="cclave" name="cclave" placeholder="" class="form-control"> 
+                            </div>
+                        </div>
+                        <div class="row">
                             <div class="form-group col-md-6">
                                 <div class=" "><label for="text-input" class=" form-control-label">DNI</label>
                                 <input type="number" v-model="DNI" name="DNI" placeholder="" class="form-control"> 
