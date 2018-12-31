@@ -36,7 +36,8 @@ Vue.component('registro-perfiles', {
                 Correo: this.Correo,
                 DNI:this.DNI,
                 NumCel: this.NumCel,
-                CENTRO_ID :this.centro_id,
+                NumCel: this.NumCel,
+                NIVEL :this.nivel_id,
                 }
                 if (this.id_usuario==null) {
                     this.$http.post('insertar_datos?view',{tabla:'usuarios', valores:valores}).then(function(response){
@@ -71,6 +72,8 @@ Vue.component('registro-perfiles', {
                     this.DNI=null;
                     this.NumCel= null;
                     this.centro_id =null;
+                    this.nivel_id =null,
+
                     this.showModal = true;
             }else{
                 console.log(usuario);
@@ -84,6 +87,8 @@ Vue.component('registro-perfiles', {
                     this.DNI=usuario.DNI;
                     this.NumCel= usuario.NUMCEL;
                     this.centro_id =usuario.CENTRO_ID,
+                    this.nivel_id =usuario.NIVEL,
+
                     this.showModal = true;
               //});
             }
