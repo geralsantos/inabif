@@ -106,6 +106,7 @@ Vue.component('nna-seguimiento-educacion', {
                     this.NEducativo = response.body.atributos[0]["NEDUCATIVO"];
                     this.Grado = response.body.atributos[0]["GRADO"];
                     this.Asitencia = response.body.atributos[0]["ASITENCIA"];
+                    this.Nro_Asistencia = response.body.atributos[0]["NRO_ASISTENCIA"];
                     this.Nro_Reforzamientos = response.body.atributos[0]["NRO_REFORZAMIENTOS"];
                     this.Nro_Aprestamiento = response.body.atributos[0]["NRO_APRESTAMIENTO"];
                     this.Nro_Consejera = response.body.atributos[0]["NRO_CONSEJERA"];
