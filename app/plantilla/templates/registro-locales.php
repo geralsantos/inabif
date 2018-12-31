@@ -111,7 +111,7 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <div class=" "><label for="text-input" class=" form-control-label">Nombre de Director</label>
-                                <input type="number" v-model="nombre_director" name="nombre_director" placeholder="" class="form-control"> 
+                                <input type="text" v-model="nombre_director" name="nombre_director" placeholder="" class="form-control"> 
                                 </div>
                             </div>
                             
@@ -138,7 +138,7 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Linea Intervención</label>
-                                <input type="number" v-model="linea_intervencion" name="linea_intervencion" placeholder="" class="form-control"> 
+                                <input type="text" v-model="linea_intervencion" name="linea_intervencion" placeholder="" class="form-control"> 
                                 </div>
                             </div>
                             <div class="form-group col-md-4">
