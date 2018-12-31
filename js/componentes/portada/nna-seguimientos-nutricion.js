@@ -8,7 +8,7 @@ Vue.component('nna-seguimientos-nutricion', {
         Cumple_Intervencion:null,
         Estado_Nutricional_Peso	:null,
         Estado_Nutricional_Talla:null,
-        Hemeglobina :null,
+        Hemoglobina :null,
         Analisis_Hemoglobina :null,
                         
         nombre_residente:null,
@@ -38,9 +38,9 @@ Vue.component('nna-seguimientos-nutricion', {
                 Meta_PAI:this,Meta_PAI,
                 Informe_Tecnico:this.Informe_Tecnico,
                 Cumple_Intervencion:this.Cumple_Intervencion,
-                Estado_Nutricional_Peso	:null,
-                Estado_Nutricional_Talla:null,
-                Hemeglobina :this.Hemeglobina,
+                Estado_Nutricional_Peso	:this.Estado_Nutricional_Peso,
+                Estado_Nutricional_Talla:this.Estado_Nutricional_Talla,
+                Hemoglobina :this.Hemoglobina,
                 Analisis_Hemoglobina :this.Analisis_Hemoglobina,
 
                 Residente_Id: this.id_residente,
@@ -95,11 +95,14 @@ Vue.component('nna-seguimientos-nutricion', {
 
                 if( response.body.atributos != undefined){
 
-                    this.Nro_Talleres_E = response.body.atributos[0]["NRO_TALLERES_E"];
-                    this.Nro_Campanas = response.body.atributos[0]["NRO_CAMPANAS"];
-                    this.Nro_Atencion_Fisi = response.body.atributos[0]["NRO_ATENCION_FISI"];
-                    this.Nro_Atencon_Ocupa = response.body.atributos[0]["NRO_ATENCON_OCUPA"];
-                    this.Nro_Atencion_Lengua = response.body.atributos[0]["NRO_ATENCION_LENGUA"];
+                    this.Plan_Intervencion = response.body.atributos[0]["PLAN_INTERVENCION"];
+                    this.Meta_PAI = response.body.atributos[0]["META_PAI"];
+                    this.Informe_Tecnico = response.body.atributos[0]["INFORME_TECNICO"];
+                    this.Cumple_Intervencion = response.body.atributos[0]["CUMPLE_INTERVENCION"];
+                    this.Estado_Nutricional_Peso = response.body.atributos[0]["ESTADO_NUTRICIONAL_PESO"];
+                    this.Estado_Nutricional_Talla = response.body.atributos[0]["ESTADO_NUTRICIONAL_TALLA"];
+                    this.Hemoglobina = response.body.atributos[0]["HEMOGLOBINA"];
+                    this.Analisis_Hemoglobina = response.body.atributos[0]["ANALISIS_HEMOGLOBINA"];
           
                 }
              });
