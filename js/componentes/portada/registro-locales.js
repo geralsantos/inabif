@@ -31,6 +31,8 @@ Vue.component('registro-locales', {
         provincias:[],
         distritos:[],
         Depatamento_Procedencia:null,
+        Provincia_Procedencia:null,
+        Distrito_Procedencia:null,
     }),
     created:function(){
     },
