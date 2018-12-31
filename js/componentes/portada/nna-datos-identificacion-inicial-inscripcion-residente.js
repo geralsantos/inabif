@@ -49,10 +49,10 @@ Vue.component('nna-datos-identificacion-inicial-inscripcion-residente', {
     },
     methods:{
         guardar(){
-            if (this.id_residente==null) {
+           /* if (this.id_residente==null) {
                 swal('Error', 'Residente no existe', 'success');
                 return false;
-            }
+            }*/
             let valores = {
                
                 residente_apellido_paterno: this.Ape_Paterno,
