@@ -73,7 +73,7 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Resv-modelente presenta Anemia</label>
+                                <label for="text-input" class=" form-control-label">Residente presenta Anemia</label>
                                     <select name="Anemia" v-model="Anemia" class="form-control">
                                         <option value="Si">Si</option>
                                         <option value="No">No</option>
