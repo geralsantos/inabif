@@ -20,7 +20,7 @@ Vue.component('seguimiento-lista-2', {
     created:function(){
     },
     mounted:function(){
-        this.listar_modulos();
+        this.listar_grupos();
     },
     updated:function(){
     },
@@ -109,8 +109,9 @@ Vue.component('seguimiento-lista-2', {
                 
             });
         },
-        listar_modulos(){
-            this.$http.post('listar_modulos?view',{}).then(function(response){
+        listar_grupos(){
+            let id_centro = document.getElementById("mensaje_entre_componentes"); 
+            this.$http.post('listar_grupos?view',{id_centro:id_centro}).then(function(response){
                 this.registro = response.body.atributos[0];
                 this.showModal = true;
                 
