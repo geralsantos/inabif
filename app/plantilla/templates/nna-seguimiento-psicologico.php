@@ -76,21 +76,7 @@
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">PRINCIPAL PERFIL ACTUAL</label>
                                 <select name="Perfil" v-model="Perfil" class="form-control">
-                                <option value="Trastorno de comportamiento">Trastorno de comportamiento</option>
-                                <option value="Consumidores de sustancias psicoactivas">Consumidores de sustancias psicoactivas</option>
-                                <option value="Experiencia Vida en Calle">Experiencia Vida en Calle</option>
-                                <option value="Víctima de Explotación sexual">Víctima de Explotación sexual</option>
-                                <option value="Víctima de trata por explotación sexual">Víctima de trata por explotación sexual</option>
-                                <option value="Víctima de trata por mendicidad">Víctima de trata por mendicidad</option>
-                                <option value="Víctima de trata por explotación laboral">Víctima de trata por explotación laboral</option>
-                                <option value="Víctima de trata por comercialización de órganos">Víctima de trata por comercialización de órganos</option>
-                                <option value="Víctima de trata por venta de niños/as">Víctima de trata por venta de niños/as</option>
-                                <option value="Trastorno disocial">Trastorno disocial</option>
-                                <option value="Víctima de violencia sexual">Víctima de violencia sexual</option>
-                                <option value="Presunto infractor">Presunto infractor</option>
-                                <option value="Víctima de maltrato físico y/o psicológico">Víctima de maltrato físico y/o psicológico</option>
-                                <option value="Abandono">Abandono</option>
-                                <option value="Victimas de explotación sexual">Victimas de explotación sexual</option>
+                                <option v-for="perfil in perfilesingreso" :value="perfil.ID">{{perfil.NOMBRE}}</option>
                                 </select>
                                 </div>
                             </div>
@@ -132,18 +118,18 @@
                             </div>
 
                             <div class="form-group col-md-3">
-                                <label for="text-input" class=" form-control-label">Nº participaciones en sesiones  Taller de Sexualidad</label>
+                                <label for="text-input" class=" form-control-label">Nº participaciones en sesiones Taller de Sexualidad</label>
                                 <input type="number" min="0"  v-model="Nro_TSexualidad" name="Nro_TSexualidad"  placeholder="" class="form-control">
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="form-group col-md-3">
-                                <label for="text-input" class=" form-control-label">Nº participaciones en sesiones   Taller de prevención del embarazo en adolescentes</label>
+                                <label for="text-input" class=" form-control-label">Nº participaciones en sesiones Taller de prevención del embarazo en adolescentes</label>
                                 <input type="number" min="0"  v-model="Nro_TPrevencionEmb" name="Nro_TPrevencionEmb"  placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-3">
-                                <label for="text-input" class=" form-control-label">Nº participaciones en sesiones  Taller de Igualdad de Género</label>
+                                <label for="text-input" class=" form-control-label">Nº participaciones en sesiones Taller de Igualdad de Género</label>
                                 <input type="number" min="0"  v-model="Nro_TIgualdadG" name="Nro_TIgualdadG"  placeholder="" class="form-control">
                             </div>
 

@@ -18,6 +18,8 @@ Vue.component('nna-seguimiento-psicologico', {
         Nro_ViolenciaF :null,
         Nro_SaludM :null,
                  
+        perfilesingreso:[],
+
         nombre_residente:null,
         isLoading:false,
         mes:moment().format("MM"),
@@ -30,6 +32,7 @@ Vue.component('nna-seguimiento-psicologico', {
     created:function(){
     },
     mounted:function(){
+        this.buscar_nna_perfiles_ingreso();
     },
     updated:function(){
     },
@@ -43,7 +46,7 @@ Vue.component('nna-seguimiento-psicologico', {
                
                 Plan_Intervencion:this.Plan_Intervencion,
                 Presento:this.Presento,
-                Perfil  :this.Perfil,
+                Perfil_Id   :this.Perfil,
                 Intervencion_Individual:this.Intervencion_Individual,
                 Intervencion_Grupal:this.Intervencion_Grupal,
                 Nro_OrientacionP:this.Nro_OrientacionP,
@@ -111,7 +114,7 @@ Vue.component('nna-seguimiento-psicologico', {
 
                     this.Plan_Intervencion = response.body.atributos[0]["PLAN_INTERVENCION"];
                     this.Presento = response.body.atributos[0]["PRESENTO"];
-                    this.Perfil = response.body.atributos[0]["PERFIL"];
+                    this.Perfil = response.body.atributos[0]["PERFIL_ID"];
                     this.Intervencion_Individual = response.body.atributos[0]["INTERVENCION_INDIVIDUAL"];
                     this.Intervencion_Grupal = response.body.atributos[0]["INTERVENCION_GRUPAL"];
                     this.Nro_OrientacionP = response.body.atributos[0]["NRO_ORIENTACIONP"];
@@ -129,6 +132,13 @@ Vue.component('nna-seguimiento-psicologico', {
              });
 
         },
-        
+        buscar_nna_perfiles_ingreso(){
+            this.$http.post('buscar?view',{tabla:'nna_perfiles_ingreso'}).then(function(response){
+                if( response.body.data ){
+                    this.perfilesingreso= response.body.data;
+                }
+
+            });
+        }
     }
   })
