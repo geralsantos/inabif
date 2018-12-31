@@ -171,7 +171,7 @@ class MySQL extends PDO
             $queryKeys .= 'Id, ';
             $queryValues = '';
             if ($lastid) {
-                $queryValues .= $lastid;
+                $queryValues .= $lastid.",";
             }else{
                 $queryValues .= "seq_".$tabla.'.NEXTVAL, ';
             }
