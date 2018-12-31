@@ -95,7 +95,6 @@ Vue.component('nna-datos-identificacion-inicial-inscripcion-residente', {
                     documento :this.Numero_Doc
                     }
                 this.$http.post('insertar_datos?view',{tabla:'residente', valores:valores_residente,lastid:true}).then(function(response){
-                    
                     valores.Residente_Id = response.body.lastid;
                     console.log(response);
                     this.$http.post('insertar_datos?view',{tabla:'NNAInscripcionResidente', valores:valores}).then(function(response){

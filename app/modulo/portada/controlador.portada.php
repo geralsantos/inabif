@@ -119,7 +119,8 @@ class portada extends App{
         $lastid = false;
         if (isset($_POST['lastid'])) {
           if ($_POST['lastid']) {
-            $lastid = true;
+            $sql = "SELECT * FROM seq_".$_POST['tabla'].".NEXTVAL FROM DUAL";
+            $lastid = $modelo->executeQuery( $sql );
           }
         }
         if (!$lastid) {
@@ -133,19 +134,15 @@ class portada extends App{
         $_POST['valores']['Usuario_Edita'] =$_SESSION["usuario"][0]["ID"];
         //aqui tu ejecutas la consulta
         
-        $res = $modelo->insertData( $_POST['tabla'],$_POST["valores"],$lastid);
-        if ($lastid) {
-          if ($res) {
-            echo json_encode(array("resultado"=>true,"lastid"=>$res )) ;
+        $res = $modelo->insertData( $_POST['tabla'],$_POST["valores"]);
+        if ($res) {
+          if ($lastid) {
+            echo json_encode(array("resultado"=>true,"lastid"=>$lastid )) ;
+          }else{
+            echo json_encode(array("resultado"=>true )) ;
           }
         }else{
-          if ($res) {
-            $sql = "SELECT * FROM ".$_POST['tabla']." WHERE ID= ESTADO=1";
-            $res = $modelo->executeQuery( $sql );
-            echo json_encode(array("resultado"=>true )) ;
-          }else{
-            return false;
-          }
+          return false;
         }
         
       }else{
