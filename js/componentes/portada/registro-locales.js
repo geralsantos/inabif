@@ -59,6 +59,7 @@ Vue.component('registro-locales', {
                 codigo_entidad: this.codigo_entidad,
                 nombre_entidad: this.nombre_entidad,
                 cod_serv:this.cod_serv,
+                ubigeo :this.Distrito_Procedencia,
                 cod_ca: this.cod_ca,
                 administrador_nombre: this.administrador_nombre,
                 nombre_director :this.nombre_director,
