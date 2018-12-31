@@ -115,7 +115,7 @@ Vue.component('seguimiento-lista-1', {
                     this.usuario = response.body.data[0];
                   //  if(this.usuario.NIVEL == 5){
                         this.mostrar_completado = true;
-                        this.matriz = true;
+                     
                   //  }
                
                 }
