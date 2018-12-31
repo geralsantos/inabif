@@ -240,7 +240,7 @@ class portada extends App{
         }
        }
     }
-    public function buscar_centro(){
+    public function buscar_centros(){
       if( $_POST['tabla'])
       {
         $modelo = new modeloPortada();

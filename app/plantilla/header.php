@@ -64,9 +64,7 @@
 </style>
 
      
-                <modulos :changeviewevent="changeview">
-
-                </modulos> 
+                <modulos :changeviewevent="changeview"></modulos> 
 
             </ul>
         </div><!-- /.navbar-collapse -->
