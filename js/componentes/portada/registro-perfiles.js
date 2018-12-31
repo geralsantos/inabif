@@ -64,15 +64,29 @@ Vue.component('registro-perfiles', {
              
         },
         EliminarUsuario(usuario){
-            let where = {id:usuario.ID}
-            this.$http.post('delete_datos?view',{tabla:'usuarios',where:where}).then(function(response){
-                if( response.body.resultado ){
-                    swal('', 'Usuario Eliminado', 'success');
-                    this.listar_usuarios();
-                }else{
-                  swal("", "Un error ha ocurrido", "error");
+            swal({
+                title: "Are you sure?",
+                text: "Once deleted, you will not be able to recover this imaginary file!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+              })
+              .then((willDelete) => {
+                if (willDelete) {
+                    let where = {id:usuario.ID}
+                    this.$http.post('delete_datos?view',{tabla:'usuarios',where:where}).then(function(response){
+                        if( response.body.resultado ){
+                            swal("Usuario Eliminado!", {
+                                icon: "success",
+                              });
+                            this.listar_usuarios();
+                        }else{
+                        swal("", "Un error ha ocurrido", "error");
+                        }
+                    });
                 }
-            });
+              });
+            
         },
         verRegistro(usuario){
             if (isempty(usuario)) {
