@@ -16,12 +16,12 @@ class portada extends App{
     public function list_modulos()
     {
       $modelo = new modeloPortada();
-      $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+      $centro_id = $_SESSION["usuario"][0]["id_centro"];
       //$bd = isset($_SESSION["usuario"][0]["database_name"]) ? $_SESSION["usuario"][0]["database_name"] : 'portal-kpi' ;
       //$usuario = "SELECT kpi_roles_id FROM kpi_usuarios WHERE id=".$_SESSION['usuario'][0]['id']." and estado = 1 limit 1";
       //$usuario = $modelo->executeQuery( $usuario );
       //$_SESSION["nivelusuario"] = $usuario[0]['kpi_roles_id'];
-      $modulos = "SELECT * FROM modulos WHERE tipo_centro_id=".$tipo_centro_id." and  estado = 1 order by id asc";
+      $modulos = "SELECT * FROM modulos WHERE centro_id=".$centro_id." and  estado = 1 order by id asc";
       $modulos = $modelo->executeQuery( $modulos );
       $tree = $this->buildTree($modulos);
       $treeHtml = $this->buildTreeHtml($tree);
@@ -283,18 +283,6 @@ class portada extends App{
       }else{
         return false;
       }
-  }
-  public function generar_matriz(){
-    $modelo = new modeloPortada();
-    $sql = "";
-    $res = $modelo->insertData("centro_atencion_detalle",array("centro_id"=>$_POST["id_centro"],"estado_completo"=>1,"fecha_matriz"=>date("y-M-t"),"usuario_crea"=>$_SESSION["usuario"][0]["ID"],"usuario_edita"=>$_SESSION["usuario"][0]["ID"] ));
-
-    if ($res) 
-    {
-      echo json_encode(array("resultado"=>true) ) ;
-    }else{
-      return false;
-    }
   }
   public function generar_matriz(){
     $modelo = new modeloPortada();
