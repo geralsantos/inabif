@@ -79,14 +79,20 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="form-group col-lg-12 col-md-12">
+                            <div class="form-group col-lg-7 col-md-7">
                                 <label for="text-input" class=" form-control-label">Aseguramiento universal de Salud-AUS</label>
                                     <select name="Salud_AUS" v-model="Salud_AUS" class="form-control">
                                         <option value="Si">Si</option>
                                         <option value="No">No</option>
                                     </select>
                             </div>
-                            
+                            <div class="form-group col-lg-5 col-md-5">
+                                <label for="text-input" class=" form-control-label">¿Partida de Nacimiento?</label>
+                                    <select name="Partida_Naci" v-model="Partida_Naci" class="form-control">
+                                    <option value="Si">Si</option>
+                                        <option value="No">No</option>
+                                    </select>
+                            </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-lg-4 col-md-4">
@@ -106,9 +112,9 @@
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Reinserción Familiar</label>
                                     <select name="Reinsecion_Familiar" v-model="Reinsecion_Familiar" class="form-control">
-                                    <<option value="Padre">Padre</option>
+                                    <option value="Padre">Padre</option>
                                     <option value="Madre">Madre</option>
-                                    <<option value="Hermano">Hermano</option>
+                                    <option value="Hermano">Hermano</option>
                                     <option value="Tío/a">Tío/a</option>
                                     <option value="Primos/as">Primos/as</option>
                                     <option value="Abuelos/as">Abuelos/as</option>
