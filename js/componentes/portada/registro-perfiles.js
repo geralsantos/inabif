@@ -32,7 +32,6 @@ Vue.component('registro-perfiles', {
                 Correo: this.Correo,
                 DNI:this.DNI,
                 NumCel: this.NumCel,
-                NumCel: this.NumCel,
                 centro_id :1,
                 }
 
