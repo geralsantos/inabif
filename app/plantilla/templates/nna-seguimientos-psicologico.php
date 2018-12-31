@@ -83,7 +83,7 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Cumplimiento del plan de intervención</label>
-                                    <select name="Cumple_Intercencion" v-model="Cumple_Intercencion" class="form-control">
+                                    <select name="Cumple_Intervencion" v-model="Cumple_Intervencion" class="form-control">
                                     <option value="Cumplida">Cumplida</option>
                                     <option value="En proceso">En proceso</option>
                                     <option value="No se evidencia progreso">No se evidencia progreso</option>
