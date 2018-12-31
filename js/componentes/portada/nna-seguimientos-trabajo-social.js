@@ -33,7 +33,7 @@ Vue.component('nna-seguimientos-trabajo-social', {
             }
             let valores = {
                
-                Plan_Intervencion:this,Plan_Intervencion,
+                Plan_Intervencion:this.Plan_Intervencion,
                 Meta_PAI :this.Meta_PAI,
                 Informe_Tecnico :this.Informe_Tecnico,
                 Cumple_Intervencion:this.Cumple_Intervencion,
