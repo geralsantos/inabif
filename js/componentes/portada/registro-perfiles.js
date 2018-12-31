@@ -1,7 +1,7 @@
 Vue.component('registro-perfiles', {
     template:'#registro-perfiles',
     data:()=>({
-        Apelido: this.Apelido,
+        Apellido: this.Apellido,
         Nombre: this.Nom_Usuario,
         Correo: this.Correo,
         DNI:this.DNI,
