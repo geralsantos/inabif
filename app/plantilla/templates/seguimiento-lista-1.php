@@ -26,9 +26,9 @@
                                 <tbody class="text-center">
                                     <tr v-for="centro in centros">
                                         <td>{{centro.NOMBRE_CENTRO}}</td>
-                                        <td>{{(centro.ESTADO_COMPLETO=='')?'NO':'SI'}}</td>
+                                        <td>{{(isempty(centro.ESTADO_COMPLETO))?'NO':'SI'}}</td>
                                         <td>{{centro.FECHA_CIERRE}}</td>
-                                        <td>{{centro.FECHA_CIERRE}}</td>
+                                        <td>{{(isempty(centro.FECHA_CIERRE))?'NO':'SI'}}</td>
                                         <td v-if="completado"><input type="checkbox" ></td>
                                         <td v-if="matriz"><button>Generar Matriz</button></td>
                                     </tr>
