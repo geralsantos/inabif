@@ -14,7 +14,7 @@ Vue.component('registro-locales', {
         centro_id:null,
         niveles_usuarios:[],
         nivel_id:null,
-        tipo_centro_id: this.tipo_centro_id,
+        tipo_centro_id: null,
         codigo_entidad:null,
         nombre_entidad:null,
         cod_serv:null,

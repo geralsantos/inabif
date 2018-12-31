@@ -81,6 +81,16 @@
                             </div>
                         </div>
                         <div class="row">
+                        <div class="form-group col-md-8">
+                                <div class=" "><label for="text-input" class=" form-control-label">Nombre de Centro</label>
+                                <select name="area_residencia" v-model="area_residencia">
+                                <option value="Urbano">Urbano</option>
+                                <option value="Rural">Rural</option>
+                                </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
                         <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Departamento de Nacimiento</label>
                                 <select name="Depatamento_Procedencia" v-model="Depatamento_Procedencia" @change="buscar_provincias()" class="form-control">
