@@ -96,6 +96,13 @@ Vue.component('registro-perfiles', {
              });
 
         }, 
+        verRegistro(usuario){
+            let  where = {'id':usuario.ID};
+              this.$http.post('buscar?view',{where:where}).then(function(response){
+                  this.registro = response.body.atributos[0];
+                  this.showModal = true;
+              });
+          },
         buscar_centros(){
             this.$http.post('buscar?view',{tabla:'centro_atencion'}).then(function(response){
                 if( response.body.data ){

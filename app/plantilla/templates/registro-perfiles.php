@@ -7,6 +7,7 @@
                     <h6>Formulario de Carga de Datos</h6>
                 </div>
                 <div class="card-body card-block">
+                    <button>Crear Usuario</button>
                 <table id="bootstrap-data-table" class="table table-striped table-bordered text-center">
                     <thead>
                     <tr>
@@ -21,7 +22,7 @@
                         <td>{{usuario.NOMBRE}}</td>
                         <td>{{usuario.APELLIDO}}</td>
                         <td>{{usuario.DNI}}</td>
-                        <td><button  class="btn btn-primary" @click="">Editar</button>
+                        <td><button  class="btn btn-primary" @click="verRegistro(usuario)">Editar</button>
                         </td>
                     </tr>
                     </tbody>
