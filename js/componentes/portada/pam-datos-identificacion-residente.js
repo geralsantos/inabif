@@ -210,7 +210,7 @@ Vue.component('pam-datos-identificacion-residente', {
             });
         },
         buscar_provincias(){
-            this.$http.post('buscar_provincia?view',{tabla:'ubigeo', cod:this.departamento_procedente_id}).then(function(response){
+            this.$http.post('buscar_provincia?view',{tabla:'ubigeo', cod:this.departamento_nacimiento_id}).then(function(response){
                 if( response.body.data ){
                     this.provincias= response.body.data;
                     //this.Provincia_Procedencia = response.body.data[0]["CODPROV"];
