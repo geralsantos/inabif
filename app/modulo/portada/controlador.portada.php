@@ -332,4 +332,19 @@ class portada extends App{
       return false;
     }
 }
+public function buscar_grupos(){
+  $modelo = new modeloPortada();
+  $id_centro = $_POST["id_centro"];
+    $sql = "select m.id as id_modulo, m.encargado_id, md.estado_completo,md.fecha_edicion from modulos m 
+    left join modulos_detalle md on (md.modulo_id=m.Id) 
+    where m.centro_id = ".$id_centro;
+
+  $res = $modelo->executeQuery($sql );
+  if ($res) 
+  {
+    echo json_encode(array("data"=>$res) ) ;
+  }else{
+    return false;
+  }
+}
 }
