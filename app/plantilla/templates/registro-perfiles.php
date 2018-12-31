@@ -7,7 +7,7 @@
                     <h6>Formulario de Carga de Datos</h6>
                 </div>
                 <div class="card-body card-block">
-                    <button>Crear Usuario</button>
+                    <button class="btn btn-success" >Crear Usuario</button>
                 <table id="bootstrap-data-table" class="table table-striped table-bordered text-center">
                     <thead>
                     <tr>
