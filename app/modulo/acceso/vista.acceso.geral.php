@@ -200,74 +200,61 @@ if (isset($_GET["nombretabla"]) && $_GET["nombretabla"]!="") {
 /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
     */
     //$x->deleteDataNoWhere("pam_nivel_educativo");
-     $x->executeQuery("insert into usuarios (id,Tipo_Centro_Id ,rol ,nombre ,apellido,correo ,usuario ,clave , fecha_creacion,usuario_creacion,usuario_edicion)
+    /* $x->executeQuery("insert into usuarios (id,Tipo_Centro_Id ,rol ,nombre ,apellido,correo ,usuario ,clave , fecha_creacion,usuario_creacion,usuario_edicion)
      values(1,1,1,'ppd','ppd','ppd@gmail.com','ppd',123,sysdate,1,1)");
      $x->executeQuery("insert into usuarios (id,Tipo_Centro_Id ,rol ,nombre ,apellido,correo ,usuario ,clave , fecha_creacion,usuario_creacion,usuario_edicion)
      values(2,2,1,'pam','pam','pam@gmail.com','pam',123,sysdate,1,1)");
      $x->executeQuery("insert into usuarios (id,Tipo_Centro_Id ,rol ,nombre ,apellido,correo ,usuario ,clave , fecha_creacion,usuario_creacion,usuario_edicion)
-     values(3,3,1,'nna','nna','nna@gmail.com','nna',123,sysdate,1,1)");
-   /*
-print_r($x->executeQuery("delete from modulos"));
+     values(3,3,1,'nna','nna','nna@gmail.com','nna',123,sysdate,1,1)");*/
+   
+//print_r($x->executeQuery("delete from modulos"));
 $arr = ["insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)
-values(1,1,1,0,'','fa fa-laptop','ACOGIDA',0,1,'18-DEC-28',1,1)",
+values(27,2,2,0,'','fa fa-laptop','INGRESO',0,1,'18-DEC-28',1,1)",
 "insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)
-values(2,1,1,1,'','fa fa-laptop','DIAGNÓSTICO',0,1,'18-DEC-28',1,1)",
+values(28,2,2,27,'pam-centro-servicios','fa fa-laptop','DATOS DEL CENTRO DE SERVICIOS',0,1,'18-DEC-28',1,1)",
 "insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)
-values(3,1,1,2,'ppd-datos-centro-servicios','fa fa-laptop','DATOS DEL CENTRO DE SERVICIOS',0,1,'18-DEC-28',1,1)",
+values(29,2,2,27,'pam-datos-identificacion-residente','fa fa-laptop','DATOS DE IDENTIFICACIÓN DEL USUARIO',0,1,'18-DEC-28',1,1)",
 "insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)
-values(4,1,1,2,'ppd-datos-identificacion-residente','fa fa-laptop','DATOS DE IDENTIFICACIÓN DEL USUARIO',0,1,'18-DEC-28',1,1)",
+values(30,2,2,27,'pam-datos-admision','fa fa-laptop','DATOS DE ADMISIÓN DEL USUARIO',0,1,'18-DEC-28',1,1)",
 "insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)
-values(5,1,1,2,'ppd-datos-admision-usuario','fa fa-laptop','DATOS DE ADMISIÓN DEL USUARIO',0,1,'18-DEC-28',1,1)",
+values(31,2,2,27,'pam-datos-condiciones-ingreso','fa fa-laptop','DATOS DE CONDICIONES DE INGRESO DEL USUARIO',0,1,'18-DEC-28',1,1)",
 "insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)
-values(6,1,1,2,'ppd-datos-condicion-ingreso','fa fa-laptop','DATOS DE CONDICIONES DE INGRESO DEL USUARIO',0,1,'18-DEC-28',1,1)",
+values(32,2,2,27,'pam-datos-nutricion-salud','fa fa-laptop','DATOS DE SALUD Y  NUTRICIÓN DEL USUARIO',0,1,'18-DEC-28',1,1)",
 "insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)
-values(7,1,1,2,'ppd-datos-salud-nutricion','fa fa-laptop','DATOS DE SALUD Y NUTRICIÓN DEL USUARIO',0,1,'18-DEC-28',1,1)",
+values(33,2,2,27,'pam-datos-salud-mental','fa fa-laptop','SALUD MENTAL',0,1,'18-DEC-28',1,1)",
 "insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)
-values(8,1,1,2,'ppd-datos-salud-mental','fa fa-laptop','SALUD MENTAL',0,1,'18-DEC-28',1,1)",
+values(34,2,2,27,'ppd-datos-salud-mental','fa fa-laptop','SALUD MENTAL',0,1,'18-DEC-28',1,1)",
+
 
 "insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)
-values(9,1,1,0,'','fa fa-laptop','DESARROLLO O CONVIVENCIA',0,1,'18-DEC-28',1,1)",
+values(35,2,2,0,'','fa fa-laptop','DESARROLLO O CONVIVENCIA',0,1,'18-DEC-28',1,1)",
 "insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)
-values(10,1,1,9,'','fa fa-laptop','SEGUIMIENTO (MENSUAL)',0,1,'18-DEC-28',1,1)",
+values(36,2,2,35,'pam-actividades-sociorecreativas','fa fa-laptop','Actividades Socio-recreativas (Terapista)',0,1,'18-DEC-28',1,1)",
 "insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)
-values(11,1,1,10,'ppd-datos-terapia','fa fa-laptop','TERAPIA',0,1,'18-DEC-28',1,1)",
+values(37,2,2,35,'pam-actividades-prevencion','fa fa-laptop','Actividades de prevención (Psicólogo)',0,1,'18-DEC-28',1,1)",
 "insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)
-values(12,1,1,10,'ppd-datos-actividades-tecnico-productivas','fa fa-laptop','Actividades Técnico - Productivas',0,1,'18-DEC-28',1,1)",
+values(38,2,2,35,'pam-actividades-sociales','fa fa-laptop','Actividades Sociales (Trabajador Social)',0,1,'18-DEC-28',1,1)",
 "insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)
-values(13,1,1,10,'ppd-datos-atencion-psicologica','fa fa-laptop','Atención Psicológica',0,1,'18-DEC-28',1,1)",
+values(39,2,2,35,'pam-atenciones-salud','fa fa-laptop','Atenciones en Salud (Médico, Enfermera y/o Nutricionista)',0,1,'18-DEC-28',1,1)",
 "insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)
-values(14,1,1,10,'ppd-datos-educacion-participacionLaboral','fa fa-laptop','FORTALECIMIENTO DE CAPACIDADES',0,1,'18-DEC-28',1,1)",
+values(40,2,2,35,'pam-datos-psicologico','fa fa-laptop','Psicológico (SEMESTRAL)',0,1,'18-DEC-28',1,1)",
 "insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)
-values(15,1,1,10,'ppd-datos-atencion-trabajoSocial','fa fa-laptop','Atención en Trabajo Social ',0,1,'18-DEC-28',1,1)",
+values(41,2,2,35,'pam-datos-salud','fa fa-laptop','Salud (SEMESTRAL)',0,1,'18-DEC-28',1,1)",
 "insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)
-values(16,1,1,10,'ppd-datos-atencion-salud','fa fa-laptop','Atenciones en Salud',0,1,'18-DEC-28',1,1)",
+values(42,2,2,35,'pam-datos-nutricion','fa fa-laptop','Nutrición (SEMESTRAL)',0,1,'18-DEC-28',1,1)",
+"insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)
+values(43,2,2,35,'pam-datos-trabajo-social','fa fa-laptop','Trabajo Social (SEMESTRAL)',0,1,'18-DEC-28',1,1)",
+
 
 "insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)
-values(17,1,1,9,'','fa fa-laptop','SEGUIMIENTO (SEMESTRAL)',0,1,'18-DEC-28',1,1)",
+values(44,2,2,0,'ppd-datos-egreso-psicologica','fa fa-laptop','EGRESO',0,1,'18-DEC-28',1,1)",
 "insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)
-values(18,1,1,17,'ppd-datos-egreso-psicologica','fa fa-laptop','Psicológico',0,1,'18-DEC-28',1,1)",
-"insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)
-values(19,1,1,17,'ppd-datos-egreso-educacion','fa fa-laptop','Educación',0,1,'18-DEC-28',1,1)",
-"insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)
-values(20,1,1,17,'ppd-datos-egreso-salud','fa fa-laptop','Salud',0,1,'18-DEC-28',1,1)",
-"insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)
-values(21,1,1,17,'ppd-datos-egreso-terapiaFisica','fa fa-laptop','Terapia Física',0,1,'18-DEC-28',1,1)",
-"insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)
-values(22,1,1,17,'ppd-datos-egreso-nutricion','fa fa-laptop','Nutrición',0,1,'18-DEC-28',1,1)",
-"insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)
-values(23,1,1,17,'ppd-datos-egreso-trabajoSocial','fa fa-laptop','Trabajo Social ',0,1,'18-DEC-28',1,1)",
-
-"insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)
-values(24,1,1,0,'','fa fa-laptop','EGRESO',0,1,'18-DEC-28',1,1)",
-"insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)
-values(25,1,1,24,'','fa fa-laptop','SALIDA',0,1,'18-DEC-28',1,1)",
-"insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)
-values(26,1,1,25,'ppd-datos-egreso-generales','fa fa-laptop','Datos Generales',0,1,'18-DEC-28',1,1)"];
+values(45,2,2,44,'pam-datos-generales-egreso','fa fa-laptop','Datos Generales del Egreso',0,1,'18-DEC-28',1,1)"];
 foreach ($arr as $key => $value) {
     $x->executeQuery($value);
 }
-print_r($x->executeQuery("SELECT * FROM nna_perfiles_ingreso  WHERE RESIDENTE_ID = 1 AND ESTADO=1"));
-die();*/
+print_r($x->executeQuery("SELECT * FROM modulos  WHERE RESIDENTE_ID = 1 AND ESTADO=1"));
+die();
 
 /*
 $arr = ['Create table pam_ActividadPrevencion
