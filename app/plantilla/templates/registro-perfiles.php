@@ -11,7 +11,8 @@
                         <div class="row">
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Apellidos</label>
-                                <input type="text" v-model="Ape_Paterno" name="Ape_Paterno" placeholder="" class="form-control"> </div>
+                                <input type="text" v-model="Ape_Paterno" name="Ape_Paterno" placeholder="" class="form-control"> 
+                                </div>
                             </div>
                            
                             <div class="form-group col-md-4">
@@ -22,33 +23,29 @@
                         <div class="row">
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Correo</label>
-                                <input type="email" v-model="Nom_Usuario" name="Nom_Usuario" placeholder="" class="form-control"> </div>
-                               
+                                <input type="email" v-model="Nom_Usuario" name="Nom_Usuario" placeholder="" class="form-control"> 
                                 </div>
                             </div>
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Usuario</label>
-                                <input type="text" v-model="Nom_Usuario" name="Nom_Usuario" placeholder="" class="form-control"> </div>
-                              
+                                <input type="text" v-model="Nom_Usuario" name="Nom_Usuario" placeholder="" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Clave</label>
-                                <input type="password" v-model="Nom_Usuario" name="Nom_Usuario" placeholder="" class="form-control"> </div>
-
+                                <input type="password" v-model="Nom_Usuario" name="Nom_Usuario" placeholder="" class="form-control"> 
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">DNI</label>
-                                <input type="number" v-model="Nom_Usuario" name="Nom_Usuario" placeholder="" class="form-control"> </div>
-                               
+                                <input type="number" v-model="Nom_Usuario" name="Nom_Usuario" placeholder="" class="form-control"> 
                                 </div>
                             </div>
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Númer Celular</label>
-                                <input type="number" v-model="Nom_Usuario" name="Nom_Usuario" placeholder="" class="form-control"> </div>
+                                <input type="number" v-model="Nom_Usuario" name="Nom_Usuario" placeholder="" class="form-control"> 
                                 </div>
                             </div>
                             <div class="form-group col-md-4">
@@ -58,7 +55,6 @@
                                 </select>
                                 </div>
                             </div>
-                           
                         </div>
                         
                         <div class="row">

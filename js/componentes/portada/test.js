@@ -3,9 +3,7 @@ Vue.component('modulos',{
   	props:["changeviewevent"],
   	template:`
         <div v-html="htmlrender" @click="showTemplate($event)" id="geral"> 
-        <a href="#registro_perfiles" class="list-group-item level-0" data-toggle="collapse" aria-expanded="true" id="gardening">Registro Usuarios 
-                <i class="fa fa-caret-down"></i>
-            </a>
+        
         </div>
          `,
   	data:()=>({
