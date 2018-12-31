@@ -64,11 +64,11 @@ Vue.component('registro-perfiles', {
                     //this.registro = response.body.atributos[0];
                     console.log(usuario);
                     this.id_usuario=usuario.ID
-                    this.Apellido= usuario.Apellido,
-                    this.Nombre= usuario.Nombre,
-                    this.Correo= usuario.Correo,
+                    this.Apellido= usuario.APELLIDO,
+                    this.Nombre= usuario.NOMBRE,
+                    this.Correo= usuario.CORREO,
                     this.DNI=usuario.DNI,
-                    this.NumCel= usuario.NumCel,
+                    this.NumCel= usuario.NUMCEL,
                     this.centro_id =1,
                     this.showModal = true;
               //});
