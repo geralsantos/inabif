@@ -8,7 +8,7 @@
                     <h6>Formulario de Carga de Datos</h6>
                 </div>
                 <div class="card-body card-block">
-                    <button class="btn btn-success" @click="showModal = true" >Crear Usuario</button>
+                    <button class="btn btn-success" @click="verRegistro('')" >Crear Usuario</button>
 </br>
                 <table id="bootstrap-data-table" class="table table-striped table-bordered text-center">
                     <thead>
