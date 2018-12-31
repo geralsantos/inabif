@@ -199,14 +199,13 @@ if (isset($_GET["nombretabla"]) && $_GET["nombretabla"]!="") {
 
 /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
     */
-    $x->deleteDataNoWhere("centro_atencion");
-    $x->executeQuery("insert into centro_atencion (id,tipo_centro_id,codigo_entidad ,nombre_entidad ,cod_serv ,ubigeo  ,cod_ca ,nom_ca ,administrador_nombre ,nombre_director ,telefono ,direccion_car ,area_residencia ,codigo_linea ,linea_intervencion ,nom_serv  ,usuario_crea ,usuario_edita  ) values(1,1,'cod001','nom 001','codserv 001','140111','codca002','Centro 002','admin nombre','director nombre','3243889','av rosa toro 544','urbano','codlinea001','linea intervencion 001','nomserv 001',1,1)");
-
-    $x->executeQuery("insert into centro_atencion (id,tipo_centro_id,codigo_entidad ,nombre_entidad ,cod_serv ,ubigeo  ,cod_ca ,nom_ca ,administrador_nombre ,nombre_director ,telefono ,direccion_car ,area_residencia ,codigo_linea ,linea_intervencion ,nom_serv  ,usuario_crea ,usuario_edita) values(2,2,'cod002','nom 002','codserv 002','140111','codca002','Centro 002','admin nombre','director nombre','3243889','av rosa toro 544','urbano','codlinea002','linea intervencion 002','nomserv 002',1,1)");
-
-    $x->executeQuery("insert into centro_atencion (id,tipo_centro_id,codigo_entidad ,nombre_entidad ,cod_serv ,ubigeo  ,cod_ca ,nom_ca ,administrador_nombre ,nombre_director ,telefono ,direccion_car ,area_residencia ,codigo_linea ,linea_intervencion ,nom_serv  ,usuario_crea ,usuario_edita) values(3,3,'cod003','nom 003','codserv 003','140111','codca002','Centro 002','admin nombre','director nombre','3243889','av rosa toro 544','urbano','codlinea003','linea intervencion 003','nomserv 003',1,1)");
-
-    $x->executeQuery("insert into centro_atencion (id,tipo_centro_id,codigo_entidad ,nombre_entidad ,cod_serv ,ubigeo  ,cod_ca ,nom_ca ,administrador_nombre ,nombre_director ,telefono ,direccion_car ,area_residencia ,codigo_linea ,linea_intervencion ,nom_serv  ,usuario_crea ,usuario_edita) values(4,1,'cod004','nom 003','codserv 004','140111','codca002','Centro 002','admin nombre','director nombre','3243889','av rosa toro 544','urbano','codlinea004','linea intervencion 004','nomserv 004',1,1)");
+    $x->deleteDataNoWhere("usuarios");
+    $x->executeQuery("insert into usuarios (id,centro_id ,nivel ,nombre ,apellido,correo ,usuario ,clave , fecha_creacion,usuario_creacion,usuario_edicion)
+    values(1,1,1,'ppd','ppd','ppd@gmail.com','ppd',123,sysdate,1,1)");
+    $x->executeQuery("insert into usuarios (id,centro_id ,nivel ,nombre ,apellido,correo ,usuario ,clave , fecha_creacion,usuario_creacion,usuario_edicion)
+    values(2,2,1,'pam','pam','pam@gmail.com','pam',123,sysdate,1,1)");
+    $x->executeQuery("insert into usuarios (id,centro_id ,nivel ,nombre ,apellido,correo ,usuario ,clave , fecha_creacion,usuario_creacion,usuario_edicion)
+    values(3,3,1,'nna','nna','nna@gmail.com','nna',123,sysdate,1,1)");
  
  
 /*

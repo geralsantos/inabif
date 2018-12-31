@@ -296,4 +296,31 @@ class portada extends App{
       return false;
     }
   }
+  public function generar_matriz(){
+    $modelo = new modeloPortada();
+    $sql = "";
+    $res = $modelo->insertData("centro_atencion_detalle",array("centro_id"=>$_POST["id_centro"],"estado_completo"=>1,"fecha_matriz"=>date("y-M-t"),"usuario_crea"=>$_SESSION["usuario"][0]["ID"],"usuario_edita"=>$_SESSION["usuario"][0]["ID"] ));
+
+    if ($res) 
+    {
+      echo json_encode(array("resultado"=>true) ) ;
+    }else{
+      return false;
+    }
+  }
+  public function buscar_grupos(){
+    $modelo = new modeloPortada();
+    $id_centro = $_POST["id_centro"];
+      $sql = "select m.id as id_modulo, m.encargado_id, md.estado_completo,md.fecha_edicion from modulos m 
+      left join modulos_detalle md on (md.modulo_id=m.Id) 
+      where m.centro_id = ".$id_centro;
+
+    $res = $modelo->executeQuery($sql );
+    if ($res) 
+    {
+      echo json_encode(array("data"=>$res) ) ;
+    }else{
+      return false;
+    }
+}
 }

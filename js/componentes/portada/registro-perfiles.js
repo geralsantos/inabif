@@ -1,6 +1,7 @@
 Vue.component('registro-perfiles', {
     template:'#registro-perfiles',
     data:()=>({
+       
         Ape_Paterno:null,
         Ape_Materno:null,
         Nom_Usuario:null,
