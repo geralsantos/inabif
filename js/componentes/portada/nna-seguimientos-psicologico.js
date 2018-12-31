@@ -7,7 +7,7 @@ Vue.component('nna-seguimientos-psicologico', {
         Des_Meta:null,
         Informe_Tecnico :null,
         Des_Informe_Tecnico:null,
-        Cumple_Intercencion:null,
+        Cumple_Intervencion:null,
         Transtorno_Depresivo :null,
         Severidad_Trans_Depresivo:null,
         NNASeveridadTranstornoDepresivo:null,
@@ -38,7 +38,7 @@ Vue.component('nna-seguimientos-psicologico', {
                 Des_Meta:this.Des_Meta,
                 Informe_Tecnico :this.Informe_Tecnico,
                 Des_Informe_Tecnico:this.Des_Informe_Tecnico,
-                Cumple_Intercencion:this.Cumple_Intercencion,
+                Cumple_Intervencion:this.Cumple_Intervencion,
                 Transtorno_Depresivo :this.Transtorno_Depresivo,
                 Severidad_Trans_Depresivo :this.Severidad_Trans_Depresivo,
 
@@ -98,7 +98,7 @@ Vue.component('nna-seguimientos-psicologico', {
                     this.Des_Meta = response.body.atributos[0]["DES_META"];
                     this.Informe_Tecnico = response.body.atributos[0]["INFORME_TECNICO"];
                     this.Des_Informe_Tecnico = response.body.atributos[0]["DES_INFORME_TECNICO"];
-                    this.Cumple_Intercencion = response.body.atributos[0]["CUMPLE_INTERCENCION"];
+                    this.Cumple_Intervencion = response.body.atributos[0]["CUMPLE_INTERVENCION"];
                     this.Transtorno_Depresivo = response.body.atributos[0]["TRANSTORNO_DEPRESIVO"];
                     this.Severidad_Trans_Depresivo = response.body.atributos[0]["SEVERIDAD_TRANS_DEPRESIVO"];
                 
