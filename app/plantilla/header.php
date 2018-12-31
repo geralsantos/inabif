@@ -63,8 +63,11 @@
   }
 </style>
 
-     
-                <modulos :changeviewevent="changeview"></modulos> 
+            <h3 class="menu-title">REGISTRO</h3>
+            <modulos :changeviewevent="changeview"></modulos> 
+            <h3 class="menu-title">SEGUIMIENTO</h3>
+            <h3 class="menu-title">REPORTES</h3>
+            <h3 class="menu-title">PERFILES</h3>
 
             </ul>
         </div><!-- /.navbar-collapse -->
