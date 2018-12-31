@@ -72,16 +72,39 @@ Vue.component('nna-datos-identificacion-inicial-inscripcion-residente', {
                 Residente_Id: this.id_residente,
                 Periodo_Mes: moment().format("MM"),
                 Periodo_Anio:moment().format("YYYY")
-
                 }
+                for (let index = 0; index < valores.length; index++) {
+                   console.log(valores[index]);
+                }
+                return false;
             this.$http.post('insertar_datos?view',{tabla:'NNAInscripcionResidente', valores:valores}).then(function(response){
-
                 if( response.body.resultado ){
                     swal('', 'Registro Guardado', 'success');
 
                 }else{
                   swal("", "Un error ha ocurrido", "error");
                 }
+            });
+        },
+        insertar_residente(){
+            let valores = {
+               
+                nombre : this.Nom_Usuario,
+                apellido_p : this.Ape_Materno,
+                apellido_m : this.Nom_Usuario,
+                pais_id : this.pais_procedente_id,
+                departamento_procedencia_cod : this.departamento_procedente_id,
+                departamento_naci_cod : this.departamento_nacimiento_id,
+                provincia_naci_cod : this.provincia_nacimiento_id,
+                distrito_naci_cod : this.distrito_nacimiento_id,
+                sexo: this.Sexo,
+                fecha_naci :  moment(this.Fecha_Nacimiento, "YYYY-MM-DD").format("YY-MMM-DD"),
+                edad: this.Edad,
+                lengua_materna: this.Lengua_Materna,
+                documento :this.Numero_Doc
+                }
+            this.$http.post('insertar_datos?view',{tabla:'residente', valores:valores}).then(function(response){
+                
             });
         },
         buscar_residente(){
