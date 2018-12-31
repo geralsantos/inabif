@@ -245,13 +245,16 @@ class portada extends App{
       {
         $modelo = new modeloPortada();
         if ($_SESSION["usuario"][0]["NIVEL"]=="5") {
-          $sql = "select *  from centro_atencion where estado = 1 and id =".$_SESSION["usuario"][0]["NIVEL"];
-        }else {
-          $sql = "select *  from centro_atencion ca 
+          $sql = "select ca.*  from centro_atencion ca
+          left join centro_atencion_detalle cad on (cad.centro_id=ca.id)
           left join tipo_centro tc on (ca.tipo_centro_id=tc.id) 
           where tc.id=".$_SESSION["usuario"][0]["NIVEL"]." and ca.estado = 1";
+        }else {
+          $sql = "select ca.*,cad.*  from centro_atencion ca 
+          left join centro_atencion_detalle cad on (cad.centro_id=ca.id) 
+          where cad.estado = 1";
         }
-        $res = $modelo->executeQuery( $sql );
+        $res = $modelo->executeQuery( array("data"=>$sql) );
         if ($res) 
         {
           echo json_encode($res) ;
