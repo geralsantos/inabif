@@ -73,8 +73,9 @@ Vue.component('nna-datos-identificacion-inicial-inscripcion-residente', {
                 Periodo_Mes: moment().format("MM"),
                 Periodo_Anio:moment().format("YYYY")
                 }
-                for (let index = 0; index < valores.length; index++) {
-                   console.log(valores[index]);
+                let valores_arr = Object.values(valores);
+                for (let index = 0; index < valores_arr.length; index++) {
+                   console.log(valores_arr[index]);
                 }
                 return false;
             this.$http.post('insertar_datos?view',{tabla:'NNAInscripcionResidente', valores:valores}).then(function(response){
