@@ -228,7 +228,7 @@ class portada extends App{
     
        }
     }
-    public function traer_datos_usuarios(){
+    public function traer_datos_usuario(){
         $modelo = new modeloPortada();
         $sql = "select *  from usuarios where estado = 1 and id =".$_SESSION["usuario"][0]["ID"];
         $res = $modelo->executeQuery( $sql );
