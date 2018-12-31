@@ -117,8 +117,8 @@ class portada extends App{
         $modelo = new modeloPortada();
         //$modelo->executeQuery("delete from CarActividades");
         $lastid = false;
-        if (isset($_POST['valores']['lastid'])) {
-          if ($_POST['valores']['lastid']) {
+        if (isset($_POST['lastid'])) {
+          if ($_POST['lastid']) {
             $lastid = true;
           }
         }
