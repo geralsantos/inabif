@@ -30,7 +30,7 @@
                                         <td>{{(isempty(centro.ESTADO_COMPLETO))?'NO':'SI'}}</td>
                                         <td>{{centro.FECHA_CIERRE}}</td>
                                         <td>{{(isempty(centro.FECHA_CIERRE))?'NO':'SI'}}</td>
-                                        <td><button>Ver</button></td>
+                                        <td><button @click="ver_grupos(centro.ID)">Ver</button></td>
                                         <td v-if="isempty(centro.ESTADO_COMPLETO)"><input type="checkbox" class="form-control" @change="completar_matriz(centro.ID_CENTRO)" :checked="!isempty(centro.ESTADO_COMPLETO)" class="form-control" ></td>
                                         <td v-if="!isempty(centro.ESTADO_COMPLETO)"> <button class="form-control" @click="generar_matriz(centro.ID_CENTRO)">Generar</button></td>
                                     </tr>

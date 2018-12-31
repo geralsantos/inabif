@@ -162,7 +162,18 @@ Vue.component('seguimiento-lista-1', {
                 }
             });
         },
-       
+        ver_grupos(centro_id){
+            alert(centro_id);
+            window.location.hash='#seguimiento-lista-2';
+            this.mensaje_entre_componentes(centro_id);
+        },
+        mensaje_entre_componentes(centro_id){
+            var input = document.createElement("input");
+            input.type = "hidden";
+            input.id = "mensaje_entre_componentes";
+            input.setAttribute("data-centro_id",centro_id);
+            document.body.appendChild(input); 
+          }
      
 
     }
