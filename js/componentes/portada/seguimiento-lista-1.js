@@ -128,6 +128,7 @@ Vue.component('seguimiento-lista-1', {
         },
 
         completar_matriz(id_centro){
+            console.log("completar_matriz");
             this.$http.post('completar_matriz?view',{id_centro:id_centro}).then(function(response){
 
                 if( response.body.resultado ){
