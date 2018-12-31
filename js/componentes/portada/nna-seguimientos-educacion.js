@@ -1,12 +1,13 @@
-Vue.component('nna-seguimiento-terapia-ocupacional', {
-    template: '#nna-seguimiento-terapia-ocupacional',
+Vue.component('nna-seguimientos-educacion', {
+    template: '#nna-seguimientos-educacion',
     data:()=>({
      
-        Nro_Talleres_E:null,
-        Nro_Campanas:null,
-        Nro_Atencion_Fisi  :null,
-        Nro_Atencon_Ocupa:null,
-        Nro_Atencion_Lengua:null,
+        Plan_Intervencion:null,
+        Meta_PAI:null,
+        Informe_Tecnico :null,
+        Cumple_Intervencion	:null,
+        Provino_Ano:null,
+        Desempeno:null,
                         
         nombre_residente:null,
         isLoading:false,
@@ -31,11 +32,12 @@ Vue.component('nna-seguimiento-terapia-ocupacional', {
             }
             let valores = {
                
-                Nro_Talleres_E:this.Nro_Talleres_E,
-                Nro_Campanas:this.Nro_Campanas,
-                Nro_Atencion_Fisi  :this.Nro_Atencion_Fisi,
-                Nro_Atencon_Ocupa:this.Nro_Atencon_Ocupa,
-                Nro_Atencion_Lengua:this.Nro_Atencion_Lengua,
+                Plan_Intervencion:this.Plan_Intervencion,
+                Meta_PAI:this.Plan_Intervencion,
+                Informe_Tecnico :this.Informe_Tecnico,
+                Cumple_Intervencion	:this.Cumple_Intervencion,
+                Provino_Ano:this.Provino_Ano,
+                Desempeno:this.Desempeno,
 
                 Residente_Id: this.id_residente,
                 Periodo_Mes: moment().format("MM"),
@@ -43,7 +45,7 @@ Vue.component('nna-seguimiento-terapia-ocupacional', {
 
             }
                 
-            this.$http.post('insertar_datos?view',{tabla:'NNATerapiasOcupacionalL', valores:valores}).then(function(response){
+            this.$http.post('insertar_datos?view',{tabla:'NNAEducacion_Semestral', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
                     swal('', 'Registro Guardado', 'success');
@@ -85,16 +87,17 @@ Vue.component('nna-seguimiento-terapia-ocupacional', {
             this.coincidencias = [];
             this.bloque_busqueda = false;
 
-            this.$http.post('cargar_datos_residente?view',{tabla:'NNATerapiasOcupacionalL', residente_id:this.id_residente }).then(function(response){
+            this.$http.post('cargar_datos_residente?view',{tabla:'NNAEducacion_Semestral', residente_id:this.id_residente }).then(function(response){
 
                 if( response.body.atributos != undefined){
 
-                    this.Nro_Talleres_E = response.body.atributos[0]["NRO_TALLERES_E"];
-                    this.Nro_Campanas = response.body.atributos[0]["NRO_CAMPANAS"];
-                    this.Nro_Atencion_Fisi = response.body.atributos[0]["NRO_ATENCION_FISI"];
-                    this.Nro_Atencon_Ocupa = response.body.atributos[0]["NRO_ATENCON_OCUPA"];
-                    this.Nro_Atencion_Lengua = response.body.atributos[0]["NRO_ATENCION_LENGUA"];
-          
+                    this.Plan_Intervencion = response.body.atributos[0]["PLAN_INTERVENCION"];
+                    this.Meta_PAI = response.body.atributos[0]["META_PAI"];
+                    this.Informe_Tecnico = response.body.atributos[0]["INFORME_TECNICO"];
+                    this.Cumple_Intervencion = response.body.atributos[0]["CUMPLE_INTERVENCION"];
+                    this.Provino_Ano = response.body.atributos[0]["PROVINO_ANO"];
+                    this.Desempeno = response.body.atributos[0]["DESEMPENO"];
+         
                 }
              });
 
