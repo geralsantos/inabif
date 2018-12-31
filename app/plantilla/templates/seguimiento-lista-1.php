@@ -25,11 +25,11 @@
                                 </thead>
                                 <tbody class="text-center">
                                     <tr v-for="centro in centros">
-                                        <td>centro.NOMBRE</td>
-                                        <td>centro.COMPLETO</td>
+                                        <td>centro.NOMBRE_CENTRO</td>
+                                        <td>centro.ESTADO_COMPLETO</td>
                                         <td>centro.FECHA_CIERRE</td>
-                                        <td>centro.CERRADO</td>
-                                        <td v-if="completado"><input type="checkbox" v-model=""></td>
+                                        <td>centro.FECHA_CIERRE</td>
+                                        <td v-if="completado"><input type="checkbox" ></td>
                                         <td v-if="matriz"><button>Generar Matriz</button></td>
                                     </tr>
                                    
