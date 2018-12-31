@@ -257,7 +257,14 @@ class portada extends App{
           left join centro_atencion_detalle cad on (cad.centro_id=ca.id) 
           left join tipo_centro tc on (ca.tipo_centro_id=tc.id) 
           where tc.id=".$_SESSION["usuario"][0]["TIPO_CENTRO_ID"]." and ca.estado = 1";
+        }else if($_SESSION["usuario"][0]["NIVEL"]=="1") //ADMIN_CENTRAL
+        {
+          $sql = "select ca.id as id_centro,ca.nombre as nombre_centro,cad.estado_completo,cad.fecha_cierre  from centro_atencion ca 
+          left join centro_atencion_detalle cad on (cad.centro_id=ca.id) 
+          left join tipo_centro tc on (ca.tipo_centro_id=tc.id) 
+          where ca.estado = 1";
         }
+        
 
         $res = $modelo->executeQuery($sql );
         if ($res) 
