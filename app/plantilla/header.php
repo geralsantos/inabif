@@ -132,6 +132,8 @@
             <h3 class="menu-title">REGISTRO</h3>
             <modulos :changeviewevent="changeview"></modulos> 
             <h3 class="menu-title">SEGUIMIENTO</h3>
+            <a href="#registro-perfiles" class="list-group-item level-0" aria-expanded="true" id="Perfiles" style="width:100%;"></a>
+
             <h3 class="menu-title">REPORTES</h3>
             <h3 class="menu-title">PERFILES</h3>
             <a href="#registro-perfiles" class="list-group-item level-0" aria-expanded="true" id="Perfiles" style="width:100%;">Perfiles</a>
@@ -139,9 +141,22 @@
         }else if ($nivelusu=="2") {
             # code...
         }else if ($nivelusu=="3") {
-            # code...
+            ?>
+            <h3 class="menu-title">REGISTRO</h3>
+            <h3 class="menu-title">SEGUIMIENTO</h3>
+            <a href="#registro-perfiles" class="list-group-item level-0" aria-expanded="true" id="Perfiles" style="width:100%;">Centros</a>
+            <h3 class="menu-title">REPORTES</h3>
+            <h3 class="menu-title">PERFILES</h3>
+            <?php 
+            /* puede bloquear la matriz de un centro*/
         }else if ($nivelusu=="4") {
-            # code...
+            ?>
+            <h3 class="menu-title">REGISTRO</h3>
+            <h3 class="menu-title">SEGUIMIENTO</h3>
+            <a href="#registro-perfiles" class="list-group-item level-0" aria-expanded="true" id="Perfiles" style="width:100%;">Centros</a>
+            <h3 class="menu-title">REPORTES</h3>
+            <h3 class="menu-title">PERFILES</h3>
+            <?php 
         }else if ($nivelusu=="5") {
             ?>
             <h3 class="menu-title">REGISTRO</h3>
