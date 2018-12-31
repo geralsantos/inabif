@@ -201,7 +201,11 @@ if (isset($_GET["nombretabla"]) && $_GET["nombretabla"]!="") {
     */
     //$x->deleteDataNoWhere("pam_nivel_educativo");
      $x->executeQuery("insert into usuarios (id,Tipo_Centro_Id ,rol ,nombre ,apellido,correo ,usuario ,clave , fecha_creacion,usuario_creacion,usuario_edicion)
-     values(2,2,1,'lesly','villalobos','lvtdesarrollo@gmail.com','lesly',123,sysdate,1,1)");
+     values(1,1,1,'ppd','ppd','ppd@gmail.com','ppd',123,sysdate,1,1)");
+     $x->executeQuery("insert into usuarios (id,Tipo_Centro_Id ,rol ,nombre ,apellido,correo ,usuario ,clave , fecha_creacion,usuario_creacion,usuario_edicion)
+     values(2,2,1,'pam','pam','pam@gmail.com','pam',123,sysdate,1,1)");
+     $x->executeQuery("insert into usuarios (id,Tipo_Centro_Id ,rol ,nombre ,apellido,correo ,usuario ,clave , fecha_creacion,usuario_creacion,usuario_edicion)
+     values(3,3,1,'nna','nna','nna@gmail.com','nna',123,sysdate,1,1)");
    /*
 print_r($x->executeQuery("delete from modulos"));
 $arr = ["insert into modulos (id,centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)
