@@ -19,7 +19,7 @@ Vue.component('seguimiento-lista-1', {
     created:function(){
     },
     mounted:function(){
-        this.traer_datos_usuario();
+        this.buscar_centros();
     },
     updated:function(){
     },
