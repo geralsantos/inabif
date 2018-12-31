@@ -45,6 +45,7 @@ Vue.component('registro-perfiles', {
                 NumCel: this.NumCel,
                 NumCel: this.NumCel,
                 NIVEL :this.nivel_id,
+                centro_id:this.centro_id,
                 usuario :this.usuario,
                 clave :this.clave,
                 }
