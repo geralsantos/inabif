@@ -65,8 +65,8 @@ Vue.component('registro-perfiles', {
         },
         EliminarUsuario(usuario){
             swal({
-                title: "Are you sure?",
-                text: "Once deleted, you will not be able to recover this imaginary file!",
+                title: "Estás seguro?",
+                text: "Desea Eliminar el usuario seleccionado: "+usuario.NOMBRE,
                 icon: "warning",
                 buttons: true,
                 dangerMode: true,
