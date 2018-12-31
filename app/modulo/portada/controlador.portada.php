@@ -248,7 +248,7 @@ class portada extends App{
           left join tipo_centro tc on (ca.tipo_centro_id=tc.id) 
           where tc.id=".$_SESSION["usuario"][0]["NIVEL"]." and ca.estado = 1";
         }else {
-          $sql = "select ca.id as id_centro,ca.nombre as nombre_crento,cad.estado_completo,cad.fecha_cierre  from centro_atencion ca 
+          $sql = "select ca.id as id_centro,ca.nombre as nombre_centro,cad.estado_completo,cad.fecha_cierre  from centro_atencion ca 
           left join centro_atencion_detalle cad on (cad.centro_id=ca.id) 
           where ca.estado = 1";
         }
