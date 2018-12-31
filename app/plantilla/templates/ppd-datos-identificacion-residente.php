@@ -116,7 +116,7 @@
                             
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Edad</label>
-                                <input type="text" v-model="Edad" name="Edad" placeholder="" class="form-control">
+                                <input type="number" v-model="Edad" name="Edad" placeholder="" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group col-md-4">
