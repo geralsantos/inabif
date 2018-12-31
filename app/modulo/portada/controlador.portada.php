@@ -260,4 +260,16 @@ class portada extends App{
           return false;
         }
     }
+    public function completar_matriz(){
+      $modelo = new modeloPortada();
+      $sql = "";
+      $res = $modelo->insertData("centro_atencion_detalle",array("centro_id"=>$_POST["id_centro"],"estado_completo"=>1,"usuario_crea"=>$_SESSION["usuario"][0]["ID"],"usuario_edita"=>$_SESSION["usuario"][0]["ID"] ));
+
+      if ($res) 
+      {
+        echo json_encode(array("resultado"=>true) ) ;
+      }else{
+        return false;
+      }
+  }
 }
