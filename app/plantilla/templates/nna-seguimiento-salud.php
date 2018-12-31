@@ -419,7 +419,7 @@
                         <div class='row'>
                             
                             <div class="form-group col-md-3">
-                                <label for="text-input" class=" form-control-label">Carné de inmunización?</label>
+                                <label for="text-input" class=" form-control-label">¿Carnet de inmunización?</label>
                                 <select name="Inmunizacion" v-model="Inmunizacion" class="form-control">
                                     <option value="Si">Si</option>
                                     <option value="No">No</option>
