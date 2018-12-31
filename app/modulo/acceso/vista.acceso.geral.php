@@ -358,7 +358,7 @@ values(69,3,3,0,'','fa fa-laptop','REINSERCIÓN/ EGRESO',0,1,'18-DEC-28',1,1)",
 "insert into modulos (id,tipo_centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)
 values(70,3,3,69,'','fa fa-laptop','SALIDA',0,1,'18-DEC-28',1,1)",
 "insert into modulos (id,tipo_centro_id,encargado_id,parent_id,url_template,icon,nombre,estado_completo, estado,fecha_creacion,usuario_creacion,usuario_edicion)
-values(71,3,3,70,'nna-egreso-usuario','fa fa-laptop','DATOS DEL EGRESO DEL USUARIO',0,1,'18-DEC-28',1,1)",];
+values(71,3,3,70,'nna-egreso-usuario','fa fa-laptop','DATOS DEL EGRESO DEL USUARIO',0,1,'18-DEC-28',1,1)"];
 foreach ($arr as $key => $value) {
     $x->executeQuery($value);
 }
