@@ -95,14 +95,14 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-lg-4 col-md-4">
                                 <label for="text-input" class=" form-control-label">¿DNI?</label>
                                     <select name="DNI" v-model="DNI" class="form-control">
                                     <option value="Si">Si</option>
                                         <option value="No">No</option>
                                     </select>
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-lg-4 col-md-4">
                                 <label for="text-input" class=" form-control-label">¿Educación?</label>
                                 <select name="Educacion" v-model="Educacion" class="form-control">
                                     <option value="Si">Si</option>
