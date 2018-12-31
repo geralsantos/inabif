@@ -45,7 +45,7 @@ Vue.component('nna-seguimiento-psicologico', {
             let valores = {
                
                 Plan_Intervencion:this.Plan_Intervencion,
-                Presento:this.Presento,
+                Presentacion_periodo :this.Presento,
                 Perfil_Id   :this.Perfil,
                 Intervencion_Individual:this.Intervencion_Individual,
                 Intervencion_Grupal:this.Intervencion_Grupal,
@@ -113,7 +113,7 @@ Vue.component('nna-seguimiento-psicologico', {
                 if( response.body.atributos != undefined){
 
                     this.Plan_Intervencion = response.body.atributos[0]["PLAN_INTERVENCION"];
-                    this.Presento = response.body.atributos[0]["PRESENTO"];
+                    this.Presento = response.body.atributos[0]["PRESENTACION_PERIODO"];
                     this.Perfil = response.body.atributos[0]["PERFIL_ID"];
                     this.Intervencion_Individual = response.body.atributos[0]["INTERVENCION_INDIVIDUAL"];
                     this.Intervencion_Grupal = response.body.atributos[0]["INTERVENCION_GRUPAL"];
