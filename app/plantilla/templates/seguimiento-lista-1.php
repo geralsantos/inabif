@@ -29,7 +29,7 @@
                                         <td>{{(isempty(centro.ESTADO_COMPLETO))?'NO':'SI'}}</td>
                                         <td>{{centro.FECHA_CIERRE}}</td>
                                         <td>{{(isempty(centro.FECHA_CIERRE))?'NO':'SI'}}</td>
-                                        <td v-if="completado"><input type="checkbox" @onchange="completar_matriz(centro.ID_CENTRO)" checked="false" class="form-control" ></td>
+                                        <td v-if="completado"><input type="checkbox" @onchange="completar_matriz(centro.ID_CENTRO)" :checked="isempty(centro.ESTADO_COMPLETO)" class="form-control" ></td>
                                         <td v-if="matriz"><button>Generar Matriz</button></td>
                                     </tr>
                                    
