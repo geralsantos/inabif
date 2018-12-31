@@ -185,7 +185,7 @@ class MySQL extends PDO
             $stmt->execute($params);
             if($stmt->rowCount()>0){
                 if ($lastid) {
-                    return $stmt->lastInsertId();
+                    return parent::lastInsertId();
                 }else{
                     return TRUE;
                 }
