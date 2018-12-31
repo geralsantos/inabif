@@ -255,7 +255,7 @@ class portada extends App{
         $res = $modelo->executeQuery($sql );
         if ($res) 
         {
-          echo json_encode(array("data"=>$sql) ) ;
+          echo json_encode(array("data"=>$res) ) ;
         }else{
           return false;
         }
