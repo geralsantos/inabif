@@ -48,10 +48,10 @@ Vue.component('pam-datos-identificacion-residente', {
     },
     methods:{
         guardar(){
-            if (this.id_residente==null) {
+            /*if (this.id_residente==null) {
                 swal('Error', 'Residente no existe', 'success');
                 return false;
-            }
+            }*/
             let valores = {
                
                 residente_apellido_paterno: this.Ape_Paterno,
@@ -89,10 +89,11 @@ Vue.component('pam-datos-identificacion-residente', {
                     }
                 }
                 if (isempty(this.id_residente)) {
+                  
                     let valores_residente = {
                         nombre : this.Nom_Usuario,
-                        apellido_p : this.Ape_Materno,
-                        apellido_m : this.Nom_Usuario,
+                        apellido_p : this.Ape_Paterno,
+                        apellido_m : this.Ape_Materno,
                         pais_id : this.pais_procedente_id,
                         departamento_naci_cod : this.departamento_nacimiento_id,
                         provincia_naci_cod : this.provincia_nacimiento_id,
