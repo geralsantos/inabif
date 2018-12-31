@@ -79,14 +79,14 @@
                                 </div>
                         </div>
                         <div class="row">
-                            <div class="form-group col-lg-5 col-md-5">
+                            <div class="form-group col-lg-4 col-md-4">
                                 <label for="text-input" class=" form-control-label">Aseguramiento universal de Salud-AUS</label>
                                     <select name="Salud_AUS" v-model="Salud_AUS" class="form-control">
                                         <option value="Si">Si</option>
                                         <option value="No">No</option>
                                     </select>
                             </div>
-                            <div class="form-group col-lg-5 col-md-5">
+                            <div class="form-group col-lg-4 col-md-4">
                                 <label for="text-input" class=" form-control-label">¿Partida de Nacimiento?</label>
                                     <select name="Partida_Naci" v-model="Partida_Naci" class="form-control">
                                     <option value="Si">Si</option>
