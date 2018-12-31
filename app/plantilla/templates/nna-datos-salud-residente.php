@@ -199,7 +199,7 @@
                                     <option value="Insuficiencia Renal">Insuficiencia Renal</option>
                                     <option value="Hipertensión">Hipertensión</option>
                                     <option value="DCI">DCI</option>
-                                    <option value="Diábetes">Diábetes</option>
+                                    <option value="Diabetes">Diabetes</option>
                                     <option value="Cáncer">Cáncer</option>
                                     <option value="Estreñimiento">Estreñimiento</option>
                                     <option value="Otros">Otros</option>
