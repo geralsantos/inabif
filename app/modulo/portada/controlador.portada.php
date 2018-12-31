@@ -252,10 +252,10 @@ class portada extends App{
           left join centro_atencion_detalle cad on (cad.centro_id=ca.id) 
           where ca.estado = 1";
         }
-        $res = $modelo->executeQuery( array("data"=>$sql) );
+        $res = $modelo->executeQuery($sql );
         if ($res) 
         {
-          echo json_encode($res) ;
+          echo json_encode(array("data"=>$sql) ) ;
         }else{
           return false;
         }
