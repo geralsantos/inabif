@@ -181,7 +181,7 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">Familia usa redes de soporte familiar?</label>
-                                    <select name="NNARedesSoporte" v-model="NNARedesSoporte" class="form-control">
+                                    <select name="Soporte_Social" v-model="Soporte_Social" class="form-control">
                                     <option value="Si">Si</option>
                                 <option value="No">No</option>
                                     </select>
