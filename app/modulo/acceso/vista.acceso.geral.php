@@ -189,11 +189,6 @@ if (isset($_GET["deletedata"])) {
 }
 if (isset($_GET["opcionejecutar"]) && $_GET["opcionejecutar"]!="") {
     if ($_GET["opcionejecutar"]=="SELECT/INSERT") {
-        echo "<script>
-            if(confirm('Ejecutar Consulta?')){
-                ".return false."
-            }
-        </script>";
         print_r($x->executeQuery($_GET["nombretabla"]));
     }else if ($_GET["opcionejecutar"]=="DELETE"){
         $x->deleteDataNoWhere($_GET["deletefrom"]);
