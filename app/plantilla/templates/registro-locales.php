@@ -83,7 +83,7 @@
                         <div class="row">
                         <div class="form-group col-md-8">
                                 <div class=" "><label for="text-input" class=" form-control-label">Nombre de Centro</label>
-                                <select name="area_residencia" v-model="area_residencia">
+                                <select name="area_residencia" v-model="area_residencia" class="form-control">
                                 <option value="Urbano">Urbano</option>
                                 <option value="Rural">Rural</option>
                                 </select>

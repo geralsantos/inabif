@@ -1,25 +1,39 @@
-<form action="geral" method="GET">
-<input type="text" style="witdh:100%;" size="100" value="<?php echo $_GET["nombretabla"]?>" name="nombretabla" placeholder="tabla">
-
+<form class="form-horizontal" action="geral" method="GET">
+<div class="row">
+    <div class="form-group col-md-4">
+        <div class=" "><label for="text-input" class=" form-control-label">Elegir opción</label>
+        <select name="opcionejecutar" id="opcionejecutar">
+            <option value="SELECT/INSERT" selected="selected">SELECT/INSERT</option> 
+            <option value="DELETE">DELETE</option>
+            <option value="CREATETABLE">DROP/CREATE TABLE y SEQUENCE</option>
+        </select>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="form-group col-md-12">
+        <label for="text-input" class=" form-control-label">Escribir insert/select a ejecutar</label>
+        <input type="text" style="witdh:100%;" placeholder="SELECT * FROM/INSERT INTO" size="100" value="<?php echo $_GET["nombretabla"]?>" name="nombretabla" placeholder="tabla">
+    </div>
+    
+</div>
+<div class="row">
+    <div class="form-group col-md-12">
+        <label for="text-input" class=" form-control-label">Crear Tabla</label>
+            <input type="text" style="witdh:100%;" size="100" placeholder="Nombre de la tabla" name="tablename" value="<?php echo $_GET["tablename"]?>" placeholder="tablename" >
+            <textarea name="campostabla" value="<?php echo $_GET["campostabla"]?>" id="" cols="100" rows="20"></textarea>
+    </div>
+</div>
+<div class="row">
+    <div class="form-group col-md-12">
+        <label for="text-input" class=" form-control-label">Eliminar Registros de una Tabla</label>
+        <input type="text" style="witdh:100%;" size="100" placeholder="Nombre de la Tabla" value="<?php echo $_GET["deletefrom"]?>" name="deletefrom" placeholder="deletefrom">
+    </div>
+</div>
 <button type="submit">mostrar resultados</button>
 </form>
 
-form crear tabla
-<form action="geral" method="GET">
-crear tabla
-    <input type="text" style="witdh:100%;" size="100" name="tablename" value="<?php echo $_GET["tablename"]?>" placeholder="tablename" >
-<br>
-    campos tabla
-    <br>
-    <textarea name="campostabla" value="<?php echo $_GET["campostabla"]?>" id="" cols="100" rows="20"></textarea>
-    <button type="submit">borrar tabla,crear tabla y crear secuencia</button>
-    <br>
-    </form>
-    <form action="geral" method="GET">
-<input type="text" style="witdh:100%;" size="100" value="<?php echo $_GET["deletefrom"]?>" name="deletefrom" placeholder="deletefrom">
-
-<button type="submit">borrar registros</button>
-</form>
+    
 <?php 
 //  Configure DB Parameters
 class mdl
@@ -173,17 +187,12 @@ if (isset($_GET["deletedata"])) {
     
     die();
 }
-if (isset($_GET["deletefrom"]) && $_GET["deletefrom"]!="") {
-    $x->deleteDataNoWhere($_GET["deletefrom"]);
-    die();
-}
-if (isset($_GET["nombretabla"]) && $_GET["nombretabla"]!="") {
-    echo $_GET["nombretabla"];
-    echo "<br>";
-    print_r($x->executeQuery($_GET["nombretabla"]));
-    die();
-}else{
-    if (isset($_GET["tablename"]) && $_GET["tablename"]!="" && isset($_GET["campostabla"]) && $_GET["campostabla"]!="") {
+if (isset($_GET["opcionejecutar"]) && $_GET["opcionejecutar"]!="") {
+    if ($_GET["opcionejecutar"]=="SELECT/INSERT") {
+        print_r($x->executeQuery($_GET["nombretabla"]));
+    }else if ($_GET["opcionejecutar"]=="DELETE"){
+        $x->deleteDataNoWhere($_GET["deletefrom"]);
+    }else if($_GET["opcionejecutar"]=="CREATETABLE"){
         $x->dropTable("drop table ".$_GET["tablename"]);
         $mdl->createTable("Create table ".$_GET["tablename"]."
         (
@@ -193,9 +202,10 @@ if (isset($_GET["nombretabla"]) && $_GET["nombretabla"]!="") {
         $mdl->createTable ("drop sequence seq_".$_GET["tablename"]);
         $mdl->createTable ("Create sequence seq_".$_GET["tablename"]);
         print_r($x->executeQuery("select * from ".$_GET["tablename"]));
-
-        die();
-    }else{
+    }
+    die();
+}else{
+     
 
 /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
     */
@@ -950,7 +960,6 @@ print_r($x->executeQuery("select * from modulos"));*/
 //$x->executeQuery("alter table caratencionsalud add (MotivoHospitalizacion varchar(250))");
 }
 
-}
  ?>
 
 <div class="sufee-login d-flex align-content-center flex-wrap">
