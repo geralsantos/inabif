@@ -127,7 +127,7 @@ class portada extends App{
           $_POST['valores']['Residente_Id'] = $_SESSION["usuario"][0]["ID"];
         }*/
         if ($_POST['tabla']!="usuarios") {
-          $_POST['valores']['Tipo_Centro_Id'] = 1;
+          $_POST['valores']['Tipo_Centro_Id'] = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
         }
         $_POST['valores']['Fecha_Creacion'] = "18-DEC-27";
         $_POST['valores']['Estado'] = 1;
@@ -147,6 +147,25 @@ class portada extends App{
           return false;
         }
         
+      }else{
+        return false;
+      }
+    }
+    public function update_datos(){
+
+      if( $_POST['tabla'] && $_POST['valores'] ){
+        $modelo = new modeloPortada();
+        
+        $_POST['valores']['Estado'] = 1;
+        $_POST['valores']['Usuario_Crea'] =$_SESSION["usuario"][0]["ID"];
+        $_POST['valores']['Usuario_Edita'] =$_SESSION["usuario"][0]["ID"];
+        
+        $res = $modelo->updateData( $_POST['tabla'],$_POST["valores"]);
+        if ($res) {
+            echo json_encode(array("resultado"=>true )) ;
+        }else{
+          return false;
+        }
       }else{
         return false;
       }
