@@ -1,10 +1,11 @@
-Vue.component('seguimiento-lista-1', {
-    template:'#seguimiento-lista-1',
+Vue.component('seguimiento-lista-2', {
+    template:'#seguimiento-lista-2',
     data:()=>({
         periodo:moment().format('MMMM YYYY'),
-        matriz:false,
+    
         completado:false,
-       
+        showModal:false,
+        grupos:[],
 
         nombre_residente:null,
         isLoading:false,
@@ -19,7 +20,7 @@ Vue.component('seguimiento-lista-1', {
     created:function(){
     },
     mounted:function(){
-        this.traer_datos_usuario();
+        this.listar_modulos();
     },
     updated:function(){
     },
@@ -30,22 +31,7 @@ Vue.component('seguimiento-lista-1', {
                 return false;
             }
             let valores = {
-                Num_TMotriz: this.CarNumReeducaion,
-                Num_TPsicomotricidad: this.CarParticipaPsicomotricidad,
-                Num_TFisioterapia: this.CarFisioterapia,
-                Num_TDeportes: this.CarDeportesAdaptados,
-                Num_TComunicacion: this.CarComunicacion,
-                Num_TOrofacial: this.CarReeducacionOrofacial,
-                Num_TLenguaje: this.CarTerapiaLenguaje,
-                Num_TLenguajeA: this.CarDesarrolloLenguaje,
-                Tipo_LenguajeA: this.CarTipoLenguajeAlternativo,
-                Num_TABVD: this.CarDesrrolloActividadesBasicas,
-                Num_TInstrumentalesB: this.CarInstrumentalesBasicas,
-                Num_TInstrumentalesC: this.CarInstrumentalesComplejas,
-                Num_TSensoriales: this.CarIntervensionSensorial,
-                Num_TReceptivas: this.CarSensoReceptivas,
-                Num_TOrteticos: this.CarElavoracionOrteticos,
-                Num_TSoillaR: this.CarAdaptacionSilla,
+                
 
                 Residente_Id: this.id_residente,
                 Periodo_Mes: moment().format("MM"),
@@ -100,7 +86,8 @@ Vue.component('seguimiento-lista-1', {
                 if( response.body.atributos != undefined){
 
                    
-                    
+
+
                 }
              });
 
@@ -109,21 +96,25 @@ Vue.component('seguimiento-lista-1', {
             this.$http.post('traer_datos_usuario?view',{}).then(function(response){
 
                 if( response.body.data != undefined){
-                    this.usuario = response.body.data[0]["ID"]
-                    this.buscar_centros(this.usuario);
-                }
-            });
-        },
-        buscar_centros(){
-
-            this.$http.post('buscar_centros?view',{}).then(function(response){
-
-                if( response.body.data != undefined){
-                    this.centros = response.body.data;
                     
                 }
             });
+        },
 
+        mostrar_modulo(id){
+            let  where = {'id':id};
+            this.$http.post('buscar_modulo?view',{id:id}).then(function(response){
+                this.campos = response.body.atributos[0];
+                this.showModal = true;
+                
+            });
+        },
+        listar_modulos(){
+            this.$http.post('listar_modulos?view',{id:id}).then(function(response){
+                this.registro = response.body.atributos[0];
+                this.showModal = true;
+                
+            });
         }
      
 

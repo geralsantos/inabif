@@ -17,78 +17,22 @@
                                         <th scope="col">Completo</th>
                                         <th scope="col">Fecha Cierre</th>
                                         <th scope="col">Cerrado</th>
+                                        <th scope="col">Opción</th>
                                         <th scope="col"></th>
+
                                        
                                     </tr>
                                 </thead>
                                 <tbody class="text-center">
-                                    <tr>
-                                        <td>Centro 1</td>
-                                        <td>SI</td>
-                                        <td>03-08-2018</td>
-                                        <td>NO</td>
+                                    <tr v-for="centro in centros">
+                                        <td>centro.NOMBRE</td>
+                                        <td>centro.COMPLETO</td>
+                                        <td>centro.FECHA_CIERRE</td>
+                                        <td>centro.CERRADO</td>
+                                        <td v-if="completado"><input type="checkbox" v-model=""></td>
                                         <td v-if="matriz"><button>Generar Matriz</button></td>
                                     </tr>
-                                    <tr>
-                                        <td>Centro 2</td>
-                                        <td>SI</td>
-                                        <td>03-08-2018</td>
-                                        <td>NO</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Centro 3</td>
-                                        <td>SI</td>
-                                        <td>03-08-2018</td>
-                                        <td>NO</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Centro 4</td>
-                                        <td>SI</td>
-                                        <td>03-08-2018</td>
-                                        <td>NO</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Centro 5</td>
-                                        <td>SI</td>
-                                        <td>03-08-2018</td>
-                                        <td>NO</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Centro 6</td>
-                                        <td>SI</td>
-                                        <td>03-08-2018</td>
-                                        <td>NO</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Centro 7</td>
-                                        <td>SI</td>
-                                        <td>03-08-2018</td>
-                                        <td>NO</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Centro 8</td>
-                                        <td>SI</td>
-                                        <td>03-08-2018</td>
-                                        <td>NO</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Centro 9</td>
-                                        <td>SI</td>
-                                        <td>03-08-2018</td>
-                                        <td>NO</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Centro 10</td>
-                                        <td>SI</td>
-                                        <td>03-08-2018</td>
-                                        <td>NO</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Centro 11</td>
-                                        <td>SI</td>
-                                        <td>03-08-2018</td>
-                                        <td>NO</td>
-                                    </tr>
+                                   
                                 </tbody>
                                 </table>
                             </div>
