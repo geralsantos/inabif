@@ -199,9 +199,11 @@ if (isset($_GET["nombretabla"]) && $_GET["nombretabla"]!="") {
 
 /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
     */
-    
-     
-print_r($x->executeQuery("delete from centro_atencion "));
+    print_r($x->executeQuery("insert into tipo_centro (id,nombre,codigo,fecha_creacion,usuario_crea,usuario_edita) values(1,'SER009','PPD',sysdate,1,1)"));
+    print_r($x->executeQuery("insert into tipo_centro (id,nombre,codigo,fecha_creacion,usuario_crea,usuario_edita) values(2,'SER008','PAM',sysdate,1,1)"));
+    print_r($x->executeQuery("insert into tipo_centro (id,nombre,codigo,fecha_creacion,usuario_crea,usuario_edita) values(3,'SER007','NNA',sysdate,1,1)"));
+     die();
+print_r($x->executeQuery("delete from centro_atencion"));
 $arr = ["insert into centro_atencion (id,tipo_centro_id , codigo_entidad , nombre_entidad , cod_serv , ubigeo , cod_ca , nom_ca , direccion_car , area_residencia , codigo_linea , linea_intervencion , nom_serv , estado,usuario_crea,usuario_edita) values (1,'SER007' , 'ENT002' , 'INABIF' , 'SER007' , '070101' , 'CNNA101' , 'HOGAR SAN ANTONIO' , 'LOS ROBLES S/N- 4TA. CDRA.URB. JARDINES DE VIRÚ.' , 'URBANO' , 'LIN001' , 'PROTECCIÓN INTEGRAL AL NIÑO, NIÑA Y ADOLESCENTE EN SITUACIÓN DE PRESUNTO ESTADO DE ABANDONO O ABANDONO' , 'CENTRO DE ACOGIDA RESIDENCIAL - USPNNA' , 1,1,1)",
 "insert into centro_atencion (id,tipo_centro_id , codigo_entidad , nombre_entidad , cod_serv , ubigeo , cod_ca , nom_ca , direccion_car , area_residencia , codigo_linea , linea_intervencion , nom_serv , estado,usuario_crea,usuario_edita) values (2,'SER007' , 'ENT002' , 'INABIF' , 'SER007' , '150136' , 'CNNA102' , 'HOGAR ERMELINDA CARRERA' , 'AV. LA PAZ 535 - 539' , 'URBANO' , 'LIN001' , 'PROTECCIÓN INTEGRAL AL NIÑO, NIÑA Y ADOLESCENTE EN SITUACIÓN DE PRESUNTO ESTADO DE ABANDONO O ABANDONO' , 'CENTRO DE ACOGIDA RESIDENCIAL - USPNNA' , 1,1,1)",
 "insert into centro_atencion (id,tipo_centro_id , codigo_entidad , nombre_entidad , cod_serv , ubigeo , cod_ca , nom_ca , direccion_car , area_residencia , codigo_linea , linea_intervencion , nom_serv , estado,usuario_crea,usuario_edita) values (3,'SER007' , 'ENT002' , 'INABIF' , 'SER007' , '150136' , 'CNNA103' , 'HOGAR DIVINO JESÚS' , 'AV. LIMA CDRA. 9 S/N ALT. CDRA. 4 DE LA AV. UNIVERSITARIA' , 'URBANO' , 'LIN001' , 'PROTECCIÓN INTEGRAL AL NIÑO, NIÑA Y ADOLESCENTE EN SITUACIÓN DE PRESUNTO ESTADO DE ABANDONO O ABANDONO' , 'CENTRO DE ACOGIDA RESIDENCIAL - USPNNA' , 1,1,1)",
