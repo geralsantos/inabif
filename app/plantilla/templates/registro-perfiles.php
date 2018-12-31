@@ -24,8 +24,8 @@
                         <td>{{usuario.NOMBRE}}</td>
                         <td>{{usuario.APELLIDO}}</td>
                         <td>{{usuario.DNI}}</td>
-                        <td><button  class="btn btn-primary" @click="verRegistro(usuario)">Editar</button>
-                        <td><button  class="btn btn-error" @click="EliminarUsuario(usuario)">Eliminar</button>
+                        <td><button  class="btn btn-primary" @click="verRegistro(usuario)">Editar</button> 
+                        <button  class="btn btn-danger" @click="EliminarUsuario(usuario)">Eliminar</button>
                         </td>
                     </tr>
                     </tbody>
