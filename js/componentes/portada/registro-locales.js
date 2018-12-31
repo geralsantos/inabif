@@ -106,31 +106,40 @@ Vue.component('registro-locales', {
               });
             
         },
-        verRegistro(usuario){
-            if (isempty(usuario)) {
-                    this.id_usuario=null;
-                    this.Apellido= null;
-                    this.Nombre= null;
-                    this.Correo= null;
-                    this.DNI=null;
-                    this.NumCel= null;
-                    this.centro_id =null;
-                    this.nivel_id =null,
-
-                    this.showModal = true;
+        verRegistro(centro){
+            if (isempty(centro)) {
+                this.tipo_centro_id=null;
+                this.codigo_entidad=null;
+                this.nombre_entidad=null;
+                this.cod_serv=null;
+                this.cod_ca=null;
+                this.administrador_nombre=null;
+                this.nombre_director=null;
+                this.telefono=null;
+                this.direccion_car=null;
+                this.area_residencia=null;
+                this.codigo_linea=null;
+                this.linea_intervencion=null;
+                this.nom_serv=null;
+                this.showModal = true;
             }else{
-                console.log(usuario);
+                console.log(centro);
  //let  where = {'id':usuario.ID};
               //this.$http.post('buscar?view',{where:where}).then(function(response){
                     //this.registro = response.body.atributos[0];
-                    this.id_usuario=usuario.ID;
-                    this.Apellido= usuario.APELLIDO;
-                    this.Nombre= usuario.NOMBRE;
-                    this.Correo= usuario.CORREO;
-                    this.DNI=usuario.DNI;
-                    this.NumCel= usuario.NUMCEL;
-                    this.centro_id =usuario.CENTRO_ID,
-                    this.nivel_id =usuario.NIVEL,
+                this.tipo_centro_id=centro.TIPO_CENTRO_ID;
+                this.codigo_entidad=centro.CODIGO_ENTIDAD;
+                this.nombre_entidad=centro.NOMBRE_ENTIDAD;
+                this.cod_serv=centro.COD_SERV;
+                this.cod_ca=centro.COD_CA;
+                this.administrador_nombre=centro.ADMINISTRADOR_NOMBRE;
+                this.nombre_director=centro.NOMBRE_DIRECTOR;
+                this.telefono=centro.TELEFONO;
+                this.direccion_car=centro.DIRECCION_CAR;
+                this.area_residencia=centro.AREA_RESIDENCIA;
+                this.codigo_linea=centro.CODIGO_LINEA;
+                this.linea_intervencion=centro.LINEA_INTERVENCION;
+                this.nom_serv=centro.NOM_SERV;
 
                     this.showModal = true;
               //});
