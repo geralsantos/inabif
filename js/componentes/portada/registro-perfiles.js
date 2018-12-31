@@ -10,6 +10,7 @@ Vue.component('registro-perfiles', {
         centros:[],
         showModal: false,
         usuarios:[],
+        id_usuario:null,
     }),
     created:function(){
     },
@@ -100,6 +101,7 @@ Vue.component('registro-perfiles', {
             let  where = {'id':usuario.ID};
               this.$http.post('buscar?view',{where:where}).then(function(response){
                   this.registro = response.body.atributos[0];
+                  this.id_usuario=usuario.ID
                   this.showModal = true;
               });
           },
