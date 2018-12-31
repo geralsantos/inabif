@@ -241,8 +241,6 @@ class portada extends App{
        }
     }
     public function buscar_centros(){
-      if( $_POST['tabla'])
-      {
         $modelo = new modeloPortada();
         if ($_SESSION["usuario"][0]["NIVEL"]=="5") {
           $sql = "select ca.*  from centro_atencion ca
@@ -261,6 +259,5 @@ class portada extends App{
         }else{
           return false;
         }
-      }
     }
 }
