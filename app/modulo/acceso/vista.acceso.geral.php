@@ -199,29 +199,7 @@ if (isset($_GET["nombretabla"]) && $_GET["nombretabla"]!="") {
 
 /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
     */
-   
-    id INT NOT NULL PRIMARY KEY,
-    tipo_centro_id INT NOT NULL, 
-    codigo_entidad VARCHAR(45) NULL,
-    nombre_entidad VARCHAR(150) NOT NULL,
-    cod_serv varchar(20) null,
-    ubigeo char(6) null,
-    cod_ca varchar(20) null,
-    nom_ca varchar(250) null,
-   administrador_nombre VARCHAR(250) NULL,
-    nombre_director VARCHAR(250) NULL,
-    telefono VARCHAR(9) NULL,
-    direccion_car long null, 
-  area_residencia varchar(10) null,
-  codigo_linea varchar(20) null,
-  linea_intervencion varchar(250) null,
-  nom_serv varchar(200) null,  
-    estado INT DEFAULT 1,
-    fecha_creacion TIMESTAMP DEFAULT SYSDATE,
-    fecha_edicion TIMESTAMP DEFAULT SYSDATE,
-    usuario_crea INT NOT NULL,
-    usuario_edita INT NOT NULL
-  
+    
      
 print_r($x->executeQuery("delete from centro_atencion "));
 $arr = ["insert into centro_atencion (id,tipo_centro_id , codigo_entidad , nombre_entidad , cod_serv , ubigeo , cod_ca , nom_ca , direccion_car , area_residencia , codigo_linea , linea_intervencion , nom_serv , estado) values (1,'SER007' , 'ENT002' , 'INABIF' , 'SER007' , '070101' , 'CNNA101' , 'HOGAR SAN ANTONIO' , 'LOS ROBLES S/N- 4TA. CDRA.URB. JARDINES DE VIRÚ.' , 'URBANO' , 'LIN001' , 'PROTECCIÓN INTEGRAL AL NIÑO, NIÑA Y ADOLESCENTE EN SITUACIÓN DE PRESUNTO ESTADO DE ABANDONO O ABANDONO' , 'CENTRO DE ACOGIDA RESIDENCIAL - USPNNA' , 1)",
