@@ -164,7 +164,7 @@ class MySQL extends PDO
       $stmt->execute($params);
       return $stmt->fetchAll();
     }
-    public function insertData($tabla, $values) {
+    public function insertData($tabla, $values,$lastid=false) {
         if(count($values)>0){
             $query = 'INSERT INTO '.$tabla;
             $queryKeys = '';
@@ -184,7 +184,11 @@ class MySQL extends PDO
             $stmt = parent::prepare($query);
             $stmt->execute($params);
             if($stmt->rowCount()>0){
-                return TRUE;
+                if ($lastid) {
+                    return $stmt->lastInsertId();
+                }else{
+                    return TRUE;
+                }
             }else{
                 return FALSE;
             }

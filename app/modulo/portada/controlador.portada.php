@@ -124,12 +124,27 @@ class portada extends App{
         $_POST['valores']['Usuario_Crea'] =$_SESSION["usuario"][0]["ID"];
         $_POST['valores']['Usuario_Edita'] =$_SESSION["usuario"][0]["ID"];
         //aqui tu ejecutas la consulta
-        $res = $modelo->insertData( $_POST['tabla'],$_POST["valores"]);
-        if ($res) {
-          echo json_encode(array("resultado"=>true )) ;
-        }else{
-          return false;
+        $lastid = false;
+        if (isset($_POST['valores']['lastid'])) {
+          if ($_POST['valores']['lastid']) {
+            $lastid = true;
+          }
         }
+        $res = $modelo->insertData( $_POST['tabla'],$_POST["valores"],$lastid);
+        if ($lastid) {
+          if ($res) {
+            echo json_encode(array("resultado"=>true,"lastid"=>$res )) ;
+          }
+        }else{
+          if ($res) {
+            $sql = "SELECT * FROM ".$_POST['tabla']." WHERE ID= ESTADO=1";
+            $res = $modelo->executeQuery( $sql );
+            echo json_encode(array("resultado"=>true )) ;
+          }else{
+            return false;
+          }
+        }
+        
       }else{
         return false;
       }
