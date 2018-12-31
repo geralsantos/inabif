@@ -116,7 +116,7 @@ Vue.component('seguimiento-lista-1', {
             });
         },
         buscar_centros(){
-
+            this.centros=[];
             this.$http.post('buscar_centros?view',{}).then(function(response){
 
                 if( response.body.data != undefined){
@@ -130,12 +130,13 @@ Vue.component('seguimiento-lista-1', {
         completar_matriz(id_centro){
             this.$http.post('completar_matriz?view',{id_centro:id_centro}).then(function(response){
 
-                if( response.body.data != undefined){
-                    this.centros = response.body.data;
-                    
+                if( response.body.resultado ){
+                    swal("", "Centro completado", "success");
+                    this.buscar_centros();
                 }
             });
-        }
+        },
+        completar_matriz
      
 
     }
