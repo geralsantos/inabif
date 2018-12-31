@@ -18,7 +18,7 @@ Vue.component('seguimiento-lista-1', {
     created:function(){
     },
     mounted:function(){
-        this.buscar_lenguajes();
+        
     },
     updated:function(){
     },
