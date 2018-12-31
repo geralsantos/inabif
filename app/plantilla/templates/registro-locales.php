@@ -71,12 +71,12 @@
                         <div class="row">
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Código de Centro</label>
-                                <input type="email" v-model="cod_ca" name="cod_ca" placeholder="" class="form-control"> 
+                                <input type="text" v-model="cod_ca" name="cod_ca" placeholder="" class="form-control"> 
                                 </div>
                             </div>
                             <div class="form-group col-md-8">
                                 <div class=" "><label for="text-input" class=" form-control-label">Nombre de Centro</label>
-                                <input type="email" v-model="nom_ca" name="nom_ca" placeholder="" class="form-control"> 
+                                <input type="text" v-model="nom_ca" name="nom_ca" placeholder="" class="form-control"> 
                                 </div>
                             </div>
                         </div>
