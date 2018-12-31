@@ -6,6 +6,7 @@ Vue.component('seguimiento-lista-1', {
         completado:true,
         completo:false,
        centros:[],
+       usuario:[],
 
         nombre_residente:null,
         isLoading:false,
@@ -21,6 +22,7 @@ Vue.component('seguimiento-lista-1', {
     },
     mounted:function(){
         this.buscar_centros();
+        this.traer_datos_usuario();
     },
     updated:function(){
     },
@@ -111,7 +113,7 @@ Vue.component('seguimiento-lista-1', {
 
                 if( response.body.data != undefined){
                     this.usuario = response.body.data[0]["ID"]
-                    this.buscar_centros(this.usuario);
+                  console.log(this.usuario);
                 }
             });
         },
