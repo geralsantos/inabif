@@ -13,7 +13,7 @@
 <div class="row">
     <div class="form-group col-md-12">
         <label for="text-input" class="form-control-label">Escribir insert/select a ejecutar</label>
-        <input type="text" style="witdh:100%;" class="form-control" placeholder="SELECT * FROM/INSERT INTO" size="100" value="<?php echo $_GET["nombretabla"]?>" name="nombretabla" placeholder="tabla">
+        <textarea class="form-control" placeholder="SELECT * FROM/INSERT INTO" size="100" value="<?php echo $_GET["nombretabla"]?>" name="nombretabla" cols="30" rows="10"></textarea>
     </div>
     
 </div>
