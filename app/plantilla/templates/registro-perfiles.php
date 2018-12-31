@@ -1,7 +1,5 @@
 <template id="registro-perfiles">
-    <style>
   
-</style>
     <div class="content mt-3">
         <div class="col-lg-12">
             <div class="card">
