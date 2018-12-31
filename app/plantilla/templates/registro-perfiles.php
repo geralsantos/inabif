@@ -33,6 +33,7 @@
         </div>
     </div> <!-- .content -->
     <div v-if="showModal">
+    <transition name="modal">
       <div class="modal-mask">
         <div class="modal-wrapper">
 
@@ -103,5 +104,6 @@
 
         </div>
       </div>
+    </transition>
   </div>
 </template>
