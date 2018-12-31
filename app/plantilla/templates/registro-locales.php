@@ -60,23 +60,23 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Código de Entidad</label>
-                                <input type="text" v-model="Apellido" name="Apellido" placeholder="" class="form-control"> 
+                                <input type="text" v-model="codigo_entidad" name="codigo_entidad" placeholder="" class="form-control"> 
                                 </div>
                             </div>
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Código de Servicio</label>
-                                <input type="text" v-model="Nombre" name="Nombre" placeholder="" class="form-control"> </div>
+                                <input type="text" v-model="nombre_entidad" name="nombre_entidad" placeholder="" class="form-control"> </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Código de Centro</label>
-                                <input type="email" v-model="Correo" name="Correo" placeholder="" class="form-control"> 
+                                <input type="email" v-model="cod_ca" name="cod_ca" placeholder="" class="form-control"> 
                                 </div>
                             </div>
                             <div class="form-group col-md-8">
                                 <div class=" "><label for="text-input" class=" form-control-label">Nombre de Centro</label>
-                                <input type="email" v-model="Correo" name="Correo" placeholder="" class="form-control"> 
+                                <input type="email" v-model="nom_ca" name="nom_ca" placeholder="" class="form-control"> 
                                 </div>
                             </div>
                         </div>
@@ -106,12 +106,12 @@
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <div class=" "><label for="text-input" class=" form-control-label">Nombre de Administrador</label>
-                                <input type="text" v-model="DNI" name="DNI" placeholder="" class="form-control"> 
+                                <input type="text" v-model="administrador_nombre" name="administrador_nombre" placeholder="" class="form-control"> 
                                 </div>
                             </div>
                             <div class="form-group col-md-6">
                                 <div class=" "><label for="text-input" class=" form-control-label">Nombre de Director</label>
-                                <input type="number" v-model="DNI" name="DNI" placeholder="" class="form-control"> 
+                                <input type="number" v-model="nombre_director" name="nombre_director" placeholder="" class="form-control"> 
                                 </div>
                             </div>
                             
@@ -119,12 +119,12 @@
                         <div class="row">
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Teléfono</label>
-                                <input type="number" v-model="DNI" name="DNI" placeholder="" class="form-control"> 
+                                <input type="number" v-model="telefono" name="telefono" placeholder="" class="form-control"> 
                                 </div>
                             </div>
                             <div class="form-group col-md-8">
                                 <div class=" "><label for="text-input" class=" form-control-label">Dirección del Centro</label>
-                                <input type="text" v-model="DNI" name="DNI" placeholder="" class="form-control"> 
+                                <input type="text" v-model="direccion_car" name="direccion_car" placeholder="" class="form-control"> 
                                 </div>
                             </div>
                             
@@ -132,18 +132,18 @@
                         <div class="row">
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Código de Linea </label>
-                                <input type="text" v-model="DNI" name="DNI" placeholder="" class="form-control"> 
+                                <input type="text" v-model="codigo_linea" name="codigo_linea" placeholder="" class="form-control"> 
 
                                 </div>
                             </div>
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Linea Intervención</label>
-                                <input type="number" v-model="DNI" name="DNI" placeholder="" class="form-control"> 
+                                <input type="number" v-model="linea_intervencion" name="linea_intervencion" placeholder="" class="form-control"> 
                                 </div>
                             </div>
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Nombre del Servicio</label>
-                                <input type="text" v-model="DNI" name="DNI" placeholder="" class="form-control"> 
+                                <input type="text" v-model="nom_serv" name="nom_serv" placeholder="" class="form-control"> 
                                 </div>
                             </div>
                             
