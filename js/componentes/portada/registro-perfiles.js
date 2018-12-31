@@ -1,48 +1,23 @@
 Vue.component('registro-perfiles', {
     template:'#registro-perfiles',
     data:()=>({
-       
-        Ape_Paterno:null,
-        Ape_Materno:null,
-        Nom_Usuario:null,
-        Pais_Procencia:null,
-        Depatamento_Procedencia:null,
-        Provincia_Procedencia:null,
-        Distrito_Procedencia:null,
-        Sexo:null,
-        Fecha_Nacimiento:null,
-        Edad:null,
-        Lengua_Materna:null,
-
-        paises:[],
-        departamentos:[],
-        provincias:[],
-        distritos:[],
-        lenguas:[],
-
-        nombre_residente:null,
-        isLoading:false,
-        mes:moment().format("MM"),
-        anio:(new Date()).getFullYear(),
-        coincidencias:[],
-        bloque_busqueda:false,
-        id_residente:null
-
-
+        Apelido: this.Apelido,
+        Nombre: this.Nom_Usuario,
+        Correo: this.Correo,
+        DNI:this.DNI,
+        NumCel: this.NumCel,
+        centroID:null,
+        centros:[],
+        showModal: false,
+        usuarios:[],
     }),
     created:function(){
     },
     mounted:function(){
-        this.buscar_paises();
-        this.buscar_lenguas();
-        this.buscar_departamentos();
+        this.buscar_centros();
+        this.listar_usuarios();
     },
     updated:function(){
-    },
-    watch:{
-        Depatamento_Procedencia:function(val){ 
-            this.buscar_provincias();
-        }
     },
     methods:{
         guardar(){
@@ -51,25 +26,16 @@ Vue.component('registro-perfiles', {
                 return false;
             }*/
             let valores = {
-                Ape_Paterno: this.Ape_Paterno,
-                Ape_Materno: this.Ape_Materno,
-                Nom_Usuario: this.Nom_Usuario,
-                Pais_Procencia: this.Pais_Procencia,
-                Depatamento_Procedencia: this.Depatamento_Procedencia,
-                Provincia_Procedencia: this.Provincia_Procedencia,
-                Distrito_Procedencia: this.Distrito_Procedencia,
-                Sexo: this.Sexo,
-                Fecha_Nacimiento:  moment(this.Fecha_Nacimiento, "YYYY-MM-DD").format("YY-MMM-DD"),
-                Edad: this.Edad,
-                Lengua_Materna: this.Lengua_Materna,
-
-                //Residente_Id: this.id_residente,
-                Periodo_Mes: moment().format("MM"),
-                Periodo_Anio:moment().format("YYYY")
-
+                Apellido: this.Apellido,
+                Nombre: this.Nom_Usuario,
+                Correo: this.Correo,
+                DNI:this.DNI,
+                NumCel: this.NumCel,
+                NumCel: this.NumCel,
+                centro_id :1,
                 }
 
-            /*this.$http.post('insertar_datos?view',{tabla:'CarIdentificacionUsuario', valores:valores}).then(function(response){
+            this.$http.post('insertar_datos?view',{tabla:'usuarios', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
                     swal('', 'Registro Guardado', 'success');
@@ -77,53 +43,8 @@ Vue.component('registro-perfiles', {
                 }else{
                   swal("", "Un error ha ocurrido", "error");
                 }
-            });*/
-            let valores_arr = Object.values(valores);
-                for (let index = 0; index < valores_arr.length; index++) {
-                    if (isempty(valores_arr[index])) {
-                        swal('Error', 'Debe llenar todos los campos', 'warning');
-                        return false;
-                    }
-                }
-                if (isempty(this.id_residente)) {
-                    let valores_residente = {
-                       
-
-                        nombre : this.Nom_Usuario,
-                        apellido_p : this.Ape_Paterno,
-                        apellido_m : this.Ape_Materno,
-                        pais_id : this.Pais_Procencia,
-                        departamento_naci_cod : this.Depatamento_Procedencia,
-                        provincia_naci_cod : this.Provincia_Procedencia,
-                        distrito_naci_cod : this.Distrito_Procedencia,
-                        sexo: this.Sexo,
-                        fecha_naci :  moment(this.Fecha_Nacimiento, "YYYY-MM-DD").format("YY-MMM-DD"),
-                        edad: this.Edad,
-                        lengua_materna: this.Lengua_Materna,
-                        //documento :this.Numero_Doc
-                        }
-                        console.log(valores_residente);
-                    this.$http.post('insertar_datos?view',{tabla:'residente', valores:valores_residente,lastid:true}).then(function(response){
-                        valores.Residente_Id = response.body.lastid;
-                        console.log(response.body.lastid);
-                        this.$http.post('insertar_datos?view',{tabla:'CarIdentificacionUsuario', valores:valores}).then(function(response){
-                            if( response.body.resultado ){
-                                swal('', 'Registro Guardado', 'success');
-                            }else{
-                              swal("", "Un error ha ocurrido", "error");
-                            }
-                        });
-                    }); 
-                }else{
-                    valores.Residente_Id = this.id_residente;
-                    this.$http.post('insertar_datos?view',{tabla:'CarIdentificacionUsuario', valores:valores}).then(function(response){
-                        if( response.body.resultado ){
-                            swal('', 'Registro Guardado', 'success');
-                        }else{
-                          swal("", "Un error ha ocurrido", "error");
-                        }
-                    });
-                }
+            });
+             
         },
         buscar_residente(){
             this.id_residente = null;
@@ -174,54 +95,22 @@ Vue.component('registro-perfiles', {
                 }
              });
 
-        },
-        buscar_paises(){
-            this.$http.post('buscar?view',{tabla:'paises'}).then(function(response){
-                if( response.body.data ){
-                    this.paises= response.body.data;
-                }
-
-            });
-        },
-
-        buscar_departamentos(){
-            this.$http.post('buscar_departamentos?view',{tabla:'ubigeo'}).then(function(response){
-                if( response.body.data ){
-                    this.departamentos= response.body.data;
-                    //this.Depatamento_Procedencia = response.body.data[0]["CODDEPT"];
-                    //this.buscar_provincias();
-
-                }
-
-            });
-        },
-        buscar_provincias(){
-            this.$http.post('buscar_provincia?view',{tabla:'ubigeo', cod:this.Depatamento_Procedencia}).then(function(response){
-                if( response.body.data ){
-                    this.provincias= response.body.data;
-                    //this.Provincia_Procedencia = response.body.data[0]["CODPROV"];
-                    this.buscar_distritos();
-                }
-
-            });
-        },
-        buscar_distritos(){
-            this.$http.post('buscar_distritos?view',{tabla:'ubigeo', cod:this.Provincia_Procedencia}).then(function(response){
-                if( response.body.data ){
-                    this.distritos= response.body.data;
-                    //this.Distrito_Procedencia = response.body.data[0]["CODDIST"];
-                }
-
-            });
-        },
-        buscar_lenguas(){
-            this.$http.post('buscar?view',{tabla:'pam_lengua_materna'}).then(function(response){
+        }, 
+        buscar_centros(){
+            this.$http.post('buscar?view',{tabla:'centro_atencion'}).then(function(response){
                 if( response.body.data ){
                     this.lenguas= response.body.data;
                 }
 
             });
         },
+        listar_usuarios(){
+            this.$http.post('buscar?view',{tabla:'usuarios'}).then(function(response){
+                if( response.body.data ){
+                    this.usuarios= response.body.data;
+                }
 
+            });
+        }
     }
   })
