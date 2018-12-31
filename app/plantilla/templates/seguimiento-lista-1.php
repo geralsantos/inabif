@@ -26,7 +26,7 @@
                                 <tbody class="text-center">
                                     <tr v-for="centro in centros">
                                         <td>{{centro.NOMBRE_CENTRO}}</td>
-                                        <td>{{if(centro.ESTADO_COMPLETO=='')?'NO':'SI'}}</td>
+                                        <td>{{(centro.ESTADO_COMPLETO=='')?'NO':'SI'}}</td>
                                         <td>{{centro.FECHA_CIERRE}}</td>
                                         <td>{{centro.FECHA_CIERRE}}</td>
                                         <td v-if="completado"><input type="checkbox" ></td>
