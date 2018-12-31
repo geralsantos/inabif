@@ -240,16 +240,25 @@ class portada extends App{
     }
     public function buscar_centros(){
         $modelo = new modeloPortada();
-        if ($_SESSION["usuario"][0]["NIVEL"]=="5") {
+        if ($_SESSION["usuario"][0]["NIVEL"]=="5") { //responsable de la información
           $sql = "select ca.id as id_centro,ca.nombre as nombre_centro,cad.estado_completo,cad.fecha_cierre   from centro_atencion ca
           left join centro_atencion_detalle cad on (cad.centro_id=ca.id)
           left join tipo_centro tc on (ca.tipo_centro_id=tc.id) 
-          where tc.id=".$_SESSION["usuario"][0]["NIVEL"]." and ca.estado = 1";
-        }else {
+          where ca.id=".$_SESSION["usuario"][0]["CENTRO_ID"]." and ca.estado = 1";
+        }else if($_SESSION["usuario"][0]["NIVEL"]=="2") //supervisor
+        {
           $sql = "select ca.id as id_centro,ca.nombre as nombre_centro,cad.estado_completo,cad.fecha_cierre  from centro_atencion ca 
           left join centro_atencion_detalle cad on (cad.centro_id=ca.id) 
-          where ca.estado = 1";
+          left join tipo_centro tc on (ca.tipo_centro_id=tc.id) 
+          where tc.id=".$_SESSION["usuario"][0]["TIPO_CENTRO_ID"]." and ca.estado = 1";
+        }else if($_SESSION["usuario"][0]["NIVEL"]=="3") //USER_SEDE_GESTIÓN 
+        {
+          $sql = "select ca.id as id_centro,ca.nombre as nombre_centro,cad.estado_completo,cad.fecha_cierre  from centro_atencion ca 
+          left join centro_atencion_detalle cad on (cad.centro_id=ca.id) 
+          left join tipo_centro tc on (ca.tipo_centro_id=tc.id) 
+          where tc.id=".$_SESSION["usuario"][0]["TIPO_CENTRO_ID"]." and ca.estado = 1";
         }
+
         $res = $modelo->executeQuery($sql );
         if ($res) 
         {

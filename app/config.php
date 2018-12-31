@@ -42,6 +42,14 @@ define ('NUM_PERPAGE',10);
 define ('MODULO_DEFAULT','acceso');
 define ('ACCION_DEFAULT','index');
 
+//NIVELES
+define ('ADMIN_CENTRAL','1');
+define ('SUPERVISOR','2');
+define ('USER_SEDE_GESTION','3');
+define ('USER_SEDE','4');
+define ('RESPONSABLE_INFORMACION','5');
+define ('REGISTRADOR','6');
+define ('USER_CENTRO','7');
 //AMBIENTE
 define ('DESARROLLO',TRUE);
 
