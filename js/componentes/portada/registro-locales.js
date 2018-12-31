@@ -73,7 +73,7 @@ Vue.component('registro-locales', {
                 nom_serv :this.nom_serv,
                 }
                 if (this.id_usuario==null) {
-                    this.$http.post('insertar_datos?view',{tabla:'usuarios', valores:valores}).then(function(response){
+                    this.$http.post('insertar_datos?view',{tabla:'centro_atencion', valores:valores}).then(function(response){
 
                         if( response.body.resultado ){
                             swal('', 'Registro Guardado', 'success');
@@ -84,7 +84,7 @@ Vue.component('registro-locales', {
                     });
                 }else{
                     let where = {id:this.id_usuario};
-                    this.$http.post('update_datos?view',{tabla:'usuarios', valores:valores,where:where}).then(function(response){
+                    this.$http.post('update_datos?view',{tabla:'centro_atencion', valores:valores,where:where}).then(function(response){
                         if( response.body.resultado ){
                             swal('', 'Registro Actualizado', 'success');
                             this.listar_usuarios();
