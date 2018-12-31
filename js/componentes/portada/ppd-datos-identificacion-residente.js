@@ -86,17 +86,7 @@ Vue.component('ppd-datos-identificacion-residente', {
                 }
                 if (isempty(this.id_residente)) {
                     let valores_residente = {
-                        Ape_Paterno: this.Ape_Paterno,
-                        Ape_Materno: this.Ape_Materno,
-                        Nom_Usuario: this.Nom_Usuario,
-                        Pais_Procencia: this.Pais_Procencia,
-                        Depatamento_Procedencia: this.Depatamento_Procedencia,
-                        Provincia_Procedencia: this.Provincia_Procedencia,
-                        Distrito_Procedencia: this.Distrito_Procedencia,
-                        Sexo: this.Sexo,
-                        Fecha_Nacimiento:  moment(this.Fecha_Nacimiento, "YYYY-MM-DD").format("YY-MMM-DD"),
-                        Edad: this.Edad,
-                        Lengua_Materna: this.Lengua_Materna,
+                       
 
                         nombre : this.Nom_Usuario,
                         apellido_p : this.Ape_Paterno,
