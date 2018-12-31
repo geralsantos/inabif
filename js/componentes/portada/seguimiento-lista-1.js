@@ -139,6 +139,7 @@ Vue.component('seguimiento-lista-1', {
 
                 if( response.body.resultado ){
                     swal("", "Centro completado", "success");
+                    this.matriz = true;
                     this.buscar_centros();
                 }else{
                     swal("", "Ha ocurrido un error", "error");
@@ -152,6 +153,8 @@ Vue.component('seguimiento-lista-1', {
 
                 if( response.body.resultado ){
                     swal("", "Matriz Generada", "success");
+
+                    this.mostrar_completado = false;
                     this.buscar_centros();
                 }else{
                     swal("", "Ha ocurrido un error", "error");
