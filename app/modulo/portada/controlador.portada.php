@@ -264,8 +264,6 @@ class portada extends App{
           left join tipo_centro tc on (ca.tipo_centro_id=tc.id) 
           where ca.estado = 1";
         }
-        
-
         $res = $modelo->executeQuery($sql );
         if ($res) 
         {
