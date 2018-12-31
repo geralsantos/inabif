@@ -27,14 +27,24 @@ Vue.component('registro-locales', {
         codigo_linea :null,
         linea_intervencion :null,
         nom_serv :null,
+        departamentos:[],
+        provincias:[],
+        distritos:[],
+        Depatamento_Procedencia:null,
     }),
     created:function(){
     },
     mounted:function(){
         this.buscar_centros();
         this.buscar_tipocentros();
+        this.buscar_departamentos();
     },
     updated:function(){
+    },
+    watch:{
+        Depatamento_Procedencia:function(val){ 
+            this.buscar_provincias();
+        }
     },
     methods:{
         guardar(){
@@ -161,7 +171,37 @@ Vue.component('registro-locales', {
                 }
 
             });
-        }/*,
+        },
+        buscar_departamentos(){
+            this.$http.post('buscar_departamentos?view',{tabla:'ubigeo'}).then(function(response){
+                if( response.body.data ){
+                    this.departamentos= response.body.data;
+                    //this.Depatamento_Procedencia = response.body.data[0]["CODDEPT"];
+                    //this.buscar_provincias();
+
+                }
+
+            });
+        },
+        buscar_provincias(){
+            this.$http.post('buscar_provincia?view',{tabla:'ubigeo', cod:this.Depatamento_Procedencia}).then(function(response){
+                if( response.body.data ){
+                    this.provincias= response.body.data;
+                    //this.Provincia_Procedencia = response.body.data[0]["CODPROV"];
+                    this.buscar_distritos();
+                }
+
+            });
+        },
+        buscar_distritos(){
+            this.$http.post('buscar_distritos?view',{tabla:'ubigeo', cod:this.Provincia_Procedencia}).then(function(response){
+                if( response.body.data ){
+                    this.distritos= response.body.data;
+                    //this.Distrito_Procedencia = response.body.data[0]["CODDIST"];
+                }
+
+            });
+        },/*,
         listar_nivelesusuarios(){
             this.$http.post('buscar?view',{tabla:'niveles_usuarios'}).then(function(response){
                 if( response.body.data ){
