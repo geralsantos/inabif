@@ -16,7 +16,7 @@ class portada extends App{
     public function list_modulos()
     {
       $modelo = new modeloPortada();
-      $centro_id = $_SESSION["usuario"][0]["id_centro"];
+      $centro_id = $_SESSION["usuario"][0]["ID_CENTRO"];
       print_r($_SESSION["usuario"]);
       //$bd = isset($_SESSION["usuario"][0]["database_name"]) ? $_SESSION["usuario"][0]["database_name"] : 'portal-kpi' ;
       //$usuario = "SELECT kpi_roles_id FROM kpi_usuarios WHERE id=".$_SESSION['usuario'][0]['id']." and estado = 1 limit 1";
