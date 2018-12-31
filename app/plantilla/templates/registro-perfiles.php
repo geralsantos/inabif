@@ -66,7 +66,7 @@
                                 <input type="email" v-model="Correo" name="Correo" placeholder="" class="form-control"> 
                                 </div>
                             </div>
-                            <div class=" "><label for="text-input" class=" form-control-label">Centro</label>
+                            <div class="form-group col-md-6"><label for="text-input" class=" form-control-label">Nivel Usuario</label>
                                 <select name="nivel_id" v-model="nivel_id" class="form-control">
                                     <option v-for="nivel in niveles_usuarios" :value="nivel.ID">{{nivel.NOMBRE}}</option>
                                 </select>
