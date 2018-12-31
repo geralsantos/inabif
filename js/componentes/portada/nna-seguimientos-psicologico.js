@@ -40,7 +40,7 @@ Vue.component('nna-seguimientos-psicologico', {
                 Des_Informe_Tecnico:this.Des_Informe_Tecnico,
                 Cumple_Intercencion:this.Cumple_Intercencion,
                 Transtorno_Depresivo :this.Transtorno_Depresivo,
-                Severidad_Trans_Depresivo:this.Severidad_Trans_Depresivo,
+                Severidad_Trans_Depresivo :this.Severidad_Trans_Depresivo,
 
                 Residente_Id: this.id_residente,
                 Periodo_Mes: moment().format("MM"),
@@ -94,13 +94,13 @@ Vue.component('nna-seguimientos-psicologico', {
 
                 if( response.body.atributos != undefined){
 
-                    this.Plan_Intervencion = response.body.atributos[0]["Plan_Intervencion"];
-                    this.Des_Meta = response.body.atributos[0]["Des_Meta"];
-                    this.Informe_Tecnico = response.body.atributos[0]["Informe_Tecnico"];
-                    this.Des_Informe_Tecnico = response.body.atributos[0]["Des_Informe_Tecnico"];
-                    this.Cumple_Intercencion = response.body.atributos[0]["Cumple_Intercencion"];
-                    this.Transtorno_Depresivo = response.body.atributos[0]["Transtorno_Depresivo"];
-                    this.Severidad_Trans_Depresivo = response.body.atributos[0]["Severidad_Trans_Depresivo"];
+                    this.Plan_Intervencion = response.body.atributos[0]["PLAN_INTERVENCION"];
+                    this.Des_Meta = response.body.atributos[0]["DES_META"];
+                    this.Informe_Tecnico = response.body.atributos[0]["INFORME_TECNICO"];
+                    this.Des_Informe_Tecnico = response.body.atributos[0]["DES_INFORME_TECNICO"];
+                    this.Cumple_Intercencion = response.body.atributos[0]["CUMPLE_INTERCENCION"];
+                    this.Transtorno_Depresivo = response.body.atributos[0]["TRANSTORNO_DEPRESIVO"];
+                    this.Severidad_Trans_Depresivo = response.body.atributos[0]["SEVERIDAD_TRANS_DEPRESIVO"];
                 
                 }
              });

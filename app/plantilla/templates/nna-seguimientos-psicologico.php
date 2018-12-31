@@ -102,7 +102,7 @@
 
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Severidad del trastorno depresivo?</label>
-                                    <select name="NNASeveridadTranstornoDepresivo" v-model="NNASeveridadTranstornoDepresivo" class="form-control">
+                                    <select name="Severidad_Trans_Depresivo" v-model="Severidad_Trans_Depresivo" class="form-control">
                                     <option value="Leve">Leve</option>
                                     <option value="Moderada">Moderada</option>
                                     <option value="Severa">Severa</option>
