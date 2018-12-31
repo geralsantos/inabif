@@ -45,10 +45,10 @@ Vue.component('ppd-datos-identificacion-residente', {
     },
     methods:{
         guardar(){
-            if (this.id_residente==null) {
+            /*if (this.id_residente==null) {
                 swal('Error', 'Residente no existe', 'success');
                 return false;
-            }
+            }*/
             let valores = {
                 Ape_Paterno: this.Ape_Paterno,
                 Ape_Materno: this.Ape_Materno,
