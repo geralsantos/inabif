@@ -10,7 +10,7 @@ Vue.component('registro-locales', {
         centros:[],
         showModal: false,
         tipo_centros:[],
-        id_usuario:null,
+        id_centro:null,
         centro_id:null,
         niveles_usuarios:[],
         nivel_id:null,
@@ -72,7 +72,7 @@ Vue.component('registro-locales', {
                 linea_intervencion :this.linea_intervencion,
                 nom_serv :this.nom_serv,
                 }
-                if (this.id_usuario==null) {
+                if (this.id_centro==null) {
                     this.$http.post('insertar_datos?view',{tabla:'centro_atencion', valores:valores}).then(function(response){
 
                         if( response.body.resultado ){
@@ -83,7 +83,7 @@ Vue.component('registro-locales', {
                         }
                     });
                 }else{
-                    let where = {id:this.id_usuario};
+                    let where = {id:this.id_centro};
                     this.$http.post('update_datos?view',{tabla:'centro_atencion', valores:valores,where:where}).then(function(response){
                         if( response.body.resultado ){
                             swal('', 'Registro Actualizado', 'success');
@@ -123,6 +123,7 @@ Vue.component('registro-locales', {
         },
         verRegistro(centro){
             if (isempty(centro)) {
+                this.id_centro=null;
                 this.tipo_centro_id=null;
                 this.codigo_entidad=null;
                 this.nombre_entidad=null;
@@ -143,6 +144,7 @@ Vue.component('registro-locales', {
  //let  where = {'id':usuario.ID};
               //this.$http.post('buscar?view',{where:where}).then(function(response){
                     //this.registro = response.body.atributos[0];
+                this.id_centro=centro.ID;
                 this.tipo_centro_id=centro.TIPO_CENTRO_ID;
                 this.codigo_entidad=centro.CODIGO_ENTIDAD;
                 this.nombre_entidad=centro.NOMBRE_ENTIDAD;
