@@ -4,7 +4,7 @@
                     <div class="card">
                         <div class="card-header">
                             <strong>Lista de Seguimiento</strong>
-                            <h6>Período: {{pediodo}}</h6>
+                            <h6>Período: {{periodo}}</h6>
                         </div>
                         <div class="card-body">
                            
