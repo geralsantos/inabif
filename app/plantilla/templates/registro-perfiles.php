@@ -81,7 +81,7 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Centro</label>
-                                <select name="centroID" v-model="centroID" class="form-control">
+                                <select name="centro_id" v-model="centro_id" class="form-control">
                                     <option v-for="centro in centros" :value="centro.ID">{{centro.NOM_CA}}</option>
                                 </select>
                                 </div>

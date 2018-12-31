@@ -11,6 +11,7 @@ Vue.component('registro-perfiles', {
         showModal: false,
         usuarios:[],
         id_usuario:null,
+        centro_id:null,
     }),
     created:function(){
     },
@@ -32,7 +33,7 @@ Vue.component('registro-perfiles', {
                 Correo: this.Correo,
                 DNI:this.DNI,
                 NumCel: this.NumCel,
-                centro_id :1,
+                CENTRO_ID :this.centro_id,
                 }
                 if (this.id_usuario==null) {
                     this.$http.post('insertar_datos?view',{tabla:'usuarios', valores:valores}).then(function(response){
