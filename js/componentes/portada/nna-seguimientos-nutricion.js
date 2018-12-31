@@ -35,7 +35,7 @@ Vue.component('nna-seguimientos-nutricion', {
             let valores = {
                
                 Plan_Intervencion:this.Plan_Intervencion,
-                Meta_PAI:this,Meta_PAI,
+                Meta_PAI:this.Meta_PAI,
                 Informe_Tecnico:this.Informe_Tecnico,
                 Cumple_Intervencion:this.Cumple_Intervencion,
                 Estado_Nutricional_Peso	:this.Estado_Nutricional_Peso,
