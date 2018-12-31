@@ -18,8 +18,8 @@
                     </thead>
                     <tbody>
                     <tr v-for="usuario in usuarios">
-                        <td>{{usuario.Nombre}}</td>
-                        <td>{{usuario.Apellido}}</td>
+                        <td>{{usuario.NOMBRE}}</td>
+                        <td>{{usuario.APELLIDO}}</td>
                         <td>{{usuario.DNI}}</td>
                         <td><button  class="btn btn-primary" @click="">Editar</button>
                         </td>
