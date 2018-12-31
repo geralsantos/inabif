@@ -94,7 +94,6 @@ Vue.component('pam-datos-identificacion-residente', {
                         apellido_p : this.Ape_Materno,
                         apellido_m : this.Nom_Usuario,
                         pais_id : this.pais_procedente_id,
-                        departamento_procedencia_cod : this.departamento_procedente_id,
                         departamento_naci_cod : this.departamento_nacimiento_id,
                         provincia_naci_cod : this.provincia_nacimiento_id,
                         distrito_naci_cod : this.distrito_nacimiento_id,

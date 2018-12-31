@@ -86,20 +86,30 @@ Vue.component('ppd-datos-identificacion-residente', {
                 }
                 if (isempty(this.id_residente)) {
                     let valores_residente = {
-               
+                        Ape_Paterno: this.Ape_Paterno,
+                        Ape_Materno: this.Ape_Materno,
+                        Nom_Usuario: this.Nom_Usuario,
+                        Pais_Procencia: this.Pais_Procencia,
+                        Depatamento_Procedencia: this.Depatamento_Procedencia,
+                        Provincia_Procedencia: this.Provincia_Procedencia,
+                        Distrito_Procedencia: this.Distrito_Procedencia,
+                        Sexo: this.Sexo,
+                        Fecha_Nacimiento:  moment(this.Fecha_Nacimiento, "YYYY-MM-DD").format("YY-MMM-DD"),
+                        Edad: this.Edad,
+                        Lengua_Materna: this.Lengua_Materna,
+
                         nombre : this.Nom_Usuario,
-                        apellido_p : this.Ape_Materno,
-                        apellido_m : this.Nom_Usuario,
-                        pais_id : this.pais_procedente_id,
-                        departamento_procedencia_cod : this.departamento_procedente_id,
-                        departamento_naci_cod : this.departamento_nacimiento_id,
-                        provincia_naci_cod : this.provincia_nacimiento_id,
-                        distrito_naci_cod : this.distrito_nacimiento_id,
+                        apellido_p : this.Ape_Paterno,
+                        apellido_m : this.Ape_Materno,
+                        pais_id : this.Pais_Procencia,
+                        departamento_naci_cod : this.Depatamento_Procedencia,
+                        provincia_naci_cod : this.Provincia_Procedencia,
+                        distrito_naci_cod : this.Distrito_Procedencia,
                         sexo: this.Sexo,
                         fecha_naci :  moment(this.Fecha_Nacimiento, "YYYY-MM-DD").format("YY-MMM-DD"),
                         edad: this.Edad,
                         lengua_materna: this.Lengua_Materna,
-                        documento :this.Numero_Doc
+                        //documento :this.Numero_Doc
                         }
                     this.$http.post('insertar_datos?view',{tabla:'residente', valores:valores_residente,lastid:true}).then(function(response){
                         valores.Residente_Id = response.body.lastid;
