@@ -200,8 +200,10 @@ if (isset($_GET["nombretabla"]) && $_GET["nombretabla"]!="") {
 /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
     */
     //$x->deleteDataNoWhere("pam_nivel_educativo");
-    $x->executeQuery("insert into centro_atencion (id,tipo_centro_id,CODDIST,codigo,nombre,usuario_crea ,usuario_edita) values(1,1,'140111','001','Centro 001',1,1)");
-  
+    
+    $x->executeQuery("insert into centro_atencion (id,tipo_centro_id,CODDIST,codigo,nombre,usuario_crea ,usuario_edita) values(1,1,'140111','002','Centro 002',1,1)");
+    $x->executeQuery("insert into centro_atencion (id,tipo_centro_id,CODDIST,codigo,nombre,usuario_crea ,usuario_edita) values(1,2,'140111','003','Centro 003',1,1)");
+    $x->executeQuery("insert into centro_atencion (id,tipo_centro_id,CODDIST,codigo,nombre,usuario_crea ,usuario_edita) values(1,3,'140111','004','Centro 004',1,1)");
 print_r($x->executeQuery("SELECT * FROM centro_atencion  WHERE  ESTADO=1"));
 die();
 
