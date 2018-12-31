@@ -17,8 +17,9 @@
                                         <th scope="col">Completo</th>
                                         <th scope="col">Fecha Cierre</th>
                                         <th scope="col">Cerrado</th>
-                                        <th scope="col">Opción</th>
-                                        <th scope="col"></th>
+                                        <th scope="col">Ver</th>
+                                        <th scope="col">Completar</th>
+                                        <th scope="col">Generar Matriz</th>
 
                                        
                                     </tr>
@@ -29,6 +30,7 @@
                                         <td>{{(isempty(centro.ESTADO_COMPLETO))?'NO':'SI'}}</td>
                                         <td>{{centro.FECHA_CIERRE}}</td>
                                         <td>{{(isempty(centro.FECHA_CIERRE))?'NO':'SI'}}</td>
+                                        <td><button>Ver</button></td>
                                         <td v-if="completado"><input type="checkbox" @change="completar_matriz(centro.ID_CENTRO)" :checked="!isempty(centro.ESTADO_COMPLETO)" class="form-control" ></td>
                                         <td v-if="matriz"><button>Generar Matriz</button></td>
                                     </tr>
