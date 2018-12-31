@@ -74,7 +74,7 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Diagnóstico Psiquiátrico 3 (CIE-10)</label>
-                                <input type="number" min="0" v-model="Diagnostico_Psiquiatrico_2" name="Diagnostico_Psiquiatrico_2"  placeholder="" class="form-control">
+                                <input type="number" min="0" v-model="Diagnostico_Psiquiatrico_3" name="Diagnostico_Psiquiatrico_3"  placeholder="" class="form-control">
                             </div>
                         </div>
                         <div class="row">
