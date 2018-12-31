@@ -160,7 +160,7 @@ class portada extends App{
         $_POST['valores']['Usuario_Crea'] =$_SESSION["usuario"][0]["ID"];
         $_POST['valores']['Usuario_Edita'] =$_SESSION["usuario"][0]["ID"];
         
-        $res = $modelo->updateData( $_POST['tabla'],$_POST["valores"]);
+        $res = $modelo->updateData( $_POST['tabla'],$_POST["valores"],$_POST["where"]);
         if ($res) {
             echo json_encode(array("resultado"=>true )) ;
         }else{
