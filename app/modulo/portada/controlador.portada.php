@@ -240,4 +240,24 @@ class portada extends App{
         }
        }
     }
+    public function buscar_centro(){
+      if( $_POST['tabla'])
+      {
+        $modelo = new modeloPortada();
+        if ($_SESSION["usuario"][0]["NIVEL"]=="5") {
+          $sql = "select *  from centro_atencion where estado = 1 and id =".$_SESSION["usuario"][0]["NIVEL"];
+        }else {
+          $sql = "select *  from centro_atencion ca 
+          left join tipo_centro tc on (ca.tipo_centro_id=tc.id) 
+          where tc.id=".$_SESSION["usuario"][0]["NIVEL"]." and ca.estado = 1";
+        }
+        $res = $modelo->executeQuery( $sql );
+        if ($res) 
+        {
+          echo json_encode($res) ;
+        }else{
+          return false;
+        }
+      }
+    }
 }
