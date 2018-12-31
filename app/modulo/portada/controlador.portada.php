@@ -137,7 +137,7 @@ class portada extends App{
         $res = $modelo->insertData( $_POST['tabla'],$_POST["valores"]);
         if ($res) {
           if ($lastid) {
-            echo json_encode(array("resultado"=>true,"lastid"=>$lastid )) ;
+            echo json_encode(array("resultado"=>true,"lastid"=>$lastid[0]["NEXTVAL"] )) ;
           }else{
             echo json_encode(array("resultado"=>true )) ;
           }
