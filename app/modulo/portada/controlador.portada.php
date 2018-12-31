@@ -116,7 +116,15 @@ class portada extends App{
       if( $_POST['tabla'] && $_POST['valores'] ){
         $modelo = new modeloPortada();
         //$modelo->executeQuery("delete from CarActividades");
-        $_POST['valores']['Residente_Id'] = $_SESSION["usuario"][0]["ID"];
+        $lastid = false;
+        if (isset($_POST['valores']['lastid'])) {
+          if ($_POST['valores']['lastid']) {
+            $lastid = true;
+          }
+        }
+        if (!$lastid) {
+          $_POST['valores']['Residente_Id'] = $_SESSION["usuario"][0]["ID"];
+        }
         $_POST['valores']['Tipo_Centro_Id'] = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
         $_POST['valores']['Fecha_Creacion'] = "18-DEC-27";
         $_POST['valores']['Estado'] = 1;
@@ -124,12 +132,7 @@ class portada extends App{
         $_POST['valores']['Usuario_Crea'] =$_SESSION["usuario"][0]["ID"];
         $_POST['valores']['Usuario_Edita'] =$_SESSION["usuario"][0]["ID"];
         //aqui tu ejecutas la consulta
-        $lastid = false;
-        if (isset($_POST['valores']['lastid'])) {
-          if ($_POST['valores']['lastid']) {
-            $lastid = true;
-          }
-        }
+        
         $res = $modelo->insertData( $_POST['tabla'],$_POST["valores"],$lastid);
         if ($lastid) {
           if ($res) {
