@@ -164,13 +164,17 @@ class MySQL extends PDO
       $stmt->execute($params);
       return $stmt->fetchAll();
     }
-    public function insertData($tabla, $values) {
+    public function insertData($tabla, $values, $lastid="") {
         if(count($values)>0){
             $query = 'INSERT INTO '.$tabla;
             $queryKeys = '';
             $queryKeys .= 'Id, ';
             $queryValues = '';
-            $queryValues .= "seq_".$tabla.'.NEXTVAL, ';
+            if ($lastid) {
+                $queryValues .= $lastid;
+            }else{
+                $queryValues .= "seq_".$tabla.'.NEXTVAL, ';
+            }
 
             $params = array();
             $coma = '';
