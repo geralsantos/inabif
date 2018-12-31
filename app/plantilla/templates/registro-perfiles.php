@@ -79,13 +79,13 @@
                                 <input type="number" v-model="NumCel" name="NumCel" placeholder="" class="form-control"> 
                                 </div>
                             </div>
-                            <!--<div class="form-group col-md-4">
+                            <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Centro</label>
                                 <select name="centroID" v-model="centroID" class="form-control">
                                     <option v-for="centro in centros" :value="centro.ID">{{centro.NOM_CA}}</option>
                                 </select>
                                 </div>
-                            </div>-->
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12 text-center" >
