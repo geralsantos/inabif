@@ -252,7 +252,7 @@ class portada extends App{
         }else {
           $sql = "select ca.*,cad.*  from centro_atencion ca 
           left join centro_atencion_detalle cad on (cad.centro_id=ca.id) 
-          where cad.estado = 1";
+          where ca.estado = 1";
         }
         $res = $modelo->executeQuery( array("data"=>$sql) );
         if ($res) 
