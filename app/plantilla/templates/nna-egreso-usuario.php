@@ -79,7 +79,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="form-group col-lg-7 col-md-7">
+                            <div class="form-group col-lg-12 col-md-12">
                                 <label for="text-input" class=" form-control-label">Aseguramiento universal de Salud-AUS</label>
                                     <select name="Salud_AUS" v-model="Salud_AUS" class="form-control">
                                         <option value="Si">Si</option>
