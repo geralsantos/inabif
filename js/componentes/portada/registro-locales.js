@@ -1,5 +1,5 @@
-Vue.component('registro-perfiles', {
-    template:'#registro-perfiles',
+Vue.component('registro-locales', {
+    template:'#registro-locales',
     data:()=>({
         Apellido: this.Apellido,
         Nombre: this.Nom_Usuario,
