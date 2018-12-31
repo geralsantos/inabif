@@ -4,6 +4,7 @@ Vue.component('seguimiento-lista-1', {
         periodo:moment().format('MMMM YYYY'),
         matriz:false,
         completado:false,
+        completo:false,
        centros:[],
 
         nombre_residente:null,
@@ -124,6 +125,16 @@ Vue.component('seguimiento-lista-1', {
                 }
             });
 
+        },
+
+        completar_matriz(id_centro){
+            this.$http.post('completar_matriz?view',{id_centro:id_centro}).then(function(response){
+
+                if( response.body.data != undefined){
+                    this.centros = response.body.data;
+                    
+                }
+            });
         }
      
 
