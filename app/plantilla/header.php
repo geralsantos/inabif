@@ -132,11 +132,9 @@
             <h3 class="menu-title">REGISTRO</h3>
             <modulos :changeviewevent="changeview"></modulos> 
             <h3 class="menu-title">SEGUIMIENTO</h3>
-            <a href="#registro-perfiles" class="list-group-item level-0" aria-expanded="true" id="Perfiles" style="width:100%;"></a>
-
             <h3 class="menu-title">REPORTES</h3>
             <h3 class="menu-title">PERFILES</h3>
-            <a href="#registro-perfiles" class="list-group-item level-0" aria-expanded="true" id="Perfiles" style="width:100%;">Perfiles</a>
+            <a href="#registro-locales" class="list-group-item level-0" aria-expanded="true" id="Perfiles" style="width:100%;">Perfiles</a>
             <a href="#registro-perfiles" class="list-group-item level-0" aria-expanded="true" id="Perfiles" style="width:100%;">Creación de Locales</a>
             <?php 
         }else if ($nivelusu=="2") {
