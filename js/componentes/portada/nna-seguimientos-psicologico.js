@@ -10,7 +10,7 @@ Vue.component('nna-seguimientos-psicologico', {
         Cumple_Intercencion:null,
         Transtorno_Depresivo :null,
         Severidad_Trans_Depresivo:null,
-                        
+        NNASeveridadTranstornoDepresivo:null,
         nombre_residente:null,
         isLoading:false,
         mes:moment().format("MM"),
