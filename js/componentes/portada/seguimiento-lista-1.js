@@ -3,7 +3,7 @@ Vue.component('seguimiento-lista-1', {
     data:()=>({
         periodo:moment().format('MMMM YYYY'),
         matriz:false,
-        completado:true,
+        mostrar_completado:false,
         completo:false,
        centros:[],
        usuario:[],
@@ -113,6 +113,11 @@ Vue.component('seguimiento-lista-1', {
 
                 if( response.body.data != undefined){
                     this.usuario = response.body.data[0];
+                  //  if(this.usuario.NIVEL == 5){
+                        this.mostrar_completado = true;
+                        this.matriz = true;
+                  //  }
+                    
                   console.log(this.usuario);
                 }
             });
@@ -135,6 +140,19 @@ Vue.component('seguimiento-lista-1', {
 
                 if( response.body.resultado ){
                     swal("", "Centro completado", "success");
+                    this.buscar_centros();
+                }else{
+                    swal("", "Ha ocurrido un error", "error");
+                    this.buscar_centros();
+                }
+            });
+        },
+        generar_matriz(id_centro){
+            console.log("generar_matriz");
+            this.$http.post('generar_matriz?view',{id_centro:id_centro}).then(function(response){
+
+                if( response.body.resultado ){
+                    swal("", "Matriz Generada", "success");
                     this.buscar_centros();
                 }else{
                     swal("", "Ha ocurrido un error", "error");
