@@ -229,7 +229,6 @@ class portada extends App{
        }
     }
     public function traer_datos_usuarios(){
-      if( $_POST['tabla']){
         $modelo = new modeloPortada();
         $sql = "select *  from usuarios where estado = 1 and id =".$_SESSION["usuario"][0]["ID"];
         $res = $modelo->executeQuery( $sql );
@@ -238,7 +237,6 @@ class portada extends App{
         }else{
           return false;
         }
-       }
     }
     public function buscar_centros(){
         $modelo = new modeloPortada();
