@@ -68,9 +68,7 @@
             ?>
             <h3 class="menu-title">REGISTRO</h3>
             <modulos :changeviewevent="changeview"></modulos> 
-            <a href="#registro_perfiles" class="list-group-item level-0" data-toggle="collapse" aria-expanded="true" id="gardening">Registro Usuarios 
-                <i class="fa fa-caret-down"></i>
-            </a>
+            
             <h3 class="menu-title">SEGUIMIENTO</h3>
             <h3 class="menu-title">REPORTES</h3>
             <h3 class="menu-title">PERFILES</h3>
