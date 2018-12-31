@@ -101,7 +101,7 @@ Vue.component('seguimiento-lista-2', {
             });
         },
 
-        mostrar_modulo(id){
+        mostrar_modulo(){
             let  where = {'id':id};
             this.$http.post('buscar_modulo?view',{id:id}).then(function(response){
                 this.campos = response.body.atributos[0];
@@ -110,7 +110,7 @@ Vue.component('seguimiento-lista-2', {
             });
         },
         listar_modulos(){
-            this.$http.post('listar_modulos?view',{id:id}).then(function(response){
+            this.$http.post('listar_modulos?view',{}).then(function(response){
                 this.registro = response.body.atributos[0];
                 this.showModal = true;
                 

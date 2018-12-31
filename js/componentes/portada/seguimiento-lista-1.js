@@ -117,8 +117,7 @@ Vue.component('seguimiento-lista-1', {
                         this.mostrar_completado = true;
                         this.matriz = true;
                   //  }
-                    
-                  console.log(this.usuario);
+               
                 }
             });
         },
