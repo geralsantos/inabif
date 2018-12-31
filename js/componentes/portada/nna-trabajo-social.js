@@ -64,7 +64,7 @@ Vue.component('nna-trabajo-social', {
                 Resultado_Clasificacion :this.Resultado_Clasificacion,
                 Nro_VisitasNNA :this.Nro_VisitasNNA,
                 Participacion_EscuelaP :this.Participacion_EscuelaP,
-                Consegeria_Familiar :this.NNAOrientacionFamilia,
+                Consegeria_Familiar :this.Consegeria_Familiar,
                 Soporte_Social:this.Soporte_Social,
                 Consejeria_Residentes:this.Consejeria_residente,
                 Charlas  :this.Charlas,

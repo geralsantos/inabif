@@ -177,7 +177,7 @@
                         <div class="row">
                         <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">N° consejerias y orientaciones a la familia</label>
-                                <input type="number" min="0"  v-model="NNAOrientacionFamilia" name="NNAOrientacionFamilia" value='5' placeholder="" class="form-control">
+                                <input type="number" min="0"  v-model="Consegeria_Familiar" name="Consegeria_Familiar" value='5' placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">Familia usa redes de soporte familiar?</label>
