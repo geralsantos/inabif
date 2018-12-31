@@ -11,7 +11,6 @@ Vue.component('registro-perfiles', {
         showModal: false,
         usuarios:[],
         id_usuario:null,
-        showModal:false,
     }),
     created:function(){
     },
