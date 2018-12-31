@@ -18,6 +18,7 @@ Vue.component('registro-locales', {
         codigo_entidad:null,
         nombre_entidad:null,
         cod_serv:null,
+        nom_ca :null,
         cod_ca:null,
         administrador_nombre:null,
         nombre_director :null,
@@ -127,6 +128,7 @@ Vue.component('registro-locales', {
                 this.nombre_entidad=null;
                 this.cod_serv=null;
                 this.cod_ca=null;
+                this.nom_ca=null;
                 this.administrador_nombre=null;
                 this.nombre_director=null;
                 this.telefono=null;
@@ -146,6 +148,7 @@ Vue.component('registro-locales', {
                 this.nombre_entidad=centro.NOMBRE_ENTIDAD;
                 this.cod_serv=centro.COD_SERV;
                 this.cod_ca=centro.COD_CA;
+                this.nom_ca=centro.NOM_CA;
                 this.administrador_nombre=centro.ADMINISTRADOR_NOMBRE;
                 this.nombre_director=centro.NOMBRE_DIRECTOR;
                 this.telefono=centro.TELEFONO;
