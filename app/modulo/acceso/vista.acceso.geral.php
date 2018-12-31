@@ -21,7 +21,7 @@
     <div class="form-group col-md-12">
         <label for="text-input" class=" form-control-label">Crear Tabla</label>
             <input type="text" class="form-control"  style="witdh:100%;" size="100" placeholder="Nombre de la tabla" name="tablename" value="<?php echo $_GET["tablename"]?>" placeholder="tablename" >
-            <textarea name="campostabla" value="<?php echo $_GET["campostabla"]?>" id="" cols="100" rows="20"></textarea>
+            <textarea name="campostabla" class="form-control"  value="<?php echo $_GET["campostabla"]?>" id="" cols="100" rows="20"></textarea>
     </div>
 </div>
 <div class="row">
