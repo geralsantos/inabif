@@ -105,14 +105,19 @@ public function __construct() {
 public function executeQuery($query, $params=NULL){
 
       try{
-
+        echo "EJECUTANDO: ".$query;
+        echo "<br>";
         $stmt = parent::prepare($query);
 
         if($stmt->execute($params)){
-            echo "executeQuery";
+            echo "EJECUTADO: ".$query;
+        echo "<br>";
+
           return $stmt->fetchAll();
 
         }else{
+            echo "ERROR: ".$query;
+        echo "<br>";
 
           return array();
 
@@ -155,8 +160,9 @@ public function executeQuery($query, $params=NULL){
         $query = 'DELETE FROM ' . $tabla;
         $params = array();
         $stmt = parent::prepare($query);
+        echo "BORRANDO: ".$query;
         $stmt->execute($params);
-        echo "borrado: ".$tabla;
+        echo "BORRADO: ".$tabla;
         if($stmt->rowCount()>0){
             return TRUE;
         }else{
