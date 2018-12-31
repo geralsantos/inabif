@@ -135,6 +135,10 @@
             <h3 class="menu-title">SEGUIMIENTO</h3>
             <h3 class="menu-title">REPORTES</h3>
             <h3 class="menu-title">PERFILES</h3>
+            <a href="#node11" class="list-group-item level-0" data-toggle="collapse"
+                aria-expanded="true" id="gardening">Gardening 
+                    <i class="fa fa-caret-down"></i>
+                </a>
             <?php 
         }else if ($nivelusu=="2") {
             # code...
