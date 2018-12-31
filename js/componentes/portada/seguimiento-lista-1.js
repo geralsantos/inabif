@@ -4,7 +4,7 @@ Vue.component('seguimiento-lista-1', {
         periodo:moment().format('MMMM YYYY'),
         matriz:false,
         completado:false,
-       
+       centros:[],
 
         nombre_residente:null,
         isLoading:false,
