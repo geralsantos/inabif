@@ -134,6 +134,9 @@ Vue.component('seguimiento-lista-1', {
                 if( response.body.resultado ){
                     swal("", "Centro completado", "success");
                     this.buscar_centros();
+                }else{
+                    swal("", "Ha ocurrido un error", "error");
+                    this.buscar_centros();
                 }
             });
         },
