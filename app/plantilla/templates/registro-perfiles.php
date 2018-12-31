@@ -48,19 +48,19 @@
                 <div class="modal-body">
                 <form  class="form-horizontal"  v-on:submit.prevent="guardar">
                         <div class="row">
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-6">
                                 <div class=" "><label for="text-input" class=" form-control-label">Apellidos</label>
                                 <input type="text" v-model="Apellido" name="Apellido" placeholder="" class="form-control"> 
                                 </div>
                             </div>
                            
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-6">
                                 <div class=" "><label for="text-input" class=" form-control-label">Nombres</label>
                                 <input type="text" v-model="Nombre" name="Nombre" placeholder="" class="form-control"> </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-6">
                                 <div class=" "><label for="text-input" class=" form-control-label">Correo</label>
                                 <input type="email" v-model="Correo" name="Correo" placeholder="" class="form-control"> 
                                 </div>
@@ -68,12 +68,12 @@
                            
                         </div>
                         <div class="row">
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-6">
                                 <div class=" "><label for="text-input" class=" form-control-label">DNI</label>
                                 <input type="number" v-model="DNI" name="DNI" placeholder="" class="form-control"> 
                                 </div>
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-6">
                                 <div class=" "><label for="text-input" class=" form-control-label">Númer Celular</label>
                                 <input type="number" v-model="NumCel" name="NumCel" placeholder="" class="form-control"> 
                                 </div>
@@ -86,7 +86,6 @@
                                 </div>
                             </div>-->
                         </div>
-                        
                         <div class="row">
                             <div class="col-md-12 text-center" >
                                 <button type="submit" class="btn btn-success btn-sm">
