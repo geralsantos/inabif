@@ -75,7 +75,7 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Detalle del motivo del egreso</label>
-                                <input type="text" v-model="Detalle_Motivo" name="Detalle_Motivo" placeholder="" class="form-control"> </div>
+                                <textarea v-model="Detalle_Motivo" name="Detalle_Motivo" placeholder="" class="form-control" cols="30" rows="2"></textarea>
                             </div>
                         </div>
                         <div class="row">
