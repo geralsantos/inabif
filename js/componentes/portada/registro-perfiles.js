@@ -66,7 +66,7 @@ Vue.component('registro-perfiles', {
                     this.Correo= null;
                     this.DNI=null;
                     this.NumCel= null;
-                    this.centro_id =1;
+                    this.centro_id =null;
                     this.showModal = true;
             }else{
  //let  where = {'id':usuario.ID};
@@ -78,7 +78,7 @@ Vue.component('registro-perfiles', {
                     this.Correo= usuario.CORREO;
                     this.DNI=usuario.DNI;
                     this.NumCel= usuario.NUMCEL;
-                    this.centro_id =1,
+                    this.centro_id =usuario.CENTRO_ID,
                     this.showModal = true;
               //});
             }
