@@ -95,7 +95,7 @@ Vue.component('nna-egreso-usuario', {
 
                 if( response.body.atributos != undefined){
 
-                    this.Fecha_Egreso = response.body.atributos[0]["FECHA_EGRESO"];
+                    this.Fecha_Egreso = moment(response.body.atributos[0]["FECHA_EGRESO"]).format("YYYY-MM-DD");
                     this.MotivoEgreso = response.body.atributos[0]["MOTIVOEGRESO"];
                     this.Detalle_Motivo = response.body.atributos[0]["DETALLE_MOTIVO"];
                     this.Salud_AUS = response.body.atributos[0]["SALUD_AUS"];
