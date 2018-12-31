@@ -112,7 +112,7 @@ Vue.component('seguimiento-lista-1', {
             this.$http.post('traer_datos_usuario?view',{}).then(function(response){
 
                 if( response.body.data != undefined){
-                    this.usuario = response.body.data[0]["ID"]
+                    this.usuario = response.body.data[0];
                   console.log(this.usuario);
                 }
             });
