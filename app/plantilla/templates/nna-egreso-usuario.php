@@ -79,30 +79,30 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-7">
                                 <label for="text-input" class=" form-control-label">Aseguramiento universal de Salud-AUS</label>
                                     <select name="Salud_AUS" v-model="Salud_AUS" class="form-control">
                                         <option value="Si">Si</option>
                                         <option value="No">No</option>
                                     </select>
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-5">
                                 <label for="text-input" class=" form-control-label">¿Partida de Nacimiento?</label>
                                     <select name="Partida_Naci" v-model="Partida_Naci" class="form-control">
                                     <option value="Si">Si</option>
                                         <option value="No">No</option>
                                     </select>
                             </div>
-                            <div class="form-group col-md-4">
+                           
+                        </div>
+                        <div class="row">
+                        <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">¿DNI?</label>
                                     <select name="DNI" v-model="DNI" class="form-control">
                                     <option value="Si">Si</option>
                                         <option value="No">No</option>
                                     </select>
                             </div>
-                        </div>
-                        <div class="row">
-
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">¿Educación?</label>
                                 <select name="Educacion" v-model="Educacion" class="form-control">
