@@ -69,6 +69,7 @@ Vue.component('registro-perfiles', {
                     this.centro_id =null;
                     this.showModal = true;
             }else{
+                console.log(usuario);
  //let  where = {'id':usuario.ID};
               //this.$http.post('buscar?view',{where:where}).then(function(response){
                     //this.registro = response.body.atributos[0];
