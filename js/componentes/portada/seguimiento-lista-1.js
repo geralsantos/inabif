@@ -3,7 +3,7 @@ Vue.component('seguimiento-lista-1', {
     data:()=>({
         periodo:moment().format('MMMM YYYY'),
         matriz:false,
-        completado:false,
+        completado:true,
         completo:false,
        centros:[],
 
