@@ -123,9 +123,9 @@ class portada extends App{
             $lastid = $modelo->executeQuery( $sql );
           }
         }
-        if (!$lastid) {
+        /*if (!$lastid) {
           $_POST['valores']['Residente_Id'] = $_SESSION["usuario"][0]["ID"];
-        }
+        }*/
         $_POST['valores']['Tipo_Centro_Id'] = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
         $_POST['valores']['Fecha_Creacion'] = "18-DEC-27";
         $_POST['valores']['Estado'] = 1;
