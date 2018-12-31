@@ -114,11 +114,11 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Diagnóstico  Agudo 2 (CIE-10)</label>
-                                <input type="number" min="0" v-model="Diagnostico_Agudo_1" name="Diagnostico_Agudo_1"  placeholder="" class="form-control">
+                                <input type="number" min="0" v-model="Diagnostico_Agudo_2" name="Diagnostico_Agudo_2"  placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Diagnóstico  Agudo 3 (CIE-10)</label>
-                                <input type="number" min="0" v-model="Diagnostico_Agudo_1" name="Diagnostico_Agudo_1"  placeholder="" class="form-control">
+                                <input type="number" min="0" v-model="Diagnostico_Agudo_3" name="Diagnostico_Agudo_3"  placeholder="" class="form-control">
                             </div>
                         </div>
                         <div class="row">
