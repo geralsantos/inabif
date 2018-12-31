@@ -198,7 +198,7 @@ Vue.component('ppd-datos-identificacion-residente', {
                 if( response.body.data ){
                     this.provincias= response.body.data;
                     //this.Provincia_Procedencia = response.body.data[0]["CODPROV"];
-                    //this.buscar_distritos();
+                    this.buscar_distritos();
                 }
 
             });
