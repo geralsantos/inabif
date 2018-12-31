@@ -233,7 +233,7 @@ class portada extends App{
         $sql = "select *  from usuarios where estado = 1 and id =".$_SESSION["usuario"][0]["ID"];
         $res = $modelo->executeQuery( $sql );
         if ($res) {
-          echo json_encode($res) ;
+          echo json_encode(array("data"=>$res)) ;
         }else{
           return false;
         }
