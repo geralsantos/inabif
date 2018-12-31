@@ -136,7 +136,7 @@ Vue.component('seguimiento-lista-1', {
                 }
             });
         },
-        completar_matriz
+       
      
 
     }
