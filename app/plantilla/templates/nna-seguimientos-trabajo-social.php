@@ -56,7 +56,7 @@
                         <div class="row">
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Plan de Intervención </label>
-                                <select name="Plan_Intervencion" id="Plan_Intervencion" class="form-control">
+                                <select name="Plan_Intervencion" id="Plan_Intervencion" v-model="Plan_Intervencion" class="form-control">
                                 <option value="Si">Si</option>
                                 <option value="No">No</option>
                                 </select> </div>
@@ -64,11 +64,11 @@
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Meta trazada en el PAI</label>
                          
-                                <textarea id="Meta_PAI" name="Meta_PAI" class="form-control" cols="30" rows="2"></textarea>
+                                <textarea id="Meta_PAI" name="Meta_PAI" v-model="Meta_PAI" class="form-control" cols="30" rows="2"></textarea>
                             </div>
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Posee informe técnico evolutivo?</label>
-                                <select name="Informe_Tecnico" id="Informe_Tecnico" class="form-control">
+                                <select name="Informe_Tecnico" id="Informe_Tecnico" v-model="Informe_Tecnico" class="form-control">
                                 <option value="Si">Si</option>
                                 <option value="No">No</option>
                                 </select>  </div>
@@ -77,7 +77,7 @@
                         <div class="row">
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">¿Cumplimiento del Plan de intervención</label>
-                                    <select name="Cumple_Intervencion" id="Cumple_Intervencion" class="form-control">
+                                    <select name="Cumple_Intervencion" v-model="Cumple_Intervencion" id="Cumple_Intervencion" class="form-control">
                                     <option value="Cumplida">Cumplida</option>
                                     <option value="En proceso">En proceso</option>
                                     <option value="No se evidencia progreso">No se evidencia progreso</option>
@@ -85,14 +85,14 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">¿Participación activa familiar?</label>
-                                    <select name="ParticipacionF_Activa" id="ParticipacionF_Activa" class="form-control">
+                                    <select name="ParticipacionF_Activa" v-model="ParticipacionF_Activa" id="ParticipacionF_Activa" class="form-control">
                                     <option value="Si">Si</option>
                                     <option value="No">No</option>
                                     </select>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">¿Plan de Reinserción familiar?</label>
-                                    <select name="Reinsercion_Familiar" id="Reinsercion_Familiar" class="form-control">
+                                    <select name="Reinsercion_Familiar" v-model="Reinsercion_Familiar" id="Reinsercion_Familiar" class="form-control">
                                     <option value="Si">Si</option>
                                 <option value="No">No</option>
                                     </select>
