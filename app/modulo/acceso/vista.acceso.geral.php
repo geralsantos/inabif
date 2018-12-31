@@ -200,12 +200,12 @@ if (isset($_GET["nombretabla"]) && $_GET["nombretabla"]!="") {
 /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
     */
     $x->deleteDataNoWhere("usuarios");
-    $x->executeQuery("insert into usuarios (id,centro_id ,nivel ,nombre ,apellido,correo ,usuario ,clave , fecha_creacion,usuario_crea,usuario_edita)
-    values(1,1,1,'ppd','ppd','ppd@gmail.com','ppd',123,sysdate,1,1)");
-    $x->executeQuery("insert into usuarios (id,centro_id ,nivel ,nombre ,apellido,correo ,usuario ,clave , fecha_creacion,usuario_crea,usuario_edita)
-    values(2,2,1,'pam','pam','pam@gmail.com','pam',123,sysdate,1,1)");
-    $x->executeQuery("insert into usuarios (id,centro_id ,nivel ,nombre ,apellido,correo ,usuario ,clave , fecha_creacion,usuario_crea,usuario_edita)
-    values(3,3,1,'nna','nna','nna@gmail.com','nna',123,sysdate,1,1)");
+    $x->executeQuery("insert into usuarios (id,centro_id ,nivel ,nombre ,apellido,correo ,dni,usuario ,clave , fecha_creacion,usuario_crea,usuario_edita)
+    values(1,1,1,'ppd','ppd','ppd@gmail.com','76934493','ppd',123,sysdate,1,1)");
+    $x->executeQuery("insert into usuarios (id,centro_id ,nivel ,nombre ,apellido,correo ,dni,usuario ,clave , fecha_creacion,usuario_crea,usuario_edita)
+    values(2,2,1,'pam','pam','pam@gmail.com','76934494','pam',123,sysdate,1,1)");
+    $x->executeQuery("insert into usuarios (id,centro_id ,nivel ,nombre ,apellido,correo ,dni,usuario ,clave , fecha_creacion,usuario_crea,usuario_edita)
+    values(3,3,1,'nna','nna','nna@gmail.com','76934495','nna',123,sysdate,1,1)");
   
  
 /*
