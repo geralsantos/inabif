@@ -2,7 +2,7 @@
 <div class="row">
     <div class="form-group col-md-4">
         <div class=" "><label for="text-input" class=" form-control-label">Elegir opción</label>
-        <select name="opcionejecutar" id="opcionejecutar">
+        <select class="form-control"  name="opcionejecutar" id="opcionejecutar">
             <option value="SELECT/INSERT" selected="selected">SELECT/INSERT</option> 
             <option value="DELETE">DELETE</option>
             <option value="CREATETABLE">DROP/CREATE TABLE y SEQUENCE</option>
@@ -12,15 +12,15 @@
 </div>
 <div class="row">
     <div class="form-group col-md-12">
-        <label for="text-input" class=" form-control-label">Escribir insert/select a ejecutar</label>
-        <input type="text" style="witdh:100%;" placeholder="SELECT * FROM/INSERT INTO" size="100" value="<?php echo $_GET["nombretabla"]?>" name="nombretabla" placeholder="tabla">
+        <label for="text-input" class="form-control-label">Escribir insert/select a ejecutar</label>
+        <input type="text" style="witdh:100%;" class="form-control" placeholder="SELECT * FROM/INSERT INTO" size="100" value="<?php echo $_GET["nombretabla"]?>" name="nombretabla" placeholder="tabla">
     </div>
     
 </div>
 <div class="row">
     <div class="form-group col-md-12">
         <label for="text-input" class=" form-control-label">Crear Tabla</label>
-            <input type="text" style="witdh:100%;" size="100" placeholder="Nombre de la tabla" name="tablename" value="<?php echo $_GET["tablename"]?>" placeholder="tablename" >
+            <input type="text" class="form-control"  style="witdh:100%;" size="100" placeholder="Nombre de la tabla" name="tablename" value="<?php echo $_GET["tablename"]?>" placeholder="tablename" >
             <textarea name="campostabla" value="<?php echo $_GET["campostabla"]?>" id="" cols="100" rows="20"></textarea>
     </div>
 </div>
