@@ -16,9 +16,10 @@ Vue.component('nna-trabajo-social', {
         Resultado_Clasificacion :null,
         Nro_VisitasNNA :null,
         Participacion_EscuelaP :null,
+        NNAOrientacionFamilia:null,
         Consegeria_Familiar:null,
         Soporte_Social:null,
-        Consejeria_Residentes:null,
+        Consejeria_residente:null,
         Charlas  :null,
         Visitas_Domicilarias:null,
         Reinsercion_Familiar:null,
@@ -63,9 +64,9 @@ Vue.component('nna-trabajo-social', {
                 Resultado_Clasificacion :this.Resultado_Clasificacion,
                 Nro_VisitasNNA :this.Nro_VisitasNNA,
                 Participacion_EscuelaP :this.Participacion_EscuelaP,
-                Consegeria_Familiar:this.Consegeria_Familiar,
+                Consegeria_Familiar :this.NNAOrientacionFamilia,
                 Soporte_Social:this.Soporte_Social,
-                Consejeria_Residentes:this.Consejeria_Residentes,
+                Consejeria_Residentes:this.Consejeria_residente,
                 Charlas  :this.Charlas,
                 Visitas_Domicilarias:this.Visitas_Domicilarias,
                 Reinsercion_Familiar:this.Reinsercion_Familiar,
@@ -141,7 +142,7 @@ Vue.component('nna-trabajo-social', {
                     this.Participacion_EscuelaP = response.body.atributos[0]["PARTICIPACION_ESCUELAP"]; 
                     this.Consegeria_Familiar = response.body.atributos[0]["CONSEGERIA_FAMILIAR"];
                     this.Soporte_Social = response.body.atributos[0]["SOPORTE_SOCIAL"];
-                    this.Consejeria_Residentes = response.body.atributos[0]["CONSEJERIA_RESIDENTES"];
+                    this.Consejeria_residente = response.body.atributos[0]["CONSEJERIA_RESIDENTES"];
                     this.Charlas = response.body.atributos[0]["CHARLAS"];
                     this.Visitas_Domicilarias = response.body.atributos[0]["VISITAS_DOMICILARIAS"];
                     this.Reinsercion_Familiar = response.body.atributos[0]["REINSERCION_FAMILIAR"];

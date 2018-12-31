@@ -190,7 +190,7 @@
                         <div class="row">
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº de consejerias y orientaciones al residente </label>
-                                <input type="number" min="0"  v-model="Consegeria_Familiar" name="Consegeria_Familiar" value='5' placeholder="" class="form-control">
+                                <input type="number" min="0"  v-model="Consejeria_residente" name="Consejeria_residente" value='5' placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº Charlas Preventivo  - Promocionales </label>
