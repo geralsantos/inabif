@@ -204,7 +204,7 @@ if (isset($_GET["nombretabla"]) && $_GET["nombretabla"]!="") {
      values(1,1,1,1,'ppd','ppd','ppd@gmail.com','ppd',123,sysdate,1,1)");
      $x->executeQuery("insert into usuarios (id,centro_id,Tipo_Centro_Id ,nivel ,nombre ,apellido,correo ,usuario ,clave , fecha_creacion,usuario_crea,usuario_edita)
      values(2,2,2,1,'pam','pam','pam@gmail.com','pam',123,sysdate,1,1)");
-     $x->executeQuery("insert into usuarios (idcentro_id,,Tipo_Centro_Id ,nivel ,nombre ,apellido,correo ,usuario ,clave , fecha_creacion,usuario_crea,usuario_edita)
+     $x->executeQuery("insert into usuarios (id,centro_id,Tipo_Centro_Id ,nivel ,nombre ,apellido,correo ,usuario ,clave , fecha_creacion,usuario_crea,usuario_edita)
      values(3,3,3,1,'nna','nna','nna@gmail.com','nna',123,sysdate,1,1)");
  
  
