@@ -228,4 +228,16 @@ class portada extends App{
     
        }
     }
+    public function traer_datos_usuarios(){
+      if( $_POST['tabla']){
+        $modelo = new modeloPortada();
+        $sql = "select *  from usuarios where estado = 1 and id =".$_SESSION["usuario"][0]["ID"];
+        $res = $modelo->executeQuery( $sql );
+        if ($res) {
+          echo json_encode($res) ;
+        }else{
+          return false;
+        }
+       }
+    }
 }
