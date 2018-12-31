@@ -87,7 +87,7 @@ Vue.component('registro-perfiles', {
         buscar_centros(){
             this.$http.post('buscar?view',{tabla:'centro_atencion'}).then(function(response){
                 if( response.body.data ){
-                    this.lenguas= response.body.data;
+                    this.centros= response.body.data;
                 }
 
             });
