@@ -12,12 +12,15 @@ Vue.component('registro-perfiles', {
         usuarios:[],
         id_usuario:null,
         centro_id:null,
+        niveles_usuarios:[],
+        nivel_id:null,
     }),
     created:function(){
     },
     mounted:function(){
         this.buscar_centros();
         this.listar_usuarios();
+        this.listar_nivelesusuarios();
     },
     updated:function(){
     },
@@ -98,6 +101,14 @@ Vue.component('registro-perfiles', {
             this.$http.post('buscar?view',{tabla:'usuarios'}).then(function(response){
                 if( response.body.data ){
                     this.usuarios= response.body.data;
+                }
+
+            });
+        },
+        listar_nivelesusuarios(){
+            this.$http.post('buscar?view',{tabla:'niveles_usuarios'}).then(function(response){
+                if( response.body.data ){
+                    this.niveles_usuarios= response.body.data;
                 }
 
             });
