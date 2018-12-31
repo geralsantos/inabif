@@ -6,6 +6,7 @@ Vue.component('seguimiento-lista-2', {
         completado:false,
         showModal:false,
         grupos:[],
+        campos:[],
 
         nombre_residente:null,
         isLoading:false,
@@ -101,18 +102,18 @@ Vue.component('seguimiento-lista-2', {
             });
         },
 
-        mostrar_modulo(){
-            let  where = {'id':id};
-            this.$http.post('buscar_modulo?view',{id:id}).then(function(response){
-                this.campos = response.body.atributos[0];
+        mostrar_modulo(id_grupo){
+          
+            this.$http.post('buscar_modulo?view',{id_grupo:id_grupo}).then(function(response){
+                this.campos = response.body.data[0];
                 this.showModal = true;
                 
             });
         },
         listar_grupos(){
             let id_centro = document.getElementById("mensaje_entre_componentes"); 
-            this.$http.post('listar_grupos?view',{id_centro:id_centro}).then(function(response){
-                this.registro = response.body.atributos[0];
+            this.$http.post('buscar_grupos?view',{id_centro:id_centro}).then(function(response){
+                this.grupos = response.body.data[0];
                 this.showModal = true;
                 
             });
