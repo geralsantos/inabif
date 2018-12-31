@@ -63,8 +63,7 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Descripción de la meta trazada en el PAI</label>
-                                <input type="text" v-model="Des_Meta" name="Des_Meta" value='Meta' placeholder="" class="form-control"> </div>
-
+                                <textarea v-model="Des_Meta" name="Des_Meta" class="form-control" cols="30" rows="2"></textarea>
                             </div>
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Posee informe técnico evolutivo?</label>
