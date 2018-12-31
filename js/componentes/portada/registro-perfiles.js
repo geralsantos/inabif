@@ -62,6 +62,7 @@ Vue.component('registro-perfiles', {
             //let  where = {'id':usuario.ID};
               //this.$http.post('buscar?view',{where:where}).then(function(response){
                     //this.registro = response.body.atributos[0];
+                    console.log(usuario);
                     this.id_usuario=usuario.ID
                     this.Apellido= usuario.Apellido,
                     this.Nombre= usuario.Nombre,
