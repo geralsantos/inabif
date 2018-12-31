@@ -170,6 +170,20 @@ class portada extends App{
         return false;
       }
     }
+    public function delete_datos(){
+
+      if( $_POST['tabla']){
+        $modelo = new modeloPortada();
+        $res = $modelo->deleteData( $_POST['tabla'],$_POST["where"]);
+        if ($res) {
+            echo json_encode(array("resultado"=>true )) ;
+        }else{
+          return false;
+        }
+      }else{
+        return false;
+      }
+    }
     public function ejecutar_consulta(){
       if( $_POST['like']){
         $modelo = new modeloPortada();

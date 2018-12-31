@@ -63,6 +63,17 @@ Vue.component('registro-perfiles', {
            
              
         },
+        EliminarUsuario(usuario){
+            let where = {id:usuario.ID}
+            this.$http.post('delete_datos?view',{tabla:'usuarios',where:where}).then(function(response){
+                if( response.body.resultado ){
+                    swal('', 'Usuario Eliminado', 'success');
+                    this.listar_usuarios();
+                }else{
+                  swal("", "Un error ha ocurrido", "error");
+                }
+            });
+        },
         verRegistro(usuario){
             if (isempty(usuario)) {
                     this.id_usuario=null;
