@@ -30,7 +30,7 @@
         <input type="text" style="witdh:100%;" size="100" placeholder="Nombre de la Tabla" value="<?php echo $_GET["deletefrom"]?>" name="deletefrom" placeholder="deletefrom">
     </div>
 </div>
-<button type="submit">mostrar resultados</button>
+<button type="submit" class="btn btn-success btn-flat">Ejecutar Query</button>
 </form>
 
     
