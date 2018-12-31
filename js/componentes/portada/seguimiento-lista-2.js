@@ -115,8 +115,11 @@ Vue.component('seguimiento-lista-2', {
                 this.showModal = true;
                 
             });
-        }
-     
+        },
+        remover_mensaje_entre_componentes(){
+            var input = document.getElementById("mensaje_entre_componentes"); 
+            input.parentNode.removeChild(input)
+          }
 
     }
   })
