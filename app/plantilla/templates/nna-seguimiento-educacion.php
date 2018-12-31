@@ -133,7 +133,7 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Especificar la actividad / oficio</label>
-                                    <textarea name="ActividadOficio" v-model="ActividadOficio" col="30" ros="2"></textarea>
+                                    <textarea name="ActividadOficio" class="form-control" v-model="ActividadOficio" col="30" ros="2"></textarea>
                             </div>
                         </div>
                         
