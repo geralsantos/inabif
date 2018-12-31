@@ -119,7 +119,7 @@ class portada extends App{
         $lastid = false;
         if (isset($_POST['lastid'])) {
           if ($_POST['lastid']) {
-            $sql = "SELECT * FROM seq_".$_POST['tabla'].".NEXTVAL FROM DUAL";
+            $sql = "SELECT seq_".$_POST['tabla'].".NEXTVAL FROM DUAL";
             $lastid = $modelo->executeQuery( $sql );
           }
         }
