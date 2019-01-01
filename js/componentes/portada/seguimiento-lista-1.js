@@ -164,8 +164,9 @@ Vue.component('seguimiento-lista-1', {
         },
         ver_grupos(centro_id){
             alert(centro_id);
-            window.location.hash='#seguimiento-lista-2';
             this.mensaje_entre_componentes(centro_id);
+            window.location.hash='#seguimiento-lista-2';
+            
         },
         mensaje_entre_componentes(centro_id){
             var input = document.createElement("input");
