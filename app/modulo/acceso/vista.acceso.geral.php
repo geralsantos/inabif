@@ -211,6 +211,13 @@ if (isset($_GET["opcionejecutar"]) && $_GET["opcionejecutar"]!="") {
     }
     die();
 }else{
+    $mdl->createTable ("drop sequence seq_centro_atencion");
+    $mdl->createTable ("CREATE SEQUENCE seq_centro_atencion
+    START WITH     56
+    INCREMENT BY   1
+    NOCACHE
+    NOCYCLE;");
+   
      /*
  
     print_r($x->executeQuery("delete from centro_atencion"));
