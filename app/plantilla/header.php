@@ -129,47 +129,39 @@
         $nivelusu = $_SESSION["usuario"][0]["NIVEL"];
         if ($nivelusu==ADMIN_CENTRAL) {
             ?>
-            <h3 class="menu-title">REGISTRO</h3>
-            <modulos :changeviewevent="changeview"></modulos> 
-            <h3 class="menu-title">SEGUIMIENTO</h3>
             <h3 class="menu-title">REPORTES</h3>
+            <!-- si tiene reportes -->
             <h3 class="menu-title">PERFILES</h3>
             <a href="#registro-perfiles" class="list-group-item level-0" aria-expanded="true" id="Perfiles" style="width:100%;">Usuario</a>
             <a href="#registro-locales" class="list-group-item level-0" aria-expanded="true" id="Perfiles" style="width:100%;">Locales</a>
             <?php 
-        }else if ($nivelusu=="SUPERVISOR") {
-            # code...
-        }else if ($nivelusu==USER_SEDE) {
+        }else if ($nivelusu==SUPERVISOR) {
             ?>
-            <h3 class="menu-title">REGISTRO</h3>
             <h3 class="menu-title">SEGUIMIENTO</h3>
             <a href="#registro-perfiles" class="list-group-item level-0" aria-expanded="true" id="Perfiles" style="width:100%;">Centros</a>
             <h3 class="menu-title">REPORTES</h3>
-            <h3 class="menu-title">PERFILES</h3>
+            <?php 
+        }else if ($nivelusu==USER_SEDE_GESTION) {
+            ?>
+            <h3 class="menu-title">SEGUIMIENTO</h3>
+            <a href="#registro-perfiles" class="list-group-item level-0" aria-expanded="true" id="Perfiles" style="width:100%;">Centros</a>
+            <h3 class="menu-title">REPORTES</h3>
+            
             <?php 
             /* puede bloquear la matriz de un centro*/
         }else if ($nivelusu==USER_SEDE) {
             ?>
-            <h3 class="menu-title">REGISTRO</h3>
-            <h3 class="menu-title">SEGUIMIENTO</h3>
-            <a href="#registro-perfiles" class="list-group-item level-0" aria-expanded="true" id="Perfiles" style="width:100%;">Centros</a>
             <h3 class="menu-title">REPORTES</h3>
-            <h3 class="menu-title">PERFILES</h3>
             <?php 
         }else if ($nivelusu==RESPONSABLE_INFORMACION) {
             ?>
-            <h3 class="menu-title">REGISTRO</h3>
-            <modulos :changeviewevent="changeview"></modulos> 
             <h3 class="menu-title">SEGUIMIENTO</h3>
             <h3 class="menu-title">REPORTES</h3>
-            <h3 class="menu-title">PERFILES</h3>
             <?php 
         }else if ($nivelusu==REGISTRADOR) {
             ?>
             <h3 class="menu-title">REGISTRO</h3>
-            <h3 class="menu-title">SEGUIMIENTO</h3>
-            <h3 class="menu-title">REPORTES</h3>
-            <h3 class="menu-title">PERFILES</h3>
+            <modulos :changeviewevent="changeview"></modulos> 
             <?php 
         }
         
