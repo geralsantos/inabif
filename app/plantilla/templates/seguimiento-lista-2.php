@@ -18,7 +18,7 @@
                                     <th scope="col">Completo</th>
                                     <th scope="col">Última actualización</th>
                                     <th scope="col">Opción</th>
-                                    <th scope="col"></th>
+                                   
                                     
                                 </tr>
                             </thead>
@@ -30,7 +30,7 @@
                                     <td>{{grupo.FECHA_EDICION}}</td>
                                     <td class="btn btn-primary" @click="mostrar_modulo(grupo.ID_MODULO)">Ver</td>
                                    
-                                    <td v-if="!isempty(grupo.ESTADO_COMPLETO)"><label class="form-control-label">Completado</label><input type="checkbox" class="form-control" @change="completar_grupo(grupo.ID_MODULO)" :checked="!isempty(grupo.ESTADO_COMPLETO)" class="form-control" ></td>
+                                    <td v-if="isempty(grupo.ESTADO_COMPLETO)"><label class="form-control-label">Completado</label><input type="checkbox" class="form-control" @change="completar_grupo(grupo.ID_MODULO)" :checked="!isempty(grupo.ESTADO_COMPLETO)" class="form-control" ></td>
                                 </tr>
                                 
                             </tbody>
