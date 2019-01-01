@@ -216,7 +216,7 @@ if (isset($_GET["opcionejecutar"]) && $_GET["opcionejecutar"]!="") {
     START WITH     56
     INCREMENT BY   1
     NOCACHE
-    NOCYCLE;");
+    NOCYCLE");
    
      /*
  
