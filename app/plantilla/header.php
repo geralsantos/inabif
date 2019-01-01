@@ -127,7 +127,7 @@
 </style>
         <?php   
         $nivelusu = $_SESSION["usuario"][0]["NIVEL"];
-        if ($nivelusu=="1") {
+        if ($nivelusu==ADMIN_CENTRAL) {
             ?>
             <h3 class="menu-title">REGISTRO</h3>
             <modulos :changeviewevent="changeview"></modulos> 
@@ -137,9 +137,9 @@
             <a href="#registro-perfiles" class="list-group-item level-0" aria-expanded="true" id="Perfiles" style="width:100%;">Usuario</a>
             <a href="#registro-locales" class="list-group-item level-0" aria-expanded="true" id="Perfiles" style="width:100%;">Locales</a>
             <?php 
-        }else if ($nivelusu=="2") {
+        }else if ($nivelusu=="SUPERVISOR") {
             # code...
-        }else if ($nivelusu=="3") {
+        }else if ($nivelusu==USER_SEDE) {
             ?>
             <h3 class="menu-title">REGISTRO</h3>
             <h3 class="menu-title">SEGUIMIENTO</h3>
@@ -148,7 +148,7 @@
             <h3 class="menu-title">PERFILES</h3>
             <?php 
             /* puede bloquear la matriz de un centro*/
-        }else if ($nivelusu=="4") {
+        }else if ($nivelusu==USER_SEDE) {
             ?>
             <h3 class="menu-title">REGISTRO</h3>
             <h3 class="menu-title">SEGUIMIENTO</h3>
@@ -156,7 +156,7 @@
             <h3 class="menu-title">REPORTES</h3>
             <h3 class="menu-title">PERFILES</h3>
             <?php 
-        }else if ($nivelusu=="5") {
+        }else if ($nivelusu==RESPONSABLE_INFORMACION) {
             ?>
             <h3 class="menu-title">REGISTRO</h3>
             <modulos :changeviewevent="changeview"></modulos> 
@@ -164,7 +164,7 @@
             <h3 class="menu-title">REPORTES</h3>
             <h3 class="menu-title">PERFILES</h3>
             <?php 
-        }else if ($nivelusu=="6") {
+        }else if ($nivelusu==REGISTRADOR) {
             ?>
             <h3 class="menu-title">REGISTRO</h3>
             <h3 class="menu-title">SEGUIMIENTO</h3>
