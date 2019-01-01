@@ -138,6 +138,9 @@ Vue.component('registro-locales', {
                 this.area_residencia=null;
                 this.codigo_linea=null;
                 this.linea_intervencion=null;
+                this.Depatamento_Procedencia=null;
+                this.Provincia_Procedencia=null;
+                this.Distrito_Procedencia=null;
                 this.nom_serv=null;
                 this.showModal = true;
             }else{
