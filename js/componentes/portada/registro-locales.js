@@ -73,6 +73,7 @@ Vue.component('registro-locales', {
                 nom_serv :this.nom_serv,
                 }
                 if (this.id_centro==null) {
+                    alert()
                     this.$http.post('insertar_datos?view',{tabla:'centro_atencion', valores:valores}).then(function(response){
 
                         if( response.body.resultado ){
