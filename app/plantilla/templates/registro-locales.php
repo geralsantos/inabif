@@ -59,9 +59,12 @@
                                 </div>
                             </div>
                             <div class="form-group col-md-4">
-                                <div class=" "><label for="text-input" class=" form-control-label">Código de Entidad</label>
+                                <label for="text-input" class=" form-control-label">Código de Entidad</label>
                                 <input type="text" v-model="codigo_entidad" name="codigo_entidad" placeholder="" class="form-control"> 
-                                </div>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="text-input" class=" form-control-label">Nombre de la Entidad</label>
+                                <input type="text" v-model="codigo_entidad" name="codigo_entidad" placeholder="" class="form-control"> 
                             </div>
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Código de Servicio</label>
@@ -81,12 +84,17 @@
                             </div>
                         </div>
                         <div class="row">
-                        <div class="form-group col-md-8">
+                            <div class="form-group col-md-6">
                                 <div class=" "><label for="text-input" class=" form-control-label">Área de Residencia </label>
                                 <select name="area_residencia" v-model="area_residencia" class="form-control">
                                 <option value="URBANO">URBANO</option>
                                 <option value="RURAL">RURAL</option>
                                 </select>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <div class=" "><label for="text-input" class=" form-control-label">Nombre del Servicio</label>
+                                <input type="text" v-model="nom_serv" name="nom_serv" placeholder="" class="form-control"> 
                                 </div>
                             </div>
                         </div>
@@ -151,11 +159,7 @@
                                 <input type="text" v-model="linea_intervencion" name="linea_intervencion" placeholder="" class="form-control"> 
                                 </div>
                             </div>
-                            <div class="form-group col-md-4">
-                                <div class=" "><label for="text-input" class=" form-control-label">Nombre del Servicio</label>
-                                <input type="text" v-model="nom_serv" name="nom_serv" placeholder="" class="form-control"> 
-                                </div>
-                            </div>
+                            
                             
                         </div>
                         <div class="row">
