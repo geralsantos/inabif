@@ -50,7 +50,6 @@
                 <div class="modal-body">
                 <form  class="form-horizontal"  v-on:submit.prevent="guardar">
                         <div class="row">
-
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Tipo de Centro</label>
                                 <select name="tipo_centro_id" v-model="tipo_centro_id" class="form-control">
@@ -58,20 +57,21 @@
                                 </select>
                                 </div>
                             </div>
-                            <div class="form-group col-md-4">
+                            
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">Código de Entidad</label>
                                 <input type="text" v-model="codigo_entidad" name="codigo_entidad" placeholder="" class="form-control"> 
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">Nombre de la Entidad</label>
                                 <input type="text" v-model="nombre_entidad" name="nombre_entidad" placeholder="" class="form-control"> 
                             </div>
-                            <div class="form-group col-md-4">
-                                <div class=" "><label for="text-input" class=" form-control-label">Código de Servicio</label>
-                                <input type="text" v-model="cod_serv" name="cod_serv" placeholder="" class="form-control"> </div>
-                            </div>
+                            
                         </div>
                         <div class="row">
+                        
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Código de Centro</label>
                                 <input type="text" v-model="cod_ca" name="cod_ca" placeholder="" class="form-control"> 
@@ -91,13 +91,19 @@
                                 <option value="RURAL">RURAL</option>
                                 </select>
                                 </div>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <div class=" "><label for="text-input" class=" form-control-label">Nombre del Servicio</label>
-                                <input type="text" v-model="nom_serv" name="nom_serv" placeholder="" class="form-control"> 
+                            </div> 
+                        </div>
+                        <div class="row">
+                                <div class="form-group col-md-4">
+                                    <div class=" "><label for="text-input" class=" form-control-label">Código de Servicio</label>
+                                    <input type="text" v-model="cod_serv" name="cod_serv" placeholder="" class="form-control"> </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <div class=" "><label for="text-input" class=" form-control-label">Nombre del Servicio</label>
+                                    <input type="text" v-model="nom_serv" name="nom_serv" placeholder="" class="form-control"> 
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         <div class="row">
                         <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Departamento de Nacimiento</label>
