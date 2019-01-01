@@ -111,9 +111,12 @@ Vue.component('seguimiento-lista-2', {
             });
         },
         listar_grupos(){
+            console.log("listar_grupos");
             let id_centro = document.getElementById("mensaje_entre_componentes"); 
             this.$http.post('buscar_grupos?view',{id_centro:id_centro}).then(function(response){
                 this.grupos = response.body.data[0];
+
+                console.log(this.grupos);
                 this.showModal = true;
                 
             });

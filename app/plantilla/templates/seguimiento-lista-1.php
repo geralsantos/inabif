@@ -18,7 +18,7 @@
                                         <th scope="col">Fecha Cierre</th>
                                         <th scope="col">Cerrado</th>
                                         <th scope="col">Ver</th>
-                                        <th scope="col" v-if="mostrar_completado">Opnción</th>
+                                        <th scope="col" v-if="mostrar_completado">Opción</th>
                                       
 
                                        
