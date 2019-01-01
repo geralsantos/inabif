@@ -55,7 +55,7 @@ Vue.component('registro-locales', {
                 swal('Error', 'Residente no existe', 'success');
                 return false;
             }*/
-            let valores = {
+            var valores = {
                 tipo_centro_id: this.tipo_centro_id,
                 codigo_entidad: this.codigo_entidad,
                 nombre_entidad: this.nombre_entidad,
@@ -73,7 +73,7 @@ Vue.component('registro-locales', {
                 nom_serv :this.nom_serv,
                 }
                 if (this.id_centro==null) {
-                    alert()
+                    console.log(valores);
                     this.$http.post('insertar_datos?view',{tabla:'centro_atencion', valores:valores}).then(function(response){
 
                         if( response.body.resultado ){
