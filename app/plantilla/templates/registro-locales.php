@@ -112,14 +112,14 @@
                         </div>
                         <div class="row">
                             
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-6">
                                 <div class=" "><label for="text-input" class=" form-control-label">Provincia de Nacimiento</label>
                                 <select name="Provincia_Procedencia" v-model="Provincia_Procedencia" @change="buscar_distritos()" class="form-control">
                                     <option v-for="provincia in provincias" :value="provincia.CODPROV">{{provincia.NOMPROV}}</option>
                                 </select>
                                 </div>
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-6">
                                 <div class=" "><label for="text-input" class=" form-control-label">Distrito de Nacimiento</label>
                                 <select name="Distrito_Procedencia" v-model="Distrito_Procedencia" class="form-control">
                                     <option v-for="distrito in distritos" :value="distrito.CODDIST">{{distrito.NOMDIST}}</option>
