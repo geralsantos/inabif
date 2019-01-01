@@ -172,7 +172,7 @@ Vue.component('seguimiento-lista-1', {
             var input = document.createElement("input");
             input.type = "hidden";
             input.id = "mensaje_entre_componentes";
-            input.setAttribute("data-centro_id",centro_id);
+            input.value = centro_id;
             document.body.appendChild(input); 
           }
      
