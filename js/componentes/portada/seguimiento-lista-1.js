@@ -113,10 +113,10 @@ Vue.component('seguimiento-lista-1', {
 
                 if( response.body.data != undefined){
                     this.usuario = response.body.data[0];
-                  //  if(this.usuario.NIVEL == 5){
+                   if(this.usuario.NIVEL == 5){
                         this.mostrar_completado = true;
                      
-                  //  }
+                  }
                
                 }
             });
