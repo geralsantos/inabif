@@ -117,7 +117,7 @@ Vue.component('seguimiento-lista-2', {
                 this.grupos = response.body.data;
 
                 console.log(this.grupos);
-                this.showModal = true;
+                //this.showModal = true;
                 
             });
         },

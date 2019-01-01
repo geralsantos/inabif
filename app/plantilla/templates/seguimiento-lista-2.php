@@ -41,33 +41,7 @@
                 </div>
             </div>
 
-        <div v-if="showModal">
-            <transition name="modal">
-            <div class="modal-mask">
-                <div class="modal-wrapper">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Módulo</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true" @click="showModal = false">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                        <ul>
-                            <li v-for="reg, index in grupos">{{index}} : {{reg}} </li>
-                        </ul>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" @click="showModal = false">Cerrar</button>
-                        </div>
-                    </div>
-                </div>
-
-                </div>
-            </div>
-            </transition>
-        </div>
+       
     </div> <!-- .content -->
     
 </template>
