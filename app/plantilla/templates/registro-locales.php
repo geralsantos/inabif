@@ -65,7 +65,7 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Código de Servicio</label>
-                                <input type="text" v-model="nombre_entidad" name="nombre_entidad" placeholder="" class="form-control"> </div>
+                                <input type="text" v-model="cod_serv" name="cod_serv" placeholder="" class="form-control"> </div>
                             </div>
                         </div>
                         <div class="row">
