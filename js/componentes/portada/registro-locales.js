@@ -80,7 +80,7 @@ Vue.component('registro-locales', {
 
                         if( response.body.resultado ){
                             swal('', 'Registro Guardado', 'success');
-                            this.listar_usuarios();
+                            this.buscar_centros();
                         }else{
                           swal("", "Un error ha ocurrido", "error");
                         }
@@ -90,7 +90,7 @@ Vue.component('registro-locales', {
                     this.$http.post('update_datos?view',{tabla:'centro_atencion', valores:valores,where:where}).then(function(response){
                         if( response.body.resultado ){
                             swal('', 'Registro Actualizado', 'success');
-                            this.listar_usuarios();
+                            this.buscar_centros();
                         }else{
                           swal("", "Un error ha ocurrido", "error");
                         }
