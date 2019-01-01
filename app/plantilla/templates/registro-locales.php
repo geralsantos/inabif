@@ -64,7 +64,7 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Nombre de la Entidad</label>
-                                <input type="text" v-model="codigo_entidad" name="codigo_entidad" placeholder="" class="form-control"> 
+                                <input type="text" v-model="nombre_entidad" name="nombre_entidad" placeholder="" class="form-control"> 
                             </div>
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Código de Servicio</label>
