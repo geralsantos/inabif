@@ -166,7 +166,7 @@ Vue.component('registro-locales', {
                 this.linea_intervencion=centro.LINEA_INTERVENCION;
                 this.nom_serv=centro.NOM_SERV;
                 this.Depatamento_Procedencia=(centro.UBIGEO).substr(0,2);
-                this.Provincia_Procedencia=(centro.UBIGEO).substr(2,4);
+                this.Provincia_Procedencia=(centro.UBIGEO).substr(0,4);
                 this.Distrito_Procedencia=centro.UBIGEO;
 
                 this.showModal = true;
