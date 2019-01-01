@@ -85,6 +85,10 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
+                                <div class=" "><label for="text-input" class=" form-control-label">Código de Servicio</label>
+                                <input type="text" v-model="cod_serv" name="cod_serv" placeholder="" class="form-control"> </div>
+                            </div>
+                            <div class="form-group col-md-6">
                                 <div class=" "><label for="text-input" class=" form-control-label">Área de Residencia </label>
                                 <select name="area_residencia" v-model="area_residencia" class="form-control">
                                 <option value="URBANO">URBANO</option>
@@ -92,10 +96,7 @@
                                 </select>
                                 </div>
                             </div> 
-                            <div class="form-group col-md-6">
-                                <div class=" "><label for="text-input" class=" form-control-label">Código de Servicio</label>
-                                <input type="text" v-model="cod_serv" name="cod_serv" placeholder="" class="form-control"> </div>
-                            </div>
+                            
                         </div>
                         <div class="row">
                                 <div class="form-group col-md-6">
@@ -110,6 +111,7 @@
                                     <option v-for="departamento in departamentos" :value="departamento.CODDEPT">{{departamento.NOMDEPT}}</option>
                                 </select>
                             </div>
+                        </div>
                         <div class="row">
                             
                             <div class="form-group col-md-4">
