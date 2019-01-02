@@ -26,8 +26,11 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
     <?php echo $this->getReferencia(); ?>
     <script>
+       
+        window.onhashchange= function(){
         let hash = window.location.hash.substr(1);
-        console.log(hash);
+        console.log(hash)
+        }
   </script>
     </head>
 <body class="">
