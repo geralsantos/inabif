@@ -114,6 +114,9 @@ function hora_min_seg(time){
   document.addEventListener('DOMContentLoaded', function() {
     
     var type = window.location.hash.substr(1) || 'portada-index';
+    if ( window.location.hash.substr(1)=="seguimiento-lista-2" || window.location.hash.substr(1)=="seguimiento-lista-3") {
+      type='seguimiento-lista-1';
+    }
       window.location.hash='#'+type;
       window.onhashchange= function(){
         var type = window.location.hash.substr(1);
