@@ -1,11 +1,11 @@
-Vue.component('seguimiento-lista-2', {
-    template:'#seguimiento-lista-2',
+Vue.component('seguimiento-lista-3', {
+    template:'#seguimiento-lista-3',
     data:()=>({
         periodo:moment().format('MMMM YYYY'),
     
         completado:false,
         showModal:false,
-        grupos:[],
+   
         campos:[],
 
         nombre_residente:null,
@@ -21,7 +21,7 @@ Vue.component('seguimiento-lista-2', {
     created:function(){
     },
     mounted:function(){
-        this.listar_grupos();
+        this.listar_campos();
     },
     updated:function(){
     },
@@ -113,13 +113,14 @@ Vue.component('seguimiento-lista-2', {
             input.value = centro_id;
             document.body.appendChild(input); 
         },
-        listar_grupos(){
+       
+        listar_campos(){
             console.log("listar_grupos");
-            let id_centro = document.getElementById("mensaje_entre_componentes").value; 
-            this.$http.post('buscar_grupos?view',{id_centro:id_centro}).then(function(response){
-                this.grupos = response.body.data;
+            let id_grupo = document.getElementById("mensaje_entre_componentes").value; 
+            this.$http.post('buscar_modulo?view',{id_grupo:id_grupo}).then(function(response){
+                this.campos = response.body.data;
 
-                console.log(this.grupos);
+                console.log(this.campos);
                 this.remover_mensaje_entre_componentes();
                 
             });
