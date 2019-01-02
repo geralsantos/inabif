@@ -7,6 +7,8 @@
             <option value="DELETE">DELETE</option>
             <option value="CREATETABLE">DROP/CREATE TABLE y SEQUENCE</option>
             <option value="ALTERTABLE">ALTER TABLE</option>
+            <option value="INTERNO" selected="selected">EJECUTAR CODIGO INTERNO</option> 
+
         </select>
         </div>
     </div>
