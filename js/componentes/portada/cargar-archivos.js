@@ -1,5 +1,5 @@
-Vue.component('cagar-archivos', {
-    template:'#cagar-archivos',
+Vue.component('cargar-archivos', {
+    template:'#cargar-archivos',
     data:()=>({
         
         showModal: false,
