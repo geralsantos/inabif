@@ -107,7 +107,7 @@ Vue.component('ppd-datos-egreso-generales', {
 
                 if( response.body.atributos != undefined){
 
-                    this.CarFEgreso = response.body.atributos[0]["FECHA_EGRESO"];
+                    this.CarFEgreso = moment(response.body.atributos[0]["FECHA_EGRESO"]).format("YYYY-MM-DD");
                     this.CarMotivoEgreso = response.body.atributos[0]["MOTIVO_EGRESO"];
                     this.CarTrasladoCar = response.body.atributos[0]["TRASLADO"];
                     this.CarReinsercionFamiliar = response.body.atributos[0]["REINSERCION"];
