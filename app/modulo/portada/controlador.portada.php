@@ -610,6 +610,7 @@ class portada extends App{
 		$parent_id=2;
 			break;
 	}
+	$centro_html="";
     $modulo_html = "<table>";
 	$modulos = "select m.nombre as nombre_modulo,m.nombre_tabla 
 	from modulos m 
