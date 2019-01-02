@@ -91,9 +91,7 @@
       changeview(val){
      
         console.log('changeview: ',val);
-        this.$nextTick(function() {
-          this.currentView = val;
-        }.bind(this));
+       
         this.currentView=val;
         
           //document.querySelector('.comprobantesestado').style.display= (val!="portadaindex"?'none':'');
