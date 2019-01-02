@@ -1,4 +1,4 @@
-<template id="carga-archivos">
+<template id="cargar-archivos">
   
     <div class="content mt-3">
         <div class="col-lg-12">
