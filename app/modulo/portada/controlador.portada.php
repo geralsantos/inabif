@@ -431,7 +431,7 @@ class portada extends App{
     $centros = $modelo->executeQuery($centros);
     
     echo $modulos = "select * from modulos_detalle md 
-      left join modulos m on(m.id=md.modulo_id) where m.centro_id in ".$centros[0]["TIPO_CENTRO_ID"]." and to_char(cad.fecha_matriz,'DD-MON') ".$fecha." order by cad.id desc";
+      left join modulos m on(m.id=md.modulo_id) where m.centro_id in (".$centros[0]["TIPO_CENTRO_ID"].") and to_char(cad.fecha_matriz,'DD-MON') ".$fecha." order by cad.id desc";
     $modulos = $modelo->executeQuery($modulos);
 
 
