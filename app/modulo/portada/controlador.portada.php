@@ -438,7 +438,7 @@ class portada extends App{
     
     $modulo_html = "<table>";
     $modulo_html .="<tr><th></th><th>Nombre del Modulo</th><th>Encargado</th><th>Periodo Mes</th></tr>";
-    $modulos = "select m.nombre as nombre_modulo,usu.nombre as nombre_usuario,md.periodo_mes from modulos_detalle md 
+    $modulos = "select m.nombre as nombre_modulo,usu.nombre as nombre_usuario,md.periodo_mes,m.nombre_tabla from modulos_detalle md 
     left join modulos m on(m.id=md.modulo_id) 
     left join usuarios usu on(usu.id=m.encargado_id) 
       where m.centro_id in (".$centros[0]["TIPO_CENTRO_ID"].") and ".$fecha." and md.periodo_anio = ".date("Y")." order by md.id desc";
@@ -450,7 +450,7 @@ class portada extends App{
       
       $grupo_html = "<table>";
       //$grupo_html .="<tr><th>Nombre del Grupo</th><th>Encargado</th><th>Periodo Mes</th></tr>";
-      $grupos = "select * from ".$modulo["nombre_tabla"]." order by md.id desc";
+      $grupos = "select * from ".$modulo["NOMBRE_TABLA"]." order by md.id desc";
       $grupos = $modelo->executeQuery($grupos);
 
       foreach ($grupos as $key => $grupo) 
