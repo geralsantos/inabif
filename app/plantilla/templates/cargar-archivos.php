@@ -45,7 +45,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                <form  class="form-horizontal" enctype="multipart/form-data" id="formuploadajax" action="adjuntar_archivo">
+                <form  class="form-horizontal" enctype="multipart/form-data" id="formuploadajax" method="post" action="adjuntar_archivo">
                         <div class="row">
                         <div class="form-group col-md-4">
 
