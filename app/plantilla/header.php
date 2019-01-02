@@ -47,7 +47,7 @@
                 <li class="active">
                     <a href="#portada-index" @click="changeview('portada-index')"> <i class="menu-icon fa fa-dashboard"></i>Pantalla Principal </a>
                 </li>
-                <h3 class="menu-title">INABIF</h3><!-- /.menu-title -->
+             <!--     <h3 class="menu-title">INABIF</h3>/.menu-title -->
                 
 <style>
   .leve-0 {
