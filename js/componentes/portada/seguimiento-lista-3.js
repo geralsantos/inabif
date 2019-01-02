@@ -109,8 +109,17 @@ Vue.component('seguimiento-lista-3', {
             let nombre_tabla = document.getElementById("mensaje_entre_componentes").value; 
             this.$http.post('mostrar_modulo?view',{nombre_tabla:nombre_tabla}).then(function(response){
                 if(response.body.data){
-                    this.campos = response.body.data;
-
+                    let arr = [];
+                    let valores = response.body.data;
+                    let cabeceras = [];
+                   
+                    for (let index = 0; index < valores.length; index++) {
+                        arr.push(Object.values(valores[index]));
+                        if (index==0) {
+                            cabeceras.push(Object.values(valores[index]));
+                        }
+                    }
+                    this.campos = arr;
                 console.log(this.campos);
                 this.remover_mensaje_entre_componentes();
                 }else{

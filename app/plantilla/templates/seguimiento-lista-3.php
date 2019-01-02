@@ -21,8 +21,8 @@
                             </thead>
                        
                             <tbody class="text-center">
-                                <tr v-for="grupo in grupos">
-                                    <td>{{grupo.MODULO_NOMBRE}}</td>
+                                <tr v-for="(campo,index) in campos">
+                                    <td>{{campo.MODULO_NOMBRE}}</td>
                                     <td>{{grupo.ENCARGADO_NOMBRE}}</td>
                                     <td>{{(isempty(grupo.ESTADO_COMPLETO))?'NO':'SI'}}</td>
                                     <td>{{grupo.FECHA_EDICION}}</td>
