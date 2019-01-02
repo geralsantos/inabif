@@ -458,7 +458,7 @@ class portada extends App{
       }*/
     }
     $modulo_html .="</table>";
-    $table = '<table><tr><td>'.$centro_html.'</td></tr><tr><td>'.$modulo_html.'</td></tr></table>';
+    $table = '<table><tr><td>'.$centro_html.'</td></tr><tr><td>&nbsp;</td><td>'.$modulo_html.'</td></tr></table>';
 
     if ($modulos) 
     {
