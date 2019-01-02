@@ -114,6 +114,13 @@ function hora_min_seg(time){
   document.addEventListener('DOMContentLoaded', function() {
     
     var type = window.location.hash.substr(1) || 'portada-index';
+    if(type == 'reporte-nominal' || type == 'reporte-matriz-general' || type == 'reporte-rub' ||
+        type == 'seguimiento-lista-1' || type == 'seguimiento-lista-2' || type == 'seguimiento-lista-3' || 
+        type == 'registro-locales' || type == 'registro-perfiles' || type == 'portada-index' ){
+          $('#cabecera-centro-nombre').hide();
+      }else{
+          $('#cabecera-centro-nombre').show();
+      }
     if ( window.location.hash.substr(1)=="seguimiento-lista-2" || window.location.hash.substr(1)=="seguimiento-lista-3") {
       type='seguimiento-lista-1';
     }
