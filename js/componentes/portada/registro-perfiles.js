@@ -34,7 +34,7 @@ Vue.component('registro-perfiles', {
                 swal('Error', 'Residente no existe', 'success');
                 return false;
             }*/
-            if(this.nivel_id == 3 || this.nivel_id == 4){
+            if(this.nivel_id == 3 || this.nivel_id == 2){
                 var iddelcentro = this.tipo_centro;
             }else{
                 var iddelcentro = this.centro_id;
@@ -163,7 +163,7 @@ Vue.component('registro-perfiles', {
             });
         }, 
         verificar_nivel(){
-            if(this.nivel_id==3 || this.nivel_id==4){
+            if(this.nivel_id==3 || this.nivel_id==2){
                 this.mostrar = false; 
             }
         }
