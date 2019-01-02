@@ -188,7 +188,7 @@ class MySQL extends PDO
                 }
                 $coma = ',';
             }
-            $query .= '('.$queryKeys.') VALUES ('.$queryValues.')';
+            echo $query .= '('.$queryKeys.') VALUES ('.$queryValues.')';
             $stmt = parent::prepare($query);
             $stmt->execute($params);
             if($stmt->rowCount()>0){
