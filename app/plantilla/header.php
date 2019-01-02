@@ -31,6 +31,10 @@
         let hash = window.location.hash.substr(1);
         console.log(hash)
         }
+        if ( window.location.hash) {
+            console.log('hash');
+            console.log(hash);
+    }
   </script>
     </head>
 <body class="">
