@@ -120,7 +120,9 @@ function hora_min_seg(time){
       window.location.hash='#'+type;
       window.onhashchange= function(){
         var type = window.location.hash.substr(1);
-        if(type == 'reporte-nominal' || type == 'reporte-matriz-general' || type == 'reporte-rub'  ){
+        if(type == 'reporte-nominal' || type == 'reporte-matriz-general' || type == 'reporte-rub' ||
+        type == 'seguimiento-lista-1' || type == 'seguimiento-lista-2' || type == 'seguimiento-lista-3' || 
+        type == 'registro-locales' || type == 'registro-perfiles'){
           $('#cabecera-centro-nombre').hide();
         }else{
           $('#cabecera-centro-nombre').show();
