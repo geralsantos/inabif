@@ -106,8 +106,8 @@ Vue.component('seguimiento-lista-3', {
        
         listar_campos(){
             console.log("listar_campos");
-            let id_grupo = document.getElementById("mensaje_entre_componentes").value; 
-            this.$http.post('buscar_modulo?view',{id_grupo:id_grupo}).then(function(response){
+            let nombre_tabla = document.getElementById("mensaje_entre_componentes").value; 
+            this.$http.post('buscar_modulo?view',{nombre_tabla:nombre_tabla}).then(function(response){
                 this.campos = response.body.data;
 
                 console.log(this.campos);
