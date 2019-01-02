@@ -607,7 +607,7 @@ class portada extends App{
 		$parent_id="46,70";
 		break;
 		default:
-		$parent_id=2;
+		$parent_id="2,25";
 			break;
 	}
 	$centro_html="";
