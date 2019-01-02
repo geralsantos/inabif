@@ -180,12 +180,15 @@ class MySQL extends PDO
             $coma = '';
             foreach($values as $key => $val){
                 $queryKeys .= $coma.$key;
-              
+                if (strpos(strtoupper($key),"FECHA")!==false) {
+                    $queryValues .= $coma." to_date('".$val."','YYYY-MM-DD') ";
+                }else{
                     $params[':'.$key] = $val;
                     $queryValues .= $coma.':'.$key;
+                }
                 $coma = ',';
             }
-             $query .= '('.$queryKeys.') VALUES ('.$queryValues.')';
+            $query .= '('.$queryKeys.') VALUES ('.$queryValues.')';
             $stmt = parent::prepare($query);
             $stmt->execute($params);
             if($stmt->rowCount()>0){
