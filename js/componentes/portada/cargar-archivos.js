@@ -4,6 +4,7 @@ Vue.component('cagar-archivos', {
         
         showModal: false,
         archivo:null,
+        archivos:[],
        
     }),
     created:function(){
