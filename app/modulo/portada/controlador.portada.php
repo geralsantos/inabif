@@ -622,7 +622,7 @@ class portada extends App{
 		$modulo_html .="<tr><th></th><th>Nombre del Modulo</th></tr>";
 		$modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td></tr>";
 
-		$grupos = "select * from (select distinct * from ".$modulo["NOMBRE_TABLA"]." order by id desc) WHERE ROWNUM = 1";
+		$grupos = "select * from (select distinct * from ".$modulo["NOMBRE_TABLA"]." where residente_id= ". $id_residente." order by id desc) WHERE ROWNUM = 1";
 		$grupos = $modelo->executeQuery($grupos);
 
 		$grupo_html = "<table>";
