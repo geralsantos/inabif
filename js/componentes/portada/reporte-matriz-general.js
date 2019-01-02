@@ -11,7 +11,6 @@ Vue.component('reporte-matriz-general', {
     created:function(){
     },
     mounted:function(){
-        this.mostrar_matrices();
 
     },
     updated:function(){
@@ -25,7 +24,7 @@ Vue.component('reporte-matriz-general', {
         mostrar_matrices(){
 
             let periodo = this.periodo;
-            this.$http.post('recuperar_matriz_general?view',{perido:periodo}).then(function(response){
+            this.$http.post('mostrar_matrices?view',{periodo:periodo}).then(function(response){
 
                 if( response.body.data != undefined){
                     this.matrices = response.body.data;
