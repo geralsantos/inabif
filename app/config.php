@@ -66,6 +66,6 @@ $JS  = array("bootstrap/bootstrap.min", "global");
 $READY = array("");
 
 //AUXILIARES
-
+define ('URL_ARCHIVOS_ADJUNTOS',APP.DS.'cargas');
 define( "URL_PDF", SITE_URL_DIR."app/cargas/" );
 define( "URL_PDF_2", SITE_URL_DIR."portal/index" );

@@ -649,7 +649,7 @@ class portada extends App{
   }
   public function adjuntar_archivo(Type $var = null)
   {
-	echo $upload_folder  = dirname(__FILE__);
+	echo $upload_folder  = URL_ARCHIVOS_ADJUNTOS;
 	
 	/*$nombre_archivo = $_FILES['archivo']['name'];
 	$tipo_archivo   = $_FILES['archivo']['type'];
