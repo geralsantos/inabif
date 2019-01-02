@@ -24,8 +24,11 @@
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-1">
-                                <label for="text-input" class=" form-control-label"></label>
-                                   <button @click="mostrar_reporte_nominal()" class="btn btn-default"><i class="fa fa-send"></i> Buscar</button>
+                                    <label for="text-input" class=" form-control-label"></label>
+                                    <button @click="mostrar_reporte_nominal()" class="btn btn-default"><i class="fa fa-send"></i> Buscar</button>
+                                </div>
+                                <div class="col-12 col-md-1">
+                                    <a @click="mostrar_lista_residentes()" class="menutoggle"><i class="fa fa fa-tasks"></i></a>
                                 </div>
                             </div>
                             <div class="table-responsive">
