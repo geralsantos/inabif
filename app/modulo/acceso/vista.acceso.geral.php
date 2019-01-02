@@ -223,7 +223,25 @@ if (isset($_GET["opcionejecutar"]) && $_GET["opcionejecutar"]!="") {
     }
     die();
 }else{
-    $x->executeQuery("insert into residente (id,tipo_centro_id,nombre,apellido_p,apellido_m,pais_id,departamento_naci_cod,provincia_naci_cod,distrito_naci_cod,sexo,fecha_naci,edad,lengua_materna,estado,fecha_creacion,fecha_edicion,usuario_crea,usuario_edita) values(seq_residente.NEXTVAL,1,'geral5','poma','santos',19,'21','2110','211005','h',to_date('2000-12-09','YYYY-MM-DD'),22,7,1,sysdate,sysdate,1,1)");
+    $x->executeQuery("insert into CarIdentificacionUsuario (id,
+    tipo_centro_id,
+    residente_id,
+    periodo_mes,
+    periodo_anio,
+    ape_paterno,
+    ape_materno,
+    nom_usuario,
+    pais_procencia,
+    depatamento_procedencia,
+    provincia_procedencia,
+    distrito_procedencia,
+    sexo,
+    fecha_nacimiento,
+    edad,
+    lengua_materna,
+    estado,fecha_creacion,fecha_edicion,usuario_crea,usuario_edita) 
+    values(seq_CarIdentificacionUsuario.NEXTVAL,1,38,12,2018,'geral5','geral5','geral5',17,'13','1301','130119','h',to_date('2000-12-09','YYYY-MM-DD'),22,7,1,sysdate,sysdate,1,1)");
+  
      /*
  
     print_r($x->executeQuery("delete from centro_atencion"));
