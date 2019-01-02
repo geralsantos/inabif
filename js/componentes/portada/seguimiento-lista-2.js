@@ -102,7 +102,7 @@ Vue.component('seguimiento-lista-2', {
             });
         },
 
-        mostrar_modulo(nombre_tabla){
+        ver_modulo(nombre_tabla){
             this.mensaje_entre_componentes(nombre_tabla);
             window.location.hash='#seguimiento-lista-3';
         },
