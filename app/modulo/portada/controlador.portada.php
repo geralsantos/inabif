@@ -390,7 +390,7 @@ class portada extends App{
     $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
     $periodo = $_POST["periodo"];
     if ($periodo=="mensual") {
-      $fecha = " = '".date("y-M")."' "; 
+      $fecha = " = UPPER('".date("y-M")."') "; 
     }else {
       if (floatval(date("m")) <= 6 ) {
         $semestral = "'".date("y")."-JAN' AND '".date("y")."-JUN'";
@@ -399,7 +399,7 @@ class portada extends App{
       }
       $fecha = " BETWEEN $semestral ";
     }
-    echo $matrices = "select ca.nom_ca as nombre_centro, cad.fecha_matriz  from centro_atencion_detalle cad 
+    $matrices = "select ca.nom_ca as nombre_centro, cad.fecha_matriz  from centro_atencion_detalle cad 
       left join centro_atencion ca on(ca.id=cad.centro_id)  where ca.tipo_centro_id = ".$tipo_centro." and to_char(cad.fecha_matriz,'DD-MON') ".$fecha." order by cad.id desc";
     $matrices = $modelo->executeQuery($matrices);
 
