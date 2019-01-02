@@ -1,5 +1,5 @@
 Vue.component('cagar-archivos', {
-    template:'#registro-perfiles',
+    template:'#cagar-archivos',
     data:()=>({
         
         showModal: false,
