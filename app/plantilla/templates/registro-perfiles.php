@@ -70,7 +70,7 @@
                                 </div>
                             </div>
                             <div class="form-group col-md-6"><label for="text-input" class=" form-control-label">Nivel Usuario</label>
-                                <select name="nivel_id" v-model="nivel_id" class="form-control">
+                                <select name="nivel_id" v-model="nivel_id" class="form-control" @change="verificar_nivel()">
                                     <option v-for="nivel in niveles_usuarios" :value="nivel.ID">{{nivel.NOMBRE}}</option>
                                 </select>
                                 </div>
@@ -99,10 +99,19 @@
                                 <input type="number" v-model="NumCel" name="NumCel" placeholder="" class="form-control"> 
                                 </div>
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-4" v-if="mostrar">
                                 <div class=" "><label for="text-input" class=" form-control-label">Centro</label>
                                 <select name="centro_id" v-model="centro_id" class="form-control">
                                     <option v-for="centro in centros" :value="centro.ID">{{centro.NOM_CA}}</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-4" v-else>
+                                <div class=" "><label for="text-input" class=" form-control-label">Tipo de Centro</label>
+                                <select name="centro_id" v-model="tipo_centro" class="form-control">
+                                   <option value="56">NNA</option>
+                                   <option value="48">PAM</option>
+                                   <option value="42">PPD</option>
                                 </select>
                                 </div>
                             </div>
