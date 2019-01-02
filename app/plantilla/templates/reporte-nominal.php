@@ -41,7 +41,7 @@
                                         <tr v-for="residente in residentes">
                                             <td>{{residente.NOMBRE_RESIDENTE}}</td>
                                      
-                                            <td><button class="btn btn-primary" @click="descargar_reporte_nominal(residente.ID)">Descargar</button></td>
+                                            <td><button class="btn btn-primary" @click="descargar_reporte_nominal(residente)">Descargar</button></td>
                                         
                                         </tr>
                                     

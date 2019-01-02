@@ -60,7 +60,6 @@ Vue.component('reporte-nominal', {
         },
         mostrar_reporte_nominal(){
 
-            let periodo = this.periodo;
             this.$http.post('mostrar_reporte_nominal?view',{id_residente:this.id_residente}).then(function(response){
 
                 if( response.body.data != undefined){
@@ -72,9 +71,9 @@ Vue.component('reporte-nominal', {
             });
 
         },
-        descargar_reporte_matriz_nominal(matriz_id){
+        descargar_reporte_matriz_nominal(residente){
 
-            let datos = {periodo:this.periodo,matriz_id:matriz_id};
+            let datos = {id_residente:this.id_residente,tipo_centro_id:residente.TIPO_CENTRO_ID};
             console.log(datos);
             this.$http.post('descargar_reporte_matriz_nominal?view',datos).then(function(response){
 

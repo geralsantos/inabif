@@ -591,4 +591,69 @@ class portada extends App{
       return false;
     }
   }
+  public function descargar_reporte_matriz_nominal(){
+    $modelo = new modeloPortada();
+    $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+    $id_residente = $_POST["id_residente"];
+    $tipo_centro_id = $_POST["tipo_centro_id"];
+    switch ($tipo_centro_id) {
+		case '1':
+		$parent_id=2;
+		break;
+		case '2':
+		$parent_id=27;
+		break;
+		case '3':
+		$parent_id=46;
+		break;
+		default:
+		$parent_id=2;
+			break;
+	}
+    $modulo_html = "<table>";
+	$modulos = "select m.nombre as nombre_modulo,m.nombre_tabla 
+	from modulos m 
+    where m.centro_id in (".$tipo_centro_id.") and m.parent_id  = ".$parent_id." order by m.id desc";
+    $modulos = $modelo->executeQuery($modulos);
+    
+    foreach ($modulos as $key => $modulo) 
+    {
+		$modulo_html .="<tr><th></th><th>Nombre del Modulo</th></tr>";
+		$modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td></tr>";
+
+		$grupos = "select * from (select distinct * from ".$modulo["NOMBRE_TABLA"]." order by id desc) WHERE ROWNUM = 1";
+		$grupos = $modelo->executeQuery($grupos);
+
+		$grupo_html = "<table>";
+      foreach ($grupos as $key => $grupo) 
+      {
+        if ($key==0) {
+          $keys = array_keys($grupo);
+          $grupo_html .="<tr><th></th>";
+          foreach ($keys as $key) 
+          {
+            $grupo_html .="<th>$key</th>";
+          }
+          $grupo_html .="</tr>";
+        }
+		$grupo_values = array_values($grupo);
+		
+        $grupo_html .= "<tr><td></td>";
+        foreach ($grupo_values as $key => $value) {
+          $grupo_html .="<td>".$value."</td>";
+        }
+        $grupo_html .= "</tr>";
+	  }
+      $modulo_html .=$grupo_html;
+    }
+    $modulo_html .="</table>";
+    $table = '<table><tr><td>'.$centro_html.'</td></tr><tr><td>'.$modulo_html.'</td></tr></table>';
+
+    if ($modulos) 
+    {
+      echo json_encode(array("data"=>$table) ) ;
+    }else{
+      return false;
+    }
+  }
 }
