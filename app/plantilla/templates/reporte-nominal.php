@@ -8,7 +8,7 @@
                         </div>
                         <div class="card-body">
                             <div class="row form-group">
-                                <div class="form-group col-md-9">
+                                <div class="form-group col-md-10">
                                     <label for="text-input" class=" form-control-label">Ingrese el nombre del residente</label>
                                     <div class="autocomplete">
                                         <input type="text"  v-model="nombre_residente" class="form-control" @keyup="buscar_residente()" placeholder="Nombre, Apellido o DNI"/>
@@ -27,10 +27,13 @@
                                     <label for="text-input" class=" form-control-label"></label>
                                     <button @click="mostrar_reporte_nominal()" class="btn btn-default"><i class="fa fa-send"></i> Buscar</button>
                                 </div>
-                                <div class="col-12 col-md-2">
+                                
+                            </div>
+                            <div class="col-12 col-md-3">
                                 <label for="text-input" class=" form-control-label"></label>
                                     <button @click="mostrar_lista_residentes()" class="btn btn-primary"><i class="fa fa fa-users"></i> Lista</button>
                                 </div>
+                            <div class="row form-group">
                             </div>
                             <div class="table-responsive">
                                 <table class="table">
