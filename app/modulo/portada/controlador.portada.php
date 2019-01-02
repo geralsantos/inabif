@@ -416,28 +416,53 @@ class portada extends App{
     $periodo = $_POST["periodo"];
     $matriz_id = $_POST["matriz_id"];
     if ($periodo=="mensual") {
-      $fecha = " = UPPER('".date("y-M")."') "; 
+      $fecha = " md.periodo_mes = ".date("m")." "; 
     }else {
       if (floatval(date("m")) <= 6 ) {
-        $semestral = "'".date("y")."-JAN' AND '".date("y")."-JUN'";
+        $semestral = " md.periodo_mes >= 1 AND md.periodo_mes <= 6 ";
       }else{
-        $semestral = "'".date("y")."-JUL' AND '".date("y")."-DEC'";
+        $semestral = " md.periodo_mes >= 7 AND md.periodo_mes <= 12 ";
       }
       $fecha = " BETWEEN $semestral ";
     }
-    
-    echo $centros = "select distinct cad.*,ca.tipo_centro_id from centro_atencion_detalle cad 
-      left join centro_atencion ca on(ca.id=cad.centro_id)  where cad.id = ".$matriz_id."  order by cad.id desc";
-    $centros = $modelo->executeQuery($centros);
-    
-    echo $modulos = "select * from modulos_detalle md 
-      left join modulos m on(m.id=md.modulo_id) where m.centro_id in (".$centros[0]["TIPO_CENTRO_ID"].") and to_char(cad.fecha_matriz,'DD-MON') ".$fecha." order by md.id desc";
-    $modulos = $modelo->executeQuery($modulos);
+    $centro_html = "<table>";
+    $centro_html .="<tr><th>Nombre del Centro</th><th>Tipo de Centro</th><th>Fecha Matriz </th></tr>";
 
+    $centros = "select distinct ca.nom_ca as nombre_centro,ca.tipo_centro_id,tc.nombre as nombre_tipo_centro,cad.fecha_matriz from centro_atencion_detalle cad 
+    left join centro_atencion ca on(ca.id=cad.centro_id) 
+    left join tipo_centro tc on(ca.tipo_centro_id=tc.id) 
+      where cad.id = ".$matriz_id."  order by cad.id desc";
+    $centros = $modelo->executeQuery($centros);
+
+    $centro_html .="<tr><th>".$centros[0]["NOMBRE_CENTRO"]."</th><th>".$centros[0]["NOMBRE_TIPO_CENTRO"]."</th><th>".$centros[0]["FECHA_MATRIZ"]."</th></tr></table>";
+    
+    $modulo_html = "<table>";
+    $modulo_html .="<tr><th>Nombre del Modulo</th><th>Encargado</th><th>Periodo Mes</th></tr>";
+    $modulos = "select m.nombre as nombre_modulo,usu.nombre as nombre_usuario,md.periodo_mes from modulos_detalle md 
+    left join modulos m on(m.id=md.modulo_id) 
+    left join usuarios usu on(usu.id=m.encargado_id) 
+      where m.centro_id in (".$centros[0]["TIPO_CENTRO_ID"].") and ".$fecha." and md.periodo_anio = ".date("Y")." order by md.id desc";
+    $modulos = $modelo->executeQuery($modulos);
+    
+    foreach ($modulos as $key => $modulo) 
+    {
+      $modulo_html .="<tr><th>".$modulo["NOMBRE_MODULO"]."</th><th>".$modulo["NOMBRE_USUARIO"]."</th><th>".$modulo["PERIODO_MES"]."</th></tr>";
+      
+      /*$grupo_html = "<table>";
+      $grupo_html .="<tr><th>Nombre del Grupo</th><th>Encargado</th><th>Periodo Mes</th></tr>";
+      $grupos = "select * from ".$modulo["nombre_tabla"]." order by md.id desc";
+      $grupos = $modelo->executeQuery($grupos);
+
+      foreach ($grupos as $key => $grupo) {
+        # code...
+      }*/
+    }
+    $modulo_html .="</table>";
+    $table = '<table><tr><td>'.$centro_html.'</td></tr><tr><td>'.$modulo_html.'</td></tr></table>';
 
     if ($modulos) 
     {
-      echo json_encode(array("data"=>$modulos) ) ;
+      echo json_encode(array("data"=>$table) ) ;
     }else{
       return false;
     }
