@@ -25,21 +25,7 @@
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
     <?php echo $this->getReferencia(); ?>
-    <script>
-      
-        
-    document.addEventListener('DOMContentLoaded', function() {
-        let hash = window.location.hash.substr(1);
-        console.log(hash)
     
-
-    });
-    window.onhashchange= function(){
-        let type = window.location.hash.substr(1);
-        console.log('type')
-       console.log(type)
-      };
-  </script>
     </head>
 <body class="">
   <!-- Left Panel -->
@@ -266,10 +252,9 @@
             <div class="page-header float-left">
                 <div class="page-title">
                     <h1>INABIF</h1>
-                    <?php $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-                   // echo $actual_link; ?>
-                    <p><?php echo $_SESSION["usuario"][0]["NOM_CA"]." (".$_SESSION["usuario"][0]["TIPO_CENTRO_NOMBRE"].")"; ?></p>
-
+                        <span id="cabecera-centro-nombre">
+                        <p><?php echo $_SESSION["usuario"][0]["NOM_CA"]." (".$_SESSION["usuario"][0]["TIPO_CENTRO_NOMBRE"].")"; ?></p>
+                        </span>
                 </div>
             </div>
 
