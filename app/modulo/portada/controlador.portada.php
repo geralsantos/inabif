@@ -455,9 +455,7 @@ class portada extends App{
 
 		$grupo_html = "<table>";
         
-		if ($modulo["NOMBRE_TABLA"]=="CarCondicionIngreso") {
-			print_r($grupos);die();
-			}
+		
       foreach ($grupos as $key => $grupo) 
       {
         if ($key==0) {
@@ -476,7 +474,10 @@ class portada extends App{
           $grupo_html .="<td>".$value."</td>";
         }
         $grupo_html .= "</tr>";
-      }
+	  }
+	  if ($modulo["NOMBRE_TABLA"]=="CarCondicionIngreso") {
+		print_r($grupo_html);die();
+		}
       $modulo_html .=$grupo_html;
     }
     $modulo_html .="</table>";
