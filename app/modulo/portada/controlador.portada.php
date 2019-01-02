@@ -484,6 +484,23 @@ class portada extends App{
       return false;
     }
   }
+  public function mostrar_reporte_rub(){
+    $modelo = new modeloPortada();
+    $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+    $fecha = "";
+    
+    $matrices = "select re.nombre as nombre_residente from residente re 
+	  left join tipo_centro tc on(tc.id=re.tipo_centro_id) 
+	  where ca.tipo_centro_id = ".$tipo_centro." and to_char(cad.fecha_matriz,'DD-MON') ".$fecha." order by cad.id desc";
+    $matrices = $modelo->executeQuery($matrices);
+
+    if ($matrices) 
+    {
+      echo json_encode(array("data"=>$matrices) ) ;
+    }else{
+      return false;
+    }
+  }
   public function descargar_reporte_matriz_rub(){
     $modelo = new modeloPortada();
     $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
@@ -553,6 +570,24 @@ class portada extends App{
     if ($modulos) 
     {
       echo json_encode(array("data"=>$table) ) ;
+    }else{
+      return false;
+    }
+  }
+  public function mostrar_reporte_nominal(){
+    $modelo = new modeloPortada();
+    $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+    $id_residente = $_POST["id_residente"];
+    
+    $residente = "select re.nombre as nombre_residente,ca.id as id_centro,tc.id as tipo_centro_id from residente re 
+	left join tipo_centro tc on(tc.id=re.tipo_centro_id) 
+	left join centro_atencion ca on(ca.tipo_centro_id=tc.id) 
+	where re.id = ".$id_residente." order by re.id desc";
+    $residente = $modelo->executeQuery($residente);
+
+    if ($residente) 
+    {
+      echo json_encode(array("data"=>$residente) ) ;
     }else{
       return false;
     }
