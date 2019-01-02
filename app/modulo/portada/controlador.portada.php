@@ -649,9 +649,7 @@ class portada extends App{
   }
   public function adjuntar_archivo(Type $var = null)
   {
-	$user = posix_getpwuid(posix_geteuid());
-
-	var_dump($user);die();
+	
 	$upload_folder  = URL_ARCHIVOS_ADJUNTOS.DS;
 	
 	$nombre_archivo = $_FILES['archivo']['name'];
