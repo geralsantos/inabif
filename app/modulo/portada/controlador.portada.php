@@ -500,7 +500,7 @@ class portada extends App{
     $fecha = " BETWEEN UPPER('".$_POST["fecha_inicial"]."') AND UPPER('".$_POST["fecha_final"]."')";
     
     $residentes = "select  re.nombre as nombre_residente,re.fecha_creacion as fecha from residente re 
-	  left join tipo_centro tc on(tc.id=re.tipo_centro_id) 
+	  inner join tipo_centro tc on(tc.id=re.tipo_centro_id) 
 	  where to_char(re.fecha_creacion,'DD-MON-YY') ".$fecha." order by re.id desc";
     $residentes = $modelo->executeQuery($residentes);
 
