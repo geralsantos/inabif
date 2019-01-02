@@ -237,7 +237,7 @@
             <div class="page-header float-left">
                 <div class="page-title">
                     <h1>INABIF</h1>
-                    <p><?php /*echo $_SESSION["usuario"][0]["nombre_sede"] */?></p>
+                    <p><?php echo $_SESSION["usuario"][0]["NOM_CA"]; ?></p>
 
                 </div>
             </div>
