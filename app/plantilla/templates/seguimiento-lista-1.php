@@ -19,8 +19,6 @@
                                         <th scope="col">Cerrado</th>
                                         <th scope="col">Ver</th>
                                         <th scope="col" v-if="mostrar_completado">Opción</th>
-                                      
-
                                        
                                     </tr>
                                 </thead>
