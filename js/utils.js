@@ -25,7 +25,7 @@
       document.body.appendChild(html);
     }
     let table_ = document.getElementById(table);
-    var ctx = {worksheet: 'uuuu' || 'Worksheet', table: table_.innerHTML}
+    var ctx = {worksheet: name || 'Worksheet', table: table_.innerHTML}
     window.location.href = uri + base64(format(template, ctx))
     if (!table.nodeType) {
       document.body.removeChild(html);
