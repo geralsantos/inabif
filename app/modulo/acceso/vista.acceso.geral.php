@@ -121,7 +121,7 @@ public function executeQuery($query, $params=NULL){
             echo "EJECUTADO: ".$query;
         echo "<br>";
 
-          return true;
+          return $stmt->fetchAll();
 
         }else{
             echo "ERROR: ".$query;
