@@ -99,6 +99,9 @@ Vue.component('cargar-archivos', {
 
             });
         },
+        mostrar_formulario(){
+            this.showModal = true;
+        }
 
     }
   })
