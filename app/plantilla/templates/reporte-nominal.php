@@ -68,9 +68,9 @@
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title">Registro - Usuario</h5>
+                                    <h5 class="modal-title">Lista Residentes</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true" @click="showModal = false">&times;</span>
+                                    <span aria-hidden="true" @click="modal_lista = false">&times;</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
@@ -96,7 +96,7 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" @click="showModal = false">Cerrar</button>
+                                    <button type="button" class="btn btn-secondary" @click="modal_lista = false">Cerrar</button>
                                 </div>
                             </div>
                         </div>

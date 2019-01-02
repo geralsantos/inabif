@@ -91,17 +91,18 @@ Vue.component('reporte-nominal', {
 
             let word = '';
           
-            this.modal_lista = true;
+          
             this.isLoading = true;
 
                 this.$http.post('ejecutar_consulta?view',{like:word }).then(function(response){
 
                     if( response.body.data != undefined){
+                        this.modal_lista = true;
                         this.isLoading = false;
                         this.pacientes = response.body.data;
                     }else{
                        
-                        this.isLoading = false;
+                        swal("", "No existe ningún residente", "error")
                         
                     }
                  });
