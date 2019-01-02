@@ -166,6 +166,8 @@ Vue.component('registro-perfiles', {
         verificar_nivel(){
             if(this.nivel_id==4 || this.nivel_id==2){
                 this.mostrar = false; 
+            }else{
+                this.mostrar = true; 
             }
         }
     }
