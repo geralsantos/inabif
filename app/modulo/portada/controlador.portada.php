@@ -331,7 +331,7 @@ class portada extends App{
       return false;
     }
   }
-  public function buscar_grupos(){
+  public function buscar_modulo(){
     $modelo = new modeloPortada();
     $id_centro = $_POST["id_centro"];
       $sql = "select m.nombre as modulo_nombre,m.id as id_modulo, m.encargado_id,usu.nombre as encargado_nombre, md.estado_completo,md.fecha_edicion,m.nombre_tabla from modulos m 
