@@ -10,9 +10,7 @@ Vue.component('cagar-archivos', {
     created:function(){
     },
     mounted:function(){
-        this.buscar_centros();
-        this.listar_usuarios();
-        this.listar_nivelesusuarios();
+    
     },
     updated:function(){
     },
