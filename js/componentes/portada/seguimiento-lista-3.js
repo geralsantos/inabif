@@ -112,12 +112,12 @@ Vue.component('seguimiento-lista-3', {
                 if(response.body.data){
                     let arr = [];
                     let valores = response.body.data;
-                    let cabeceras = [];
+                    let cabeceras;
                    
                     for (let index = 0; index < valores.length; index++) {
                         arr.push(Object.values(valores[index]));
                         if (index==0) {
-                            cabeceras.push(Object.keys(valores[index]));
+                            cabeceras= Object.keys(valores[index]);
                         }
                     }
                     this.campos = arr;

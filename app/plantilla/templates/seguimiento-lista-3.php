@@ -19,8 +19,8 @@
                        
                             <tbody class="text-center">
                                 <tr v-for="campo in campos">
-                                    <td>{{campo}}</td>
-                                   
+                                    <td v-for="item in campo">{{item}}</td>
+                                  
                                 </tr>
                                  
                             </tbody>
