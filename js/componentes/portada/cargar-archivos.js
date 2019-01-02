@@ -3,6 +3,7 @@ Vue.component('cagar-archivos', {
     data:()=>({
         
         showModal: false,
+        archivo:null,
        
     }),
     created:function(){
