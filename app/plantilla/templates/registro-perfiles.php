@@ -91,12 +91,12 @@
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <div class=" "><label for="text-input" class=" form-control-label">DNI</label>
-                                <input type="number" v-model="DNI" name="DNI" placeholder="" class="form-control"> 
+                                <input type="number" v-model="DNI" name="DNI" max="12" placeholder="" class="form-control"> 
                                 </div>
                             </div>
                             <div class="form-group col-md-6">
                                 <div class=" "><label for="text-input" class=" form-control-label">Númer Celular</label>
-                                <input type="number" v-model="NumCel" name="NumCel" placeholder="" class="form-control"> 
+                                <input type="number" v-model="NumCel" max="9" name="NumCel" placeholder="" class="form-control"> 
                                 </div>
                             </div>
                             <div class="form-group col-md-4" v-if="mostrar">

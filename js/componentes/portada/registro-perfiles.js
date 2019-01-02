@@ -119,6 +119,7 @@ Vue.component('registro-perfiles', {
                     this.clave=null;
                     this.cclave=null;
                     this.showModal = true;
+                    this.mostrar = true;
             }else{
                 console.log(usuario);
  //let  where = {'id':usuario.ID};
