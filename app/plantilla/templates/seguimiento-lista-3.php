@@ -11,8 +11,8 @@
                         <div class="table-responsive">
                             <table class="table">
                            <thead class="thead-dark text-center">
-                                <tr v-for="cabecera in cabeceras">
-                                    <th scope="col">{{cabecera}}</th>
+                                <tr>
+                                    <th scope="col" v-for="cabecera in cabeceras">{{cabecera}}</th>
                                    
                                 </tr>
                             </thead>
