@@ -28,7 +28,8 @@
                                     <button @click="mostrar_reporte_nominal()" class="btn btn-default"><i class="fa fa-send"></i> Buscar</button>
                                 </div>
                                 <div class="col-12 col-md-1">
-                                    <a @click="mostrar_lista_residentes()" class="menutoggle"><i class="fa fa fa-tasks"></i></a>
+                                   
+                                    <button @click="mostrar_lista_residentes()" class="btn btn-danger"><i class="fa fa fa-tasks"></i> Lista</button>
                                 </div>
                             </div>
                             <div class="table-responsive">
