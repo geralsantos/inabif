@@ -337,7 +337,7 @@ class portada extends App{
       $sql = "select m.nombre as modulo_nombre,m.id as id_modulo, m.encargado_id,usu.nombre as encargado_nombre, md.estado_completo,md.fecha_edicion from modulos m 
       left join modulos_detalle md on (md.modulo_id=m.Id) 
       left join usuarios usu on (usu.id = m.encargado_id) 
-      left join centro_atencion ca on (ca.tipo_centro_id=m.tipo_centro_id) 
+      left join centro_atencion ca on (ca.tipo_centro_id=m.centro_id) 
       where ca.id = ".$id_centro;
 
     $res = $modelo->executeQuery($sql );
@@ -350,12 +350,8 @@ class portada extends App{
   }
   public function mostrar_grupo(){
     $modelo = new modeloPortada();
-    $id_centro = $_POST["id_centro"];
-      $sql = "select m.nombre as modulo_nombre,m.id as id_modulo, m.encargado_id,usu.nombre as encargado_nombre, md.estado_completo,md.fecha_edicion from modulos m 
-      left join modulos_detalle md on (md.modulo_id=m.Id) 
-      left join usuarios usu on (usu.id = m.encargado_id) 
-      left join centro_atencion ca on (ca.tipo_centro_id=m.tipo_centro_id) 
-      where ca.id = ".$id_centro;
+    $id_grupo = $_POST["id_grupo"];
+    $sql = "select * from modulos m where ca.id = ".$id_centro;
 
     $res = $modelo->executeQuery($sql );
     if ($res) 
