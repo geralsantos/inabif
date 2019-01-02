@@ -121,6 +121,7 @@ function hora_min_seg(time){
       window.location.hash='#'+type;
       window.onhashchange= function(){
         var type = window.location.hash.substr(1);
+        window.location.lasthash.pop();
         appVue.changeview(type);
       }
       // just mocking history back
