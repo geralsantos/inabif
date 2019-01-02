@@ -1,4 +1,4 @@
-var lista2 = Vue.component('seguimiento-lista-2', {
+Vue.component('seguimiento-lista-2', {
     template:'#seguimiento-lista-2',
     data:()=>({
         periodo:moment().format('MMMM YYYY'),
