@@ -5,6 +5,7 @@ Vue.component('seguimiento-lista-2', {
     
         completado:false,
         showModal:false,
+        mensaje_entre_componentes_1:null,
         grupos:[],
         campos:[],
 
@@ -14,7 +15,8 @@ Vue.component('seguimiento-lista-2', {
         anio:(new Date()).getFullYear(),
         coincidencias:[],
         bloque_busqueda:false,
-        id_residente:null
+        id_residente:null,
+ 
 
 
     }),
@@ -117,7 +119,7 @@ Vue.component('seguimiento-lista-2', {
         },
 
         ver_modulo(nombre_tabla){
-            this.remover_mensaje_entre_componentes();
+            
             this.mensaje_entre_componentes(nombre_tabla);
             window.location.hash='#seguimiento-lista-3';
         },
@@ -130,8 +132,13 @@ Vue.component('seguimiento-lista-2', {
         },
         listar_grupos(){
             console.log("listar_grupos");
-            let id_centro = document.getElementById("mensaje_entre_componentes_1").value; 
-            this.$http.post('buscar_grupos?view',{id_centro:id_centro}).then(function(response){
+            if(this.mensaje_entre_componentes_1==null){
+                let id_centro = document.getElementById("mensaje_entre_componentes_1").value; 
+                this.mensaje_entre_componentes_1 = id_centro;
+                this.remover_mensaje_entre_componentes();
+            }
+            
+            this.$http.post('buscar_grupos?view',{id_centro:this.mensaje_entre_componentes_1}).then(function(response){
                 this.grupos = response.body.data;
 
                 console.log(this.grupos);
