@@ -23,7 +23,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="col-12 col-md-3">
+                                <div class="col-12 col-md-1">
                                     <label for="text-input" class=" form-control-label"></label>
                                     <button @click="mostrar_lista_residentes()" class="btn btn-primary"><i class="fa fa fa-users"></i> Lista</button>
                                 </div>
