@@ -350,7 +350,7 @@ class portada extends App{
       left join modulos_detalle md on (md.modulo_id=m.Id) 
       left join usuarios usu on (usu.id = m.encargado_id) 
       left join centro_atencion ca on (ca.tipo_centro_id=m.centro_id) 
-      where ca.id = ".$id_centro;
+      where ca.id = ".$id_centro." order by m.id desc";
 
     $res = $modelo->executeQuery($sql );
     if ($res) 
