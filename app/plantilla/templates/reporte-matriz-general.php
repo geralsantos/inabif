@@ -30,7 +30,7 @@
                                         <tr v-for="matriz in matrices">
                                             <td>{{matriz.NOMBRE_CENTRO}}</td>
                                             <td>{{matriz.FECHA_MATRIZ}}</td>
-                                            <td><button class="btn btn-primary" @click="generar_reporte(matriz.ID)">Descargar</button></td>
+                                            <td><button class="btn btn-primary" @click="descargar_reporte_matriz_general(matriz.ID)">Descargar</button></td>
                                         
                                         </tr>
                                     

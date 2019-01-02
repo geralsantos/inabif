@@ -414,6 +414,7 @@ class portada extends App{
     $modelo = new modeloPortada();
     $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
     $periodo = $_POST["periodo"];
+    $matriz_id = $_POST["matriz_id"];
     if ($periodo=="mensual") {
       $fecha = " = UPPER('".date("y-M")."') "; 
     }else {
@@ -426,7 +427,7 @@ class portada extends App{
     }
     
     echo $centros = "select distinct cad.*,ca.tipo_centro_id from centro_atencion_detalle cad 
-      left join centro_atencion ca on(ca.id=cad.centro_id)  where ca.tipo_centro_id = ".$tipo_centro." and to_char(cad.fecha_matriz,'DD-MON') ".$fecha." order by cad.id desc";
+      left join centro_atencion ca on(ca.id=cad.centro_id)  where cad.id = ".$matriz_id."  order by cad.id desc";
     $centros = $modelo->executeQuery($centros);
     
     echo $modulos = "select * from modulos_detalle md 
