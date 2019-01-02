@@ -11,7 +11,7 @@ Vue.component('reporte-matriz-general', {
     created:function(){
     },
     mounted:function(){
-        this.buscar_centros();
+        this.mostrar_matrices();
 
     },
     updated:function(){
