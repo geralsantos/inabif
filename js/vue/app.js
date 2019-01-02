@@ -21,6 +21,9 @@
       currentView:function(val){
       }
     },
+    beforeDestroy() {
+      console.log('Main Vue destroyed')
+    },
     methods: {
       form_submit:function(){
         var data = new FormData(document.querySelector('#login-form'));
@@ -86,8 +89,10 @@
         this.menuVisible = !this.menuVisible;
       },
       changeview(val){
+     
         console.log('changeview: ',val);
         this.currentView=val;
+        
           //document.querySelector('.comprobantesestado').style.display= (val!="portadaindex"?'none':'');
       }
     }
