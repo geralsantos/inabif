@@ -351,7 +351,7 @@ class portada extends App{
   public function mostrar_grupo(){
     $modelo = new modeloPortada();
     $nombre_tabla = $_POST["nombre_tabla"];
-    $sql = "select * from ".$nombre_tabla." where  to_char(fecha_creacion, 'MON-YY') ='".date("y-M")."'";
+    $sql = "select * from ".$nombre_tabla." where  to_char(fecha_creacion, 'DD-MON') ='".date("y-M")."'";
 
     $res = $modelo->executeQuery($sql );
     if ($res) 
