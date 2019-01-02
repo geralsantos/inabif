@@ -9,11 +9,11 @@
                         <div class="card-body">
                             <div class="row form-group">
                                 <div class="col col-md-2"><label for="select" class=" form-control-label">Fecha Inicial</label></div>
-                                <div class="col-12 col-md-2">
+                                <div class="col-12 col-md-3">
                                     <input type="date" class="form-control dtp_fecha_indicador_11" placeholder="YYYY-MM-DD" v-model="fecha_inicial" >
                                 </div>
-                                <div class="col col-md-2 col-sm-2"><label for="select" class=" form-control-label">Fecha Final</label></div>
-                                <div class="col-12 col-md-2">
+                                <div class="col col-md-2"><label for="select" class=" form-control-label">Fecha Final</label></div>
+                                <div class="col-12 col-md-3">
                                     <input type="date" class="form-control dtp_fecha_indicador_11" placeholder="YYYY-MM-DD" v-model="fecha_final">
                                 </div>
                                 <div class="col-12 col-md-1">
