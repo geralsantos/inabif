@@ -84,7 +84,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody class="text-center">
-                                                <tr v-for="residente in residentes">
+                                                <tr v-for="residente in pacientes">
                                                     <td>{{residente.NOMBRE_RESIDENTE}}</td>
                                                     <td>{{residente.DNI}}</td>
                                                     <td><button class="btn btn-success" @click="elegir_residente(residente)">Descargar</button></td>
