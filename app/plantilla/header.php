@@ -252,7 +252,7 @@
                 <div class="page-title">
                     <h1>INABIF</h1>
                     <?php $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-                    echo $actual_link; ?>
+                   // echo $actual_link; ?>
                     <p><?php echo $_SESSION["usuario"][0]["NOM_CA"]." (".$_SESSION["usuario"][0]["TIPO_CENTRO_NOMBRE"].")"; ?></p>
 
                 </div>
