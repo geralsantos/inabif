@@ -470,6 +470,7 @@ class portada extends App{
         }
         $grupo_html .= "</tr>";
       }
+      $modulo_html .=$grupo_html;
     }
     $grupo_html .= "</table>";
     $modulo_html .="</table>";
