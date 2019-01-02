@@ -33,7 +33,7 @@
                                 <option value="2021">2021</option>
                                 </select>
                             </div>
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-2">
                                 <div class=""><label for="text-input" class=" form-control-label">Mes</label>
                                 <select id="mes" v-model="mes" disabled="disabled" class="form-control" >
                                         <option value="1">Enero</option>
@@ -50,6 +50,10 @@
                                         <option value="12">Diciembre</option>
                                     </select> </div>
                             </div>
+                            <div class="col-12 col-md-1">
+                                    <label for="text-input" class=" form-control-label"></label>
+                                    <button @click="mostrar_lista_residentes()" class="btn btn-primary"><i class="fa fa fa-users"></i> Lista</button>
+                                </div>
 
                         </div>
                         <div class="row">

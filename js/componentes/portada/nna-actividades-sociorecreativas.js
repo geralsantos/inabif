@@ -115,6 +115,49 @@ Vue.component('nna-actividades-sociorecreativas', {
              });
 
         },
+        mostrar_lista_residentes(){
+            this.id_residente = null;
+            this.isLoading = true;
+                this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
+
+                    if( response.body.data != undefined){
+                        this.modal_lista = true;
+                        this.isLoading = false;
+                        this.pacientes = response.body.data;
+                    }else{
+                        swal("", "No existe ningún residente", "error")
+                    }
+                 });
+            
+        },
+        elegir_residente(residente){
+
+            this.id_residente = residente.ID;
+            let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
+            let apellido = (residente.APELLIDO==undefined)?'':residente.APELLIDO;
+            this.nombre_residente=nombre + ' ' + apellido;
+            this.modal_lista = false;
+
+            this.$http.post('cargar_datos_residente?view',{tabla:'NNAActividadesSociorecrea', residente_id:this.id_residente }).then(function(response){
+
+                if( response.body.atributos != undefined){
+
+                    this.Nro_Arte = response.body.atributos[0]["NRO_ARTE"];
+                    this.Nro_BioHuerto = response.body.atributos[0]["NRO_BIOHUERTO"];
+                    this.Nro_Zapateria = response.body.atributos[0]["NRO_ZAPATERIA"];
+                    this.Nro_Carpinteria = response.body.atributos[0]["NRO_CARPINTERIA"];
+                    this.Nro_Ceramica = response.body.atributos[0]["NRO_CERAMICA"];
+                    this.Nro_Crianza = response.body.atributos[0]["NRO_CRIANZA"];
+                    this.Nro_Dibujo = response.body.atributos[0]["NRO_DIBUJO"];
+                    this.Nro_Tejido = response.body.atributos[0]["NRO_TEJIDO"];
+                    this.Nro_Deportes = response.body.atributos[0]["NRO_DEPORTES"];
+                    this.Nro_Taller_Pro = response.body.atributos[0]["NRO_TALLER_PRO"];
+
+
+                }
+             });
+
+        }
         
     }
   })
