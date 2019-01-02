@@ -134,6 +134,7 @@
             <h3 class="menu-title">REPORTES</h3>
             <a href="#reporte-matriz-general" class="list-group-item level-0" aria-expanded="true" id="Perfiles" style="width:100%;">Matriz General</a>
             <a href="#reporte-rub" class="list-group-item level-0" aria-expanded="true" id="reporterub" style="width:100%;">Rub</a>
+            <a href="#reporte-nominal" class="list-group-item level-0" aria-expanded="true" id="reportenominal" style="width:100%;">Nominal</a>
             <!-- si tiene reportes -->
             <h3 class="menu-title">PERFILES</h3>
             <a href="#registro-perfiles" class="list-group-item level-0" aria-expanded="true" id="Perfiles" style="width:100%;">Usuario</a>
@@ -147,7 +148,7 @@
             <h3 class="menu-title">REPORTES</h3>
             <a href="#reporte-matriz-general" class="list-group-item level-0" aria-expanded="true" id="Perfiles" style="width:100%;">Matriz General</a>
             <a href="#reporte-rub" class="list-group-item level-0" aria-expanded="true" id="reporterub" style="width:100%;">Rub</a>
-
+            <a href="#reporte-nominal" class="list-group-item level-0" aria-expanded="true" id="reportenominal" style="width:100%;">Nominal</a>
             <h3 class="menu-title">PERFILES</h3>
 
             <?php 
@@ -159,7 +160,7 @@
             <h3 class="menu-title">REPORTES</h3>
             <a href="#reporte-matriz-general" class="list-group-item level-0" aria-expanded="true" id="Perfiles" style="width:100%;">Matriz General</a>
             <a href="#reporte-rub" class="list-group-item level-0" aria-expanded="true" id="reporterub" style="width:100%;">Matriz General</a>
-
+            <a href="#reporte-nominal" class="list-group-item level-0" aria-expanded="true" id="reportenominal" style="width:100%;">Nominal</a>
             <h3 class="menu-title">PERFILES</h3>
             <?php 
             /* puede bloquear la matriz de un centro*/
@@ -170,6 +171,7 @@
             <h3 class="menu-title">REPORTES</h3>
             <a href="#reporte-matriz-general" class="list-group-item level-0" aria-expanded="true" id="Perfiles" style="width:100%;">Matriz General</a>
             <a href="#reporte-rub" class="list-group-item level-0" aria-expanded="true" id="reporterub" style="width:100%;">Rub</a>
+            <a href="#reporte-nominal" class="list-group-item level-0" aria-expanded="true" id="reportenominal" style="width:100%;">Nominal</a>
             <h3 class="menu-title">PERFILES</h3>
             <?php 
         }else if ($nivelusu==RESPONSABLE_INFORMACION) {
@@ -180,7 +182,7 @@
             <h3 class="menu-title">REPORTES</h3>
             <a href="#reporte-matriz-general" class="list-group-item level-0" aria-expanded="true" id="Perfiles" style="width:100%;">Matriz General</a>
             <a href="#reporte-rub" class="list-group-item level-0" aria-expanded="true" id="reporterub" style="width:100%;">Rub</a>
-
+            <a href="#reporte-nominal" class="list-group-item level-0" aria-expanded="true" id="reportenominal" style="width:100%;">Nominal</a>
             <h3 class="menu-title">PERFILES</h3>
             <?php 
         }else if ($nivelusu==REGISTRADOR) {
