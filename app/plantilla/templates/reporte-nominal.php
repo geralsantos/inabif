@@ -79,14 +79,14 @@
                                             <thead class="thead-dark text-center">
                                                 <tr>
                                                     <th scope="col">Nombre</th>
-                                                    <th scope="col">DNI</th>
+                                                    <th scope="col">NÚMERO DOCUMENTO</th>
                                                     <th scope="col">Opción</th>
                                                 </tr>
                                             </thead>
                                             <tbody class="text-center">
                                                 <tr v-for="residente in pacientes">
-                                                    <td>{{residente.NOMBRE_RESIDENTE}}</td>
-                                                    <td>{{residente.DNI}}</td>
+                                                    <td>{{residente.NOMBRE}} {{residente.APELLIDO}}</td>
+                                                    <td>{{residente.DOCUMENTO}}</td>
                                                     <td><button class="btn btn-success" @click="elegir_residente(residente)">Descargar</button></td>
                                                 
                                                 </tr>
