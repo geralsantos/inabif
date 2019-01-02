@@ -649,21 +649,18 @@ class portada extends App{
   }
   public function adjuntar_archivo(Type $var = null)
   {
-	echo $upload_folder  = URL_ARCHIVOS_ADJUNTOS;
+	$upload_folder  = URL_ARCHIVOS_ADJUNTOS;
 	
-	/*$nombre_archivo = $_FILES['archivo']['name'];
+	$nombre_archivo = $_FILES['archivo']['name'];
 	$tipo_archivo   = $_FILES['archivo']['type'];
 	$tamano_archivo = $_FILES['archivo']['size'];
 	$tmp_archivo    = $_FILES['archivo']['tmp_name'];
 	$extension		= pathinfo($nombre_archivo, PATHINFO_EXTENSION);
 	$result=[];
 	$fichero_subido = $upload_folder . basename($nombre_archivo);
-	if (strtolower($extension) == "xlsx" || strtolower($extension) == "xls")
+	if (move_uploaded_file($tmp_archivo, $fichero_subido))
 	{
-	  if (move_uploaded_file($tmp_archivo, $fichero_subido))
-	  {
-
-	  }
-	}*/
+		echo "subido";
+	}
   }
 }
