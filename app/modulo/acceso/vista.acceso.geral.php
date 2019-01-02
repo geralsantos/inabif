@@ -223,7 +223,7 @@ if (isset($_GET["opcionejecutar"]) && $_GET["opcionejecutar"]!="") {
     }
     die();
 }else{
-    
+    $x->executeQuery("insert into residente (id,tipo_centro_id,nombre,apellido_p,apellido_m,pais_id,departamento_naci_cod,provincia_naci_cod,distrito_naci_cod,sexo,fecha_naci,edad,lengua_materna,estado,fecha_creacion,fecha_edicion,usuario_crea,usuario_edita) values(seq_residente.NEXTVAL,1,'geral4','poma','santos',19,'21','2110','211005','h',sysdate,22,7,1,sysdate,sysdate,1,1)");
      /*
  
     print_r($x->executeQuery("delete from centro_atencion"));
