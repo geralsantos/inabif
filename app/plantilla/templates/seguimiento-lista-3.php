@@ -11,15 +11,15 @@
                         <div class="table-responsive">
                             <table class="table">
                            <thead class="thead-dark text-center">
-                                <tr v-for="(cabecera,index) in cabeceras">
-                                    <th scope="col">{{cabecera[index]}}</th>
+                                <tr v-for="cabecera in cabeceras">
+                                    <th scope="col">{{cabecera}}</th>
                                    
                                 </tr>
                             </thead>
                        
                             <tbody class="text-center">
-                                <tr v-for="(campo,index) in campos">
-                                    <td>{{campo[index]}}</td>
+                                <tr v-for="campo in campos">
+                                    <td>{{campo}}</td>
                                    
                                 </tr>
                                  
