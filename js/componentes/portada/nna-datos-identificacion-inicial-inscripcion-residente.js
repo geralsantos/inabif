@@ -118,9 +118,7 @@ Vue.component('nna-datos-identificacion-inicial-inscripcion-residente', {
                 
             
         },
-        insertar_residente(){
-            
-        },
+        
         buscar_residente(){
             this.id_residente = null;
 

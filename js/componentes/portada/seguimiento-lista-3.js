@@ -102,20 +102,10 @@ Vue.component('seguimiento-lista-3', {
             });
         },
 
-        mostrar_modulo(id_grupo){
-            this.mensaje_entre_componentes(centro_id);
-            window.location.hash='#seguimiento-lista-3';
-        },
-        mensaje_entre_componentes(centro_id){
-            var input = document.createElement("input");
-            input.type = "hidden";
-            input.id = "mensaje_entre_componentes";
-            input.value = centro_id;
-            document.body.appendChild(input); 
-        },
+        
        
         listar_campos(){
-            console.log("listar_grupos");
+            console.log("listar_campos");
             let id_grupo = document.getElementById("mensaje_entre_componentes").value; 
             this.$http.post('buscar_modulo?view',{id_grupo:id_grupo}).then(function(response){
                 this.campos = response.body.data;

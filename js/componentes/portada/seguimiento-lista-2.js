@@ -102,15 +102,15 @@ Vue.component('seguimiento-lista-2', {
             });
         },
 
-        mostrar_modulo(id_grupo){
-            this.mensaje_entre_componentes(centro_id);
+        mostrar_modulo(nombre_tabla){
+            this.mensaje_entre_componentes(nombre_tabla);
             window.location.hash='#seguimiento-lista-3';
         },
-        mensaje_entre_componentes(centro_id){
+        mensaje_entre_componentes(id_grupo){
             var input = document.createElement("input");
             input.type = "hidden";
             input.id = "mensaje_entre_componentes";
-            input.value = centro_id;
+            input.value = id_grupo;
             document.body.appendChild(input); 
         },
         listar_grupos(){
