@@ -25,7 +25,7 @@
                         <td>{{usuario.NOMBRE}}</td>
                         <td>{{usuario.APELLIDO}}</td>
                         <td>{{usuario.USUARIO}}</td>
-                        <td>{{usuario.NIVEL}}</td>
+                        <td>{{usuario.NIVEL_NOMBRE}}</td>
                         <td><button  class="btn btn-primary" @click="verRegistro(usuario)">Editar</button> 
                         <button  class="btn btn-danger" @click="EliminarUsuario(usuario)">Eliminar</button>
                         </td>
