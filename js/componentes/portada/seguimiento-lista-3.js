@@ -7,6 +7,7 @@ Vue.component('seguimiento-lista-3', {
         showModal:false,
    
         campos:[],
+        cabeceras:[],
 
         nombre_residente:null,
         isLoading:false,
@@ -120,6 +121,7 @@ Vue.component('seguimiento-lista-3', {
                         }
                     }
                     this.campos = arr;
+                    this.cabeceras = cabeceras;
                 console.log(this.campos);
                 console.log(cabeceras);
                 this.remover_mensaje_entre_componentes();
