@@ -319,6 +319,18 @@ class portada extends App{
         return false;
       }
   }
+  public function completar_grupo(){
+    $modelo = new modeloPortada();
+    $sql = "";
+    $res = $modelo->insertData("modulos_detalle",array("modulo_id"=>$_POST["id_modulo"],"estado_completo"=>1,"Periodo_Mes"=>date("m"),"Periodo_Anio"=>date("Y"),"usuario_crea"=>$_SESSION["usuario"][0]["ID"],"usuario_edita"=>$_SESSION["usuario"][0]["ID"] ));
+
+    if ($res) 
+    {
+      echo json_encode(array("resultado"=>true) ) ;
+    }else{
+      return false;
+    }
+}
   public function generar_matriz(){
     $modelo = new modeloPortada();
     $sql = "";
