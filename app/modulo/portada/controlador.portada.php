@@ -515,21 +515,8 @@ class portada extends App{
     $modelo = new modeloPortada();
     $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
     $periodo = $_POST["periodo"];
-    $matriz_id = $_POST["matriz_id"];
+    $fecha = " BETWEEN UPPER('".$_POST["fecha_inicial"]."') AND UPPER('".$_POST["fecha_final"]."')";
    
-	$fecha = " BETWEEN  ";
-
-    $centro_html = "<table>";
-    $centro_html .="<tr><th>Nombre del Centro</th><th>Tipo de Centro</th><th>Fecha Matriz </th></tr>";
-
-    $centros = "select distinct ca.nom_ca as nombre_centro,ca.tipo_centro_id,tc.nombre as nombre_tipo_centro,cad.fecha_matriz from centro_atencion_detalle cad 
-    left join centro_atencion ca on(ca.id=cad.centro_id) 
-    left join tipo_centro tc on(ca.tipo_centro_id=tc.id) 
-      where cad.id = ".$matriz_id."  order by cad.id desc";
-    $centros = $modelo->executeQuery($centros);
-
-    $centro_html .="<tr><th>".$centros[0]["NOMBRE_CENTRO"]."</th><th>".$centros[0]["NOMBRE_TIPO_CENTRO"]."</th><th>".$centros[0]["FECHA_MATRIZ"]."</th></tr></table>";
-    
     $modulo_html = "<table>";
     $modulos = "select m.nombre as nombre_modulo,usu.nombre as nombre_usuario,md.periodo_mes,m.nombre_tabla from modulos_detalle md 
     left join modulos m on(m.id=md.modulo_id) 
@@ -659,5 +646,24 @@ class portada extends App{
     }else{
       return false;
     }
+  }
+  public function adjuntar_archivo(Type $var = null)
+  {
+	echo $upload_folder  = dirname(__FILE__);
+	
+	/*$nombre_archivo = $_FILES['archivo']['name'];
+	$tipo_archivo   = $_FILES['archivo']['type'];
+	$tamano_archivo = $_FILES['archivo']['size'];
+	$tmp_archivo    = $_FILES['archivo']['tmp_name'];
+	$extension		= pathinfo($nombre_archivo, PATHINFO_EXTENSION);
+	$result=[];
+	$fichero_subido = $upload_folder . basename($nombre_archivo);
+	if (strtolower($extension) == "xlsx" || strtolower($extension) == "xls")
+	{
+	  if (move_uploaded_file($tmp_archivo, $fichero_subido))
+	  {
+
+	  }
+	}*/
   }
 }
