@@ -101,31 +101,46 @@ Vue.component('seguimiento-lista-2', {
                 }
             });
         },
+        completar_grupo(id_modulo){
+            this.$http.post('completar_grupo?view',{id_modulo:id_modulo}).then(function(response){
+                if( response.body.resultado ){
+                    swal("", "Matriz Generada", "success");
+
+                  
+                    this.listar_grupos();
+                }else{
+                    swal("", "Ha ocurrido un error", "error");
+                    this.listar_grupos();
+                }
+                
+            });
+        },
 
         ver_modulo(nombre_tabla){
+            this.remover_mensaje_entre_componentes();
             this.mensaje_entre_componentes(nombre_tabla);
             window.location.hash='#seguimiento-lista-3';
         },
         mensaje_entre_componentes(id_grupo){
             var input = document.createElement("input");
             input.type = "hidden";
-            input.id = "mensaje_entre_componentes";
+            input.id = "mensaje_entre_componentes_2";
             input.value = id_grupo;
             document.body.appendChild(input); 
         },
         listar_grupos(){
             console.log("listar_grupos");
-            let id_centro = document.getElementById("mensaje_entre_componentes").value; 
+            let id_centro = document.getElementById("mensaje_entre_componentes_1").value; 
             this.$http.post('buscar_grupos?view',{id_centro:id_centro}).then(function(response){
                 this.grupos = response.body.data;
 
                 console.log(this.grupos);
-                this.remover_mensaje_entre_componentes();
+               
                 
             });
         },
         remover_mensaje_entre_componentes(){
-            var input = document.getElementById("mensaje_entre_componentes"); 
+            var input = document.getElementById("mensaje_entre_componentes_1"); 
             input.parentNode.removeChild(input)
           }
 

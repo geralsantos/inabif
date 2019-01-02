@@ -107,7 +107,7 @@ Vue.component('seguimiento-lista-3', {
        
         listar_campos(){
             console.log("listar_campos");
-            let nombre_tabla = document.getElementById("mensaje_entre_componentes").value; 
+            let nombre_tabla = document.getElementById("mensaje_entre_componentes_2").value; 
             this.$http.post('mostrar_modulo?view',{nombre_tabla:nombre_tabla}).then(function(response){
                 if(response.body.data){
                     let arr = [];
@@ -132,7 +132,7 @@ Vue.component('seguimiento-lista-3', {
             });
         },
         remover_mensaje_entre_componentes(){
-            var input = document.getElementById("mensaje_entre_componentes"); 
+            var input = document.getElementById("mensaje_entre_componentes_2"); 
             input.parentNode.removeChild(input)
           }
 
