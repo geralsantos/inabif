@@ -122,6 +122,8 @@ function hora_min_seg(time){
         var type = window.location.hash.substr(1);
         if(type == 'reporte-nominal' || type == 'reporte-matriz-general' || type == 'reporte-rub'  ){
           $('#cabecera-centro-nombre').hide();
+        }else{
+          $('#cabecera-centro-nombre').show();
         }
         appVue.changeview(type);
       }
