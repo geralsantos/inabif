@@ -448,14 +448,16 @@ class portada extends App{
     {
       $modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td><td>".$modulo["NOMBRE_USUARIO"]."</td><td>".$modulo["PERIODO_MES"]."</td></tr>";
       
-      /*$grupo_html = "<table>";
-      $grupo_html .="<tr><th>Nombre del Grupo</th><th>Encargado</th><th>Periodo Mes</th></tr>";
+      $grupo_html = "<table>";
+      //$grupo_html .="<tr><th>Nombre del Grupo</th><th>Encargado</th><th>Periodo Mes</th></tr>";
       $grupos = "select * from ".$modulo["nombre_tabla"]." order by md.id desc";
       $grupos = $modelo->executeQuery($grupos);
 
-      foreach ($grupos as $key => $grupo) {
-        # code...
-      }*/
+      foreach ($grupos as $key => $grupo) 
+      {
+        print_r($grupo);die();
+        //$grupo_html .="<tr><td></td><td>".$grupo["NOMBRE_MODULO"]."</td><td>".$grupo["NOMBRE_USUARIO"]."</td><td>".$grupo["PERIODO_MES"]."</td></tr>";
+      }
     }
     $modulo_html .="</table>";
     $table = '<table><tr><td>'.$centro_html.'</td></tr><tr><td>'.$modulo_html.'</td></tr></table>';
