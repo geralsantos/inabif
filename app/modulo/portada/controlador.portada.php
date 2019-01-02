@@ -308,7 +308,14 @@ class portada extends App{
           left join centro_atencion_detalle cad on (cad.centro_id=ca.id) 
           left join tipo_centro tc on (ca.tipo_centro_id=tc.id) 
           where ca.estado = 1 ";
+		}else if($_SESSION["usuario"][0]["NIVEL"]=="4") //USER_SEDE
+        {
+          $sql = "select distinct ca.id as id_centro,ca.NOM_CA as nombre_centro,cad.estado_completo,cad.fecha_cierre  from centro_atencion ca 
+          left join centro_atencion_detalle cad on (cad.centro_id=ca.id) 
+          left join tipo_centro tc on (ca.tipo_centro_id=tc.id) 
+          where tc.id=".$_SESSION["usuario"][0]["TIPO_CENTRO_ID"]." and ca.estado = 1 ";
         }
+		
         $res = $modelo->executeQuery($sql );
         if ($res) 
         {
@@ -499,7 +506,8 @@ class portada extends App{
     $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
     $fecha = " BETWEEN UPPER('".$_POST["fecha_inicial"]."') AND UPPER('".$_POST["fecha_final"]."')";
     
-    echo $residentes = "select  re.nombre as nombre_residente,re.fecha_creacion as fecha from residente re 
+    $residentes = "select  re.nombre as nombre_residente,re.fecha_creacion as fecha from residente re 
+	  inner join tipo_centro tc on(tc.id=re.tipo_centro_id) 
 	  where to_char(re.fecha_creacion,'DD-MON-YY') ".$fecha." order by re.id desc";
     $residentes = $modelo->executeQuery($residentes);
 

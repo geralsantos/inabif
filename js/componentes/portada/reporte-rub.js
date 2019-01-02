@@ -38,9 +38,9 @@ Vue.component('reporte-rub', {
             });
 
         },
-        descargar_reporte_matriz_rub(matriz_id){
+        descargar_reporte_matriz_rub(residente_id){
 
-            let datos = {periodo:this.periodo,matriz_id:matriz_id};
+            let datos = {periodo:this.periodo,residente_id:residente_id};
             console.log(datos);
             this.$http.post('descargar_reporte_matriz_rub?view',datos).then(function(response){
 
