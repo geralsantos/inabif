@@ -12,14 +12,14 @@
                             <table class="table">
                            <thead class="thead-dark text-center">
                                 <tr v-for="(cabecera,index) in cabeceras">
-                                    <th scope="col">{{cabecera}}</th>
+                                    <th scope="col">{{cabecera[index]}}</th>
                                    
                                 </tr>
                             </thead>
                        
                             <tbody class="text-center">
                                 <tr v-for="(campo,index) in campos">
-                                    <td>{{campo}}</td>
+                                    <td>{{campo[index]}}</td>
                                    
                                 </tr>
                                  
