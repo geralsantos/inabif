@@ -410,6 +410,7 @@ class portada extends App{
       return false;
     }
   }
+  
   public function descargar_reporte_matriz_general(){
     $modelo = new modeloPortada();
     $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
@@ -447,20 +448,32 @@ class portada extends App{
     foreach ($modulos as $key => $modulo) 
     {
       $modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td><td>".$modulo["NOMBRE_USUARIO"]."</td><td>".$modulo["PERIODO_MES"]."</td></tr>";
-      
-      $grupo_html = "<table>";
-      //$grupo_html .="<tr><th>Nombre del Grupo</th><th>Encargado</th><th>Periodo Mes</th></tr>";
+
       $grupos = "select * from ".$modulo["NOMBRE_TABLA"]." order by id desc";
       $grupos = $modelo->executeQuery($grupos);
 
+        $grupo_html = "<table>";
+        $keys = array_keys($grupos[0]);
+        $grupo_html .="<tr><th></th>";
+        foreach ($keys as $key) 
+        {
+          $grupo_html .="<th>$key</th>";
+        }
+        $grupo_html .="</tr>";
+
       foreach ($grupos as $key => $grupo) 
       {
-        print_r($key);die();
-        //$grupo_html .="<tr><td></td><td>".$grupo["NOMBRE_MODULO"]."</td><td>".$grupo["NOMBRE_USUARIO"]."</td><td>".$grupo["PERIODO_MES"]."</td></tr>";
+        $grupo_values = array_values($grupo);
+        $grupo_html .= "<tr><td></td>";
+        foreach ($grupo_values as $key => $value) {
+          $grupo_html .="<td>".$value."</td>";
+        }
+        $grupo_html .= "</tr>";
       }
     }
+    $grupo_html .= "</table>";
     $modulo_html .="</table>";
-    $table = '<table><tr><td>'.$centro_html.'</td></tr><tr><td>'.$modulo_html.'</td></tr></table>';
+    $table = '<table><tr><td>'.$centro_html.'</td></tr><tr><td>'.$modulo_html.'</td></tr><tr><td>'.$grupo_html.'</td></tr></table>';
 
     if ($modulos) 
     {
