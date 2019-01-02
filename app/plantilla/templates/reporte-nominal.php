@@ -28,8 +28,8 @@
                                     <button @click="mostrar_reporte_nominal()" class="btn btn-default"><i class="fa fa-send"></i> Buscar</button>
                                 </div>
                                 <div class="col-12 col-md-1">
-                                   
-                                    <button @click="mostrar_lista_residentes()" class="btn btn-primary"><i class="fa fa fa-tasks"></i> Lista</button>
+                                <label for="text-input" class=" form-control-label"></label>
+                                    <button @click="mostrar_lista_residentes()" class="btn btn-primary"><i class="fa fa fa-users"></i> Lista</button>
                                 </div>
                             </div>
                             <div class="table-responsive">
