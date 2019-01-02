@@ -403,9 +403,9 @@ class portada extends App{
       left join centro_atencion ca on(ca.id=cad.centro_id)  where ca.tipo_centro_id = ".$tipo_centro." and to_char(cad.fecha_matriz,'DD-MON') ".$fecha." order by cad.id desc";
     $matrices = $modelo->executeQuery($matrices);
 
-    if ($res) 
+    if ($matrices) 
     {
-      echo json_encode(array("data"=>$res) ) ;
+      echo json_encode(array("data"=>$matrices) ) ;
     }else{
       return false;
     }
