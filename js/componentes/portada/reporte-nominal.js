@@ -106,7 +106,7 @@ Vue.component('reporte-nominal', {
             this.id_residente = residente.ID;
             let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
             let apellido = (residente.APELLIDO==undefined)?'':residente.APELLIDO;
-            this.nombre_residente=residente.NOMBRE + ' ' + residente.APELLIDO;
+            this.nombre_residente=nombre + ' ' + apellido;
             this.modal_lista = false;
 
         }
