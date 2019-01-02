@@ -12,7 +12,7 @@
                                    
                                     <div class="col col-md-2"><label for="select" class=" form-control-label">Fecha Inicial</label></div>
                                     <div class="col-12 col-md-2">
-                                    <input type="date" class="form-control dtp_fecha_indicador_11" placeholder="YYYY-MM-DD" v-model="fecha" id="" @onchange="geral()">
+                                    <input type="date" class="form-control dtp_fecha_indicador_11" placeholder="YYYY-MM-DD" v-model="fecha_inicial" >
                                     </div>
                                 </div>
 
@@ -20,7 +20,7 @@
          
                                     <div class="col col-md-2 col-sm-2"><label for="select" class=" form-control-label">Fecha Final</label></div>
                                     <div class="col-12 col-md-2">
-                                    <input type="date" class="form-control dtp_fecha_indicador_11" placeholder="YYYY-MM-DD" v-model="fecha" id="" @onchange="geral()">
+                                    <input type="date" class="form-control dtp_fecha_indicador_11" placeholder="YYYY-MM-DD" v-model="fecha_final">
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-1">
