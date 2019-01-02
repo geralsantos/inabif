@@ -387,12 +387,22 @@ class portada extends App{
   }
   public function recuperar_matriz_general(){
     $modelo = new modeloPortada();
-    $id_centro = $_POST["id_centro"];
+    $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
     $periodo = $_POST["periodo"];
-    $sql = "select * from modulos centro_atencion_detalle cad 
-      left join centro_atencion ca on(ca.id=cad.centro_id)  where ca.id = ".$id_centro." order by m.id desc";
+    if ($periodo=="mensual") {
+      $fecha = " = '".date("y-M")."' "; 
+    }else {
+      if (floatval(date("m")) <= 6 ) {
+        $semestral = "'".date("y")."-JAN' AND '".date("y")."-JUN'";
+      }else{
+        $semestral = "'".date("y")."-JUL' AND '".date("y")."-DEC'";
+      }
+      $fecha = " BETWEEN $semestral ";
+    }
+    $matrices = "select ca.nom_ca as nombre_centro, cad.fecha_matriz  from centro_atencion_detalle cad 
+      left join centro_atencion ca on(ca.id=cad.centro_id)  where ca.idtipo_centro_id = ".$tipo_centro." and to_char(cad.fecha_matriz,'DD-MON') ".$fecha." order by cad.id desc";
+    $matrices = $modelo->executeQuery($matrices);
 
-    $res = $modelo->executeQuery($sql );
     if ($res) 
     {
       echo json_encode(array("data"=>$res) ) ;
