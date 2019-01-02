@@ -521,7 +521,7 @@ class portada extends App{
   public function descargar_reporte_matriz_rub(){
     $modelo = new modeloPortada();
     $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
-    $periodo = $_POST["periodo"];
+    $residente_id = $_POST["residente_id"];
     $fecha = " BETWEEN UPPER('".$_POST["fecha_inicial"]."') AND UPPER('".$_POST["fecha_final"]."')";
    
     $modulo_html = "<table>";

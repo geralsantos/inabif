@@ -40,7 +40,7 @@ Vue.component('reporte-rub', {
         },
         descargar_reporte_matriz_rub(residente_id){
 
-            let datos = {periodo:this.periodo,residente_id:residente_id};
+            let datos = {residente_id:residente_id};
             console.log(datos);
             this.$http.post('descargar_reporte_matriz_rub?view',datos).then(function(response){
 
