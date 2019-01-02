@@ -129,7 +129,7 @@ class portada extends App{
         if ($_POST['tabla']!="usuarios" && $_POST['tabla']!="centro_atencion") {
           $_POST['valores']['Tipo_Centro_Id'] = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
         }
-        $_POST['valores']['Fecha_Creacion'] = "18-DEC-27";
+        $_POST['valores']['Fecha_Creacion'] = date("y-M-d");
         $_POST['valores']['Estado'] = 1;
         //$_POST['valores']['Fecha_Edicion'] = date("Y-m-d H:i:s");
         $_POST['valores']['Usuario_Crea'] =$_SESSION["usuario"][0]["ID"];
@@ -350,8 +350,8 @@ class portada extends App{
   }
   public function mostrar_grupo(){
     $modelo = new modeloPortada();
-    $id_grupo = $_POST["id_grupo"];
-    $sql = "select * from modulos m where ca.id = ".$id_centro;
+    $nombre_tabla = $_POST["nombre_tabla"];
+    $sql = "select * from ".$nombre_tabla." where  to_char(fecha_creacion, 'DD-MON-YY') ='".date("y-M-d")."'";
 
     $res = $modelo->executeQuery($sql );
     if ($res) 
