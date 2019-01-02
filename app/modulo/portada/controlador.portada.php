@@ -455,7 +455,9 @@ class portada extends App{
 
 		$grupo_html = "<table>";
         
-
+		if ($modulo["NOMBRE_TABLA"]=="CarCondicionIngreso") {
+			print_r($grupos);die();
+			}
       foreach ($grupos as $key => $grupo) 
       {
         if ($key==0) {
@@ -468,9 +470,7 @@ class portada extends App{
           $grupo_html .="</tr>";
         }
 		$grupo_values = array_values($grupo);
-		if ($modulo["NOMBRE_TABLA"]=="CarCondicionIngreso") {
-		print_r($grupo_values);die();
-		}
+		
         $grupo_html .= "<tr><td></td>";
         foreach ($grupo_values as $key => $value) {
           $grupo_html .="<td>".$value."</td>";
