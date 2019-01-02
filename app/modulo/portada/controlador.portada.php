@@ -579,7 +579,7 @@ class portada extends App{
     $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
     $id_residente = $_POST["id_residente"];
     
-    $residente = "select re.nombre as nombre_residente,ca.id as id_centro,tc.id as tipo_centro_id from residente re 
+    $residente = "select distinct re.nombre as nombre_residente,ca.id as id_centro,tc.id as tipo_centro_id from residente re 
 	left join tipo_centro tc on(tc.id=re.tipo_centro_id) 
 	left join centro_atencion ca on(ca.tipo_centro_id=tc.id) 
 	where re.id = ".$id_residente." order by re.id desc";
