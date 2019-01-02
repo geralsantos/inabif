@@ -26,7 +26,7 @@ Vue.component('ppd-datos-condicion-ingreso', {
 
         nombre_residente:null,
         isLoading:false,
-        mes:moment().format("MM"),
+        mes:moment().format("M"),
         anio:(new Date()).getFullYear(),
         coincidencias:[],
         bloque_busqueda:false,
