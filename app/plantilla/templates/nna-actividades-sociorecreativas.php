@@ -9,7 +9,7 @@
                 <div class="card-body card-block">
                     <form class="form-horizontal" v-on:submit.prevent="guardar">
                         <div class="row">
-                            <div class="form-group col-md-7">
+                            <div class="form-group col-md-6 ">
                                 <label for="text-input" class=" form-control-label">Nombre Residente</label>
                                 <div class="autocomplete">
                                     <input type="text"  v-model="nombre_residente" class="form-control" @keyup="buscar_residente()" placeholder="Nombre, Apellido o DNI"/>
@@ -24,7 +24,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="form-group col-md-1">
+                            <div class="form-group col-md-2">
                                 <label for="text-input" class=" form-control-label">Año</label>
                                 <select name="anio" disabled="disabled" id="anio"  v-model="anio" class="form-control">
                                 <option value="2018">2018</option>
