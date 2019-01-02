@@ -196,7 +196,17 @@ class portada extends App{
         }
     
        }
-    }
+	}
+	public function ejecutar_consulta_lista(){
+		  $modelo = new modeloPortada();
+		  $sql = "SELECT * FROM Residente WHERE  ESTADO=1 ORDER BY Id desc";
+		  $res = $modelo->executeQuery( $sql );
+		  if ($res) {
+			echo json_encode(array( "data"=>$res )) ;
+		  }else{
+			return false;
+		  }
+	  }
     public function cargar_datos_residente(){
       if( $_POST['tabla'] && $_POST['residente_id']){
         $modelo = new modeloPortada();
