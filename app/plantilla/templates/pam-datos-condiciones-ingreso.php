@@ -104,10 +104,10 @@
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Tipo de Pensión</label>
                                 <select name="tipo_pension" v-model="tipo_pension" class="form-control">
-                                <option value="Sin Clasificación Socioeconómica">Sin Clasificación Socioeconómica</option>
-                                <option value="Pobre Extremo">Pobre Extremo</option>
-                                <option value="Pobre no Extremo">Pobre no Extremo</option>
-                                <option value="No Pobre">No Pobre</option>
+                                <option value="ONP">ONP</option>
+                                <option value="AFP">AFP</option>
+                                <option value="Otros">Otros</option>
+                                <option value="No Pobre">No tiene</option>
                                 </select>
                                 </div>
                             </div>
