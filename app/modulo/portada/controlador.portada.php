@@ -501,7 +501,7 @@ class portada extends App{
     
     $residentes = "select * from (select re.nombre as nombre_residente,re.fecha_creacion as fecha from residente re 
 	left join tipo_centro tc on(tc.id=re.tipo_centro_id) 
-	where to_char(re.fecha_creacion,'DD-MON-YY') ".$fecha." order by re.id desc) ROWNUM=1";
+	where to_char(re.fecha_creacion,'DD-MON-YY') ".$fecha." order by re.id desc) WHERE ROWNUM=1";
     $residentes = $modelo->executeQuery($residentes);
 
     if ($residentes) 
