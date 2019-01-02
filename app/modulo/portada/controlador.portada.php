@@ -475,13 +475,10 @@ class portada extends App{
         }
         $grupo_html .= "</tr>";
 	  }
-	  if ($modulo["NOMBRE_TABLA"]=="CarCondicionIngreso") {
-		print_r($grupo_html);die();
-		}
       $modulo_html .=$grupo_html;
     }
     $modulo_html .="</table>";
-    $table = '<table><tr><td>'.$centro_html.'</td></tr><tr><td>'.$modulo_html.'</td></tr><tr><td>'.$grupo_html.'</td></tr></table>';
+    $table = '<table><tr><td>'.$centro_html.'</td></tr><tr><td>'.$modulo_html.'</td></tr></table>';
 
     if ($modulos) 
     {
