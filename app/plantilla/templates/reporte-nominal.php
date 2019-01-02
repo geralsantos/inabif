@@ -29,7 +29,7 @@
                                 </div>
                                 <div class="col-12 col-md-1">
                                    
-                                    <button @click="mostrar_lista_residentes()" class="btn btn-danger"><i class="fa fa fa-tasks"></i> Lista</button>
+                                    <button @click="mostrar_lista_residentes()" class="btn btn-primary"><i class="fa fa fa-tasks"></i> Lista</button>
                                 </div>
                             </div>
                             <div class="table-responsive">
@@ -45,7 +45,7 @@
                                         <tr v-for="residente in residentes">
                                             <td>{{residente.NOMBRE_RESIDENTE}}</td>
                                      
-                                            <td><button class="btn btn-primary" @click="descargar_reporte_matriz_nominal(residente)">Descargar</button></td>
+                                            <td><button class="btn btn-success" @click="descargar_reporte_matriz_nominal(residente)">Descargar</button></td>
                                         
                                         </tr>
                                     
