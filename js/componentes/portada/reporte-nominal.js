@@ -9,7 +9,8 @@ Vue.component('reporte-nominal', {
        
         coincidencias:[],
         bloque_busqueda:false,
-        id_residente:null
+        id_residente:null,
+        modal_lista:false,
 
 
     }),
@@ -85,6 +86,33 @@ Vue.component('reporte-nominal', {
             });
 
         },
+        mostrar_lista_residentes(){
+            this.id_residente = null;
+
+            let word = '';
+          
+            this.modal_lista = true;
+            this.isLoading = true;
+
+                this.$http.post('ejecutar_consulta?view',{like:word }).then(function(response){
+
+                    if( response.body.data != undefined){
+                        this.isLoading = false;
+                        this.pacientes = response.body.data;
+                    }else{
+                       
+                        this.isLoading = false;
+                        
+                    }
+                 });
+            
+        },
+        elegir_residente(residente){
+
+            this.id_residente = residente.ID;
+            this.nombre_residente=residente.NOMBRE;
+
+        }
      
 
     }

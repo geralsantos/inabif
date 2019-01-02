@@ -60,6 +60,50 @@
                         </div>
                     </div>
                 </div>
+                <div v-if="modal_lista">
+                    <transition name="modal">
+                    <div class="modal-mask">
+                        <div class="modal-wrapper">
 
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Registro - Usuario</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true" @click="showModal = false">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead class="thead-dark text-center">
+                                                <tr>
+                                                    <th scope="col">Nombre</th>
+                                                    <th scope="col">DNI</th>
+                                                    <th scope="col">Opción</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="text-center">
+                                                <tr v-for="residente in residentes">
+                                                    <td>{{residente.NOMBRE_RESIDENTE}}</td>
+                                                    <td>{{residente.DNI}}</td>
+                                                    <td><button class="btn btn-success" @click="elegir_residente(residente)">Descargar</button></td>
+                                                
+                                                </tr>
+                                            
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" @click="showModal = false">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        </div>
+                    </div>
+                    </transition>
+                </div>
         </div> <!-- .content -->
 </template>
