@@ -6,6 +6,7 @@
             <option value="SELECT/INSERT" selected="selected">SELECT/INSERT</option> 
             <option value="DELETE">DELETE</option>
             <option value="CREATETABLE">DROP/CREATE TABLE y SEQUENCE</option>
+            <option value="ALTERTABLE">DROP/CREATE TABLE y SEQUENCE</option>
         </select>
         </div>
     </div>
@@ -28,6 +29,12 @@
     <div class="form-group col-md-12">
         <label for="text-input" class=" form-control-label">Eliminar Registros de una Tabla</label>
         <input type="text" style="witdh:100%;" size="100" placeholder="Nombre de la Tabla" value="<?php echo $_GET["deletefrom"]?>" name="deletefrom" placeholder="deletefrom">
+    </div>
+</div>
+<div class="row">
+    <div class="form-group col-md-12">
+        <label for="text-input" class=" form-control-label">Alter table a una tabla</label>
+        <input type="text" style="witdh:100%;" size="100" placeholder="Nombre de la Tabla" value="<?php echo $_GET["altertable"]?>" name="deletefrom" placeholder="deletefrom">
     </div>
 </div>
 <button type="submit" class="btn btn-success btn-flat">Ejecutar Query</button>
@@ -208,6 +215,10 @@ if (isset($_GET["opcionejecutar"]) && $_GET["opcionejecutar"]!="") {
         $mdl->createTable ("drop sequence seq_".$_GET["tablename"]);
         $mdl->createTable ("Create sequence seq_".$_GET["tablename"]);
         print_r($x->executeQuery("select * from ".$_GET["tablename"]));
+    }else if($_GET["opcionejecutar"]=="ALTERTABLE"){
+        
+        $mdl->createTable ($_GET["altertable"]);
+        print_r($x->executeQuery("select * from ".$_GET["altertable"]));
     }
     die();
 }else{
