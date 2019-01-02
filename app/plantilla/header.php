@@ -26,15 +26,14 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
     <?php echo $this->getReferencia(); ?>
     <script>
-       
-        window.onhashchange= function(){
+      
+        
+    document.addEventListener('DOMContentLoaded', function() {
         let hash = window.location.hash.substr(1);
         console.log(hash)
-        }
-        if ( window.location.hash) {
-            console.log('hash');
-            console.log(hash);
-    }
+    
+
+    });
   </script>
     </head>
 <body class="">
