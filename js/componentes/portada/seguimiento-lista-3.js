@@ -116,11 +116,12 @@ Vue.component('seguimiento-lista-3', {
                     for (let index = 0; index < valores.length; index++) {
                         arr.push(Object.values(valores[index]));
                         if (index==0) {
-                            cabeceras.push(Object.values(valores[index]));
+                            cabeceras.push(valores[name]);
                         }
                     }
                     this.campos = arr;
                 console.log(this.campos);
+                console.log(cabeceras);
                 this.remover_mensaje_entre_componentes();
                 }else{
                     swal("", "No hay registros hasta la fecha", "error")
