@@ -167,7 +167,7 @@ Vue.component('ppd-datos-identificacion-residente', {
                     this.Provincia_Procedencia = response.body.atributos[0]["PROVINCIA_PROCEDENCIA"];
                     this.Distrito_Procedencia = response.body.atributos[0]["DISTRITO_PROCEDENCIA"];
                     this.Sexo = response.body.atributos[0]["SEXO"];
-                    this.Fecha_Nacimiento = moment(response.body.atributos[0]["FECHA_NACIMIENTO"]).format("YYYY-MM-DD");
+                    this.Fecha_Nacimiento = moment(response.body.atributos[0]["FECHA_NACIMIENTO"]).format("yyyy-MM-dd");
                     this.Edad = response.body.atributos[0]["EDAD"];
                     this.Lengua_Materna = response.body.atributos[0]["LENGUA_MATERNA"];
                 }
