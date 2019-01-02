@@ -181,7 +181,7 @@ class MySQL extends PDO
             foreach($values as $key => $val){
                 $queryKeys .= $coma.$key;
                 if (strpos(strtoupper($key),"FECHA")!==false) {
-                    echo $queryValues .= $coma." to_date('".$val."','YYYY-MM-DD') ";
+                    $queryValues .= $coma." to_date('".$val."','YYYY-MM-DD') ";
                 }else{
                     $params[':'.$key] = $val;
                     $queryValues .= $coma.':'.$key;
