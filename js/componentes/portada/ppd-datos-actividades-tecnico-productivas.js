@@ -14,7 +14,7 @@ Vue.component('ppd-datos-actividades-tecnico-productivas', {
         CarNumDecisiones:null,
         nombre_residente:null,
         isLoading:false,
-        mes:moment().format("MM"),
+        mes:moment().format("M"),
         anio:(new Date()).getFullYear(),
         coincidencias:[],
         bloque_busqueda:false,

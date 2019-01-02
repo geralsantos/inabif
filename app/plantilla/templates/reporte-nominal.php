@@ -79,7 +79,7 @@
                                             <thead class="thead-dark text-center">
                                                 <tr>
                                                     <th scope="col">Nombre</th>
-                                                    <th scope="col">NÚMERO DOCUMENTO</th>
+                                                    <th scope="col">Número de documento</th>
                                                     <th scope="col">Opción</th>
                                                 </tr>
                                             </thead>
