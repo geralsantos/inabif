@@ -5,6 +5,8 @@ Vue.component('reporte-rub', {
         residentes:[],
         periodo:'mes',
        matriz_general:[],
+       fecha_final:null,
+       fecha_inicial:null,
 
 
     }),
