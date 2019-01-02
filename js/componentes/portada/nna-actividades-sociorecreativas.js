@@ -15,7 +15,7 @@ Vue.component('nna-actividades-sociorecreativas', {
 
         nombre_residente:null,
         isLoading:false,
-        mes:moment().format("MM"),
+        mes:moment().format("M"),
         anio:(new Date()).getFullYear(),
         coincidencias:[],
         bloque_busqueda:false,
@@ -118,7 +118,7 @@ Vue.component('nna-actividades-sociorecreativas', {
 
         },
         mostrar_lista_residentes(){
-            console.log(moment().format("MM"));
+         
             this.id_residente = null;
             this.isLoading = true;
                 this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
