@@ -126,8 +126,7 @@
 }
 </style>
         <?php   
-        echo $nivelusu = $_SESSION["usuario"][0]["NIVEL"];
-        echo REGISTRADOR;
+        $nivelusu = $_SESSION["usuario"][0]["NIVEL"];
         if ($nivelusu==ADMIN_CENTRAL) {
             ?>
             <h3 class="menu-title">REGISTRO</h3>
@@ -174,6 +173,7 @@
         }else if ($nivelusu==REGISTRADOR) {
             ?>
             <h3 class="menu-title">REGISTRO</h3>
+           <modulos :changeviewevent="changeview"></modulos> 
             <h3 class="menu-title">SEGUIMIENTO</h3>
             <h3 class="menu-title">REPORTES</h3>
             <h3 class="menu-title">PERFILES</h3>
@@ -181,7 +181,6 @@
         }
         
         ?>
-           <modulos :changeviewevent="changeview"></modulos> 
 
             </ul>
         </div><!-- /.navbar-collapse -->
