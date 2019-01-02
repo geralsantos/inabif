@@ -117,7 +117,7 @@ Vue.component('seguimiento-lista-3', {
                         arr.push(Object.values(valores[index]));
                         if (index==0) {
                             for (let i = 0; i < valores[index].length; i++) {
-                                console.log(valores[index][i][name]);
+                                console.log(valores[index]);
                                 //cabeceras.push(valores[index][name]);
                             }
                         }
