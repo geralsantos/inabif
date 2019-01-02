@@ -54,17 +54,7 @@
                         <input type="file" id="archivo" v-model="archivo" name="archivo" value="archivo" class="form-control-file">
                         </div>
                         </div>
-                        <div class="row">
-                            <div class="form-group col-md-6">
-                                <div class=" "><label for="text-input" class=" form-control-label">Correo</label>
-                                <input type="email" v-model="Correo" name="Correo" placeholder="" class="form-control"> 
-                                </div>
-                            </div>
-                            <div class="form-group col-md-6"><label for="text-input" class=" form-control-label">Nivel Usuario</label>
-                                <select name="nivel_id" v-model="nivel_id" class="form-control" @change="verificar_nivel()">
-                                    <option v-for="nivel in niveles_usuarios" :value="nivel.ID">{{nivel.NOMBRE}}</option>
-                                </select>
-                                </div>
+                        
                        
                         <div class="row">
                             <div class="col-md-12 text-center" >
