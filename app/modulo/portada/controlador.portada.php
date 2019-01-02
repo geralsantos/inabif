@@ -331,7 +331,7 @@ class portada extends App{
       return false;
     }
   }
-  public function buscar_modulo(){
+  public function buscar_grupos(){
     $modelo = new modeloPortada();
     $id_centro = $_POST["id_centro"];
       $sql = "select m.nombre as modulo_nombre,m.id as id_modulo, m.encargado_id,usu.nombre as encargado_nombre, md.estado_completo,md.fecha_edicion,m.nombre_tabla from modulos m 
@@ -348,7 +348,7 @@ class portada extends App{
       return false;
     }
   }
-  public function mostrar_grupo(){
+  public function mostrar_modulo(){
     $modelo = new modeloPortada();
     $nombre_tabla = $_POST["nombre_tabla"];
     $sql = "select * from ".$nombre_tabla." where  to_char(fecha_creacion, 'DD-MON') ='".date("y-M")."'";
