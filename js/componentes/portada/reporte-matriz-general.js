@@ -4,7 +4,7 @@ Vue.component('reporte-matriz-general', {
        // periodo:moment().format('MMMM YYYY'),
         matrices:[],
         periodo:'mes',
-       
+       matriz_general:[],
 
 
     }),
@@ -33,7 +33,19 @@ Vue.component('reporte-matriz-general', {
             });
 
         },
+        descargar_reporte_matriz_general(){
 
+            let periodo = this.periodo;
+            this.$http.post('descargar_reporte_matriz_general?view',{periodo:periodo}).then(function(response){
+
+                if( response.body.data != undefined){
+                    tableToExcel('tbl_temp','ExcelExport',response.body.data);
+                    this.matriz_general = response.body.data;
+                    
+                }
+            });
+
+        },
      
 
     }

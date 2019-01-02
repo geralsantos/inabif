@@ -410,18 +410,33 @@ class portada extends App{
       return false;
     }
   }
-  public function mostrar_matriz_general(){
+  public function descargar_reporte_matriz_general(){
     $modelo = new modeloPortada();
     $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
     $periodo = $_POST["periodo"];
+    if ($periodo=="mensual") {
+      $fecha = " = UPPER('".date("y-M")."') "; 
+    }else {
+      if (floatval(date("m")) <= 6 ) {
+        $semestral = "'".date("y")."-JAN' AND '".date("y")."-JUN'";
+      }else{
+        $semestral = "'".date("y")."-JUL' AND '".date("y")."-DEC'";
+      }
+      $fecha = " BETWEEN $semestral ";
+    }
     
-    $matrices = "select * from centro_atencion_detalle cad 
-      left join centro_atencion ca on(ca.id=cad.centro_id)  where ca.idtipo_centro_id = ".$tipo_centro." order by cad.id desc";
-    $matrices = $modelo->executeQuery($matrices);
+    echo $centros = "select distinct cad.*,ca.tipo_centro_id from centro_atencion_detalle cad 
+      left join centro_atencion ca on(ca.id=cad.centro_id)  where ca.tipo_centro_id = ".$tipo_centro." and to_char(cad.fecha_matriz,'DD-MON') ".$fecha." order by cad.id desc";
+    $centros = $modelo->executeQuery($centros);
+    
+    echo $modulos = "select * from modulos_detalle md 
+      left join modulos m on(m.id=md.modulo_id) where m.centro_id in ".$centros[0]["TIPO_CENTRO_ID"]." and to_char(cad.fecha_matriz,'DD-MON') ".$fecha." order by cad.id desc";
+    $modulos = $modelo->executeQuery($modulos);
 
-    if ($res) 
+
+    if ($modulos) 
     {
-      echo json_encode(array("data"=>$res) ) ;
+      echo json_encode(array("data"=>$modulos) ) ;
     }else{
       return false;
     }
