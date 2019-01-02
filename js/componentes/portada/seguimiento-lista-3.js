@@ -22,7 +22,6 @@ Vue.component('seguimiento-lista-3', {
     created:function(){
     },
     mounted:function(){
-        window.location.hash='#seguimiento-lista-1';
 
         this.listar_campos();
     },

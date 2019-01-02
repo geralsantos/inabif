@@ -112,7 +112,11 @@ function hora_min_seg(time){
   return result;
 }
   document.addEventListener('DOMContentLoaded', function() {
+    
     var type = window.location.hash.substr(1) || 'portada-index';
+    if ( window.location.hash.substr(1)=="seguimiento-lista-2" || window.location.hash.substr(1)=="seguimiento-lista-3") {
+      type='seguimiento-lista-1';
+    }
       appVue.changeview(type);
       window.location.hash='#'+type;
       window.onhashchange= function(){
