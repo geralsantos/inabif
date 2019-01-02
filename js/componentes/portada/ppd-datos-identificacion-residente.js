@@ -58,7 +58,7 @@ Vue.component('ppd-datos-identificacion-residente', {
                 Provincia_Procedencia: this.Provincia_Procedencia,
                 Distrito_Procedencia: this.Distrito_Procedencia,
                 Sexo: this.Sexo,
-                Fecha_Nacimiento:  moment(this.Fecha_Nacimiento, "YYYY-MM-DD").format("YY-MMM-DD"),
+                Fecha_Nacimiento:  moment(this.Fecha_Nacimiento, "YYYY-MM-DD").format("YYYY-MMM-DD"),
                 Edad: this.Edad,
                 Lengua_Materna: this.Lengua_Materna,
 
@@ -96,7 +96,7 @@ Vue.component('ppd-datos-identificacion-residente', {
                         provincia_naci_cod : this.Provincia_Procedencia,
                         distrito_naci_cod : this.Distrito_Procedencia,
                         sexo: this.Sexo,
-                        fecha_naci :  moment(this.Fecha_Nacimiento, "YYYY-MM-DD").format("YY-MMM-DD"),
+                        fecha_naci :  moment(this.Fecha_Nacimiento, "YYYY-MM-DD").format("YYYY-MMM-DD"),
                         edad: this.Edad,
                         lengua_materna: this.Lengua_Materna,
                         //documento :this.Numero_Doc
