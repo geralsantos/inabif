@@ -18,8 +18,8 @@ Vue.component('cargar-archivos', {
         guardar(){
             var formData = new FormData(document.getElementById("formuploadajax"))
             formData.append("archivo",document.getElementById('archivo'));
-            formData.append("anio",(this.anio));
-            formData.append("mes",(this.mes));
+           /* formData.append("anio",(this.anio));
+            formData.append("mes",(this.mes));*/
             this.$http.post('adjuntar_archivo?view',formData,{headers: {'Content-Type': 'multipart/form-data'}}).then(function(response){
             });
         },
