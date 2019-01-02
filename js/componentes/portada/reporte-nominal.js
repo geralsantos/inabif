@@ -88,22 +88,15 @@ Vue.component('reporte-nominal', {
         },
         mostrar_lista_residentes(){
             this.id_residente = null;
-
-            let word = '';
-          
-          
             this.isLoading = true;
-
-                this.$http.post('ejecutar_consulta?view',{like:word }).then(function(response){
+                this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
 
                     if( response.body.data != undefined){
                         this.modal_lista = true;
                         this.isLoading = false;
                         this.pacientes = response.body.data;
                     }else{
-                       
                         swal("", "No existe ningún residente", "error")
-                        
                     }
                  });
             
