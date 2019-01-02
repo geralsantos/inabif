@@ -34,6 +34,11 @@
     
 
     });
+    window.onhashchange= function(){
+        let type = window.location.hash.substr(1);
+        console.log('type')
+       console.log(type)
+      };
   </script>
     </head>
 <body class="">
