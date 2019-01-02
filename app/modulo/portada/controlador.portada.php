@@ -21,7 +21,7 @@ class portada extends App{
       //$usuario = "SELECT kpi_roles_id FROM kpi_usuarios WHERE id=".$_SESSION['usuario'][0]['id']." and estado = 1 limit 1";
       //$usuario = $modelo->executeQuery( $usuario );
       //$_SESSION["nivelusuario"] = $usuario[0]['kpi_roles_id'];
-      $modulos = "SELECT * FROM modulos WHERE centro_id=".$centro_id." and  estado = 1 order by id asc";
+      $modulos = "SELECT * FROM modulos WHERE estado = 1 order by id asc";
       $modulos = $modelo->executeQuery( $modulos );
       $tree = $this->buildTree($modulos);
       $treeHtml = $this->buildTreeHtml($tree);
@@ -376,6 +376,21 @@ class portada extends App{
   public function listar_usuarios(){
     $modelo = new modeloPortada();
     $sql = "select usu.*,nu.nombre as nivel_nombre from usuarios usu left join niveles_usuarios nu on (usu.nivel=nu.id)";
+
+    $res = $modelo->executeQuery($sql );
+    if ($res) 
+    {
+      echo json_encode(array("data"=>$res) ) ;
+    }else{
+      return false;
+    }
+  }
+  public function recuperar_matriz_general(){
+    $modelo = new modeloPortada();
+    $id_centro = $_POST["id_centro"];
+    $periodo = $_POST["periodo"];
+    $sql = "select * from modulos centro_atencion_detalle cad 
+      left join centro_atencion ca on(ca.id=cad.centro_id)  where ca.id = ".$id_centro." order by m.id desc";
 
     $res = $modelo->executeQuery($sql );
     if ($res) 
