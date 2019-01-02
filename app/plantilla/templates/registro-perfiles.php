@@ -15,7 +15,8 @@
                     <tr>
                         <th>Nombre</th>
                         <th>Apellido</th>
-                        <th>DNI</th>
+                        <th>Usuario</th>
+                        <th>Perfil</th>
                         <th>Acciones</th>
                     </tr>
                     </thead>
@@ -23,7 +24,8 @@
                     <tr v-for="usuario in usuarios">
                         <td>{{usuario.NOMBRE}}</td>
                         <td>{{usuario.APELLIDO}}</td>
-                        <td>{{usuario.DNI}}</td>
+                        <td>{{usuario.USUARIO}}</td>
+                        <td>{{usuario.NIVEL}}</td>
                         <td><button  class="btn btn-primary" @click="verRegistro(usuario)">Editar</button> 
                         <button  class="btn btn-danger" @click="EliminarUsuario(usuario)">Eliminar</button>
                         </td>
