@@ -497,16 +497,16 @@ class portada extends App{
   public function mostrar_reporte_rub(){
     $modelo = new modeloPortada();
     $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
-    $fecha = "";
+    $fecha = " BETWEEN '".$_POST["fecha_inicial"]."' AND '".$_POST["fecha_final"]."'";
     
-    $matrices = "select re.nombre as nombre_residente from residente re 
+    $residentes = "select re.nombre as nombre_residente from residente re 
 	  left join tipo_centro tc on(tc.id=re.tipo_centro_id) 
-	  where ca.tipo_centro_id = ".$tipo_centro." and to_char(cad.fecha_matriz,'DD-MON') ".$fecha." order by cad.id desc";
-    $matrices = $modelo->executeQuery($matrices);
+	  where to_char(re.fecha_creacion,'DD-MON-YY') ".$fecha." order by re.id desc";
+    $residentes = $modelo->executeQuery($residentes);
 
-    if ($matrices) 
+    if ($residentes) 
     {
-      echo json_encode(array("data"=>$matrices) ) ;
+      echo json_encode(array("data"=>$residentes) ) ;
     }else{
       return false;
     }
