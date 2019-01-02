@@ -597,14 +597,14 @@ class portada extends App{
     $id_residente = $_POST["id_residente"];
     $tipo_centro_id = $_POST["tipo_centro_id"];
     switch ($tipo_centro_id) {
-		case '1':
-		$parent_id=2;
+		case '1': /*ppd*/
+		$parent_id="2,25";
 		break;
-		case '2':
-		$parent_id=27;
+		case '2': /*pam*/
+		$parent_id="27,43";
 		break;
 		case '3':
-		$parent_id=46;
+		$parent_id="46,70";
 		break;
 		default:
 		$parent_id=2;
@@ -614,7 +614,7 @@ class portada extends App{
     $modulo_html = "<table>";
 	$modulos = "select m.nombre as nombre_modulo,m.nombre_tabla 
 	from modulos m 
-    where m.centro_id in (".$tipo_centro_id.") and m.parent_id  = ".$parent_id." order by m.id desc";
+    where m.centro_id in (".$tipo_centro_id.") and m.parent_id  in (".$parent_id.") order by m.id desc";
     $modulos = $modelo->executeQuery($modulos);
     
     foreach ($modulos as $key => $modulo) 
