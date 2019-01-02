@@ -453,13 +453,16 @@ class portada extends App{
       $grupos = $modelo->executeQuery($grupos);
 
         $grupo_html = "<table>";
-        $keys = array_keys($grupos[0]);
-        $grupo_html .="<tr><th></th>";
-        foreach ($keys as $key) 
-        {
-          $grupo_html .="<th>$key</th>";
+        if ($key==0) {
+          $keys = array_keys($grupos[0]);
+          $grupo_html .="<tr><th></th>";
+          foreach ($keys as $key) 
+          {
+            $grupo_html .="<th>$key</th>";
+          }
+          $grupo_html .="</tr>";
         }
-        $grupo_html .="</tr>";
+        
 
       foreach ($grupos as $key => $grupo) 
       {
