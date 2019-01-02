@@ -8,16 +8,23 @@
                         </div>
                         <div class="card-body">
                             <div class="row form-group">
-                                <div class="form-group col-md-3">
-                                    <label for="text-input" class=" form-control-label">Fecha Inicial</label>
-                                    <input type="date" class="form-control" v-model="fecha_inicial">
+                                <div class="col-md-3">
+                                   
+                                    <div class="col col-md-2"><label for="select" class=" form-control-label">Fecha Inicial</label></div>
+                                    <div class="col-12 col-md-2">
+                                    <input type="date" class="form-control dtp_fecha_indicador_11" placeholder="YYYY-MM-DD" v-model="fecha" id="" @onchange="geral()">
+                                    </div>
                                 </div>
-                                <div class="form-group col-md-3">
-                                    <label for="text-input" class=" form-control-label">Feacha Final</label>
-                                    <input type="date" class="form-control" v-model="fecha_final">
+
+                                <div class="col-md-3">
+         
+                                    <div class="col col-md-2 col-sm-2"><label for="select" class=" form-control-label">Fecha Final</label></div>
+                                    <div class="col-12 col-md-2">
+                                    <input type="date" class="form-control dtp_fecha_indicador_11" placeholder="YYYY-MM-DD" v-model="fecha" id="" @onchange="geral()">
+                                    </div>
                                 </div>
-                                <div class="form-group col-md-3">
-                                   <button @click="mostrar_reporte_rub()" class="btn btn-default">Buscar</button>
+                                <div class="col-12 col-md-1">
+                                   <button @click="mostrar_reporte_rub()" class="btn btn-default"><i class="fa fa-send"></i> Buscar</button>
                                 </div>
                                 
                                 
