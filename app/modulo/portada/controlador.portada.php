@@ -506,16 +506,9 @@ class portada extends App{
     $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
     $periodo = $_POST["periodo"];
     $matriz_id = $_POST["matriz_id"];
-    if ($periodo=="mensual") {
-      $fecha = " md.periodo_mes = ".date("m")." "; 
-    }else {
-      if (floatval(date("m")) <= 6 ) {
-        $semestral = " md.periodo_mes >= 1 AND md.periodo_mes <= 6 ";
-      }else{
-        $semestral = " md.periodo_mes >= 7 AND md.periodo_mes <= 12 ";
-      }
-      $fecha = " BETWEEN $semestral ";
-    }
+   
+	$fecha = " BETWEEN  ";
+
     $centro_html = "<table>";
     $centro_html .="<tr><th>Nombre del Centro</th><th>Tipo de Centro</th><th>Fecha Matriz </th></tr>";
 
@@ -622,7 +615,7 @@ class portada extends App{
 		$modulo_html .="<tr><th></th><th>Nombre del Modulo</th></tr>";
 		$modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td></tr>";
 
-		$grupos = "select * from (select distinct * from ".$modulo["NOMBRE_TABLA"]." where residente_id= ". $id_residente." order by id desc) WHERE ROWNUM = 1";
+		$grupos = "select distinct * from ".$modulo["NOMBRE_TABLA"]." where residente_id= ". $id_residente." order by id desc";
 		$grupos = $modelo->executeQuery($grupos);
 
 		$grupo_html = "<table>";
