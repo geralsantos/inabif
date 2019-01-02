@@ -87,7 +87,7 @@
                                                 <tr v-for="residente in pacientes">
                                                     <td>{{residente.NOMBRE}} {{residente.APELLIDO}}</td>
                                                     <td>{{residente.DOCUMENTO}}</td>
-                                                    <td><button class="btn btn-success" @click="elegir_residente(residente)">Descargar</button></td>
+                                                    <td><button class="btn btn-primary" @click="elegir_residente(residente)">Seleccionar</button></td>
                                                 
                                                 </tr>
                                             

@@ -104,7 +104,7 @@ Vue.component('reporte-nominal', {
         elegir_residente(residente){
 
             this.id_residente = residente.ID;
-            this.nombre_residente=residente.NOMBRE;
+            this.nombre_residente=residente.NOMBRE + ' ' + residente.APELLIDO;
 
         }
      
