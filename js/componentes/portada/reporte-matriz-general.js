@@ -36,6 +36,7 @@ Vue.component('reporte-matriz-general', {
         descargar_reporte_matriz_general(matriz_id){
 
             let datos = {periodo:this.periodo,matriz_id:matriz_id};
+            console.log(datos);
             this.$http.post('descargar_reporte_matriz_general?view',datos).then(function(response){
 
                 if( response.body.data != undefined){
