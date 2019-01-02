@@ -459,7 +459,7 @@ class portada extends App{
       foreach ($grupos as $key => $grupo) 
       {
         if ($key==0) {
-          $keys = array_keys($grupos[0]);
+          $keys = array_keys($grupo);
           $grupo_html .="<tr><th></th>";
           foreach ($keys as $key) 
           {
