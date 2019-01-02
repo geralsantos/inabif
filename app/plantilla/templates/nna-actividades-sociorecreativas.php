@@ -24,7 +24,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="form-group col-md-2">
+                            <div class="form-group col-md-1">
                                 <label for="text-input" class=" form-control-label">Año</label>
                                 <select name="anio" disabled="disabled" id="anio"  v-model="anio" class="form-control">
                                 <option value="2018">2018</option>
