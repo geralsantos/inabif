@@ -437,7 +437,7 @@ class portada extends App{
     $centro_html .="<tr><th>".$centros[0]["NOMBRE_CENTRO"]."</th><th>".$centros[0]["NOMBRE_TIPO_CENTRO"]."</th><th>".$centros[0]["FECHA_MATRIZ"]."</th></tr></table>";
     
     $modulo_html = "<table>";
-    $modulo_html .="<tr><th>Nombre del Modulo</th><th>Encargado</th><th>Periodo Mes</th></tr>";
+    $modulo_html .="<tr><th></th><th>Nombre del Modulo</th><th>Encargado</th><th>Periodo Mes</th></tr>";
     $modulos = "select m.nombre as nombre_modulo,usu.nombre as nombre_usuario,md.periodo_mes from modulos_detalle md 
     left join modulos m on(m.id=md.modulo_id) 
     left join usuarios usu on(usu.id=m.encargado_id) 
@@ -446,7 +446,7 @@ class portada extends App{
     
     foreach ($modulos as $key => $modulo) 
     {
-      $modulo_html .="<tr><th>".$modulo["NOMBRE_MODULO"]."</th><th>".$modulo["NOMBRE_USUARIO"]."</th><th>".$modulo["PERIODO_MES"]."</th></tr>";
+      $modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td><td>".$modulo["NOMBRE_USUARIO"]."</td><td>".$modulo["PERIODO_MES"]."</td></tr>";
       
       /*$grupo_html = "<table>";
       $grupo_html .="<tr><th>Nombre del Grupo</th><th>Encargado</th><th>Periodo Mes</th></tr>";
@@ -458,7 +458,7 @@ class portada extends App{
       }*/
     }
     $modulo_html .="</table>";
-    $table = '<table><tr><td>'.$centro_html.'</td></tr><tr><td>&nbsp;</td><td>'.$modulo_html.'</td></tr></table>';
+    $table = '<table><tr><td>'.$centro_html.'</td></tr><tr><td>'.$modulo_html.'</td></tr></table>';
 
     if ($modulos) 
     {
