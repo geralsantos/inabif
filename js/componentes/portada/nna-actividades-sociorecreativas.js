@@ -134,6 +134,17 @@ Vue.component('nna-actividades-sociorecreativas', {
         },
         elegir_residente(residente){
 
+            this.Nro_Arte = null;
+            this.Nro_BioHuerto = null;
+            this.Nro_Zapateria =  null;
+            this.Nro_Carpinteria =  null;
+            this.Nro_Ceramica =  null;
+            this.Nro_Crianza =  null;
+            this.Nro_Dibujo =  null;
+            this.Nro_Tejido =  null;
+            this.Nro_Deportes =  null;
+            this.Nro_Taller_Pro =  null;
+
             this.id_residente = residente.ID;
             let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
             let apellido = (residente.APELLIDO==undefined)?'':residente.APELLIDO;
