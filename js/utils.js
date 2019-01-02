@@ -114,7 +114,7 @@ function hora_min_seg(time){
   document.addEventListener('DOMContentLoaded', function() {
     
     var type = window.location.hash.substr(1) || 'portada-index';
-   
+   alert(type)
       window.location.hash='#'+type;
       window.onhashchange= function(){
         var type = window.location.hash.substr(1);
