@@ -6,7 +6,7 @@
             <option value="SELECT/INSERT" selected="selected">SELECT/INSERT</option> 
             <option value="DELETE">DELETE</option>
             <option value="CREATETABLE">DROP/CREATE TABLE y SEQUENCE</option>
-            <option value="ALTERTABLE">DROP/CREATE TABLE y SEQUENCE</option>
+            <option value="ALTERTABLE">ALTER TABLE</option>
         </select>
         </div>
     </div>
