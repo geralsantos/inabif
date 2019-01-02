@@ -18,7 +18,7 @@ Vue.component('registro-perfiles', {
         clave:null,
         usuario:null,
         mostrar:true,
-        tipo_centro=''
+        tipo_centro:null
     }),
     created:function(){
     },

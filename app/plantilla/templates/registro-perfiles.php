@@ -108,8 +108,8 @@
                             </div>
                             <div class="form-group col-md-4" v-else>
                                 <div class=" "><label for="text-input" class=" form-control-label">Tipo de Centro</label>
-                                <select name="centro_id" v-model="tipo_centro" class="form-control">
-                                <option value=""></option>
+                                <select name="tipo_centro" v-model="tipo_centro" class="form-control">
+                             
                                    <option value="56">NNA</option>
                                    <option value="48">PAM</option>
                                    <option value="42">PPD</option>
