@@ -127,7 +127,7 @@
 </style>
         <?php   
         echo $nivelusu = $_SESSION["usuario"][0]["NIVEL"];
-        
+        echo REGISTRADOR;
         if ($nivelusu==ADMIN_CENTRAL) {
             ?>
             <h3 class="menu-title">REGISTRO</h3>
