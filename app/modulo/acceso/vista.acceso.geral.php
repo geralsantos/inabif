@@ -34,7 +34,7 @@
 <div class="row">
     <div class="form-group col-md-12">
         <label for="text-input" class=" form-control-label">Alter table a una tabla</label>
-        <input type="text" style="witdh:100%;" size="100" placeholder="Nombre de la Tabla" value="<?php echo $_GET["altertable"]?>" name="deletefrom" placeholder="deletefrom">
+        <input type="text" style="witdh:100%;" size="100" placeholder="Nombre de la Tabla" value="<?php echo $_GET["altertable"]?>" name="altertable" placeholder="altertable">
     </div>
 </div>
 <button type="submit" class="btn btn-success btn-flat">Ejecutar Query</button>
