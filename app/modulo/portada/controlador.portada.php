@@ -16,12 +16,12 @@ class portada extends App{
     public function list_modulos()
     {
       $modelo = new modeloPortada();
-      $centro_id = $_SESSION["usuario"][0]["ID_CENTRO"];
+      $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
       //$bd = isset($_SESSION["usuario"][0]["database_name"]) ? $_SESSION["usuario"][0]["database_name"] : 'portal-kpi' ;
       //$usuario = "SELECT kpi_roles_id FROM kpi_usuarios WHERE id=".$_SESSION['usuario'][0]['id']." and estado = 1 limit 1";
       //$usuario = $modelo->executeQuery( $usuario );
       //$_SESSION["nivelusuario"] = $usuario[0]['kpi_roles_id'];
-      $modulos = "SELECT * FROM modulos WHERE estado = 1 order by id asc";
+      $modulos = "SELECT * FROM modulos WHERE centro_id=".$tipo_centro_id." and  estado = 1 order by id asc";
       $modulos = $modelo->executeQuery( $modulos );
       $tree = $this->buildTree($modulos);
       $treeHtml = $this->buildTreeHtml($tree);
