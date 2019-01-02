@@ -361,4 +361,16 @@ class portada extends App{
       return false;
     }
   }
+  public function listar_usuarios(){
+    $modelo = new modeloPortada();
+    $sql = "select usu.*,nu.nombre as nivel_nombre from usuarios usu left join niveles_usuarios nu on (usu.nivel=nu.id) where  to_char(fecha_creacion, 'DD-MON-YY') ='".date("y-M-d")."'";
+
+    $res = $modelo->executeQuery($sql );
+    if ($res) 
+    {
+      echo json_encode(array("data"=>$res) ) ;
+    }else{
+      return false;
+    }
+  }
 }

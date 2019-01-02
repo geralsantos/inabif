@@ -141,7 +141,7 @@ Vue.component('registro-perfiles', {
             });
         },
         listar_usuarios(){
-            this.$http.post('buscar?view',{tabla:'usuarios'}).then(function(response){
+            this.$http.post('listar_usuarios?view').then(function(response){
                 if( response.body.data ){
                     this.usuarios= response.body.data;
                 }
