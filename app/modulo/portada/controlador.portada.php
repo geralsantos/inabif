@@ -279,25 +279,25 @@ class portada extends App{
           $sql = "select distinct ca.id as id_centro,ca.NOM_CA as nombre_centro,cad.estado_completo,cad.fecha_cierre   from centro_atencion ca
           left join centro_atencion_detalle cad on (cad.centro_id=ca.id)
           left join tipo_centro tc on (ca.tipo_centro_id=tc.id) 
-          where ca.id=".$_SESSION["usuario"][0]["CENTRO_ID"]." and ca.estado = 1 order by cad.id desc";
+          where ca.id=".$_SESSION["usuario"][0]["CENTRO_ID"]." and ca.estado = 1";
         }else if($_SESSION["usuario"][0]["NIVEL"]=="2") //supervisor
         {
           $sql = "select distinct ca.id as id_centro,ca.NOM_CA as nombre_centro,cad.estado_completo,cad.fecha_cierre  from centro_atencion ca 
           left join centro_atencion_detalle cad on (cad.centro_id=ca.id) 
           left join tipo_centro tc on (ca.tipo_centro_id=tc.id) 
-          where tc.id=".$_SESSION["usuario"][0]["TIPO_CENTRO_ID"]." and ca.estado = 1 order by cad.id desc";
+          where tc.id=".$_SESSION["usuario"][0]["TIPO_CENTRO_ID"]." and ca.estado = 1";
         }else if($_SESSION["usuario"][0]["NIVEL"]=="3") //USER_SEDE_GESTIÓN 
         {
           $sql = "select distinct ca.id as id_centro,ca.NOM_CA as nombre_centro,cad.estado_completo,cad.fecha_cierre  from centro_atencion ca 
           left join centro_atencion_detalle cad on (cad.centro_id=ca.id) 
           left join tipo_centro tc on (ca.tipo_centro_id=tc.id) 
-          where tc.id=".$_SESSION["usuario"][0]["TIPO_CENTRO_ID"]." and ca.estado = 1 order by cad.id desc";
+          where tc.id=".$_SESSION["usuario"][0]["TIPO_CENTRO_ID"]." and ca.estado = 1 ";
         }else if($_SESSION["usuario"][0]["NIVEL"]=="1") //ADMIN_CENTRAL
         {
           $sql = "select distinct ca.id as id_centro,ca.NOM_CA as nombre_centro,cad.estado_completo,cad.fecha_cierre  from centro_atencion ca 
           left join centro_atencion_detalle cad on (cad.centro_id=ca.id) 
           left join tipo_centro tc on (ca.tipo_centro_id=tc.id) 
-          where ca.estado = 1 order by cad.id desc";
+          where ca.estado = 1 ";
         }
         $res = $modelo->executeQuery($sql );
         if ($res) 
