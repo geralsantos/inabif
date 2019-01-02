@@ -580,8 +580,8 @@ class portada extends App{
     $id_residente = $_POST["id_residente"];
     
     $residente = "select distinct re.nombre as nombre_residente,ca.id as id_centro,tc.id as tipo_centro_id from residente re 
-	left join tipo_centro tc on(tc.id=re.tipo_centro_id) 
-	left join centro_atencion ca on(ca.tipo_centro_id=tc.id) 
+	inner join tipo_centro tc on(tc.id=re.tipo_centro_id) 
+	inner join centro_atencion ca on(ca.tipo_centro_id=tc.id) 
 	where re.id = ".$id_residente." order by re.id desc";
     $residente = $modelo->executeQuery($residente);
 
