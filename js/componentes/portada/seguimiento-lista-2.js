@@ -27,6 +27,9 @@ Vue.component('seguimiento-lista-2', {
     },
     updated:function(){
     },
+    destroyed:function(){
+        alert("seguimiento 2 destruido");
+    },
     methods:{
         guardar(){
             if (this.id_residente==null) {
