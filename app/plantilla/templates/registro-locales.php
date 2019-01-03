@@ -52,7 +52,7 @@
                         <div class="row">
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Tipo de Centro</label>
-                                <select name="tipo_centro_id" v-model="tipo_centro_id" class="form-control">
+                                <select name="tipo_centro_id" v-model="tipo_centro_id" class="form-control" @change="mostrar_entidad()" >
                                     <option v-for="tipo_centro in tipo_centros" :value="tipo_centro.ID">{{tipo_centro.NOMBRE}}</option>
                                 </select>
                                 </div>

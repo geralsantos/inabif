@@ -219,7 +219,18 @@ Vue.component('registro-locales', {
                 }
 
             });
-        },/*,
+        },
+        mostrar_entidad(){
+            console.log(this.tipo_centro_id)
+           /* this.$http.post('buscar_distritos?view',{tabla:'ubigeo', cod:this.Provincia_Procedencia}).then(function(response){
+                if( response.body.data ){
+                    this.distritos= response.body.data;
+                    //this.Distrito_Procedencia = response.body.data[0]["CODDIST"];
+                }
+
+            });*/
+        }
+        /*,
         listar_nivelesusuarios(){
             this.$http.post('buscar?view',{tabla:'niveles_usuarios'}).then(function(response){
                 if( response.body.data ){
