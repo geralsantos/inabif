@@ -73,28 +73,28 @@
                         <div class="row">
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Departamento del Centro de Atención</label>
-                                <select name="CarDepart" v-model="CarDepart" class="form-control"  @change="cargar_provincias()">
-                                    <option v-for="departamento in departamentos" disabled="disabled" :value="departamento.CODDEPT">{{departamento.NOMDEPT}}</option>
+                                <select name="CarDepart" v-model="CarDepart" class="form-control" disabled="disabled" @change="cargar_provincias()">
+                                    <option v-for="departamento in departamentos"  :value="departamento.CODDEPT">{{departamento.NOMDEPT}}</option>
                                 </select>
                                 </div>
                             </div>
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Provincia del Centro de Atención</label>
-                                <select name="CarProv" v-model="CarProv" class="form-control"  @change="cargar_distritos()">
-                                    <option v-for="provincia in provincias" disabled="disabled" :value="provincia.CODPROV">{{provincia.NOMPROV}}</option>
+                                <select name="CarProv" v-model="CarProv" class="form-control"  disabled="disabled"  @change="cargar_distritos()">
+                                    <option v-for="provincia in provincias" :value="provincia.CODPROV">{{provincia.NOMPROV}}</option>
                                 </select>
                                 </div>
                             </div>
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Distrito del Centro de Atención</label>
-                                <select name="CarDistrito" v-model="CarDistrito" class="form-control">
-                                    <option v-for="distrito in distritos" disabled="disabled" :value="distrito.CODDIST">{{distrito.NOMDIST}}</option>
+                                <select name="CarDistrito" v-model="CarDistrito" class="form-control" disabled="disabled">
+                                    <option v-for="distrito in distritos" :value="distrito.CODDIST">{{distrito.NOMDIST}}</option>
                                 </select>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-4">
                                 <div class=""><label for="text-input" class=" form-control-label">Área de residencia del centro de atención</label>
                                     <select name="areaResidencia" disabled="disabled" v-model="areaResidencia" class="form-control">
                                     <option value="URBANO">URBANO</option>
@@ -107,7 +107,7 @@
                                 <div class=""><label for="text-input" class=" form-control-label">Código del Centro de Atención</label>
                                 <input type="text" v-model="codigoCentroAtencion" name="codigoCentroAtencion" placeholder="" class="form-control" readonly></div>
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-5">
                                 <div class=""><label for="text-input" class=" form-control-label">Nombre del Centro de Atención</label>
                                 <input type="text" v-model="nombreCentroAtencion" name="nombreCentroAtencion" placeholder="" class="form-control" readonly></div>
                             </div>

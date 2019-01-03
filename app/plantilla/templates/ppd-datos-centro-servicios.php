@@ -94,7 +94,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-4">
                                 <div class=""><label for="text-input" class=" form-control-label">Área de residencia del centro de atención</label>
                                     <select name="areaResidencia" disabled="disabled" v-model="areaResidencia" class="form-control" readonly>
                                         <option value="URBANO">URBANO</option>
@@ -107,7 +107,7 @@
                                 <div class=""><label for="text-input" class=" form-control-label">Código del Centro de Atención</label>
                                 <input type="text" v-model="codigoCentroAtencion" name="codigoCentroAtencion" placeholder="" class="form-control" readonly></div>
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-5">
                                 <div class=""><label for="text-input" class=" form-control-label">Nombre del Centro de Atención</label>
                                 <input type="text" v-model="nombreCentroAtencion" name="nombreCentroAtencion" placeholder="" class="form-control" readonly></div>
                             </div>
