@@ -456,7 +456,7 @@ class portada extends App{
     $centro_html .="<tr><th>".$centros[0]["NOMBRE_CENTRO"]."</th><th>".$centros[0]["NOMBRE_TIPO_CENTRO"]."</th><th>".$centros[0]["FECHA_MATRIZ"]."</th></tr></table>";
     
     $modulo_html = "<table>";
-    $modulos = "select m.nombre as nombre_modulo,usu.nombre as nombre_usuario,md.periodo_mes,m.nombre_tabla from modulos_detalle md 
+    $modulos = "select m.parent_id,m.nombre as nombre_modulo,usu.nombre as nombre_usuario,md.periodo_mes,m.nombre_tabla from modulos_detalle md 
     left join modulos m on(m.id=md.modulo_id) 
     left join usuarios usu on(usu.id=m.encargado_id) 
       where m.centro_id in (".$centros[0]["TIPO_CENTRO_ID"].") and ".$fecha." and m.parent_id > 0 and md.periodo_anio = ".date("Y")." order by md.id desc";
