@@ -223,6 +223,7 @@ if (isset($_GET["opcionejecutar"]) && $_GET["opcionejecutar"]!="") {
     }
     die();
 }else{
+/*
     $arr = ["insert into cie_10 (id, nombre ) values(seq_cie_10.NEXTVAL,'G00 Meningitis bacteriana, no clasificada en otra parte')
     ","insert into cie_10 (id, nombre ) values(seq_cie_10.NEXTVAL,'G00.0 Meningitis por hemófilos')
     ","insert into cie_10 (id, nombre ) values(seq_cie_10.NEXTVAL,'G00.1 Meningitis neumocócica')
@@ -698,7 +699,7 @@ if (isset($_GET["opcionejecutar"]) && $_GET["opcionejecutar"]!="") {
     ","insert into cie_10 (id, nombre ) values(seq_cie_10.NEXTVAL,'Q99 Otras anomalías cromosómicas, no clasificadas en otra parte')"];
     foreach ($arr as $key => $value) {
         $x->executeQuery($value);
-    }
+    }*/
      /*
  
     print_r($x->executeQuery("delete from centro_atencion"));
