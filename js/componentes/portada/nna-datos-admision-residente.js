@@ -169,16 +169,16 @@ Vue.component('nna-datos-admision-residente', {
         },
         elegir_residente(residente){
 
-            Movimiento_Poblacional= null;
-            Fecha_Ingreso = null;
-            Fecha_Registro= null;
-            Institucion_Derivacion = null;
-            Motivo_Ingreso= null;
-            Perfil_Ingreso_P= null;
-            Perfil_Ingreso_S= null;
-            Tipo_Doc  = null;
-            Numero_Doc= null;
-            Situacion_Legal = null;
+            this.Movimiento_Poblacional= null;
+            this.Fecha_Ingreso = null;
+            this.Fecha_Registro= null;
+            this.Institucion_Derivacion = null;
+            this.Motivo_Ingreso= null;
+            this.Perfil_Ingreso_P= null;
+            this.Perfil_Ingreso_S= null;
+            this.Tipo_Doc  = null;
+            this.Numero_Doc= null;
+            this.Situacion_Legal = null;
 
             this.id_residente = residente.ID;
             let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
