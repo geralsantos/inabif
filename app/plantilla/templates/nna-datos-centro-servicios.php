@@ -99,8 +99,8 @@
                             <div class="form-group col-md-4">
                                 <div class=""><label for="text-input" class=" form-control-label">Área de residencia del centro de atención</label>
                                     <select name="Area_Residencia" v-model="Area_Residencia" class="form-control" disabled="disabled">
-                                        <option value="URBANO">Urbano</option>
-                                        <option value="RURAL">Rural</option>
+                                        <option value="URBANO">URBANO</option>
+                                        <option value="RURAL">RURAL</option>
                                 </select></div>
                             </div>
                             <div class="form-group col-md-3">
