@@ -131,7 +131,59 @@ console.log(valores);
                 }
 
             });
+        },mostrar_lista_residentes(){
+         
+            this.id_residente = null;
+            this.isLoading = true;
+                this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
+
+                    if( response.body.data != undefined){
+                        this.modal_lista = true;
+                        this.isLoading = false;
+                        this.pacientes = response.body.data;
+                    }else{
+                        swal("", "No existe ningún residente", "error")
+                    }
+                 });
+            
         },
+        elegir_residente(residente){
+
+            this.CarTrastornosNeurologico = null;
+            this.CarNeurologicoPrincipal = null;
+            this.CarTrastornoConduta = null;
+            this.CarDificultadHabla = null;
+            this.CarMetodoHabla = null;
+            this.CarComprension = null;
+            this.CarDificultadPresenta = null;
+            this.CarRealizaActividades = null;
+            this.CarEspeficicarActividades = null;
+
+
+            this.id_residente = residente.ID;
+            let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
+            let apellido = (residente.APELLIDO==undefined)?'':residente.APELLIDO;
+            this.nombre_residente=nombre + ' ' + apellido;
+            this.modal_lista = false;
+
+            this.$http.post('cargar_datos_residente?view',{tabla:'CarSaludMental', residente_id:this.id_residente }).then(function(response){
+
+                if( response.body.atributos != undefined){
+
+                    this.CarTrastornosNeurologico = response.body.atributos[0]["TRANSTORNO_NEUROLOGICO"];
+                    this.CarNeurologicoPrincipal = response.body.atributos[0]["DES_TRANSTORNO"];
+                    this.CarTrastornoConduta = response.body.atributos[0]["TIPO_TRANSTORNO"];
+                    this.CarDificultadHabla = response.body.atributos[0]["DIFICULTAD_HABLA"];
+                    this.CarMetodoHabla = response.body.atributos[0]["METODO_COMUNICARSE"];
+                    this.CarComprension = response.body.atributos[0]["COMPRENSION"];
+                    this.CarDificultadPresenta = response.body.atributos[0]["TIPO_DIFICULTAD"];
+                    this.CarRealizaActividades = response.body.atributos[0]["ACTIVIDADES_DIARIAS"];
+                    this.CarEspeficicarActividades = response.body.atributos[0]["ESPECIFICAR"];
+
+                }
+             });
+
+        }
 
 
     }

@@ -174,6 +174,101 @@ Vue.component('ppd-datos-atencion-salud', {
                 }
              });
 
+        },mostrar_lista_residentes(){
+         
+            this.id_residente = null;
+            this.isLoading = true;
+                this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
+
+                    if( response.body.data != undefined){
+                        this.modal_lista = true;
+                        this.isLoading = false;
+                        this.pacientes = response.body.data;
+                    }else{
+                        swal("", "No existe ningún residente", "error")
+                    }
+                 });
+            
         },
+        elegir_residente(residente){
+
+            this.CarNumAtencionesMG = null;
+            this.CarSalidaMes = null;
+            this.CarNunSalidas = null;
+            this.CarNumACardiovascular = null;
+            this.CarANefrologia = null;
+            this.CarAOncologia = null;
+            this.CarANeurocirugia = null;
+            this.CarNumDermatologia = null;
+            this.CarAEndocrinologia = null;
+            this.CarAGastroenterologia = null;
+            this.CarAGinecoObstretica = null;
+            this.CarAInfectoContagiosas = null;
+            this.CarAHematologia = null;
+            this.CarAInmunologia = null;
+            this.CarAMedicinaFisica = null;
+            this.CarANeumologia = null;
+            this.CarAnutricion = null;
+            this.CarANeurologia = null;
+            this.CarAOftamologia = null;
+            this.CarAOtorrinoloringologia = null;
+            this.CarAPedriatria = null;
+            this.CarAPsiquiatria = null;
+            this.CarAQuirurgica = null;
+            this.CarATraumologia = null;
+            this.CarAUrologia = null;
+            this.CarAOdontologia = null;
+            this.CarAServicios = null;
+            this.CarTratamientoPsicofarmaco = null;
+            this.CarHopitalizadoP = null;
+            this.CarNumHospitalizaciones = null;
+            this.CarMotivoHospitalizacion = null;
+
+            this.id_residente = residente.ID;
+            let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
+            let apellido = (residente.APELLIDO==undefined)?'':residente.APELLIDO;
+            this.nombre_residente=nombre + ' ' + apellido;
+            this.modal_lista = false;
+
+            this.$http.post('cargar_datos_residente?view',{tabla:'CarAtencionSalud', residente_id:this.id_residente }).then(function(response){
+
+                if( response.body.atributos != undefined){
+
+                    this.CarNumAtencionesMG = response.body.atributos[0]["NUM_MEDICINAG"];
+                    this.CarSalidaMes = response.body.atributos[0]["SALIDA_HOSPITALES"];
+                    this.CarNunSalidas = response.body.atributos[0]["NUM_SALIDASHOSPITALES"];
+                    this.CarNumACardiovascular = response.body.atributos[0]["NUM_CARDIOVASCULAR"];
+                    this.CarANefrologia = response.body.atributos[0]["NUM_NEFROLOGIA"];
+                    this.CarAOncologia = response.body.atributos[0]["NUM_ONCOLOGIA"];
+                    this.CarANeurocirugia = response.body.atributos[0]["NUM_NEUROCIRUGIA"];
+                    this.CarNumDermatologia = response.body.atributos[0]["NUM_DERMATOLOGIA"];
+                    this.CarAEndocrinologia = response.body.atributos[0]["NUM_ENDOCRINOLOGIA"];
+                    this.CarAGastroenterologia = response.body.atributos[0]["NUM_GASTROENTEROLOGIA"];
+                    this.CarAGinecoObstretica = response.body.atributos[0]["NUM_GINECO_OBSTERICA"];
+                    this.CarAInfectoContagiosas = response.body.atributos[0]["Num_Infec_contagiosa"];
+                    this.CarAHematologia = response.body.atributos[0]["NUM_HEMATOLOGIA"];
+                    this.CarAInmunologia = response.body.atributos[0]["NUM_INMUNOLOGIA"];
+                    this.CarAMedicinaFisica = response.body.atributos[0]["NUM_MEDICINA_FISICA"];
+                    this.CarANeumologia = response.body.atributos[0]["NUM_NEUMOLOGIA"];
+                    this.CarAnutricion = response.body.atributos[0]["NUM_NUTRICION"];
+                    this.CarANeurologia = response.body.atributos[0]["NUM_NEUROLOGIA"];
+                    this.CarAOftamologia = response.body.atributos[0]["NUM_OFTALMOLOGIA"];
+                    this.CarAOtorrinoloringologia = response.body.atributos[0]["NUM_OTORRINOLARINLOGIA"];
+                    this.CarAPedriatria = response.body.atributos[0]["NUM_PEDRIATRIA"];
+                    this.CarAPsiquiatria = response.body.atributos[0]["NUM_PSIQUIATRIA"];
+                    this.CarAQuirurgica = response.body.atributos[0]["NUM_QUIRURGICA"];
+                    this.CarATraumologia = response.body.atributos[0]["NUM_TRAUMOLOGIA"];
+                    this.CarAUrologia = response.body.atributos[0]["NUM_UROLOGIA"];
+                    this.CarAOdontologia = response.body.atributos[0]["NUM_ODONTOLOGIA"];
+                    this.CarAServicios = response.body.atributos[0]["NUM_OTRO"];
+                    this.CarTratamientoPsicofarmaco = response.body.atributos[0]["TRATAMIENTO_PSICOFARMACO"];
+                    this.CarHopitalizadoP = response.body.atributos[0]["HOPITALIZADO_PERIODO"];
+                    this.CarNumHospitalizaciones = response.body.atributos[0]["NUMERO_HOSPITALIZACIONES"];
+                    this.CarMotivoHospitalizacion = response.body.atributos[0]["MOTIVO_HOSPITALIZACION"];
+
+                }
+             });
+
+        }
     }
   })

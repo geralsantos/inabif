@@ -220,7 +220,61 @@ Vue.component('ppd-datos-identificacion-residente', {
                 }
 
             });
+        },mostrar_lista_residentes(){
+         
+            this.id_residente = null;
+            this.isLoading = true;
+                this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
+
+                    if( response.body.data != undefined){
+                        this.modal_lista = true;
+                        this.isLoading = false;
+                        this.pacientes = response.body.data;
+                    }else{
+                        swal("", "No existe ningún residente", "error")
+                    }
+                 });
+            
         },
+        elegir_residente(residente){
+
+            this.Ape_Paterno = null;
+            this.Ape_Materno = null;
+            this.Nom_Usuario = null;
+            this.Pais_Procencia = null;
+            this.Depatamento_Procedencia = null;
+            this.Provincia_Procedencia = null;
+            this.Distrito_Procedencia = null;
+            this.Sexo = null;
+            this.Fecha_Nacimiento = null;
+            this.Edad = null;
+            this.Lengua_Materna = null;
+
+
+            this.id_residente = residente.ID;
+            let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
+            let apellido = (residente.APELLIDO==undefined)?'':residente.APELLIDO;
+            this.nombre_residente=nombre + ' ' + apellido;
+            this.modal_lista = false;
+
+            this.$http.post('cargar_datos_residente?view',{tabla:'CarIdentificacionUsuario', residente_id:this.id_residente }).then(function(response){
+
+                if( response.body.atributos != undefined){
+                    this.Ape_Paterno = response.body.atributos[0]["APE_PATERNO"];
+                    this.Ape_Materno = response.body.atributos[0]["APE_MATERNO"];
+                    this.Nom_Usuario = response.body.atributos[0]["NOM_USUARIO"];
+                    this.Pais_Procencia = response.body.atributos[0]["PAIS_PROCENCIA"];
+                    this.Depatamento_Procedencia = response.body.atributos[0]["DEPATAMENTO_PROCEDENCIA"];
+                    this.Provincia_Procedencia = response.body.atributos[0]["PROVINCIA_PROCEDENCIA"];
+                    this.Distrito_Procedencia = response.body.atributos[0]["DISTRITO_PROCEDENCIA"];
+                    this.Sexo = response.body.atributos[0]["SEXO"];
+                    this.Fecha_Nacimiento = moment(response.body.atributos[0]["FECHA_NACIMIENTO"],"DD-MMM-YY").format("YYYY-MM-DD");
+                    this.Edad = response.body.atributos[0]["EDAD"];
+                    this.Lengua_Materna = response.body.atributos[0]["LENGUA_MATERNA"];
+                }
+             });
+
+        }
 
     }
   })

@@ -142,6 +142,73 @@ Vue.component('ppd-datos-terapia', {
                 }
 
             });
+        },mostrar_lista_residentes(){
+         
+            this.id_residente = null;
+            this.isLoading = true;
+                this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
+
+                    if( response.body.data != undefined){
+                        this.modal_lista = true;
+                        this.isLoading = false;
+                        this.pacientes = response.body.data;
+                    }else{
+                        swal("", "No existe ningún residente", "error")
+                    }
+                 });
+            
+        },
+        elegir_residente(residente){
+
+            this.CarNumReeducaion = null;
+            this.CarParticipaPsicomotricidad = null;
+            this.CarFisioterapia = null;
+            this.CarDeportesAdaptados = null;
+            this.CarComunicacion = null;
+            this.CarReeducacionOrofacial = null;
+            this.CarTerapiaLenguaje = null;
+            this.CarDesarrolloLenguaje = null;
+            this.CarTipoLenguajeAlternativo = null;
+            this.CarDesrrolloActividadesBasicas = null;
+            this.CarInstrumentalesBasicas = null;
+            this.CarInstrumentalesComplejas = null;
+            this.CarIntervensionSensorial = null;
+            this.CarSensoReceptivas = null;
+            this.CarElavoracionOrteticos = null;
+            this.CarAdaptacionSilla = null;
+
+
+            this.id_residente = residente.ID;
+            let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
+            let apellido = (residente.APELLIDO==undefined)?'':residente.APELLIDO;
+            this.nombre_residente=nombre + ' ' + apellido;
+            this.modal_lista = false;
+
+            this.$http.post('cargar_datos_residente?view',{tabla:'CarTerapia', residente_id:this.id_residente }).then(function(response){
+
+                if( response.body.atributos != undefined){
+
+                    this.CarNumReeducaion = response.body.atributos[0]["NUM_TMOTRIZ"];
+                    this.CarParticipaPsicomotricidad = response.body.atributos[0]["NUM_TPSICOMOTRICIDAD"];
+                    this.CarFisioterapia = response.body.atributos[0]["NUM_TFISIOTERAPIA"];
+                    this.CarDeportesAdaptados = response.body.atributos[0]["NUM_TDEPORTES"];
+                    this.CarComunicacion = response.body.atributos[0]["NUM_TCOMUNICACION"];
+                    this.CarReeducacionOrofacial = response.body.atributos[0]["NUM_TOROFACIAL"];
+                    this.CarTerapiaLenguaje = response.body.atributos[0]["NUM_TLENGUAJE"];
+                    this.CarDesarrolloLenguaje = response.body.atributos[0]["NUM_TLENGUAJEA"];
+                    this.CarTipoLenguajeAlternativo = response.body.atributos[0]["TIPO_LENGUAJEA"];
+                    this.CarDesrrolloActividadesBasicas = response.body.atributos[0]["NUM_TABVD"];
+                    this.CarInstrumentalesBasicas = response.body.atributos[0]["NUM_TINSTRUMENTALESB"];
+                    this.CarInstrumentalesComplejas = response.body.atributos[0]["NUM_TINSTRUMENTALESC"];
+                    this.CarIntervensionSensorial = response.body.atributos[0]["NUM_TSENSORIALES"];
+                    this.CarSensoReceptivas = response.body.atributos[0]["NUM_TRECEPTIVAS"];
+                    this.CarElavoracionOrteticos = response.body.atributos[0]["NUM_TORTETICOS"];
+                    this.CarAdaptacionSilla = response.body.atributos[0]["NUM_TSOILLAR"];
+
+
+                }
+             });
+
         }
 
 

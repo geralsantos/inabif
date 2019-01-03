@@ -104,6 +104,55 @@ Vue.component('ppd-datos-educacion-participacionLaboral', {
                 }
              });
 
+        },mostrar_lista_residentes(){
+         
+            this.id_residente = null;
+            this.isLoading = true;
+                this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
+
+                    if( response.body.data != undefined){
+                        this.modal_lista = true;
+                        this.isLoading = false;
+                        this.pacientes = response.body.data;
+                    }else{
+                        swal("", "No existe ningún residente", "error")
+                    }
+                 });
+            
+        },
+        elegir_residente(residente){
+
+            this.CarTipoIIEE = null;
+            this.CarInsertadoLaboralmente = null;
+            this.CarDesParticipacionLa = null;
+            this.CarFortalecimientoHabilidades = null;
+            this.CarFIActividades = null;
+            this.CarFFActividades = null;
+            this.CarNNAConcluyoHP = null;
+            this.CarNNAFortaliceHP = null;
+
+            this.id_residente = residente.ID;
+            let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
+            let apellido = (residente.APELLIDO==undefined)?'':residente.APELLIDO;
+            this.nombre_residente=nombre + ' ' + apellido;
+            this.modal_lista = false;
+
+            this.$http.post('cargar_datos_residente?view',{tabla:'CarEducacionCapacidades', residente_id:this.id_residente }).then(function(response){
+
+                if( response.body.atributos != undefined){
+
+                    this.CarTipoIIEE = response.body.atributos[0]["TIPO_INSTITUCION"];
+                    this.CarInsertadoLaboralmente = response.body.atributos[0]["INSERTADO_LABORA"];
+                    this.CarDesParticipacionLa = response.body.atributos[0]["DES_LABORA"];
+                    this.CarFortalecimientoHabilidades = response.body.atributos[0]["PARTICIPA_ACTIVIDADES"];
+                    this.CarFIActividades = response.body.atributos[0]["FECHA_INICIONA"];
+                    this.CarFFActividades = response.body.atributos[0]["FECHA_FINA"];
+                    this.CarNNAConcluyoHP = response.body.atributos[0]["CULMINO_ACTIVIDADES"];
+                    this.CarNNAFortaliceHP = response.body.atributos[0]["LOGRO_ACTIVIDADES"];
+
+                }
+             });
+
         }
     }
   })

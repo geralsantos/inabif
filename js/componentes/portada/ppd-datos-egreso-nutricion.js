@@ -107,7 +107,58 @@ Vue.component('ppd-datos-egreso-nutricion', {
                 }
              });
 
+        },mostrar_lista_residentes(){
+         
+            this.id_residente = null;
+            this.isLoading = true;
+                this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
+
+                    if( response.body.data != undefined){
+                        this.modal_lista = true;
+                        this.isLoading = false;
+                        this.pacientes = response.body.data;
+                    }else{
+                        swal("", "No existe ningún residente", "error")
+                    }
+                 });
+            
         },
+        elegir_residente(residente){
+
+            this.CarPlanIntervencion = null;
+            this.CarDesMetaPII = null;
+            this.CarInformeTecnico = null;
+            this.CarDesInformEvolutivo = null;
+            this.CarCumplePlan = null;
+            this.CarEstadoNutricional = null;
+            this.CarPeso = null;
+            this.CarTalla = null;
+            this.CarHemoglobina = null;
+
+
+            this.id_residente = residente.ID;
+            let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
+            let apellido = (residente.APELLIDO==undefined)?'':residente.APELLIDO;
+            this.nombre_residente=nombre + ' ' + apellido;
+            this.modal_lista = false;
+
+            this.$http.post('cargar_datos_residente?view',{tabla:'CarEgresoNutricion', residente_id:this.id_residente }).then(function(response){
+
+                if( response.body.atributos != undefined){
+                    this.CarPlanIntervencion = response.body.atributos[0]["PLAN_NUTRICIONAL"];
+                    this.CarDesMetaPII = response.body.atributos[0]["META_PII"];
+                    this.CarInformeTecnico = response.body.atributos[0]["INFORME_TECNICO"];
+                    this.CarDesInformEvolutivo = response.body.atributos[0]["DES_INFORME"];
+                    this.CarCumplePlan = response.body.atributos[0]["CUMPLE_PLAN"];
+                    this.CarEstadoNutricional = response.body.atributos[0]["ESTADO_NUTRICIONAL"];
+                    this.CarPeso = response.body.atributos[0]["PESO"];
+                    this.CarTalla = response.body.atributos[0]["TALLA"];
+                    this.CarHemoglobina = response.body.atributos[0]["HEMOGLOBINA"];
+
+                }
+             });
+
+        }
 
     }
   })

@@ -176,6 +176,81 @@ Vue.component('ppd-datos-salud-nutricion', {
                 }
 
             });
+        },mostrar_lista_residentes(){
+         
+            this.id_residente = null;
+            this.isLoading = true;
+                this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
+
+                    if( response.body.data != undefined){
+                        this.modal_lista = true;
+                        this.isLoading = false;
+                        this.pacientes = response.body.data;
+                    }else{
+                        swal("", "No existe ningún residente", "error")
+                    }
+                 });
+            
+        },
+        elegir_residente(residente){
+
+            this.CarDiscapacidad = null;
+            this.CarDiscapacidadFisica = null;
+            this.CarDiscapacidadIntelectual = null;
+            this.CarDiscapacidadSensorial = null;
+            this.CarDiscapacidadMental = null;
+            this.CarDxCertificado = null;
+            this.CarCarnetConadis = null;
+            this.CarMovilidad = null;
+            this.CarDificultadDesplazamiento = null;
+            this.CarDificultadBrazoCuerpo = null;
+            this.CarPatologica1 = null;
+            this.CarTipoPatologia1 = null;
+            this.CarEspecifiquePato1 = null;
+            this.CarPatologia2 = null;
+            this.CarTipoPatologia2 = null;
+            this.CarEspecifiquePato2 = null;
+            this.CarNivelHemoglobina = null;
+            this.CarAnemia = null;
+            this.CarPeso = null;
+            this.CarTalla = null;
+            this.CarEstadoNutricional = null;
+
+
+            this.id_residente = residente.ID;
+            let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
+            let apellido = (residente.APELLIDO==undefined)?'':residente.APELLIDO;
+            this.nombre_residente=nombre + ' ' + apellido;
+            this.modal_lista = false;
+
+            this.$http.post('cargar_datos_residente?view',{tabla:'CarSaludNutricion', residente_id:this.id_residente }).then(function(response){
+
+                if( response.body.atributos != undefined){
+
+                    this.CarDiscapacidad = response.body.atributos[0]["DISCAPACIDAD"];
+                    this.CarDiscapacidadFisica = response.body.atributos[0]["DISCAPACIDAD_FISICA"];
+                    this.CarDiscapacidadIntelectual = response.body.atributos[0]["DISCAPACIDAD_INTELECTUAL"];
+                    this.CarDiscapacidadSensorial = response.body.atributos[0]["DISCAPACIDAD_SENSORIAL"];
+                    this.CarDiscapacidadMental = response.body.atributos[0]["DISCAPACIDAD_MENTAL"];
+                    this.CarDxCertificado = response.body.atributos[0]["CERTIFICACDO_DX"];
+                    this.CarCarnetConadis = response.body.atributos[0]["CARNET_CONADIS"];
+                    this.CarMovilidad = response.body.atributos[0]["MOVILIDAD"];
+                    this.CarDificultadDesplazamiento = response.body.atributos[0]["MOTIVO_MOVILIDAD"];
+                    this.CarDificultadBrazoCuerpo = response.body.atributos[0]["DIFICULTAD_MOVILIDAD"];
+                    this.CarPatologica1 = response.body.atributos[0]["PATOLOGIA1"];
+                    this.CarTipoPatologia1 = response.body.atributos[0]["TIPO_PATOLOGIA1"];
+                    this.CarEspecifiquePato1 = response.body.atributos[0]["ESPECIFIQUE1"];
+                    this.CarPatologia2 = response.body.atributos[0]["PATOLOGIA2"];
+                    this.CarTipoPatologia2 = response.body.atributos[0]["TIPO_PATOLOGIA2"];
+                    this.CarEspecifiquePato2 = response.body.atributos[0]["ESPECIFIQUE2"];
+                    this.CarNivelHemoglobina = response.body.atributos[0]["NIVEL_HEMOGLOBINA"];
+                    this.CarAnemia = response.body.atributos[0]["ANEMIA"];
+                    this.CarPeso = response.body.atributos[0]["PESO"];
+                    this.CarTalla = response.body.atributos[0]["TALLA"];
+                    this.CarEstadoNutricional = response.body.atributos[0]["ESTADO_NUTRICIONAL"];
+                }
+             });
+
         }
 
     }

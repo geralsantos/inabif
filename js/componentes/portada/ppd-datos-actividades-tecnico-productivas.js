@@ -110,6 +110,60 @@ Vue.component('ppd-datos-actividades-tecnico-productivas', {
                 }
              });
 
+        }, mostrar_lista_residentes(){
+         
+            this.id_residente = null;
+            this.isLoading = true;
+                this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
+
+                    if( response.body.data != undefined){
+                        this.modal_lista = true;
+                        this.isLoading = false;
+                        this.pacientes = response.body.data;
+                    }else{
+                        swal("", "No existe ningún residente", "error")
+                    }
+                 });
+            
         },
+        elegir_residente(residente){
+
+            this.CarNumBiohuerto = null;
+            this.CarNumManualidades = null;
+            this.CarNumReposteria = null;
+            this.CarNumPaseos = null;
+            this.CarNumCulturales = null;
+            this.CarNumCivicas = null;
+            this.CarNumFutbol = null;
+            this.CarNumNatacion = null;
+            this.CarNumDeportes = null;
+            this.CArNumDinero = null;
+            this.CarNumDecisiones = null;
+
+            this.id_residente = residente.ID;
+            let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
+            let apellido = (residente.APELLIDO==undefined)?'':residente.APELLIDO;
+            this.nombre_residente=nombre + ' ' + apellido;
+            this.modal_lista = false;
+
+            this.$http.post('cargar_datos_residente?view',{tabla:'CarActividades', residente_id:this.id_residente }).then(function(response){
+                console.log(response.body);
+                if( response.body.atributos != undefined){
+
+                    this.CarNumBiohuerto = response.body.atributos[0]["NUM_BIOHUERTO"];
+                    this.CarNumManualidades = response.body.atributos[0]["NUM_MANUALIDADES"];
+                    this.CarNumReposteria = response.body.atributos[0]["NUM_PANADERIA"];
+                    this.CarNumPaseos = response.body.atributos[0]["NUM_PASEOS"];
+                    this.CarNumCulturales = response.body.atributos[0]["NUM_CULTURALES"];
+                    this.CarNumCivicas = response.body.atributos[0]["NUM_CIVICAS"];
+                    this.CarNumFutbol = response.body.atributos[0]["NUM_FUTBOL"];
+                    this.CarNumNatacion = response.body.atributos[0]["NUM_NATACION"];
+                    this.CarNumDeportes = response.body.atributos[0]["NUM_OTROSDE"];
+                    this.CArNumDinero = response.body.atributos[0]["NUM_MANEJODINERO"];
+                    this.CarNumDecisiones = response.body.atributos[0]["NUM_DECISIONES"];
+                }
+             });
+
+        }
     }
   })
