@@ -32,6 +32,7 @@
             if (response.body.success) {
               document.querySelector('#login-form').submit();
             }else{
+              console.log(response.body);
               let _error = {_code:response.body['error-codes'][0]},error_default=[["missing-input-response","Tiene que completar el CAPTCHA"],["timeout-or-duplicate","Ha duplicado o expirado el CAPTCHA, actualice su navegador."]],response_=[];
               for (var i = 0; i < error_default.length; i++) {
                 if (error_default[i][0]==_error._code) {
