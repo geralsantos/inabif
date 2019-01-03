@@ -693,7 +693,7 @@ $modulo_html .="</table>";
 	$upload_folder  = "/var/www/html/inabif/app/cargas/";
 
 	$nombre_archivo = $_FILES['archivo']['name'];
-	$tipo_archivo   = $_FILES['archivo']['type'];
+	echo $tipo_archivo   = $_FILES['archivo']['type'];
 	$tamano_archivo = $_FILES['archivo']['size'];
 	$tmp_archivo    = $_FILES['archivo']['tmp_name'];
 	$extension		= pathinfo($nombre_archivo, PATHINFO_EXTENSION);
