@@ -46,6 +46,10 @@ Vue.component('pam-datos-identificacion-residente', {
     watch:{
         departamento_nacimiento_id:function(val){ 
             this.buscar_provincias();
+        },
+        Fecha_Nacimiento:function(val){
+            this.edad = moment().diff(val, 'year'); 
+            console.log(this.edad)
         }
     },
     methods:{
