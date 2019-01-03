@@ -110,9 +110,9 @@
                                 <div class=" "><label for="text-input" class=" form-control-label">Tipo de Centro</label>
                                 <select name="tipo_centro" v-model="tipo_centro" class="form-control">
                              
-                                   <option value="56">NNA</option>
-                                   <option value="48">PAM</option>
-                                   <option value="42">PPD</option>
+                                   <option value="56">USPNNA</option>
+                                   <option value="48">USPAM</option>
+                                   <option value="42">USPPD</option>
                                 </select>
                                 </div>
                             </div>
