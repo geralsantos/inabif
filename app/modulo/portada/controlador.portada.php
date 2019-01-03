@@ -412,7 +412,7 @@ class portada extends App{
 		$where = "ca.tipo_centro_id = ".$tipo_centro;
 	}else{
 		$id_centro = $_SESSION["usuario"][0]["CENTRO_ID"];
-		$where = "ca.centro_id = ".$id_centro;
+		$where = "ca.id = ".$id_centro;
 	}
     $periodo = $_POST["periodo"];
     if ($periodo=="mensual") {
