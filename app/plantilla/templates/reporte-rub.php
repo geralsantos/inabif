@@ -30,14 +30,18 @@
                                     <thead class="thead-dark text-center">
                                         <tr>
                                             <th scope="col">Nombre</th>
+                                            <th scope="col">Apellido Paterno</th>
+                                            <th scope="col">Apellido Materno</th>
                                             <th scope="col">Fecha</th>
-                                            <th scope="col">Descargar</th>
                                         </tr>
                                     </thead>
                                     <tbody class="text-center">
                                         <tr v-for="residente in residentes">
                                             <td>{{residente.NOMBRE_RESIDENTE}}</td>
+                                            <td>{{residente.APELLIDO_P}}</td>
+                                            <td>{{residente.APELLIDO_M}}</td>
                                             <td>{{residente.FECHA}}</td>
+                                            
                                         
                                         </tr>
                                     
