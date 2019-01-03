@@ -18,15 +18,19 @@ Vue.component('cargar-archivos', {
         guardar(){
             var formData = new FormData(document.getElementById("formuploadajax"))
             formData.append("archivo",document.getElementById('archivo'));
-           /* formData.append("anio",(this.anio));
-            formData.append("mes",(this.mes));*/
             this.$http.post('adjuntar_archivo?view',formData,{headers: {'Content-Type': 'multipart/form-data'}}).then(function(response){
+                let data = response.body.resultado;
+                if (data) {
+                    swal("Subida", "El archivo ha sido subido.", "success");
+                }else{
+                    swal("Error", "Un error ha ocurrido", "error");
+                }
             });
         },
         eliminar(usuario){
             swal({
                 title: "Estás seguro?",
-                text: "Desea Eliminar el usuario seleccionado: "+usuario.NOMBRE,
+                text: "Desea Eliminar el archivo seleccionado: "+usuario.NOMBRE,
                 icon: "warning",
                 buttons: true,
                 dangerMode: true,
@@ -83,18 +87,10 @@ Vue.component('cargar-archivos', {
             }
            
           },
-        buscar_centros(){
-            this.$http.post('buscar?view',{tabla:'centro_atencion'}).then(function(response){
+        listar_archivos_adjuntos(){
+            this.$http.post('buscar?view').then(function(response){
                 if( response.body.data ){
-                    this.centros= response.body.data;
-                }
-
-            });
-        },
-        listar_usuarios(){
-            this.$http.post('listar_usuarios?view').then(function(response){
-                if( response.body.data ){
-                    this.usuarios= response.body.data;
+                    this.archivos= response.body.data;
                 }
 
             });
