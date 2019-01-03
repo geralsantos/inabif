@@ -63,7 +63,7 @@ class portada extends App{
     <a href="#node'.$element['ID'].'" class="list-group-item level-0" data-toggle="collapse" aria-expanded="true" id="gardening">'.$element['NOMBRE'].'
         <i class="fa fa-caret-down"></i>
     </a>
-    <div class="collapse" id="node'.$element['ID'].'">
+    <div class="collapse tabulacionMenu" id="node'.$element['ID'].'">
     '. $this->buildTreeHtml($element['children'],'childs').'
     </div>
       ') :
@@ -316,11 +316,11 @@ class portada extends App{
       $modelo = new modeloPortada();
 
         $sql = "select ca.* from centro_atencion ca
-        left join tipo_centro tc on (ca.tipo_centro_id=tc.id) 
+        left join tipo_centro tc on (ca.tipo_centro_id=tc.id)
         where ca.id=".$_SESSION["usuario"][0]["CENTRO_ID"]." and ca.estado = 1";
-  
+
       $res = $modelo->executeQuery($sql );
-      if ($res) 
+      if ($res)
       {
         echo json_encode(array("data"=>$res) ) ;
       }else{
@@ -704,7 +704,7 @@ $modulo_html .="</table>";
 	{
     $modelo = new modeloPortada();
     $valores = array("centro_id"=>$_SESSION["usuario"][0]["ID_CENTRO"],"tipo_centro_id"=>$_SESSION["usuario"][0]["TIPO_CENTRO_ID"],"nombre"=>$nombre_archivo,"ruta"=>$fichero_subido,"tipo"=>$extension,"tamano"=>$tamano_archivo,"fecha_creacion"=> date("y-M-d"),"usuario_crea"=>$_SESSION["usuario"][0]["ID"],"usuario_edita"=>$_SESSION["usuario"][0]["ID"]);
-  
+
     $res = $modelo->insertData('archivos_adjuntados',$valores);
     if ($res)
     {
