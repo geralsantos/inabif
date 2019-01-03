@@ -532,7 +532,7 @@ class portada extends App{
 	inner join centro_atencion ca on(ca.tipo_centro_id=tc.id) 
 	inner join paises pa on(pa.id=re.pais_id) 
 	inner join ubigeo ubi on(ubi.coddist=re.distrito_naci_cod) 
-	where to_char(re.fecha_creacion,'DD-MON-YY') ".$fecha." AND ".$filtro_centro."  order by re.id desc";
+	where to_char(re.fecha_creacion,'DD-MON-YY') ".$fecha." AND ".$filtro_centro." ";
 	$residentes = $modelo->executeQuery($residentes);
 	$residente_html = "";
 	foreach ($residentes as $key => $value) {
