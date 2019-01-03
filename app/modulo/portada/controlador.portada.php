@@ -456,7 +456,7 @@ class portada extends App{
     $centro_html .="<tr><th>".$centros[0]["NOMBRE_CENTRO"]."</th><th>".$centros[0]["NOMBRE_TIPO_CENTRO"]."</th><th>".$centros[0]["FECHA_MATRIZ"]."</th></tr></table>";
     
     $modulo_html = "<table>";
-    $modulos = "select m.nombre as nombre_modulo,usu.nombre as nombre_usuario,md.periodo_mes,m.nombre_tabla from modulos_detalle md 
+    echo $modulos = "select m.nombre as nombre_modulo,usu.nombre as nombre_usuario,md.periodo_mes,m.nombre_tabla from modulos_detalle md 
     left join modulos m on(m.id=md.modulo_id) 
     left join usuarios usu on(usu.id=m.encargado_id) 
       where m.centro_id in (".$centros[0]["TIPO_CENTRO_ID"].") and ".$fecha." and md.periodo_anio = ".date("Y")." order by md.id desc";
@@ -467,7 +467,7 @@ class portada extends App{
 		$modulo_html .="<tr><th></th><th>Nombre del Modulo</th><th>Encargado</th><th>Periodo Mes</th></tr>";
 		$modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td><td>".$modulo["NOMBRE_USUARIO"]."</td><td>".$modulo["PERIODO_MES"]."</td></tr>";
 
-		echo $grupos = "select distinct * from ".$modulo["NOMBRE_TABLA"]." order by id desc";
+		$grupos = "select distinct * from ".$modulo["NOMBRE_TABLA"]." order by id desc";
 		$grupos = $modelo->executeQuery($grupos);
 
 		$grupo_html = "<table>";
