@@ -146,3 +146,8 @@ fieldset.legend-indicador {
 .tabulacionMenu {
     padding-left: 15px;
 }
+
+.tabulacionMenu a{
+    border-top-left-radius: 0rem !important;
+    border-bottom-left-radius: 0rem !important;
+}
