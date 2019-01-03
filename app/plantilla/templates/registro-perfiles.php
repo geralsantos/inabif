@@ -91,7 +91,7 @@
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <div class=" "><label for="text-input" class=" form-control-label">DNI</label>
-                                <input type="number" v-model="DNI" name="DNI" maxlength="12" placeholder="" class="form-control"> 
+                                <input type="number" v-model="DNI" name="DNI" maxlength="9" placeholder="" class="form-control"> 
                                 </div>
                             </div>
                             <div class="form-group col-md-6">

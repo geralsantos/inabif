@@ -129,6 +129,9 @@ class portada extends App{
         if ($_POST['tabla']!="usuarios" && $_POST['tabla']!="centro_atencion") {
           $_POST['valores']['Tipo_Centro_Id'] = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
         }
+        if ($_POST['tabla'] == "residente") {
+          $_POST['valores']['centro_id'] = $_SESSION["usuario"][0]["ID_CENTRO"];
+        }
         $_POST['valores']['Fecha_Creacion'] = date("y-M-d");
         $_POST['valores']['Estado'] = 1;
         //$_POST['valores']['Fecha_Edicion'] = date("Y-m-d H:i:s");
