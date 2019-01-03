@@ -140,7 +140,7 @@ Vue.component('nna-datos-centro-servicios', {
                     let ubigeo =  response.body.data[0]["UBIGEO"];
                     let departamento = ubigeo.substring(0, 2);
                     let provincia = ubigeo.substring(0, 4);
-                    let distrito= ubigeo.substring(0, 6) ;
+
                     this.Cod_Entidad = response.body.data[0]["CODIGO_ENTIDAD"];
                     this.Nom_Entidad = response.body.data[0]["NOMBRE_ENTIDAD"];
                     this.Cod_Linea = response.body.data[0]["CODIGO_LINEA"];
@@ -149,7 +149,7 @@ Vue.component('nna-datos-centro-servicios', {
                     this.NomC_Servicio = response.body.data[0]["NOM_SERV"];
                     this.Departamento_Centro = departamento;
                     this.Provincia_centro =provincia;
-                    this.Distrito_centro = distrito;
+                    this.Distrito_centro =  response.body.data[0]["UBIGEO"];
                     this.Area_Residencia = response.body.data[0]["AREA_RESIDENCIA"];
                     this.CodigoC_Atencion = response.body.data[0]["COD_CA"];
                     this.NomC_Atencion = response.body.data[0]["NOM_CA"];
