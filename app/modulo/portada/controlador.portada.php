@@ -404,8 +404,16 @@ class portada extends App{
     }
   }
   public function mostrar_matrices(){
-    $modelo = new modeloPortada();
-    $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+	$modelo = new modeloPortada();
+    $nivel = $_SESSION["usuario"][0]["NIVEL"];
+
+	if (SUPERVISOR == $nivel || USER_SEDE == $nivel) {
+		$tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+		$where = "ca.tipo_centro_id = ".$tipo_centro;
+	}else{
+		$id_centro = $_SESSION["usuario"][0]["CENTRO_ID"];
+		$where = "ca.centro_id = ".$id_centro;
+	}
     $periodo = $_POST["periodo"];
     if ($periodo=="mensual") {
       $fecha = " = UPPER('".date("y-M")."') "; 
@@ -418,7 +426,7 @@ class portada extends App{
       $fecha = " BETWEEN $semestral ";
     }
     $matrices = "select ca.nom_ca as nombre_centro, cad.fecha_matriz, cad.ID  from centro_atencion_detalle cad 
-      left join centro_atencion ca on(ca.id=cad.centro_id)  where ca.tipo_centro_id = ".$tipo_centro." and to_char(cad.fecha_matriz,'DD-MON') ".$fecha." order by cad.id desc";
+      left join centro_atencion ca on(ca.id=cad.centro_id)  where ".$where." and to_char(cad.fecha_matriz,'DD-MON') ".$fecha." order by cad.id desc";
     $matrices = $modelo->executeQuery($matrices);
 
     if ($matrices) 
