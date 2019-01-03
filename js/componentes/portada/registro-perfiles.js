@@ -65,7 +65,7 @@ Vue.component('registro-perfiles', {
                     let where = {usuario:this.usuario};
                     this.$http.post('selectData?view',{tabla:'usuarios', where:where}).then(function(response){
 
-                        if( response.body.resultado ){
+                        if( response.body.data ){
                             swal('', 'El usuario ya existe', 'error');
                         }else{
                             this.$http.post('insertar_datos?view',{tabla:'usuarios', valores:valores}).then(function(response){
