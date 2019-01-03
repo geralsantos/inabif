@@ -520,14 +520,19 @@ class portada extends App{
   }
   public function descargar_reporte_matriz_rub(){
     $modelo = new modeloPortada();
-    $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+	$nivel = $_SESSION["usuario"][0]["NIVEL"];
+	if (SUPERVISOR == $nivel || USER_SEDE == $nivel ) {
+		$filtro_centro = " tc.id= ".$_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+	}else{
+		$filtro_centro = " ca.id=".$_SESSION["usuario"][0]["CENTRO_ID"];
+	}
     $fecha = " BETWEEN UPPER('".$_POST["fecha_inicial"]."') AND UPPER('".$_POST["fecha_final"]."')";
 	$residentes = "select distinct re.id, re.nombre as nombre_residente, re.apellido_p, re.apellido_m, pa.nombre as nombre_pais , ubi.NOMDEPT as nombre_departamento, ubi.nomprov as nombre_provincia, ubi.nomdist as nombre_distrito, (CASE sexo WHEN 'h' THEN 'Hombre' ELSE 'Mujer' END) as sexo_residente ,re.fecha_creacion as fecha,ca.nom_ca as nombre_centro from residente re 
 	inner join tipo_centro tc on(tc.id=re.tipo_centro_id) 
 	inner join centro_atencion ca on(ca.tipo_centro_id=tc.id) 
 	inner join paises pa on(pa.id=re.pais_id) 
 	inner join ubigeo ubi on(ubi.coddist=re.distrito_naci_cod) 
-	where to_char(re.fecha_creacion,'DD-MON-YY') ".$fecha." order by re.id desc";
+	where to_char(re.fecha_creacion,'DD-MON-YY') ".$fecha." AND ".$filtro_centro." order by re.id desc";
 	$residentes = $modelo->executeQuery($residentes);
 	$residente_html = "";
 	foreach ($residentes as $key => $value) {
