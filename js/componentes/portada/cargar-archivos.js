@@ -89,6 +89,7 @@ Vue.component('cargar-archivos', {
           },
         listar_archivos_adjuntos(){
             this.$http.post('buscar?view').then(function(response){
+                console.log(response);
                 if( response.body.data ){
                     this.archivos= response.body.data;
                 }
