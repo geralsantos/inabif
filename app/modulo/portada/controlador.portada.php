@@ -312,6 +312,21 @@ class portada extends App{
           return false;
         }
     }
+    public function buscar_centro(){
+      $modelo = new modeloPortada();
+
+        $sql = "select ca.*,  from centro_atencion ca
+        left join tipo_centro tc on (ca.tipo_centro_id=tc.id) 
+        where ca.id=".$_SESSION["usuario"][0]["CENTRO_ID"]." and ca.estado = 1";
+  
+      $res = $modelo->executeQuery($sql );
+      if ($res) 
+      {
+        echo json_encode(array("data"=>$res) ) ;
+      }else{
+        return false;
+      }
+  }
     public function buscar_centros(){
         $modelo = new modeloPortada();
         if ($_SESSION["usuario"][0]["NIVEL"]=="5") { //responsable de la información
