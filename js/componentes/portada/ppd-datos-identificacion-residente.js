@@ -43,6 +43,9 @@ Vue.component('ppd-datos-identificacion-residente', {
     watch:{
         Depatamento_Procedencia:function(val){ 
             this.buscar_provincias();
+        },
+        Fecha_Nacimiento:function(val){
+            this.Edad = moment().diff(val, 'year'); 
         }
     },
     methods:{

@@ -47,6 +47,9 @@ Vue.component('nna-datos-identificacion-inicial-inscripcion-residente', {
     watch:{
         departamento_nacimiento_id:function(val){ 
             this.buscar_provincias();
+        },
+        Fecha_Nacimiento:function(val){
+            this.Edad = moment().diff(val, 'year'); 
         }
     },
     methods:{
