@@ -22,8 +22,8 @@
                     <tr v-for="archivo in archivos">
                         <td>{{archivo.NOMBRE}}</td>
                         <td>{{archivo.FECHA_CREACION}}</td>
-                        <td><button  class="btn btn-primary" @click="descargar(archivo.ID)">Descargar</button> 
-                        <button  class="btn btn-danger" @click="eliminar(archivo.ID)">Eliminar</button> </td>
+                        <td><button  class="btn btn-primary" @click="descargar(archivo)">Descargar</button> 
+                        <button  class="btn btn-danger" @click="eliminar(archivo)">Eliminar</button> </td>
                     </tr>
                     </tbody>
                 </table>
