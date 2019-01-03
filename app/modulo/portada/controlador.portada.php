@@ -250,6 +250,19 @@ class portada extends App{
         }
        }
     }
+    public function buscar_entidad(){
+      if( $_POST['tabla']){
+      
+        $modelo = new modeloPortada();
+        $sql = "SELECT * FROM (SELECT * FROM ".strtoupper($_POST["tabla"])." WHERE tipo_centro_id = ".$_POST["tipo_centro_id"]." AND ESTADO=1 order by Id desc) WHERE ROWNUM=1";
+        $res = $modelo->executeQuery( $sql );
+        if ($res) {
+          echo json_encode(array( "data"=>$res )) ;
+        }else{
+          return false;
+        }
+       }
+    }
     public function buscar_departamentos(){
       if( $_POST['tabla']){
         $modelo = new modeloPortada();

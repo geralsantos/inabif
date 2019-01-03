@@ -222,13 +222,15 @@ Vue.component('registro-locales', {
         },
         mostrar_entidad(){
             console.log(this.tipo_centro_id)
-           /* this.$http.post('buscar_distritos?view',{tabla:'ubigeo', cod:this.Provincia_Procedencia}).then(function(response){
+            let where = {tipo_centro_id:this.tipo_centro_id};
+           this.$http.post('buscar_entidad?view',{tabla:'centro_atencion', tipo_centro_id:tipo_centro_id}).then(function(response){
                 if( response.body.data ){
-                    this.distritos= response.body.data;
+                    this.codigo_entidad= response.body.data[0]["CODIGO_ENTIDAD"];
+                    this.nombre_entidad = response.body.data[0]["NOMBRE_ENTIDAD"];
                     //this.Distrito_Procedencia = response.body.data[0]["CODDIST"];
                 }
 
-            });*/
+            });
         }
         /*,
         listar_nivelesusuarios(){
