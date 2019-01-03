@@ -109,7 +109,7 @@ let apellido = apellido_p + ' ' + apellido_m;
 
                 if( response.body.atributos != undefined){
 
-                    this.CarTrastornosNeurologico = response.body.atributos[0]["TRANSTORNO_NEUROLOGICO"];
+                    this.CarTrastornosNeurologico = trim(response.body.atributos[0]["TRANSTORNO_NEUROLOGICO"]);
                     this.CarNeurologicoPrincipal = response.body.atributos[0]["DES_TRANSTORNO"];
                     this.CarTrastornoConduta = response.body.atributos[0]["TIPO_TRANSTORNO"];
                     this.CarDificultadHabla = response.body.atributos[0]["DIFICULTAD_HABLA"];
