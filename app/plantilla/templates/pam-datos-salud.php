@@ -111,7 +111,7 @@
                         <div class="row">
                             
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Enfermedades crónicas degeneraritvas</label>
+                                <label for="text-input" class=" form-control-label">Enfermedades crónicas degenerativas</label>
                                 <select name="EnfermedaCronicasDegenerativas" v-model="EnfermedaCronicasDegenerativas" class="form-control">
                                 <option value="Si">Si</option>
                                 <option value="No">No</option>

@@ -80,7 +80,7 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">NNA conluyó actividades de fortalecimiento de habilidades personales y sociales </label>
+                                <label for="text-input" class=" form-control-label">NNA concluyó actividades de fortalecimiento de habilidades personales y sociales </label>
                                     <select name="Termino_Actividades" v-model="Termino_Actividades" class="form-control">
                                     <option value="Si">Si</option>
                                     <option value="No">No</option>

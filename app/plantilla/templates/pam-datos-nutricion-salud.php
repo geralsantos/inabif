@@ -78,9 +78,10 @@
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Presenta Discapacidad Intelectual</label>
                                 <select name="discapacidad_intelectual" v-model="discapacidad_intelectual" class="form-control">
-                                <option value="Nuclear">Nuclear</option>
-                                <option value="Extensa">Extensa</option>
-                                <option value="Mononuclear">Mononuclear</option>
+                                <option value="No">No</option>
+                                <option value="Leve">Leve</option>
+                                <option value="Moderada">Moderada</option>
+                                <option value="Severa">Severa</option>
                                 </select>  </div>
                             </div>
                         </div>

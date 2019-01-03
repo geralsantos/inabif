@@ -85,12 +85,12 @@
                         <div class="row">
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Cumplimiento del Plan de intervención</label>
-                                    <!--  <select name="Cumple_Intervencion" v-model="Cumple_Intervencion" class="form-control">
-                                    <option value="">CUMPLIDA</option>
-                                    <option value="">EN PROCESO</option>
-                                    <option value="">NO SE EVIDENCIA PROGRESO</option>
-                                    </select>  -->
-                                    <textarea rows="2" cols="30" v-model="Cumple_Intervencion" name="Cumple_Intervencion" class="form-control"></textarea>
+                                    <select name="Cumple_Intervencion" v-model="Cumple_Intervencion" class="form-control">
+                                    <option value="Cumplida">Cumplida</option>
+                                    <option value="En proceso">En proceso</option>
+                                    <option value="No se evidencia progreso">No se evidencia progreso</option>
+                                    </select>  
+                                   
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Residente promovido de año ?</label>
