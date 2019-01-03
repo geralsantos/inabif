@@ -459,14 +459,15 @@ class portada extends App{
     $modulos = "select m.parent_id,m.nombre as nombre_modulo,usu.nombre as nombre_usuario,md.periodo_mes,m.nombre_tabla from modulos_detalle md 
     left join modulos m on(m.id=md.modulo_id) 
     left join usuarios usu on(usu.id=m.encargado_id) 
-      where m.centro_id in (".$centros[0]["TIPO_CENTRO_ID"].") and ".$fecha." and m.parent_id > 0 and md.periodo_anio = ".date("Y")." order by md.id desc";
+      where m.centro_id in (".$centros[0]["TIPO_CENTRO_ID"].") and ".$fecha." and md.periodo_anio = ".date("Y")." order by md.id desc";
     $modulos = $modelo->executeQuery($modulos);
     
     foreach ($modulos as $key => $modulo) 
     {
 		$modulo_html .="<tr><th></th><th>Nombre del Modulo</th><th>Encargado</th><th>Periodo Mes</th></tr>";
 		$modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td><td>".$modulo["NOMBRE_USUARIO"]."</td><td>".$modulo["PERIODO_MES"]."</td></tr>";
-
+		if (floatval($modulo["parent_id"])>0) {
+			
 		$grupos = "select distinct * from ".$modulo["NOMBRE_TABLA"]." order by id desc";
 		$grupos = $modelo->executeQuery($grupos);
 
@@ -491,8 +492,9 @@ class portada extends App{
         $grupo_html .= "</tr>";
 	  }
       $modulo_html .=$grupo_html;
-    }
-    $modulo_html .="</table>";
+    	}
+	}
+$modulo_html .="</table>";
     $table = '<table><tr><td>'.$centro_html.'</td></tr><tr><td>'.$modulo_html.'</td></tr></table>';
 
     if ($modulos) 
