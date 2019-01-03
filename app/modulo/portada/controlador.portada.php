@@ -464,8 +464,7 @@ class portada extends App{
     
     foreach ($modulos as $key => $modulo) 
     {
-		if (floatval($modulo["PARENT_ID"])>0) {
-			print_r($modulo);
+		if (floatval($modulo["NOMBRE_TABLA"])!="") {
 		$modulo_html .="<tr><th></th><th>Nombre del Modulo</th><th>Encargado</th><th>Periodo Mes</th></tr>";
 		$modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td><td>".$modulo["NOMBRE_USUARIO"]."</td><td>".$modulo["PERIODO_MES"]."</td></tr>";
 			
