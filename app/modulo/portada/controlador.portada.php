@@ -467,7 +467,7 @@ class portada extends App{
 		$modulo_html .="<tr><th></th><th>Nombre del Modulo</th><th>Encargado</th><th>Periodo Mes</th></tr>";
 		$modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td><td>".$modulo["NOMBRE_USUARIO"]."</td><td>".$modulo["PERIODO_MES"]."</td></tr>";
 
-		$grupos = "select distinct * from ".$modulo["NOMBRE_TABLA"]." order by id desc";
+		echo $grupos = "select distinct * from ".$modulo["NOMBRE_TABLA"]." order by id desc";
 		$grupos = $modelo->executeQuery($grupos);
 
 		$grupo_html = "<table>";
