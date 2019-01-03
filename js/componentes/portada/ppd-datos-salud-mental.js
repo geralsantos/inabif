@@ -32,6 +32,7 @@ Vue.component('ppd-datos-salud-mental', {
     mounted:function(){
         this.buscar_tipos();
         this.buscar_actividades();
+        this.listar_cie_10();
     },
     updated:function(){
     },
@@ -57,7 +58,7 @@ Vue.component('ppd-datos-salud-mental', {
                 Periodo_Anio:parseFloat(moment().format("YYYY"))
 
             }
-console.log(valores);
+
             this.$http.post('insertar_datos?view',{tabla:'CarSaludMental', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
@@ -194,6 +195,7 @@ let apellido = apellido_p + ' ' + apellido_m;
             this.$http.post('buscar?view',{tabla:'cie_10'}).then(function(response){
                 if( response.body.data ){
                     this.lista_cie_10= response.body.data;
+                    
                 }
 
             });
