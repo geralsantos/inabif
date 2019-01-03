@@ -19,7 +19,9 @@ Vue.component('nna-datos-condiciones-ingreso-residente', {
         anio:(new Date()).getFullYear(),
         coincidencias:[],
         bloque_busqueda:false,
-        id_residente:null
+        id_residente:null,
+        modal_lista:false,
+        pacientes:[]
 
     }),
     created:function(){

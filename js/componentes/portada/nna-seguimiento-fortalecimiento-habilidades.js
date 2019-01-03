@@ -14,7 +14,9 @@ Vue.component('nna-seguimiento-fortalecimiento-habilidades', {
         anio:(new Date()).getFullYear(),
         coincidencias:[],
         bloque_busqueda:false,
-        id_residente:null
+        id_residente:null,
+        modal_lista:false,
+        pacientes:[]
 
     }),
     created:function(){

@@ -10,6 +10,8 @@ Vue.component('ppd-datos-educacion-participacionLaboral', {
         CarNNAConcluyoHP:null,
         CarNNAFortaliceHP:null,
 
+        instituciones:[],
+
         nombre_residente:null,
         isLoading:false,
         mes:moment().format("M"),
@@ -17,8 +19,10 @@ Vue.component('ppd-datos-educacion-participacionLaboral', {
         coincidencias:[],
         bloque_busqueda:false,
         id_residente:null,
+        modal_lista:false,
+        pacientes:[]
 
-        instituciones:[]
+        
 
     }),
     created:function(){

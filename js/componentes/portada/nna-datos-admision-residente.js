@@ -23,7 +23,9 @@ Vue.component('nna-datos-admision-residente', {
         anio:(new Date()).getFullYear(),
         coincidencias:[],
         bloque_busqueda:false,
-        id_residente:null
+        id_residente:null,
+        modal_lista:false,
+        pacientes:[]
 
     }),
     created:function(){
@@ -148,6 +150,61 @@ Vue.component('nna-datos-admision-residente', {
                 }
 
             });
+        },
+        mostrar_lista_residentes(){
+         
+            this.id_residente = null;
+            this.isLoading = true;
+                this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
+
+                    if( response.body.data != undefined){
+                        this.modal_lista = true;
+                        this.isLoading = false;
+                        this.pacientes = response.body.data;
+                    }else{
+                        swal("", "No existe ningún residente", "error")
+                    }
+                 });
+            
+        },
+        elegir_residente(residente){
+
+            Movimiento_Poblacional= null;
+            Fecha_Ingreso = null;
+            Fecha_Registro= null;
+            Institucion_Derivacion = null;
+            Motivo_Ingreso= null;
+            Perfil_Ingreso_P= null;
+            Perfil_Ingreso_S= null;
+            Tipo_Doc  = null;
+            Numero_Doc= null;
+            Situacion_Legal = null;
+
+            this.id_residente = residente.ID;
+            let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
+            let apellido = (residente.APELLIDO==undefined)?'':residente.APELLIDO;
+            this.nombre_residente=nombre + ' ' + apellido;
+            this.modal_lista = false;
+
+            this.$http.post('cargar_datos_residente?view',{tabla:'NNAAdmisionResidente', residente_id:this.id_residente }).then(function(response){
+
+                if( response.body.atributos != undefined){
+
+                    this.Movimiento_Poblacional = response.body.atributos[0]["MOVIMIENTO_POBLACIONAL"];
+                    this.Fecha_Ingreso =  moment(response.body.atributos[0]["FECHA_INGRESO"],"YY-MMM-DD").format("YYYY-MM-DD");
+                    this.Fecha_Registro =  moment(response.body.atributos[0]["FECHA_REGISTRO"],"YY-MMM-DD").format("YYYY-MM-DD");
+                    this.Institucion_Derivacion = response.body.atributos[0]["INSTITUCION_DERIVACION"];
+                    this.Motivo_Ingreso = response.body.atributos[0]["MOTIVO_INGRESO"];
+                    this.Perfil_Ingreso_P = response.body.atributos[0]["PERFIL_INGRESO_P"];
+                    this.Perfil_Ingreso_S = response.body.atributos[0]["PERFIL_INGRESO_S"];
+                    this.Tipo_Doc = response.body.atributos[0]["TIPO_DOC"];
+                    this.Numero_Doc = response.body.atributos[0]["NUMERO_DOC"];
+                    this.Situacion_Legal = response.body.atributos[0]["SITUACION_LEGAL"];
+
+
+                }
+             });
+
         }
     }
   })
