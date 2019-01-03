@@ -520,51 +520,24 @@ class portada extends App{
   }
   public function descargar_reporte_matriz_rub(){
     $modelo = new modeloPortada();
-    $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+    $tipo_centro = $_SESSION["usuario"][0]["Tsexo WHEN 'h' THEN 'Hombre' ELSE 'Mujer' ENDI as sexo_residentePO_CENTRO_ID"];
     $residente_id = $_POST["residente_id"];
     $fecha = " BETWEEN UPPER('".$_POST["fecha_inicial"]."') AND UPPER('".$_POST["fecha_final"]."')";
    
-    $modulo_html = "<table>";
-    $modulos = "select m.nombre as nombre_modulo,usu.nombre as nombre_usuario,md.periodo_mes,m.nombre_tabla from modulos_detalle md 
-    left join modulos m on(m.id=md.modulo_id) 
-    left join usuarios usu on(usu.id=m.encargado_id) 
-      where m.centro_id in (".$centros[0]["TIPO_CENTRO_ID"].") and ".$fecha." and md.periodo_anio = ".date("Y")." order by md.id desc";
-    $modulos = $modelo->executeQuery($modulos);
-    
-    foreach ($modulos as $key => $modulo) 
-    {
-		$modulo_html .="<tr><th></th><th>Nombre del Modulo</th><th>Encargado</th><th>Periodo Mes</th></tr>";
-		$modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td><td>".$modulo["NOMBRE_USUARIO"]."</td><td>".$modulo["PERIODO_MES"]."</td></tr>";
+	$residentes = "select  re.nombre as nombre_residente, re.apellido_p, re.apellido_m, pa.nombre as nombre_pais , ubi.NOMDEPT as nombre_departamento, ubi.nomprov as nombre_provincia, ubi.nomdist as nombre_distrito, (CASE sexo WHEN 'h' THEN 'Hombre' ELSE 'Mujer' END) as sexo_residente ,re.fecha_creacion as fecha from residente re 
+	inner join tipo_centro tc on(tc.id=re.tipo_centro_id) 
+	inner join centro_atencion ca on(ca.tipo_centro_id=tc.id) 
+	inner join paises pa on(pa.id=re.pais_id) 
+	inner join ubigeo ubi on(ubi.coddist=re.distrito_naci_cod) 
+	where to_char(re.fecha_creacion,'DD-MON-YY') ".$fecha." order by re.id desc";
+	$residentes = $modelo->executeQuery($residentes);
+	$residente_html = "";
+	foreach ($residentes as $key => $value) {
+		$residente_html .="<tr><td>".$value["NOMBRE_RESIDENTE"]."</td><td>".$value["APELLIDO_P"]."</td><td>".$value["APELLIDO_M"]."</td><td>".$value["NOMBRE_PAIS"]."</td><td>".$value["NOMBRE_DEPARTAMENTO"]."</td><td>".$value["NOMBRE_PROVINCIA"]."</td><td>".$value["NOMBRE_DISTRITO"]."</td><td>".$value["SEXO_RESIDENTE"]."</td><td>".$value["FECHA"]."</td></tr>";
+	}
+    $table = '<table><thead><tr><th>Nombre del Residente</th><th>Apellido Paterno</th><th>Apellido Materno</th><th>País</th><th>Departamento Nacimiento</th><th>Provincia Nacimiento</th><th>Distrito Nacimiento</th><th>Sexo</th><th>Fecha Registro</th></tr></thead><tbody>'.$residente_html.'</tbody></table>';
 
-		$grupos = "select * from (select distinct * from ".$modulo["NOMBRE_TABLA"]." order by id desc) WHERE ROWNUM = 1";
-		$grupos = $modelo->executeQuery($grupos);
-
-		$grupo_html = "<table>";
-      foreach ($grupos as $key => $grupo) 
-      {
-        if ($key==0) {
-          $keys = array_keys($grupo);
-          $grupo_html .="<tr><th></th>";
-          foreach ($keys as $key) 
-          {
-            $grupo_html .="<th>$key</th>";
-          }
-          $grupo_html .="</tr>";
-        }
-		$grupo_values = array_values($grupo);
-		
-        $grupo_html .= "<tr><td></td>";
-        foreach ($grupo_values as $key => $value) {
-          $grupo_html .="<td>".$value."</td>";
-        }
-        $grupo_html .= "</tr>";
-	  }
-      $modulo_html .=$grupo_html;
-    }
-    $modulo_html .="</table>";
-    $table = '<table><tr><td>'.$centro_html.'</td></tr><tr><td>'.$modulo_html.'</td></tr></table>';
-
-    if ($modulos) 
+    if ($residentes) 
     {
       echo json_encode(array("data"=>$table) ) ;
     }else{

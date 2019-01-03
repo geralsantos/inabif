@@ -38,11 +38,10 @@ Vue.component('reporte-rub', {
             });
 
         },
-        descargar_reporte_matriz_rub(residente_id){
+        descargar_reporte_matriz_rub(){
 
-            let datos = {residente_id:residente_id};
             console.log(datos);
-            this.$http.post('descargar_reporte_matriz_rub?view',datos).then(function(response){
+            this.$http.post('descargar_reporte_matriz_rub?view').then(function(response){
 
                 if( response.body.data != undefined){
                     tableToExcel('tbl_temp','ExcelExport',response.body.data);

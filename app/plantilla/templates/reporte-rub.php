@@ -20,6 +20,10 @@
                                    <button @click="mostrar_reporte_rub()" class="btn btn-default"><i class="fa fa-send"></i> Buscar</button>
                                 </div>
                             </div>
+                            <div class="row">
+                            <button @click="descargar_reporte_matriz_rub()" class="btn btn-default"><i class="fa fa-send"></i> Descargar Reporte</button>
+                            
+                            </div>
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead class="thead-dark text-center">
@@ -33,7 +37,6 @@
                                         <tr v-for="residente in residentes">
                                             <td>{{residente.NOMBRE_RESIDENTE}}</td>
                                             <td>{{residente.FECHA}}</td>
-                                            <td><button class="btn btn-primary" @click="descargar_reporte_matriz_general(residente.ID)">Descargar</button></td>
                                         
                                         </tr>
                                     
