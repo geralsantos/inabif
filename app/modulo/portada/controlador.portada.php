@@ -224,7 +224,8 @@ class portada extends App{
       if( $_POST['tabla']){
         $modelo = new modeloPortada();
         $codigo = isset($_POST['codigo']) ? " CODIGO='".$_POST['codigo']."' AND " : "";
-        $sql = "SELECT * FROM ".$_POST['tabla']." WHERE ".$codigo." ESTADO=1";
+        $orderby = isset($_POST['orderby']) ? ("order by ".$_POST['orderby']) : "";
+        $sql = "SELECT * FROM ".$_POST['tabla']." WHERE ".$codigo." ESTADO=1 ".$orderby;
         $res = $modelo->executeQuery( $sql );
         if ($res) {
           echo json_encode(array( "data"=>$res )) ;
