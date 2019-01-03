@@ -36,11 +36,7 @@ Vue.component('registro-perfiles', {
                 swal('Error', 'Residente no existe', 'warning');
                 return false;
             }*/
-            if(this.nivel_id == 4 || this.nivel_id == 2){
-                var iddelcentro = this.tipo_centro;
-            }else{
-                var iddelcentro = this.centro_id;
-            }
+           
             if (this.clave!=this.cclave) {
                 swal('Error', 'Los campos de clave deben coincidir', 'warning');
                 return false;
@@ -53,9 +49,17 @@ Vue.component('registro-perfiles', {
                 NumCel: this.NumCel,
                 NumCel: this.NumCel,
                 NIVEL :this.nivel_id,
-                centro_id:iddelcentro,
+                centro_id:this.tipo_centro,
+                tipo_centro_id:this.centro_id,
                 usuario :this.usuario,
                 clave :this.clave,
+                }
+                if(this.nivel_id == 4 || this.nivel_id == 2){
+                    valores.tipo_centro_id = this.tipo_centro;
+                    valores.centro_id = null;
+                }else{
+                    valores.centro_id = this.centro_id;
+                    valores.tipo_centro_id = null;
                 }
                 if (this.id_usuario==null) {
                     this.$http.post('insertar_datos?view',{tabla:'usuarios', valores:valores}).then(function(response){
