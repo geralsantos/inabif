@@ -71,7 +71,7 @@
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Especificar trastorno neurológico principal</label>
                                 <select name="CarNeurologicoPrincipal" v-model="CarNeurologicoPrincipal" class="form-control">
-                                    <option value="CIE 10" >CIE 10</option>
+                                    <option v-for="cie in lista_cie_10" :value="cie.ID" >{{cie.NOMBRE}}</option>
                                 </select>
                                 </div>
                             </div>

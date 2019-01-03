@@ -23,8 +23,8 @@ Vue.component('ppd-datos-salud-mental', {
         bloque_busqueda:false,
         id_residente:null,
         modal_lista:false,
-        pacientes:[]
-
+        pacientes:[],
+        lista_cie_10:[],
 
     }),
     created:function(){
@@ -189,6 +189,14 @@ let apellido = apellido_p + ' ' + apellido_m;
                 }
              });
 
+        },
+        listar_cie_10(){
+            this.$http.post('buscar?view',{tabla:'cie_10'}).then(function(response){
+                if( response.body.data ){
+                    this.lista_cie_10= response.body.data;
+                }
+
+            });
         }
 
 
