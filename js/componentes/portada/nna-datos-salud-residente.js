@@ -171,6 +171,97 @@ Vue.component('nna-datos-salud-residente', {
              });
 
         },
+        mostrar_lista_residentes(){
+         
+            this.id_residente = null;
+            this.isLoading = true;
+                this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
+
+                    if( response.body.data != undefined){
+                        this.modal_lista = true;
+                        this.isLoading = false;
+                        this.pacientes = response.body.data;
+                    }else{
+                        swal("", "No existe ningún residente", "error")
+                    }
+                 });
+            
+        },
+        elegir_residente(residente){
+
+            this.Discapacidad = null;
+            this.Discapacidad_Fisica = null;
+            this.Discapacidad_Sensorial = null;
+            this.Discapaciada_Intelectual = null;
+            this.Discapacidad_Mental = null;
+            this.Certificado = null;
+            this.Carnet_CANADIS = null;
+            this.Transtornos_Neuro = null;
+            this.Des_Transtorno_Neuro = null;
+            this.CRED = null;
+            this.Vacunas = null;
+            this.Patologia_1 = null;
+            this.Diagnostico_S1 = null;
+            this.Patologia_2 = null;
+            this.Diagnostico_S3 = null;
+            this.Transtornos_Comportamiento = null;
+            this.Tipo_Transtorno = null;
+            this.Gestante = null;
+            this.Semanas_Gestacion = null;
+            this.Control_Prenatal = null;
+            this.Hijos = null;
+            this.Nro_Hijos = null;
+            this.Nivel_Hemoglobina = null;
+            this.Anemia = null;
+            this.Peso = null;
+            this.Talla = null;
+            this.Estado_Nutricional1 = null;
+            this.Estado_Nutricional2 = null;
+
+            this.id_residente = residente.ID;
+            let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
+            let apellido = (residente.APELLIDO==undefined)?'':residente.APELLIDO;
+            this.nombre_residente=nombre + ' ' + apellido;
+            this.modal_lista = false;
+
+            this.$http.post('cargar_datos_residente?view',{tabla:'NNADatosSaludResi', residente_id:this.id_residente }).then(function(response){
+
+                if( response.body.atributos != undefined){
+
+                    this.Discapacidad = response.body.atributos[0]["DISCAPACIDAD"];
+                    this.Discapacidad_Fisica = response.body.atributos[0]["DISCAPACIDAD_FISICA"];
+                    this.Discapacidad_Sensorial = response.body.atributos[0]["DISCAPACIDAD_SENSORIAL"];
+                    this.Discapaciada_Intelectual = response.body.atributos[0]["DISCAPACIADA_INTELECTUAL"];
+                    this.Discapacidad_Mental = response.body.atributos[0]["DISCAPACIDAD_MENTAL"];
+                    this.Certificado = response.body.atributos[0]["CERTIFICADO"];
+                    this.Carnet_CANADIS = response.body.atributos[0]["CARNET_CANADIS"];
+                    this.Transtornos_Neuro = response.body.atributos[0]["TRANSTORNOS_NEURO"];
+                    this.Des_Transtorno_Neuro = response.body.atributos[0]["DES_TRANSTORNO_NEURO"];
+                    this.CRED = response.body.atributos[0]["CRED"];
+                    this.Vacunas = response.body.atributos[0]["VACUNAS"];
+                    this.Patologia_1 = response.body.atributos[0]["PATOLOGIA_1"];
+                    this.Diagnostico_S1 = response.body.atributos[0]["DIAGNOSTICO_S1"];
+                    this.Patologia_2 = response.body.atributos[0]["PATOLOGIA_2"];
+                    this.Diagnostico_S3 = response.body.atributos[0]["DIAGNOSTICO_S3"];
+                    this.Transtornos_Comportamiento = response.body.atributos[0]["TRANSTORNOS_COMPORTAMIENTO"];
+                    this.Tipo_Transtorno = response.body.atributos[0]["TIPO_TRANSTORNO"];
+                    this.Gestante = response.body.atributos[0]["GESTANTE"];
+                    this.Semanas_Gestacion = response.body.atributos[0]["SEMANAS_GESTACION"];
+                    this.Control_Prenatal = response.body.atributos[0]["CONTROL_PRENATAL"];
+                    this.Hijos = response.body.atributos[0]["HIJOS"];
+                    this.Nro_Hijos = response.body.atributos[0]["NRO_HIJOS"];
+                    this.Nivel_Hemoglobina = response.body.atributos[0]["NIVEL_HEMOGLOBINA"];
+                    this.Anemia = response.body.atributos[0]["ANEMIA"];
+                    this.Peso = response.body.atributos[0]["PESO"];
+                    this.Talla = response.body.atributos[0]["TALLA"];
+                    this.Estado_Nutricional1 = response.body.atributos[0]["ESTADO_NUTRICIONAL1"];
+                    this.Estado_Nutricional2 = response.body.atributos[0]["ESTADO_NUTRICIONAL2"];
+                                    
+                }
+             });
+
+
+        }
         
     }
   })

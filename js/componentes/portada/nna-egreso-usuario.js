@@ -110,6 +110,56 @@ Vue.component('nna-egreso-usuario', {
              });
 
         },
+        mostrar_lista_residentes(){
+         
+            this.id_residente = null;
+            this.isLoading = true;
+                this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
+
+                    if( response.body.data != undefined){
+                        this.modal_lista = true;
+                        this.isLoading = false;
+                        this.pacientes = response.body.data;
+                    }else{
+                        swal("", "No existe ningún residente", "error")
+                    }
+                 });
+            
+        },
+        elegir_residente(residente){
+
+            this.Fecha_Egreso = null;
+            this.MotivoEgreso = null;
+            this.Detalle_Motivo = null;
+            this.Salud_AUS = null;
+            this.Partida_Naci = null;
+            this.DNI = null;
+            this.Educacion = null;
+            this.Reinsecion_Familiar = null;
+
+            this.id_residente = residente.ID;
+            let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
+            let apellido = (residente.APELLIDO==undefined)?'':residente.APELLIDO;
+            this.nombre_residente=nombre + ' ' + apellido;
+            this.modal_lista = false;
+
+            this.$http.post('cargar_datos_residente?view',{tabla:'NNAEgresoUsuario', residente_id:this.id_residente }).then(function(response){
+
+                if( response.body.atributos != undefined){
+
+                    this.Fecha_Egreso = moment(response.body.atributos[0]["FECHA_EGRESO"]).format("YYYY-MM-DD");
+                    this.MotivoEgreso = response.body.atributos[0]["MOTIVOEGRESO"];
+                    this.Detalle_Motivo = response.body.atributos[0]["DETALLE_MOTIVO"];
+                    this.Salud_AUS = response.body.atributos[0]["SALUD_AUS"];
+                    this.Partida_Naci = response.body.atributos[0]["PARTIDA_NACI"];
+                    this.DNI = response.body.atributos[0]["DNI"];
+                    this.Educacion = response.body.atributos[0]["EDUCACION"];
+                    this.Reinsecion_Familiar = response.body.atributos[0]["REINSECION_FAMILIAR"];
+                 
+                }
+             });
+
+        }
         
     }
   })

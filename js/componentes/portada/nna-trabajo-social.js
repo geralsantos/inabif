@@ -152,13 +152,89 @@ Vue.component('nna-trabajo-social', {
                     this.AUS_SIS = response.body.atributos[0]["AUS_SIS"];
                     this.CONADIS = response.body.atributos[0]["CONADIS"]; 
    
-            
-              
-
                 }
              })
 
         },
+        mostrar_lista_residentes(){
+         
+            this.id_residente = null;
+            this.isLoading = true;
+                this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
+
+                    if( response.body.data != undefined){
+                        this.modal_lista = true;
+                        this.isLoading = false;
+                        this.pacientes = response.body.data;
+                    }else{
+                        swal("", "No existe ningún residente", "error")
+                    }
+                 });
+            
+        },
+        elegir_residente(residente){
+
+            this.Fase_Intervencion = null;
+            this.Estado_Usuario = null;
+            this.Plan_Intervencion = null;
+            this.SituacionL_NNA = null;
+            this.Familia_NNA = null;
+            this.SoporteF_NNA = null;
+            this.Des_SoporteF = null;
+            this.Tipo_Familia = null;
+            this.Problematica_Fami = null;
+            this.NNA_Soporte_Fami = null;
+            this.Familia_SISFOH = null;
+            this.Resultado_Clasificacion = null;
+            this.Nro_VisitasNNA = null;
+            this.Participacion_EscuelaP = null;
+            this.Consegeria_Familiar = null;
+            this.Soporte_Social = null;
+            this.Consejeria_residente = null;
+            this.Charlas = null;
+            this.Visitas_Domicilarias = null;
+            this.Reinsercion_Familiar = null;
+            this.DNI = null;
+            this.AUS_SIS = null;
+            this.CONADIS = response.body.atributos[0]["CONADIS"]; null;
+            this.id_residente = residente.ID;
+            let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
+            let apellido = (residente.APELLIDO==undefined)?'':residente.APELLIDO;
+            this.nombre_residente=nombre + ' ' + apellido;
+            this.modal_lista = false;
+
+            this.$http.post('cargar_datos_residente?view',{tabla:'NNATrabajoSocial', residente_id:this.id_residente }).then(function(response){
+
+                if( response.body.atributos != undefined){
+
+                    this.Fase_Intervencion = response.body.atributos[0]["FASE_INTERVENCION"];
+                    this.Estado_Usuario = response.body.atributos[0]["ESTADO_USUARIO"];
+                    this.Plan_Intervencion = response.body.atributos[0]["PLAN_INTERVENCION"];
+                    this.SituacionL_NNA = response.body.atributos[0]["SITUACIONL_NNA"];
+                    this.Familia_NNA = response.body.atributos[0]["FAMILIA_NNA"];
+                    this.SoporteF_NNA = response.body.atributos[0]["SOPORTEF_NNA"];
+                    this.Des_SoporteF = response.body.atributos[0]["DES_SOPORTEF"];  
+                    this.Tipo_Familia = response.body.atributos[0]["TIPO_FAMILIA"];
+                    this.Problematica_Fami = response.body.atributos[0]["PROBLEMATICA_FAMI"];
+                    this.NNA_Soporte_Fami = response.body.atributos[0]["NNA_SOPORTE_FAMI"];
+                    this.Familia_SISFOH = response.body.atributos[0]["FAMILIA_SISFOH"];
+                    this.Resultado_Clasificacion = response.body.atributos[0]["RESULTADO_CLASIFICACION"];
+                    this.Nro_VisitasNNA = response.body.atributos[0]["NRO_VISITASNNA"];
+                    this.Participacion_EscuelaP = response.body.atributos[0]["PARTICIPACION_ESCUELAP"]; 
+                    this.Consegeria_Familiar = response.body.atributos[0]["CONSEGERIA_FAMILIAR"];
+                    this.Soporte_Social = response.body.atributos[0]["SOPORTE_SOCIAL"];
+                    this.Consejeria_residente = response.body.atributos[0]["CONSEJERIA_RESIDENTES"];
+                    this.Charlas = response.body.atributos[0]["CHARLAS"];
+                    this.Visitas_Domicilarias = response.body.atributos[0]["VISITAS_DOMICILARIAS"];
+                    this.Reinsercion_Familiar = response.body.atributos[0]["REINSERCION_FAMILIAR"];
+                    this.DNI = response.body.atributos[0]["DNI"]; 
+                    this.AUS_SIS = response.body.atributos[0]["AUS_SIS"];
+                    this.CONADIS = response.body.atributos[0]["CONADIS"]; 
+   
+                }
+             })
+
+        }
         
     }
   })

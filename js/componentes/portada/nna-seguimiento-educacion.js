@@ -118,6 +118,61 @@ Vue.component('nna-seguimiento-educacion', {
              });
 
         },
+        mostrar_lista_residentes(){
+         
+            this.id_residente = null;
+            this.isLoading = true;
+                this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
+
+                    if( response.body.data != undefined){
+                        this.modal_lista = true;
+                        this.isLoading = false;
+                        this.pacientes = response.body.data;
+                    }else{
+                        swal("", "No existe ningún residente", "error")
+                    }
+                 });
+            
+        },
+        elegir_residente(residente){
+
+            this.Plan_Intervencion = null;
+            this.Sistema_Educativo = null;
+            this.NEducativo = null;
+            this.Grado = null;
+            this.Asitencia = null;
+            this.Nro_Asistencia = null;
+            this.Nro_Reforzamientos = null;
+            this.Nro_Aprestamiento = null;
+            this.Nro_Consejera = null;
+            this.Estado_Participacion = null;
+            this.ActividadOficio = null;
+
+            this.id_residente = residente.ID;
+            let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
+            let apellido = (residente.APELLIDO==undefined)?'':residente.APELLIDO;
+            this.nombre_residente=nombre + ' ' + apellido;
+            this.modal_lista = false;
+
+            this.$http.post('cargar_datos_residente?view',{tabla:'NNAEducacion', residente_id:this.id_residente }).then(function(response){
+
+                if( response.body.atributos != undefined){
+
+                    this.Plan_Intervencion = response.body.atributos[0]["PLAN_INTERVENCION"];
+                    this.Sistema_Educativo = response.body.atributos[0]["SISTEMA_EDUCATIVO"];
+                    this.NEducativo = response.body.atributos[0]["NEDUCATIVO"];
+                    this.Grado = response.body.atributos[0]["GRADO"];
+                    this.Asitencia = response.body.atributos[0]["ASITENCIA"];
+                    this.Nro_Asistencia = response.body.atributos[0]["NRO_ASISTENCIA"];
+                    this.Nro_Reforzamientos = response.body.atributos[0]["NRO_REFORZAMIENTOS"];
+                    this.Nro_Aprestamiento = response.body.atributos[0]["NRO_APRESTAMIENTO"];
+                    this.Nro_Consejera = response.body.atributos[0]["NRO_CONSEJERA"];
+                    this.Estado_Participacion = response.body.atributos[0]["ESTADO_PARTICIPACION"];
+                    this.ActividadOficio = response.body.atributos[0]["ACTIVIDADOFICIO"];
+                }
+             });
+
+        }
         
     }
   })

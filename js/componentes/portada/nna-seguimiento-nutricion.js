@@ -97,6 +97,47 @@ Vue.component('nna-seguimiento-nutricion', {
              });
 
         },
+        mostrar_lista_residentes(){
+         
+            this.id_residente = null;
+            this.isLoading = true;
+                this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
+
+                    if( response.body.data != undefined){
+                        this.modal_lista = true;
+                        this.isLoading = false;
+                        this.pacientes = response.body.data;
+                    }else{
+                        swal("", "No existe ningún residente", "error")
+                    }
+                 });
+            
+        },
+        elegir_residente(residente){
+
+            this.Intervencion = null;
+            this.Peso = null;
+            this.Talla = null;
+            this.Anemia = null;
+
+            this.id_residente = residente.ID;
+            let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
+            let apellido = (residente.APELLIDO==undefined)?'':residente.APELLIDO;
+            this.nombre_residente=nombre + ' ' + apellido;
+            this.modal_lista = false;
+
+            this.$http.post('cargar_datos_residente?view',{tabla:'NNANutricion', residente_id:this.id_residente }).then(function(response){
+
+                if( response.body.atributos != undefined){
+
+                    this.Intervencion = response.body.atributos[0]["INTERVENCION"];
+                    this.Peso = response.body.atributos[0]["PESO"];
+                    this.Talla = response.body.atributos[0]["TALLA"];
+                    this.Anemia = response.body.atributos[0]["ANEMIA"];
+                }
+             });
+
+        }
         
     }
   })

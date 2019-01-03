@@ -141,6 +141,70 @@ Vue.component('nna-seguimiento-psicologico', {
                 }
 
             });
+        },
+        mostrar_lista_residentes(){
+         
+            this.id_residente = null;
+            this.isLoading = true;
+                this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
+
+                    if( response.body.data != undefined){
+                        this.modal_lista = true;
+                        this.isLoading = false;
+                        this.pacientes = response.body.data;
+                    }else{
+                        swal("", "No existe ningún residente", "error")
+                    }
+                 });
+            
+        },
+        elegir_residente(residente){
+
+            this.Plan_Intervencion = null;
+            this.Presento = null;
+            this.Perfil = null;
+            this.Intervencion_Individual = null;
+            this.Intervencion_Grupal = null;
+            this.Nro_OrientacionP = null;
+            this.Nro_OrientacionF = null;
+            this.Nro_Charlas = null;
+            this.Nro_TLiderazgo = null;
+            this.Nro_TAutoestima = null;
+            this.Nro_TSexualidad = null;
+            this.Nro_TPrevencionEmb = null;
+            this.Nro_TIgualdadG = null;
+            this.Nro_ViolenciaF = null;
+            this.Nro_SaludM = null;
+
+            this.id_residente = residente.ID;
+            let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
+            let apellido = (residente.APELLIDO==undefined)?'':residente.APELLIDO;
+            this.nombre_residente=nombre + ' ' + apellido;
+            this.modal_lista = false;
+
+            this.$http.post('cargar_datos_residente?view',{tabla:'NNAPsicologico', residente_id:this.id_residente }).then(function(response){
+
+                if( response.body.atributos != undefined){
+
+                    this.Plan_Intervencion = response.body.atributos[0]["PLAN_INTERVENCION"];
+                    this.Presento = response.body.atributos[0]["PRESENTACION_PERIODO"];
+                    this.Perfil = response.body.atributos[0]["PERFIL_ID"];
+                    this.Intervencion_Individual = response.body.atributos[0]["INTERVENCION_INDIVIDUAL"];
+                    this.Intervencion_Grupal = response.body.atributos[0]["INTERVENCION_GRUPAL"];
+                    this.Nro_OrientacionP = response.body.atributos[0]["NRO_ORIENTACIONP"];
+                    this.Nro_OrientacionF = response.body.atributos[0]["NRO_ORIENTACIONF"];
+                    this.Nro_Charlas = response.body.atributos[0]["NRO_CHARLAS"];
+                    this.Nro_TLiderazgo = response.body.atributos[0]["NRO_TLIDERAZGO"];
+                    this.Nro_TAutoestima = response.body.atributos[0]["NRO_TAUTOESTIMA"];
+                    this.Nro_TSexualidad = response.body.atributos[0]["NRO_TSEXUALIDAD"];
+                    this.Nro_TPrevencionEmb = response.body.atributos[0]["NRO_TPREVENCIONEMB"];
+                    this.Nro_TIgualdadG = response.body.atributos[0]["NRO_TIGUALDADG"];
+                    this.Nro_ViolenciaF = response.body.atributos[0]["NRO_VIOLENCIAF"];
+                    this.Nro_SaludM = response.body.atributos[0]["NRO_SALUDM"];
+
+                }
+             });
+
         }
     }
   })

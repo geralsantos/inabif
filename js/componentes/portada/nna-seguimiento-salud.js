@@ -269,6 +269,162 @@ Vue.component('nna-seguimiento-salud', {
              });
 
         },
+        mostrar_lista_residentes(){
+         
+            this.id_residente = null;
+            this.isLoading = true;
+                this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
+
+                    if( response.body.data != undefined){
+                        this.modal_lista = true;
+                        this.isLoading = false;
+                        this.pacientes = response.body.data;
+                    }else{
+                        swal("", "No existe ningún residente", "error")
+                    }
+                 });
+            
+        },
+        elegir_residente(residente){
+
+            this.Intervencion = null;
+            this.Diagnostico_Psiquiatrico_1 = null;
+            this.Diagnostico_Psiquiatrico_2 = null;
+            this.Diagnostico_Psiquiatrico_3 = null;
+            this.Diagnostico_Neurologico_1 = null;
+            this.Diagnostico_Neurologico_2 = null;
+            this.Diagnostico_Neurologico_3 = null;
+            this.Diagnostico_Cronico_1 = null;
+            this.Diagnostico_Cronico_2 = null;
+            this.Diagnostico_Cronico_3 = null;
+            this.Diagnostico_Agudo_1 = null;
+            this.Diagnostico_Agudo_2 = null;
+            this.Diagnostico_Agudo_3 = null;
+            this.VIH = null;
+            this.ETS = null;
+            this.TBC = null;
+            this.HepatitisA = null;
+            this.HepatitisB = null;
+            this.Caries = null; 
+            this.Discapacidad = null;
+            this.Discapacidad_Fisica = null;
+            this.Discapacidad_Intelectual = null;
+            this.Discapacidad_Sensorial = null;
+            this.Discapacidad_Mental = null;
+            this.SIS = null;
+            this.ESSALUD = null;
+            this.Tipo_Seguro = null;
+            this.CONADIS = null;
+            this.A_Medicina_General = null;
+            this.A_Cirujia_General = null;
+            this.A_Traumatologia = null; 
+            this.A_Odontologia = null;
+            this.A_Medicina_Interna = null;
+            this.A_Cardiovascular = null;
+            this.A_Dermatologia = null;
+            this.A_Endrocrinologia = null;
+            this.A_Gastroentrologia = null;
+            this.A_Gineco_Obstetricia = null;
+            this.A_Hermatologia = null;
+            this.A_Nefrologia = null;
+            this.A_Infectologia = null;
+            this.A_Inmunologia = null;
+            this.A_Reumatologia = null;
+            this.A_Neumologia = null;
+            this.A_Neurologia = null;
+            this.A_Oftalmologia = null;
+            this.A_Otorrinolaringologia = null;
+            this.A_Oncologia = null;
+            this.A_Psicriatica = null;
+            this.A_Cirujia = null;
+            this.A_Urologia = null;
+            this.A_Nutricion = null;
+            this.A_Pedriatria = null;
+            this.A_Rehabilitacion = null;
+            this.A_Gineco_Menores = null;
+            this.A_Psicologia = null;
+            this.Atencion_Total = null;
+            this.Hospitalizado = null;
+            this.Emergencia = null;
+            this.CRED = null;
+            this.Inmunizacion = null;
+
+            this.id_residente = residente.ID;
+            let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
+            let apellido = (residente.APELLIDO==undefined)?'':residente.APELLIDO;
+            this.nombre_residente=nombre + ' ' + apellido;
+            this.modal_lista = false;
+
+            this.$http.post('cargar_datos_residente?view',{tabla:'NNASalud', residente_id:this.id_residente }).then(function(response){
+
+                if( response.body.atributos != undefined){
+
+                    this.Intervencion = response.body.atributos[0]["INTERVENCION"];
+                    this.Diagnostico_Psiquiatrico_1 = response.body.atributos[0]["DIAGNOSTICO_PSIQUIATRICO_1"];
+                    this.Diagnostico_Psiquiatrico_2 = response.body.atributos[0]["DIAGNOSTICO_PSIQUIATRICO_2"];
+                    this.Diagnostico_Psiquiatrico_3 = response.body.atributos[0]["DIAGNOSTICO_PSIQUIATRICO_3"];
+                    this.Diagnostico_Neurologico_1 = response.body.atributos[0]["DIAGNOSTICO_NEUROLOGICO_1"];
+                    this.Diagnostico_Neurologico_2 = response.body.atributos[0]["DIAGNOSTICO_NEUROLOGICO_2"];
+                    this.Diagnostico_Neurologico_3 = response.body.atributos[0]["DIAGNOSTICO_NEUROLOGICO_3"];
+                    this.Diagnostico_Cronico_1 = response.body.atributos[0]["DIAGNOSTICO_CRONICO_1"];
+                    this.Diagnostico_Cronico_2 = response.body.atributos[0]["DIAGNOSTICO_CRONICO_2"];
+                    this.Diagnostico_Cronico_3 = response.body.atributos[0]["DIAGNOSTICO_CRONICO_3"];
+                    this.Diagnostico_Agudo_1 = response.body.atributos[0]["DIAGNOSTICO_AGUDO_1"];
+                    this.Diagnostico_Agudo_2 = response.body.atributos[0]["DIAGNOSTICO_AGUDO_2"];
+                    this.Diagnostico_Agudo_3 = response.body.atributos[0]["DIAGNOSTICO_AGUDO_3"];
+                    this.VIH = response.body.atributos[0]["VIH"];
+                    this.ETS = response.body.atributos[0]["ETS"];
+                    this.TBC = response.body.atributos[0]["TBC"];
+                    this.HepatitisA = response.body.atributos[0]["HEPATITISA"];
+                    this.HepatitisB = response.body.atributos[0]["HEPATITISB"];
+                    this.Caries = response.body.atributos[0]["CARIES"]; 
+                    this.Discapacidad = response.body.atributos[0]["DISCAPACIDAD"];
+                    this.Discapacidad_Fisica = response.body.atributos[0]["DISCAPACIDAD_FISICA"];
+                    this.Discapacidad_Intelectual = response.body.atributos[0]["DISCAPACIDAD_INTELECTUAL"];
+                    this.Discapacidad_Sensorial = response.body.atributos[0]["DISCAPACIDAD_SENSORIAL"];
+                    this.Discapacidad_Mental = response.body.atributos[0]["DISCAPACIDAD_MENTAL"];
+                    this.SIS = response.body.atributos[0]["SIS"];
+                    this.ESSALUD = response.body.atributos[0]["ESSALUD"];
+                    this.Tipo_Seguro = response.body.atributos[0]["TIPO_SEGURO"];
+                    this.CONADIS = response.body.atributos[0]["CONADIS"];
+                    this.A_Medicina_General = response.body.atributos[0]["A_MEDICINA_GENERAL"];
+                    this.A_Cirujia_General = response.body.atributos[0]["A_CIRUJIA_GENERAL"];
+                    this.A_Traumatologia = response.body.atributos[0]["A_TRAUMATOLOGIA"]; 
+                    this.A_Odontologia = response.body.atributos[0]["A_ODONTOLOGIA"];
+                    this.A_Medicina_Interna = response.body.atributos[0]["A_MEDICINA_INTERNA"];
+                    this.A_Cardiovascular = response.body.atributos[0]["A_CARDIOVASCULAR"];
+                    this.A_Dermatologia = response.body.atributos[0]["A_DERMATOLOGIA"];
+                    this.A_Endrocrinologia = response.body.atributos[0]["A_ENDROCRINOLOGIA"];
+                    this.A_Gastroentrologia = response.body.atributos[0]["A_GASTROENTROLOGIA"];
+                    this.A_Gineco_Obstetricia = response.body.atributos[0]["A_GINECO_OBSTETRICIA"];
+                    this.A_Hermatologia = response.body.atributos[0]["A_HERMATOLOGIA"];
+                    this.A_Nefrologia = response.body.atributos[0]["A_NEFROLOGIA"];
+                    this.A_Infectologia = response.body.atributos[0]["A_Infectologia"]; 
+                    this.A_Inmunologia = response.body.atributos[0]["A_INMUNOLOGIA"];
+                    this.A_Reumatologia = response.body.atributos[0]["A_REUMATOLOGIA"];
+                    this.A_Neumologia = response.body.atributos[0]["A_NEUMOLOGIA"];
+                    this.A_Neurologia = response.body.atributos[0]["A_NEUROLOGIA"];
+                    this.A_Oftalmologia = response.body.atributos[0]["A_OFTALMOLOGIA"];
+                    this.A_Otorrinolaringologia = response.body.atributos[0]["A_OTORRINOLARINGOLOGIA"];
+                    this.A_Oncologia = response.body.atributos[0]["A_ONCOLOGIA"];
+                    this.A_Psicriatica = response.body.atributos[0]["A_PSICRIATICA"];
+                    this.A_Cirujia = response.body.atributos[0]["A_CIRUJIA"]; 
+                    this.A_Urologia = response.body.atributos[0]["A_UROLOGIA"];
+                    this.A_Nutricion = response.body.atributos[0]["A_NUTRICION"];
+                    this.A_Pedriatria = response.body.atributos[0]["A_PEDRIATRIA"];
+                    this.A_Rehabilitacion = response.body.atributos[0]["A_REHABILITACION"];
+                    this.A_Gineco_Menores = response.body.atributos[0]["A_GINECO_MENORES"];
+                    this.A_Psicologia = response.body.atributos[0]["A_PSICOLOGIA"];
+                    this.Atencion_Total = response.body.atributos[0]["ATENCION_TOTAL"];
+                    this.Hospitalizado = response.body.atributos[0]["HOSPITALIZADO"];
+                    this.Emergencia = response.body.atributos[0]["EMERGENCIA"];
+                    this.CRED = response.body.atributos[0]["CRED"];
+                    this.Inmunizacion = response.body.atributos[0]["INMUNIZACION"];
+
+                }
+             });
+
+        }
         
     }
   })
