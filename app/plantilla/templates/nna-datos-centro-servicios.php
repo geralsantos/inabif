@@ -41,21 +41,21 @@
 
                         </div>
                         <div class="row">
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-3">
                                 <div class=" "><label for="text-input" class=" form-control-label">Código de la Entidad</label>
                                 <input type="text" v-model="Cod_Entidad" name="Cod_Entidad" placeholder="" class="form-control" readonly> </div>
                             </div>
-                            <div class="form-group col-md-8">
+                            <div class="form-group col-md-9">
                                 <div class=" "><label for="text-input" class=" form-control-label">Nombre de la Entidad</label>
                                 <input type="text" v-model="Nom_Entidad" name="Nom_Entidad" placeholder="" class="form-control" readonly> </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-3">
                                 <div class=" "><label for="text-input" class=" form-control-label">Código de la Línea</label>
                                 <input type="text" v-model="Cod_Linea" name="Cod_Linea" placeholder="" class="form-control" readonly> </div>
                             </div>
-                            <div class="form-group col-md-8">
+                            <div class="form-group col-md-9">
                                 <div class=" "><label for="text-input" class=" form-control-label">Línea de Intervención</label>
                                 <input type="text" v-model="Linea_Intervencion" name="Linea_Intervencion" placeholder="" class="form-control" readonly> </div>
                             </div>
@@ -63,11 +63,11 @@
                         </div>
                         <div class="row">
 
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-3">
                                 <div class=" "><label for="text-input" class=" form-control-label">Código del Servicio</label>
                                 <input type="text" v-model="Cod_Servicio" name="Cod_Servicio" placeholder="" class="form-control" readonly> </div>
                             </div>
-                            <div class="form-group col-md-8">
+                            <div class="form-group col-md-9">
                                 <div class=" "><label for="text-input" class=" form-control-label">Nombre del Servicio</label>
                                 <input type="text" v-model="NomC_Servicio" name="NomC_Servicio" placeholder="" class="form-control" readonly> </div>
                             </div>
@@ -96,7 +96,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-3">
                                 <div class=""><label for="text-input" class=" form-control-label">Área de residencia del centro de atención</label>
                                     <select name="Area_Residencia" v-model="Area_Residencia" class="form-control" disabled="disabled">
                                         <option value="URBANO">URBANO</option>
@@ -107,7 +107,7 @@
                                 <div class=""><label for="text-input" class=" form-control-label">Código del Centro de Atención</label>
                                 <input type="text" v-model="CodigoC_Atencion" name="CodigoC_Atencion" placeholder="" class="form-control" readonly></div>
                             </div>
-                            <div class="form-group col-md-5">
+                            <div class="form-group col-md-6">
                                 <div class=""><label for="text-input" class=" form-control-label">Nombre del Centro de Atención</label>
                                 <input type="text" v-model="NomC_Atencion" name="NomC_Atencion" placeholder="" class="form-control" readonly></div>
                             </div>

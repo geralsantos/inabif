@@ -41,31 +41,31 @@
 
                         </div>
                         <div class="row">
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-3">
                                 <div class=" "><label for="text-input" class=" form-control-label">Código de la Entidad</label>
                                 <input type="text" v-model="CarCodEntidad" name="CarCodEntidad" placeholder="" class="form-control" readonly> </div>
                             </div>
-                            <div class="form-group col-md-8">
+                            <div class="form-group col-md-9">
                                 <div class=" "><label for="text-input" class=" form-control-label">Nombre de la Entidad</label>
                                 <input type="text" v-model="CarNomEntidad" name="CarNomEntidad" placeholder="" class="form-control" readonly> </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-3">
                                 <div class=" "><label for="text-input" class=" form-control-label">Código de la Línea</label>
                                 <input type="text" v-model="CarCodLinea" name="CarCodLinea" placeholder="" class="form-control" readonly> </div>
                             </div>
-                            <div class="form-group col-md-8">
+                            <div class="form-group col-md-9">
                                 <div class=" "><label for="text-input" class=" form-control-label">Línea de Intervención</label>
                                 <input type="text" v-model="CarLineaI" name="CarLineaI" placeholder="" class="form-control" readonly> </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-3">
                                 <div class=" "><label for="text-input" class=" form-control-label">Código del Servicio</label>
                                 <input type="text" v-model="CarCodServicio" name="CarCodServicio" placeholder="" class="form-control" readonly> </div>
                             </div>
-                            <div class="form-group col-md-8">
+                            <div class="form-group col-md-9">
                                 <div class=" "><label for="text-input" class=" form-control-label">Nombre del Servicio</label>
                                 <input type="text" v-model="CarNomServicio" name="CarNomServicio" placeholder="" class="form-control" readonly> </div>
                             </div>
@@ -94,7 +94,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-3">
                                 <div class=""><label for="text-input" class=" form-control-label">Área de residencia del centro de atención</label>
                                     <select name="areaResidencia" disabled="disabled" v-model="areaResidencia" class="form-control">
                                     <option value="URBANO">URBANO</option>
@@ -103,10 +103,7 @@
                             </div>
 
 
-                        </div>
-                        <div class="row">
-
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-3">
                                 <div class=""><label for="text-input" class=" form-control-label">Código del Centro de Atención</label>
                                 <input type="text" v-model="codigoCentroAtencion" name="codigoCentroAtencion" placeholder="" class="form-control" readonly></div>
                             </div>
