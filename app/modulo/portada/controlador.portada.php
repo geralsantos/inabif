@@ -528,9 +528,11 @@ class portada extends App{
 		$filtro_centro = " ca.id=".$_SESSION["usuario"][0]["CENTRO_ID"];
 	}
     $fecha = " BETWEEN UPPER('".$_POST["fecha_inicial"]."') AND UPPER('".$_POST["fecha_final"]."')";
-	$residentes = "select distinct re.id, re.nombre as nombre_residente, re.apellido_p, re.apellido_m, pa.nombre as nombre_pais , 'ubi.NOMDEPT' as nombre_departamento, 'ubi.nomprov' as nombre_provincia, 'ubi.nomdist' as nombre_distrito, (CASE sexo WHEN 'h' THEN 'Hombre' ELSE 'Mujer' END) as sexo_residente ,re.fecha_creacion as fecha from residente re 
+	$residentes = "select distinct ca.id, re.nombre as nombre_residente, re.apellido_p, re.apellido_m, pa.nombre as nombre_pais , ubi.NOMDEPT as nombre_departamento, ubi.nomprov as nombre_provincia, ubi.nomdist as nombre_distrito, (CASE sexo WHEN 'h' THEN 'Hombre' ELSE 'Mujer' END) as sexo_residente ,re.fecha_creacion as fecha from residente re 
 	inner join tipo_centro tc on(tc.id=re.tipo_centro_id) 
+	inner join centro_atencion ca on(ca.tipo_centro_id=tc.id) 
 	inner join paises pa on(pa.id=re.pais_id) 
+	inner join ubigeo ubi on(ubi.coddist=re.distrito_naci_cod) 
 	where to_char(re.fecha_creacion,'DD-MON-YY') ".$fecha." AND ".$filtro_centro." ";
 	$residentes = $modelo->executeQuery($residentes);
 	$residente_html = "";
