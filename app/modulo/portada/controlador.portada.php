@@ -315,7 +315,7 @@ class portada extends App{
     public function buscar_centro(){
       $modelo = new modeloPortada();
 
-        $sql = "select ca.*,  from centro_atencion ca
+        $sql = "select ca.* from centro_atencion ca
         left join tipo_centro tc on (ca.tipo_centro_id=tc.id) 
         where ca.id=".$_SESSION["usuario"][0]["CENTRO_ID"]." and ca.estado = 1";
   
