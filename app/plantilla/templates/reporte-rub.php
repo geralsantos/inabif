@@ -21,7 +21,9 @@
                                 </div>
                             </div>
                             <div class="row">
-                            <button @click="descargar_reporte_matriz_rub()" class="btn btn-default"><i class="fa fa-send"></i> Descargar Reporte</button>
+                            <div class="col-12 col-md-1">
+                                    <button @click="descargar_reporte_matriz_rub()" class="btn btn-success"><i class="fa fa-send"></i> Descargar Reporte</button>
+                                </div>
                             
                             </div>
                             <div class="table-responsive">

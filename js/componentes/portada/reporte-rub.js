@@ -40,7 +40,6 @@ Vue.component('reporte-rub', {
         },
         descargar_reporte_matriz_rub(){
 
-            console.log(datos);
             this.$http.post('descargar_reporte_matriz_rub?view').then(function(response){
 
                 if( response.body.data != undefined){
