@@ -31,6 +31,7 @@ Vue.component('registro-perfiles', {
     },
     methods:{
         guardar(){
+            alert(this.tipo_centro);returnfalse;
             /*if (this.id_residente==null) {
                 swal('Error', 'Residente no existe', 'warning');
                 return false;
