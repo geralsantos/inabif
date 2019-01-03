@@ -10,7 +10,7 @@ Vue.component('cargar-archivos', {
     created:function(){
     },
     mounted:function(){
-    
+        this.listar_archivos_adjuntos();
     },
     updated:function(){
     },

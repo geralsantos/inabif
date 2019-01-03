@@ -711,7 +711,6 @@ $modulo_html .="</table>";
     }else{
       return false;
     }
-		echo "subido";
 	}
   }
 }
