@@ -4,7 +4,7 @@ Vue.component('reporte-rub', {
        // periodo:moment().format('MMMM YYYY'),
         residentes:[],
         periodo:'mes',
-       matriz_general:[],
+       data_reporte_rub:[],
        fecha_final:null,
        fecha_inicial:null,
 
@@ -44,7 +44,7 @@ Vue.component('reporte-rub', {
 
                 if( response.body.data != undefined){
                     tableToExcel('tbl_temp','ExcelExport',response.body.data);
-                    this.matriz_general = response.body.data;
+                    this.data_reporte_rub = response.body.data;
                     
                 }
             });
