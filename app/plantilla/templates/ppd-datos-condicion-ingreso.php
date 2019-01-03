@@ -3,7 +3,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <strong>Datos de condicion de ingreso Del Usuario</strong>
+                        <strong>Datos de condicion de ingreso Del Residente</strong>
                         <h6>Formulario de Carga de Datos</h6>
                     </div>
                     <div class="card-body card-block">
@@ -195,9 +195,9 @@
                                                 <td>{{residente.NOMBRE}} {{residente.APELLIDO}}</td>
                                                 <td>{{residente.DOCUMENTO}}</td>
                                                 <td><button class="btn btn-primary" @click="elegir_residente(residente)">Seleccionar</button></td>
-                                            
+
                                             </tr>
-                                        
+
                                         </tbody>
                                     </table>
                                 </div>
