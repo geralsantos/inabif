@@ -410,7 +410,7 @@ class portada extends App{
 	$modelo = new modeloPortada();
     $nivel = $_SESSION["usuario"][0]["NIVEL"];
 
-	if (SUPERVISOR == $nivel || USER_SEDE == $nivel) {
+	if (SUPERVISOR == $nivel || USER_SEDE == $nivel || ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel) {
 		$tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
 		$where = "ca.tipo_centro_id = ".$tipo_centro;
 	}else{
@@ -445,6 +445,7 @@ class portada extends App{
     $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
     $periodo = $_POST["periodo"];
     $matriz_id = $_POST["matriz_id"];
+    
     if ($periodo=="mensual") {
       $fecha = " md.periodo_mes = ".date("m")." "; 
     }else {

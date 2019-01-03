@@ -54,7 +54,7 @@ Vue.component('registro-perfiles', {
                 usuario :this.usuario,
                 clave :this.clave,
                 }
-                if(this.nivel_id == 4 || this.nivel_id == 2){
+                if(this.nivel_id == 4 || this.nivel_id == 2 || this.nivel_id == 1 || this.nivel_id == 3){
                     valores.tipo_centro_id = this.tipo_centro;
                     valores.centro_id = null;
                 }else{
@@ -178,7 +178,7 @@ Vue.component('registro-perfiles', {
             });
         }, 
         verificar_nivel(){
-            if(this.nivel_id==4 || this.nivel_id==2){
+            if(this.nivel_id==4 || this.nivel_id==2 || this.nivel_id==1 || this.nivel_id==3){
                 this.mostrar = false; 
             }else{
                 this.mostrar = true; 
