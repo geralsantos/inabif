@@ -94,10 +94,10 @@ Vue.component('nna-actividades-sociorecreativas', {
         actualizar(coincidencia){
             this.id_residente = coincidencia.ID;
             let nombre=(coincidencia.NOMBRE==undefined)?'':coincidencia.NOMBRE;
-let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
-let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
-let apellido = coincidencia.APELLIDO_P + ' ' + coincidencia.APELLIDO_M;
- this.nombre_residente=nombre + ' ' + apellido;
+            let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
+            let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
+            let apellido = apellido_p + ' ' + apellido_m;
+            this.nombre_residente=nombre + ' ' + apellido;
             this.coincidencias = [];
             this.bloque_busqueda = false;
 
