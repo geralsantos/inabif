@@ -43,8 +43,8 @@ Vue.component('ppd-datos-condicion-ingreso', {
         this.institucion_educativa();
         this.tipo_seguro();
         this.clasificacion_socioeconomica();
-        this.tipo_parentesco();
-        this.problematica_familiar();
+    //    this.tipo_parentesco();
+     //   this.problematica_familiar();
         this.tipo_documento_identidad();
     },
     updated:function(){
@@ -66,9 +66,7 @@ Vue.component('ppd-datos-condicion-ingreso', {
                 Institucion_Educativa:this.CarInstitucionEducativa,
                 Tipo_Seguro:this.CarTipoSeguro,
                 Clasficacion_Socioeconomica:this.CarCSocioeconomica,
-                Familiares:this.CarFamiliaresUbicados,
-                Parentesco:this.CarTipoParentesco,
-                Problematica_Familiar:this.CarProblematicaFam,
+
                 Residente_Id: this.id_residente,
                 Periodo_Mes: parseFloat(moment().format("MM")),
                 Periodo_Anio: parseFloat(moment().format("YYYY"))
@@ -133,9 +131,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.CarInstitucionEducativa = response.body.atributos[0]["INSTITUCION_EDUCATIVA"];
                     this.CarTipoSeguro = response.body.atributos[0]["TIPO_SEGURO"];
                     this.CarCSocioeconomica = response.body.atributos[0]["CLASFICACION_SOCIOECONOMICA"];
-                    this.CarFamiliaresUbicados = response.body.atributos[0]["FAMILIARES"];
-                    this.CarTipoParentesco = response.body.atributos[0]["PARENTESCO"];
-                    this.CarProblematicaFam = response.body.atributos[0]["PROBLEMATICA_FAMILIAR"];
+
 
                 }
              });
@@ -199,7 +195,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                 }
             });
         },mostrar_lista_residentes(){
-         
+
             this.id_residente = null;
             this.isLoading = true;
                 this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
@@ -212,7 +208,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                         swal("", "No existe ningún residente", "error")
                     }
                  });
-            
+
         },
         elegir_residente(residente){
 
@@ -226,9 +222,7 @@ let apellido = apellido_p + ' ' + apellido_m;
             this.CarInstitucionEducativa = null;
             this.CarTipoSeguro = null;
             this.CarCSocioeconomica = null;
-            this.CarFamiliaresUbicados = null;
-            this.CarTipoParentesco = null;
-            this.CarProblematicaFam = null;
+
 
             this.id_residente = residente.ID;
             let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
@@ -250,9 +244,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.CarInstitucionEducativa = response.body.atributos[0]["INSTITUCION_EDUCATIVA"];
                     this.CarTipoSeguro = response.body.atributos[0]["TIPO_SEGURO"];
                     this.CarCSocioeconomica = response.body.atributos[0]["CLASFICACION_SOCIOECONOMICA"];
-                    this.CarFamiliaresUbicados = response.body.atributos[0]["FAMILIARES"];
-                    this.CarTipoParentesco = response.body.atributos[0]["PARENTESCO"];
-                    this.CarProblematicaFam = response.body.atributos[0]["PROBLEMATICA_FAMILIAR"];
+
 
                 }
              });
