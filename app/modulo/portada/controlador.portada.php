@@ -464,34 +464,34 @@ class portada extends App{
     
     foreach ($modulos as $key => $modulo) 
     {
-		if (floatval($modulo["NOMBRE_TABLA"])!="") {
-		$modulo_html .="<tr><th></th><th>Nombre del Modulo</th><th>Encargado</th><th>Periodo Mes</th></tr>";
-		$modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td><td>".$modulo["NOMBRE_USUARIO"]."</td><td>".$modulo["PERIODO_MES"]."</td></tr>";
-			
-		$grupos = "select distinct * from ".$modulo["NOMBRE_TABLA"]." order by id desc";
-		$grupos = $modelo->executeQuery($grupos);
+		if (($modulo["NOMBRE_TABLA"])!="") {
+			$modulo_html .="<tr><th></th><th>Nombre del Modulo</th><th>Encargado</th><th>Periodo Mes</th></tr>";
+			$modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td><td>".$modulo["NOMBRE_USUARIO"]."</td><td>".$modulo["PERIODO_MES"]."</td></tr>";
+				
+			$grupos = "select distinct * from ".$modulo["NOMBRE_TABLA"]." order by id desc";
+			$grupos = $modelo->executeQuery($grupos);
 
-		$grupo_html = "<table>";
-      foreach ($grupos as $key => $grupo) 
-      {
-        if ($key==0) {
-          $keys = array_keys($grupo);
-          $grupo_html .="<tr><th></th>";
-          foreach ($keys as $key) 
-          {
-            $grupo_html .="<th>$key</th>";
-          }
-          $grupo_html .="</tr>";
-        }
-		$grupo_values = array_values($grupo);
-		
-        $grupo_html .= "<tr><td></td>";
-        foreach ($grupo_values as $key => $value) {
-          $grupo_html .="<td>".$value."</td>";
-        }
-        $grupo_html .= "</tr>";
-	  }
-      $modulo_html .=$grupo_html;
+			$grupo_html = "<table>";
+			foreach ($grupos as $key => $grupo) 
+			{
+				if ($key==0) {
+				$keys = array_keys($grupo);
+				$grupo_html .="<tr><th></th>";
+				foreach ($keys as $key) 
+				{
+					$grupo_html .="<th>$key</th>";
+				}
+				$grupo_html .="</tr>";
+				}
+				$grupo_values = array_values($grupo);
+				
+				$grupo_html .= "<tr><td></td>";
+				foreach ($grupo_values as $key => $value) {
+				$grupo_html .="<td>".$value."</td>";
+				}
+				$grupo_html .= "</tr>";
+			}
+			$modulo_html .=$grupo_html;
     	}
 	}
 $modulo_html .="</table>";
