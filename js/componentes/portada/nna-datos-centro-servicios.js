@@ -73,67 +73,7 @@ Vue.component('nna-datos-centro-servicios', {
 
             });
         },
-        mostrar_lista_residentes(){
 
-            this.id_residente = null;
-            this.isLoading = true;
-                this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
-
-                    if( response.body.data != undefined){
-                        this.modal_lista = true;
-                        this.isLoading = false;
-                        this.pacientes = response.body.data;
-                    }else{
-                        swal("", "No existe ningún residente", "error")
-                    }
-                 });
-
-        },
-        elegir_residente(residente){
-
-            this.Cod_Entidad= null;
-            this.Nom_Entidad= null;
-            this.Cod_Linea= null;
-            this.Nom_Linea= null;
-            this.Linea_Intervencion= null;
-            this.Cod_Servicio = null;
-            this.NomC_Servicio= null;
-            this.Departamento_Centro= null;
-            this.Provincia_centro= null;
-            this.Distrito_centro= null;
-            this.Area_Residencia= null;
-            this.CodigoC_Atencion= null;
-            this.NomC_Atencion= null;
-
-            this.id_residente = residente.ID;
-            let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
-            let apellido = (residente.APELLIDO==undefined)?'':residente.APELLIDO;
-            this.nombre_residente=nombre + ' ' + apellido;
-            this.modal_lista = false;
-
-            this.$http.post('cargar_datos_residente?view',{tabla:'NNACentroServicios', residente_id:this.id_residente }).then(function(response){
-
-                if( response.body.atributos != undefined){
-
-                    this.Cod_Entidad = response.body.atributos[0]["COD_ENTIDAD"];
-                    this.Nom_Entidad = response.body.atributos[0]["NOM_ENTIDAD"];
-                    this.Cod_Linea = response.body.atributos[0]["COD_LINEA"];
-                    this.Nom_Linea = response.body.atributos[0]["NOM_LINEA"];
-                    this.Linea_Intervencion = response.body.atributos[0]["LINEA_INTERVENCION"];
-                    this.Cod_Servicio = response.body.atributos[0]["COD_SERVICIO"];
-                    this.NomC_Servicio = response.body.atributos[0]["NOMC_SERVICIO"];
-                    this.Departamento_Centro = response.body.atributos[0]["DEPARTAMENTO_CENTRO"];
-                    this.Provincia_centro = response.body.atributos[0]["PROVINCIA_CENTRO"];
-                    this.Distrito_centro = response.body.atributos[0]["DISTRITO_CENTRO"];
-                    this.Area_Residencia = response.body.atributos[0]["AREA_RESIDENCIA"];
-                    this.CodigoC_Atencion = response.body.atributos[0]["CODIGOC_ATENCION"];
-                    this.NomC_Atencion = response.body.atributos[0]["NOMC_ATENCION"];
-
-
-                }
-             });
-
-        },
         buscar_centro(){
             this.$http.post('buscar_centro?view',{tabla:'centro_atencion' }).then(function(response){
 

@@ -55,7 +55,7 @@
                                 <div class=" "><label for="text-input" class=" form-control-label">Código de la Línea</label>
                                 <input type="text" v-model="Cod_Linea" name="Cod_Linea" placeholder="" class="form-control" readonly> </div>
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-8">
                                 <div class=" "><label for="text-input" class=" form-control-label">Línea de Intervención</label>
                                 <input type="text" v-model="Linea_Intervencion" name="Linea_Intervencion" placeholder="" class="form-control" readonly> </div>
                             </div>
