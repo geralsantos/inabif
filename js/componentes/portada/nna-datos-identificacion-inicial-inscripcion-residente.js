@@ -28,7 +28,9 @@ Vue.component('nna-datos-identificacion-inicial-inscripcion-residente', {
         anio:(new Date()).getFullYear(),
         coincidencias:[],
         bloque_busqueda:false,
-        id_residente:null
+        id_residente:null,
+        modal_lista:false,
+        pacientes:[]
 
 
     }),
@@ -230,6 +232,65 @@ Vue.component('nna-datos-identificacion-inicial-inscripcion-residente', {
 
             });
         },
+        mostrar_lista_residentes(){
+         
+            this.id_residente = null;
+            this.isLoading = true;
+                this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
+
+                    if( response.body.data != undefined){
+                        this.modal_lista = true;
+                        this.isLoading = false;
+                        this.pacientes = response.body.data;
+                    }else{
+                        swal("", "No existe ningún residente", "error")
+                    }
+                 });
+            
+        },
+        elegir_residente(residente){
+
+            this.Ape_Paterno = null;
+            this.Ape_Materno = null;
+            this.Nom_Usuario = null;
+            this.pais_procedente_id = null;            
+            this.departamento_procedente_id = null;
+            this.departamento_nacimiento_id = null;
+            this.provincia_nacimiento_id = null;
+            this.distrito_nacimiento_id = null;
+            this.Sexo = null;
+            this.Fecha_Nacimiento = null;
+            this.Edad = null;
+            this.Lengua_Materna = null;
+            this.Numero_Doc = null;
+
+            this.id_residente = residente.ID;
+            let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
+            let apellido = (residente.APELLIDO==undefined)?'':residente.APELLIDO;
+            this.nombre_residente=nombre + ' ' + apellido;
+            this.modal_lista = false;
+
+            this.$http.post('cargar_datos_residente?view',{tabla:'NNAInscripcionResidente', residente_id:this.id_residente }).then(function(response){
+
+                if( response.body.atributos != undefined){
+                    this.Ape_Paterno = response.body.atributos[0]["RESIDENTE_APELLIDO_PATERNO"];
+                    this.Ape_Materno = response.body.atributos[0]["RESIDENTE_APELLIDO_MATERNO"];
+                    this.Nom_Usuario = response.body.atributos[0]["RESIDENTE_NOMBRE"];
+                    this.pais_procedente_id = response.body.atributos[0]["PAIS_PROCEDENTE_ID"];
+                    this.departamento_procedente_id = response.body.atributos[0]["DEPARTAMENTO_PROCEDENTE_ID"];
+                    this.departamento_nacimiento_id = response.body.atributos[0]["DEPARTAMENTO_NACIMIENTO_ID"];
+                    this.provincia_nacimiento_id = response.body.atributos[0]["PROVINCIA_NACIMIENTO_ID"];
+                    this.distrito_nacimiento_id = response.body.atributos[0]["DISTRITO_NACIMIENTO_ID"];
+                    this.Sexo = response.body.atributos[0]["SEXO"];
+                    this.Fecha_Nacimiento = moment(response.body.atributos[0]["FECHA_NACIMIENTO"]).format("YYYY-MM-DD");
+                    this.Edad = response.body.atributos[0]["EDAD"];
+                    this.Lengua_Materna = response.body.atributos[0]["LENGUA_MATERNA"];
+                    this.Numero_Doc = response.body.atributos[0]["NUMERO_DOC"];
+                    
+                }
+             });
+
+        }
 
     }
   })

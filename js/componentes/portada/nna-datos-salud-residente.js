@@ -37,7 +37,9 @@ Vue.component('nna-datos-salud-residente', {
         anio:(new Date()).getFullYear(),
         coincidencias:[],
         bloque_busqueda:false,
-        id_residente:null
+        id_residente:null,
+        modal_lista:false,
+        pacientes:[]
 
 
     }),

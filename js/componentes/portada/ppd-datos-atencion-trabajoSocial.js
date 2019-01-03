@@ -21,6 +21,8 @@ Vue.component('ppd-datos-atencion-trabajoSocial', {
         coincidencias:[],
         bloque_busqueda:false,
         id_residente:null,
+        modal_lista:false,
+        pacientes:[],
         parentescos:[],
         familiares:[],
 

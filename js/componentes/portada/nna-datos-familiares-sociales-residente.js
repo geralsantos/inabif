@@ -15,7 +15,9 @@ Vue.component('nna-datos-familiares-sociales-residente', {
         anio:(new Date()).getFullYear(),
         coincidencias:[],
         bloque_busqueda:false,
-        id_residente:null
+        id_residente:null,
+        modal_lista:false,
+        pacientes:[]
  
 
     }),
@@ -115,6 +117,48 @@ Vue.component('nna-datos-familiares-sociales-residente', {
                 }
             });
         },
+        mostrar_lista_residentes(){
+         
+            this.id_residente = null;
+            this.isLoading = true;
+                this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
+
+                    if( response.body.data != undefined){
+                        this.modal_lista = true;
+                        this.isLoading = false;
+                        this.pacientes = response.body.data;
+                    }else{
+                        swal("", "No existe ningún residente", "error")
+                    }
+                 });
+            
+        },
+        elegir_residente(residente){
+
+            this.Familiares = null;
+            this.Parentesco = null;
+            this.Tipo_Familia = null;
+            this.Problematica_Fami = null;
+
+            this.id_residente = residente.ID;
+            let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
+            let apellido = (residente.APELLIDO==undefined)?'':residente.APELLIDO;
+            this.nombre_residente=nombre + ' ' + apellido;
+            this.modal_lista = false;
+
+            this.$http.post('cargar_datos_residente?view',{tabla:'NNAFamiliaresResidente', residente_id:this.id_residente }).then(function(response){
+
+                if( response.body.atributos != undefined){
+
+                    this.Familiares = response.body.atributos[0]["FAMILIARES"];
+                    this.Parentesco = response.body.atributos[0]["PARENTESCO"];
+                    this.Tipo_Familia = response.body.atributos[0]["TIPO_FAMILIA"];
+                    this.Problematica_Fami = response.body.atributos[0]["PROBLEMATICA_FAMI"];
+
+                }
+             });
+
+        }
         
     }
   })
