@@ -27,20 +27,20 @@ Vue.component('cargar-archivos', {
                 }
             });
         },
-        eliminar(usuario){
+        eliminar(archivo){
             swal({
                 title: "Estás seguro?",
-                text: "Desea Eliminar el archivo seleccionado: "+usuario.NOMBRE,
+                text: "Desea Eliminar el archivo seleccionado: "+archivo.NOMBRE,
                 icon: "warning",
                 buttons: true,
                 dangerMode: true,
               })
               .then((willDelete) => {
                 if (willDelete) {
-                    let where = {id:usuario.ID}
-                    this.$http.post('delete_datos?view',{tabla:'usuarios',where:where}).then(function(response){
+                    let where = {id:archivo.ID}
+                    this.$http.post('delete_datos?view',{tabla:'archivos_adjuntados',where:where}).then(function(response){
                         if( response.body.resultado ){
-                            swal("Usuario Eliminado!", {
+                            swal("Archivo Eliminado!", {
                                 icon: "success",
                               });
                             this.listar_usuarios();
