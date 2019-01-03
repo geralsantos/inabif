@@ -162,6 +162,66 @@ Vue.component('pam-centro-servicios', {
                     this.distritos= response.body.data;
                 }
              });
+        },mostrar_lista_residentes(){
+         
+            this.id_residente = null;
+            this.isLoading = true;
+                this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
+
+                    if( response.body.data != undefined){
+                        this.modal_lista = true;
+                        this.isLoading = false;
+                        this.pacientes = response.body.data;
+                    }else{
+                        swal("", "No existe ningún residente", "error")
+                    }
+                 });
+            
         },
+        elegir_residente(residente){
+
+            this.CarCodEntidad = null;
+            this.CarNomEntidad = null;
+            this.CarCodLinea = null;
+            this.CarLineaI = null;
+            this.CarCodServicio = null;
+            this.CarNomServicio = null;
+            this.CarDepart = null;
+            this.CarProv = null;
+            this.CarDistrito = null;
+            this.centroPoblado = null;
+            this.areaResidencia = null;
+            this.codigoCentroAtencion = null;
+            this.nombreCentroAtencion = null;
+
+
+            this.id_residente = residente.ID;
+            let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
+            let apellido = (residente.APELLIDO==undefined)?'':residente.APELLIDO;
+            this.nombre_residente=nombre + ' ' + apellido;
+            this.modal_lista = false;
+
+            this.$http.post('cargar_datos_residente?view',{tabla:'pam_datos_centro_servicios', residente_id:this.id_residente }).then(function(response){
+
+                if( response.body.atributos != undefined){
+
+                    this.CarCodEntidad = response.body.atributos[0]["COD_ENTIDAD"];
+                    this.CarNomEntidad = response.body.atributos[0]["NOM_ENTIDAD"];
+                    this.CarCodLinea = response.body.atributos[0]["COD_LINEA"];
+                    this.CarLineaI = response.body.atributos[0]["LINEA_INTERVENCION"];
+                    this.CarCodServicio = response.body.atributos[0]["COD_SERVICIO"];
+                    this.CarNomServicio = response.body.atributos[0]["NOM_SERVICIO"];
+                    this.CarDepart = response.body.atributos[0]["DEPARTAMENTO_CATENCION"];
+                    this.CarProv = response.body.atributos[0]["PROVINCIA_CATENCION"];
+                    this.CarDistrito = response.body.atributos[0]["DISTRITO_CATENCION"];
+                    this.centroPoblado = response.body.atributos[0]["CENTRO_POBLADO"];
+                    this.areaResidencia = response.body.atributos[0]["CENTRO_RESIDENCIA"];
+                    this.codigoCentroAtencion = response.body.atributos[0]["COD_CENTROATENCION"];
+                    this.nombreCentroAtencion = response.body.atributos[0]["NOM_CENTROATENCION"];
+
+                }
+             });
+
+        }
     }
   })

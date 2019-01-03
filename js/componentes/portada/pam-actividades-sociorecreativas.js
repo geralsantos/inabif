@@ -114,7 +114,60 @@ Vue.component('pam-actividades-sociorecreativas', {
                 }
              });
 
+        },mostrar_lista_residentes(){
+         
+            this.id_residente = null;
+            this.isLoading = true;
+                this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
+
+                    if( response.body.data != undefined){
+                        this.modal_lista = true;
+                        this.isLoading = false;
+                        this.pacientes = response.body.data;
+                    }else{
+                        swal("", "No existe ningún residente", "error")
+                    }
+                 });
+            
         },
+        elegir_residente(residente){
+
+            this.Terapia_Fisica_Rehabilitacion = null;
+            this.Arte = null;
+            this.Nro_Arte = null;
+            this.Dibujo_Pintura = null;
+            this.Nro_Arte_Dibujo_Pintura = null;
+            this.Manualidades = null;
+            this.Nro_Arte_Manualidades = null;
+            this.Otros = null;
+            this.Nro_Arte_Otros = null;
+
+
+            this.id_residente = residente.ID;
+            let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
+            let apellido = (residente.APELLIDO==undefined)?'':residente.APELLIDO;
+            this.nombre_residente=nombre + ' ' + apellido;
+            this.modal_lista = false;
+
+            this.$http.post('cargar_datos_residente?view',{tabla:'pam_ActividadSociorecrea', residente_id:this.id_residente }).then(function(response){
+
+                if( response.body.atributos != undefined){
+
+                    this.Terapia_Fisica_Rehabilitacion = response.body.atributos[0]["TERAPIA_FISICA_REHABILITACION"];
+                    this.Arte = response.body.atributos[0]["ARTE"];
+                    this.Nro_Arte = response.body.atributos[0]["NRO_ARTE"];
+                    this.Dibujo_Pintura = response.body.atributos[0]["DIBUJO_PINTURA"];
+                    this.Nro_Arte_Dibujo_Pintura = response.body.atributos[0]["NRO_ARTE_DIBUJO_PINTURA"];
+                    this.Manualidades = response.body.atributos[0]["MANUALIDADES"];
+                    this.Nro_Arte_Manualidades = response.body.atributos[0]["NRO_ARTE_MANUALIDADES"];
+                    this.Otros = response.body.atributos[0]["OTROS"];
+                    this.Nro_Arte_Otros = response.body.atributos[0]["NRO_ARTE_OTROS"];
+
+        
+                }
+             });
+
+        }
         
     }
   })

@@ -115,6 +115,58 @@ Vue.component('pam-actividades-sociales', {
              });
 
         },
-        
+        mostrar_lista_residentes(){
+         
+            this.id_residente = null;
+            this.isLoading = true;
+                this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
+
+                    if( response.body.data != undefined){
+                        this.modal_lista = true;
+                        this.isLoading = false;
+                        this.pacientes = response.body.data;
+                    }else{
+                        swal("", "No existe ningún residente", "error")
+                    }
+                 });
+            
+        },
+        elegir_residente(residente){
+
+            this.Atencion_Social = null;
+            this.Visita_Familiares = null;
+            this.Nro_Visitas = null;
+            this.Nro_Visitas_Amigos = null;
+            this.Descriptivo_Persona_Visita = null;
+            this.Aseguramiento_Universal_Salud = null;
+            this.Fecha_Emision_Obtencion_Seguro = null;
+            this.DNI = null;
+            this.Fecha_Emision_DNI = null;
+
+
+            this.id_residente = residente.ID;
+            let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
+            let apellido = (residente.APELLIDO==undefined)?'':residente.APELLIDO;
+            this.nombre_residente=nombre + ' ' + apellido;
+            this.modal_lista = false;
+
+            this.$http.post('cargar_datos_residente?view',{tabla:'pam_ActividadesSociales', residente_id:this.id_residente }).then(function(response){
+
+                if( response.body.atributos != undefined){
+
+                    this.Atencion_Social = response.body.atributos[0]["ATENCION_SOCIAL"];
+                    this.Visita_Familiares = response.body.atributos[0]["VISITA_FAMILIARES"];
+                    this.Nro_Visitas = response.body.atributos[0]["NRO_VISITAS"];
+                    this.Nro_Visitas_Amigos = response.body.atributos[0]["NRO_VISITAS_AMIGOS"];
+                    this.Descriptivo_Persona_Visita = response.body.atributos[0]["DESCRIPTIVO_PERSONA_VISITA"];
+                    this.Aseguramiento_Universal_Salud = response.body.atributos[0]["ASEGURAMIENTO_UNIVERSAL_SALUD"];
+                    this.Fecha_Emision_Obtencion_Seguro = moment(response.body.atributos[0]["FECHA_EMISION_OBTENCION_SEGURO"]).format("YYYY-MM-DD");
+                    this.DNI = response.body.atributos[0]["DNI"];
+                    this.Fecha_Emision_DNI = moment(response.body.atributos[0]["FECHA_EMISION_DNI"]).format("YYYY-MM-DD");
+            
+                }
+             });
+
+        }
     }
   })

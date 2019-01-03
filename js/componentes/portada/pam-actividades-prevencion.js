@@ -126,7 +126,68 @@ Vue.component('pam-actividades-prevencion', {
                 }
              });
 
+        },mostrar_lista_residentes(){
+         
+            this.id_residente = null;
+            this.isLoading = true;
+                this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
+
+                    if( response.body.data != undefined){
+                        this.modal_lista = true;
+                        this.isLoading = false;
+                        this.pacientes = response.body.data;
+                    }else{
+                        swal("", "No existe ningún residente", "error")
+                    }
+                 });
+            
         },
+        elegir_residente(residente){
+
+            this.Atencion_Psicologica = null;
+            this.Habilidades_Sociales = null;
+            this.Nro_Participa = null;
+            this.Taller_Autoestima = null;
+            this.Nro_Participa_Autoestima = null;
+            this.ManejoSituacionesDivergentes = null;
+            this.Nro_Participa_Divergentes = null;
+            this.Taller_Control_Emociones = null;
+            this.Nro_Participa_Emociones = null;
+            this.ConservacionHabilidadCognitiva = null;
+            this.Nro_Participa_Cognitivas = null;
+            this.Otros = null;
+            this.Nro_Participa_Otros = null;
+
+
+            this.id_residente = residente.ID;
+            let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
+            let apellido = (residente.APELLIDO==undefined)?'':residente.APELLIDO;
+            this.nombre_residente=nombre + ' ' + apellido;
+            this.modal_lista = false;
+
+            this.$http.post('cargar_datos_residente?view',{tabla:'pam_ActividadPrevencion', residente_id:this.id_residente }).then(function(response){
+
+                if( response.body.atributos != undefined){
+
+                    this.Atencion_Psicologica = response.body.atributos[0]["ATENCION_PSICOLOGICA"];
+                    this.Habilidades_Sociales = response.body.atributos[0]["HABILIDADES_SOCIALES"];
+                    this.Nro_Participa = response.body.atributos[0]["NRO_PARTICIPA"];
+                    this.Taller_Autoestima = response.body.atributos[0]["TALLER_AUTOESTIMA"];
+                    this.Nro_Participa_Autoestima = response.body.atributos[0]["NRO_PARTICIPA_AUTOESTIMA"];
+                    this.ManejoSituacionesDivergentes = response.body.atributos[0]["MANEJOSITUACIONESDIVERGENTES"];
+                    this.Nro_Participa_Divergentes = response.body.atributos[0]["NRO_PARTICIPA_DIVERGENTES"];
+                    this.Taller_Control_Emociones = response.body.atributos[0]["TALLER_CONTROL_EMOCIONES"];
+                    this.Nro_Participa_Emociones = response.body.atributos[0]["NRO_PARTICIPA_EMOCIONES"];
+                    this.ConservacionHabilidadCognitiva = response.body.atributos[0]["CONSERVACIONHABILIDADCOGNITIVA"];
+                    this.Nro_Participa_Cognitivas = response.body.atributos[0]["NRO_PARTICIPA_COGNITIVAS"];
+                    this.Otros = response.body.atributos[0]["OTROS"];
+                    this.Nro_Participa_Otros = response.body.atributos[0]["NRO_PARTICIPA_OTROS"];
+
+
+                }
+             });
+
+        }
         
     }
   })

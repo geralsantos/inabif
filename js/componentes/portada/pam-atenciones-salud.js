@@ -161,7 +161,91 @@ Vue.component('pam-atenciones-salud', {
                 }
              });
 
+        },mostrar_lista_residentes(){
+         
+            this.id_residente = null;
+            this.isLoading = true;
+                this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
+
+                    if( response.body.data != undefined){
+                        this.modal_lista = true;
+                        this.isLoading = false;
+                        this.pacientes = response.body.data;
+                    }else{
+                        swal("", "No existe ningún residente", "error")
+                    }
+                 });
+            
         },
+        elegir_residente(residente){
+
+            this.Residente_Salida = null;
+            this.Salidas = null;
+            this.Atenciones_Cardiovascular = null;
+            this.Atenciones_Nefrologia = null;
+            this.Atenciones_Oncologia = null;
+            this.Atenciones_Neurocirugia = null;
+            this.Atenciones_Dermatologia = null;
+            this.Atenciones_Endocrinologo = null;
+            this.Atenciones_Gastroenterologia = null;
+            this.Atenciones_Hematologia = null;
+            this.Atenciones_Inmunologia = null;
+            this.AtencionesMedicFisiRehabilita = null;
+            this.Atenciones_Neumologia = null;
+            this.Atenciones_Nutricion = null;
+            this.Atenciones_Neurologia = null;
+            this.Atenciones_Oftalmologia = null;
+            this.AtencionOtorrinolaringologia = null;
+            this.Atenciones_Psiquiatria = null;
+            this.Atenciones_Traumatologia = null;
+            this.Atenciones_Urologia = null;
+            this.Atenciones_Odontologia = null;
+            this.MedicinaGeneral_Geriatrica = null;
+            this.Nro_Atenciones_OtrosServicios = null;
+            this.ResidenteHospitalizadoPeriodo = null;
+            this.Motivo_Hospitalizacion = null;
+
+
+            this.id_residente = residente.ID;
+            let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
+            let apellido = (residente.APELLIDO==undefined)?'':residente.APELLIDO;
+            this.nombre_residente=nombre + ' ' + apellido;
+            this.modal_lista = false;
+
+            this.$http.post('cargar_datos_residente?view',{tabla:'pam_AtencionesSalud', residente_id:this.id_residente }).then(function(response){
+
+                if( response.body.atributos != undefined){
+
+                    this.Residente_Salida = response.body.atributos[0]["RESIDENTE_SALIDA"];
+                    this.Salidas = response.body.atributos[0]["SALIDAS"];
+                    this.Atenciones_Cardiovascular = response.body.atributos[0]["ATENCIONES_CARDIOVASCULAR"];
+                    this.Atenciones_Nefrologia = response.body.atributos[0]["ATENCIONES_NEFROLOGIA"];
+                    this.Atenciones_Oncologia = response.body.atributos[0]["ATENCIONES_ONCOLOGIA"];
+                    this.Atenciones_Neurocirugia = response.body.atributos[0]["ATENCIONES_NEUROCIRUGIA"];
+                    this.Atenciones_Dermatologia = response.body.atributos[0]["ATENCIONES_DERMATOLOGIA"];
+                    this.Atenciones_Endocrinologo = response.body.atributos[0]["ATENCIONES_ENDOCRINOLOGO"];
+                    this.Atenciones_Gastroenterologia = response.body.atributos[0]["ATENCIONES_GASTROENTEROLOGIA"];
+                    this.Atenciones_Hematologia = response.body.atributos[0]["ATENCIONES_HEMATOLOGIA"];
+                    this.Atenciones_Inmunologia = response.body.atributos[0]["ATENCIONES_INMUNOLOGIA"];
+                    this.AtencionesMedicFisiRehabilita = response.body.atributos[0]["ATENCIONESMEDICFISIREHABILITA"];
+                    this.Atenciones_Neumologia = response.body.atributos[0]["ATENCIONES_NEUMOLOGIA"];
+                    this.Atenciones_Nutricion = response.body.atributos[0]["ATENCIONES_NUTRICION"];
+                    this.Atenciones_Neurologia = response.body.atributos[0]["ATENCIONES_NEUROLOGIA"];
+                    this.Atenciones_Oftalmologia = response.body.atributos[0]["ATENCIONES_OFTALMOLOGIA"];
+                    this.AtencionOtorrinolaringologia = response.body.atributos[0]["ATENCIONOTORRINOLARINGOLOGIA"];
+                    this.Atenciones_Psiquiatria = response.body.atributos[0]["ATENCIONES_PSIQUIATRIA"];
+                    this.Atenciones_Traumatologia = response.body.atributos[0]["ATENCIONES_TRAUMATOLOGIA"];
+                    this.Atenciones_Urologia = response.body.atributos[0]["ATENCIONES_UROLOGIA"];
+                    this.Atenciones_Odontologia = response.body.atributos[0]["ATENCIONES_ODONTOLOGIA"];
+                    this.MedicinaGeneral_Geriatrica = response.body.atributos[0]["MEDICINAGENERAL_GERIATRICA"];
+                    this.Nro_Atenciones_OtrosServicios = response.body.atributos[0]["NRO_ATENCIONES_OTROSSERVICIOS"];
+                    this.ResidenteHospitalizadoPeriodo = response.body.atributos[0]["RESIDENTEHOSPITALIZADOPERIODO"];
+                    this.Motivo_Hospitalizacion = response.body.atributos[0]["MOTIVO_HOSPITALIZACION"];
+
+                }
+             });
+
+        }
         
     }
   })

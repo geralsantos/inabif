@@ -150,7 +150,76 @@ Vue.component('pam-datos-nutricion-salud', {
                 }
 
             });
+        },mostrar_lista_residentes(){
+         
+            this.id_residente = null;
+            this.isLoading = true;
+                this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
+
+                    if( response.body.data != undefined){
+                        this.modal_lista = true;
+                        this.isLoading = false;
+                        this.pacientes = response.body.data;
+                    }else{
+                        swal("", "No existe ningún residente", "error")
+                    }
+                 });
+            
         },
+        elegir_residente(residente){
+
+            this.discapacidad = null;
+            this.discapacidad_fisica = null;
+            this.discapacidad_intelectual = null;
+            this.discapacidad_sensorial = null;
+            this.presenta_discapacidad_mental = null;
+            this.dx_certificado = null;
+            this.carnet_conadis = null;
+            this.grado_dependencia_pam = null;
+            this.motivo_dif_desplazamiento = null;
+            this.enfermedad_ingreso_1 = null;
+            this.tipo_patologia = null;
+            this.tipo_patologia_2 = null;
+            this.enfermedad_ingreso_2 = null;
+            this.nivel_hemoglobina = null;
+            this.presenta_anema = null;
+            this.peso = null;
+            this.talla = null;
+            this.estado_nutricional = null;
+
+
+            this.id_residente = residente.ID;
+            let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
+            let apellido = (residente.APELLIDO==undefined)?'':residente.APELLIDO;
+            this.nombre_residente=nombre + ' ' + apellido;
+            this.modal_lista = false;
+
+            this.$http.post('cargar_datos_residente?view',{tabla:'pam_datos_saludnutric', residente_id:this.id_residente }).then(function(response){
+
+                if( response.body.atributos != undefined){
+
+                    this.discapacidad = response.body.atributos[0]["DISCAPACIDAD"];
+                    this.discapacidad_fisica = response.body.atributos[0]["DISCAPACIDAD_FISICA"];
+                    this.discapacidad_intelectual = response.body.atributos[0]["DISCAPACIDAD_INTELECTUAL"];
+                    this.discapacidad_sensorial = response.body.atributos[0]["DISCAPACIDAD_SENSORIAL"];
+                    this.presenta_discapacidad_mental = response.body.atributos[0]["PRESENTA_DISCAPACIDAD_MENTAL"];
+                    this.dx_certificado = response.body.atributos[0]["DX_CERTIFICADO"];
+                    this.carnet_conadis = response.body.atributos[0]["CARNET_CONADIS"];
+                    this.grado_dependencia_pam = response.body.atributos[0]["GRADO_DEPENDENCIA_PAM"];
+                    this.motivo_dif_desplazamiento = response.body.atributos[0]["MOTIVO_DIF_DESPLAZAMIENTO"];
+                    this.enfermedad_ingreso_1 = response.body.atributos[0]["ENFERMEDAD_INGRESO_1"];
+                    this.tipo_patologia = response.body.atributos[0]["TIPO_PATOLOGIA"];
+                    this.tipo_patologia_2 = response.body.atributos[0]["TIPO_PATOLOGIA_2"];
+                    this.enfermedad_ingreso_2 = response.body.atributos[0]["ENFERMEDAD_INGRESO_2"];
+                    this.nivel_hemoglobina = response.body.atributos[0]["NIVEL_HEMOGLOBINA"];
+                    this.presenta_anema = response.body.atributos[0]["PRESENTA_ANEMA"];
+                    this.peso = response.body.atributos[0]["PESO"];
+                    this.talla = response.body.atributos[0]["TALLA"];
+                    this.estado_nutricional = response.body.atributos[0]["ESTADO_NUTRICIONAL"];
+                }
+             });
+
+        }
 
         
     }

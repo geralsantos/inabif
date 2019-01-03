@@ -93,7 +93,45 @@ Vue.component('pam-datos-salud-mental', {
                 }
              });
 
+        },mostrar_lista_residentes(){
+         
+            this.id_residente = null;
+            this.isLoading = true;
+                this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
+
+                    if( response.body.data != undefined){
+                        this.modal_lista = true;
+                        this.isLoading = false;
+                        this.pacientes = response.body.data;
+                    }else{
+                        swal("", "No existe ningún residente", "error")
+                    }
+                 });
+            
         },
+        elegir_residente(residente){
+
+            this.trastorno_disociales = null;
+            this.tipo_trastorno = null;
+
+
+            this.id_residente = residente.ID;
+            let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
+            let apellido = (residente.APELLIDO==undefined)?'':residente.APELLIDO;
+            this.nombre_residente=nombre + ' ' + apellido;
+            this.modal_lista = false;
+
+            this.$http.post('cargar_datos_residente?view',{tabla:'pam_salud_mental', residente_id:this.id_residente }).then(function(response){
+
+                if( response.body.atributos != undefined){
+
+                    this.trastorno_disociales = response.body.atributos[0]["TRASTORNO_DISOCIALES"];
+                    this.tipo_trastorno = response.body.atributos[0]["TIPO_TRASTORNO"];
+                                      
+                }
+             });
+
+        }
        
     }
   })
