@@ -693,7 +693,7 @@ $modulo_html .="</table>";
 	$upload_folder  = "/var/www/html/inabif/app/cargas/";
 
 	$nombre_archivo = $_FILES['archivo']['name'];
-	echo $tipo_archivo   = $_FILES['archivo']['type'];
+	$tipo_archivo   = $_FILES['archivo']['type'];
 	$tamano_archivo = $_FILES['archivo']['size'];
 	$tmp_archivo    = $_FILES['archivo']['tmp_name'];
 	$extension		= pathinfo($nombre_archivo, PATHINFO_EXTENSION);
@@ -703,7 +703,7 @@ $modulo_html .="</table>";
 	if (move_uploaded_file($tmp_archivo, $fichero_subido))
 	{
     $modelo = new modeloPortada();
-    $valores = array("centro_id"=>$_SESSION["usuario"][0]["ID_CENTRO"],"tipo_centro_id"=>$_SESSION["usuario"][0]["TIPO_CENTRO_ID"],"nombre"=>$nombre_archivo,"ruta"=>$fichero_subido,"tipo"=>$tipo_archivo,"tamano"=>$tamano_archivo);
+    $valores = array("centro_id"=>$_SESSION["usuario"][0]["ID_CENTRO"],"tipo_centro_id"=>$_SESSION["usuario"][0]["TIPO_CENTRO_ID"],"nombre"=>$nombre_archivo,"ruta"=>$fichero_subido,"tipo"=>$extension,"tamano"=>$tamano_archivo);
     $res = $modelo->insertData('archivos_adjuntados',$valores);
     if ($res)
     {
