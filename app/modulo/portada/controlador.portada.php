@@ -238,6 +238,18 @@ class portada extends App{
     
        }
     }
+    public function selectData(){
+      if( $_POST['tabla']){
+        $modelo = new modeloPortada();
+      
+        $res = $modelo->selectData( $_POST["tabla"],$_POST["where"] );
+        if ($res) {
+          echo json_encode(array( "data"=>$res )) ;
+        }else{
+          return false;
+        }
+       }
+    }
     public function buscar_departamentos(){
       if( $_POST['tabla']){
         $modelo = new modeloPortada();

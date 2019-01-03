@@ -62,15 +62,25 @@ Vue.component('registro-perfiles', {
                     valores.tipo_centro_id = null;
                 }
                 if (this.id_usuario==null) {
-                    this.$http.post('insertar_datos?view',{tabla:'usuarios', valores:valores}).then(function(response){
+                    let where = {usuario:this.usuario};
+                    this.$http.post('selectData?view',{tabla:'usuarios', where:where}).then(function(response){
 
                         if( response.body.resultado ){
-                            swal('', 'Registro Guardado', 'success');
-                            this.listar_usuarios();
+                            swal('', 'El usuario ya existe', 'error');
                         }else{
-                          swal("", "Un error ha ocurrido", "error");
+                            this.$http.post('insertar_datos?view',{tabla:'usuarios', valores:valores}).then(function(response){
+
+                                if( response.body.resultado ){
+                                    swal('', 'Registro Guardado', 'success');
+                                    this.listar_usuarios();
+                                    showModal = false;
+                                }else{
+                                  swal("", "Un error ha ocurrido", "error");
+                                }
+                            });
                         }
                     });
+
                 }else{
                     let where = {id:this.id_usuario};
                     this.$http.post('update_datos?view',{tabla:'usuarios', valores:valores,where:where}).then(function(response){
