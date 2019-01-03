@@ -74,22 +74,19 @@
                                 <div class=" "><label for="text-input" class=" form-control-label">Código de la Línea</label>
                                 <input type="text" v-model="Cod_Linea" name="Cod_Linea" placeholder="" class="form-control"> </div>
                             </div>
-                            <div class="form-group col-md-8">
-                                <div class=" "><label for="text-input" class=" form-control-label">Nombre de la Línea</label>
-                                <input type="text" v-model="Nom_Linea" name="Nom_Linea" placeholder="" class="form-control"> </div>
-                            </div>
-                            
-                        </div>
-                        <div class="row">
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Línea de Intervención</label>
                                 <input type="text" v-model="Linea_Intervencion" name="Linea_Intervencion" placeholder="" class="form-control"> </div>
                             </div>
-                            <div class="form-group col-md-3">
+
+                        </div>
+                        <div class="row">
+
+                            <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Código del Servicio</label>
                                 <input type="text" v-model="Cod_Servicio" name="Cod_Servicio" placeholder="" class="form-control"> </div>
                             </div>
-                            <div class="form-group col-md-5">
+                            <div class="form-group col-md-8">
                                 <div class=" "><label for="text-input" class=" form-control-label">Nombre del Servicio</label>
                                 <input type="text" v-model="NomC_Servicio" name="NomC_Servicio" placeholder="" class="form-control"> </div>
                             </div>
@@ -174,9 +171,9 @@
                                                 <td>{{residente.NOMBRE}} {{residente.APELLIDO}}</td>
                                                 <td>{{residente.DOCUMENTO}}</td>
                                                 <td><button class="btn btn-primary" @click="elegir_residente(residente)">Seleccionar</button></td>
-                                            
+
                                             </tr>
-                                        
+
                                         </tbody>
                                     </table>
                                 </div>
