@@ -520,7 +520,7 @@ class portada extends App{
   }
   public function descargar_reporte_matriz_rub(){
     $modelo = new modeloPortada();
-    $tipo_centro = $_SESSION["usuario"][0]["Tsexo WHEN 'h' THEN 'Hombre' ELSE 'Mujer' ENDI as sexo_residentePO_CENTRO_ID"];
+    $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
     $residente_id = $_POST["residente_id"];
     $fecha = " BETWEEN UPPER('".$_POST["fecha_inicial"]."') AND UPPER('".$_POST["fecha_final"]."')";
    
