@@ -649,7 +649,7 @@ $modulo_html .="</table>";
   public function adjuntar_archivo(Type $var = null)
   {
 	
-	$upload_folder  = '/var/www/html/inabif/';
+	echo $upload_folder  = '/var/www/html/inabif/';
 	
 	$nombre_archivo = $_FILES['archivo']['name'];
 	$tipo_archivo   = $_FILES['archivo']['type'];
@@ -657,7 +657,8 @@ $modulo_html .="</table>";
 	$tmp_archivo    = $_FILES['archivo']['tmp_name'];
 	$extension		= pathinfo($nombre_archivo, PATHINFO_EXTENSION);
 	$result=[];
-	$fichero_subido = $upload_folder . basename($nombre_archivo);
+  echo $fichero_subido = $upload_folder . basename($nombre_archivo);
+  
 	if (move_uploaded_file($tmp_archivo, $fichero_subido))
 	{
 		echo "subido";
