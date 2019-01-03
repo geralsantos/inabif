@@ -72,7 +72,7 @@
                                 <div class=" "><label for="text-input" class=" form-control-label">Tipo de Documento</label>
                                 <select name="tipo_documento_entidad" v-model="tipo_documento_entidad" class="form-control">
                                 <option value="Dni">Dni</option>
-                                <option value="Carnét de extranjería">Carnét de extranjería</option>
+                                <option value="Carnet de extranjería">Carnet de extranjería</option>
                                 <option value="Pasaporte">Pasaporte</option>
                                 </select>
                                 </div>
@@ -82,7 +82,7 @@
                                 <input type="text" v-model="numero_documento_ingreso" name="numero_documento_ingreso" placeholder="" class="form-control"> </div>
                             </div>
                             <div class="form-group col-md-3">
-                                <div class=" "><label for="text-input" class=" form-control-label">Saber Leer y Escribir</label>
+                                <div class=" "><label for="text-input" class=" form-control-label">Sabe Leer y Escribir</label>
                                 <select name="leer_escribir" v-model="leer_escribir" class="form-control">
                                 <option value="Si">Si</option>
                                 <option value="No">No</option>
@@ -113,7 +113,6 @@
                                 <option value="ONP">ONP</option>
                                 <option value="AFP">AFP</option>
                                 <option value="Otros">Otros</option>
-                                <option value="No Pobre">No tiene</option>
                                 </select>
                                 </div>
                             </div>
