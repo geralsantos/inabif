@@ -649,7 +649,7 @@ $modulo_html .="</table>";
   public function adjuntar_archivo(Type $var = null)
   {
 	
-	echo $upload_folder  = '/var/www/html/inabif/';
+	$upload_folder  = '/var/www/html/inabif/app/cargas/';
 	
 	$nombre_archivo = $_FILES['archivo']['name'];
 	$tipo_archivo   = $_FILES['archivo']['type'];
