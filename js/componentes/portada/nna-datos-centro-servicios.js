@@ -1,7 +1,7 @@
 Vue.component('nna-datos-centro-servicios', {
     template: '#nna-datos-centro-servicios',
     data:()=>({
-       
+
         Cod_Entidad:null,
         Nom_Entidad:null,
         Cod_Linea:null,
@@ -19,7 +19,7 @@ Vue.component('nna-datos-centro-servicios', {
         departamentos:[],
         provincias:[],
         distritos:[],
-  
+
         nombre_residente:null,
         isLoading:false,
         mes:moment().format("M"),
@@ -33,12 +33,13 @@ Vue.component('nna-datos-centro-servicios', {
     created:function(){
     },
     mounted:function(){
+        this.buscar_centro();
         this.buscar_departamentos();
     },
     updated:function(){
     },
     watch:{
-        Departamento_Centro:function(val){ 
+        Departamento_Centro:function(val){
             this.buscar_provincias();
         }
     },
@@ -49,7 +50,7 @@ Vue.component('nna-datos-centro-servicios', {
                 return false;
             }
             let valores = {
-           
+
                 Cod_Entidad:this.Cod_Entidad,
                 Nom_Entidad:this.Nom_Entidad,
                 Cod_Linea:this.Cod_Linea,
@@ -65,13 +66,13 @@ Vue.component('nna-datos-centro-servicios', {
                 CodigoC_Atencion :this.CodigoC_Atencion,
                 NomC_Atencion :this.NomC_Atencion,
                 Fecha_Registro :moment().format("YY-MMM-DD"),
-       
+
                 Residente_Id: this.id_residente,
                 Periodo_Mes: moment().format("MM"),
                 Periodo_Anio:moment().format("YYYY")
 
             }
-                
+
             this.$http.post('insertar_datos?view',{tabla:'NNACentroServicios', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
@@ -144,7 +145,7 @@ let apellido = apellido_p + ' ' + apellido_m;
             this.$http.post('buscar_departamentos?view',{tabla:'ubigeo'}).then(function(response){
                 if( response.body.data ){
                     this.departamentos= response.body.data;
-                    
+
                 }
 
             });
@@ -167,7 +168,7 @@ let apellido = apellido_p + ' ' + apellido_m;
             });
         },
         mostrar_lista_residentes(){
-         
+
             this.id_residente = null;
             this.isLoading = true;
                 this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
@@ -180,7 +181,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                         swal("", "No existe ningún residente", "error")
                     }
                  });
-            
+
         },
         elegir_residente(residente){
 
@@ -226,7 +227,29 @@ let apellido = apellido_p + ' ' + apellido_m;
                 }
              });
 
-        }
-        
+        },
+        buscar_centro(){
+            this.$http.post('buscar_centro?view',{tabla:'centro_atencion' }).then(function(response){
+
+                if( response.body.atributos != undefined){
+                    console.log(response.body.atributos[0])
+                   /*  this.Cod_Entidad = response.body.atributos[0]["COD_ENTIDAD"];
+                    this.Nom_Entidad = response.body.atributos[0]["NOM_ENTIDAD"];
+                    this.Cod_Linea = response.body.atributos[0]["COD_LINEA"];
+                    this.Nom_Linea = response.body.atributos[0]["NOM_LINEA"];
+                    this.Linea_Intervencion = response.body.atributos[0]["LINEA_INTERVENCION"];
+                    this.Cod_Servicio = response.body.atributos[0]["COD_SERVICIO"];
+                    this.NomC_Servicio = response.body.atributos[0]["NOMC_SERVICIO"];
+                    this.Departamento_Centro = response.body.atributos[0]["DEPARTAMENTO_CENTRO"];
+                    this.Provincia_centro = response.body.atributos[0]["PROVINCIA_CENTRO"];
+                    this.Distrito_centro = response.body.atributos[0]["DISTRITO_CENTRO"];
+                    this.Area_Residencia = response.body.atributos[0]["AREA_RESIDENCIA"];
+                    this.CodigoC_Atencion = response.body.atributos[0]["CODIGOC_ATENCION"];
+                    this.NomC_Atencion = response.body.atributos[0]["NOMC_ATENCION"]; */
+
+                }
+             });
+        },
+
     }
   })

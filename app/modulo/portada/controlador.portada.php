@@ -37,7 +37,7 @@ class portada extends App{
               }
               $branch[] = $element;
           }
-          
+
       }
       return $branch;
   }
@@ -48,19 +48,19 @@ class portada extends App{
     foreach ($elements as $element)
     {
       /*<a href="#node11" class="list-group-item level-0" data-toggle="collapse"
-    aria-expanded="true" id="gardening">Gardening 
+    aria-expanded="true" id="gardening">Gardening
         <i class="fa fa-caret-down"></i>
     </a>
     <div class="collapse" id="node11">
-        <a href="#node13" class="list-group-item level-1" data-toggle="collapse" id="lawn-chemicals">Lawn Chemicals 
+        <a href="#node13" class="list-group-item level-1" data-toggle="collapse" id="lawn-chemicals">Lawn Chemicals
         <i class="fa fa-caret-down"></i>
         </a>
         <div class="collapse" id="node13">
             <a href="gardening/lawn-chemicals/moss-control/" class="list-group-item level-2" id="moss-control">Moss Control</a>
         </div>
-    </div>*/ 
+    </div>*/
     $li = $li  . (isset($element['children']) ? ('
-    <a href="#node'.$element['ID'].'" class="list-group-item level-0" data-toggle="collapse" aria-expanded="true" id="gardening">'.$element['NOMBRE'].' 
+    <a href="#node'.$element['ID'].'" class="list-group-item level-0" data-toggle="collapse" aria-expanded="true" id="gardening">'.$element['NOMBRE'].'
         <i class="fa fa-caret-down"></i>
     </a>
     <div class="collapse" id="node'.$element['ID'].'">
@@ -138,7 +138,7 @@ class portada extends App{
         $_POST['valores']['Usuario_Crea'] =$_SESSION["usuario"][0]["ID"];
         $_POST['valores']['Usuario_Edita'] =$_SESSION["usuario"][0]["ID"];
         //aqui tu ejecutas la consulta
-        
+
         $res = $modelo->insertData( $_POST['tabla'],$_POST["valores"],$lastid[0]["NEXTVAL"]);
         if ($res) {
           if ($lastid) {
@@ -149,7 +149,7 @@ class portada extends App{
         }else{
           return false;
         }
-        
+
       }else{
         return false;
       }
@@ -158,11 +158,11 @@ class portada extends App{
 
       if( $_POST['tabla'] && $_POST['valores'] ){
         $modelo = new modeloPortada();
-        
+
         $_POST['valores']['Estado'] = 1;
         $_POST['valores']['Usuario_Crea'] =$_SESSION["usuario"][0]["ID"];
         $_POST['valores']['Usuario_Edita'] =$_SESSION["usuario"][0]["ID"];
-        
+
         $res = $modelo->updateData( $_POST['tabla'],$_POST["valores"],$_POST["where"]);
         if ($res) {
             echo json_encode(array("resultado"=>true )) ;
@@ -197,7 +197,7 @@ class portada extends App{
         }else{
           return false;
         }
-    
+
        }
 	}
 	public function ejecutar_consulta_lista(){
@@ -220,7 +220,7 @@ class portada extends App{
         }else{
           return false;
         }
-    
+
        }
     }
     public function buscar(){
@@ -235,13 +235,13 @@ class portada extends App{
         }else{
           return false;
         }
-    
+
        }
     }
     public function selectData(){
       if( $_POST['tabla']){
         $modelo = new modeloPortada();
-      
+
         $res = $modelo->selectData( $_POST["tabla"],$_POST["where"] );
         if ($res) {
           echo json_encode(array( "data"=>$res )) ;
@@ -252,7 +252,7 @@ class portada extends App{
     }
     public function buscar_entidad(){
       if( $_POST['tabla']){
-      
+
         $modelo = new modeloPortada();
         $sql = "SELECT * FROM (SELECT * FROM ".strtoupper($_POST["tabla"])." WHERE tipo_centro_id = ".$_POST["tipo_centro_id"]." AND ESTADO=1 order by Id desc) WHERE ROWNUM=1";
         $res = $modelo->executeQuery( $sql );
@@ -273,7 +273,7 @@ class portada extends App{
         }else{
           return false;
         }
-    
+
        }
     }
     public function buscar_provincia(){
@@ -286,7 +286,7 @@ class portada extends App{
         }else{
           return false;
         }
-    
+
        }
     }
     public function buscar_distritos(){
@@ -299,7 +299,7 @@ class portada extends App{
         }else{
           return false;
         }
-    
+
        }
     }
     public function traer_datos_usuario(){
@@ -317,36 +317,36 @@ class portada extends App{
         if ($_SESSION["usuario"][0]["NIVEL"]=="5") { //responsable de la información
           $sql = "select distinct ca.id as id_centro,ca.NOM_CA as nombre_centro,cad.estado_completo,cad.fecha_cierre   from centro_atencion ca
           left join centro_atencion_detalle cad on (cad.centro_id=ca.id)
-          left join tipo_centro tc on (ca.tipo_centro_id=tc.id) 
+          left join tipo_centro tc on (ca.tipo_centro_id=tc.id)
           where ca.id=".$_SESSION["usuario"][0]["CENTRO_ID"]." and ca.estado = 1";
         }else if($_SESSION["usuario"][0]["NIVEL"]=="2") //supervisor
         {
-          $sql = "select distinct ca.id as id_centro,ca.NOM_CA as nombre_centro,cad.estado_completo,cad.fecha_cierre  from centro_atencion ca 
-          left join centro_atencion_detalle cad on (cad.centro_id=ca.id) 
-          left join tipo_centro tc on (ca.tipo_centro_id=tc.id) 
+          $sql = "select distinct ca.id as id_centro,ca.NOM_CA as nombre_centro,cad.estado_completo,cad.fecha_cierre  from centro_atencion ca
+          left join centro_atencion_detalle cad on (cad.centro_id=ca.id)
+          left join tipo_centro tc on (ca.tipo_centro_id=tc.id)
           where tc.id=".$_SESSION["usuario"][0]["TIPO_CENTRO_ID"]." and ca.estado = 1";
-        }else if($_SESSION["usuario"][0]["NIVEL"]=="3") //USER_SEDE_GESTIÓN 
+        }else if($_SESSION["usuario"][0]["NIVEL"]=="3") //USER_SEDE_GESTIÓN
         {
-          $sql = "select distinct ca.id as id_centro,ca.NOM_CA as nombre_centro,cad.estado_completo,cad.fecha_cierre  from centro_atencion ca 
-          left join centro_atencion_detalle cad on (cad.centro_id=ca.id) 
-          left join tipo_centro tc on (ca.tipo_centro_id=tc.id) 
+          $sql = "select distinct ca.id as id_centro,ca.NOM_CA as nombre_centro,cad.estado_completo,cad.fecha_cierre  from centro_atencion ca
+          left join centro_atencion_detalle cad on (cad.centro_id=ca.id)
+          left join tipo_centro tc on (ca.tipo_centro_id=tc.id)
           where tc.id=".$_SESSION["usuario"][0]["TIPO_CENTRO_ID"]." and ca.estado = 1 ";
         }else if($_SESSION["usuario"][0]["NIVEL"]=="1") //ADMIN_CENTRAL
         {
-          $sql = "select distinct ca.id as id_centro,ca.NOM_CA as nombre_centro,cad.estado_completo,cad.fecha_cierre  from centro_atencion ca 
-          left join centro_atencion_detalle cad on (cad.centro_id=ca.id) 
-          left join tipo_centro tc on (ca.tipo_centro_id=tc.id) 
+          $sql = "select distinct ca.id as id_centro,ca.NOM_CA as nombre_centro,cad.estado_completo,cad.fecha_cierre  from centro_atencion ca
+          left join centro_atencion_detalle cad on (cad.centro_id=ca.id)
+          left join tipo_centro tc on (ca.tipo_centro_id=tc.id)
           where ca.estado = 1 ";
 		}else if($_SESSION["usuario"][0]["NIVEL"]=="4") //USER_SEDE
         {
-          $sql = "select distinct ca.id as id_centro,ca.NOM_CA as nombre_centro,cad.estado_completo,cad.fecha_cierre  from centro_atencion ca 
-          left join centro_atencion_detalle cad on (cad.centro_id=ca.id) 
-          left join tipo_centro tc on (ca.tipo_centro_id=tc.id) 
+          $sql = "select distinct ca.id as id_centro,ca.NOM_CA as nombre_centro,cad.estado_completo,cad.fecha_cierre  from centro_atencion ca
+          left join centro_atencion_detalle cad on (cad.centro_id=ca.id)
+          left join tipo_centro tc on (ca.tipo_centro_id=tc.id)
           where tc.id=".$_SESSION["usuario"][0]["TIPO_CENTRO_ID"]." and ca.estado = 1 ";
         }
-		
+
         $res = $modelo->executeQuery($sql );
-        if ($res) 
+        if ($res)
         {
           echo json_encode(array("data"=>$res) ) ;
         }else{
@@ -358,7 +358,7 @@ class portada extends App{
       $sql = "";
       $res = $modelo->insertData("centro_atencion_detalle",array("centro_id"=>$_POST["id_centro"],"estado_completo"=>1,"usuario_crea"=>$_SESSION["usuario"][0]["ID"],"usuario_edita"=>$_SESSION["usuario"][0]["ID"] ));
 
-      if ($res) 
+      if ($res)
       {
         echo json_encode(array("resultado"=>true) ) ;
       }else{
@@ -370,7 +370,7 @@ class portada extends App{
     $sql = "";
     $res = $modelo->insertData("modulos_detalle",array("modulo_id"=>$_POST["id_modulo"],"estado_completo"=>1,"Periodo_Mes"=>date("m"),"Periodo_Anio"=>date("Y"),"usuario_crea"=>$_SESSION["usuario"][0]["ID"],"usuario_edita"=>$_SESSION["usuario"][0]["ID"] ));
 
-    if ($res) 
+    if ($res)
     {
       echo json_encode(array("resultado"=>true) ) ;
     }else{
@@ -382,7 +382,7 @@ class portada extends App{
     $sql = "";
     $res = $modelo->insertData("centro_atencion_detalle",array("centro_id"=>$_POST["id_centro"],"estado_completo"=>1,"fecha_matriz"=>date("y-M-t"),"usuario_crea"=>$_SESSION["usuario"][0]["ID"],"usuario_edita"=>$_SESSION["usuario"][0]["ID"] ));
 
-    if ($res) 
+    if ($res)
     {
       echo json_encode(array("resultado"=>true) ) ;
     }else{
@@ -392,14 +392,14 @@ class portada extends App{
   public function buscar_grupos(){
     $modelo = new modeloPortada();
     $id_centro = $_POST["id_centro"];
-      $sql = "select distinct m.nombre as modulo_nombre,m.id as id_modulo, m.encargado_id,usu.nombre as encargado_nombre, md.estado_completo,md.fecha_edicion,m.nombre_tabla from modulos m 
-      left join modulos_detalle md on (md.modulo_id=m.Id) 
-      left join usuarios usu on (usu.id = m.encargado_id) 
-      left join centro_atencion ca on (ca.tipo_centro_id=m.centro_id) 
+      $sql = "select distinct m.nombre as modulo_nombre,m.id as id_modulo, m.encargado_id,usu.nombre as encargado_nombre, md.estado_completo,md.fecha_edicion,m.nombre_tabla from modulos m
+      left join modulos_detalle md on (md.modulo_id=m.Id)
+      left join usuarios usu on (usu.id = m.encargado_id)
+      left join centro_atencion ca on (ca.tipo_centro_id=m.centro_id)
       where ca.id = ".$id_centro." order by m.id desc";
 
     $res = $modelo->executeQuery($sql );
-    if ($res) 
+    if ($res)
     {
       echo json_encode(array("data"=>$res) ) ;
     }else{
@@ -412,7 +412,7 @@ class portada extends App{
     $sql = "select * from ".$nombre_tabla." where  to_char(fecha_creacion, 'DD-MON') =UPPER('".date("y-M")."')";
 
     $res = $modelo->executeQuery($sql );
-    if ($res) 
+    if ($res)
     {
       echo json_encode(array("data"=>$res) ) ;
     }else{
@@ -424,7 +424,7 @@ class portada extends App{
     $sql = "select usu.*,nu.nombre as nivel_nombre from usuarios usu left join niveles_usuarios nu on (usu.nivel=nu.id)";
 
     $res = $modelo->executeQuery($sql );
-    if ($res) 
+    if ($res)
     {
       echo json_encode(array("data"=>$res) ) ;
     }else{
@@ -444,7 +444,7 @@ class portada extends App{
 	}
     $periodo = $_POST["periodo"];
     if ($periodo=="mensual") {
-      $fecha = " = UPPER('".date("y-M")."') "; 
+      $fecha = " = UPPER('".date("y-M")."') ";
     }else {
       if (floatval(date("m")) <= 6 ) {
         $semestral = "'".date("y")."-JAN' AND '".date("y")."-JUN'";
@@ -453,26 +453,26 @@ class portada extends App{
       }
       $fecha = " BETWEEN $semestral ";
     }
-    $matrices = "select ca.nom_ca as nombre_centro, cad.fecha_matriz, cad.ID  from centro_atencion_detalle cad 
+    $matrices = "select ca.nom_ca as nombre_centro, cad.fecha_matriz, cad.ID  from centro_atencion_detalle cad
       left join centro_atencion ca on(ca.id=cad.centro_id)  where ".$where." and to_char(cad.fecha_matriz,'DD-MON') ".$fecha." order by cad.id desc";
     $matrices = $modelo->executeQuery($matrices);
 
-    if ($matrices) 
+    if ($matrices)
     {
       echo json_encode(array("data"=>$matrices) ) ;
     }else{
       return false;
     }
   }
-  
+
   public function descargar_reporte_matriz_general(){
     $modelo = new modeloPortada();
     $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
     $periodo = $_POST["periodo"];
     $matriz_id = $_POST["matriz_id"];
-    
+
     if ($periodo=="mensual") {
-      $fecha = " md.periodo_mes = ".date("m")." "; 
+      $fecha = " md.periodo_mes = ".date("m")." ";
     }else {
       if (floatval(date("m")) <= 6 ) {
         $semestral = " md.periodo_mes >= 1 AND md.periodo_mes <= 6 ";
@@ -484,44 +484,44 @@ class portada extends App{
     $centro_html = "<table>";
     $centro_html .="<tr><th>Nombre del Centro</th><th>Tipo de Centro</th><th>Fecha Matriz </th></tr>";
 
-    $centros = "select distinct ca.nom_ca as nombre_centro,ca.tipo_centro_id,tc.nombre as nombre_tipo_centro,cad.fecha_matriz from centro_atencion_detalle cad 
-    left join centro_atencion ca on(ca.id=cad.centro_id) 
-    left join tipo_centro tc on(ca.tipo_centro_id=tc.id) 
+    $centros = "select distinct ca.nom_ca as nombre_centro,ca.tipo_centro_id,tc.nombre as nombre_tipo_centro,cad.fecha_matriz from centro_atencion_detalle cad
+    left join centro_atencion ca on(ca.id=cad.centro_id)
+    left join tipo_centro tc on(ca.tipo_centro_id=tc.id)
       where cad.id = ".$matriz_id."  order by cad.id desc";
     $centros = $modelo->executeQuery($centros);
 
     $centro_html .="<tr><th>".$centros[0]["NOMBRE_CENTRO"]."</th><th>".$centros[0]["NOMBRE_TIPO_CENTRO"]."</th><th>".$centros[0]["FECHA_MATRIZ"]."</th></tr></table>";
-    
+
     $modulo_html = "<table>";
-    $modulos = "select m.parent_id,m.nombre as nombre_modulo,usu.nombre as nombre_usuario,md.periodo_mes,m.nombre_tabla from modulos_detalle md 
-    left join modulos m on(m.id=md.modulo_id) 
-    left join usuarios usu on(usu.id=m.encargado_id) 
+    $modulos = "select m.parent_id,m.nombre as nombre_modulo,usu.nombre as nombre_usuario,md.periodo_mes,m.nombre_tabla from modulos_detalle md
+    left join modulos m on(m.id=md.modulo_id)
+    left join usuarios usu on(usu.id=m.encargado_id)
       where m.centro_id in (".$centros[0]["TIPO_CENTRO_ID"].") and ".$fecha." and md.periodo_anio = ".date("Y")." order by md.id desc";
     $modulos = $modelo->executeQuery($modulos);
-    
-    foreach ($modulos as $key => $modulo) 
+
+    foreach ($modulos as $key => $modulo)
     {
 		if (($modulo["NOMBRE_TABLA"])!="") {
 			$modulo_html .="<tr><th></th><th>Nombre del Modulo</th><th>Encargado</th><th>Periodo Mes</th></tr>";
 			$modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td><td>".$modulo["NOMBRE_USUARIO"]."</td><td>".$modulo["PERIODO_MES"]."</td></tr>";
-				
+
 			$grupos = "select distinct * from ".$modulo["NOMBRE_TABLA"]." order by id desc";
 			$grupos = $modelo->executeQuery($grupos);
 
 			$grupo_html = "<table>";
-			foreach ($grupos as $key => $grupo) 
+			foreach ($grupos as $key => $grupo)
 			{
 				if ($key==0) {
 				$keys = array_keys($grupo);
 				$grupo_html .="<tr><th></th>";
-				foreach ($keys as $key) 
+				foreach ($keys as $key)
 				{
 					$grupo_html .="<th>$key</th>";
 				}
 				$grupo_html .="</tr>";
 				}
 				$grupo_values = array_values($grupo);
-				
+
 				$grupo_html .= "<tr><td></td>";
 				foreach ($grupo_values as $key => $value) {
 				$grupo_html .="<td>".$value."</td>";
@@ -534,7 +534,7 @@ class portada extends App{
 $modulo_html .="</table>";
     $table = '<table><tr><td>'.$centro_html.'</td></tr><tr><td>'.$modulo_html.'</td></tr></table>';
 
-    if ($modulos) 
+    if ($modulos)
     {
       echo json_encode(array("data"=>$table) ) ;
     }else{
@@ -545,13 +545,13 @@ $modulo_html .="</table>";
     $modelo = new modeloPortada();
     $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
     $fecha = " BETWEEN UPPER('".$_POST["fecha_inicial"]."') AND UPPER('".$_POST["fecha_final"]."')";
-    
-    $residentes = "select  re.nombre as nombre_residente,re.apellido_p,re.apellido_m,re.fecha_creacion as fecha from residente re 
-	  inner join tipo_centro tc on(tc.id=re.tipo_centro_id) 
+
+    $residentes = "select  re.nombre as nombre_residente,re.apellido_p,re.apellido_m,re.fecha_creacion as fecha from residente re
+	  inner join tipo_centro tc on(tc.id=re.tipo_centro_id)
 	  where to_char(re.fecha_creacion,'DD-MON-YY') ".$fecha." order by re.id desc";
     $residentes = $modelo->executeQuery($residentes);
 
-    if ($residentes) 
+    if ($residentes)
     {
       echo json_encode(array("data"=>$residentes) ) ;
     }else{
@@ -569,11 +569,11 @@ $modulo_html .="</table>";
 		$filtro_centro = " ca.id=".$_SESSION["usuario"][0]["CENTRO_ID"];
 	}
     $fecha = " BETWEEN UPPER('".$_POST["fecha_inicial"]."') AND UPPER('".$_POST["fecha_final"]."')";
-	$residentes = "select distinct re.id, re.nombre as nombre_residente, re.apellido_p, re.apellido_m, pa.nombre as nombre_pais , ubi.NOMDEPT as nombre_departamento, ubi.nomprov as nombre_provincia, ubi.nomdist as nombre_distrito, (CASE sexo WHEN 'h' THEN 'Hombre' ELSE 'Mujer' END) as sexo_residente ,re.fecha_creacion as fecha from residente re 
-	inner join tipo_centro tc on(tc.id=re.tipo_centro_id) 
+	$residentes = "select distinct re.id, re.nombre as nombre_residente, re.apellido_p, re.apellido_m, pa.nombre as nombre_pais , ubi.NOMDEPT as nombre_departamento, ubi.nomprov as nombre_provincia, ubi.nomdist as nombre_distrito, (CASE sexo WHEN 'h' THEN 'Hombre' ELSE 'Mujer' END) as sexo_residente ,re.fecha_creacion as fecha from residente re
+	inner join tipo_centro tc on(tc.id=re.tipo_centro_id)
 	".$innner_centro_atencion."
-	inner join paises pa on(pa.id=re.pais_id) 
-	inner join ubigeo ubi on(ubi.coddist=re.distrito_naci_cod) 
+	inner join paises pa on(pa.id=re.pais_id)
+	inner join ubigeo ubi on(ubi.coddist=re.distrito_naci_cod)
 	where to_char(re.fecha_creacion,'DD-MON-YY') ".$fecha." AND ".$filtro_centro." ";
 	$residentes = $modelo->executeQuery($residentes);
 	$residente_html = "";
@@ -582,7 +582,7 @@ $modulo_html .="</table>";
 	}
     $table = '<table><thead><tr><th>Nombre del Residente</th><th>Apellido Paterno</th><th>Apellido Materno</th><th>País</th><th>Departamento Nacimiento</th><th>Provincia Nacimiento</th><th>Distrito Nacimiento</th><th>Sexo</th><th>Fecha Registro</th></tr></thead><tbody>'.$residente_html.'</tbody></table>';
 
-    if ($residentes) 
+    if ($residentes)
     {
       echo json_encode(array("data"=>$table) ) ;
     }else{
@@ -593,13 +593,13 @@ $modulo_html .="</table>";
     $modelo = new modeloPortada();
     $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
     $id_residente = $_POST["id_residente"];
-    
-    $residente = "select distinct re.nombre as nombre_residente,tc.id as tipo_centro_id from residente re 
-	inner join tipo_centro tc on(tc.id=re.tipo_centro_id) 
+
+    $residente = "select distinct re.nombre as nombre_residente,tc.id as tipo_centro_id from residente re
+	inner join tipo_centro tc on(tc.id=re.tipo_centro_id)
 	where re.id = ".$id_residente." order by re.id desc";
     $residente = $modelo->executeQuery($residente);
 
-    if ($residente) 
+    if ($residente)
     {
       echo json_encode(array("data"=>$residente) ) ;
     }else{
@@ -627,12 +627,12 @@ $modulo_html .="</table>";
 	}
 	$centro_html="";
     $modulo_html = "<table>";
-	$modulos = "select m.nombre as nombre_modulo,m.nombre_tabla 
-	from modulos m 
+	$modulos = "select m.nombre as nombre_modulo,m.nombre_tabla
+	from modulos m
     where m.centro_id in (".$tipo_centro_id.") and m.parent_id  in (".$parent_id.") order by m.id desc";
     $modulos = $modelo->executeQuery($modulos);
-    
-    foreach ($modulos as $key => $modulo) 
+
+    foreach ($modulos as $key => $modulo)
     {
 		$modulo_html .="<tr><th></th><th>Nombre del Modulo</th></tr>";
 		$modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td></tr>";
@@ -641,19 +641,19 @@ $modulo_html .="</table>";
 		$grupos = $modelo->executeQuery($grupos);
 
 		$grupo_html = "<table>";
-      foreach ($grupos as $key => $grupo) 
+      foreach ($grupos as $key => $grupo)
       {
         if ($key==0) {
           $keys = array_keys($grupo);
           $grupo_html .="<tr><th></th>";
-          foreach ($keys as $key) 
+          foreach ($keys as $key)
           {
             $grupo_html .="<th>$key</th>";
           }
           $grupo_html .="</tr>";
         }
 		$grupo_values = array_values($grupo);
-		
+
         $grupo_html .= "<tr><td></td>";
         foreach ($grupo_values as $key => $value) {
           $grupo_html .="<td>".$value."</td>";
@@ -665,7 +665,7 @@ $modulo_html .="</table>";
     $modulo_html .="</table>";
     $table = '<table><tr><td>'.$centro_html.'</td></tr><tr><td>'.$modulo_html.'</td></tr></table>';
 
-    if ($modulos) 
+    if ($modulos)
     {
       echo json_encode(array("data"=>$table) ) ;
     }else{
@@ -674,9 +674,9 @@ $modulo_html .="</table>";
   }
   public function adjuntar_archivo(Type $var = null)
   {
-	
+
 	$upload_folder  = "/var/www/html/inabif/app/cargas/";
-	 
+
 	$nombre_archivo = $_FILES['archivo']['name'];
 	$tipo_archivo   = $_FILES['archivo']['type'];
 	$tamano_archivo = $_FILES['archivo']['size'];
@@ -684,7 +684,7 @@ $modulo_html .="</table>";
 	$extension		= pathinfo($nombre_archivo, PATHINFO_EXTENSION);
 	$result=[];
   echo $fichero_subido = $upload_folder . basename($nombre_archivo);
-  
+
 	if (move_uploaded_file($tmp_archivo, $fichero_subido))
 	{
 		echo "subido";
