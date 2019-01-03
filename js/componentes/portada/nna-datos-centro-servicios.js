@@ -137,22 +137,22 @@ Vue.component('nna-datos-centro-servicios', {
 
                 if( response.body.data != undefined){
 
-                    let ubigeo =  response.body.atributos[0]["UBIGEO"];
+                    let ubigeo =  response.body.data[0]["UBIGEO"];
                     let departamento = ubigeo.substring(0, 2);
                     let provincia = ubigeo.substring(0, 4);
                     let distrito= ubigeo.substring(0, 6) ;
-                    this.Cod_Entidad = response.body.atributos[0]["CODIGO_ENTIDAD"];
-                    this.Nom_Entidad = response.body.atributos[0]["NOMBRE_ENTIDAD"];
-                    this.Cod_Linea = response.body.atributos[0]["CODIGO_LINEA"];
-                    this.Linea_Intervencion = response.body.atributos[0]["LINEA_INTERVENCION"];
-                    this.Cod_Servicio = response.body.atributos[0]["COD_SERV"];
-                    this.NomC_Servicio = response.body.atributos[0]["NOM_SERV"];
+                    this.Cod_Entidad = response.body.data[0]["CODIGO_ENTIDAD"];
+                    this.Nom_Entidad = response.body.data[0]["NOMBRE_ENTIDAD"];
+                    this.Cod_Linea = response.body.data[0]["CODIGO_LINEA"];
+                    this.Linea_Intervencion = response.body.data[0]["LINEA_INTERVENCION"];
+                    this.Cod_Servicio = response.body.data[0]["COD_SERV"];
+                    this.NomC_Servicio = response.body.data[0]["NOM_SERV"];
                     this.Departamento_Centro = departamento;
                     this.Provincia_centro =provincia;
                     this.Distrito_centro = distrito;
-                    this.Area_Residencia = response.body.atributos[0]["AREA_RESIDENCIA"];
-                    this.CodigoC_Atencion = response.body.atributos[0]["COD_CA"];
-                    this.NomC_Atencion = response.body.atributos[0]["NOM_CA"];
+                    this.Area_Residencia = response.body.data[0]["AREA_RESIDENCIA"];
+                    this.CodigoC_Atencion = response.body.data[0]["COD_CA"];
+                    this.NomC_Atencion = response.body.data[0]["NOM_CA"];
 
                 }
              });
