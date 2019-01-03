@@ -649,8 +649,8 @@ $modulo_html .="</table>";
   public function adjuntar_archivo(Type $var = null)
   {
 	
-	$upload_folder  = '/var/www/html/inabif/app/cargas/';
-	
+	$upload_folder  = dirname(__FILE__)."/";
+	 
 	$nombre_archivo = $_FILES['archivo']['name'];
 	$tipo_archivo   = $_FILES['archivo']['type'];
 	$tamano_archivo = $_FILES['archivo']['size'];
