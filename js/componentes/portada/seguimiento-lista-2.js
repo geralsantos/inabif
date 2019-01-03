@@ -83,7 +83,9 @@ Vue.component('seguimiento-lista-2', {
         },
         actualizar(coincidencia){
             this.id_residente = coincidencia.ID;
-            this.nombre_residente=coincidencia.NOMBRE;
+            let nombre=(coincidencia.NOMBRE==undefined)?'':coincidencia.NOMBRE;
+let apellido = (coincidencia.APELLIDO==undefined)?'':coincidencia.APELLIDO;
+ this.nombre_residente=nombre + ' ' + apellido;
             this.coincidencias = [];
             this.bloque_busqueda = false;
 
