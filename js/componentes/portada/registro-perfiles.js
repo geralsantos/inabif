@@ -135,6 +135,7 @@ Vue.component('registro-perfiles', {
                     this.nivel_id =usuario.NIVEL,
                     this.usuario=usuario.USUARIO;
                     this.clave=usuario.CLAVE;
+                    this.cclave=usuario.CLAVE;
                     this.showModal = true;
               //});
             }
