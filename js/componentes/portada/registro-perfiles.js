@@ -31,7 +31,7 @@ Vue.component('registro-perfiles', {
     },
     methods:{
         guardar(){
-            alert(this.tipo_centro);returnfalse;
+            
             /*if (this.id_residente==null) {
                 swal('Error', 'Residente no existe', 'warning');
                 return false;
@@ -138,6 +138,13 @@ Vue.component('registro-perfiles', {
                     this.clave=usuario.CLAVE;
                     this.cclave=usuario.CLAVE;
                     this.showModal = true;
+                    
+
+                    if(this.nivel_id==4 || this.nivel_id==2){
+                        this.mostrar = false; 
+                    }else{
+                        this.mostrar = true; 
+                    }
               //});
             }
            
