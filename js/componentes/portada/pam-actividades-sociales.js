@@ -95,10 +95,10 @@ Vue.component('pam-actividades-sociales', {
         actualizar(coincidencia){
             this.id_residente = coincidencia.ID;
             let nombre=(coincidencia.NOMBRE==undefined)?'':coincidencia.NOMBRE;
-let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
-let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
-let apellido = apellido_p + ' ' + apellido_m;
- this.nombre_residente=nombre + ' ' + apellido;
+            let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
+            let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
+            let apellido = apellido_p + ' ' + apellido_m;
+            this.nombre_residente=nombre + ' ' + apellido;
             this.coincidencias = [];
             this.bloque_busqueda = false;
 
@@ -153,7 +153,9 @@ let apellido = apellido_p + ' ' + apellido_m;
 
             this.id_residente = residente.ID;
             let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
-            let apellido = (residente.APELLIDO==undefined)?'':residente.APELLIDO;
+            let apellido_p = (residente.APELLIDO_P==undefined)?'':residente.APELLIDO_P;
+            let apellido_m = (residente.APELLIDO_M==undefined)?'':residente.APELLIDO_M;
+            let apellido = apellido_p + ' ' + apellido_m;
             this.nombre_residente=nombre + ' ' + apellido;
             this.modal_lista = false;
 
