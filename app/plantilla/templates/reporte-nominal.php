@@ -4,14 +4,14 @@
                     <div class="card">
                         <div class="card-header">
                             <strong>Reporte Nominal</strong>
-                       
+
                         </div>
                         <div class="card-body">
                             <div class="row form-group">
                                 <div class="form-group col-md-10">
                                     <label for="text-input" class=" form-control-label">Ingrese el nombre del residente</label>
                                     <div class="autocomplete">
-                                        <input type="text"  v-model="nombre_residente" class="form-control" @keyup="buscar_residente()" placeholder="Nombre, Apellido o DNI"/>
+                                        <input type="text"  v-model="nombre_residente" class="form-control campo_busqueda_residente" @keyup="buscar_residente()" placeholder="Nombre, Apellido o DNI"/>
                                         <ul  id="autocomplete-results" class="autocomplete-results" v-if="bloque_busqueda">
                                             <li class="loading" v-if="isLoading">
                                                 Loading results...
@@ -27,12 +27,12 @@
                                     <label for="text-input" class=" form-control-label"></label>
                                     <button @click="mostrar_lista_residentes()" class="btn btn-primary"><i class="fa fa fa-users"></i> Lista</button>
                                 </div>
-                                
+
                             </div>
-                            
+
                             <div class="row form-group">
                                 <div class="col-12 col-md-1">
-                                   
+
                                     <button @click="mostrar_reporte_nominal()" class="btn btn-default"><i class="fa fa-send"></i> Buscar</button>
                                 </div>
                             </div>
@@ -41,18 +41,18 @@
                                     <thead class="thead-dark text-center">
                                         <tr>
                                             <th scope="col">Nombre</th>
-                                 
+
                                             <th scope="col">Descargar</th>
                                         </tr>
                                     </thead>
                                     <tbody class="text-center">
                                         <tr v-for="residente in residentes">
                                             <td>{{residente.NOMBRE_RESIDENTE}}</td>
-                                     
+
                                             <td><button class="btn btn-success" @click="descargar_reporte_matriz_nominal(residente)">Descargar</button></td>
-                                        
+
                                         </tr>
-                                    
+
                                     </tbody>
                                 </table>
                             </div>
@@ -88,9 +88,9 @@
                                                     <td>{{residente.NOMBRE}} {{residente.APELLIDO}}</td>
                                                     <td>{{residente.DOCUMENTO}}</td>
                                                     <td><button class="btn btn-primary" @click="elegir_residente(residente)">Seleccionar</button></td>
-                                                
+
                                                 </tr>
-                                            
+
                                             </tbody>
                                         </table>
                                     </div>

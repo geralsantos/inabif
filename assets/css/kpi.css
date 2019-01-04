@@ -154,3 +154,6 @@ fieldset.legend-indicador {
     border-top-left-radius: 0rem !important;
     border-bottom-left-radius: 0rem !important;
 }
+.campo_busqueda_residente{
+    background-color: #bbedf7;
+}
