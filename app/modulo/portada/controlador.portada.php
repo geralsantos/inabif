@@ -397,7 +397,7 @@ class portada extends App{
           where tc.id=".$_SESSION["usuario"][0]["TIPO_CENTRO_ID"]." and ca.estado = 1 ";
         }
 
-        $res = $modelo->executeQuery($sql );
+        $res = $modelo->executeQuery($sql);
         if ($res)
         {
           echo json_encode(array("data"=>$res) ) ;
