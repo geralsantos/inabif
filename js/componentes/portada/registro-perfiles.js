@@ -41,6 +41,10 @@ Vue.component('registro-perfiles', {
                 swal('Error', 'Los campos de clave deben coincidir', 'warning');
                 return false;
             }
+            if ((this.DNI).length>8 || (this.DNI).length<8) {
+                swal('Error', 'El campo de DNI debe ser de 8 digitos', 'warning');
+                return false;
+            }
             let valores = {
                 Apellido: this.Apellido,
                 Nombre: this.Nombre,
