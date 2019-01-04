@@ -175,7 +175,7 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="text-input" class=" form-control-label">N° visitas familiar recibe cada NNA</label>
+                                <label for="text-input" class=" form-control-label">N° visitas familiar recibe cada mes</label>
                                 <input type="number" min="0"  v-model="Nro_VisitasNNA" name="Nro_VisitasNNA" value='5' placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-6">

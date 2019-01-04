@@ -7,19 +7,19 @@
                             <h6>Período: {{periodo}}</h6>
                         </div>
                         <div class="card-body">
-                           
+
                             <div class="table-responsive">
                                 <table class="table">
                                 <thead class="thead-dark text-center">
                                     <tr>
-                                    
+
                                         <th scope="col">Centro</th>
                                         <th scope="col">Completo</th>
                                         <th scope="col">Fecha Cierre</th>
                                         <th scope="col">Cerrado</th>
                                         <th scope="col">Ver</th>
-                                        <th scope="col" v-if="mostrar_completado">Opción</th>
-                                       
+                                        <th scope="col" v-if="mostrar_completado">Acciones</th>
+
                                     </tr>
                                 </thead>
                                 <tbody class="text-center">
@@ -29,10 +29,10 @@
                                         <td>{{centro.FECHA_CIERRE}}</td>
                                         <td>{{(isempty(centro.FECHA_CIERRE))?'NO':'SI'}}</td>
                                         <td><button class="btn btn-primary" @click="ver_grupos(centro.ID_CENTRO)">Ver</button></td>
-                                        <td v-if="isempty(centro.ESTADO_COMPLETO) && mostrar_completado"><label class="form-control-label">Completado</label><input type="checkbox" class="form-control" @change="completar_matriz(centro.ID_CENTRO)" :checked="!isempty(centro.ESTADO_COMPLETO)" class="form-control" ></td>
+                                        <td><label class="form-control-label">Completado</label><input type="checkbox" class="form-control" @change="completar_matriz(centro.ID_CENTRO)" :checked="!isempty(centro.ESTADO_COMPLETO)" :disabled="isempty(centro.ESTADO_COMPLETO) && mostrar_completado" class="form-control" ></td>
                                         <td v-if="!isempty(centro.ESTADO_COMPLETO) && mostrar_completado"> <button class="btn btn-success" @click="generar_matriz(centro.ID_CENTRO)">Generar Matriz</button></td>
                                     </tr>
-                                   
+
                                 </tbody>
                                 </table>
                             </div>
