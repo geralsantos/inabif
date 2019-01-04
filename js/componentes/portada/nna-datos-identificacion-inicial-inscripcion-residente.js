@@ -55,7 +55,7 @@ Vue.component('nna-datos-identificacion-inicial-inscripcion-residente', {
     },
     methods:{
         guardar(){
-           let Numero_Doc = 0;
+           let Numero_Doc = '0';
             if(this.Numero_Doc != null){
                 Numero_Doc = this.Numero_Doc;
             }
@@ -80,7 +80,8 @@ Vue.component('nna-datos-identificacion-inicial-inscripcion-residente', {
                 let valores_arr = Object.values(valores);
                 for (let index = 0; index < valores_arr.length; index++) {
                     if (isempty(valores_arr[index])) {
-                        swal('Error', 'Debe llenar todos los campos', 'warning');
+                        console.log(valores_arr[index])
+                        swal('Error', 'Debe llenar todos los camposs', 'warning');
                         return false;
                     }
                 }
