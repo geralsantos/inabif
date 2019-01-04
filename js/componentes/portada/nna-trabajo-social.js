@@ -202,7 +202,7 @@ Vue.component('nna-trabajo-social', {
             this.Reinsercion_Familiar = null;
             this.DNI = null;
             this.AUS_SIS = null;
-            this.CONADIS = response.body.atributos[0]["CONADIS"]; null;
+            this.CONADIS = null;
 
             this.id_residente = residente.ID;
             let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
