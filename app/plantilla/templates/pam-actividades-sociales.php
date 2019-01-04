@@ -117,7 +117,7 @@
                                 <input type="text" v-model="Descriptivo_Persona_Visita" name="Descriptivo_Persona_Visita" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-6">
-                                <div class=" "><label for="text-input" class=" form-control-label">Aseguramiento de la Universidad</label>
+                                <div class=" "><label for="text-input" class=" form-control-label">Aseguramiento Universal a la Salud</label>
                                 <select name="Aseguramiento_Universal_Salud" v-model="Aseguramiento_Universal_Salud" class="form-control">
                                 <option value="Si">Si</option>
                                     <option value="No">No</option>
