@@ -470,7 +470,7 @@ class portada extends App{
     $res = $modelo->executeQuery($sql );
     if ($res)
     {
-      echo json_encode(array("data"=>$res) ) ;
+      echo json_encode(array("data"=>$res,"nivel_usuario"=>$_SESSION["usuario"][0]["NIVEL"]) ) ;
     }else{
       return false;
     }
