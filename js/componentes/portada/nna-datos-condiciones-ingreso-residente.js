@@ -98,6 +98,7 @@ Vue.component('nna-datos-condiciones-ingreso-residente', {
             let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
             let apellido = apellido_p + ' ' + apellido_m;
             this.nombre_residente=nombre + ' ' + apellido;
+            this.id = coincidencia.ID;
             this.coincidencias = [];
             this.bloque_busqueda = false;
 
