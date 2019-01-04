@@ -472,7 +472,7 @@ class portada extends App{
 	$modelo = new modeloPortada();
     $nivel = $_SESSION["usuario"][0]["NIVEL"];
 
-	if (SUPERVISOR == $nivel || USER_SEDE == $nivel || ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel || USER_CENTRO == $nivel) {
+	if (SUPERVISOR == $nivel || USER_SEDE == $nivel || RESPONSABLE_INFORMACION == $nivel || ADMIN_CENTRAL == $nivel || USER_CENTRO == $nivel) {
 		$tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
 		$where = "ca.tipo_centro_id = ".$tipo_centro;
 	}else{
