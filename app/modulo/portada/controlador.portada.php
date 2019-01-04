@@ -238,8 +238,19 @@ class portada extends App{
 		 }
 	  }
 	public function ejecutar_consulta_lista(){
-		  $modelo = new modeloPortada();
-		  $sql = "SELECT * FROM Residente WHERE  ESTADO=1  AND centro_id = ".$_SESSION["usuario"][0]["ID_CENTRO"]." ORDER BY Id desc";
+      $modelo = new modeloPortada();
+      $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+        if ($tipo_centro_id == PPD) {
+          $campo = "nd.Numero_Documento ";
+          $left_join = " left join CarCondicionIngreso nd on (nd.residente_id=re.id) ";
+        }else if($tipo_centro_id == PAM){
+          $campo = "cir.Numero_Doc ";
+          $left_join = " left join pam_datosCondicionIngreso dci on (dci.residente_id=re.id) ";
+        }else if($tipo_centro_id == NNA){
+          $campo = "cir.Numero_Doc ";
+          $left_join = " left join NNACondicionIResidente cir on (cir.residente_id=re.id) ";
+        }
+		  $sql = "SELECT re.*,".$campo." as dni_residente FROM Residente re ".$left_join." WHERE  re.ESTADO=1  AND re.centro_id = ".$_SESSION["usuario"][0]["ID_CENTRO"]." ORDER BY re.Id desc";
 		  $res = $modelo->executeQuery( $sql );
 		  if ($res) {
 			echo json_encode(array( "data"=>$res )) ;
@@ -366,38 +377,44 @@ class portada extends App{
   }
     public function buscar_centros(){
         $modelo = new modeloPortada();
-        if ($_SESSION["usuario"][0]["NIVEL"]=="5") { //responsable de la información
+        if ($_SESSION["usuario"][0]["NIVEL"]==RESPONSABLE_INFORMACION) { //responsable de la información
           $sql = "select distinct ca.id as id_centro,ca.NOM_CA as nombre_centro,cad.estado_completo,cad.fecha_cierre   from centro_atencion ca
           left join centro_atencion_detalle cad on (cad.centro_id=ca.id)
           left join tipo_centro tc on (ca.tipo_centro_id=tc.id)
           where ca.id=".$_SESSION["usuario"][0]["CENTRO_ID"]." and ca.estado = 1";
-        }else if($_SESSION["usuario"][0]["NIVEL"]=="2") //supervisor
+        }else if($_SESSION["usuario"][0]["NIVEL"]==SUPERVISOR) //supervisor
         {
           $sql = "select distinct ca.id as id_centro,ca.NOM_CA as nombre_centro,cad.estado_completo,cad.fecha_cierre  from centro_atencion ca
           left join centro_atencion_detalle cad on (cad.centro_id=ca.id)
           left join tipo_centro tc on (ca.tipo_centro_id=tc.id)
           where tc.id=".$_SESSION["usuario"][0]["TIPO_CENTRO_ID"]." and ca.estado = 1";
-        }else if($_SESSION["usuario"][0]["NIVEL"]=="3") //USER_SEDE_GESTIÓN
+        }else if($_SESSION["usuario"][0]["NIVEL"]==USER_SEDE_GESTION) //USER_SEDE_GESTIÓN
         {
           $sql = "select distinct ca.id as id_centro,ca.NOM_CA as nombre_centro,cad.estado_completo,cad.fecha_cierre  from centro_atencion ca
           left join centro_atencion_detalle cad on (cad.centro_id=ca.id)
           left join tipo_centro tc on (ca.tipo_centro_id=tc.id)
           where tc.id=".$_SESSION["usuario"][0]["TIPO_CENTRO_ID"]." and ca.estado = 1 ";
-        }else if($_SESSION["usuario"][0]["NIVEL"]=="1") //ADMIN_CENTRAL
+        }else if($_SESSION["usuario"][0]["NIVEL"]==ADMIN_CENTRAL) //ADMIN_CENTRAL
         {
           $sql = "select distinct ca.id as id_centro,ca.NOM_CA as nombre_centro,cad.estado_completo,cad.fecha_cierre  from centro_atencion ca
           left join centro_atencion_detalle cad on (cad.centro_id=ca.id)
           left join tipo_centro tc on (ca.tipo_centro_id=tc.id)
           where ca.estado = 1 ";
-		}else if($_SESSION["usuario"][0]["NIVEL"]=="4") //USER_SEDE
+		}else if($_SESSION["usuario"][0]["NIVEL"]==USER_SEDE) //USER_SEDE
         {
           $sql = "select distinct ca.id as id_centro,ca.NOM_CA as nombre_centro,cad.estado_completo,cad.fecha_cierre  from centro_atencion ca
           left join centro_atencion_detalle cad on (cad.centro_id=ca.id)
           left join tipo_centro tc on (ca.tipo_centro_id=tc.id)
           where tc.id=".$_SESSION["usuario"][0]["TIPO_CENTRO_ID"]." and ca.estado = 1 ";
+        }else if($_SESSION["usuario"][0]["NIVEL"]==REGISTRADOR) //USER_SEDE
+        {
+          $sql = "select distinct ca.id as id_centro,ca.NOM_CA as nombre_centro,cad.estado_completo,cad.fecha_cierre  from centro_atencion ca
+          left join centro_atencion_detalle cad on (cad.centro_id=ca.id)
+          left join tipo_centro tc on (ca.tipo_centro_id=tc.id)
+          where ca.id=".$_SESSION["usuario"][0]["CENTRO_ID"]." and ca.estado = 1 ";
         }
 
-        $res = $modelo->executeQuery($sql );
+        $res = $modelo->executeQuery($sql);
         if ($res)
         {
           echo json_encode(array("data"=>$res) ) ;
