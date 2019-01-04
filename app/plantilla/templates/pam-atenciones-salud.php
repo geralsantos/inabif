@@ -16,7 +16,7 @@
                     <form v-on:submit.prevent="guardar"  class="form-horizontal">
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="text-input" class=" form-control-label">Nombre Residente</label>
+                                <label for="text-input" class=" form-control-label">Buscar Residente <i class="fa fa-search" aria-hidden="true"></i></label>
                                 <div class="autocomplete">
                                     <input type="text"  v-model="nombre_residente" class="form-control" @keyup="buscar_residente()" placeholder="Nombre, Apellido o DNI"/>
                                     <ul  id="autocomplete-results" class="autocomplete-results" v-if="bloque_busqueda">

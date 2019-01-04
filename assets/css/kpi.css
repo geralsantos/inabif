@@ -126,6 +126,9 @@ fieldset.legend-indicador {
     height: 120px;
     overflow: auto;
     width: 100%;
+    margin-bottom: 15px;
+    background-color: #bbedf7;
+    padding-left: 9px;
   }
 
   .autocomplete-result {
