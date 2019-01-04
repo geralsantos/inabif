@@ -194,13 +194,13 @@ class portada extends App{
         $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
         if ($tipo_centro_id == PPD) {
           $campo = "nd.Numero_Documento LIKE '%".$word."%'";
-          $left_join = " inner join CarCondicionIngreso nd on (nd.residente_id=re.id) ";
+          $left_join = " left join CarCondicionIngreso nd on (nd.residente_id=re.id) ";
         }else if($tipo_centro_id == PAM){
           $campo = "dci.numero_documento_ingreso LIKE '%".$word."%'";
-          $left_join = " inner join pam_datosCondicionIngreso dci on (dci.residente_id=re.id) ";
+          $left_join = " left join pam_datosCondicionIngreso dci on (dci.residente_id=re.id) ";
         }else if($tipo_centro_id == NNA){
           $campo = "cir.Numero_Doc LIKE '%".$word."%'";
-          $left_join = " inner join NNACondicionIResidente cir on (cir.residente_id=re.id) ";
+          $left_join = " left join NNACondicionIResidente cir on (cir.residente_id=re.id) ";
         }
         $sql = "SELECT * FROM (SELECT re.* FROM Residente re ".$left_join."  WHERE (LOWER(re.Nombre) LIKE '%".$word."%' OR LOWER(re.APELLIDO_M) LIKE '%".$word."%' OR LOWER(re.APELLIDO_P) LIKE '%".$word."%' OR ".$campo.") AND ESTADO=1 AND centro_id = ".$_SESSION["usuario"][0]["ID_CENTRO"]."  ORDER BY Id desc) WHERE ROWNUM<=10";
         $res = $modelo->executeQuery( $sql );
