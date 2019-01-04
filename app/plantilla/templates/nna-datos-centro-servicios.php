@@ -11,7 +11,7 @@
                     <form class="form-horizontal" v-on:submit.prevent="guardar">
                         <div class="row">
 
-                            <div class="form-group col-md-1">
+                            <div class="form-group col-md-2">
                                 <label for="text-input" class=" form-control-label">Año</label>
                                 <select name="select" disabled="disabled" id="anio"  v-model="anio" class="form-control" >
                                 <option value="2018">2018</option>
