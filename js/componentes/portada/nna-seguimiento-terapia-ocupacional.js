@@ -132,7 +132,7 @@ Vue.component('nna-seguimiento-terapia-ocupacional', {
             this.Nro_Atencion_Lengua = null;
             this.id = null;
 
-            this.id_residente = residente.ID;
+            this.id_residente = residente.ID;  this.id=residente.ID;
             let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
             let apellido_p = (residente.APELLIDO_P==undefined)?'':residente.APELLIDO_P;
             let apellido_m = (residente.APELLIDO_M==undefined)?'':residente.APELLIDO_M;

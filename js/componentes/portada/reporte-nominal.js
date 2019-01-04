@@ -107,7 +107,7 @@ let apellido = apellido_p + ' ' + apellido_m;
         },
         elegir_residente(residente){
 
-            this.id_residente = residente.ID;
+            this.id_residente = residente.ID;  this.id=residente.ID;
             let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
             let apellido = (residente.APELLIDO==undefined)?'':residente.APELLIDO;
             this.nombre_residente=nombre + ' ' + apellido;
