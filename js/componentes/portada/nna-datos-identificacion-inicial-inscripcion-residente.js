@@ -55,10 +55,10 @@ Vue.component('nna-datos-identificacion-inicial-inscripcion-residente', {
     },
     methods:{
         guardar(){
-           /* if (this.id_residente==null) {
-                swal('Error', 'Residente no existe', 'success');
-                return false;
-            }*/
+           let Numero_Doc = '  ';
+            if(this.Numero_Doc != null){
+                Numero_Doc = this.Numero_Doc;
+            }
             var valores = {
 
                 residente_apellido_paterno: this.Ape_Paterno,
@@ -73,7 +73,7 @@ Vue.component('nna-datos-identificacion-inicial-inscripcion-residente', {
                 fecha_nacimiento:  moment(this.Fecha_Nacimiento, "YYYY-MM-DD").format("YY-MMM-DD"),
                 edad: this.Edad,
                 lengua_materna: this.Lengua_Materna,
-                Numero_Doc:this.Numero_Doc,
+                Numero_Doc:Numero_Doc,
                 Periodo_Mes: moment().format("MM"),
                 Periodo_Anio:moment().format("YYYY")
                 }
