@@ -148,7 +148,7 @@ Vue.component('pam-actividades-sociales', {
             this.Fecha_Emision_Obtencion_Seguro = null;
             this.DNI = null;
             this.Fecha_Emision_DNI = null;
-            this.id = null;
+
 
 
             this.id_residente = residente.ID;  this.id=residente.ID;

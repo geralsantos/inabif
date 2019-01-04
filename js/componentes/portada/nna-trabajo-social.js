@@ -204,14 +204,15 @@ Vue.component('nna-trabajo-social', {
             this.AUS_SIS = null;
             this.CONADIS = null;
 
-            this.id_residente = residente.ID;  this.id=residente.ID;
+            this.id_residente = residente.ID;
+            this.id=residente.ID;
             let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
             let apellido_p = (residente.APELLIDO_P==undefined)?'':residente.APELLIDO_P;
             let apellido_m = (residente.APELLIDO_M==undefined)?'':residente.APELLIDO_M;
             let apellido = apellido_p + ' ' + apellido_m;
             this.nombre_residente=nombre + ' ' + apellido;
             this.modal_lista = false;
-            this.id = null;
+
 
             this.$http.post('cargar_datos_residente?view',{tabla:'NNATrabajoSocial', residente_id:this.id_residente }).then(function(response){
 
