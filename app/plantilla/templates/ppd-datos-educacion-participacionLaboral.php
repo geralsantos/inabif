@@ -72,7 +72,7 @@
                             </div>
 
                             <div class="form-group col-md-4">
-                                <div class=" "><label for="text-input" class=" form-control-label">Residente se encuentra inserción labora</label>
+                                <div class=" "><label for="text-input" class=" form-control-label">Residente se encuentra insertado laboralmente</label>
                                 <select name="CarInsertadoLaboralmente" v-model="CarInsertadoLaboralmente" class="form-control">
                                     <option value="Si">Si</option>
                                     <option value="No">No</option>
@@ -159,9 +159,9 @@
                                                 <td>{{residente.NOMBRE}} {{residente.APELLIDO}}</td>
                                                 <td>{{residente.DOCUMENTO}}</td>
                                                 <td><button class="btn btn-primary" @click="elegir_residente(residente)">Seleccionar</button></td>
-                                            
+
                                             </tr>
-                                        
+
                                         </tbody>
                                     </table>
                                 </div>
