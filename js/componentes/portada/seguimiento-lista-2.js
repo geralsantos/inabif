@@ -137,7 +137,9 @@ Vue.component('seguimiento-lista-2', {
                     });
 
                 } else {
-                  return false;
+                    this.listar_grupos();
+
+
                 }
               });
 
