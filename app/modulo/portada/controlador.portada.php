@@ -193,15 +193,15 @@ class portada extends App{
         $word = strtolower($_POST['like']);
         $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
         if ($tipo_centro_id == PPD) {
-          $campo = ",nd.Numero_Documento ";
+          $campo = "nd.Numero_Documento ";
           $like = "nd.Numero_Documento LIKE '%".$word."%'";
           $left_join = " left join CarCondicionIngreso nd on (nd.residente_id=re.id) ";
         }else if($tipo_centro_id == PAM){
-          $campo = ",cir.Numero_Doc ";
+          $campo = "cir.Numero_Doc ";
           $like = "dci.numero_documento_ingreso LIKE '%".$word."%'";
           $left_join = " left join pam_datosCondicionIngreso dci on (dci.residente_id=re.id) ";
         }else if($tipo_centro_id == NNA){
-          $campo = ",cir.Numero_Doc ";
+          $campo = "cir.Numero_Doc ";
           $like = "cir.Numero_Doc LIKE '%".$word."%'";
           $left_join = " left join NNACondicionIResidente cir on (cir.residente_id=re.id) ";
         }
