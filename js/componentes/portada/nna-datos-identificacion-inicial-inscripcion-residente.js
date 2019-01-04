@@ -167,6 +167,7 @@ Vue.component('nna-datos-identificacion-inicial-inscripcion-residente', {
             this.$http.post('cargar_datos_residente?view',{tabla:'NNAInscripcionResidente', residente_id:this.id_residente }).then(function(response){
 
                 if( response.body.atributos != undefined){
+                    console.log(response.body.atributos[0]["FECHA_NACIMIENTO"]);
                     this.Ape_Paterno = response.body.atributos[0]["RESIDENTE_APELLIDO_PATERNO"];
                     this.Ape_Materno = response.body.atributos[0]["RESIDENTE_APELLIDO_MATERNO"];
                     this.Nom_Usuario = response.body.atributos[0]["RESIDENTE_NOMBRE"];
@@ -181,6 +182,8 @@ Vue.component('nna-datos-identificacion-inicial-inscripcion-residente', {
                     this.Lengua_Materna = response.body.atributos[0]["LENGUA_MATERNA"];
                     this.Numero_Doc = response.body.atributos[0]["NUMERO_DOC"];
                     this.id = response.body.atributos[0]["RESIDENTE_ID"];
+
+                    console.log(response.body.atributos[0]["FECHA_NACIMIENTO"]);
 
                 }
              });
