@@ -2,7 +2,7 @@ Vue.component('seguimiento-lista-2', {
     template:'#seguimiento-lista-2',
     data:()=>({
         periodo:moment().format('MMMM YYYY'),
-    
+
         completado:false,
         showModal:false,
         mensaje_entre_componentes_1:null,
@@ -16,7 +16,7 @@ Vue.component('seguimiento-lista-2', {
         coincidencias:[],
         bloque_busqueda:false,
         id_residente:null,
- 
+
 
 
     }),
@@ -37,7 +37,7 @@ Vue.component('seguimiento-lista-2', {
                 return false;
             }
             let valores = {
-                
+
 
                 Residente_Id: this.id_residente,
                 Periodo_Mes: moment().format("MM"),
@@ -87,7 +87,7 @@ Vue.component('seguimiento-lista-2', {
 let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
 let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
 let apellido = apellido_p + ' ' + apellido_m;
- this.nombre_residente=nombre + ' ' + apellido;
+ this.nombre_residente=nombre + ' ' + apellido;             this.id = coincidencia.ID;
             this.coincidencias = [];
             this.bloque_busqueda = false;
 
@@ -95,7 +95,7 @@ let apellido = apellido_p + ' ' + apellido_m;
 
                 if( response.body.atributos != undefined){
 
-                   
+
 
 
                 }
@@ -106,7 +106,7 @@ let apellido = apellido_p + ' ' + apellido_m;
             this.$http.post('traer_datos_usuario?view',{}).then(function(response){
 
                 if( response.body.data != undefined){
-                    
+
                 }
             });
         },
@@ -115,18 +115,18 @@ let apellido = apellido_p + ' ' + apellido_m;
                 if( response.body.resultado ){
                     swal("", "Matriz Generada", "success");
 
-                  
+
                     this.listar_grupos();
                 }else{
                     swal("", "Ha ocurrido un error", "error");
                     this.listar_grupos();
                 }
-                
+
             });
         },
 
         ver_modulo(nombre_tabla){
-            
+
             this.mensaje_entre_componentes(nombre_tabla);
             window.location.hash='#seguimiento-lista-3';
         },
@@ -135,26 +135,26 @@ let apellido = apellido_p + ' ' + apellido_m;
             input.type = "hidden";
             input.id = "mensaje_entre_componentes_2";
             input.value = id_grupo;
-            document.body.appendChild(input); 
+            document.body.appendChild(input);
         },
         listar_grupos(){
             console.log("listar_grupos");
             if(this.mensaje_entre_componentes_1==null){
-                let id_centro = document.getElementById("mensaje_entre_componentes_1").value; 
+                let id_centro = document.getElementById("mensaje_entre_componentes_1").value;
                 this.mensaje_entre_componentes_1 = id_centro;
                 this.remover_mensaje_entre_componentes();
             }
-            
+
             this.$http.post('buscar_grupos?view',{id_centro:this.mensaje_entre_componentes_1}).then(function(response){
                 this.grupos = response.body.data;
 
                 console.log(this.grupos);
-               
-                
+
+
             });
         },
         remover_mensaje_entre_componentes(){
-            var input = document.getElementById("mensaje_entre_componentes_1"); 
+            var input = document.getElementById("mensaje_entre_componentes_1");
             input.parentNode.removeChild(input)
           }
 

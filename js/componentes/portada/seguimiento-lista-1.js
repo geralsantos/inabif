@@ -101,7 +101,7 @@ Vue.component('seguimiento-lista-1', {
 let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
 let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
 let apellido = apellido_p + ' ' + apellido_m;
- this.nombre_residente=nombre + ' ' + apellido;
+ this.nombre_residente=nombre + ' ' + apellido;             this.id = coincidencia.ID;
             this.coincidencias = [];
             this.bloque_busqueda = false;
 
@@ -109,8 +109,8 @@ let apellido = apellido_p + ' ' + apellido_m;
 
                 if( response.body.atributos != undefined){
 
-                   
-                    
+
+
                 }
              });
 
@@ -122,9 +122,9 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.usuario = response.body.data[0];
                    if(this.usuario.NIVEL == 5){
                         this.mostrar_completado = true;
-                     
+
                   }
-               
+
                 }
             });
         },
@@ -134,7 +134,7 @@ let apellido = apellido_p + ' ' + apellido_m;
 
                 if( response.body.data != undefined){
                     this.centros = response.body.data;
-                    
+
                 }
             });
 
@@ -173,16 +173,16 @@ let apellido = apellido_p + ' ' + apellido_m;
           //  alert(centro_id);
             this.mensaje_entre_componentes(centro_id);
             window.location.hash='#seguimiento-lista-2';
-            
+
         },
         mensaje_entre_componentes(centro_id){
             var input = document.createElement("input");
             input.type = "hidden";
             input.id = "mensaje_entre_componentes_1";
             input.value = centro_id;
-            document.body.appendChild(input); 
+            document.body.appendChild(input);
           }
-     
+
 
     }
   })

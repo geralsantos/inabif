@@ -2,10 +2,10 @@ Vue.component('seguimiento-lista-3', {
     template:'#seguimiento-lista-3',
     data:()=>({
         periodo:moment().format('MMMM YYYY'),
-    
+
         completado:false,
         showModal:false,
-   
+
         campos:[],
         cabeceras:[],
 
@@ -34,7 +34,7 @@ Vue.component('seguimiento-lista-3', {
                 return false;
             }
             let valores = {
-                
+
 
                 Residente_Id: this.id_residente,
                 Periodo_Mes: moment().format("MM"),
@@ -84,7 +84,7 @@ Vue.component('seguimiento-lista-3', {
 let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
 let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
 let apellido = apellido_p + ' ' + apellido_m;
- this.nombre_residente=nombre + ' ' + apellido;
+ this.nombre_residente=nombre + ' ' + apellido;             this.id = coincidencia.ID;
             this.coincidencias = [];
             this.bloque_busqueda = false;
 
@@ -92,7 +92,7 @@ let apellido = apellido_p + ' ' + apellido_m;
 
                 if( response.body.atributos != undefined){
 
-                   
+
 
 
                 }
@@ -103,27 +103,27 @@ let apellido = apellido_p + ' ' + apellido_m;
             this.$http.post('traer_datos_usuario?view',{}).then(function(response){
 
                 if( response.body.data != undefined){
-                    
+
                 }
             });
         },
 
-        
-       
+
+
         listar_campos(){
             console.log("listar_campos");
             if(this.mensaje_entre_componentes_1==null){
-                let nombre_tabla = document.getElementById("mensaje_entre_componentes_2").value; 
+                let nombre_tabla = document.getElementById("mensaje_entre_componentes_2").value;
                 this.mensaje_entre_componentes_2 = nombre_tabla;
                 this.remover_mensaje_entre_componentes();
             }
-           
+
             this.$http.post('mostrar_modulo?view',{nombre_tabla:this.mensaje_entre_componentes_2}).then(function(response){
                 if(response.body.data){
                     let arr = [];
                     let valores = response.body.data;
                     let cabeceras;
-                   
+
                     for (let index = 0; index < valores.length; index++) {
                         arr.push(Object.values(valores[index]));
                         if (index==0) {
@@ -138,11 +138,11 @@ let apellido = apellido_p + ' ' + apellido_m;
                 }else{
                     swal("", "No hay registros hasta la fecha", "error")
                 }
-                
+
             });
         },
         remover_mensaje_entre_componentes(){
-            var input = document.getElementById("mensaje_entre_componentes_2"); 
+            var input = document.getElementById("mensaje_entre_componentes_2");
             input.parentNode.removeChild(input)
           }
 

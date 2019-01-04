@@ -6,7 +6,7 @@ Vue.component('reporte-nominal', {
 
        nombre_residente:null,
         isLoading:false,
-       
+
         coincidencias:[],
         bloque_busqueda:false,
         id_residente:null,
@@ -25,7 +25,7 @@ Vue.component('reporte-nominal', {
         console.log('Main Vue destroyed')
       },
     methods:{
-       
+
         buscar_residente(){
             this.id_residente = null;
 
@@ -58,7 +58,7 @@ Vue.component('reporte-nominal', {
 let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
 let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
 let apellido = apellido_p + ' ' + apellido_m;
- this.nombre_residente=nombre + ' ' + apellido;
+ this.nombre_residente=nombre + ' ' + apellido;             this.id = coincidencia.ID;
             this.coincidencias = [];
             this.bloque_busqueda = false;
 
@@ -69,7 +69,7 @@ let apellido = apellido_p + ' ' + apellido_m;
 
                 if( response.body.data != undefined){
                     this.residentes = response.body.data;
-                    
+
                 }else{
                     swal("", "No hay registros para este reporte", "error");
                 }
@@ -85,7 +85,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                 if( response.body.data != undefined){
                     tableToExcel('tbl_temp','Reporte Nominal',response.body.data);
                     this.matriz_general = response.body.data;
-                    
+
                 }
             });
 
@@ -103,18 +103,18 @@ let apellido = apellido_p + ' ' + apellido_m;
                         swal("", "No existe ningún residente", "error")
                     }
                  });
-            
+
         },
         elegir_residente(residente){
 
             this.id_residente = residente.ID;
             let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
             let apellido = (residente.APELLIDO==undefined)?'':residente.APELLIDO;
-            this.nombre_residente=nombre + ' ' + apellido;
+            this.nombre_residente=nombre + ' ' + apellido;             this.id = coincidencia.ID;
             this.modal_lista = false;
 
         }
-     
+
 
     }
   })
