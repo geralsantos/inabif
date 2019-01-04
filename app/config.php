@@ -50,6 +50,10 @@ define ('USER_SEDE','4');
 define ('RESPONSABLE_INFORMACION','5');
 define ('REGISTRADOR','6');
 define ('USER_CENTRO','7');
+//TIPO_CENTRO_ID
+define ('PPD','1');
+define ('PAM','2');
+define ('NNA','3');
 //AMBIENTE
 define ('DESARROLLO',TRUE);
 

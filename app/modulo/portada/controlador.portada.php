@@ -190,7 +190,18 @@ class portada extends App{
     public function ejecutar_consulta(){
       if( $_POST['like']){
         $modelo = new modeloPortada();
-        $sql = "SELECT * FROM (SELECT * FROM Residente WHERE (Nombre LIKE '%".$_POST['like']."%' OR APELLIDO_M LIKE '%".$_POST['like']."%' OR APELLIDO_P LIKE '%".$_POST['like']."%' OR Documento LIKE '%".$_POST['like']."%') AND ESTADO=1 AND centro_id = ".$_SESSION["usuario"][0]["ID_CENTRO"]."  ORDER BY Id desc) WHERE ROWNUM<=10";
+        $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+        if ($tipo_centro_id == PPD) {
+          $campo = "nd.Numero_Documento LIKE '%".$_POST['like']."%'";
+          $inner_join = " inner join CarCondicionIngreso nd on (nd.residente_id=re.id) ";
+        }else if($tipo_centro_id == PAM){
+          $campo = "dci.numero_documento_ingreso LIKE '%".$_POST['like']."%'";
+          $inner_join = " inner join pam_datosCondicionIngreso dci on (dci.residente_id=re.id) ";
+        }else if($tipo_centro_id == NNA){
+          $campo = "cir.Numero_Doc LIKE '%".$_POST['like']."%'";
+          $inner_join = " inner join NNACondicionIResidente cir on (cir.residente_id=re.id) ";
+        }
+        $sql = "SELECT * FROM (SELECT re.* FROM Residente re ".$inner_join."  WHERE (re.Nombre LIKE '%".$_POST['like']."%' OR re.APELLIDO_M LIKE '%".$_POST['like']."%' OR re.APELLIDO_P LIKE '%".$_POST['like']."%' OR Documento LIKE '%".$_POST['like']."%' ".$campo.") AND ESTADO=1 AND centro_id = ".$_SESSION["usuario"][0]["ID_CENTRO"]."  ORDER BY Id desc) WHERE ROWNUM<=10";
         $res = $modelo->executeQuery( $sql );
         if ($res) {
           echo json_encode(array( "data"=>$res )) ;
