@@ -101,7 +101,7 @@ Vue.component('cargar-archivos', {
         },
         descargar(archivo){
             console.log(archivo);
-            downloadLink(url_archivo);
+            downloadLink(archivo.RUTA);
         }
 
     }
