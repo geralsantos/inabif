@@ -149,7 +149,7 @@ Vue.component('pam-datos-nutricion', {
             let apellido_p = (residente.APELLIDO_P==undefined)?'':residente.APELLIDO_P;
             let apellido_m = (residente.APELLIDO_M==undefined)?'':residente.APELLIDO_M;
             let apellido = apellido_p + ' ' + apellido_m;
-            this.nombre_residente=nombre + ' ' + apellido;             this.id = coincidencia.ID;
+            this.nombre_residente=nombre + ' ' + apellido;
             this.modal_lista = false;
 
             this.$http.post('cargar_datos_residente?view', { tabla: 'pam_nutricion', residente_id: this.id_residente }).then(function (response) {

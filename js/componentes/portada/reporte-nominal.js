@@ -58,7 +58,7 @@ Vue.component('reporte-nominal', {
 let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
 let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
 let apellido = apellido_p + ' ' + apellido_m;
- this.nombre_residente=nombre + ' ' + apellido;             this.id = coincidencia.ID;
+ this.nombre_residente=nombre + ' ' + apellido;
             this.coincidencias = [];
             this.bloque_busqueda = false;
 
@@ -110,7 +110,7 @@ let apellido = apellido_p + ' ' + apellido_m;
             this.id_residente = residente.ID;
             let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
             let apellido = (residente.APELLIDO==undefined)?'':residente.APELLIDO;
-            this.nombre_residente=nombre + ' ' + apellido;             this.id = coincidencia.ID;
+            this.nombre_residente=nombre + ' ' + apellido;
             this.modal_lista = false;
 
         }
