@@ -1,7 +1,7 @@
 Vue.component('nna-actividades-sociorecreativas', {
     template:'#nna-actividades-sociorecreativas',
     data:()=>({
-        
+
         Nro_Arte:null,
         Nro_BioHuerto:null,
         Nro_Zapateria:null,
@@ -10,8 +10,9 @@ Vue.component('nna-actividades-sociorecreativas', {
         Nro_Crianza:null,
         Nro_Dibujo:null,
         Nro_Tejido:null,
-        Nro_Deportes:null, 
+        Nro_Deportes:null,
         Nro_Taller_Pro:null,
+        id:null,
 
         nombre_residente:null,
         isLoading:false,
@@ -37,7 +38,7 @@ Vue.component('nna-actividades-sociorecreativas', {
                 return false;
             }
             let valores = {
-               
+
                 Nro_Arte:this.Nro_Arte,
                 Nro_BioHuerto:this.Nro_BioHuerto,
                 Nro_Zapateria:this.Nro_Zapateria,
@@ -46,15 +47,15 @@ Vue.component('nna-actividades-sociorecreativas', {
                 Nro_Crianza:this.Nro_Crianza,
                 Nro_Dibujo:this.Nro_Dibujo,
                 Nro_Tejido:this.Nro_Tejido,
-                Nro_Deportes:this.Nro_Deportes, 
+                Nro_Deportes:this.Nro_Deportes,
                 Nro_Taller_Pro:this.Nro_Taller_Pro,
-                
+
                 Residente_Id: this.id_residente,
                 Periodo_Mes: moment().format("MM"),
                 Periodo_Anio:moment().format("YYYY")
 
             }
-                
+
             this.$http.post('insertar_datos?view',{tabla:'NNAActividadesSociorecrea', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
@@ -115,6 +116,7 @@ Vue.component('nna-actividades-sociorecreativas', {
                     this.Nro_Tejido = response.body.atributos[0]["NRO_TEJIDO"];
                     this.Nro_Deportes = response.body.atributos[0]["NRO_DEPORTES"];
                     this.Nro_Taller_Pro = response.body.atributos[0]["NRO_TALLER_PRO"];
+                    this.id = response.body.atributos[0]["ID"];
 
 
                 }
@@ -122,7 +124,7 @@ Vue.component('nna-actividades-sociorecreativas', {
 
         },
         mostrar_lista_residentes(){
-         
+
             this.id_residente = null;
             this.isLoading = true;
                 this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
@@ -135,7 +137,7 @@ Vue.component('nna-actividades-sociorecreativas', {
                         swal("", "No existe ningún residente", "error")
                     }
                  });
-            
+
         },
         elegir_residente(residente){
 
@@ -149,6 +151,7 @@ Vue.component('nna-actividades-sociorecreativas', {
             this.Nro_Tejido =  null;
             this.Nro_Deportes =  null;
             this.Nro_Taller_Pro =  null;
+            this.id = null;
 
             this.id_residente = residente.ID;
             let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
@@ -170,12 +173,13 @@ Vue.component('nna-actividades-sociorecreativas', {
                     this.Nro_Tejido = response.body.atributos[0]["NRO_TEJIDO"];
                     this.Nro_Deportes = response.body.atributos[0]["NRO_DEPORTES"];
                     this.Nro_Taller_Pro = response.body.atributos[0]["NRO_TALLER_PRO"];
+                    this.id = response.body.atributos[0]["ID"];
 
 
                 }
              });
 
         }
-        
+
     }
   })
