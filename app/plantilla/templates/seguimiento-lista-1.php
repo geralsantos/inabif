@@ -32,6 +32,7 @@
 
                                         <td v-if="isempty(centro.ESTADO_COMPLETO) && mostrar_completado"><label class="form-control-label">Completado</label><input type="checkbox" class="form-control" @change="completar_matriz(centro.ID_CENTRO)" :checked="!isempty(centro.ESTADO_COMPLETO)"  class="form-control" ></td>
                                         <td v-if="!isempty(centro.ESTADO_COMPLETO) && mostrar_completado"> <button class="btn btn-success" @click="generar_matriz(centro.ID_CENTRO)">Generar Matriz</button></td>
+
                                     </tr>
 
                                 </tbody>
