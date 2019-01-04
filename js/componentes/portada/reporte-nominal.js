@@ -35,7 +35,7 @@ Vue.component('reporte-nominal', {
                 this.bloque_busqueda = true;
                 this.isLoading = true;
 
-                this.$http.post('ejecutar_consulta?view',{like:word }).then(function(response){
+                this.$http.post('buscar_residente_nominal?view',{like:word }).then(function(response){
 
                     if( response.body.data != undefined){
                         this.isLoading = false;

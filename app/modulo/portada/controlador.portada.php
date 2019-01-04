@@ -200,6 +200,28 @@ class portada extends App{
 
        }
 	}
+	public function buscar_residente_nominal(){
+		if( $_POST['like']){
+		  $modelo = new modeloPortada();
+			if (SUPERVISOR == $nivel || USER_SEDE == $nivel) {
+				$tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+				$where = " AND tipo_centro_id = ".$tipo_centro;
+			}else if (REGISTRADOR ==$nivel || RESPONSABLE_INFORMACION ==$nivel){
+				$centro_id = $_SESSION["usuario"][0]["CENTRO_ID"];
+				$where = " AND centro_id = ".$centro_id;
+			}else if(ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel){
+				$where ="";
+			}
+			$sql = "SELECT * FROM (SELECT * FROM Residente WHERE (Nombre LIKE '%".$_POST['like']."%' OR APELLIDO_M LIKE '%".$_POST['like']."%' OR APELLIDO_P LIKE '%".$_POST['like']."%' OR Documento LIKE '%".$_POST['like']."%') AND ESTADO=1 ".$where." ORDER BY Id desc) WHERE ROWNUM<=10";
+			$res = $modelo->executeQuery( $sql );
+			if ($res) {
+			echo json_encode(array( "data"=>$res )) ;
+			}else{
+			return false;
+			}
+  
+		 }
+	  }
 	public function ejecutar_consulta_lista(){
 		  $modelo = new modeloPortada();
 		  $sql = "SELECT * FROM Residente WHERE  ESTADO=1  AND centro_id = ".$_SESSION["usuario"][0]["ID_CENTRO"]." ORDER BY Id desc";
@@ -450,7 +472,7 @@ class portada extends App{
 	$modelo = new modeloPortada();
     $nivel = $_SESSION["usuario"][0]["NIVEL"];
 
-	if (SUPERVISOR == $nivel || USER_SEDE == $nivel || ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel) {
+	if (SUPERVISOR == $nivel || USER_SEDE == $nivel || ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel || USER_CENTRO == $nivel) {
 		$tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
 		$where = "ca.tipo_centro_id = ".$tipo_centro;
 	}else{
@@ -546,7 +568,7 @@ class portada extends App{
 			$modulo_html .=$grupo_html;
     	}
 	}
-$modulo_html .="</table>";
+    $modulo_html .="</table>";
     $table = '<table><tr><td>'.$centro_html.'</td></tr><tr><td>'.$modulo_html.'</td></tr></table>';
 
     if ($modulos)
@@ -561,9 +583,19 @@ $modulo_html .="</table>";
     $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
     $fecha = " BETWEEN UPPER('".$_POST["fecha_inicial"]."') AND UPPER('".$_POST["fecha_final"]."')";
 
-    $residentes = "select  re.nombre as nombre_residente,re.apellido_p,re.apellido_m,re.fecha_creacion as fecha from residente re
-	  inner join tipo_centro tc on(tc.id=re.tipo_centro_id)
-	  where to_char(re.fecha_creacion,'DD-MON-YY') ".$fecha." order by re.id desc";
+    if (USER_CENTRO == $nivel || SUPERVISOR == $nivel || RESPONSABLE_INFORMACION == $nivel) {
+      $tipo_centro = $_SESSION["usuario"][0]["CENTRO_ID"];
+      $where = "ca.id = ".$tipo_centro;
+    }else{
+      $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+      $where = "ca.tipo_centro_id = ".$tipo_centro_id;
+    }
+
+    $residentes = "select  re.nombre as nombre_residente,re.apellido_p,re.apellido_m,re.fecha_creacion as fecha 
+    from residente re
+    inner join centro_atencion ca on (re.centro_id=ca.id) 
+	  inner join tipo_centro tc on(tc.id=re.tipo_centro_id) 
+	  where to_char(re.fecha_creacion,'DD-MON-YY') ".$fecha." and ".$where." order by re.id desc";
     $residentes = $modelo->executeQuery($residentes);
 
     if ($residentes)
@@ -577,11 +609,14 @@ $modulo_html .="</table>";
     $modelo = new modeloPortada();
 	$nivel = $_SESSION["usuario"][0]["NIVEL"];
 	$innner_centro_atencion = "inner join centro_atencion ca on(ca.tipo_centro_id=tc.id) ";
-	if (SUPERVISOR == $nivel || USER_SEDE == $nivel ) {
-		$filtro_centro = " tc.id= ".$_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
-		$innner_centro_atencion = "";
+
+	if (USER_CENTRO == $nivel || SUPERVISOR == $nivel || RESPONSABLE_INFORMACION == $nivel) {
+		$tipo_centro = $_SESSION["usuario"][0]["CENTRO_ID"];
+		$filtro_centro = "ca.id = ".$tipo_centro;
 	}else{
-		$filtro_centro = " ca.id=".$_SESSION["usuario"][0]["CENTRO_ID"];
+		$tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+		$filtro_centro = "tc.tipo_centro_id = ".$tipo_centro_id;
+		$innner_centro_atencion = "";
 	}
     $fecha = " BETWEEN UPPER('".$_POST["fecha_inicial"]."') AND UPPER('".$_POST["fecha_final"]."')";
 	$residentes = "select distinct re.id, re.nombre as nombre_residente, re.apellido_p, re.apellido_m, pa.nombre as nombre_pais , ubi.NOMDEPT as nombre_departamento, ubi.nomprov as nombre_provincia, ubi.nomdist as nombre_distrito, (CASE sexo WHEN 'h' THEN 'Hombre' ELSE 'Mujer' END) as sexo_residente ,re.fecha_creacion as fecha from residente re
@@ -607,9 +642,19 @@ $modulo_html .="</table>";
   public function mostrar_reporte_nominal(){
     $modelo = new modeloPortada();
     $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
-    $id_residente = $_POST["id_residente"];
-
+	$id_residente = $_POST["id_residente"];
+	/*
+	if (SUPERVISOR == $nivel || USER_SEDE == $nivel) {
+		$tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+		$where = " AND tipo_centro_id = ".$tipo_centro;
+	}else if (REGISTRADOR ==$nivel || RESPONSABLE_INFORMACION ==$nivel){
+		$centro_id = $_SESSION["usuario"][0]["CENTRO_ID"];
+		$where = " AND centro_id = ".$centro_id;
+	}else if(ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel){
+		$where ="";
+	}*/
     $residente = "select distinct re.nombre as nombre_residente,tc.id as tipo_centro_id from residente re
+	inner join centro_atencion ca on(ca.id=re.centro_id)
 	inner join tipo_centro tc on(tc.id=re.tipo_centro_id)
 	where re.id = ".$id_residente." order by re.id desc";
     $residente = $modelo->executeQuery($residente);

@@ -20,12 +20,12 @@
                                    <button @click="mostrar_reporte_rub()" class="btn btn-default"><i class="fa fa-send"></i> Buscar</button>
                                 </div>
                             </div>
-                            <div class="row" v-if="!isempty(residentes)">
+                            <div class="row">
                                 <div class="col-12 col-md-1">
                                     <button @click="descargar_reporte_matriz_rub()" class="btn btn-success"><i class="fa fa-send"></i> Descargar Reporte</button>
                                 </div>
                             </div>
-                            <div class="table-responsive">
+                            <!--<div class="table-responsive">
                                 <table class="table">
                                     <thead class="thead-dark text-center">
                                         <tr>
@@ -47,7 +47,7 @@
                                     
                                     </tbody>
                                 </table>
-                            </div>
+                            </div>-->
 
                         </div>
                     </div>
