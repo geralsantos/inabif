@@ -116,7 +116,7 @@ Vue.component('nna-actividades-sociorecreativas', {
                     this.Nro_Tejido = response.body.atributos[0]["NRO_TEJIDO"];
                     this.Nro_Deportes = response.body.atributos[0]["NRO_DEPORTES"];
                     this.Nro_Taller_Pro = response.body.atributos[0]["NRO_TALLER_PRO"];
-                    this.id = response.body.atributos[0]["ID"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
 
 
                 }
@@ -173,7 +173,7 @@ Vue.component('nna-actividades-sociorecreativas', {
                     this.Nro_Tejido = response.body.atributos[0]["NRO_TEJIDO"];
                     this.Nro_Deportes = response.body.atributos[0]["NRO_DEPORTES"];
                     this.Nro_Taller_Pro = response.body.atributos[0]["NRO_TALLER_PRO"];
-                    this.id = response.body.atributos[0]["ID"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
 
 
                 }
