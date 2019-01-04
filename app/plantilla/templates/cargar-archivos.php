@@ -47,7 +47,7 @@
                 <div class="modal-body">
                 <form  class="form-horizontal" enctype="multipart/form-data" id="formuploadajax" v-on:submit.prevent="guardar">
                         <div class="row">
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-12">
 
                         <label for="text-input" class=" form-control-label">Adjuntar archivo</label>
 
