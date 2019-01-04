@@ -8,6 +8,8 @@ Vue.component('seguimiento-lista-2', {
         mensaje_entre_componentes_1:null,
         grupos:[],
         campos:[],
+        nivel_usuario:null,
+        mostrar_check:false,
 
         nombre_residente:null,
         isLoading:false,
@@ -84,10 +86,10 @@ Vue.component('seguimiento-lista-2', {
         actualizar(coincidencia){
             this.id_residente = coincidencia.ID;               this.id=coincidencia.ID;
             let nombre=(coincidencia.NOMBRE==undefined)?'':coincidencia.NOMBRE;
-let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
-let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
-let apellido = apellido_p + ' ' + apellido_m;
- this.nombre_residente=nombre + ' ' + apellido;
+            let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
+            let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
+            let apellido = apellido_p + ' ' + apellido_m;
+            this.nombre_residente=nombre + ' ' + apellido;
             this.coincidencias = [];
             this.bloque_busqueda = false;
 
@@ -111,18 +113,34 @@ let apellido = apellido_p + ' ' + apellido_m;
             });
         },
         completar_grupo(id_modulo){
-            this.$http.post('completar_grupo?view',{id_modulo:id_modulo}).then(function(response){
-                if( response.body.resultado ){
-                    swal("", "Matriz Generada", "success");
+
+            swal({
+                title: "¿Está seguro de querer realizar esta acción?",
+                text: "Una vez completado el grupo no podrá deshacer el cambio",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+              })
+              .then((willDelete) => {
+                if (willDelete) {
+                    this.$http.post('completar_grupo?view',{id_modulo:id_modulo}).then(function(response){
+                        if( response.body.resultado ){
+                            swal("", "Matriz Generada", "success");
 
 
-                    this.listar_grupos();
-                }else{
-                    swal("", "Ha ocurrido un error", "error");
-                    this.listar_grupos();
+                            this.listar_grupos();
+                        }else{
+                            swal("", "Ha ocurrido un error", "error");
+                            this.listar_grupos();
+                        }
+
+                    });
+
+                } else {
+                  return false;
                 }
+              });
 
-            });
         },
 
         ver_modulo(nombre_tabla){
@@ -146,9 +164,18 @@ let apellido = apellido_p + ' ' + apellido_m;
             }
 
             this.$http.post('buscar_grupos?view',{id_centro:this.mensaje_entre_componentes_1}).then(function(response){
-                this.grupos = response.body.data;
 
-                console.log(this.grupos);
+                if(response.body.data){
+                    this.grupos = response.body.data;
+                    this.nivel_usuario = response.body.nivel_usuario;
+
+                    console.log(this.grupos);
+                }else{
+                    swal("", "Ha ocurrido un error", "error")
+                }
+
+
+
 
 
             });
