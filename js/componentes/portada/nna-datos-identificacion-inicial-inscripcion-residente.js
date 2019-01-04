@@ -80,9 +80,11 @@ Vue.component('nna-datos-identificacion-inicial-inscripcion-residente', {
                 let valores_arr = Object.values(valores);
                 for (let index = 0; index < valores_arr.length; index++) {
                     if (isempty(valores_arr[index])) {
-                        console.log(valores_arr[index])
-                        swal('Error', 'Debe llenar todos los camposs', 'warning');
+                       if(valores_arr[index]!='0'){
+                        swal('Error', 'Debe llenar todos los campos', 'warning');
                         return false;
+                       }
+
                     }
                 }
                 if (isempty(this.id_residente)) {
