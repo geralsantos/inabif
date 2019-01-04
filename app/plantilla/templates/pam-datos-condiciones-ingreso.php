@@ -30,7 +30,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="form-group col-md-2">
+                            <div class="form-group col-md-1">
                                 <label for="text-input" class=" form-control-label">Año</label>
                                 <select name="select" disabled="disabled" id="anio"  v-model="anio" class="form-control">
                                 <option value="2018">2018</option>
@@ -39,7 +39,7 @@
                                 <option value="2021">2021</option>
                                 </select>
                             </div>
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-2">
                                 <div class=""><label for="text-input" class=" form-control-label">Mes</label>
                                 <select id="mes" v-model="mes" disabled="disabled" class="form-control" >
                                         <option value="1">Enero</option>
@@ -56,9 +56,12 @@
                                         <option value="12">Diciembre</option>
                                     </select> </div>
                             </div>
-
+                            <div class="form-group col-md-2">
+                                <label for="text-input" class=" form-control-label">Código</label>
+                                <input type="text" v-model="id" class="form-control" readonly>
+                            </div>
                         </div>
-                        
+
                         <div class="row">
                             <div class="form-group col-md-3">
                                 <div class=" "><label for="text-input" class=" form-control-label">Documento de Identidad</label>
@@ -121,7 +124,7 @@
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Clasificación Socioeconómica (SISFOH)</label>
                                 <select name="SISFOH" v-model="SISFOH" class="form-control">
-                                    <option v-for="socioeconomica in clasif_socioeconomica" :value="socioeconomica.ID">{{socioeconomica.NOMBRE}}</option> 
+                                    <option v-for="socioeconomica in clasif_socioeconomica" :value="socioeconomica.ID">{{socioeconomica.NOMBRE}}</option>
                                 </select>
                                 </div>
                             </div>
@@ -136,7 +139,7 @@
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Tipo de Parentesco</label>
                                 <select name="tipo_parentesco" v-model="tipo_parentesco" class="form-control">
-                                    <option v-for="parentesco in tipos_parentescos" :value="parentesco.ID">{{parentesco.NOMBRE}}</option> 
+                                    <option v-for="parentesco in tipos_parentescos" :value="parentesco.ID">{{parentesco.NOMBRE}}</option>
                                 </select>
                                 </div>
                             </div>
@@ -180,9 +183,9 @@
                                                 <td>{{residente.NOMBRE}} {{residente.APELLIDO}}</td>
                                                 <td>{{residente.DOCUMENTO}}</td>
                                                 <td><button class="btn btn-primary" @click="elegir_residente(residente)">Seleccionar</button></td>
-                                            
+
                                             </tr>
-                                        
+
                                         </tbody>
                                     </table>
                                 </div>

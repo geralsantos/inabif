@@ -14,6 +14,7 @@ Vue.component('nna-datos-identificacion-inicial-inscripcion-residente', {
         Edad:null,
         Lengua_Materna:null,
         Numero_Doc:null,
+        id:null,
 
         paises:[],
         departamentos:[],
@@ -45,11 +46,11 @@ Vue.component('nna-datos-identificacion-inicial-inscripcion-residente', {
     updated:function(){
     },
     watch:{
-        departamento_nacimiento_id:function(val){ 
+        departamento_nacimiento_id:function(val){
             this.buscar_provincias();
         },
         Fecha_Nacimiento:function(val){
-            this.Edad = moment().diff(val, 'year'); 
+            this.Edad = moment().diff(val, 'year');
         }
     },
     methods:{
@@ -59,7 +60,7 @@ Vue.component('nna-datos-identificacion-inicial-inscripcion-residente', {
                 return false;
             }*/
             var valores = {
-               
+
                 residente_apellido_paterno: this.Ape_Paterno,
                 residente_apellido_materno: this.Ape_Materno,
                 residente_nombre: this.Nom_Usuario,
@@ -85,7 +86,7 @@ Vue.component('nna-datos-identificacion-inicial-inscripcion-residente', {
                 }
                 if (isempty(this.id_residente)) {
                     let valores_residente = {
-               
+
                         nombre : this.Nom_Usuario,
                         apellido_p : this.Ape_Paterno,
                         apellido_m : this.Ape_Materno,
@@ -109,7 +110,7 @@ Vue.component('nna-datos-identificacion-inicial-inscripcion-residente', {
                               swal("", "Un error ha ocurrido", "error");
                             }
                         });
-                    }); 
+                    });
                 }else{
                     valores.Residente_Id = this.id_residente;
                     this.$http.post('insertar_datos?view',{tabla:'NNAInscripcionResidente', valores:valores}).then(function(response){
@@ -120,10 +121,10 @@ Vue.component('nna-datos-identificacion-inicial-inscripcion-residente', {
                         }
                     });
                 }
-                
-            
+
+
         },
-        
+
         buscar_residente(){
             this.id_residente = null;
 
@@ -176,7 +177,8 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.Edad = response.body.atributos[0]["EDAD"];
                     this.Lengua_Materna = response.body.atributos[0]["LENGUA_MATERNA"];
                     this.Numero_Doc = response.body.atributos[0]["NUMERO_DOC"];
-                    
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
+
                 }
              });
 
@@ -240,7 +242,7 @@ let apellido = apellido_p + ' ' + apellido_m;
             });
         },
         mostrar_lista_residentes(){
-         
+
             this.id_residente = null;
             this.isLoading = true;
                 this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
@@ -253,14 +255,14 @@ let apellido = apellido_p + ' ' + apellido_m;
                         swal("", "No existe ningún residente", "error")
                     }
                  });
-            
+
         },
         elegir_residente(residente){
 
             this.Ape_Paterno = null;
             this.Ape_Materno = null;
             this.Nom_Usuario = null;
-            this.pais_procedente_id = null;            
+            this.pais_procedente_id = null;
             this.departamento_procedente_id = null;
             this.departamento_nacimiento_id = null;
             this.provincia_nacimiento_id = null;
@@ -270,6 +272,8 @@ let apellido = apellido_p + ' ' + apellido_m;
             this.Edad = null;
             this.Lengua_Materna = null;
             this.Numero_Doc = null;
+            this.id = null;
+
 
             this.id_residente = residente.ID;
             let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
@@ -293,7 +297,8 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.Edad = response.body.atributos[0]["EDAD"];
                     this.Lengua_Materna = response.body.atributos[0]["LENGUA_MATERNA"];
                     this.Numero_Doc = response.body.atributos[0]["NUMERO_DOC"];
-                    
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
+
                 }
              });
 

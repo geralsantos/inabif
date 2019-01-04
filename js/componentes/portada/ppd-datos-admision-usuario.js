@@ -8,6 +8,7 @@ Vue.component('ppd-datos-admision-usuario', {
         CarMotivoI:null,
         CarTipoDoc:null,
         CarNumDoc:null,
+        id:null,
 
         instituciones:[],
         documentos:[],
@@ -109,6 +110,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.CarMotivoI = response.body.atributos[0]["MOTIVO_INGRESO"];
                     this.CarTipoDoc = response.body.atributos[0]["TIPO_DOCUMENTO"];
                     this.CarNumDoc = response.body.atributos[0]["NUMERO_DOCUMENTO"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
 
                 }
              });
@@ -131,7 +133,7 @@ let apellido = apellido_p + ' ' + apellido_m;
 
             });
         }, mostrar_lista_residentes(){
-         
+
             this.id_residente = null;
             this.isLoading = true;
                 this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
@@ -144,7 +146,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                         swal("", "No existe ningún residente", "error")
                     }
                  });
-            
+
         },
         elegir_residente(residente){
 
@@ -155,6 +157,7 @@ let apellido = apellido_p + ' ' + apellido_m;
             this.CarMotivoI = null;
             this.CarTipoDoc = null;
             this.CarNumDoc = null;
+            this.id = null;
 
             this.id_residente = residente.ID;
             let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
@@ -173,6 +176,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.CarMotivoI = response.body.atributos[0]["MOTIVO_INGRESO"];
                     this.CarTipoDoc = response.body.atributos[0]["TIPO_DOCUMENTO"];
                     this.CarNumDoc = response.body.atributos[0]["NUMERO_DOCUMENTO"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
 
                 }
              });

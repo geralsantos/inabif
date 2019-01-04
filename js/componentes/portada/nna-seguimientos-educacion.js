@@ -1,14 +1,15 @@
 Vue.component('nna-seguimientos-educacion', {
     template: '#nna-seguimientos-educacion',
     data:()=>({
-     
+
         Plan_Intervencion:null,
         Meta_PAI:null,
         Informe_Tecnico :null,
         Cumple_Intervencion	:null,
         Provino_Ano:null,
         Desempeno:null,
-                        
+        id:null,
+
         nombre_residente:null,
         isLoading:false,
         mes:moment().format("M"),
@@ -33,7 +34,7 @@ Vue.component('nna-seguimientos-educacion', {
                 return false;
             }
             let valores = {
-               
+
                 Plan_Intervencion:this.Plan_Intervencion,
                 Meta_PAI:this.Meta_PAI ,
                 Informe_Tecnico :this.Informe_Tecnico,
@@ -46,7 +47,7 @@ Vue.component('nna-seguimientos-educacion', {
                 Periodo_Anio:moment().format("YYYY")
 
             }
-                
+
             this.$http.post('insertar_datos?view',{tabla:'NNAEducacion_Semestral', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
@@ -103,13 +104,14 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.Cumple_Intervencion = response.body.atributos[0]["CUMPLE_INTERVENCION"];
                     this.Provino_Ano = response.body.atributos[0]["PROVINO_ANO"];
                     this.Desempeno = response.body.atributos[0]["DESEMPENO"];
-         
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
+
                 }
              });
 
         },
         mostrar_lista_residentes(){
-         
+
             this.id_residente = null;
             this.isLoading = true;
                 this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
@@ -122,7 +124,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                         swal("", "No existe ningún residente", "error")
                     }
                  });
-            
+
         },
         elegir_residente(residente){
 
@@ -132,7 +134,8 @@ let apellido = apellido_p + ' ' + apellido_m;
             this.Cumple_Intervencion = null;
             this.Provino_Ano = null;
             this.Desempeno = null;
-         
+            this.id = null;
+
 
             this.id_residente = residente.ID;
             let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
@@ -150,11 +153,12 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.Cumple_Intervencion = response.body.atributos[0]["CUMPLE_INTERVENCION"];
                     this.Provino_Ano = response.body.atributos[0]["PROVINO_ANO"];
                     this.Desempeno = response.body.atributos[0]["DESEMPENO"];
-         
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
+
                 }
              });
 
         }
-        
+
     }
   })

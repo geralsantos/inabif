@@ -10,6 +10,7 @@ Vue.component('ppd-datos-egreso-trabajoSocial', {
         CarParticipacionfamilia:null,
         CarPosibilidadReinsercion:null,
         CarColocacionLaboral:null,
+        id:null,
 
         nombre_residente:null,
         isLoading:false,
@@ -114,12 +115,13 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.CarParticipacionfamilia = response.body.atributos[0]["PARTICIPACION_FAMILIA"];
                     this.CarPosibilidadReinsercion = response.body.atributos[0]["REINSERCION"];
                     this.CarColocacionLaboral = response.body.atributos[0]["COLOCACION_LABORAL"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
 
                 }
              });
 
         },mostrar_lista_residentes(){
-         
+
             this.id_residente = null;
             this.isLoading = true;
                 this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
@@ -132,7 +134,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                         swal("", "No existe ningún residente", "error")
                     }
                  });
-            
+
         },
         elegir_residente(residente){
 
@@ -145,6 +147,7 @@ let apellido = apellido_p + ' ' + apellido_m;
             this.CarParticipacionfamilia = null;
             this.CarPosibilidadReinsercion = null;
             this.CarColocacionLaboral = null;
+            this.id = null;
 
 
             this.id_residente = residente.ID;
@@ -166,6 +169,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.CarParticipacionfamilia = response.body.atributos[0]["PARTICIPACION_FAMILIA"];
                     this.CarPosibilidadReinsercion = response.body.atributos[0]["REINSERCION"];
                     this.CarColocacionLaboral = response.body.atributos[0]["COLOCACION_LABORAL"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
 
                 }
              });

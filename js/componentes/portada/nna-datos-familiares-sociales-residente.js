@@ -1,11 +1,12 @@
 Vue.component('nna-datos-familiares-sociales-residente', {
     template: '#nna-datos-familiares-sociales-residente',
     data:()=>({
-        
+
         Familiares:null,
         Parentesco:null,
         Tipo_Familia:null,
         Problematica_Fami:null,
+        id:null,
 
         problematicas:[],
         parentescos:[],
@@ -18,7 +19,7 @@ Vue.component('nna-datos-familiares-sociales-residente', {
         id_residente:null,
         modal_lista:false,
         pacientes:[]
- 
+
 
     }),
     created:function(){
@@ -36,18 +37,18 @@ Vue.component('nna-datos-familiares-sociales-residente', {
                 return false;
             }
             let valores = {
-               
+
                 Familiares:this.Familiares,
                 Parentesco:this.Parentesco,
                 Tipo_Familia:this.Tipo_Familia,
-                Problematica_Fami:this.Problematica_Fami, 
-             
+                Problematica_Fami:this.Problematica_Fami,
+
                 Residente_Id: this.id_residente,
                 Periodo_Mes: moment().format("MM"),
                 Periodo_Anio:moment().format("YYYY")
 
             }
-                
+
             this.$http.post('insertar_datos?view',{tabla:'NNAFamiliaresResidente', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
@@ -87,10 +88,10 @@ Vue.component('nna-datos-familiares-sociales-residente', {
         actualizar(coincidencia){
             this.id_residente = coincidencia.ID;
             let nombre=(coincidencia.NOMBRE==undefined)?'':coincidencia.NOMBRE;
-let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
-let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
-let apellido = apellido_p + ' ' + apellido_m;
- this.nombre_residente=nombre + ' ' + apellido;
+            let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
+            let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
+            let apellido = apellido_p + ' ' + apellido_m;
+            this.nombre_residente=nombre + ' ' + apellido;
             this.coincidencias = [];
             this.bloque_busqueda = false;
 
@@ -102,6 +103,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.Parentesco = response.body.atributos[0]["PARENTESCO"];
                     this.Tipo_Familia = response.body.atributos[0]["TIPO_FAMILIA"];
                     this.Problematica_Fami = response.body.atributos[0]["PROBLEMATICA_FAMI"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
 
                 }
              });
@@ -122,7 +124,7 @@ let apellido = apellido_p + ' ' + apellido_m;
             });
         },
         mostrar_lista_residentes(){
-         
+
             this.id_residente = null;
             this.isLoading = true;
                 this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
@@ -135,7 +137,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                         swal("", "No existe ningún residente", "error")
                     }
                  });
-            
+
         },
         elegir_residente(residente){
 
@@ -143,6 +145,7 @@ let apellido = apellido_p + ' ' + apellido_m;
             this.Parentesco = null;
             this.Tipo_Familia = null;
             this.Problematica_Fami = null;
+            this.id = null;
 
             this.id_residente = residente.ID;
             let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
@@ -158,11 +161,12 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.Parentesco = response.body.atributos[0]["PARENTESCO"];
                     this.Tipo_Familia = response.body.atributos[0]["TIPO_FAMILIA"];
                     this.Problematica_Fami = response.body.atributos[0]["PROBLEMATICA_FAMI"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
 
                 }
              });
 
         }
-        
+
     }
   })

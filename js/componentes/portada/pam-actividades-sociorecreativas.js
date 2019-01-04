@@ -10,7 +10,8 @@ Vue.component('pam-actividades-sociorecreativas', {
         Nro_Arte_Manualidades:null,
         Otros:null,
         Nro_Arte_Otros:null,
-            
+        id:null,
+
         nombre_residente:null,
         isLoading:false,
         mes:moment().format("M"),
@@ -37,7 +38,7 @@ Vue.component('pam-actividades-sociorecreativas', {
                 return false;
             }
             let valores = {
-             
+
                 Terapia_Fisica_Rehabilitacion:this.Terapia_Fisica_Rehabilitacion,
                 Arte:this.Arte,
                 Nro_Arte:this.Nro_Arte,
@@ -47,13 +48,13 @@ Vue.component('pam-actividades-sociorecreativas', {
                 Nro_Arte_Manualidades:this.Nro_Arte_Manualidades,
                 Otros:this.Otros,
                 Nro_Arte_Otros:this.Nro_Arte_Otros,
-           
+
                 Residente_Id: this.id_residente,
                 Periodo_Mes: moment().format("MM"),
                 Periodo_Anio:moment().format("YYYY")
 
             }
-                  
+
             this.$http.post('insertar_datos?view',{tabla:'pam_ActividadSociorecrea', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
@@ -93,10 +94,10 @@ Vue.component('pam-actividades-sociorecreativas', {
         actualizar(coincidencia){
             this.id_residente = coincidencia.ID;
             let nombre=(coincidencia.NOMBRE==undefined)?'':coincidencia.NOMBRE;
-let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
-let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
-let apellido = apellido_p + ' ' + apellido_m;
- this.nombre_residente=nombre + ' ' + apellido;
+            let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
+            let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
+            let apellido = apellido_p + ' ' + apellido_m;
+            this.nombre_residente=nombre + ' ' + apellido;
             this.coincidencias = [];
             this.bloque_busqueda = false;
 
@@ -113,13 +114,14 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.Nro_Arte_Manualidades = response.body.atributos[0]["NRO_ARTE_MANUALIDADES"];
                     this.Otros = response.body.atributos[0]["OTROS"];
                     this.Nro_Arte_Otros = response.body.atributos[0]["NRO_ARTE_OTROS"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
 
-        
+
                 }
              });
 
         },mostrar_lista_residentes(){
-         
+
             this.id_residente = null;
             this.isLoading = true;
                 this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
@@ -132,7 +134,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                         swal("", "No existe ningún residente", "error")
                     }
                  });
-            
+
         },
         elegir_residente(residente){
 
@@ -145,6 +147,7 @@ let apellido = apellido_p + ' ' + apellido_m;
             this.Nro_Arte_Manualidades = null;
             this.Otros = null;
             this.Nro_Arte_Otros = null;
+            this.id = null;
 
 
             this.id_residente = residente.ID;
@@ -166,12 +169,13 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.Nro_Arte_Manualidades = response.body.atributos[0]["NRO_ARTE_MANUALIDADES"];
                     this.Otros = response.body.atributos[0]["OTROS"];
                     this.Nro_Arte_Otros = response.body.atributos[0]["NRO_ARTE_OTROS"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
 
-        
+
                 }
              });
 
         }
-        
+
     }
   })

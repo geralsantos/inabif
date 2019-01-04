@@ -1,7 +1,7 @@
 Vue.component('nna-seguimientos-trabajo-social', {
     template: '#nna-seguimientos-trabajo-social',
     data:()=>({
-     
+
         Plan_Intervencion:null,
         Meta_PAI :null,
         Informe_Tecnico :null,
@@ -9,7 +9,8 @@ Vue.component('nna-seguimientos-trabajo-social', {
         ParticipacionF_Activa:null,
         Reinsercion_Familiar:null,
         FamiliaR_Soporte:null,
-                        
+        id:null,
+
         nombre_residente:null,
         isLoading:false,
         mes:moment().format("M"),
@@ -34,7 +35,7 @@ Vue.component('nna-seguimientos-trabajo-social', {
                 return false;
             }
             let valores = {
-               
+
                 Plan_Intervencion:this.Plan_Intervencion,
                 Meta_PAI :this.Meta_PAI,
                 Informe_Tecnico :this.Informe_Tecnico,
@@ -48,7 +49,7 @@ Vue.component('nna-seguimientos-trabajo-social', {
                 Periodo_Anio:moment().format("YYYY")
 
             }
-                
+
             this.$http.post('insertar_datos?view',{tabla:'NNAtrabajoSocial_Semestral', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
@@ -88,10 +89,10 @@ Vue.component('nna-seguimientos-trabajo-social', {
         actualizar(coincidencia){
             this.id_residente = coincidencia.ID;
             let nombre=(coincidencia.NOMBRE==undefined)?'':coincidencia.NOMBRE;
-let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
-let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
-let apellido = apellido_p + ' ' + apellido_m;
- this.nombre_residente=nombre + ' ' + apellido;
+            let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
+            let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
+            let apellido = apellido_p + ' ' + apellido_m;
+            this.nombre_residente=nombre + ' ' + apellido;
             this.coincidencias = [];
             this.bloque_busqueda = false;
 
@@ -105,14 +106,15 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.Cumple_Intervencion = response.body.atributos[0]["CUMPLE_INTERVENCION"];
                     this.ParticipacionF_Activa = response.body.atributos[0]["PARTICIPACIONF_ACTIVA"];
                     this.Reinsercion_Familiar = response.body.atributos[0]["REINSERCION_FAMILIAR"];
-                    this.FamiliaR_Soporte = response.body.atributos[0]["FAMILIAR_SOPORTE"];                  
+                    this.FamiliaR_Soporte = response.body.atributos[0]["FAMILIAR_SOPORTE"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
 
                 }
              })
 
         },
         mostrar_lista_residentes(){
-         
+
             this.id_residente = null;
             this.isLoading = true;
                 this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
@@ -125,7 +127,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                         swal("", "No existe ningún residente", "error")
                     }
                  });
-            
+
         },
         elegir_residente(residente){
 
@@ -135,7 +137,8 @@ let apellido = apellido_p + ' ' + apellido_m;
             this.Cumple_Intervencion = null;
             this.ParticipacionF_Activa = null;
             this.Reinsercion_Familiar = null;
-            this.FamiliaR_Soporte = null; 
+            this.FamiliaR_Soporte = null;
+            this.id = null;
 
             this.id_residente = residente.ID;
             let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
@@ -153,12 +156,13 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.Cumple_Intervencion = response.body.atributos[0]["CUMPLE_INTERVENCION"];
                     this.ParticipacionF_Activa = response.body.atributos[0]["PARTICIPACIONF_ACTIVA"];
                     this.Reinsercion_Familiar = response.body.atributos[0]["REINSERCION_FAMILIAR"];
-                    this.FamiliaR_Soporte = response.body.atributos[0]["FAMILIAR_SOPORTE"];                  
+                    this.FamiliaR_Soporte = response.body.atributos[0]["FAMILIAR_SOPORTE"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
 
                 }
              })
 
         }
-        
+
     }
   })

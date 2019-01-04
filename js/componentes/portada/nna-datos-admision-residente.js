@@ -1,7 +1,7 @@
 Vue.component('nna-datos-admision-residente', {
     template:'#nna-datos-admision-residente',
     data:()=>({
-        
+
         Movimiento_Poblacional:null,
         Fecha_Ingreso:null,
         Fecha_Registro:null,
@@ -12,6 +12,7 @@ Vue.component('nna-datos-admision-residente', {
         Tipo_Doc  :null,
         Numero_Doc:null,
         Situacion_Legal :null,
+        id:null,
 
         instituciones:[],
         motivosingreso:[],
@@ -36,7 +37,7 @@ Vue.component('nna-datos-admision-residente', {
         this.buscar_motivosingreso();
     },
     updated:function(){
-        
+
     },
     methods:{
         guardar(){
@@ -45,7 +46,7 @@ Vue.component('nna-datos-admision-residente', {
                 return false;
             }
             let valores = {
-               
+
                 Movimiento_Poblacional:this.Movimiento_Poblacional,
                 Fecha_Ingreso:moment(this.Fecha_Ingreso, "YYYY-MM-DD").format("YY-MMM-DD"),
                 Fecha_Registro:moment(this.Fecha_Registro, "YYYY-MM-DD").format("YY-MMM-DD"),
@@ -54,15 +55,15 @@ Vue.component('nna-datos-admision-residente', {
                 Perfil_Ingreso_P:this.Perfil_Ingreso_P,
                 Perfil_Ingreso_S:this.Perfil_Ingreso_S,
                 Tipo_Doc:this.Tipo_Doc,
-                Numero_Doc:this.Numero_Doc, 
+                Numero_Doc:this.Numero_Doc,
                 Situacion_Legal:this.Situacion_Legal,
-       
+
                 Residente_Id: this.id_residente,
                 Periodo_Mes: moment().format("MM"),
                 Periodo_Anio:moment().format("YYYY")
 
             }
-                
+
             this.$http.post('insertar_datos?view',{tabla:'NNAAdmisionResidente', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
@@ -119,12 +120,13 @@ Vue.component('nna-datos-admision-residente', {
                     this.Tipo_Doc = response.body.atributos[0]["TIPO_DOC"];
                     this.Numero_Doc = response.body.atributos[0]["NUMERO_DOC"];
                     this.Situacion_Legal = response.body.atributos[0]["SITUACION_LEGAL"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
 
                 }
              });
 
         },
-        
+
         buscar_instituciones(){
             this.$http.post('buscar?view',{tabla:'nna_instituciones'}).then(function(response){
                 if( response.body.data ){
@@ -133,7 +135,7 @@ Vue.component('nna-datos-admision-residente', {
 
             });
         },
-        
+
         buscar_motivosingreso(){
             this.$http.post('buscar?view',{tabla:'nna_motivos_ingreso'}).then(function(response){
                 if( response.body.data ){
@@ -152,7 +154,7 @@ Vue.component('nna-datos-admision-residente', {
             });
         },
         mostrar_lista_residentes(){
-         
+
             this.id_residente = null;
             this.isLoading = true;
                 this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
@@ -165,7 +167,7 @@ Vue.component('nna-datos-admision-residente', {
                         swal("", "No existe ningún residente", "error")
                     }
                  });
-            
+
         },
         elegir_residente(residente){
 
@@ -179,6 +181,7 @@ Vue.component('nna-datos-admision-residente', {
             this.Tipo_Doc  = null;
             this.Numero_Doc= null;
             this.Situacion_Legal = null;
+            this.id = null;
 
             this.id_residente = residente.ID;
             let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
@@ -200,6 +203,7 @@ Vue.component('nna-datos-admision-residente', {
                     this.Tipo_Doc = response.body.atributos[0]["TIPO_DOC"];
                     this.Numero_Doc = response.body.atributos[0]["NUMERO_DOC"];
                     this.Situacion_Legal = response.body.atributos[0]["SITUACION_LEGAL"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
 
 
                 }

@@ -10,6 +10,7 @@ Vue.component('ppd-datos-salud-mental', {
         CarDificultadPresenta:null,
         CarRealizaActividades:null,
         CarEspeficicarActividades:null,
+        id:null,
 
         transtornos:[],
         tipos:[],
@@ -98,10 +99,10 @@ Vue.component('ppd-datos-salud-mental', {
         actualizar(coincidencia){
             this.id_residente = coincidencia.ID;
             let nombre=(coincidencia.NOMBRE==undefined)?'':coincidencia.NOMBRE;
-let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
-let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
-let apellido = apellido_p + ' ' + apellido_m;
- this.nombre_residente=nombre + ' ' + apellido;
+            let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
+            let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
+            let apellido = apellido_p + ' ' + apellido_m;
+            this.nombre_residente=nombre + ' ' + apellido;
             this.coincidencias = [];
             this.bloque_busqueda = false;
 
@@ -118,6 +119,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.CarDificultadPresenta = response.body.atributos[0]["TIPO_DIFICULTAD"];
                     this.CarRealizaActividades = response.body.atributos[0]["ACTIVIDADES_DIARIAS"];
                     this.CarEspeficicarActividades = response.body.atributos[0]["ESPECIFICAR"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
 
                 }
              });
@@ -139,7 +141,7 @@ let apellido = apellido_p + ' ' + apellido_m;
 
             });
         },mostrar_lista_residentes(){
-         
+
             this.id_residente = null;
             this.isLoading = true;
                 this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
@@ -152,7 +154,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                         swal("", "No existe ningún residente", "error")
                     }
                  });
-            
+
         },
         elegir_residente(residente){
 
@@ -165,6 +167,7 @@ let apellido = apellido_p + ' ' + apellido_m;
             this.CarDificultadPresenta = null;
             this.CarRealizaActividades = null;
             this.CarEspeficicarActividades = null;
+            this.id = null;
 
 
             this.id_residente = residente.ID;
@@ -186,6 +189,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.CarDificultadPresenta = response.body.atributos[0]["TIPO_DIFICULTAD"];
                     this.CarRealizaActividades = response.body.atributos[0]["ACTIVIDADES_DIARIAS"];
                     this.CarEspeficicarActividades = response.body.atributos[0]["ESPECIFICAR"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
 
                 }
              });
@@ -195,7 +199,7 @@ let apellido = apellido_p + ' ' + apellido_m;
             this.$http.post('buscar?view',{tabla:'cie_10'}).then(function(response){
                 if( response.body.data ){
                     this.lista_cie_10= response.body.data;
-                    
+
                 }
 
             });

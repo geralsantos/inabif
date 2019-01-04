@@ -11,7 +11,8 @@ Vue.component('pam-datos-condiciones-ingreso', {
         SISFOH:null,
         familiar_ubicados:null,
         tipo_parentesco:null,
-              
+        id:null,
+
         niveles_educativos:[],
         clasif_socioeconomica:[],
         tipos_parentescos:[],
@@ -44,7 +45,7 @@ Vue.component('pam-datos-condiciones-ingreso', {
                 return false;
             }
             let valores = {
-               
+
                 documento_entidad:this.documento_entidad,
                 tipo_documento_entidad:this.tipo_documento_entidad,
                 numero_documento_ingreso:this.numero_documento_ingreso,
@@ -55,13 +56,13 @@ Vue.component('pam-datos-condiciones-ingreso', {
                 SISFOH:this.SISFOH,
                 familiar_ubicados:this.familiar_ubicados,
                 tipo_parentesco:this.tipo_parentesco,
-                
+
                 Residente_Id: this.id_residente,
                 Periodo_Mes: moment().format("MM"),
                 Periodo_Anio:moment().format("YYYY")
 
             }
-                     
+
             this.$http.post('insertar_datos?view',{tabla:'pam_datosCondicionIngreso', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
@@ -122,6 +123,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.SISFOH = response.body.atributos[0]["SISFOH"];
                     this.familiar_ubicados = response.body.atributos[0]["FAMILIAR_UBICADOS"];
                     this.tipo_parentesco = response.body.atributos[0]["TIPO_PARENTESCO"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
                 }
              });
 
@@ -151,7 +153,7 @@ let apellido = apellido_p + ' ' + apellido_m;
 
             });
         },mostrar_lista_residentes(){
-         
+
             this.id_residente = null;
             this.isLoading = true;
                 this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
@@ -164,7 +166,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                         swal("", "No existe ningún residente", "error")
                     }
                  });
-            
+
         },
         elegir_residente(residente){
 
@@ -178,6 +180,7 @@ let apellido = apellido_p + ' ' + apellido_m;
             this.SISFOH = null;
             this.familiar_ubicados = null;
             this.tipo_parentesco = null;
+            this.id = null;
 
 
             this.id_residente = residente.ID;
@@ -200,12 +203,13 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.SISFOH = response.body.atributos[0]["SISFOH"];
                     this.familiar_ubicados = response.body.atributos[0]["FAMILIAR_UBICADOS"];
                     this.tipo_parentesco = response.body.atributos[0]["TIPO_PARENTESCO"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
                 }
              });
 
         }
 
 
-        
+
     }
   })

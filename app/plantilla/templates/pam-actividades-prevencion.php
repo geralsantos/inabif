@@ -30,7 +30,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="form-group col-md-2">
+                            <div class="form-group col-md-1">
                                 <label for="text-input" class=" form-control-label">Año</label>
                                 <select name="select" disabled="disabled" id="anio"  v-model="anio" class="form-control">
                                 <option value="2018">2018</option>
@@ -39,7 +39,7 @@
                                 <option value="2021">2021</option>
                                 </select>
                             </div>
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-2">
                                 <div class=""><label for="text-input" class=" form-control-label">Mes</label>
                                 <select id="mes" v-model="mes" disabled="disabled" class="form-control" >
                                         <option value="1">Enero</option>
@@ -56,7 +56,10 @@
                                         <option value="12">Diciembre</option>
                                     </select> </div>
                             </div>
-
+                            <div class="form-group col-md-2">
+                                <label for="text-input" class=" form-control-label">Código</label>
+                                <input type="text" v-model="id" class="form-control" readonly>
+                            </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
@@ -76,7 +79,7 @@
                                     <option value="No">No</option>
                                 </select> </div>
                             </div>
-                        
+
                             <div class="form-group col-md-6">
                                 <div class=" "><label for="text-input" class=" form-control-label">N° de Veces que Participa</label>
                                 <select name="Nro_Participa" v-model="Nro_Participa" class="form-control">
@@ -93,7 +96,7 @@
                                 </select>
                                 </div>
                             </div>
-                     
+
                             <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">N° de Veces que Participa</label>
                                     <select name="Nro_Participa_Autoestima" v-model="Nro_Participa_Autoestima" class="form-control">
@@ -107,9 +110,9 @@
                                 <select name="ManejoSituacionesDivergentes" v-model="ManejoSituacionesDivergentes" class="form-control">
                                 <option value="Si">Si</option>
                                         <option value="No">No</option>
-                                </select> 
+                                </select>
                             </div>
-                        
+
                             <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">N° de Veces que Participa</label>
                                     <select name="Nro_Participa_Divergentes" v-model="Nro_Participa_Divergentes" class="form-control">
@@ -140,7 +143,7 @@
                                 <select name="ConservacionHabilidadCognitiva" v-model="ConservacionHabilidadCognitiva" class="form-control">
                                 <option value="Si">Si</option>
                                         <option value="No">No</option>
-                                </select> 
+                                </select>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">N° de Veces que Participa</label>
@@ -149,14 +152,14 @@
                                     </select>
                             </div>
                         </div>
-                   
+
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">Otros </label>
                                 <select name="Otros" v-model="Otros" class="form-control">
                                 <option value="Si">Si</option>
                                         <option value="No">No</option>
-                                </select> 
+                                </select>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">N° de Veces que Participa</label>
@@ -204,9 +207,9 @@
                                                 <td>{{residente.NOMBRE}} {{residente.APELLIDO}}</td>
                                                 <td>{{residente.DOCUMENTO}}</td>
                                                 <td><button class="btn btn-primary" @click="elegir_residente(residente)">Seleccionar</button></td>
-                                            
+
                                             </tr>
-                                        
+
                                         </tbody>
                                     </table>
                                 </div>

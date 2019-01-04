@@ -1,13 +1,14 @@
 Vue.component('nna-seguimiento-terapia-ocupacional', {
     template: '#nna-seguimiento-terapia-ocupacional',
     data:()=>({
-     
+
         Nro_Talleres_E:null,
         Nro_Campanas:null,
         Nro_Atencion_Fisi  :null,
         Nro_Atencon_Ocupa:null,
         Nro_Atencion_Lengua:null,
-                        
+        id:null,
+
         nombre_residente:null,
         isLoading:false,
         mes:moment().format("M"),
@@ -32,7 +33,7 @@ Vue.component('nna-seguimiento-terapia-ocupacional', {
                 return false;
             }
             let valores = {
-               
+
                 Nro_Talleres_E:this.Nro_Talleres_E,
                 Nro_Campanas:this.Nro_Campanas,
                 Nro_Atencion_Fisi  :this.Nro_Atencion_Fisi,
@@ -44,7 +45,7 @@ Vue.component('nna-seguimiento-terapia-ocupacional', {
                 Periodo_Anio:moment().format("YYYY")
 
             }
-                
+
             this.$http.post('insertar_datos?view',{tabla:'NNATerapiasOcupacionalL', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
@@ -84,10 +85,10 @@ Vue.component('nna-seguimiento-terapia-ocupacional', {
         actualizar(coincidencia){
             this.id_residente = coincidencia.ID;
             let nombre=(coincidencia.NOMBRE==undefined)?'':coincidencia.NOMBRE;
-let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
-let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
-let apellido = apellido_p + ' ' + apellido_m;
- this.nombre_residente=nombre + ' ' + apellido;
+            let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
+            let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
+            let apellido = apellido_p + ' ' + apellido_m;
+            this.nombre_residente=nombre + ' ' + apellido;
             this.coincidencias = [];
             this.bloque_busqueda = false;
 
@@ -100,13 +101,14 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.Nro_Atencion_Fisi = response.body.atributos[0]["NRO_ATENCION_FISI"];
                     this.Nro_Atencon_Ocupa = response.body.atributos[0]["NRO_ATENCON_OCUPA"];
                     this.Nro_Atencion_Lengua = response.body.atributos[0]["NRO_ATENCION_LENGUA"];
-          
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
+
                 }
              });
 
         },
         mostrar_lista_residentes(){
-         
+
             this.id_residente = null;
             this.isLoading = true;
                 this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
@@ -119,7 +121,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                         swal("", "No existe ningún residente", "error")
                     }
                  });
-            
+
         },
         elegir_residente(residente){
 
@@ -128,6 +130,7 @@ let apellido = apellido_p + ' ' + apellido_m;
             this.Nro_Atencion_Fisi = null;
             this.Nro_Atencon_Ocupa = null;
             this.Nro_Atencion_Lengua = null;
+            this.id = null;
 
             this.id_residente = residente.ID;
             let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
@@ -144,11 +147,12 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.Nro_Atencion_Fisi = response.body.atributos[0]["NRO_ATENCION_FISI"];
                     this.Nro_Atencon_Ocupa = response.body.atributos[0]["NRO_ATENCON_OCUPA"];
                     this.Nro_Atencion_Lengua = response.body.atributos[0]["NRO_ATENCION_LENGUA"];
-          
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
+
                 }
              });
 
         }
-        
+
     }
   })

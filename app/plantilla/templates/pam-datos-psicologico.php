@@ -30,7 +30,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="form-group col-md-2">
+                            <div class="form-group col-md-1">
                                 <label for="text-input" class=" form-control-label">Año</label>
                                 <select name="select" disabled="disabled" id="anio"  v-model="anio" class="form-control">
                                 <option value="2018">2018</option>
@@ -40,7 +40,7 @@
                                 </select>
 
                             </div>
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-2">
                                 <div class=""><label for="text-input" class=" form-control-label">Mes</label>
                                 <select id="mes" v-model="mes" disabled="disabled" class="form-control" >
                                         <option value="1">Enero</option>
@@ -57,7 +57,10 @@
                                         <option value="12">Diciembre</option>
                                     </select> </div>
                             </div>
-
+                            <div class="form-group col-md-2">
+                                <label for="text-input" class=" form-control-label">Código</label>
+                                <input type="text" v-model="id" class="form-control" readonly>
+                            </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-4">
@@ -71,7 +74,7 @@
                                 <div class=" "><label for="text-input" class=" form-control-label">Descripción de la meta trazada en el pai </label>
                                 <textarea class="form-control" v-model="Des_Meta" name="Des_Meta" cols="30" rows="2"></textarea>
 
-                                </div>        
+                                </div>
                             </div>
                         </div>
                         <div class="row">
@@ -83,7 +86,7 @@
                                 </select>
                                 </div>
                             </div>
-                        
+
                             <div class="form-group col-md-8">
                                 <label for="text-input" class=" form-control-label">Descripción del informe evolutivo </label>
                                 <textarea class="form-control" v-model="Des_Informe_Tecnico" name="Des_Informe_Tecnico" cols="30" rows="2"></textarea>
@@ -98,7 +101,7 @@
                                 <option value="Residente no logra el objetivo trazado">Residente no logra el objetivo trazado</option>
                                 </select>
                             </div>
-                            
+
                             <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">Deteriorio del área cognitiva</label>
                                 <select name="Deterioro_Cognitivo" v-model="Deterioro_Cognitivo" class="form-control">
@@ -116,7 +119,7 @@
                                 <option value="No">No</option>
                                 </select>
                             </div>
-                        
+
                             <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">Severidad del transtorno depresivo</label>
                                 <select name="Severidad_Trans_Depresivo" v-model="Severidad_Trans_Depresivo" class="form-control">
@@ -165,9 +168,9 @@
                                                 <td>{{residente.NOMBRE}} {{residente.APELLIDO}}</td>
                                                 <td>{{residente.DOCUMENTO}}</td>
                                                 <td><button class="btn btn-primary" @click="elegir_residente(residente)">Seleccionar</button></td>
-                                            
+
                                             </tr>
-                                        
+
                                         </tbody>
                                     </table>
                                 </div>

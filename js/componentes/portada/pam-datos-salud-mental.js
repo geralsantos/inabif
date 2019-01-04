@@ -1,10 +1,11 @@
 Vue.component('pam-datos-salud-mental', {
     template:'#pam-datos-salud-mental',
     data:()=>({
-        
+
         trastorno_disociales:null,
         tipo_trastorno:null,
-       
+        id:null,
+
 
         nombre_residente:null,
         isLoading:false,
@@ -21,7 +22,7 @@ Vue.component('pam-datos-salud-mental', {
     created:function(){
     },
     mounted:function(){
-      
+
     },
     updated:function(){
     },
@@ -32,15 +33,15 @@ Vue.component('pam-datos-salud-mental', {
                 return false;
             }
             let valores = {
-                
+
                 trastorno_disociales:this.trastorno_disociales,
                 tipo_trastorno:this.tipo_trastorno,
                 Residente_Id: this.id_residente,
                 Periodo_Mes: moment().format("MM"),
                 Periodo_Anio:moment().format("YYYY")
-                
+
             }
-             
+
             this.$http.post('insertar_datos?view',{tabla:'pam_salud_mental', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
@@ -80,10 +81,10 @@ Vue.component('pam-datos-salud-mental', {
         actualizar(coincidencia){
             this.id_residente = coincidencia.ID;
             let nombre=(coincidencia.NOMBRE==undefined)?'':coincidencia.NOMBRE;
-let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
-let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
-let apellido = apellido_p + ' ' + apellido_m;
- this.nombre_residente=nombre + ' ' + apellido;
+            let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
+            let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
+            let apellido = apellido_p + ' ' + apellido_m;
+            this.nombre_residente=nombre + ' ' + apellido;
             this.coincidencias = [];
             this.bloque_busqueda = false;
 
@@ -93,12 +94,13 @@ let apellido = apellido_p + ' ' + apellido_m;
 
                     this.trastorno_disociales = response.body.atributos[0]["TRASTORNO_DISOCIALES"];
                     this.tipo_trastorno = response.body.atributos[0]["TIPO_TRASTORNO"];
-                                      
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
+
                 }
              });
 
         },mostrar_lista_residentes(){
-         
+
             this.id_residente = null;
             this.isLoading = true;
                 this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
@@ -111,12 +113,13 @@ let apellido = apellido_p + ' ' + apellido_m;
                         swal("", "No existe ningún residente", "error")
                     }
                  });
-            
+
         },
         elegir_residente(residente){
 
             this.trastorno_disociales = null;
             this.tipo_trastorno = null;
+            this.id = null;
 
 
             this.id_residente = residente.ID;
@@ -131,11 +134,12 @@ let apellido = apellido_p + ' ' + apellido_m;
 
                     this.trastorno_disociales = response.body.atributos[0]["TRASTORNO_DISOCIALES"];
                     this.tipo_trastorno = response.body.atributos[0]["TIPO_TRASTORNO"];
-                                      
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
+
                 }
              });
 
         }
-       
+
     }
   })

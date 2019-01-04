@@ -1,13 +1,14 @@
 Vue.component('pam-datos-trabajo-social', {
     template:'#pam-datos-trabajo-social',
     data:()=>({
-        
+
         Plan_Intervencion:null,
         Meta_PAI:null,
         Informe_Tecnico :null,
         Des_Informe_Tecnico:null,
         Cumple_Intervencion :null,
-             
+        id:null,
+
         nombre_residente:null,
         isLoading:false,
         mes:moment().format("M"),
@@ -23,7 +24,7 @@ Vue.component('pam-datos-trabajo-social', {
     created:function(){
     },
     mounted:function(){
-      
+
     },
     updated:function(){
     },
@@ -34,19 +35,19 @@ Vue.component('pam-datos-trabajo-social', {
                 return false;
             }
             let valores = {
-                
+
                 Plan_Intervencion:this.Plan_Intervencion,
                 Meta_PAI:this.Meta_PAI,
                 Informe_Tecnico :this.Informe_Tecnico,
                 Des_Informe_Tecnico:this.Des_Informe_Tecnico,
                 Cumple_Intervencion :this.Cumple_Intervencion,
-        
+
                 Residente_Id: this.id_residente,
                 Periodo_Mes: moment().format("MM"),
                 Periodo_Anio:moment().format("YYYY")
-                
+
             }
-             
+
             this.$http.post('insertar_datos?view',{tabla:'pam_trabajoSocial', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
@@ -86,10 +87,10 @@ Vue.component('pam-datos-trabajo-social', {
         actualizar(coincidencia){
             this.id_residente = coincidencia.ID;
             let nombre=(coincidencia.NOMBRE==undefined)?'':coincidencia.NOMBRE;
-let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
-let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
-let apellido = apellido_p + ' ' + apellido_m;
- this.nombre_residente=nombre + ' ' + apellido;
+            let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
+            let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
+            let apellido = apellido_p + ' ' + apellido_m;
+            this.nombre_residente=nombre + ' ' + apellido;
             this.coincidencias = [];
             this.bloque_busqueda = false;
 
@@ -102,12 +103,13 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.Informe_Tecnico = response.body.atributos[0]["INFORME_TECNICO"];
                     this.Des_Informe_Tecnico = response.body.atributos[0]["DES_INFORME_TECNICO"];
                     this.Cumple_Intervencion = response.body.atributos[0]["CUMPLE_INTERVENCION"];
-                  
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
+
                 }
              });
 
         },mostrar_lista_residentes(){
-         
+
             this.id_residente = null;
             this.isLoading = true;
                 this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
@@ -120,7 +122,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                         swal("", "No existe ningún residente", "error")
                     }
                  });
-            
+
         },
         elegir_residente(residente){
 
@@ -129,6 +131,7 @@ let apellido = apellido_p + ' ' + apellido_m;
             this.Informe_Tecnico = null;
             this.Des_Informe_Tecnico = null;
             this.Cumple_Intervencion = null;
+            this.id = null;
 
 
             this.id_residente = residente.ID;
@@ -146,11 +149,12 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.Informe_Tecnico = response.body.atributos[0]["INFORME_TECNICO"];
                     this.Des_Informe_Tecnico = response.body.atributos[0]["DES_INFORME_TECNICO"];
                     this.Cumple_Intervencion = response.body.atributos[0]["CUMPLE_INTERVENCION"];
-                  
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
+
                 }
              });
 
         }
-       
+
     }
   })

@@ -26,7 +26,8 @@ Vue.component('pam-atenciones-salud', {
         Nro_Atenciones_OtrosServicios:null,
         ResidenteHospitalizadoPeriodo:null,
         Motivo_Hospitalizacion:null,
-            
+        id:null,
+
         nombre_residente:null,
         isLoading:false,
         mes:moment().format("M"),
@@ -53,7 +54,7 @@ Vue.component('pam-atenciones-salud', {
                 return false;
             }
             let valores = {
-                
+
                 Residente_Salida:this.Residente_Salida,
                 Salidas:this.Salidas,
                 Atenciones_Cardiovascular:this.Atenciones_Cardiovascular,
@@ -79,13 +80,13 @@ Vue.component('pam-atenciones-salud', {
                 Nro_Atenciones_OtrosServicios:this.Nro_Atenciones_OtrosServicios,
                 ResidenteHospitalizadoPeriodo:this.ResidenteHospitalizadoPeriodo,
                 Motivo_Hospitalizacion:this.Motivo_Hospitalizacion,
-           
+
                 Residente_Id: this.id_residente,
                 Periodo_Mes: moment().format("MM"),
                 Periodo_Anio:moment().format("YYYY")
 
             }
-                  
+
             this.$http.post('insertar_datos?view',{tabla:'pam_AtencionesSalud', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
@@ -125,10 +126,10 @@ Vue.component('pam-atenciones-salud', {
         actualizar(coincidencia){
             this.id_residente = coincidencia.ID;
             let nombre=(coincidencia.NOMBRE==undefined)?'':coincidencia.NOMBRE;
-let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
-let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
-let apellido = apellido_p + ' ' + apellido_m;
- this.nombre_residente=nombre + ' ' + apellido;
+            let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
+            let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
+            let apellido = apellido_p + ' ' + apellido_m;
+            this.nombre_residente=nombre + ' ' + apellido;
             this.coincidencias = [];
             this.bloque_busqueda = false;
 
@@ -161,12 +162,13 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.Nro_Atenciones_OtrosServicios = response.body.atributos[0]["NRO_ATENCIONES_OTROSSERVICIOS"];
                     this.ResidenteHospitalizadoPeriodo = response.body.atributos[0]["RESIDENTEHOSPITALIZADOPERIODO"];
                     this.Motivo_Hospitalizacion = response.body.atributos[0]["MOTIVO_HOSPITALIZACION"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
 
                 }
              });
 
         },mostrar_lista_residentes(){
-         
+
             this.id_residente = null;
             this.isLoading = true;
                 this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
@@ -179,7 +181,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                         swal("", "No existe ningún residente", "error")
                     }
                  });
-            
+
         },
         elegir_residente(residente){
 
@@ -208,6 +210,7 @@ let apellido = apellido_p + ' ' + apellido_m;
             this.Nro_Atenciones_OtrosServicios = null;
             this.ResidenteHospitalizadoPeriodo = null;
             this.Motivo_Hospitalizacion = null;
+            this.id = null;
 
 
             this.id_residente = residente.ID;
@@ -245,11 +248,12 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.Nro_Atenciones_OtrosServicios = response.body.atributos[0]["NRO_ATENCIONES_OTROSSERVICIOS"];
                     this.ResidenteHospitalizadoPeriodo = response.body.atributos[0]["RESIDENTEHOSPITALIZADOPERIODO"];
                     this.Motivo_Hospitalizacion = response.body.atributos[0]["MOTIVO_HOSPITALIZACION"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
 
                 }
              });
 
         }
-        
+
     }
   })

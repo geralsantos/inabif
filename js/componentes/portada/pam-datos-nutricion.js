@@ -10,6 +10,7 @@ Vue.component('pam-datos-nutricion', {
         Peso: null,
         Talla: null,
         Hemoglobina: null,
+        id:null,
 
         nombre_residente: null,
         isLoading: false,
@@ -108,12 +109,13 @@ Vue.component('pam-datos-nutricion', {
                     this.Peso = response.body.atributos[0]["PESO"];
                     this.Talla = response.body.atributos[0]["TALLA"];
                     this.Hemoglobina = response.body.atributos[0]["HEMOGLOBINA"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
 
                 }
             });
 
         },mostrar_lista_residentes(){
-         
+
             this.id_residente = null;
             this.isLoading = true;
                 this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
@@ -126,7 +128,7 @@ Vue.component('pam-datos-nutricion', {
                         swal("", "No existe ningún residente", "error")
                     }
                  });
-            
+
         },
         elegir_residente(residente){
 
@@ -139,6 +141,7 @@ Vue.component('pam-datos-nutricion', {
             this.Peso = null;
             this.Talla = null;
             this.Hemoglobina = null;
+            this.id = null;
 
 
             this.id_residente = residente.ID;
@@ -160,6 +163,7 @@ Vue.component('pam-datos-nutricion', {
                     this.Peso = response.body.atributos[0]["PESO"];
                     this.Talla = response.body.atributos[0]["TALLA"];
                     this.Hemoglobina = response.body.atributos[0]["HEMOGLOBINA"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
 
                 }
             });

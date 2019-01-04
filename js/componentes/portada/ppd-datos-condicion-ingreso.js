@@ -14,6 +14,7 @@ Vue.component('ppd-datos-condicion-ingreso', {
         CarFamiliaresUbicados:null,
         CarTipoParentesco:null,
         CarProblematicaFam:null,
+        id:null,
 
         pensiones:[],
         educativos:[],
@@ -112,10 +113,10 @@ Vue.component('ppd-datos-condicion-ingreso', {
         actualizar(coincidencia){
             this.id_residente = coincidencia.ID;
             let nombre=(coincidencia.NOMBRE==undefined)?'':coincidencia.NOMBRE;
-let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
-let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
-let apellido = apellido_p + ' ' + apellido_m;
- this.nombre_residente=nombre + ' ' + apellido;
+            let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
+            let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
+            let apellido = apellido_p + ' ' + apellido_m;
+            this.nombre_residente=nombre + ' ' + apellido;
             this.coincidencias = [];
             this.bloque_busqueda = false;
 
@@ -136,6 +137,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.CarFamiliaresUbicados = response.body.atributos[0]["FAMILIARES"];
                     this.CarTipoParentesco = response.body.atributos[0]["PARENTESCO"];
                     this.CarProblematicaFam = response.body.atributos[0]["PROBLEMATICA_FAMILIAR"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
 
                 }
              });
@@ -150,8 +152,7 @@ let apellido = apellido_p + ' ' + apellido_m;
         },
         tipo_documento_identidad(){
             this.$http.post('buscar?view',{tabla:'pam_tipo_documento_identidad'}).then(function(response){
-                console.log("tipo_documento_identidad");
-                console.log(response.body);
+
                 if( response.body.data ){
                     this.tipoDocumentos= response.body.data;
                 }
@@ -229,6 +230,7 @@ let apellido = apellido_p + ' ' + apellido_m;
             this.CarFamiliaresUbicados = null;
             this.CarTipoParentesco = null;
             this.CarProblematicaFam = null;
+            this.id = null;
 
             this.id_residente = residente.ID;
             let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
@@ -253,6 +255,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.CarFamiliaresUbicados = response.body.atributos[0]["FAMILIARES"];
                     this.CarTipoParentesco = response.body.atributos[0]["PARENTESCO"];
                     this.CarProblematicaFam = response.body.atributos[0]["PROBLEMATICA_FAMILIAR"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
 
                 }
              });

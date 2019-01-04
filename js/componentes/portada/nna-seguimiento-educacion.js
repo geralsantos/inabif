@@ -1,7 +1,7 @@
 Vue.component('nna-seguimiento-educacion', {
     template: '#nna-seguimiento-educacion',
     data:()=>({
-     
+
         Plan_Intervencion:null,
         Sistema_Educativo:null,
         NEducativo:null,
@@ -13,6 +13,7 @@ Vue.component('nna-seguimiento-educacion', {
         Nro_Consejera :null,
         Estado_Participacion :null,
         ActividadOficio:null,
+        id:null,
 
         nombre_residente:null,
         isLoading:false,
@@ -38,7 +39,7 @@ Vue.component('nna-seguimiento-educacion', {
                 return false;
             }
             let valores = {
-               
+
                 Plan_Intervencion:this.Plan_Intervencion,
                 Sistema_Educativo:this.Sistema_Educativo,
                 NEducativo:this.NEducativo,
@@ -56,7 +57,7 @@ Vue.component('nna-seguimiento-educacion', {
                 Periodo_Anio:moment().format("YYYY")
 
             }
-                
+
             this.$http.post('insertar_datos?view',{tabla:'NNAEducacion', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
@@ -118,12 +119,13 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.Nro_Consejera = response.body.atributos[0]["NRO_CONSEJERA"];
                     this.Estado_Participacion = response.body.atributos[0]["ESTADO_PARTICIPACION"];
                     this.ActividadOficio = response.body.atributos[0]["ACTIVIDADOFICIO"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
                 }
              });
 
         },
         mostrar_lista_residentes(){
-         
+
             this.id_residente = null;
             this.isLoading = true;
                 this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
@@ -136,7 +138,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                         swal("", "No existe ningún residente", "error")
                     }
                  });
-            
+
         },
         elegir_residente(residente){
 
@@ -151,6 +153,7 @@ let apellido = apellido_p + ' ' + apellido_m;
             this.Nro_Consejera = null;
             this.Estado_Participacion = null;
             this.ActividadOficio = null;
+            this.id = null;
 
             this.id_residente = residente.ID;
             let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
@@ -173,10 +176,11 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.Nro_Consejera = response.body.atributos[0]["NRO_CONSEJERA"];
                     this.Estado_Participacion = response.body.atributos[0]["ESTADO_PARTICIPACION"];
                     this.ActividadOficio = response.body.atributos[0]["ACTIVIDADOFICIO"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
                 }
              });
 
         }
-        
+
     }
   })

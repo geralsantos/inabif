@@ -11,7 +11,7 @@
                     <form class="form-horizontal" v-on:submit.prevent="guardar">
                         <div class="row">
 
-                            <div class="form-group col-md-2">
+                            <div class="form-group col-md-1">
                                 <label for="text-input" class=" form-control-label">Año</label>
                                 <select name="select" disabled="disabled" id="anio"  v-model="anio" class="form-control" >
                                 <option value="2018">2018</option>
@@ -21,7 +21,7 @@
                                 </select>
 
                             </div>
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-2">
                                 <div class=""><label for="text-input" class=" form-control-label">Mes</label>
                                 <select id="mes" v-model="mes" disabled="disabled" class="form-control"  >
                                         <option value="1">Enero</option>
@@ -38,7 +38,6 @@
                                         <option value="12">Diciembre</option>
                                     </select> </div>
                             </div>
-
                         </div>
                         <div class="row">
                             <div class="form-group col-md-3">

@@ -30,7 +30,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="form-group col-md-2">
+                            <div class="form-group col-md-1">
                                 <label for="text-input" class=" form-control-label">Año</label>
                                 <select name="anio" disabled="disabled" id="anio"  v-model="anio" class="form-control">
                                 <option value="2018">2018</option>
@@ -39,7 +39,7 @@
                                 <option value="2021">2021</option>
                                 </select>
                             </div>
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-2">
                                 <div class=""><label for="text-input" class=" form-control-label">Mes</label>
                                 <select id="mes" v-model="mes" disabled="disabled" class="form-control" >
                                         <option value="1">Enero</option>
@@ -56,7 +56,10 @@
                                         <option value="12">Diciembre</option>
                                     </select> </div>
                             </div>
-
+                            <div class="form-group col-md-2">
+                                <label for="text-input" class=" form-control-label">Código</label>
+                                <input type="text" v-model="id" class="form-control" readonly>
+                            </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
@@ -90,7 +93,7 @@
                                 <option v-for="i in 30" :value="i">{{i}}</option>
                                     </select> </div>
                             </div>
-                        </div> 
+                        </div>
                         <div class="row">
                         <div class="form-group col-md-6">
                                 <div class=" "><label for="text-input" class=" form-control-label">Visitas de Amigos</label>
@@ -106,12 +109,12 @@
                                 <option v-for="i in 30" :value="i">{{i}}</option>
                                     </select> </div>
                             </div>
-                            
+
                         </div>
                         <div class="row">
                         <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">Descriptivo de la persona que los visita</label>
-                                <input type="text" v-model="Descriptivo_Persona_Visita" name="Descriptivo_Persona_Visita" placeholder="" class="form-control"> 
+                                <input type="text" v-model="Descriptivo_Persona_Visita" name="Descriptivo_Persona_Visita" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-6">
                                 <div class=" "><label for="text-input" class=" form-control-label">Aseguramiento de la Universidad</label>
@@ -121,20 +124,20 @@
                                 </select>
                                 </div>
                             </div>
-                            
+
                         </div>
                         <div class="row">
                         <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">Fecha de Emisión de la Obtención del Seguro</label>
-                                <input type="date" v-model="Fecha_Emision_Obtencion_Seguro" name="Fecha_Emision_Obtencion_Seguro" placeholder="" class="form-control"> 
+                                <input type="date" v-model="Fecha_Emision_Obtencion_Seguro" name="Fecha_Emision_Obtencion_Seguro" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">Fecha de Emisión DNI</label>
-                                <input type="date" v-model="Fecha_Emision_DNI" name="Fecha_Emision_DNI" placeholder="" class="form-control"> 
+                                <input type="date" v-model="Fecha_Emision_DNI" name="Fecha_Emision_DNI" placeholder="" class="form-control">
                             </div>
                         </div>
-                     
-                        
+
+
                         <div class="row">
                             <div class="col-md-12 text-center" >
                                 <button type="submit" class="btn btn-success btn-sm">
@@ -174,9 +177,9 @@
                                                 <td>{{residente.NOMBRE}} {{residente.APELLIDO}}</td>
                                                 <td>{{residente.DOCUMENTO}}</td>
                                                 <td><button class="btn btn-primary" @click="elegir_residente(residente)">Seleccionar</button></td>
-                                            
+
                                             </tr>
-                                        
+
                                         </tbody>
                                     </table>
                                 </div>

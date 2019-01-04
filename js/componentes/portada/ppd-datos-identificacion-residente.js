@@ -12,6 +12,7 @@ Vue.component('ppd-datos-identificacion-residente', {
         Fecha_Nacimiento:null,
         Edad:null,
         Lengua_Materna:null,
+        id:null,
 
         paises:[],
         departamentos:[],
@@ -41,11 +42,11 @@ Vue.component('ppd-datos-identificacion-residente', {
     updated:function(){
     },
     watch:{
-        Depatamento_Procedencia:function(val){ 
+        Depatamento_Procedencia:function(val){
             this.buscar_provincias();
         },
         Fecha_Nacimiento:function(val){
-            this.Edad = moment().diff(val, 'year'); 
+            this.Edad = moment().diff(val, 'year');
         }
     },
     methods:{
@@ -91,7 +92,7 @@ Vue.component('ppd-datos-identificacion-residente', {
                 }
                 if (isempty(this.id_residente)) {
                     let valores_residente = {
-                       
+
 
                         nombre : this.Nom_Usuario,
                         apellido_p : this.Ape_Paterno,
@@ -117,7 +118,7 @@ Vue.component('ppd-datos-identificacion-residente', {
                               swal("", "Un error ha ocurrido", "error");
                             }
                         });
-                    }); 
+                    });
                 }else{
                     valores.Residente_Id = this.id_residente;
                     this.$http.post('insertar_datos?view',{tabla:'CarIdentificacionUsuario', valores:valores}).then(function(response){
@@ -158,10 +159,10 @@ Vue.component('ppd-datos-identificacion-residente', {
         actualizar(coincidencia){
             this.id_residente = coincidencia.ID;
             let nombre=(coincidencia.NOMBRE==undefined)?'':coincidencia.NOMBRE;
-let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
-let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
-let apellido = apellido_p + ' ' + apellido_m;
- this.nombre_residente=nombre + ' ' + apellido;
+            let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
+            let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
+            let apellido = apellido_p + ' ' + apellido_m;
+            this.nombre_residente=nombre + ' ' + apellido;
             this.coincidencias = [];
             this.bloque_busqueda = false;
 
@@ -179,6 +180,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.Fecha_Nacimiento = moment(response.body.atributos[0]["FECHA_NACIMIENTO"],"DD-MMM-YY").format("YYYY-MM-DD");
                     this.Edad = response.body.atributos[0]["EDAD"];
                     this.Lengua_Materna = response.body.atributos[0]["LENGUA_MATERNA"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
                 }
              });
 
@@ -230,7 +232,7 @@ let apellido = apellido_p + ' ' + apellido_m;
 
             });
         },mostrar_lista_residentes(){
-         
+
             this.id_residente = null;
             this.isLoading = true;
                 this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
@@ -243,7 +245,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                         swal("", "No existe ningún residente", "error")
                     }
                  });
-            
+
         },
         elegir_residente(residente){
 
@@ -258,6 +260,7 @@ let apellido = apellido_p + ' ' + apellido_m;
             this.Fecha_Nacimiento = null;
             this.Edad = null;
             this.Lengua_Materna = null;
+            this.id = null;
 
 
             this.id_residente = residente.ID;
@@ -280,6 +283,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.Fecha_Nacimiento = moment(response.body.atributos[0]["FECHA_NACIMIENTO"],"DD-MMM-YY").format("YYYY-MM-DD");
                     this.Edad = response.body.atributos[0]["EDAD"];
                     this.Lengua_Materna = response.body.atributos[0]["LENGUA_MATERNA"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
                 }
              });
 

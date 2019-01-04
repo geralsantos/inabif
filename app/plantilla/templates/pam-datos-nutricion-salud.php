@@ -30,7 +30,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="form-group col-md-2">
+                            <div class="form-group col-md-1">
                                 <label for="text-input" class=" form-control-label">Año</label>
                                 <select name="select" disabled="disabled" id="anio"  v-model="anio" class="form-control">
                                 <option value="2018">2018</option>
@@ -39,7 +39,7 @@
                                 <option value="2021">2021</option>
                                 </select>
                             </div>
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-2">
                                 <div class=""><label for="text-input" class=" form-control-label">Mes</label>
                                 <select id="mes" v-model="mes" disabled="disabled" class="form-control" >
                                         <option value="1">Enero</option>
@@ -56,7 +56,10 @@
                                         <option value="12">Diciembre</option>
                                     </select> </div>
                             </div>
-
+                            <div class="form-group col-md-2">
+                                <label for="text-input" class=" form-control-label">Código</label>
+                                <input type="text" v-model="id" class="form-control" readonly>
+                            </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-4">
@@ -93,7 +96,7 @@
                                     <option value="Leve">Leve</option>
                                     <option value="Moderada">Moderada</option>
                                     <option value="Severa">Severa</option>
-                                    </select> 
+                                    </select>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Presenta Discapacidad Mental</label>
@@ -102,25 +105,25 @@
                                     <option value="Leve">Leve</option>
                                     <option value="Moderada">Moderada</option>
                                     <option value="Severa">Severa</option>
-                                    </select> 
+                                    </select>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">El Dx es Certificado</label>
                                     <select name="dx_certificado" v-model="dx_certificado" class="form-control">
                                     <option value="Si">Si</option>
                                     <option value="No">No</option>
-                                    </select> 
+                                    </select>
                             </div>
                         </div>
                         <div class="row">
-                            
+
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Tiene Carnet del CONADIS</label>
                                     <select name="selcarnet_conadisect" v-model="carnet_conadis" class="form-control">
                                     <option value="Si">Si</option>
                                     <option value="No">No</option>
                                     <option value="Se desconoce">Se desconoce</option>
-                                    </select> 
+                                    </select>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Grado Dependencia de la PAM</label>
@@ -128,7 +131,7 @@
                                         <option value="Autovalente">Autovalente</option>
                                         <option value="Frágil/Postrada">Frágil/Postrada</option>
                                         <option value="Geríatrica compleja">Geríatrica compleja</option>
-                                    </select> 
+                                    </select>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Motivo de Dificultad con el Desplazamiento</label>
@@ -140,21 +143,21 @@
                                     <option value="Factores psicológicos">Factores psicológicos</option>
                                     <option value="Otras">Otras</option>
                                     <option value="No tiene">No tiene</option>
-                                    </select> 
+                                    </select>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Enfermedad de Ingreso 1</label>
                                     <select name="enfermedad_ingreso_1" v-model="enfermedad_ingreso_1" class="form-control">
                                     <option value="Si">Si</option>
                                     <option value="No">No</option>
-                                    </select> 
+                                    </select>
                             </div>
-                        
+
                             <div class="form-group col-md-8">
                                 <label for="text-input" class=" form-control-label">Tipo de Patología </label>
                                     <select name="tipo_patologia" v-model="tipo_patologia" class="form-control">
                                     <option v-for="patologia in patologias" :value="patologia.ID">{{patologia.NOMBRE}}</option>
-                                    </select> 
+                                    </select>
                             </div>
                         </div>
                         <div class="row">
@@ -163,13 +166,13 @@
                                     <select name="enfermedad_ingreso_2" v-model="enfermedad_ingreso_2" class="form-control">
                                     <option value="Si">Si</option>
                                     <option value="No">No</option>
-                                    </select> 
+                                    </select>
                             </div>
                             <div class="form-group col-md-8">
                                 <label for="text-input" class=" form-control-label">Tipo de Patología 2</label>
                                     <select name="tipo_patologia_2" v-model="tipo_patologia_2" class="form-control">
                                     <option v-for="patologia in patologias" :value="patologia.ID">{{patologia.NOMBRE}}</option>
-                                    </select> 
+                                    </select>
                             </div>
                         </div>
                         <div class="row">
@@ -184,7 +187,7 @@
                                     <option value="Leve">Leve</option>
                                     <option value="Moderada">Moderada</option>
                                     <option value="Severa">Severa</option>
-                                    </select> 
+                                    </select>
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="text-input" class=" form-control-label">Peso (kg.)</label>
@@ -194,7 +197,7 @@
                                 <label for="text-input" class=" form-control-label">Talla (mt)</label>
                                 <input type="number" v-model="talla" step="0.001" name="talla" placeholder="" class="form-control">
                             </div>
-                 
+
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Estado Nutricional (IMC) </label>
                                 <select name="estado_nutricional" v-model="estado_nutricional" class="form-control">
@@ -202,7 +205,7 @@
                                     <option value="Desnutrición">Desnutrición</option>
                                     <option value="Sobrepeso">Sobrepeso</option>
                                     <option value="Obesidad">Obesidad</option>
-                                    </select> 
+                                    </select>
                             </div>
                         </div>
                         <div class="row">
@@ -244,9 +247,9 @@
                                                 <td>{{residente.NOMBRE}} {{residente.APELLIDO}}</td>
                                                 <td>{{residente.DOCUMENTO}}</td>
                                                 <td><button class="btn btn-primary" @click="elegir_residente(residente)">Seleccionar</button></td>
-                                            
+
                                             </tr>
-                                        
+
                                         </tbody>
                                     </table>
                                 </div>

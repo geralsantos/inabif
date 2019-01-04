@@ -30,7 +30,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="form-group col-md-2">
+                            <div class="form-group col-md-1">
                                 <label for="text-input" class=" form-control-label">Año</label>
                                 <select name="select" disabled="disabled" id="anio"  v-model="anio" class="form-control">
                                 <option value="2018">2018</option>
@@ -40,7 +40,7 @@
                                 </select>
 
                             </div>
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-2">
                                 <div class=""><label for="text-input" class=" form-control-label">Mes</label>
                                 <select id="mes" v-model="mes" disabled="disabled" class="form-control" >
                                         <option value="1">Enero</option>
@@ -57,7 +57,10 @@
                                         <option value="12">Diciembre</option>
                                     </select> </div>
                             </div>
-
+                            <div class="form-group col-md-2">
+                                <label for="text-input" class=" form-control-label">Código</label>
+                                <input type="text" v-model="id" class="form-control" readonly>
+                            </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-4">
@@ -75,7 +78,7 @@
                                     <option value="CEBE">CEBE</option>
                                     <option value="CEPTRO">CEPTRO</option>
                                 </select> </div>
-                                
+
                             </div>
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Nivel que cursa?</label>
@@ -96,15 +99,15 @@
                                     <select name="Grado" v-model="Grado" class="form-control">
                                         <option value="Primaria: 1 a 6 to grado">Primaria: 1 a 6 to grado</option>
                                         <option value="Secundaria: 1 a 5to grado">Secundaria: 1 a 5to grado</option>
-                                    </select> 
-                                    
+                                    </select>
+
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Acude en el mes al centro de estudios?</label>
                                     <select name="Asitencia" v-model="Asitencia" class="form-control">
                                     <option value="Si">Si</option>
                                     <option value="No">No</option>
-                                    </select> 
+                                    </select>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">N° de días de asistencia</label>
@@ -112,7 +115,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            
+
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">N° de sesiones de reforzamiento escolar</label>
                                 <input type="number"  min="0" v-model="Nro_Reforzamientos" name="Nro_Reforzamientos" value='5' placeholder="" class="form-control">
@@ -125,7 +128,7 @@
                                 <label for="text-input" class=" form-control-label">N° de consejerías y orientaciones - Área educativa</label>
                                 <input type="number"  min="0" v-model="Nro_Consejera" name="Nro_Consejera" value='5' placeholder="" class="form-control">
                             </div>
-                                                        
+
                         </div>
                         <div class="row">
                             <div class="form-group col-md-4">
@@ -134,15 +137,15 @@
                                     <option value="Inserciones Laborales">Inserciones Laborales </option>
                                     <option value="Prácticas profesionales o técnicas">Prácticas profesionales o técnicas</option>
                                     <option value="Programa de entrenamiento no remunerado">Programa de entrenamiento no remunerado</option>
-                                    </select> 
-                                    
+                                    </select>
+
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Especificar la actividad / oficio</label>
                                     <textarea name="ActividadOficio" class="form-control" v-model="ActividadOficio" col="30" ros="2"></textarea>
                             </div>
                         </div>
-                        
+
                         <div class="row">
                             <div class="col-md-12 text-center" >
                                 <button type="submit" class="btn btn-success btn-sm">
@@ -182,9 +185,9 @@
                                                 <td>{{residente.NOMBRE}} {{residente.APELLIDO}}</td>
                                                 <td>{{residente.DOCUMENTO}}</td>
                                                 <td><button class="btn btn-primary" @click="elegir_residente(residente)">Seleccionar</button></td>
-                                            
+
                                             </tr>
-                                        
+
                                         </tbody>
                                     </table>
                                 </div>

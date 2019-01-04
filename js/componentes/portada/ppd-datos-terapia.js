@@ -17,6 +17,8 @@ Vue.component('ppd-datos-terapia', {
         CarSensoReceptivas:null,
         CarElavoracionOrteticos:null,
         CarAdaptacionSilla:null,
+        id:null,
+
 
         lenguajes:[],
 
@@ -135,6 +137,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.CarSensoReceptivas = response.body.atributos[0]["NUM_TRECEPTIVAS"];
                     this.CarElavoracionOrteticos = response.body.atributos[0]["NUM_TORTETICOS"];
                     this.CarAdaptacionSilla = response.body.atributos[0]["NUM_TSOILLAR"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
 
 
                 }
@@ -149,7 +152,7 @@ let apellido = apellido_p + ' ' + apellido_m;
 
             });
         },mostrar_lista_residentes(){
-         
+
             this.id_residente = null;
             this.isLoading = true;
                 this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
@@ -162,7 +165,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                         swal("", "No existe ningún residente", "error")
                     }
                  });
-            
+
         },
         elegir_residente(residente){
 
@@ -182,6 +185,7 @@ let apellido = apellido_p + ' ' + apellido_m;
             this.CarSensoReceptivas = null;
             this.CarElavoracionOrteticos = null;
             this.CarAdaptacionSilla = null;
+            this.id = null;
 
 
             this.id_residente = residente.ID;
@@ -210,6 +214,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.CarSensoReceptivas = response.body.atributos[0]["NUM_TRECEPTIVAS"];
                     this.CarElavoracionOrteticos = response.body.atributos[0]["NUM_TORTETICOS"];
                     this.CarAdaptacionSilla = response.body.atributos[0]["NUM_TSOILLAR"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
 
 
                 }

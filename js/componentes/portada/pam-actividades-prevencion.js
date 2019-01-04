@@ -14,7 +14,8 @@ Vue.component('pam-actividades-prevencion', {
         Nro_Participa_Cognitivas:null,
         Otros:null,
         Nro_Participa_Otros:null,
-       
+        id:null,
+
         nombre_residente:null,
         isLoading:false,
         mes:moment().format("M"),
@@ -41,7 +42,7 @@ Vue.component('pam-actividades-prevencion', {
                 return false;
             }
             let valores = {
-               
+
                 Atencion_Psicologica:this.Atencion_Psicologica,
                 Habilidades_Sociales:this.Habilidades_Sociales,
                 Nro_Participa:this.Nro_Participa,
@@ -55,7 +56,7 @@ Vue.component('pam-actividades-prevencion', {
                 Nro_Participa_Cognitivas:this.Nro_Participa_Cognitivas,
                 Otros:this.Otros,
                 Nro_Participa_Otros:this.Nro_Participa_Otros,
-                
+
                 Residente_Id: this.id_residente,
                 Periodo_Mes: moment().format("MM"),
                 Periodo_Anio:moment().format("YYYY")
@@ -101,10 +102,10 @@ Vue.component('pam-actividades-prevencion', {
         actualizar(coincidencia){
             this.id_residente = coincidencia.ID;
             let nombre=(coincidencia.NOMBRE==undefined)?'':coincidencia.NOMBRE;
-let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
-let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
-let apellido = apellido_p + ' ' + apellido_m;
- this.nombre_residente=nombre + ' ' + apellido;
+            let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
+            let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
+            let apellido = apellido_p + ' ' + apellido_m;
+            this.nombre_residente=nombre + ' ' + apellido;
             this.coincidencias = [];
             this.bloque_busqueda = false;
 
@@ -125,13 +126,14 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.Nro_Participa_Cognitivas = response.body.atributos[0]["NRO_PARTICIPA_COGNITIVAS"];
                     this.Otros = response.body.atributos[0]["OTROS"];
                     this.Nro_Participa_Otros = response.body.atributos[0]["NRO_PARTICIPA_OTROS"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
 
 
                 }
              });
 
         },mostrar_lista_residentes(){
-         
+
             this.id_residente = null;
             this.isLoading = true;
                 this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
@@ -144,7 +146,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                         swal("", "No existe ningún residente", "error")
                     }
                  });
-            
+
         },
         elegir_residente(residente){
 
@@ -161,6 +163,7 @@ let apellido = apellido_p + ' ' + apellido_m;
             this.Nro_Participa_Cognitivas = null;
             this.Otros = null;
             this.Nro_Participa_Otros = null;
+            this.id = null;
 
 
             this.id_residente = residente.ID;
@@ -186,12 +189,13 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.Nro_Participa_Cognitivas = response.body.atributos[0]["NRO_PARTICIPA_COGNITIVAS"];
                     this.Otros = response.body.atributos[0]["OTROS"];
                     this.Nro_Participa_Otros = response.body.atributos[0]["NRO_PARTICIPA_OTROS"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
 
 
                 }
              });
 
         }
-        
+
     }
   })

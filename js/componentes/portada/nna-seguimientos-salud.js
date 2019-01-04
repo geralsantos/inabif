@@ -1,14 +1,15 @@
 Vue.component('nna-seguimientos-salud', {
     template: '#nna-seguimientos-salud',
     data:()=>({
-     
+
         Plan_Intervencion:null,
         Meta_PAI :null,
         Informe_tecnico :null,
         Cumple_Intervencion:null,
         Control_CRED:null,
         Vacunacion:null,
-                        
+        id:null,
+
         nombre_residente:null,
         isLoading:false,
         mes:moment().format("M"),
@@ -33,7 +34,7 @@ Vue.component('nna-seguimientos-salud', {
                 return false;
             }
             let valores = {
-               
+
                 Plan_Intervencion:this.Plan_Intervencion,
                 Meta_PAI :this.Meta_PAI,
                 Informe_tecnico :this.Informe_tecnico,
@@ -46,7 +47,7 @@ Vue.component('nna-seguimientos-salud', {
                 Periodo_Anio:moment().format("YYYY")
 
             }
-                
+
             this.$http.post('insertar_datos?view',{tabla:'NNASalud_Semestral', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
@@ -86,10 +87,10 @@ Vue.component('nna-seguimientos-salud', {
         actualizar(coincidencia){
             this.id_residente = coincidencia.ID;
             let nombre=(coincidencia.NOMBRE==undefined)?'':coincidencia.NOMBRE;
-let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
-let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
-let apellido = apellido_p + ' ' + apellido_m;
- this.nombre_residente=nombre + ' ' + apellido;
+            let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
+            let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
+            let apellido = apellido_p + ' ' + apellido_m;
+            this.nombre_residente=nombre + ' ' + apellido;
             this.coincidencias = [];
             this.bloque_busqueda = false;
 
@@ -103,14 +104,15 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.Cumple_Intervencion = response.body.atributos[0]["CUMPLE_INTERVENCION"];
                     this.Control_CRED = response.body.atributos[0]["CONTROL_CRED"];
                     this.Vacunacion = response.body.atributos[0]["VACUNACION"];
-                  
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
+
 
                 }
              });
 
         },
         mostrar_lista_residentes(){
-         
+
             this.id_residente = null;
             this.isLoading = true;
                 this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
@@ -123,7 +125,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                         swal("", "No existe ningún residente", "error")
                     }
                  });
-            
+
         },
         elegir_residente(residente){
 
@@ -133,6 +135,7 @@ let apellido = apellido_p + ' ' + apellido_m;
             this.Cumple_Intervencion = null;
             this.Control_CRED = null;
             this.Vacunacion = null;
+            this.id = null;
 
             this.id_residente = residente.ID;
             let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
@@ -150,12 +153,13 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.Cumple_Intervencion = response.body.atributos[0]["CUMPLE_INTERVENCION"];
                     this.Control_CRED = response.body.atributos[0]["CONTROL_CRED"];
                     this.Vacunacion = response.body.atributos[0]["VACUNACION"];
-                  
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
+
 
                 }
              });
 
         }
-        
+
     }
   })

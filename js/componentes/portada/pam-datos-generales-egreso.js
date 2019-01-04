@@ -11,7 +11,8 @@ Vue.component('pam-datos-generales-egreso', {
         RestitucionAseguramientoSaludo:null,
         Restitucion_Derechos_DNI:null,
         RestitucionReinsercionFamiliar:null,
-              
+        id:null,
+
         nombre_residente:null,
         isLoading:false,
         mes:moment().format("M"),
@@ -38,7 +39,7 @@ Vue.component('pam-datos-generales-egreso', {
                 return false;
             }
             let valores = {
-              
+
                 Fecha_Egreso:moment(this.Fecha_Egreso).format("YY-MMM-DD"),
                 MotivoEgreso:this.MotivoEgreso,
                 Retiro_Voluntario:this.Retiro_Voluntario,
@@ -49,13 +50,13 @@ Vue.component('pam-datos-generales-egreso', {
                 RestitucionAseguramientoSaludo:this.RestitucionAseguramientoSaludo,
                 Restitucion_Derechos_DNI:this.Restitucion_Derechos_DNI,
                 RestitucionReinsercionFamiliar:this.RestitucionReinsercionFamiliar,
-                
+
                 Residente_Id: this.id_residente,
                 Periodo_Mes: moment().format("MM"),
                 Periodo_Anio:moment().format("YYYY")
 
             }
-                     
+
             this.$http.post('insertar_datos?view',{tabla:'pam_EgresoUsuario', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
@@ -95,10 +96,10 @@ Vue.component('pam-datos-generales-egreso', {
         actualizar(coincidencia){
             this.id_residente = coincidencia.ID;
             let nombre=(coincidencia.NOMBRE==undefined)?'':coincidencia.NOMBRE;
-let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
-let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
-let apellido = apellido_p + ' ' + apellido_m;
- this.nombre_residente=nombre + ' ' + apellido;
+            let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
+            let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
+            let apellido = apellido_p + ' ' + apellido_m;
+            this.nombre_residente=nombre + ' ' + apellido;
             this.coincidencias = [];
             this.bloque_busqueda = false;
 
@@ -116,12 +117,12 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.RestitucionAseguramientoSaludo = response.body.atributos[0]["RESTITUCIONASEGURAMIENTOSALUDO"];
                     this.Restitucion_Derechos_DNI = response.body.atributos[0]["RESTITUCION_DERECHOS_DNI"];
                     this.RestitucionReinsercionFamiliar = response.body.atributos[0]["RESTITUCIONREINSERCIONFAMILIAR"];
-
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
                 }
              });
 
         },mostrar_lista_residentes(){
-         
+
             this.id_residente = null;
             this.isLoading = true;
                 this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
@@ -134,7 +135,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                         swal("", "No existe ningún residente", "error")
                     }
                  });
-            
+
         },
         elegir_residente(residente){
 
@@ -148,6 +149,7 @@ let apellido = apellido_p + ' ' + apellido_m;
             this.RestitucionAseguramientoSaludo = null;
             this.Restitucion_Derechos_DNI = null;
             this.RestitucionReinsercionFamiliar = null;
+            this.id = null;
 
 
             this.id_residente = residente.ID;
@@ -170,11 +172,11 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.RestitucionAseguramientoSaludo = response.body.atributos[0]["RESTITUCIONASEGURAMIENTOSALUDO"];
                     this.Restitucion_Derechos_DNI = response.body.atributos[0]["RESTITUCION_DERECHOS_DNI"];
                     this.RestitucionReinsercionFamiliar = response.body.atributos[0]["RESTITUCIONREINSERCIONFAMILIAR"];
-
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
                 }
              });
 
         }
-        
+
     }
   })

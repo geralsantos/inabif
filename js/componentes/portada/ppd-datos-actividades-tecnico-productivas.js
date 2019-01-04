@@ -12,6 +12,8 @@ Vue.component('ppd-datos-actividades-tecnico-productivas', {
         CarNumDeportes:null,
         CArNumDinero:null,
         CarNumDecisiones:null,
+        id:null,
+
         nombre_residente:null,
         isLoading:false,
         mes:moment().format("M"),
@@ -91,15 +93,15 @@ Vue.component('ppd-datos-actividades-tecnico-productivas', {
         actualizar(coincidencia){
             this.id_residente = coincidencia.ID;
             let nombre=(coincidencia.NOMBRE==undefined)?'':coincidencia.NOMBRE;
-let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
-let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
-let apellido = apellido_p + ' ' + apellido_m;
- this.nombre_residente=nombre + ' ' + apellido;
+            let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
+            let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
+            let apellido = apellido_p + ' ' + apellido_m;
+            this.nombre_residente=nombre + ' ' + apellido;
             this.coincidencias = [];
             this.bloque_busqueda = false;
-            console.log(this.id_residente);
+
             this.$http.post('cargar_datos_residente?view',{tabla:'CarActividades', residente_id:this.id_residente }).then(function(response){
-                console.log(response.body);
+
                 if( response.body.atributos != undefined){
 
                     this.CarNumBiohuerto = response.body.atributos[0]["NUM_BIOHUERTO"];
@@ -113,11 +115,12 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.CarNumDeportes = response.body.atributos[0]["NUM_OTROSDE"];
                     this.CArNumDinero = response.body.atributos[0]["NUM_MANEJODINERO"];
                     this.CarNumDecisiones = response.body.atributos[0]["NUM_DECISIONES"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
                 }
              });
 
         }, mostrar_lista_residentes(){
-         
+
             this.id_residente = null;
             this.isLoading = true;
                 this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
@@ -130,7 +133,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                         swal("", "No existe ningún residente", "error")
                     }
                  });
-            
+
         },
         elegir_residente(residente){
 
@@ -145,6 +148,7 @@ let apellido = apellido_p + ' ' + apellido_m;
             this.CarNumDeportes = null;
             this.CArNumDinero = null;
             this.CarNumDecisiones = null;
+            this.id = null;
 
             this.id_residente = residente.ID;
             let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
@@ -167,6 +171,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.CarNumDeportes = response.body.atributos[0]["NUM_OTROSDE"];
                     this.CArNumDinero = response.body.atributos[0]["NUM_MANEJODINERO"];
                     this.CarNumDecisiones = response.body.atributos[0]["NUM_DECISIONES"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
                 }
              });
 

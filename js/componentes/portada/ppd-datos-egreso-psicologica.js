@@ -6,6 +6,7 @@ Vue.component('ppd-datos-egreso-psicologica', {
         CarInformeTecnico:null,
         CarDesInforme:null,
         CarCumplePlan:null,
+        id:null,
 
         nombre_residente:null,
         isLoading:false,
@@ -83,10 +84,10 @@ Vue.component('ppd-datos-egreso-psicologica', {
         actualizar(coincidencia){
             this.id_residente = coincidencia.ID;
             let nombre=(coincidencia.NOMBRE==undefined)?'':coincidencia.NOMBRE;
-let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
-let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
-let apellido = apellido_p + ' ' + apellido_m;
- this.nombre_residente=nombre + ' ' + apellido;
+            let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
+            let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
+            let apellido = apellido_p + ' ' + apellido_m;
+            this.nombre_residente=nombre + ' ' + apellido;
             this.coincidencias = [];
             this.bloque_busqueda = false;
 
@@ -99,11 +100,12 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.CarInformeTecnico = response.body.atributos[0]["INFORME_TECNICO"];
                     this.CarDesInforme = response.body.atributos[0]["DES_INFORME"];
                     this.CarCumplePlan = response.body.atributos[0]["CUMPLE_PLAN"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
                 }
              });
 
         },mostrar_lista_residentes(){
-         
+
             this.id_residente = null;
             this.isLoading = true;
                 this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
@@ -116,7 +118,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                         swal("", "No existe ningún residente", "error")
                     }
                  });
-            
+
         },
         elegir_residente(residente){
 
@@ -125,6 +127,7 @@ let apellido = apellido_p + ' ' + apellido_m;
             this.CarInformeTecnico = null;
             this.CarDesInforme = null;
             this.CarCumplePlan = null;
+            this.id = null;
 
 
             this.id_residente = residente.ID;
@@ -142,6 +145,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.CarInformeTecnico = response.body.atributos[0]["INFORME_TECNICO"];
                     this.CarDesInforme = response.body.atributos[0]["DES_INFORME"];
                     this.CarCumplePlan = response.body.atributos[0]["CUMPLE_PLAN"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
                 }
              });
 

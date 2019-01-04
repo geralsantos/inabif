@@ -22,6 +22,7 @@ Vue.component('ppd-datos-salud-nutricion', {
         CarPeso:null,
         CarTalla:null,
         CarEstadoNutricional:null,
+        id:null,
 
         dificultades:[],
         patologias:[],
@@ -123,10 +124,10 @@ Vue.component('ppd-datos-salud-nutricion', {
         actualizar(coincidencia){
             this.id_residente = coincidencia.ID;
             let nombre=(coincidencia.NOMBRE==undefined)?'':coincidencia.NOMBRE;
-let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
-let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
-let apellido = apellido_p + ' ' + apellido_m;
- this.nombre_residente=nombre + ' ' + apellido;
+            let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
+            let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
+            let apellido = apellido_p + ' ' + apellido_m;
+            this.nombre_residente=nombre + ' ' + apellido;
             this.coincidencias = [];
             this.bloque_busqueda = false;
 
@@ -155,6 +156,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.CarPeso = response.body.atributos[0]["PESO"];
                     this.CarTalla = response.body.atributos[0]["TALLA"];
                     this.CarEstadoNutricional = response.body.atributos[0]["ESTADO_NUTRICIONAL"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
                 }
              });
 
@@ -183,7 +185,7 @@ let apellido = apellido_p + ' ' + apellido_m;
 
             });
         },mostrar_lista_residentes(){
-         
+
             this.id_residente = null;
             this.isLoading = true;
                 this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
@@ -196,7 +198,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                         swal("", "No existe ningún residente", "error")
                     }
                  });
-            
+
         },
         elegir_residente(residente){
 
@@ -221,6 +223,7 @@ let apellido = apellido_p + ' ' + apellido_m;
             this.CarPeso = null;
             this.CarTalla = null;
             this.CarEstadoNutricional = null;
+            this.id = null;
 
 
             this.id_residente = residente.ID;
@@ -254,6 +257,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.CarPeso = response.body.atributos[0]["PESO"];
                     this.CarTalla = response.body.atributos[0]["TALLA"];
                     this.CarEstadoNutricional = response.body.atributos[0]["ESTADO_NUTRICIONAL"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
                 }
              });
 

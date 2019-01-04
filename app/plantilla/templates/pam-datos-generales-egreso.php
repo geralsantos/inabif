@@ -30,7 +30,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="form-group col-md-2">
+                            <div class="form-group col-md-1">
                                 <label for="text-input" class=" form-control-label">Año</label>
                                 <select name="select" disabled="disabled" id="anio"  v-model="anio" class="form-control">
                                 <option value="2018">2018</option>
@@ -40,7 +40,7 @@
                                 </select>
 
                             </div>
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-2">
                                 <div class=""><label for="text-input" class=" form-control-label">Mes</label>
                                 <select id="mes" v-model="mes" disabled="disabled" class="form-control" >
                                         <option value="1">Enero</option>
@@ -57,7 +57,10 @@
                                         <option value="12">Diciembre</option>
                                     </select> </div>
                             </div>
-
+                            <div class="form-group col-md-2">
+                                <label for="text-input" class=" form-control-label">Código</label>
+                                <input type="text" v-model="id" class="form-control" readonly>
+                            </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-3">
@@ -72,7 +75,7 @@
                                     <option value="Traslado a una entidad de salud">Traslado a una entidad de salud</option>
                                     <option value="Traslado a otra Entidad">Traslado a otra Entidad</option>
                                     <option value="Fallecimiento">Fallecimiento</option>
-                                    
+
                                 </select>
                             </div>
 
@@ -145,7 +148,7 @@
                                     <option value="No">No</option>
                                 </select>
                             </div>
-                            
+
                         </div>
                         <div class="row">
                             <div class="col-md-12 text-center" >
@@ -186,9 +189,9 @@
                                                 <td>{{residente.NOMBRE}} {{residente.APELLIDO}}</td>
                                                 <td>{{residente.DOCUMENTO}}</td>
                                                 <td><button class="btn btn-primary" @click="elegir_residente(residente)">Seleccionar</button></td>
-                                            
+
                                             </tr>
-                                        
+
                                         </tbody>
                                     </table>
                                 </div>

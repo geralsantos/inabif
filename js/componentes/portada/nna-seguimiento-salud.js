@@ -1,7 +1,7 @@
 Vue.component('nna-seguimiento-salud', {
     template: '#nna-seguimiento-salud',
     data:()=>({
-     
+
         Intervencion :null,
         Diagnostico_Psiquiatrico_1:null,
         Diagnostico_Psiquiatrico_2:null,
@@ -15,7 +15,7 @@ Vue.component('nna-seguimiento-salud', {
         Diagnostico_Agudo_1 :null,
         Diagnostico_Agudo_2 :null,
         Diagnostico_Agudo_3 :null,
-        VIH  :null,  
+        VIH  :null,
         ETS   :null,
         TBC   :null,
         HepatitisA :null,
@@ -63,7 +63,8 @@ Vue.component('nna-seguimiento-salud', {
         Emergencia :null,
         CRED  :null,
         Inmunizacion     :null,
-                 
+        id:null,
+
         nombre_residente:null,
         isLoading:false,
         mes:moment().format("M"),
@@ -88,7 +89,7 @@ Vue.component('nna-seguimiento-salud', {
                 return false;
             }
             let valores = {
-               
+
                 Intervencion :this.Intervencion,
                 Diagnostico_Psiquiatrico_1:this.Diagnostico_Psiquiatrico_1,
                 Diagnostico_Psiquiatrico_2:this.Diagnostico_Psiquiatrico_2,
@@ -102,7 +103,7 @@ Vue.component('nna-seguimiento-salud', {
                 Diagnostico_Agudo_1 :this.Diagnostico_Agudo_1,
                 Diagnostico_Agudo_2 :this.Diagnostico_Agudo_2,
                 Diagnostico_Agudo_3 :this.Diagnostico_Agudo_3,
-                VIH  :this.VIH,  
+                VIH  :this.VIH,
                 ETS   :this.ETS,
                 TBC   :this.TBC,
                 HepatitisA :this.HepatitisA,
@@ -156,7 +157,7 @@ Vue.component('nna-seguimiento-salud', {
                 Periodo_Anio:moment().format("YYYY")
 
             }
-                
+
             this.$http.post('insertar_datos?view',{tabla:'NNASalud', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
@@ -196,10 +197,10 @@ Vue.component('nna-seguimiento-salud', {
         actualizar(coincidencia){
             this.id_residente = coincidencia.ID;
             let nombre=(coincidencia.NOMBRE==undefined)?'':coincidencia.NOMBRE;
-let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
-let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
-let apellido = apellido_p + ' ' + apellido_m;
- this.nombre_residente=nombre + ' ' + apellido;
+            let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
+            let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
+            let apellido = apellido_p + ' ' + apellido_m;
+            this.nombre_residente=nombre + ' ' + apellido;
             this.coincidencias = [];
             this.bloque_busqueda = false;
 
@@ -225,7 +226,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.TBC = response.body.atributos[0]["TBC"];
                     this.HepatitisA = response.body.atributos[0]["HEPATITISA"];
                     this.HepatitisB = response.body.atributos[0]["HEPATITISB"];
-                    this.Caries = response.body.atributos[0]["CARIES"]; 
+                    this.Caries = response.body.atributos[0]["CARIES"];
                     this.Discapacidad = response.body.atributos[0]["DISCAPACIDAD"];
                     this.Discapacidad_Fisica = response.body.atributos[0]["DISCAPACIDAD_FISICA"];
                     this.Discapacidad_Intelectual = response.body.atributos[0]["DISCAPACIDAD_INTELECTUAL"];
@@ -237,7 +238,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.CONADIS = response.body.atributos[0]["CONADIS"];
                     this.A_Medicina_General = response.body.atributos[0]["A_MEDICINA_GENERAL"];
                     this.A_Cirujia_General = response.body.atributos[0]["A_CIRUJIA_GENERAL"];
-                    this.A_Traumatologia = response.body.atributos[0]["A_TRAUMATOLOGIA"]; 
+                    this.A_Traumatologia = response.body.atributos[0]["A_TRAUMATOLOGIA"];
                     this.A_Odontologia = response.body.atributos[0]["A_ODONTOLOGIA"];
                     this.A_Medicina_Interna = response.body.atributos[0]["A_MEDICINA_INTERNA"];
                     this.A_Cardiovascular = response.body.atributos[0]["A_CARDIOVASCULAR"];
@@ -247,7 +248,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.A_Gineco_Obstetricia = response.body.atributos[0]["A_GINECO_OBSTETRICIA"];
                     this.A_Hermatologia = response.body.atributos[0]["A_HERMATOLOGIA"];
                     this.A_Nefrologia = response.body.atributos[0]["A_NEFROLOGIA"];
-                    this.A_Infectologia = response.body.atributos[0]["A_Infectologia"]; 
+                    this.A_Infectologia = response.body.atributos[0]["A_Infectologia"];
                     this.A_Inmunologia = response.body.atributos[0]["A_INMUNOLOGIA"];
                     this.A_Reumatologia = response.body.atributos[0]["A_REUMATOLOGIA"];
                     this.A_Neumologia = response.body.atributos[0]["A_NEUMOLOGIA"];
@@ -256,7 +257,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.A_Otorrinolaringologia = response.body.atributos[0]["A_OTORRINOLARINGOLOGIA"];
                     this.A_Oncologia = response.body.atributos[0]["A_ONCOLOGIA"];
                     this.A_Psicriatica = response.body.atributos[0]["A_PSICRIATICA"];
-                    this.A_Cirujia = response.body.atributos[0]["A_CIRUJIA"]; 
+                    this.A_Cirujia = response.body.atributos[0]["A_CIRUJIA"];
                     this.A_Urologia = response.body.atributos[0]["A_UROLOGIA"];
                     this.A_Nutricion = response.body.atributos[0]["A_NUTRICION"];
                     this.A_Pedriatria = response.body.atributos[0]["A_PEDRIATRIA"];
@@ -268,13 +269,14 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.Emergencia = response.body.atributos[0]["EMERGENCIA"];
                     this.CRED = response.body.atributos[0]["CRED"];
                     this.Inmunizacion = response.body.atributos[0]["INMUNIZACION"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
 
                 }
              });
 
         },
         mostrar_lista_residentes(){
-         
+
             this.id_residente = null;
             this.isLoading = true;
                 this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
@@ -287,7 +289,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                         swal("", "No existe ningún residente", "error")
                     }
                  });
-            
+
         },
         elegir_residente(residente){
 
@@ -309,7 +311,7 @@ let apellido = apellido_p + ' ' + apellido_m;
             this.TBC = null;
             this.HepatitisA = null;
             this.HepatitisB = null;
-            this.Caries = null; 
+            this.Caries = null;
             this.Discapacidad = null;
             this.Discapacidad_Fisica = null;
             this.Discapacidad_Intelectual = null;
@@ -321,7 +323,7 @@ let apellido = apellido_p + ' ' + apellido_m;
             this.CONADIS = null;
             this.A_Medicina_General = null;
             this.A_Cirujia_General = null;
-            this.A_Traumatologia = null; 
+            this.A_Traumatologia = null;
             this.A_Odontologia = null;
             this.A_Medicina_Interna = null;
             this.A_Cardiovascular = null;
@@ -352,6 +354,7 @@ let apellido = apellido_p + ' ' + apellido_m;
             this.Emergencia = null;
             this.CRED = null;
             this.Inmunizacion = null;
+            this.id = null;
 
             this.id_residente = residente.ID;
             let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
@@ -381,7 +384,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.TBC = response.body.atributos[0]["TBC"];
                     this.HepatitisA = response.body.atributos[0]["HEPATITISA"];
                     this.HepatitisB = response.body.atributos[0]["HEPATITISB"];
-                    this.Caries = response.body.atributos[0]["CARIES"]; 
+                    this.Caries = response.body.atributos[0]["CARIES"];
                     this.Discapacidad = response.body.atributos[0]["DISCAPACIDAD"];
                     this.Discapacidad_Fisica = response.body.atributos[0]["DISCAPACIDAD_FISICA"];
                     this.Discapacidad_Intelectual = response.body.atributos[0]["DISCAPACIDAD_INTELECTUAL"];
@@ -393,7 +396,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.CONADIS = response.body.atributos[0]["CONADIS"];
                     this.A_Medicina_General = response.body.atributos[0]["A_MEDICINA_GENERAL"];
                     this.A_Cirujia_General = response.body.atributos[0]["A_CIRUJIA_GENERAL"];
-                    this.A_Traumatologia = response.body.atributos[0]["A_TRAUMATOLOGIA"]; 
+                    this.A_Traumatologia = response.body.atributos[0]["A_TRAUMATOLOGIA"];
                     this.A_Odontologia = response.body.atributos[0]["A_ODONTOLOGIA"];
                     this.A_Medicina_Interna = response.body.atributos[0]["A_MEDICINA_INTERNA"];
                     this.A_Cardiovascular = response.body.atributos[0]["A_CARDIOVASCULAR"];
@@ -403,7 +406,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.A_Gineco_Obstetricia = response.body.atributos[0]["A_GINECO_OBSTETRICIA"];
                     this.A_Hermatologia = response.body.atributos[0]["A_HERMATOLOGIA"];
                     this.A_Nefrologia = response.body.atributos[0]["A_NEFROLOGIA"];
-                    this.A_Infectologia = response.body.atributos[0]["A_Infectologia"]; 
+                    this.A_Infectologia = response.body.atributos[0]["A_Infectologia"];
                     this.A_Inmunologia = response.body.atributos[0]["A_INMUNOLOGIA"];
                     this.A_Reumatologia = response.body.atributos[0]["A_REUMATOLOGIA"];
                     this.A_Neumologia = response.body.atributos[0]["A_NEUMOLOGIA"];
@@ -412,7 +415,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.A_Otorrinolaringologia = response.body.atributos[0]["A_OTORRINOLARINGOLOGIA"];
                     this.A_Oncologia = response.body.atributos[0]["A_ONCOLOGIA"];
                     this.A_Psicriatica = response.body.atributos[0]["A_PSICRIATICA"];
-                    this.A_Cirujia = response.body.atributos[0]["A_CIRUJIA"]; 
+                    this.A_Cirujia = response.body.atributos[0]["A_CIRUJIA"];
                     this.A_Urologia = response.body.atributos[0]["A_UROLOGIA"];
                     this.A_Nutricion = response.body.atributos[0]["A_NUTRICION"];
                     this.A_Pedriatria = response.body.atributos[0]["A_PEDRIATRIA"];
@@ -424,11 +427,12 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.Emergencia = response.body.atributos[0]["EMERGENCIA"];
                     this.CRED = response.body.atributos[0]["CRED"];
                     this.Inmunizacion = response.body.atributos[0]["INMUNIZACION"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
 
                 }
              });
 
         }
-        
+
     }
   })

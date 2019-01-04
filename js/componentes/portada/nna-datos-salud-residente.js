@@ -1,7 +1,7 @@
 Vue.component('nna-datos-salud-residente', {
     template: '#nna-datos-salud-residente',
     data:()=>({
-        
+
         Discapacidad:null,
         Discapacidad_Fisica :null,
         Discapacidad_Sensorial:null,
@@ -30,6 +30,7 @@ Vue.component('nna-datos-salud-residente', {
         Talla :null,
         Estado_Nutricional1  :null,
         Estado_Nutricional2  :null,
+        id:null,
 
         nombre_residente:null,
         isLoading:false,
@@ -56,7 +57,7 @@ Vue.component('nna-datos-salud-residente', {
                 return false;
             }
             let valores = {
-               
+
                 Discapacidad:this.Discapacidad,
                 Discapacidad_Fisica :this.Discapacidad_Fisica,
                 Discapacidad_Sensorial:this.Discapacidad_Sensorial,
@@ -91,7 +92,7 @@ Vue.component('nna-datos-salud-residente', {
                 Periodo_Anio:moment().format("YYYY")
 
             }
-                
+
             this.$http.post('insertar_datos?view',{tabla:'NNADatosSaludResi', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
@@ -170,13 +171,14 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.Talla = response.body.atributos[0]["TALLA"];
                     this.Estado_Nutricional1 = response.body.atributos[0]["ESTADO_NUTRICIONAL1"];
                     this.Estado_Nutricional2 = response.body.atributos[0]["ESTADO_NUTRICIONAL2"];
-                                    
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
+
                 }
              });
 
         },
         mostrar_lista_residentes(){
-         
+
             this.id_residente = null;
             this.isLoading = true;
                 this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
@@ -189,7 +191,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                         swal("", "No existe ningún residente", "error")
                     }
                  });
-            
+
         },
         elegir_residente(residente){
 
@@ -221,6 +223,7 @@ let apellido = apellido_p + ' ' + apellido_m;
             this.Talla = null;
             this.Estado_Nutricional1 = null;
             this.Estado_Nutricional2 = null;
+            this.id = null;
 
             this.id_residente = residente.ID;
             let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
@@ -260,12 +263,13 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.Talla = response.body.atributos[0]["TALLA"];
                     this.Estado_Nutricional1 = response.body.atributos[0]["ESTADO_NUTRICIONAL1"];
                     this.Estado_Nutricional2 = response.body.atributos[0]["ESTADO_NUTRICIONAL2"];
-                                    
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
+
                 }
              });
 
 
         }
-        
+
     }
   })

@@ -1,13 +1,14 @@
 Vue.component('nna-seguimiento-fortalecimiento-habilidades', {
     template: '#nna-seguimiento-fortalecimiento-habilidades',
     data:()=>({
-     
+
         Participacion:null,
         FInicio_Actividades:null,
         FFin_Actividades:null,
         Termino_Actividades :null,
         Fortalecer_Actividades :null,
-          
+        id:null,
+
         nombre_residente:null,
         isLoading:false,
         mes:moment().format("M"),
@@ -32,7 +33,7 @@ Vue.component('nna-seguimiento-fortalecimiento-habilidades', {
                 return false;
             }
             let valores = {
-               
+
                 Participacion:this.Participacion,
                 FInicio_Actividades:moment(this.FInicio_Actividades).format("YY-MMM-DD"),
                 FFin_Actividades:moment(this.FFin_Actividades).format("YY-MMM-DD"),
@@ -44,7 +45,7 @@ Vue.component('nna-seguimiento-fortalecimiento-habilidades', {
                 Periodo_Anio:moment().format("YYYY")
 
             }
-                
+
             this.$http.post('insertar_datos?view',{tabla:'NNAFHabilidades', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
@@ -84,10 +85,10 @@ Vue.component('nna-seguimiento-fortalecimiento-habilidades', {
         actualizar(coincidencia){
             this.id_residente = coincidencia.ID;
             let nombre=(coincidencia.NOMBRE==undefined)?'':coincidencia.NOMBRE;
-let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
-let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
-let apellido = apellido_p + ' ' + apellido_m;
- this.nombre_residente=nombre + ' ' + apellido;
+            let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
+            let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
+            let apellido = apellido_p + ' ' + apellido_m;
+            this.nombre_residente=nombre + ' ' + apellido;
             this.coincidencias = [];
             this.bloque_busqueda = false;
 
@@ -100,12 +101,13 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.FFin_Actividades = moment(response.body.atributos[0]["FFIN_ACTIVIDADES"]).format("YYYY-MM-DD");
                     this.Termino_Actividades = response.body.atributos[0]["TERMINO_ACTIVIDADES"];
                     this.Fortalecer_Actividades = response.body.atributos[0]["FORTALECER_ACTIVIDADES"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
                 }
              });
 
         },
         mostrar_lista_residentes(){
-         
+
             this.id_residente = null;
             this.isLoading = true;
                 this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
@@ -118,7 +120,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                         swal("", "No existe ningún residente", "error")
                     }
                  });
-            
+
         },
         elegir_residente(residente){
 
@@ -127,6 +129,7 @@ let apellido = apellido_p + ' ' + apellido_m;
             this.FFin_Actividades = null;
             this.Termino_Actividades = null;
             this.Fortalecer_Actividades = null;
+            this.id = null;
 
             this.id_residente = residente.ID;
             let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
@@ -143,11 +146,12 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.FFin_Actividades = moment(response.body.atributos[0]["FFIN_ACTIVIDADES"]).format("YYYY-MM-DD");
                     this.Termino_Actividades = response.body.atributos[0]["TERMINO_ACTIVIDADES"];
                     this.Fortalecer_Actividades = response.body.atributos[0]["FORTALECER_ACTIVIDADES"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
                 }
              });
 
 
         }
-        
+
     }
   })

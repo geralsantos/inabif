@@ -30,7 +30,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="form-group col-md-2">
+                            <div class="form-group col-md-1">
                                 <label for="text-input" class=" form-control-label">Año</label>
                                 <select name="select" disabled="disabled" id="anio"  v-model="anio" class="form-control">
                                 <option value="2018">2018</option>
@@ -39,7 +39,7 @@
                                 <option value="2021">2021</option>
                                 </select>
                             </div>
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-2">
                                 <div class=""><label for="text-input" class=" form-control-label">Mes</label>
                                 <select id="mes" v-model="mes" disabled="disabled" class="form-control" >
                                         <option value="1">Enero</option>
@@ -56,7 +56,10 @@
                                         <option value="12">Diciembre</option>
                                     </select> </div>
                             </div>
-
+                            <div class="form-group col-md-2">
+                                <label for="text-input" class=" form-control-label">Código</label>
+                                <input type="text" v-model="id" class="form-control" readonly>
+                            </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-4">
@@ -91,10 +94,10 @@
                             </div>
                         </div>
                         <div class="row">
-                            
+
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Nº atenciones en DERMATOLOGÍA</label>
-                                <input type="number" min="0"  v-model="Atenciones_Dermatologia" name="Atenciones_Dermatologia" placeholder="" class="form-control"> 
+                                <input type="number" min="0"  v-model="Atenciones_Dermatologia" name="Atenciones_Dermatologia" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Nº atenciones en ENDOCRINOLOGÍA</label>
@@ -103,7 +106,7 @@
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Nº atenciones en GASTROENTEROLOGÍA</label>
                                 <input type="number" min="0"  v-model="Atenciones_Gastroenterologia" name="Atenciones_Gastroenterologia" placeholder="" class="form-control">
-                                    
+
                             </div>
                         </div>
                         <div class="row">
@@ -111,14 +114,14 @@
                                 <label for="text-input" class=" form-control-label"> Nº atenciones en HEMATOLOGÍA</label>
                                 <input type="number" min="0"  v-model="Atenciones_Hematologia" name="Atenciones_Hematologia" placeholder="" class="form-control">
                             </div>
-                        
+
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Nº atenciones en INMUNOLOGÍA</label>
                                 <input type="number" min="0"  v-model="Atenciones_Inmunologia" name="Atenciones_Inmunologia" placeholder="" class="form-control">
-                                    
+
                             </div>
-                            
-                        
+
+
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Nº atenciones en MEDICINA FÍSICA Y REHABILITACION</label>
                                 <input type="number" min="0"  v-model="AtencionesMedicFisiRehabilita" name="AtencionesMedicFisiRehabilita" placeholder="" class="form-control">
@@ -158,7 +161,7 @@
                                 <label for="text-input" class=" form-control-label">Nº Atenciones en TRAUMATOLOGÍA</label>
                                 <input type="number" min="0"  v-model="Atenciones_Traumatologia" name="Atenciones_Traumatologia" placeholder="" class="form-control">
                             </div>
-                        
+
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Nº Atenciones en UROLOGÍA</label>
                                 <input type="number" min="0"  v-model="Atenciones_Urologia" name="Atenciones_Urologia" placeholder="" class="form-control">
@@ -177,14 +180,14 @@
                                 <label for="text-input" class=" form-control-label">Nº Atenciones en Otros servicios</label>
                                 <input type="number" min="0"  v-model="Nro_Atenciones_OtrosServicios" name="Nro_Atenciones_OtrosServicios" placeholder="" class="form-control">
                             </div>
-                            
-                        
+
+
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Residente fue hospitalizado en el periodo</label>
                                 <select name="ResidenteHospitalizadoPeriodo" v-model="ResidenteHospitalizadoPeriodo" class="form-control">
                                     <option value="Si">Si</option>
                                     <option value="No">No</option>
-                                </select> 
+                                </select>
                             </div>
                         </div>
 
@@ -193,7 +196,7 @@
                                 <label for="text-input" class=" form-control-label">Motivo de la hospitalización</label>
                                 <input type="text" v-model="Motivo_Hospitalizacion" name="Motivo_Hospitalizacion" placeholder="" class="form-control">
                             </div>
-                            
+
                         </div>
                         <div class="row">
                             <div class="col-md-12 text-center" >
@@ -234,9 +237,9 @@
                                                 <td>{{residente.NOMBRE}} {{residente.APELLIDO}}</td>
                                                 <td>{{residente.DOCUMENTO}}</td>
                                                 <td><button class="btn btn-primary" @click="elegir_residente(residente)">Seleccionar</button></td>
-                                            
+
                                             </tr>
-                                        
+
                                         </tbody>
                                     </table>
                                 </div>

@@ -13,6 +13,7 @@ Vue.component('pam-datos-identificacion-residente', {
         Fecha_Nacimiento:null,
         Edad:null,
         Lengua_Materna:null,
+        id:null,
 
         paises:[],
         departamentos:[],
@@ -44,11 +45,11 @@ Vue.component('pam-datos-identificacion-residente', {
     updated:function(){
     },
     watch:{
-        departamento_nacimiento_id:function(val){ 
+        departamento_nacimiento_id:function(val){
             this.buscar_provincias();
         },
         Fecha_Nacimiento:function(val){
-            this.Edad = moment().diff(val, 'year'); 
+            this.Edad = moment().diff(val, 'year');
         }
     },
     methods:{
@@ -58,7 +59,7 @@ Vue.component('pam-datos-identificacion-residente', {
                 return false;
             }*/
             let valores = {
-               
+
                 residente_apellido_paterno: this.Ape_Paterno,
                 residente_apellido_materno: this.Ape_Materno,
                 residente_nombre: this.Nom_Usuario,
@@ -94,7 +95,7 @@ Vue.component('pam-datos-identificacion-residente', {
                     }
                 }
                 if (isempty(this.id_residente)) {
-                  
+
                     let valores_residente = {
                         nombre : this.Nom_Usuario,
                         apellido_p : this.Ape_Paterno,
@@ -130,7 +131,7 @@ Vue.component('pam-datos-identificacion-residente', {
                         }
                     });
                 }
-                
+
         },
         buscar_residente(){
             this.id_residente = null;
@@ -183,6 +184,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.Fecha_Nacimiento = moment(response.body.atributos[0]["FECHA_NACIMIENTO"]).format("YYYY-MM-DD");
                     this.Edad = response.body.atributos[0]["EDAD"];
                     this.Lengua_Materna = response.body.atributos[0]["LENGUA_MATERNA"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
                 }
              });
 
@@ -245,7 +247,7 @@ let apellido = apellido_p + ' ' + apellido_m;
 
             });
         },mostrar_lista_residentes(){
-         
+
             this.id_residente = null;
             this.isLoading = true;
                 this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
@@ -258,7 +260,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                         swal("", "No existe ningún residente", "error")
                     }
                  });
-            
+
         },
         elegir_residente(residente){
 
@@ -274,6 +276,7 @@ let apellido = apellido_p + ' ' + apellido_m;
             this.Fecha_Nacimiento = null;
             this.Edad = null;
             this.Lengua_Materna = null;
+            this.id = null;
 
 
             this.id_residente = residente.ID;
@@ -297,6 +300,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.Fecha_Nacimiento = moment(response.body.atributos[0]["FECHA_NACIMIENTO"]).format("YYYY-MM-DD");
                     this.Edad = response.body.atributos[0]["EDAD"];
                     this.Lengua_Materna = response.body.atributos[0]["LENGUA_MATERNA"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
                 }
              });
 

@@ -34,6 +34,8 @@ Vue.component('ppd-datos-atencion-salud', {
         CarMotivoHospitalizacion:null,
         CarAEndocrinologia :null,
         CarAHematologia:null,
+        id:null,
+
         nombre_residente:null,
         isLoading:false,
         mes:moment().format("M"),
@@ -176,12 +178,13 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.CarHopitalizadoP = response.body.atributos[0]["HOPITALIZADO_PERIODO"];
                     this.CarNumHospitalizaciones = response.body.atributos[0]["NUMERO_HOSPITALIZACIONES"];
                     this.CarMotivoHospitalizacion = response.body.atributos[0]["MOTIVO_HOSPITALIZACION"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
 
                 }
              });
 
         },mostrar_lista_residentes(){
-         
+
             this.id_residente = null;
             this.isLoading = true;
                 this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
@@ -194,7 +197,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                         swal("", "No existe ningún residente", "error")
                     }
                  });
-            
+
         },
         elegir_residente(residente){
 
@@ -229,6 +232,7 @@ let apellido = apellido_p + ' ' + apellido_m;
             this.CarHopitalizadoP = null;
             this.CarNumHospitalizaciones = null;
             this.CarMotivoHospitalizacion = null;
+            this.id = null;
 
             this.id_residente = residente.ID;
             let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
@@ -271,6 +275,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.CarHopitalizadoP = response.body.atributos[0]["HOPITALIZADO_PERIODO"];
                     this.CarNumHospitalizaciones = response.body.atributos[0]["NUMERO_HOSPITALIZACIONES"];
                     this.CarMotivoHospitalizacion = response.body.atributos[0]["MOTIVO_HOSPITALIZACION"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
 
                 }
              });

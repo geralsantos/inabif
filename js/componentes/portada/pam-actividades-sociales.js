@@ -11,7 +11,8 @@ Vue.component('pam-actividades-sociales', {
         Fecha_Emision_Obtencion_Seguro:null,
         DNI:null,
         Fecha_Emision_DNI:null,
-       
+        id:null,
+
         nombre_residente:null,
         isLoading:false,
         mes:moment().format("M"),
@@ -38,7 +39,7 @@ Vue.component('pam-actividades-sociales', {
                 return false;
             }
             let valores = {
-               
+
                 Atencion_Social:this.Atencion_Social,
                 Visita_Familiares:this.Visita_Familiares,
                 Nro_Visitas:this.Nro_Visitas,
@@ -48,7 +49,7 @@ Vue.component('pam-actividades-sociales', {
                 Fecha_Emision_Obtencion_Seguro: moment(this.Fecha_Emision_Obtencion_Seguro).format("YY-MMM-DD"),
                 DNI:this.DNI,
                 Fecha_Emision_DNI:moment(this.Fecha_Emision_DNI).format("YY-MMM-DD"),
-           
+
                 Residente_Id: this.id_residente,
                 Periodo_Mes: moment().format("MM"),
                 Periodo_Anio:moment().format("YYYY")
@@ -114,13 +115,14 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.Fecha_Emision_Obtencion_Seguro = moment(response.body.atributos[0]["FECHA_EMISION_OBTENCION_SEGURO"]).format("YYYY-MM-DD");
                     this.DNI = response.body.atributos[0]["DNI"];
                     this.Fecha_Emision_DNI = moment(response.body.atributos[0]["FECHA_EMISION_DNI"]).format("YYYY-MM-DD");
-            
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
+
                 }
              });
 
         },
         mostrar_lista_residentes(){
-         
+
             this.id_residente = null;
             this.isLoading = true;
                 this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
@@ -133,7 +135,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                         swal("", "No existe ningún residente", "error")
                     }
                  });
-            
+
         },
         elegir_residente(residente){
 
@@ -146,6 +148,7 @@ let apellido = apellido_p + ' ' + apellido_m;
             this.Fecha_Emision_Obtencion_Seguro = null;
             this.DNI = null;
             this.Fecha_Emision_DNI = null;
+            this.id = null;
 
 
             this.id_residente = residente.ID;
@@ -167,7 +170,8 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.Fecha_Emision_Obtencion_Seguro = moment(response.body.atributos[0]["FECHA_EMISION_OBTENCION_SEGURO"]).format("YYYY-MM-DD");
                     this.DNI = response.body.atributos[0]["DNI"];
                     this.Fecha_Emision_DNI = moment(response.body.atributos[0]["FECHA_EMISION_DNI"]).format("YYYY-MM-DD");
-            
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
+
                 }
              });
 

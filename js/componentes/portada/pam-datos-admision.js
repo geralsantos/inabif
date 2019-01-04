@@ -9,7 +9,8 @@ Vue.component('pam-datos-admision', {
         perfil_ingreso:null,
         tipo_documento_ingreo_car:null,
         numero_documento_ingreo_car:null,
-              
+        id:null,
+
         instituciones:[],
         motivos:[],
         motivos2:[],
@@ -42,7 +43,7 @@ Vue.component('pam-datos-admision', {
                 return false;
             }
             let valores = {
-               
+
                 movimiento_poblacional:this.movimiento_poblacional,
                 fecha_ingreso_usuario:moment(this.fecha_ingreso_usuario).format("YY-MMM-DD"),
                 institucion_deriva:this.institucion_deriva,
@@ -51,13 +52,13 @@ Vue.component('pam-datos-admision', {
                 perfil_ingreso:(this.perfil_ingreso).join("@"),
                 tipo_documento_ingreo_car:this.tipo_documento_ingreo_car,
                 numero_documento_ingreo_car:this.numero_documento_ingreo_car,
-                
+
                 Residente_Id: this.id_residente,
                 Periodo_Mes: moment().format("MM"),
                 Periodo_Anio:moment().format("YYYY")
 
             }
-                     
+
             this.$http.post('insertar_datos?view',{tabla:'pam_datos_admision_usuario', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
@@ -116,6 +117,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.perfil_ingreso = (response.body.atributos[0]["PERFIL_INGRESO"]).split("@");
                     this.tipo_documento_ingreo_car = response.body.atributos[0]["TIPO_DOCUMENTO_INGREO_CAR"];
                     this.numero_documento_ingreo_car = response.body.atributos[0]["NUMERO_DOCUMENTO_INGREO_CAR"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
 
                 }
              });
@@ -146,7 +148,7 @@ let apellido = apellido_p + ' ' + apellido_m;
 
             });
         },mostrar_lista_residentes(){
-         
+
             this.id_residente = null;
             this.isLoading = true;
                 this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
@@ -159,7 +161,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                         swal("", "No existe ningún residente", "error")
                     }
                  });
-            
+
         },
         elegir_residente(residente){
 
@@ -171,6 +173,7 @@ let apellido = apellido_p + ' ' + apellido_m;
             this.perfil_ingreso = null;
             this.tipo_documento_ingreo_car = null;
             this.numero_documento_ingreo_car = null;
+            this.id = null;
 
 
             this.id_residente = residente.ID;
@@ -191,6 +194,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                     this.perfil_ingreso = (response.body.atributos[0]["PERFIL_INGRESO"]).split("@");
                     this.tipo_documento_ingreo_car = response.body.atributos[0]["TIPO_DOCUMENTO_INGREO_CAR"];
                     this.numero_documento_ingreo_car = response.body.atributos[0]["NUMERO_DOCUMENTO_INGREO_CAR"];
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
 
                 }
              });
@@ -198,6 +202,6 @@ let apellido = apellido_p + ' ' + apellido_m;
         }
 
 
-        
+
     }
   })
