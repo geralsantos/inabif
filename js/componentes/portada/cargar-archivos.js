@@ -22,6 +22,8 @@ Vue.component('cargar-archivos', {
                 let data = response.body.resultado;
                 if (data) {
                     swal("Subida", "El archivo ha sido subido.", "success");
+                    this.listar_archivos_adjuntos();
+                    this.showModal = false;
                 }else{
                     swal("Error", "Un error ha ocurrido", "error");
                 }
