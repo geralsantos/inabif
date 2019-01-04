@@ -238,8 +238,19 @@ class portada extends App{
 		 }
 	  }
 	public function ejecutar_consulta_lista(){
-		  $modelo = new modeloPortada();
-		  $sql = "SELECT * FROM Residente WHERE  ESTADO=1  AND centro_id = ".$_SESSION["usuario"][0]["ID_CENTRO"]." ORDER BY Id desc";
+      $modelo = new modeloPortada();
+      $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+        if ($tipo_centro_id == PPD) {
+          $campo = "nd.Numero_Documento ";
+          $left_join = " left join CarCondicionIngreso nd on (nd.residente_id=re.id) ";
+        }else if($tipo_centro_id == PAM){
+          $campo = "cir.Numero_Doc ";
+          $left_join = " left join pam_datosCondicionIngreso dci on (dci.residente_id=re.id) ";
+        }else if($tipo_centro_id == NNA){
+          $campo = "cir.Numero_Doc ";
+          $left_join = " left join NNACondicionIResidente cir on (cir.residente_id=re.id) ";
+        }
+		  $sql = "SELECT re.*,".$campo." as dni_residente FROM Residente re ".$left_join." WHERE  re.ESTADO=1  AND re.centro_id = ".$_SESSION["usuario"][0]["ID_CENTRO"]." ORDER BY re.Id desc";
 		  $res = $modelo->executeQuery( $sql );
 		  if ($res) {
 			echo json_encode(array( "data"=>$res )) ;
