@@ -55,7 +55,7 @@ Vue.component('nna-datos-identificacion-inicial-inscripcion-residente', {
     },
     methods:{
         guardar(){
-           let Numero_Doc = '  ';
+           let Numero_Doc = 0;
             if(this.Numero_Doc != null){
                 Numero_Doc = this.Numero_Doc;
             }
@@ -98,7 +98,7 @@ Vue.component('nna-datos-identificacion-inicial-inscripcion-residente', {
                         fecha_naci :  moment(this.Fecha_Nacimiento, "YYYY-MM-DD").format("YY-MMM-DD"),
                         edad: this.Edad,
                         lengua_materna: this.Lengua_Materna,
-                        documento :this.Numero_Doc
+                        documento :Numero_Doc
                         }
                     this.$http.post('insertar_datos?view',{tabla:'residente', valores:valores_residente,lastid:true}).then(function(response){
                         valores.Residente_Id = response.body.lastid;
