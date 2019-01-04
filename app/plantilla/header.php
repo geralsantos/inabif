@@ -191,6 +191,7 @@
             <h3 class="menu-title">REGISTRO</h3>
            <modulos :changeviewevent="changeview"></modulos> 
             <h3 class="menu-title">SEGUIMIENTO</h3>
+            <a href="#seguimiento-lista-1" class="list-group-item level-0" aria-expanded="true" id="Perfiles" style="width:100%;">Matrices en los Centros</a>
             <h3 class="menu-title">REPORTES</h3>
             <h3 class="menu-title">PERFILES</h3>
             <?php 
