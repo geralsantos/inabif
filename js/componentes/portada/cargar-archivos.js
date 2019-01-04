@@ -43,7 +43,7 @@ Vue.component('cargar-archivos', {
                             swal("Archivo Eliminado!", {
                                 icon: "success",
                               });
-                            this.listar_usuarios();
+                            this.listar_archivos_adjuntos();
                         }else{
                         swal("", "Un error ha ocurrido", "error");
                         }
@@ -98,6 +98,10 @@ Vue.component('cargar-archivos', {
         },
         mostrar_formulario(){
             this.showModal = true;
+        },
+        descargar(archivo){
+            console.log(archivo);
+          //  downloadLink(url_archivo);
         }
 
     }

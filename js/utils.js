@@ -32,6 +32,28 @@
     }
   }
 })();
+function downloadLink(url_archivo) {
+  var ajaxOptions = {
+    url: url_archivo
+    };
+    
+    var res = $.ajax(ajaxOptions);
+    
+    function onAjaxDone(data) {
+      
+        location.href = url_archivo;
+    }
+    
+    function onAjaxFail() {
+      alert('Bad ID');
+    }
+    
+    res
+      .done(onAjaxDone)
+        .fail(onAjaxFail)
+    ;
+}
+ 
   var toLower = text => {
     return text.toString().toLowerCase();
   }
