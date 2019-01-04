@@ -101,7 +101,7 @@ Vue.component('nna-datos-admision-residente', {
             }
         },
         actualizar(coincidencia){
-            this.id_residente = coincidencia.ID;
+            this.id_residente = coincidencia.ID;               this.id=coincidencia.ID;
 
             let nombre=(coincidencia.NOMBRE==undefined)?'':coincidencia.NOMBRE;
             let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;

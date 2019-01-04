@@ -85,7 +85,7 @@ Vue.component('pam-datos-trabajo-social', {
             }
         },
         actualizar(coincidencia){
-            this.id_residente = coincidencia.ID;
+            this.id_residente = coincidencia.ID;               this.id=coincidencia.ID;
             let nombre=(coincidencia.NOMBRE==undefined)?'':coincidencia.NOMBRE;
             let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
             let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;

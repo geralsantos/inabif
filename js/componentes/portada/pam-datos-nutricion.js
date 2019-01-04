@@ -91,7 +91,7 @@ Vue.component('pam-datos-nutricion', {
             }
         },
         actualizar(coincidencia) {
-            this.id_residente = coincidencia.ID;
+            this.id_residente = coincidencia.ID;               this.id=coincidencia.ID;
             this.nombre_residente = coincidencia.NOMBRE;
             this.coincidencias = [];
             this.bloque_busqueda = false;
