@@ -101,7 +101,7 @@ Vue.component('cargar-archivos', {
         },
         descargar(archivo){
             console.log(archivo);
-            downloadLink(archivo.RUTA);
+            downloadLink('/inabif/app/cargas/'+archivo.NOMBRE);
         }
 
     }
