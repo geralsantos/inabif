@@ -23,7 +23,7 @@
                         <td>{{archivo.NOMBRE}}</td>
                         <td>{{archivo.FECHA_CREACION}}</td>
                         <td><button  class="btn btn-primary" @click="descargar(archivo)">Descargar</button> 
-                        <button  class="btn btn-danger" @click="eliminar(archivo)">Eliminar</button> </td>
+                        <a :href="/inabif/app/cargas/archivo.NOMBRE" class="btn btn-danger" @click="eliminar(archivo)">Eliminar</a> </td>
                     </tr>
                     </tbody>
                 </table>
