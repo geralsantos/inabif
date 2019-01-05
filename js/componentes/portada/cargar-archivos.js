@@ -114,6 +114,8 @@ Vue.component('cargar-archivos', {
                     this.id = response.body.atributos[0]["RESIDENTE_ID"];
                     this.archivos= response.body.atributos;
 
+                }else{
+                    swal("Error", "El residente aún no cuenta con archivos adjuntos", "error");
                 }
              });
 
