@@ -119,8 +119,8 @@ Vue.component('cargar-archivos', {
             this.id=coincidencia.ID;
             this.coincidencias = [];
             this.bloque_busqueda = false;
-
-            this.$http.post('cargar_datos_residente?view',{tabla:'archivos_adjuntados', residente_id:this.id_residente }).then(function(response){
+            console.log(coincidencia);
+            this.$http.post('cargar_datos?view',{tabla:'archivos_adjuntados', residente_id:this.id_residente }).then(function(response){
 
                 if( response.body.atributos != undefined){
                     
