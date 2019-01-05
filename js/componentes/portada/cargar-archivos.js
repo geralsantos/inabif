@@ -147,8 +147,9 @@ Vue.component('cargar-archivos', {
 
                     if( response.body.data != undefined){
                         this.isLoading = false;
-                        console.log(this.coincidencias)
                         this.coincidencias = response.body.data;
+                        console.log(this.coincidencias)
+
                     }else{
                         this.bloque_busqueda = false;
                         this.isLoading = false;
