@@ -776,7 +776,7 @@ class portada extends App{
 	$extension		= pathinfo($nombre_archivo, PATHINFO_EXTENSION);
 	$result=[];
   $fichero_subido = $upload_folder . basename($nombre_archivo);
-  $id_residente = $_POST["id_residente"];
+  $id_residente = $_POST["residente_id"];
 	if (move_uploaded_file($tmp_archivo, $fichero_subido))
 	{
     $modelo = new modeloPortada();

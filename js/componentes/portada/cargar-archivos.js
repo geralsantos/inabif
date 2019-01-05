@@ -23,7 +23,7 @@ Vue.component('cargar-archivos', {
             let self = this;
             var formData = new FormData(document.getElementById("formuploadajax"))
             formData.append("archivo",document.getElementById('archivo'));
-            formData.append("id_residente",self.id_residente);
+            formData.append("residente_id",self.id_residente);
             this.$http.post('adjuntar_archivo?view',formData,{headers: {'Content-Type': 'multipart/form-data'}}).then(function(response){
                 let data = response.body.resultado;
                 if (data) {
