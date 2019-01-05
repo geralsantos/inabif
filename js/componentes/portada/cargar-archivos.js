@@ -119,7 +119,6 @@ Vue.component('cargar-archivos', {
             this.id=coincidencia.ID;
             this.coincidencias = [];
             this.bloque_busqueda = false;
-            console.log(coincidencia);
             let where = {residente_id:this.id_residente}
             this.$http.post('cargar_datos?view',{tabla:'archivos_adjuntados', where:where }).then(function(response){
 
@@ -129,6 +128,7 @@ Vue.component('cargar-archivos', {
                     this.archivos= response.body.atributos;
 
                 }else{
+                    this.archivos= [];
                     swal("Error", "El residente aún no cuenta con archivos adjuntos", "error");
                 }
              });
