@@ -781,7 +781,6 @@ class portada extends App{
 	{
     $modelo = new modeloPortada();
     $valores = array("centro_id"=>$_SESSION["usuario"][0]["ID_CENTRO"],"tipo_centro_id"=>$_SESSION["usuario"][0]["TIPO_CENTRO_ID"],"nombre"=>$nombre_archivo,"ruta"=>$fichero_subido,"tipo"=>$extension,"tamano"=>$tamano_archivo,"fecha_creacion"=> date("y-M-d g.i.s"),"usuario_crea"=>$_SESSION["usuario"][0]["ID"],"usuario_edita"=>$_SESSION["usuario"][0]["ID"]);
-    print_r($valores);
     $res = $modelo->insertData('archivos_adjuntados',$valores);
     if ($res)
     {

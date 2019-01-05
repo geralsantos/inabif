@@ -5,12 +5,16 @@ Vue.component('cargar-archivos', {
         showModal: false,
         archivo:null,
         archivos:[],
-       
+        nombre_residente:null,
+        isLoading:false,
+        coincidencias:[],
+        bloque_busqueda:false,
+        id_residente:null,
+        modal_lista:false,
     }),
     created:function(){
     },
     mounted:function(){
-        this.listar_archivos_adjuntos();
     },
     updated:function(){
     },
@@ -89,21 +93,55 @@ Vue.component('cargar-archivos', {
             }
            
           },
-        listar_archivos_adjuntos(){
-            this.$http.post('buscar?view',{tabla:"archivos_adjuntados"}).then(function(response){
-                console.log(response);
-                if( response.body.data ){
-                    this.archivos= response.body.data;
-                }
-
-            });
-        },
         mostrar_formulario(){
             this.showModal = true;
         },
         descargar(archivo){
             console.log(archivo);
             downloadLink('/inabif/app/cargas/'+archivo.NOMBRE);
+        },
+        actualizar(coincidencia){
+            this.id_residente = coincidencia.ID;               
+            this.id=coincidencia.ID;
+            this.coincidencias = [];
+            this.bloque_busqueda = false;
+
+            this.$http.post('cargar_datos_residente?view',{tabla:'archivos_adjuntados', residente_id:this.id_residente }).then(function(response){
+
+                if( response.body.atributos != undefined){
+                    
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
+                    this.archivos= response.body.atributos;
+
+                }
+             });
+
+        },
+        buscar_residente(){
+            this.id_residente = null;
+
+            var word = this.nombre_residente;
+            if( word.length >= 4){
+                this.coincidencias = [];
+                this.bloque_busqueda = true;
+                this.isLoading = true;
+
+                this.$http.post('ejecutar_consulta?view',{like:word }).then(function(response){
+
+                    if( response.body.data != undefined){
+                        this.isLoading = false;
+                        this.coincidencias = response.body.data;
+                    }else{
+                        this.bloque_busqueda = false;
+                        this.isLoading = false;
+                        this.coincidencias = [];
+                    }
+                 });
+            }else{
+                this.bloque_busqueda = false;
+                this.isLoading = false;
+                this.coincidencias = [];
+            }
         }
 
     }
