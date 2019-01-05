@@ -6,6 +6,8 @@
                 <div class="card-header">
                     <strong>Formulario de Carga de Documentos</strong>
                 </div>
+                
+                <div class="card-body card-block">
                 <div class="row">
                 <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">Buscar Residente <i class="fa fa-search" aria-hidden="true"></i></label>
@@ -23,7 +25,6 @@
                                 </div>
                             </div>
                 </div>
-                <div class="card-body card-block">
                     <button class="btn btn-success" @click="mostrar_formulario('')" >Adjuntar Nuevo</button>
 </br>
                 <table id="bootstrap-data-table" class="table table-striped table-bordered text-center">
