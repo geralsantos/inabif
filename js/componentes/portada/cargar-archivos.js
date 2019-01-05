@@ -148,8 +148,6 @@ Vue.component('cargar-archivos', {
                     if( response.body.data != undefined){
                         this.isLoading = false;
                         this.coincidencias = response.body.data;
-                        console.log(this.coincidencias)
-
                     }else{
                         this.bloque_busqueda = false;
                         this.isLoading = false;
@@ -162,6 +160,7 @@ Vue.component('cargar-archivos', {
                 this.coincidencias = [];
                 this.id_residente = null;
                 this.id = null;
+                this.archivos = [];
             }
         }
 
