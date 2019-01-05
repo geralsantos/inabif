@@ -101,7 +101,8 @@ Vue.component('cargar-archivos', {
             downloadLink('/inabif/app/cargas/'+archivo.NOMBRE);
         },
         actualizar(coincidencia){
-            this.id_residente = coincidencia.ID;               
+            this.id_residente = coincidencia.ID;     
+            this.nombre_residente = (coincidencia.NOMBRE==undefined)?'':coincidencia.NOMBRE;          
             this.id=coincidencia.ID;
             this.coincidencias = [];
             this.bloque_busqueda = false;
