@@ -144,6 +144,8 @@ Vue.component('cargar-archivos', {
                 this.bloque_busqueda = false;
                 this.isLoading = false;
                 this.coincidencias = [];
+                this.id_residente = null;
+                this.id = null;
             }
         }
 
