@@ -478,7 +478,7 @@ class portada extends App{
   public function mostrar_modulo(){
     $modelo = new modeloPortada();
     $nombre_tabla = $_POST["nombre_tabla"];
-    $sql = "select * from ".$nombre_tabla." where  to_char(fecha_creacion, 'DD-MON') =UPPER('".date("y-M")."')";
+    $sql = "select * from ".$nombre_tabla." where  to_char(fecha_creacion, 'MON-YY') =UPPER('".date("M-y")."')";
 
     $res = $modelo->executeQuery($sql );
     if ($res)
