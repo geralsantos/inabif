@@ -553,7 +553,7 @@ class portada extends App{
     $centro_html = "<table>";
     $centro_html .="<tr><th>Nombre del Centro</th><th>Tipo de Centro</th><th>Fecha Matriz </th></tr>";
 
-    echo $centros = "select distinct ca.nom_ca as nombre_centro,ca.tipo_centro_id,tc.nombre as nombre_tipo_centro,cad.fecha_matriz from centro_atencion_detalle cad
+    $centros = "select distinct ca.nom_ca as nombre_centro,ca.tipo_centro_id,tc.nombre as nombre_tipo_centro,cad.fecha_matriz from centro_atencion_detalle cad
     left join centro_atencion ca on(ca.id=cad.centro_id)
     left join tipo_centro tc on(ca.tipo_centro_id=tc.id)
       where cad.id = ".$matriz_id."  order by cad.id desc";
@@ -562,7 +562,7 @@ class portada extends App{
     $centro_html .="<tr><th>".$centros[0]["NOMBRE_CENTRO"]."</th><th>".$centros[0]["NOMBRE_TIPO_CENTRO"]."</th><th>".$centros[0]["FECHA_MATRIZ"]."</th></tr></table>";
 
     $modulo_html = "<table>";
-    echo $modulos = "select m.parent_id,m.nombre as nombre_modulo,usu.nombre as nombre_usuario,md.periodo_mes,m.nombre_tabla from modulos_detalle md
+    $modulos = "select m.parent_id,m.nombre as nombre_modulo,usu.nombre as nombre_usuario,md.periodo_mes,m.nombre_tabla from modulos_detalle md
     left join modulos m on(m.id=md.modulo_id)
     left join usuarios usu on(usu.id=m.encargado_id)
       where m.centro_id in (".$centros[0]["TIPO_CENTRO_ID"].") and ".$fecha." and md.periodo_anio = ".date("Y")." order by md.id desc";
