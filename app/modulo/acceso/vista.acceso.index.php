@@ -26,7 +26,7 @@
                                <?php
                             }else {
                                 ?>
-                            <div class="g-recaptcha" data-sitekey="6LfEQIUUAAAAAECD9TC9MWDVq92BVvIuGm16xVrz"></div>
+                            <div class="g-recaptcha" data-sitekey="6LcysIcUAAAAAE3Xju4Ee_ZhFlOw6D-JyudgfUAB"></div>
 
                                <?php
                             }

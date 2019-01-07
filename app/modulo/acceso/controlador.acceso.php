@@ -25,7 +25,7 @@ class acceso extends App{
           if ($_SERVER['HTTP_HOST']=="localhost") {
             $params['secret'] = '6LdHmIYUAAAAAHVfpV2ip7Yc4Lic-pJut_oYH9lm'; // Clave privada
           }else {
-            $params['secret'] = '6LfEQIUUAAAAAAtzFSfcUppTHY8pOGcp_tlqYtqs'; // Clave privada
+            $params['secret'] = '6LcysIcUAAAAAEKGI89m657mqwqez6coPvn_Mw3w'; // Clave privada
           }
           
           if (!empty($_POST) && isset($_POST['g-recaptcha-response'])) {
