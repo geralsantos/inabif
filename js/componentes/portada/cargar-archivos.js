@@ -25,15 +25,14 @@ Vue.component('cargar-archivos', {
             formData.append("archivo",document.getElementById('archivo'));
             formData.append("residente_id",self.id_residente);
             this.$http.post('adjuntar_archivo?view',formData,{headers: {'Content-Type': 'multipart/form-data'}}).then(function(response){
-                swal("Subida", "El archivo ha sido leido.", "success");
-                /*let data = response.body.resultado;
+                let data = response.body.resultado;
                 if (data) {
                     swal("Subida", "El archivo ha sido subido.", "success");
                     this.listar_archivos_adjuntos();
                     this.showModal = false;
                 }else{
                     swal("Error", "Un error ha ocurrido", "error");
-                }*/
+                }
             });
         },
         listar_archivos_adjuntos(){
