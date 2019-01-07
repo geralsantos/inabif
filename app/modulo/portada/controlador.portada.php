@@ -478,7 +478,7 @@ class portada extends App{
   public function mostrar_modulo(){
     $modelo = new modeloPortada();
     $nombre_tabla = $_POST["nombre_tabla"];
-    $sql = "select * from ".$nombre_tabla." where  to_char(fecha_creacion, 'DD-MON') =UPPER('".date("y-M")."')";
+    $sql = "select * from ".$nombre_tabla." where  to_char(fecha_creacion, 'MON-YY') =UPPER('".date("M-y")."')";
 
     $res = $modelo->executeQuery($sql );
     if ($res)
@@ -776,12 +776,11 @@ class portada extends App{
 	$extension		= pathinfo($nombre_archivo, PATHINFO_EXTENSION);
 	$result=[];
   $fichero_subido = $upload_folder . basename($nombre_archivo);
-
+  $id_residente = $_POST["residente_id"];
 	if (move_uploaded_file($tmp_archivo, $fichero_subido))
 	{
     $modelo = new modeloPortada();
-    $valores = array("centro_id"=>$_SESSION["usuario"][0]["ID_CENTRO"],"tipo_centro_id"=>$_SESSION["usuario"][0]["TIPO_CENTRO_ID"],"nombre"=>$nombre_archivo,"ruta"=>$fichero_subido,"tipo"=>$extension,"tamano"=>$tamano_archivo,"fecha_creacion"=> date("y-M-d"),"usuario_crea"=>$_SESSION["usuario"][0]["ID"],"usuario_edita"=>$_SESSION["usuario"][0]["ID"]);
-
+    $valores = array("residente_id"=>$id_residente,"centro_id"=>$_SESSION["usuario"][0]["ID_CENTRO"],"tipo_centro_id"=>$_SESSION["usuario"][0]["TIPO_CENTRO_ID"],"nombre"=>$nombre_archivo,"ruta"=>$fichero_subido,"tipo"=>$extension,"tamano"=>$tamano_archivo,"fecha_creacion"=> date("y-M-d g.i.s"),"usuario_crea"=>$_SESSION["usuario"][0]["ID"],"usuario_edita"=>$_SESSION["usuario"][0]["ID"]);
     $res = $modelo->insertData('archivos_adjuntados',$valores);
     if ($res)
     {
