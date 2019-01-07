@@ -19,14 +19,15 @@ Vue.component('cargar-archivos', {
             var formData = new FormData(document.getElementById("formuploadajax"))
             formData.append("archivo",document.getElementById('archivo'));
             this.$http.post('adjuntar_archivo?view',formData,{headers: {'Content-Type': 'multipart/form-data'}}).then(function(response){
-                let data = response.body.resultado;
+                swal("Subida", "El archivo ha sido leido.", "success");
+                /*let data = response.body.resultado;
                 if (data) {
                     swal("Subida", "El archivo ha sido subido.", "success");
                     this.listar_archivos_adjuntos();
                     this.showModal = false;
                 }else{
                     swal("Error", "Un error ha ocurrido", "error");
-                }
+                }*/
             });
         },
         eliminar(archivo){
