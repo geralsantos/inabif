@@ -197,7 +197,7 @@ class portada extends App{
           $like = "nd.Numero_Documento LIKE '%".$word."%'";
           $left_join = " left join CarCondicionIngreso nd on (nd.residente_id=re.id) ";
         }else if($tipo_centro_id == PAM){
-          $campo = "cir.Numero_Doc ";
+          $campo = "dci.Numero_Doc ";
           $like = "dci.numero_documento_ingreso LIKE '%".$word."%'";
           $left_join = " left join pam_datosCondicionIngreso dci on (dci.residente_id=re.id) ";
         }else if($tipo_centro_id == NNA){
