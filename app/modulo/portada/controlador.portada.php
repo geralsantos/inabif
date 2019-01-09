@@ -244,7 +244,7 @@ class portada extends App{
           $campo = "nd.Numero_Documento ";
           $left_join = " left join CarCondicionIngreso nd on (nd.residente_id=re.id) ";
         }else if($tipo_centro_id == PAM){
-          $campo = "cir.Numero_Doc ";
+          $campo = "dci.numero_documento_ingreso ";
           $left_join = " left join pam_datosCondicionIngreso dci on (dci.residente_id=re.id) ";
         }else if($tipo_centro_id == NNA){
           $campo = "cir.Numero_Doc ";
