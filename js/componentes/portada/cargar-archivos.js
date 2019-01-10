@@ -11,6 +11,7 @@ Vue.component('cargar-archivos', {
         bloque_busqueda:false,
         id_residente:null,
         modal_lista:false,
+        tipo_documento :null,
     }),
     created:function(){
     },
@@ -24,6 +25,7 @@ Vue.component('cargar-archivos', {
             var formData = new FormData(document.getElementById("formuploadajax"))
             formData.append("archivo",document.getElementById('archivo'));
             formData.append("residente_id",self.id_residente);
+            formData.append("tipo_documento",self.tipo_documento);
             this.$http.post('adjuntar_archivo?view',formData,{headers: {'Content-Type': 'multipart/form-data'}}).then(function(response){
                 let data = response.body.resultado;
                 if (data) {
