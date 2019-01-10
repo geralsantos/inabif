@@ -3,7 +3,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <strong>FORTALECIMIENTO DE CAPACIDADES:Atención en educación, inserción laboral y fortalecimiento de habilidades</strong>
+                    <strong>FORTALECIMIENTO DE CAPACIDADES: Atención en educación, inserción laboral y fortalecimiento de habilidades</strong>
                     <h6>Formulario de Carga de Datos</h6>
                 </div>
                 <div class="card-body card-block">

@@ -42,7 +42,7 @@ Vue.component('ppd-datos-admision-usuario', {
             let valores = {
                 Mov_Poblacional: this.CarMPoblacional,
                 Fecha_Ingreso:  moment(this.CarFIngreso, "YYYY-MM-DD").format("YY-MMM-DD"),
-                Fecha_Reingreso:moment(this.CarFReingreso, "YYYY-MM-DD").format("YY-MMM-DD"),
+                Fecha_Reingreso:isempty(this.CarFReingreso) ? null : moment(this.CarFReingreso, "YYYY-MM-DD").format("YY-MMM-DD"),
                 Institucion_derivado: this.CarIDerivo,
                 Motivo_Ingreso: this.CarMotivoI,
                 Tipo_Documento: this.CarTipoDoc,
