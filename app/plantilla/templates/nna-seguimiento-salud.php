@@ -95,15 +95,22 @@
 
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Diagnóstico Neurológico 1 (CIE-10)</label>
-                                <input type="number" min="0" v-model="Diagnostico_Neurologico_1" name="Diagnostico_Neurologico_1"  placeholder="" class="form-control">
+                                <select name="Diagnostico_Neurologico_1" v-model="Diagnostico_Neurologico_1" id="Diagnostico_Neurologico_1" class="form-control">
+                                    <option v-for="neurologico in diag_neurologico_cie_10" :value="neurologico.ID">{{neurologico.NOMBRE}}</option>
+                                </select>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Diagnóstico Neurológico 2 (CIE-10)</label>
-                                <input type="number" min="0" v-model="Diagnostico_Neurologico_2" name="Diagnostico_Neurologico_2"  placeholder="" class="form-control">
+                                <select name="Diagnostico_Neurologico_2" v-model="Diagnostico_Neurologico_2" id="Diagnostico_Neurologico_2" class="form-control">
+                                    <option v-for="neurologico in diag_neurologico_cie_10" :value="neurologico.ID">{{neurologico.NOMBRE}}</option>
+                                </select>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Diagnóstico Neurológico 3 (CIE-10)</label>
-                                <input type="number" min="0" v-model="Diagnostico_Neurologico_3" name="Diagnostico_Neurologico_3"  placeholder="" class="form-control">
+                                <select name="Diagnostico_Neurologico_3" v-model="Diagnostico_Neurologico_3" id="Diagnostico_Neurologico_3" class="form-control">
+                                    <option v-for="neurologico in diag_neurologico_cie_10" :value="neurologico.ID">{{neurologico.NOMBRE}}</option>
+                                </select>
+                              
                             </div>
                         </div>
                         <div class="row">
