@@ -92,22 +92,22 @@ Vue.component('nna-seguimiento-salud', {
     methods:{
         Diagnostico_Psiquiatrico(){
             this.$http.post('buscar?view',{tabla:'diag_psiquiatrico_cie_10'}).then(function(response){
-                this.diag_psiquiatrico_cie_10 = responde.body.data;
+                this.diag_psiquiatrico_cie_10 = response.body.data;
             });
         },
         Diagnostico_Neurologico(){
             this.$http.post('buscar?view',{tabla:'diag_neurologico_cie_10'}).then(function(response){
-                this.diag_neurologico_cie_10 = responde.body.data;
+                this.diag_neurologico_cie_10 = response.body.data;
             });
         },
         Diagnostico_Cronico(){
             this.$http.post('buscar?view',{tabla:'diag_cronico_cie_10'}).then(function(response){
-                this.diag_cronico_cie_10 = responde.body.data;
+                this.diag_cronico_cie_10 = response.body.data;
             });
         },
         Diagnostico_Agudo(){
             this.$http.post('buscar?view',{tabla:'diag_agudo_cie_10'}).then(function(response){
-                this.diag_agudo_cie_10 = responde.body.data;
+                this.diag_agudo_cie_10 = response.body.data;
             });
         },
         guardar(){
