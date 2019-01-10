@@ -196,6 +196,7 @@ Vue.component('cargar-archivos', {
             this.id=residente.ID;
             this.bloque_busqueda = false;
             let where = {residente_id:this.id_residente}
+            this.modal_lista = false
             this.$http.post('cargar_datos?view',{tabla:'archivos_adjuntados', where:where }).then(function(response){
 
                 if( response.body.atributos != undefined){
