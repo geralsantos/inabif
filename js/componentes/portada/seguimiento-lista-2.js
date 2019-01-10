@@ -116,12 +116,11 @@ Vue.component('seguimiento-lista-2', {
         },
         completar_grupo(id_modulo){
             let estado_completo = 0;
-            console.log(this.rolesSelected)
-            if(this.rolesSelected != "") {
 
-                estado_completo=1;
-
-             }
+            if ($("#"+id_modulo).is(':checked')) {
+                estado_completo =1;
+            }
+            console.log(this.estado_completo)
 
             this.$http.post('completar_grupo?view',{id_modulo:id_modulo, estado_completo:estado_completo}).then(function(response){
                 if( response.body.resultado ){
