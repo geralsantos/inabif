@@ -31,6 +31,7 @@
                     <thead>
                     <tr>
                         <th>Nombre</th>
+                        <th>Tipo Documento</th>
                         <th>Fecha</th>
                         <th>Acción</th>
                     </tr>
@@ -38,6 +39,7 @@
                     <tbody>
                     <tr v-for="archivo in archivos">
                         <td>{{archivo.NOMBRE}}</td>
+                        <td>{{archivo.TIPO_DOCUMENTO}}</td>
                         <td>{{archivo.FECHA_CREACION}}</td>
                         <td><a :href="'/inabif/app/cargas/'+archivo.NOMBRE" :download="archivo.NOMBRE" class="btn btn-primary" >Descargar</a> 
                         <button  class="btn btn-danger" @click="eliminar(archivo)">Eliminar</button> </td>
