@@ -64,7 +64,7 @@ Vue.component('nna-trabajo-social', {
                 Problematica_Fami :this.Problematica_Fami,
                 NNA_Soporte_Fami:this.NNA_Soporte_Fami,
                 Familia_SISFOH :this.Familia_SISFOH,
-                Resultado_Clasificacion :this.Resultado_Clasificacion,
+                Resultado_Clasificacion :this.Resultado_Clasificacion || " ",
                 Nro_VisitasNNA :this.Nro_VisitasNNA,
                 Participacion_EscuelaP :this.Participacion_EscuelaP,
                 Consegeria_Familiar :this.Consegeria_Familiar,
