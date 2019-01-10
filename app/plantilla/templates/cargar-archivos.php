@@ -8,6 +8,12 @@
                 </div>
                 
                 <div class="card-body card-block">
+                <div class="row form-group">
+                        <div class="col-12 col-md-1">
+                            <label for="text-input" class=" form-control-label"></label>
+                            <button @click="mostrar_lista_residentes()" class="btn btn-primary"><i class="fa fa fa-users"></i> Lista de Residentes</button>
+                        </div>
+                    </div>
                 <div class="row">
                 <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">Buscar Residente <i class="fa fa-search" aria-hidden="true"></i></label>
