@@ -66,6 +66,35 @@
                 <div class="modal-body">
                 <form  class="form-horizontal" enctype="multipart/form-data" id="formuploadajax" v-on:submit.prevent="guardar">
                         <div class="row">
+                            <div class="form-group col-md-12">
+                                <label for="">Tipo Documento</label>
+                                <select name="tipo_documento" v-model="tipo_documento" id="tipo_documento">
+                                <option value="Acta de Egreso">Acta de Egreso</option>
+                                <option value="Acta de externamiento">Acta de externamiento</option>
+                                <option value="Acta del fiscal">Acta del fiscal</option>
+                                <option value="Certificado médico legal">Certificado médico legal</option>
+                                <option value="Documento de identificación">Documento de identificación</option>
+                                <option value="Examen de integridad sexual">Examen de integridad sexual</option>
+                                <option value="Examen pelmatoscópico">Examen pelmatoscópico</option>
+                                <option value="Examen psicosomático">Examen psicosomático</option>
+                                <option value="Examen VIH">Examen VIH</option>
+                                <option value="Formato de Egreso">Formato de Egreso</option>
+                                <option value="Informe de egreso del residente a la familia">Informe de egreso del residente a la familia</option>
+                                <option value="Informe de salud">Informe de salud</option>
+                                <option value="Informe del PAI">Informe del PAI</option>
+                                <option value="Informe educativo">Informe educativo</option>
+                                <option value="Informe evolutivo">Informe evolutivo</option>
+                                <option value="Informe psicológico">Informe psicológico</option>
+                                <option value="Informe social">Informe social</option>
+                                <option value="Partida de nacimiento">Partida de nacimiento</option>
+                                <option value="Plan de intervención Individualizado">Plan de intervención Individualizado</option>
+                                <option value="Referente familiar / afectivo">Referente familiar / afectivo</option>
+                                <option value="Tarjeta de vacunación">Tarjeta de vacunación</option>
+                                <option value="Otro">Otro</option>
+                                </select>                
+                            </div>
+                        </div>
+                        <div class="row">
                         <div class="form-group col-md-12">
 
                         <label for="text-input" class=" form-control-label">Adjuntar archivo</label>
