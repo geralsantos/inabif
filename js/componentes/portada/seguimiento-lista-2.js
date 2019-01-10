@@ -21,6 +21,7 @@ Vue.component('seguimiento-lista-2', {
 
 
 
+
     }),
     created:function(){
     },
@@ -113,35 +114,26 @@ Vue.component('seguimiento-lista-2', {
             });
         },
         completar_grupo(id_modulo){
+            if(this.rolesSelected != "") {
+                alert('isSelected');
+                return false;
+             }else{
+                alert('notselect');
+                return false;
+             }
 
-            swal({
-                title: "¿Está seguro de querer realizar esta acción?",
-                text: "Una vez completado el grupo no podrá deshacer el cambio",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-              })
-              .then((willDelete) => {
-                if (willDelete) {
-                    this.$http.post('completar_grupo?view',{id_modulo:id_modulo}).then(function(response){
-                        if( response.body.resultado ){
-                            swal("", "Matriz Generada", "success");
+            this.$http.post('completar_grupo?view',{id_modulo:id_modulo}).then(function(response){
+                if( response.body.resultado ){
+                    swal("", "Matriz Generada", "success");
 
 
-                            this.listar_grupos();
-                        }else{
-                            swal("", "Ha ocurrido un error", "error");
-                            this.listar_grupos();
-                        }
-
-                    });
-
-                } else {
                     this.listar_grupos();
-
-
+                }else{
+                    swal("", "Ha ocurrido un error", "error");
+                    this.listar_grupos();
                 }
-              });
+
+            });
 
         },
 
