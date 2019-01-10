@@ -160,7 +160,7 @@ Vue.component('registro-perfiles', {
                     this.showModal = true;
                     
 
-                    if(this.nivel_id==4 || this.nivel_id==2){
+                    if(this.nivel_id == 4 || this.nivel_id == 2 || this.nivel_id == 1 || this.nivel_id == 3){
                         this.mostrar = false; 
                     }else{
                         this.mostrar = true; 
