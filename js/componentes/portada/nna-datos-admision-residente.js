@@ -49,7 +49,7 @@ Vue.component('nna-datos-admision-residente', {
 
                 Movimiento_Poblacional:this.Movimiento_Poblacional,
                 Fecha_Ingreso:moment(this.Fecha_Ingreso, "YYYY-MM-DD").format("YY-MMM-DD"),
-                Fecha_Registro:moment(this.Fecha_Registro, "YYYY-MM-DD").format("YY-MMM-DD") || " ",
+                Fecha_Registro:moment(this.Fecha_Registro, "YYYY-MM-DD").format("YY-MMM-DD"),
                 Institucion_Derivacion:this.Institucion_Derivacion,
                 Motivo_Ingreso :this.Motivo_Ingreso,
                 Perfil_Ingreso_P:this.Perfil_Ingreso_P,
