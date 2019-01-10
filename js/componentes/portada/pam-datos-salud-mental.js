@@ -35,7 +35,7 @@ Vue.component('pam-datos-salud-mental', {
             let valores = {
 
                 trastorno_disociales:this.trastorno_disociales,
-                tipo_trastorno:this.tipo_trastorno,
+                tipo_trastorno:this.tipo_trastorno || " ",
                 Residente_Id: this.id_residente,
                 Periodo_Mes: moment().format("MM"),
                 Periodo_Anio:moment().format("YYYY")
