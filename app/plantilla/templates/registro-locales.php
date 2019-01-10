@@ -89,22 +89,19 @@
                                 <input type="text" v-model="cod_serv" name="cod_serv" placeholder="" class="form-control"> </div>
                             </div>
                             
-                            
-                        </div>
-                        <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">Nombre del Servicio</label>
                                 <input type="text" v-model="nom_serv" name="nom_serv" placeholder="" class="form-control"> 
                             </div>
+                        </div>
+                        <div class="row">
+                            
                             <div class="form-group col-md-6">
                                 <div class=" "><label for="text-input" class=" form-control-label">Nombre de Administrador</label>
                                 <input type="text" v-model="administrador_nombre" name="administrador_nombre" placeholder="" class="form-control"> 
                                 </div>
                             </div>
-                        </div>
-                        
-                        <div class="row">
-                        <div class="form-group col-md-6">
+                            <div class="form-group col-md-6">
                                 <div class=" "><label for="text-input" class=" form-control-label">Nombre de Director</label>
                                 <input type="text" v-model="nombre_director" name="nombre_director" placeholder="" class="form-control"> 
                                 </div>
