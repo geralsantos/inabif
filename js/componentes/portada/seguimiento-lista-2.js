@@ -124,7 +124,7 @@ Vue.component('seguimiento-lista-2', {
 
             this.$http.post('completar_grupo?view',{id_modulo:id_modulo, estado_completo:estado_completo}).then(function(response){
                 if( response.body.resultado ){
-                    swal("", "Matriz Generada", "success");
+                    swal("", "Registro Exitoso", "success");
 
 
                     this.listar_grupos();
