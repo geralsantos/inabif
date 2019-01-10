@@ -3,7 +3,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <strong>Datos de Terapia</strong>
+                    <strong>Datos de Terapia (física, del lenguaje, ocupacional y tecnológica)</strong>
                     <h6>Formulario de Carga de Datos</h6>
                 </div>
                 <div class="card-body card-block">

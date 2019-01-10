@@ -3,7 +3,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <strong>Egreso Educación</strong>
+                        <strong>Educación</strong>
                         <h6>Formulario de Carga de Datos</h6>
                     </div>
                     <div class="card-body card-block">
