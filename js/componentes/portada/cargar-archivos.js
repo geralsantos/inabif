@@ -191,10 +191,9 @@ Vue.component('cargar-archivos', {
             
             this.id=null;
             this.archivos=[];
-            this.id_residente = coincidencia.ID;     
-            this.nombre_residente = (coincidencia.NOMBRE==undefined)?'':coincidencia.NOMBRE;          
-            this.id=coincidencia.ID;
-            this.coincidencias = [];
+            this.id_residente = residente.ID;     
+            this.nombre_residente = (residente.NOMBRE==undefined)?'':residente.NOMBRE;          
+            this.id=residente.ID;
             this.bloque_busqueda = false;
             let where = {residente_id:this.id_residente}
             this.$http.post('cargar_datos?view',{tabla:'archivos_adjuntados', where:where }).then(function(response){
