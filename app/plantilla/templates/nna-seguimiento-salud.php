@@ -73,61 +73,86 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-md-4">
-                                <div class=" "><label for="text-input" class=" form-control-label">Diagnóstico Psiquiátrico 1 (CIE-10)</label>
-                                <input type="number" min="0" v-model="Diagnostico_Psiquiatrico_1" name="Diagnostico_Psiquiatrico_1"  placeholder="" class="form-control">
-                                </div>
+                                <label for="text-input" class=" form-control-label">Diagnóstico Psiquiátrico 1 (CIE-10)</label>
+                                    <select name="Diagnostico_Psiquiatrico_1" v-model="Diagnostico_Psiquiatrico_1" id="Diagnostico_Psiquiatrico_1" class="form-control">
+                                        <option v-for="psiquiatrico in diag_psiquiatrico_cie_10" :value="psiquiatrico.ID">{{psiquiatrico.NOMBRE}}</option>
+                                    </select>
                             </div>
                             <div class="form-group col-md-4">
-                                <div class=" "><label for="text-input" class=" form-control-label">Diagnóstico Psiquiátrico 2 (CIE-10)</label>
-                                <input type="number" min="0" v-model="Diagnostico_Psiquiatrico_2" name="Diagnostico_Psiquiatrico_2"  placeholder="" class="form-control"> </div>
+                                <label for="text-input" class=" form-control-label">Diagnóstico Psiquiátrico 2 (CIE-10)</label>
+                                <select name="Diagnostico_Psiquiatrico_2" v-model="Diagnostico_Psiquiatrico_2" id="Diagnostico_Psiquiatrico_2" class="form-control">
+                                    <option v-for="psiquiatrico in diag_psiquiatrico_cie_10" :value="psiquiatrico.ID">{{psiquiatrico.NOMBRE}}</option>
+                                </select>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Diagnóstico Psiquiátrico 3 (CIE-10)</label>
-                                <input type="number" min="0" v-model="Diagnostico_Psiquiatrico_3" name="Diagnostico_Psiquiatrico_3"  placeholder="" class="form-control">
+                                <select name="Diagnostico_Psiquiatrico_3" v-model="Diagnostico_Psiquiatrico_3" id="Diagnostico_Psiquiatrico_3" class="form-control">
+                                    <option v-for="psiquiatrico in diag_psiquiatrico_cie_10" :value="psiquiatrico.ID">{{psiquiatrico.NOMBRE}}</option>
+                                </select>
                             </div>
                         </div>
                         <div class="row">
 
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Diagnóstico Neurológico 1 (CIE-10)</label>
-                                <input type="number" min="0" v-model="Diagnostico_Neurologico_1" name="Diagnostico_Neurologico_1"  placeholder="" class="form-control">
+                                <select name="Diagnostico_Neurologico_1" v-model="Diagnostico_Neurologico_1" id="Diagnostico_Neurologico_1" class="form-control">
+                                    <option v-for="neurologico in diag_neurologico_cie_10" :value="neurologico.ID">{{neurologico.NOMBRE}}</option>
+                                </select>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Diagnóstico Neurológico 2 (CIE-10)</label>
-                                <input type="number" min="0" v-model="Diagnostico_Neurologico_2" name="Diagnostico_Neurologico_2"  placeholder="" class="form-control">
+                                <select name="Diagnostico_Neurologico_2" v-model="Diagnostico_Neurologico_2" id="Diagnostico_Neurologico_2" class="form-control">
+                                    <option v-for="neurologico in diag_neurologico_cie_10" :value="neurologico.ID">{{neurologico.NOMBRE}}</option>
+                                </select>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Diagnóstico Neurológico 3 (CIE-10)</label>
-                                <input type="number" min="0" v-model="Diagnostico_Neurologico_3" name="Diagnostico_Neurologico_3"  placeholder="" class="form-control">
+                                <select name="Diagnostico_Neurologico_3" v-model="Diagnostico_Neurologico_3" id="Diagnostico_Neurologico_3" class="form-control">
+                                    <option v-for="neurologico in diag_neurologico_cie_10" :value="neurologico.ID">{{neurologico.NOMBRE}}</option>
+                                </select>
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Diagnóstico  Crónico 1 (CIE-10)</label>
-                                <input type="number" min="0" v-model="Diagnostico_Cronico_1" name="Diagnostico_Cronico_1"  placeholder="" class="form-control">
+                                <select name="Diagnostico_Cronico_1" v-model="Diagnostico_Cronico_1" id="Diagnostico_Cronico_1" class="form-control">
+                                    <option v-for="cronico in diag_cronico_cie_10" :value="cronico.ID">{{cronico.NOMBRE}}</option>
+                                </select>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Diagnóstico  Crónico 2 (CIE-10)</label>
-                                <input type="number" min="0" v-model="Diagnostico_Cronico_2" name="Diagnostico_Cronico_2"   placeholder="" class="form-control">
+                                <select name="Diagnostico_Cronico_2" v-model="Diagnostico_Cronico_2" id="Diagnostico_Cronico_2" class="form-control">
+                                    <option v-for="cronico in diag_cronico_cie_10" :value="cronico.ID">{{cronico.NOMBRE}}</option>
+                                </select>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label"> Diagnóstico  Crónico 3 (CIE-10)</label>
-                                <input type="number" min="0" v-model="Diagnostico_Cronico_3" name="Diagnostico_Cronico_3"  placeholder="" class="form-control">
+                                <select name="Diagnostico_Cronico_3" v-model="Diagnostico_Cronico_3" id="Diagnostico_Cronico_3" class="form-control">
+                                    <option v-for="cronico in diag_cronico_cie_10" :value="cronico.ID">{{cronico.NOMBRE}}</option>
+                                </select>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Diagnóstico  Agudo 1 (CIE-10)</label>
-                                <input type="number" min="0" v-model="Diagnostico_Agudo_1" name="Diagnostico_Agudo_1"  placeholder="" class="form-control">
+                                <select name="Diagnostico_Agudo_1" v-model="Diagnostico_Agudo_1" id="Diagnostico_Agudo_1" class="form-control">
+                                    <option v-for="agudo in diag_agudo_cie_10" :value="agudo.ID">{{agudo.NOMBRE}}</option>
+                                </select>
+                           
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Diagnóstico  Agudo 2 (CIE-10)</label>
-                                <input type="number" min="0" v-model="Diagnostico_Agudo_2" name="Diagnostico_Agudo_2"  placeholder="" class="form-control">
+                                <select name="Diagnostico_Agudo_2" v-model="Diagnostico_Agudo_2" id="Diagnostico_Agudo_2" class="form-control">
+                                    <option v-for="agudo in diag_agudo_cie_10" :value="agudo.ID">{{agudo.NOMBRE}}</option>
+                                </select>
+                             
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Diagnóstico  Agudo 3 (CIE-10)</label>
-                                <input type="number" min="0" v-model="Diagnostico_Agudo_3" name="Diagnostico_Agudo_3"  placeholder="" class="form-control">
+                                <select name="Diagnostico_Agudo_3" v-model="Diagnostico_Agudo_3" id="Diagnostico_Agudo_3" class="form-control">
+                                    <option v-for="agudo in diag_agudo_cie_10" :value="agudo.ID">{{agudo.NOMBRE}}</option>
+                                </select>
                             </div>
                         </div>
                         <div class="row">

@@ -49,7 +49,7 @@ Vue.component('nna-datos-admision-residente', {
 
                 Movimiento_Poblacional:this.Movimiento_Poblacional,
                 Fecha_Ingreso:moment(this.Fecha_Ingreso, "YYYY-MM-DD").format("YY-MMM-DD"),
-                Fecha_Registro:moment(this.Fecha_Registro, "YYYY-MM-DD").format("YY-MMM-DD"),
+                Fecha_Registro: isempty(this.Fecha_Registro) ? null : moment(this.Fecha_Registro, "YYYY-MM-DD").format("YY-MMM-DD"),
                 Institucion_Derivacion:this.Institucion_Derivacion,
                 Motivo_Ingreso :this.Motivo_Ingreso,
                 Perfil_Ingreso_P:this.Perfil_Ingreso_P,
@@ -63,7 +63,7 @@ Vue.component('nna-datos-admision-residente', {
                 Periodo_Anio:moment().format("YYYY")
 
             }
-
+            console.log(valores);
             this.$http.post('insertar_datos?view',{tabla:'NNAAdmisionResidente', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
@@ -114,10 +114,11 @@ Vue.component('nna-datos-admision-residente', {
             this.$http.post('cargar_datos_residente?view',{tabla:'NNAAdmisionResidente', residente_id:this.id_residente }).then(function(response){
 
                 if( response.body.atributos != undefined){
+                    console.log(response.body.atributos);
 
                     this.Movimiento_Poblacional = response.body.atributos[0]["MOVIMIENTO_POBLACIONAL"];
-                    this.Fecha_Ingreso =  moment(response.body.atributos[0]["FECHA_INGRESO"],"YY-MMM-DD").format("YYYY-MM-DD");
-                    this.Fecha_Registro =  moment(response.body.atributos[0]["FECHA_REGISTRO"],"YY-MMM-DD").format("YYYY-MM-DD");
+                    this.Fecha_Ingreso =  moment(response.body.atributos[0]["FECHA_INGRESO"],"DD-MMM-YY").format("YYYY-MM-DD");
+                    this.Fecha_Registro =  moment(response.body.atributos[0]["FECHA_REGISTRO"],"DD-MMM-YY").format("YYYY-MM-DD");
                     this.Institucion_Derivacion = response.body.atributos[0]["INSTITUCION_DERIVACION"];
                     this.Motivo_Ingreso = response.body.atributos[0]["MOTIVO_INGRESO"];
                     this.Perfil_Ingreso_P = response.body.atributos[0]["PERFIL_INGRESO_P"];
@@ -199,10 +200,10 @@ Vue.component('nna-datos-admision-residente', {
             this.$http.post('cargar_datos_residente?view',{tabla:'NNAAdmisionResidente', residente_id:this.id_residente }).then(function(response){
 
                 if( response.body.atributos != undefined){
-
+                    console.log(response.body.atributos);
                     this.Movimiento_Poblacional = response.body.atributos[0]["MOVIMIENTO_POBLACIONAL"];
-                    this.Fecha_Ingreso =  moment(response.body.atributos[0]["FECHA_INGRESO"],"YY-MMM-DD").format("YYYY-MM-DD");
-                    this.Fecha_Registro =  moment(response.body.atributos[0]["FECHA_REGISTRO"],"YY-MMM-DD").format("YYYY-MM-DD");
+                    this.Fecha_Ingreso =  moment(response.body.atributos[0]["FECHA_INGRESO"],"DD-MMM-YY").format("YYYY-MM-DD");
+                    this.Fecha_Registro =  moment(response.body.atributos[0]["FECHA_REGISTRO"],"DD-MMM-YY").format("YYYY-MM-DD");
                     this.Institucion_Derivacion = response.body.atributos[0]["INSTITUCION_DERIVACION"];
                     this.Motivo_Ingreso = response.body.atributos[0]["MOTIVO_INGRESO"];
                     this.Perfil_Ingreso_P = response.body.atributos[0]["PERFIL_INGRESO_P"];
