@@ -17,6 +17,12 @@ class portada extends App{
     {
       $modelo = new modeloPortada();
       $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+      $centro_id = $_SESSION["usuario"][0]["CENTRO_ID"];
+      
+      if (empty($tipo_centro_id)) {
+        $tipo_centro_id = "SELECT tipo_centro_id FROM centro_atencion WHERE id=".$centro_id." and  estado = 1 order by id asc";
+        $tipo_centro_id = $modelo->executeQuery( $tipo_centro_id );
+      }
       //$bd = isset($_SESSION["usuario"][0]["database_name"]) ? $_SESSION["usuario"][0]["database_name"] : 'portal-kpi' ;
       //$usuario = "SELECT kpi_roles_id FROM kpi_usuarios WHERE id=".$_SESSION['usuario'][0]['id']." and estado = 1 limit 1";
       //$usuario = $modelo->executeQuery( $usuario );
