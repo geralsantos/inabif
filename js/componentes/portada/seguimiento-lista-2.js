@@ -120,7 +120,7 @@ Vue.component('seguimiento-lista-2', {
             if ($("#"+id_modulo).is(':checked')) {
                 estado_completo =1;
             }
-            console.log(this.estado_completo)
+            console.log(estado_completo)
 
             this.$http.post('completar_grupo?view',{id_modulo:id_modulo, estado_completo:estado_completo}).then(function(response){
                 if( response.body.resultado ){
