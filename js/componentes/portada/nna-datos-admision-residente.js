@@ -63,7 +63,7 @@ Vue.component('nna-datos-admision-residente', {
                 Periodo_Anio:moment().format("YYYY")
 
             }
-
+            console.log(valores);
             this.$http.post('insertar_datos?view',{tabla:'NNAAdmisionResidente', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
