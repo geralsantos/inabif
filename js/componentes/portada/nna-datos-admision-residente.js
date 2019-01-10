@@ -53,7 +53,7 @@ Vue.component('nna-datos-admision-residente', {
                 Institucion_Derivacion:this.Institucion_Derivacion,
                 Motivo_Ingreso :this.Motivo_Ingreso,
                 Perfil_Ingreso_P:this.Perfil_Ingreso_P,
-                Perfil_Ingreso_S:this.Perfil_Ingreso_S || " ",
+                Perfil_Ingreso_S:this.Perfil_Ingreso_S || null,
                 Tipo_Doc:this.Tipo_Doc,
                 Numero_Doc:this.Numero_Doc,
                 Situacion_Legal:this.Situacion_Legal,
