@@ -12,6 +12,7 @@ Vue.component('cargar-archivos', {
         id_residente:null,
         modal_lista:false,
         tipo_documento :null,
+        pacientes:[]
     }),
     created:function(){
     },
@@ -169,6 +170,46 @@ Vue.component('cargar-archivos', {
                 this.id = null;
                 this.archivos = [];
             }
+        },
+        mostrar_lista_residentes(){
+
+            this.id_residente = null;
+            this.isLoading = true;
+                this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
+
+                    if( response.body.data != undefined){
+                        this.modal_lista = true;
+                        this.isLoading = false;
+                        this.pacientes = response.body.data;
+                    }else{
+                        swal("", "No existe ningún residente", "error")
+                    }
+                 });
+
+        },
+        elegir_residente(residente){
+            
+            this.id=null;
+            this.archivos=[];
+            this.id_residente = coincidencia.ID;     
+            this.nombre_residente = (coincidencia.NOMBRE==undefined)?'':coincidencia.NOMBRE;          
+            this.id=coincidencia.ID;
+            this.coincidencias = [];
+            this.bloque_busqueda = false;
+            let where = {residente_id:this.id_residente}
+            this.$http.post('cargar_datos?view',{tabla:'archivos_adjuntados', where:where }).then(function(response){
+
+                if( response.body.atributos != undefined){
+                    
+                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
+                    this.archivos= response.body.atributos;
+
+                }else{
+                    this.archivos= [];
+                    swal("Error", "El residente aún no cuenta con archivos adjuntos", "error");
+                }
+             });
+
         }
 
     }
