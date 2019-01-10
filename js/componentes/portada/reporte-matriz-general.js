@@ -19,8 +19,6 @@ Vue.component('reporte-matriz-general', {
         console.log('Main Vue destroyed')
       },
     methods:{
-       
-     
         mostrar_matrices(){
 
             let periodo = this.periodo;

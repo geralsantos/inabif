@@ -522,7 +522,7 @@ class portada extends App{
       }
       $fecha = " BETWEEN $semestral ";
     }
-    $matrices = "select ca.nom_ca as nombre_centro, cad.fecha_matriz, cad.ID  from centro_atencion_detalle cad
+    echo $matrices = "select ca.nom_ca as nombre_centro, cad.fecha_matriz, cad.ID  from centro_atencion_detalle cad
       left join centro_atencion ca on(ca.id=cad.centro_id)  where ".$where." and to_char(cad.fecha_matriz,'YY-MON') ".$fecha." order by cad.id desc";
     $matrices = $modelo->executeQuery($matrices);
 
