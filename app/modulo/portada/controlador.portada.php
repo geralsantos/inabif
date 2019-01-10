@@ -205,7 +205,7 @@ class portada extends App{
           $like = "cir.Numero_Doc LIKE '%".$word."%'";
           $left_join = " left join NNACondicionIResidente cir on (cir.residente_id=re.id) ";
         }
-        $sql = "SELECT * FROM (SELECT re.*,".$campo." as dni_residente  FROM Residente re ".$left_join."  WHERE (LOWER(re.Nombre) LIKE '%".$word."%' OR LOWER(re.APELLIDO_M) LIKE '%".$word."%' OR LOWER(re.APELLIDO_P) LIKE '%".$word."%' OR ".$like.") AND re.ESTADO=1 AND re.centro_id = ".$_SESSION["usuario"][0]["ID_CENTRO"]."  ORDER BY re.Id desc) WHERE ROWNUM<=10";
+        $sql = "SELECT * FROM (SELECT re.*, DISTINCT ".$campo." as dni_residente  FROM Residente re ".$left_join."  WHERE (LOWER(re.Nombre) LIKE '%".$word."%' OR LOWER(re.APELLIDO_M) LIKE '%".$word."%' OR LOWER(re.APELLIDO_P) LIKE '%".$word."%' OR ".$like.") AND re.ESTADO=1 AND re.centro_id = ".$_SESSION["usuario"][0]["ID_CENTRO"]."  ORDER BY re.Id desc) WHERE ROWNUM<=10";
         $res = $modelo->executeQuery( $sql );
         if ($res) {
           echo json_encode(array( "data"=>$res )) ;
@@ -234,7 +234,7 @@ class portada extends App{
 			}else{
 			return false;
 			}
-  
+
 		 }
 	  }
 	public function ejecutar_consulta_lista(){
@@ -623,10 +623,10 @@ class portada extends App{
       $where = "ca.tipo_centro_id = ".$tipo_centro_id;
     }
 
-    $residentes = "select  re.nombre as nombre_residente,re.apellido_p,re.apellido_m,re.fecha_creacion as fecha 
+    $residentes = "select  re.nombre as nombre_residente,re.apellido_p,re.apellido_m,re.fecha_creacion as fecha
     from residente re
-    inner join centro_atencion ca on (re.centro_id=ca.id) 
-	  inner join tipo_centro tc on(tc.id=re.tipo_centro_id) 
+    inner join centro_atencion ca on (re.centro_id=ca.id)
+	  inner join tipo_centro tc on(tc.id=re.tipo_centro_id)
 	  where to_char(re.fecha_creacion,'DD-MON-YY') ".$fecha." and ".$where." order by re.id desc";
     $residentes = $modelo->executeQuery($residentes);
 
