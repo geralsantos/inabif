@@ -18,6 +18,7 @@ Vue.component('seguimiento-lista-2', {
         coincidencias:[],
         bloque_busqueda:false,
         id_residente:null,
+        rolesSelected :''
 
 
 
