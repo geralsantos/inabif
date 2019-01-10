@@ -68,7 +68,7 @@
                         <div class="row">
                             <div class="form-group col-md-12">
                                 <label for="">Tipo Documento</label>
-                                <select name="tipo_documento" v-model="tipo_documento" id="tipo_documento">
+                                <select class="form-control" name="tipo_documento" v-model="tipo_documento" id="tipo_documento">
                                 <option value="Acta de Egreso">Acta de Egreso</option>
                                 <option value="Acta de externamiento">Acta de externamiento</option>
                                 <option value="Acta del fiscal">Acta del fiscal</option>
