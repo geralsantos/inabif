@@ -87,6 +87,8 @@ Vue.component('registro-perfiles', {
 
                 }else{
                     let where = {id:this.id_usuario};
+                    console.log(where);
+                    console.log(valores);
                     this.$http.post('update_datos?view',{tabla:'usuarios', valores:valores,where:where}).then(function(response){
                         if( response.body.resultado ){
                             swal('', 'Registro Actualizado', 'success');
