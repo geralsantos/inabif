@@ -18,7 +18,7 @@ class portada extends App{
       $modelo = new modeloPortada();
       $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
       $centro_id = $_SESSION["usuario"][0]["CENTRO_ID"];
-      
+
       if (empty($tipo_centro_id)) {
         $tipo_centro_id = "SELECT tipo_centro_id FROM centro_atencion WHERE id=".$centro_id." and  estado = 1 order by id asc";
         $tipo_centro_id = $modelo->executeQuery( $tipo_centro_id )[0]["TIPO_CENTRO_ID"];
@@ -212,7 +212,7 @@ class portada extends App{
           $like = "cir.Numero_Doc LIKE '%".$word."%'";
           $left_join = " left join NNACondicionIResidente cir on (cir.residente_id=re.id) ";
         }
-        $sql = "SELECT * FROM (SELECT re.*,".$campo." as dni_residente  FROM Residente re ".$left_join."  WHERE (LOWER(re.Nombre) LIKE '%".$word."%' OR LOWER(re.APELLIDO_M) LIKE '%".$word."%' OR LOWER(re.APELLIDO_P) LIKE '%".$word."%' OR ".$like.") AND re.ESTADO=1 AND re.centro_id = ".$_SESSION["usuario"][0]["ID_CENTRO"]."  ORDER BY re.Id desc) WHERE ROWNUM<=10";
+        $sql = "SELECT * FROM (SELECT re.*, DISTINCT  ".$campo." as dni_residente  FROM Residente re ".$left_join."  WHERE (LOWER(re.Nombre) LIKE '%".$word."%' OR LOWER(re.APELLIDO_M) LIKE '%".$word."%' OR LOWER(re.APELLIDO_P) LIKE '%".$word."%' OR ".$like.") AND re.ESTADO=1 AND re.centro_id = ".$_SESSION["usuario"][0]["ID_CENTRO"]."  ORDER BY re.Id desc) WHERE ROWNUM<=10";
         $res = $modelo->executeQuery( $sql );
         if ($res) {
           echo json_encode(array( "data"=>$res )) ;
@@ -443,15 +443,21 @@ class portada extends App{
   }
   public function completar_grupo(){
     $modelo = new modeloPortada();
-    $sql = "";
-    $res = $modelo->insertData("modulos_detalle",array("modulo_id"=>$_POST["id_modulo"],"estado_completo"=>1,"Periodo_Mes"=>date("m"),"Periodo_Anio"=>date("Y"),"usuario_crea"=>$_SESSION["usuario"][0]["ID"],"usuario_edita"=>$_SESSION["usuario"][0]["ID"] ));
 
-    if ($res)
-    {
+    $sql = "select * from modulos_detalle where modulo_id = " . $_POST["id_modulo"] ." AND Periodo_Mes = ".date("m") . " AND Periodo_Anio = ".date("Y");
+    $res = $modelo->executeQuery($sql );
+    if($res){
+      $res = $modelo->updateData("modulos_detalle",array("estado_completo"=>$__POST["estado_completo"]),array("modulo_id"=>$_POST["id_modulo"],"Periodo_Mes"=>date("m"),"Periodo_Anio"=>date("Y")));
+    }else{
+      $res = $modelo->insertData("modulos_detalle",array("modulo_id"=>$_POST["id_modulo"],"estado_completo"=>1,"Periodo_Mes"=>date("m"),"Periodo_Anio"=>date("Y"),"usuario_crea"=>$_SESSION["usuario"][0]["ID"],"usuario_edita"=>$_SESSION["usuario"][0]["ID"] ));
+
+    }
+    if ($res){
       echo json_encode(array("resultado"=>true) ) ;
     }else{
       return false;
     }
+
 }
   public function generar_matriz(){
     $modelo = new modeloPortada();
