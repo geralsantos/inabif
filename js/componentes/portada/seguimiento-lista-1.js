@@ -120,9 +120,8 @@ let apellido = apellido_p + ' ' + apellido_m;
 
                 if( response.body.data != undefined){
                     this.usuario = response.body.data[0];
-                   if(this.usuario.NIVEL == 5){
+                   if(this.usuario.NIVEL == 5 || this.usuario.NIVEL == 6){
                         this.mostrar_completado = true;
-
                   }
 
                 }
