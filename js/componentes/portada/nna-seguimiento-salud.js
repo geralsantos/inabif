@@ -73,16 +73,43 @@ Vue.component('nna-seguimiento-salud', {
         bloque_busqueda:false,
         id_residente:null,
         modal_lista:false,
-        pacientes:[]
-
+        pacientes:[],
+        diag_psiquiatrico_cie_10 :[],
+        diag_neurologico_cie_10  :[],
+        diag_cronico_cie_10  :[],
+        diag_agudo_cie_10  :[],
     }),
     created:function(){
     },
     mounted:function(){
+        this.Diagnostico_Psiquiatrico();
+        this.Diagnostico_Neurologico();
+        this.Diagnostico_Cronico();
+        this.Diagnostico_Agudo();
     },
     updated:function(){
     },
     methods:{
+        Diagnostico_Psiquiatrico(){
+            this.$http.post('buscar?view',{tabla:'diag_psiquiatrico_cie_10'}).then(function(response){
+                this.diag_psiquiatrico_cie_10 = responde.body.data;
+            });
+        },
+        Diagnostico_Neurologico(){
+            this.$http.post('buscar?view',{tabla:'diag_neurologico_cie_10'}).then(function(response){
+                this.diag_neurologico_cie_10 = responde.body.data;
+            });
+        },
+        Diagnostico_Cronico(){
+            this.$http.post('buscar?view',{tabla:'diag_cronico_cie_10'}).then(function(response){
+                this.diag_cronico_cie_10 = responde.body.data;
+            });
+        },
+        Diagnostico_Agudo(){
+            this.$http.post('buscar?view',{tabla:'diag_agudo_cie_10'}).then(function(response){
+                this.diag_agudo_cie_10 = responde.body.data;
+            });
+        },
         guardar(){
             if (this.id_residente==null) {
                 swal('Error', 'Residente no existe', 'warning');
