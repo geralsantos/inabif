@@ -37,7 +37,6 @@ Vue.component('ppd-datos-actividades-tecnico-productivas', {
                 return false;
             }
             let valores = {
-                Actividades_Id: 1,
                 Num_Biohuerto: this.CarNumBiohuerto,
                 Num_Manualidades: this.CarNumManualidades,
                 Num_Panaderia: this.CarNumReposteria,
