@@ -443,15 +443,21 @@ class portada extends App{
   }
   public function completar_grupo(){
     $modelo = new modeloPortada();
-    $sql = "";
-    $res = $modelo->insertData("modulos_detalle",array("modulo_id"=>$_POST["id_modulo"],"estado_completo"=>1,"Periodo_Mes"=>date("m"),"Periodo_Anio"=>date("Y"),"usuario_crea"=>$_SESSION["usuario"][0]["ID"],"usuario_edita"=>$_SESSION["usuario"][0]["ID"] ));
 
-    if ($res)
-    {
+    $sql = "select * from modulos_detalle where modulo_id = " . $_POST["id_modulo"] ." AND Periodo_Mes = ".date("m") . " AND Periodo_Anio = ".date("Y");
+    $res = $modelo->executeQuery($sql );
+    if($res){
+      $res = $modelo->updateData("modulos_detalle",array("estado_completo"=>$__POST["estado_completo"]),array("modulo_id"=>$_POST["id_modulo"],"Periodo_Mes"=>date("m"),"Periodo_Anio"=>date("Y")));
+    }else{
+      $res = $modelo->insertData("modulos_detalle",array("modulo_id"=>$_POST["id_modulo"],"estado_completo"=>1,"Periodo_Mes"=>date("m"),"Periodo_Anio"=>date("Y"),"usuario_crea"=>$_SESSION["usuario"][0]["ID"],"usuario_edita"=>$_SESSION["usuario"][0]["ID"] ));
+
+    }
+    if ($res){
       echo json_encode(array("resultado"=>true) ) ;
     }else{
       return false;
     }
+
 }
   public function generar_matriz(){
     $modelo = new modeloPortada();
