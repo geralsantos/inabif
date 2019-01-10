@@ -73,15 +73,13 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-md-4">
-                                <div class=" "><label for="text-input" class=" form-control-label">Diagnóstico Psiquiátrico 1 (CIE-10)</label>
-                                <select name="Diagnostico_Psiquiatrico_1" v-model="Diagnostico_Psiquiatrico_1" id="Diagnostico_Psiquiatrico_1" class="form-control">
-                                    <option v-for="psiquiatrico in diag_psiquiatrico_cie_10" :value="psiquiatrico.ID">{{psiquiatrico.NOMBRE}}</option>
-                                </select>
-                                
-                                </div>
+                                <label for="text-input" class=" form-control-label">Diagnóstico Psiquiátrico 1 (CIE-10)</label>
+                                    <select name="Diagnostico_Psiquiatrico_1" v-model="Diagnostico_Psiquiatrico_1" id="Diagnostico_Psiquiatrico_1" class="form-control">
+                                        <option v-for="psiquiatrico in diag_psiquiatrico_cie_10" :value="psiquiatrico.ID">{{psiquiatrico.NOMBRE}}</option>
+                                    </select>
                             </div>
                             <div class="form-group col-md-4">
-                                <div class=" "><label for="text-input" class=" form-control-label">Diagnóstico Psiquiátrico 2 (CIE-10)</label>
+                                <label for="text-input" class=" form-control-label">Diagnóstico Psiquiátrico 2 (CIE-10)</label>
                                 <select name="Diagnostico_Psiquiatrico_2" v-model="Diagnostico_Psiquiatrico_2" id="Diagnostico_Psiquiatrico_2" class="form-control">
                                     <option v-for="psiquiatrico in diag_psiquiatrico_cie_10" :value="psiquiatrico.ID">{{psiquiatrico.NOMBRE}}</option>
                                 </select>
