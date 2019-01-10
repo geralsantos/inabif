@@ -115,15 +115,15 @@ Vue.component('seguimiento-lista-2', {
             });
         },
         completar_grupo(id_modulo){
+            let estado_completo = 0;
+            console.log(this.rolesSelected)
             if(this.rolesSelected != "") {
-                alert('isSelected');
-                return false;
-             }else{
-                alert('notselect');
-                return false;
+
+                estado_completo=1;
+
              }
 
-            this.$http.post('completar_grupo?view',{id_modulo:id_modulo}).then(function(response){
+            this.$http.post('completar_grupo?view',{id_modulo:id_modulo, estado_completo:estado_completo}).then(function(response){
                 if( response.body.resultado ){
                     swal("", "Matriz Generada", "success");
 

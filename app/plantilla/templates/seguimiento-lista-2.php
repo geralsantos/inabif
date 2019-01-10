@@ -3,7 +3,7 @@
         <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <strong>Lista de Seguimiento</strong>
+                        <strong>Autodeclaración de llenado total grupos y residentes</strong>
                         <h6>Período {{periodo}}</h6>
                     </div>
                     <div class="card-body">
@@ -13,7 +13,7 @@
                             <thead class="thead-dark text-center">
                                 <tr>
 
-                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Nombre de Grupo</th>
                                     <th scope="col">Encargado</th>
                                     <th scope="col">Completo</th>
                                     <th scope="col">Última actualización</th>
