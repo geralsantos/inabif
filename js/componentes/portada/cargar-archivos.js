@@ -22,6 +22,10 @@ Vue.component('cargar-archivos', {
     methods:{
         guardar(){
             let self = this;
+            if (self.tipo_documento == null) {
+                swal("Error", "Un error ha ocurrido", "error");
+                return false;
+            }
             var formData = new FormData(document.getElementById("formuploadajax"))
             formData.append("archivo",document.getElementById('archivo'));
             formData.append("residente_id",self.id_residente);
