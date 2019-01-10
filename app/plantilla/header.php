@@ -25,7 +25,7 @@
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
     <?php echo $this->getReferencia(); ?>
-    
+
     </head>
 <body class="">
   <!-- Left Panel -->
@@ -48,7 +48,7 @@
                     <a href="#portada-index" @click="changeview('portada-index')"> <i class="menu-icon fa fa-dashboard"></i>Pantalla Principal </a>
                 </li>
              <!--     <h3 class="menu-title">INABIF</h3>/.menu-title -->
-                
+
 <style>
   .leve-0 {
     padding-left: 15px;
@@ -126,7 +126,7 @@
   transform: scale(1.1);
 }
 </style>
-        <?php   
+        <?php
         $nivelusu = $_SESSION["usuario"][0]["NIVEL"];
         if ($nivelusu==ADMIN_CENTRAL) {
             ?>
@@ -140,7 +140,7 @@
             <h3 class="menu-title">PERFILES</h3>
             <a href="#registro-perfiles" class="list-group-item level-0" aria-expanded="true" id="Perfiles" style="width:100%;">Usuario</a>
             <a href="#registro-locales" class="list-group-item level-0" aria-expanded="true" id="Perfiles" style="width:100%;">Locales</a>
-            <?php 
+            <?php
         }else if ($nivelusu==SUPERVISOR) {
             ?>
             <h3 class="menu-title">REGISTRO</h3>
@@ -152,7 +152,7 @@
             <a href="#reporte-nominal" class="list-group-item level-0" aria-expanded="true" id="reportenominal" style="width:100%;">Nominal</a>
             <h3 class="menu-title">PERFILES</h3>
 
-            <?php 
+            <?php
         }else if ($nivelusu==USER_SEDE_GESTION) {
             ?>
             <h3 class="menu-title">REGISTRO</h3>
@@ -163,18 +163,19 @@
             <a href="#reporte-rub" class="list-group-item level-0" aria-expanded="true" id="reporterub" style="width:100%;">Matriz General</a>
             <a href="#reporte-nominal" class="list-group-item level-0" aria-expanded="true" id="reportenominal" style="width:100%;">Nominal</a>
             <h3 class="menu-title">PERFILES</h3>
-            <?php 
+            <?php
             /* puede bloquear la matriz de un centro*/
         }else if ($nivelusu==USER_SEDE) {
             ?>
              <h3 class="menu-title">REGISTRO</h3>
             <h3 class="menu-title">SEGUIMIENTO</h3>
+            <a href="#seguimiento-lista-1" class="list-group-item level-0" aria-expanded="true" id="Perfiles" style="width:100%;">Matrices en los Centros</a>
             <h3 class="menu-title">REPORTES</h3>
             <a href="#reporte-matriz-general" class="list-group-item level-0" aria-expanded="true" id="Perfiles" style="width:100%;">Matriz General</a>
             <a href="#reporte-rub" class="list-group-item level-0" aria-expanded="true" id="reporterub" style="width:100%;">Rub</a>
             <a href="#reporte-nominal" class="list-group-item level-0" aria-expanded="true" id="reportenominal" style="width:100%;">Nominal</a>
             <h3 class="menu-title">PERFILES</h3>
-            <?php 
+            <?php
         }else if ($nivelusu==RESPONSABLE_INFORMACION) {
             ?>
             <h3 class="menu-title">REGISTRO</h3>
@@ -185,20 +186,20 @@
             <a href="#reporte-rub" class="list-group-item level-0" aria-expanded="true" id="reporterub" style="width:100%;">Rub</a>
             <a href="#reporte-nominal" class="list-group-item level-0" aria-expanded="true" id="reportenominal" style="width:100%;">Nominal</a>
             <h3 class="menu-title">PERFILES</h3>
-            <?php 
+            <?php
         }else if ($nivelusu==REGISTRADOR) {
             ?>
             <h3 class="menu-title">REGISTRO</h3>
-           <modulos :changeviewevent="changeview"></modulos> 
+           <modulos :changeviewevent="changeview"></modulos>
            <a href="#cargar-archivos" class="list-group-item level-0" aria-expanded="true" id="Perfiles" style="width:100%;">Subir documentos al servidor</a>
-           
+
             <h3 class="menu-title">SEGUIMIENTO</h3>
             <a href="#seguimiento-lista-1" class="list-group-item level-0" aria-expanded="true" id="Perfiles" style="width:100%;">Matrices en los Centros</a>
             <h3 class="menu-title">REPORTES</h3>
             <h3 class="menu-title">PERFILES</h3>
-            <?php 
+            <?php
         }
-        
+
         ?>
 
             </ul>
