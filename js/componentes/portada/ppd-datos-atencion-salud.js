@@ -61,7 +61,7 @@ Vue.component('ppd-datos-atencion-salud', {
             }
             let valores = {
 
-                Atencion_Salud_Id:this.CarNumAtencionesMG,
+              //  Atencion_Salud_Id:this.CarNumAtencionesMG,
                 Num_MedicinaG:this.CarNumAtencionesMG,
                 Salida_Hospitales:this.CarSalidaMes,
                 NumSalidasHospital:this.CarNunSalidas,
