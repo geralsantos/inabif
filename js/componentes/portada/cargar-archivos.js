@@ -40,6 +40,7 @@ Vue.component('cargar-archivos', {
         listar_archivos_adjuntos(){
             let where = {residente_id:this.id_residente}
             console.log(where);
+            this.archivos = [];
             this.$http.post('cargar_datos?view',{tabla:"archivos_adjuntados",where:where}).then(function(response){
                 console.log(response);
                 if( response.body.atributos ){
