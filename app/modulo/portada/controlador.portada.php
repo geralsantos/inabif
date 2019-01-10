@@ -574,28 +574,31 @@ class portada extends App{
 			$modulo_html .="<tr><th></th><th>Nombre del Modulo</th><th>Encargado</th><th>Periodo Mes</th></tr>";
 			$modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td><td>".$modulo["NOMBRE_USUARIO"]."</td><td>".$modulo["PERIODO_MES"]."</td></tr>";
 
-			$grupos = "select distinct * from ".$modulo["NOMBRE_TABLA"]." order by id desc";
+			$grupos = "select distinct * from ".$modulo["NOMBRE_TABLA"]." order by residente_id desc";
 			$grupos = $modelo->executeQuery($grupos);
 
-			$grupo_html = "<table>";
+      $grupo_html = "<table>";
+      $residentes = [];
 			foreach ($grupos as $key => $grupo)
 			{
-				if ($key==0) {
-				$keys = array_keys($grupo);
-				$grupo_html .="<tr><th></th>";
-				foreach ($keys as $key)
-				{
-					$grupo_html .="<th>$key</th>";
-				}
-				$grupo_html .="</tr>";
-				}
-				$grupo_values = array_values($grupo);
-
-				$grupo_html .= "<tr><td></td>";
-				foreach ($grupo_values as $key => $value) {
-				$grupo_html .="<td>".$value."</td>";
-				}
-				$grupo_html .= "</tr>";
+				if (!in_array($grupo["RESIDENTE_ID"],$residentes)) {
+          if ($key==0) {
+            $keys = array_keys($grupo);
+            $grupo_html .="<tr><th></th>";
+            foreach ($keys as $key)
+            {
+              $grupo_html .="<th>$key</th>";
+            }
+            $grupo_html .="</tr>";
+          }
+          $grupo_values = array_values($grupo);
+          $grupo_html .= "<tr><td></td>";
+          foreach ($grupo_values as $key => $value) {
+            $grupo_html .="<td>".$value."</td>";
+          }
+          $grupo_html .= "</tr>";
+          $residentes[] = $grupo["RESIDENTE_ID"];
+        }
 			}
 			$modulo_html .=$grupo_html;
     	}
