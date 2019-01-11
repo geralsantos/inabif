@@ -51,6 +51,50 @@ Vue.component('ppd-datos-condicion-ingreso', {
     updated:function(){
     },
     methods:{
+        inicializar(){
+            this.CarDocIngreso = null;
+            this.CarTipoDoc = null;
+            this.CarNumDoc = null;
+            this.CarPoseePension = null;
+            this.CarTipoPension = null;
+            this.CarULeeEscribe = null;
+            this.CarNivelEducativo = null;
+            this.CarInstitucionEducativa = null;
+            this.CarTipoSeguro = null;
+            this.CarCSocioeconomica = null;
+            this.CarFamiliaresUbicados = null;
+            this.CarTipoParentesco = null;
+            this.CarProblematicaFam = null;
+            this.id = null;
+
+            this.pensiones= [];
+            this.educativos= [];
+            this.instituciones= [];
+            this.seguros= [];
+            this.socioeconomicos= [];
+            this.familiares= [];
+            this.tipoDocumentos= [];
+            this.parentescos= [];
+
+            this.nombre_residente=null;
+            this.isLoading=false;
+            this.mes=moment().format("M");
+            this.anio=(new Date()).getFullYear();
+            this.coincidencias=[];
+            this.bloque_busqueda=false;
+            this.id_residente=null;
+            this.modal_lista=false;
+            this.pacientes = [];
+
+            this.tipo_pension();
+            this.nivel_educativo();
+            this.institucion_educativa();
+            this.tipo_seguro();
+            this.clasificacion_socioeconomica();
+            this.tipo_parentesco();
+            this.problematica_familiar();
+            this.tipo_documento_identidad();
+        },
         guardar(){
             if (this.id_residente==null) {
                 swal('Error', 'Residente no existe', 'warning');
@@ -77,6 +121,7 @@ Vue.component('ppd-datos-condicion-ingreso', {
             this.$http.post('insertar_datos?view',{tabla:'CarCondicionIngreso', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
+                    this.inicializar();
                     swal('', 'Registro Guardado', 'success');
 
                 }else{

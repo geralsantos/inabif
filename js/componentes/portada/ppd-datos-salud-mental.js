@@ -38,6 +38,37 @@ Vue.component('ppd-datos-salud-mental', {
     updated:function(){
     },
     methods:{
+        inicializar(){
+            this.CarTrastornosNeurologico = null;
+            this.CarNeurologicoPrincipal = null;
+            this.CarTrastornoConduta = null;
+            this.CarDificultadHabla = null;
+            this.CarMetodoHabla = null;
+            this.CarComprension = null;
+            this.CarDificultadPresenta = null;
+            this.CarRealizaActividades = null;
+            this.CarEspeficicarActividades = null;
+            this.id = null;
+
+            this.transtornos=[];
+            this.tipos=[];
+            this.actividades=[];
+
+            this.nombre_residente=null;
+            this.isLoading=false;
+            this.mes=moment().format("M");
+            this.anio=(new Date()).getFullYear();
+            this.coincidencias=[];
+            this.bloque_busqueda=false;
+            this.id_residente=null;
+            this.modal_lista=false;
+            this.pacientes = [];
+
+            this.buscar_tipos();
+            this.buscar_actividades();
+            this.listar_cie_10();
+
+        },
         guardar(){
             if (this.id_residente==null) {
                 swal('Error', 'Residente no existe', 'warning');
@@ -63,6 +94,7 @@ Vue.component('ppd-datos-salud-mental', {
             this.$http.post('insertar_datos?view',{tabla:'CarSaludMental', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
+                    this.inicializar();
                     swal('', 'Registro Guardado', 'success');
 
                 }else{

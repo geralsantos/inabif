@@ -90,6 +90,91 @@ Vue.component('nna-seguimiento-salud', {
     updated:function(){
     },
     methods:{
+        inicializar(){
+            this.Intervencion = null;
+                    this.Diagnostico_Psiquiatrico_1 = null;
+                    this.Diagnostico_Psiquiatrico_2 = null;
+                    this.Diagnostico_Psiquiatrico_3 = null;
+                    this.Diagnostico_Neurologico_1 = null;
+                    this.Diagnostico_Neurologico_2 = null;
+                    this.Diagnostico_Neurologico_3 = null;
+                    this.Diagnostico_Cronico_1 = null;
+                    this.Diagnostico_Cronico_2 = null;
+                    this.Diagnostico_Cronico_3 = null;
+                    this.Diagnostico_Agudo_1 = null;
+                    this.Diagnostico_Agudo_2 = null;
+                    this.Diagnostico_Agudo_3 = null;
+                    this.VIH = null;
+                    this.ETS = null;
+                    this.TBC = null;
+                    this.HepatitisA = null;
+                    this.HepatitisB = null;
+                    this.Caries = null;
+                    this.Discapacidad = null;
+                    this.Discapacidad_Fisica = null;
+                    this.Discapacidad_Intelectual = null;
+                    this.Discapacidad_Sensorial = null;
+                    this.Discapacidad_Mental = null;
+                    this.SIS = null;
+                    this.ESSALUD = null;
+                    this.Tipo_Seguro = null;
+                    this.CONADIS = null;
+                    this.A_Medicina_General = null;
+                    this.A_Cirujia_General = null;
+                    this.A_Traumatologia = null;
+                    this.A_Odontologia = null;
+                    this.A_Medicina_Interna = null;
+                    this.A_Cardiovascular = null;
+                    this.A_Dermatologia = null;
+                    this.A_Endrocrinologia = null;
+                    this.A_Gastroentrologia = null;
+                    this.A_Gineco_Obstetricia = null;
+                    this.A_Hermatologia = null;
+                    this.A_Nefrologia = null;
+                    this.A_Infectologia = null;
+                    this.A_Inmunologia = null;
+                    this.A_Reumatologia = null;
+                    this.A_Neumologia = null;
+                    this.A_Neurologia = null;
+                    this.A_Oftalmologia = null;
+                    this.A_Otorrinolaringologia = null;
+                    this.A_Oncologia = null;
+                    this.A_Psicriatica = null;
+                    this.A_Cirujia = null;
+                    this.A_Urologia = null;
+                    this.A_Nutricion = null;
+                    this.A_Pedriatria = null;
+                    this.A_Rehabilitacion = null;
+                    this.A_Gineco_Menores = null;
+                    this.A_Psicologia = null;
+                    this.Atencion_Total = null;
+                    this.Hospitalizado = null;
+                    this.Emergencia = null;
+                    this.CRED = null;
+                    this.Inmunizacion = null;
+                    this.id = null;
+
+            this.diag_psiquiatrico_cie_10=[];
+            this.diag_neurologico_cie_10=[];
+            this.diag_cronico_cie_10=[];
+            this.diag_agudo_cie_10=[];
+
+            this.nombre_residente=null;
+            this.isLoading=false;
+            this.mes=moment().format("M");
+            this.anio=(new Date()).getFullYear();
+            this.coincidencias=[];
+            this.bloque_busqueda=false;
+            this.id_residente=null;
+            this.modal_lista=false;
+            this.pacientes = [];
+
+            this.Diagnostico_Psiquiatrico();
+            this.Diagnostico_Neurologico();
+            this.Diagnostico_Cronico();
+            this.Diagnostico_Agudo();
+
+        },
         Diagnostico_Psiquiatrico(){
             this.$http.post('buscar?view',{tabla:'diag_psiquiatrico_cie_10'}).then(function(response){
                 this.diag_psiquiatrico_cie_10 = response.body.data;
@@ -188,6 +273,7 @@ Vue.component('nna-seguimiento-salud', {
             this.$http.post('insertar_datos?view',{tabla:'NNASalud', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
+                    this.inicializar();
                     swal('', 'Registro Guardado', 'success');
 
                 }else{

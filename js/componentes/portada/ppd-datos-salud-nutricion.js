@@ -26,8 +26,6 @@ Vue.component('ppd-datos-salud-nutricion', {
 
         dificultades:[],
         patologias:[],
-        patologias2:[],
-        nutricionales:[],
 
         nombre_residente:null,
         isLoading:false,
@@ -46,11 +44,52 @@ Vue.component('ppd-datos-salud-nutricion', {
     mounted:function(){
         this.buscar_dificultades();
         this.buscar_patologias();
-        this.buscar_patologias2();
+
     },
     updated:function(){
     },
     methods:{
+        inicializar(){
+            this.CarDiscapacidad = null;
+            this.CarDiscapacidadFisica = null;
+            this.CarDiscapacidadIntelectual = null;
+            this.CarDiscapacidadSensorial = null;
+            this.CarDiscapacidadMental = null;
+            this.CarDxCertificado = null;
+            this.CarCarnetConadis = null;
+            this.CarMovilidad = null;
+            this.CarDificultadDesplazamiento = null;
+            this.CarDificultadBrazoCuerpo = null;
+            this.CarPatologica1 = null;
+            this.CarTipoPatologia1 = null;
+            this.CarEspecifiquePato1 = null;
+            this.CarPatologia2 = null;
+            this.CarTipoPatologia2 = null;
+            this.CarEspecifiquePato2 = null;
+            this.CarNivelHemoglobina = null;
+            this.CarAnemia = null;
+            this.CarPeso = null;
+            this.CarTalla = null;
+            this.CarEstadoNutricional = null;
+            this.id = null;
+
+            this.dificultades=[];
+            this.patologias=[];
+
+            this.nombre_residente=null;
+            this.isLoading=false;
+            this.mes=moment().format("M");
+            this.anio=(new Date()).getFullYear();
+            this.coincidencias=[];
+            this.bloque_busqueda=false;
+            this.id_residente=null;
+            this.modal_lista=false;
+            this.pacientes = [];
+
+            this.buscar_dificultades();
+            this.buscar_patologias();
+
+        },
         guardar(){
             if (this.id_residente==null) {
                 swal('Error', 'Residente no existe', 'warning');
@@ -88,6 +127,7 @@ Vue.component('ppd-datos-salud-nutricion', {
             this.$http.post('insertar_datos?view',{tabla:'CarSaludNutricion', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
+                    this.inicializar();
                     swal('', 'Registro Guardado', 'success');
 
                 }else{
@@ -177,14 +217,7 @@ Vue.component('ppd-datos-salud-nutricion', {
 
             });
         },
-        buscar_patologias2(){
-            this.$http.post('buscar?view',{tabla:'pam_tipo_patologia'}).then(function(response){
-                if( response.body.data ){
-                    this.patologias2= response.body.data;
-                }
-
-            });
-        },mostrar_lista_residentes(){
+        mostrar_lista_residentes(){
 
             this.id_residente = null;
             this.isLoading = true;

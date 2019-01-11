@@ -26,6 +26,24 @@ Vue.component('nna-seguimiento-nutricion', {
     updated:function(){
     },
     methods:{
+        inicializar(){
+            this.Intervencion = null;
+            this.Peso = null;
+            this.Talla = null;
+            this.Anemia = null;
+            this.id = null;
+
+            this.nombre_residente=null;
+            this.isLoading=false;
+            this.mes=moment().format("M");
+            this.anio=(new Date()).getFullYear();
+            this.coincidencias=[];
+            this.bloque_busqueda=false;
+            this.id_residente=null;
+            this.modal_lista=false;
+            this.pacientes = [];
+
+        },
         guardar(){
             if (this.id_residente==null) {
                 swal('Error', 'Residente no existe', 'warning');
@@ -47,6 +65,7 @@ Vue.component('nna-seguimiento-nutricion', {
             this.$http.post('insertar_datos?view',{tabla:'NNANutricion', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
+                    this.inicializar();
                     swal('', 'Registro Guardado', 'success');
 
                 }else{

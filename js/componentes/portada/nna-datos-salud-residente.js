@@ -51,6 +51,48 @@ Vue.component('nna-datos-salud-residente', {
     updated:function(){
     },
     methods:{
+        inicializar(){
+            this.Discapacidad = null;
+            this.Discapacidad_Fisica = null;
+            this.Discapacidad_Sensorial = null;
+            this.Discapaciada_Intelectual = null;
+            this.Discapacidad_Mental = null;
+            this.Certificado = null;
+            this.Carnet_CANADIS = null;
+            this.Transtornos_Neuro = null;
+            this.Des_Transtorno_Neuro = null;
+            this.CRED = null;
+            this.Vacunas = null;
+            this.Patologia_1 = null;
+            this.Diagnostico_S1 = null;
+            this.Patologia_2 = null;
+            this.Diagnostico_S3 = null;
+            this.Transtornos_Comportamiento = null;
+            this.Tipo_Transtorno = null;
+            this.Gestante = null;
+            this.Semanas_Gestacion = null;
+            this.Control_Prenatal = null;
+            this.Hijos = null;
+            this.Nro_Hijos = null;
+            this.Nivel_Hemoglobina = null;
+            this.Anemia = null;
+            this.Peso = null;
+            this.Talla = null;
+            this.Estado_Nutricional1 = null;
+            this.Estado_Nutricional2 = null;
+            this.id = null;
+
+            this.nombre_residente=null;
+            this.isLoading=false;
+            this.mes=moment().format("M");
+            this.anio=(new Date()).getFullYear();
+            this.coincidencias=[];
+            this.bloque_busqueda=false;
+            this.id_residente=null;
+            this.modal_lista=false;
+            this.pacientes = [];
+
+        },
         guardar(){
             if (this.id_residente==null) {
                 swal('Error', 'Residente no existe', 'warning');
@@ -96,6 +138,7 @@ Vue.component('nna-datos-salud-residente', {
             this.$http.post('insertar_datos?view',{tabla:'NNADatosSaludResi', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
+                    this.inicializar();
                     swal('', 'Registro Guardado', 'success');
 
                 }else{

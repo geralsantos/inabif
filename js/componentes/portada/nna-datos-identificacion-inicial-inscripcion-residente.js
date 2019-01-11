@@ -54,6 +54,45 @@ Vue.component('nna-datos-identificacion-inicial-inscripcion-residente', {
         }
     },
     methods:{
+        inicializar(){
+            this.Ape_Paterno = null;
+            this.Ape_Materno = null;
+            this.Nom_Usuario = null;
+            this.pais_procedente_id = null;
+            this.departamento_procedente_id = null;
+            this.departamento_nacimiento_id = null;
+            this.provincia_nacimiento_id = null;
+            this.distrito_nacimiento_id = null;
+            this.Sexo = null;
+            this.Fecha_Nacimiento = null;
+            this.Edad = null;
+            this.Lengua_Materna = null;
+            this.Numero_Doc = null;
+            this.id = null;
+
+            this.paises=[];
+            this.departamentos=[];
+            this.provincias=[];
+            this.distritos=[];
+            this.lenguas=[];
+            this.departamentos2=[];
+
+            this.nombre_residente=null;
+            this.isLoading=false;
+            this.mes=moment().format("M");
+            this.anio=(new Date()).getFullYear();
+            this.coincidencias=[];
+            this.bloque_busqueda=false;
+            this.id_residente=null;
+            this.modal_lista=false;
+            this.pacientes = [];
+
+            this.buscar_paises();
+            this.buscar_lenguas();
+            this.buscar_departamentos();
+            this.buscar_departamentos2();
+        },
+
         guardar(){
            let Numero_Doc = '0';
             if(this.Numero_Doc != null){
@@ -108,6 +147,7 @@ Vue.component('nna-datos-identificacion-inicial-inscripcion-residente', {
                         console.log(response.body.lastid);
                         this.$http.post('insertar_datos?view',{tabla:'NNAInscripcionResidente', valores:valores}).then(function(response){
                             if( response.body.resultado ){
+                                this.inicializar();
                                 swal('', 'Registro Guardado', 'success');
                             }else{
                               swal("", "Un error ha ocurrido", "error");
@@ -118,6 +158,7 @@ Vue.component('nna-datos-identificacion-inicial-inscripcion-residente', {
                     valores.Residente_Id = this.id_residente;
                     this.$http.post('insertar_datos?view',{tabla:'NNAInscripcionResidente', valores:valores}).then(function(response){
                         if( response.body.resultado ){
+                            this.inicializar();
                             swal('', 'Registro Guardado', 'success');
                         }else{
                           swal("", "Un error ha ocurrido", "error");

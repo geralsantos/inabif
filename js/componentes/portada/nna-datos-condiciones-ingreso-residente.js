@@ -35,6 +35,33 @@ Vue.component('nna-datos-condiciones-ingreso-residente', {
     updated:function(){
     },
     methods:{
+        inicializar(){
+            this.Tipo_Doc = null;
+            this.Numero_Doc = null;
+            this.Lee_Escribe = null;
+            this.Nivel_Educativo = null;
+            this.Tipo_Seguro = null;
+            this.SISFOH = null;
+            this.id = null;
+
+            this.tipos_seguros=[];
+            this.niveles_educativos=[];
+            this.clasif_socioeconomica=[];
+
+            this.nombre_residente=null;
+            this.isLoading=false;
+            this.mes=moment().format("M");
+            this.anio=(new Date()).getFullYear();
+            this.coincidencias=[];
+            this.bloque_busqueda=false;
+            this.id_residente=null;
+            this.modal_lista=false;
+            this.pacientes=[];
+
+            this.buscar_niveleducativo();
+            this.buscar_clasif_socioeconomica();
+            this.buscar_pam_tipo_seguro_salud();
+        },
         guardar(){
             if (this.id_residente==null) {
                 swal('Error', 'Residente no existe', 'warning');
@@ -58,6 +85,8 @@ Vue.component('nna-datos-condiciones-ingreso-residente', {
             this.$http.post('insertar_datos?view',{tabla:'NNACondicionIResidente', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
+
+                    this.inicializar();
                     swal('', 'Registro Guardado', 'success');
 
                 }else{

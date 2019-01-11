@@ -11,7 +11,6 @@ Vue.component('ppd-datos-atencion-trabajoSocial', {
         CarRConadis:null,
         id:null,
 
-        CarFamiliaresUbicados:null,
         CarTipoParentesco:null,
         CarProblematicaFam:null,
 
@@ -37,6 +36,33 @@ Vue.component('ppd-datos-atencion-trabajoSocial', {
     updated:function(){
     },
     methods:{
+        inicializar(){
+            this.CarVisitaF = null;
+            this.CarNumVisitaMes = null;
+            this.CarResinsercionF = null;
+            this.CarFamiliaRSoporte = null;
+            this.CarDesPersonaV = null;
+            this.CarRDni = null;
+            this.CarRAus = null;
+            this.CarRConadis = null;
+            this.id = null;
+
+            this.CarTipoParentesco= null;
+            this.CarProblematicaFam= null;
+
+            this.nombre_residente=null;
+            this.isLoading=false;
+            this.mes=moment().format("M");
+            this.anio=(new Date()).getFullYear();
+            this.coincidencias=[];
+            this.bloque_busqueda=false;
+            this.id_residente=null;
+            this.modal_lista=false;
+            this.pacientes = [];
+
+            this.tipo_parentesco();
+            this.problematica_familiar();
+        },
         guardar(){
             if (this.id_residente==null) {
                 swal('Error', 'Residente no existe', 'warning');
@@ -60,6 +86,7 @@ Vue.component('ppd-datos-atencion-trabajoSocial', {
             this.$http.post('insertar_datos?view',{tabla:'CarTrabajoSocial', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
+                    this.inicializar();
                     swal('', 'Registro Guardado', 'success');
 
                 }else{

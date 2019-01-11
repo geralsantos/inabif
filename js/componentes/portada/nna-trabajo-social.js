@@ -46,6 +46,43 @@ Vue.component('nna-trabajo-social', {
     updated:function(){
     },
     methods:{
+        inicializar(){
+            this.Fase_Intervencion = null;
+            this.Estado_Usuario = null;
+            this.Plan_Intervencion = null;
+            this.SituacionL_NNA = null;
+            this.Familia_NNA = null;
+            this.SoporteF_NNA = null;
+            this.Des_SoporteF = null;
+            this.Tipo_Familia = null;
+            this.Problematica_Fami = null;
+            this.NNA_Soporte_Fami = null;
+            this.Familia_SISFOH = null;
+            this.Resultado_Clasificacion = null;
+            this.Nro_VisitasNNA = null;
+            this.Participacion_EscuelaP = null;
+            this.Consegeria_Familiar = null;
+            this.Soporte_Social = null;
+            this.Consejeria_residente = null;
+            this.Charlas = null;
+            this.Visitas_Domicilarias = null;
+            this.Reinsercion_Familiar = null;
+            this.DNI = null;
+            this.AUS_SIS = null;
+            this.CONADIS = null;
+            this.id = null;
+
+            this.nombre_residente=null;
+            this.isLoading=false;
+            this.mes=moment().format("M");
+            this.anio=(new Date()).getFullYear();
+            this.coincidencias=[];
+            this.bloque_busqueda=false;
+            this.id_residente=null;
+            this.modal_lista=false;
+            this.pacientes = [];
+
+        },
         guardar(){
             if (this.id_residente==null) {
                 swal('Error', 'Residente no existe', 'warning');
@@ -86,6 +123,7 @@ Vue.component('nna-trabajo-social', {
             this.$http.post('insertar_datos?view',{tabla:'NNATrabajoSocial', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
+                    this.inicializar();
                     swal('', 'Registro Guardado', 'success');
 
                 }else{
@@ -203,9 +241,9 @@ Vue.component('nna-trabajo-social', {
             this.DNI = null;
             this.AUS_SIS = null;
             this.CONADIS = null;
+            this.id = null;
 
             this.id_residente = residente.ID;
-            this.id=residente.ID;
             let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
             let apellido_p = (residente.APELLIDO_P==undefined)?'':residente.APELLIDO_P;
             let apellido_m = (residente.APELLIDO_M==undefined)?'':residente.APELLIDO_M;

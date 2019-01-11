@@ -40,6 +40,39 @@ Vue.component('nna-seguimiento-psicologico', {
     updated:function(){
     },
     methods:{
+        inicializar(){
+            this.Plan_Intervencion = null;
+            this.Presento = null;
+            this.Perfil = null;
+            this.Intervencion_Individual = null;
+            this.Intervencion_Grupal = null;
+            this.Nro_OrientacionP = null;
+            this.Nro_OrientacionF = null;
+            this.Nro_Charlas = null;
+            this.Nro_TLiderazgo = null;
+            this.Nro_TAutoestima = null;
+            this.Nro_TSexualidad = null;
+            this.Nro_TPrevencionEmb = null;
+            this.Nro_TIgualdadG = null;
+            this.Nro_ViolenciaF = null;
+            this.Nro_SaludM = null;
+            this.id = null;
+
+            this.perfilesingreso=[];
+
+            this.nombre_residente=null;
+            this.isLoading=false;
+            this.mes=moment().format("M");
+            this.anio=(new Date()).getFullYear();
+            this.coincidencias=[];
+            this.bloque_busqueda=false;
+            this.id_residente=null;
+            this.modal_lista=false;
+            this.pacientes = [];
+
+            this.buscar_nna_perfiles_ingreso();
+
+        },
         guardar(){
             if (this.id_residente==null) {
                 swal('Error', 'Residente no existe', 'warning');
@@ -72,6 +105,7 @@ Vue.component('nna-seguimiento-psicologico', {
             this.$http.post('insertar_datos?view',{tabla:'NNAPsicologico', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
+                    this.inicializar();
                     swal('', 'Registro Guardado', 'success');
 
                 }else{

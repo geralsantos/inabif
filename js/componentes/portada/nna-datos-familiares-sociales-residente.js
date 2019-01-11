@@ -10,6 +10,7 @@ Vue.component('nna-datos-familiares-sociales-residente', {
 
         problematicas:[],
         parentescos:[],
+
         nombre_residente:null,
         isLoading:false,
         mes:moment().format("M"),
@@ -31,6 +32,29 @@ Vue.component('nna-datos-familiares-sociales-residente', {
     updated:function(){
     },
     methods:{
+        inicializar(){
+            this.Familiares = null;
+            this.Parentesco = null;
+            this.Tipo_Familia = null;
+            this.Problematica_Fami = null;
+            this.id = null;
+
+            this.problematicas=[];
+            this.parentescos=[];
+
+            this.nombre_residente=null;
+            this.isLoading=false;
+            this.mes=moment().format("M");
+            this.anio=(new Date()).getFullYear();
+            this.coincidencias=[];
+            this.bloque_busqueda=false;
+            this.id_residente=null;
+            this.modal_lista=false;
+            this.pacientes = [];
+
+            this.cargar_problematicas();
+            this.tipo_parentesco();
+        },
         guardar(){
             if (this.id_residente==null) {
                 swal('Error', 'Residente no existe', 'warning');
@@ -52,6 +76,7 @@ Vue.component('nna-datos-familiares-sociales-residente', {
             this.$http.post('insertar_datos?view',{tabla:'NNAFamiliaresResidente', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
+                    this.inicializar();
                     swal('', 'Registro Guardado', 'success');
 
                 }else{

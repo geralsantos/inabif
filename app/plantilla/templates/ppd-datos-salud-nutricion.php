@@ -195,7 +195,7 @@
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Tipo de patología</label>
                                 <select name="CarTipoPatologia2" v-model="CarTipoPatologia2" class="form-control">
-                                    <option v-for="patologia2 in patologias2" :value="patologia2.ID">{{patologia2.NOMBRE}}</option>
+                                    <option v-for="patologia2 in patologias" :value="patologia2.ID">{{patologia2.NOMBRE}}</option>
                                 </select>
                             </div>
 

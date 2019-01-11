@@ -54,6 +54,50 @@ Vue.component('ppd-datos-atencion-salud', {
     updated:function(){
     },
     methods:{
+        inicializar(){
+            this.CarNumAtencionesMG = null;
+            this.CarSalidaMes = null;
+            this.CarNunSalidas = null;
+            this.CarNumACardiovascular = null;
+            this.CarANefrologia = null;
+            this.CarAOncologia = null;
+            this.CarANeurocirugia = null;
+            this.CarNumDermatologia = null;
+            this.CarAEndocrinologia = null;
+            this.CarAGastroenterologia = null;
+            this.CarAGinecoObstretica = null;
+            this.CarAInfectoContagiosas = null;
+            this.CarAHematologia = null;
+            this.CarAInmunologia = null;
+            this.CarAMedicinaFisica = null;
+            this.CarANeumologia = null;
+            this.CarAnutricion = null;
+            this.CarANeurologia = null;
+            this.CarAOftamologia = null;
+            this.CarAOtorrinoloringologia = null;
+            this.CarAPedriatria = null;
+            this.CarAPsiquiatria = null;
+            this.CarAQuirurgica = null;
+            this.CarATraumologia = null;
+            this.CarAUrologia = null;
+            this.CarAOdontologia = null;
+            this.CarAServicios = null;
+            this.CarTratamientoPsicofarmaco = null;
+            this.CarHopitalizadoP = null;
+            this.CarNumHospitalizaciones = null;
+            this.CarMotivoHospitalizacion = null;
+            this.id = null;
+
+            this.nombre_residente=null;
+            this.isLoading=false;
+            this.mes=moment().format("M");
+            this.anio=(new Date()).getFullYear();
+            this.coincidencias=[];
+            this.bloque_busqueda=false;
+            this.id_residente=null;
+            this.modal_lista=false;
+            this.pacientes = [];
+        },
         guardar(){
             if (this.id_residente==null) {
                 swal('Error', 'Residente no existe', 'warning');
@@ -100,6 +144,7 @@ Vue.component('ppd-datos-atencion-salud', {
             this.$http.post('insertar_datos?view',{tabla:'CarAtencionSalud', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
+                    this.inicializar();
                     swal('', 'Registro Guardado', 'success');
 
                 }else{
@@ -136,10 +181,10 @@ Vue.component('ppd-datos-atencion-salud', {
         actualizar(coincidencia){
             this.id_residente = coincidencia.ID;               this.id=coincidencia.ID;
             let nombre=(coincidencia.NOMBRE==undefined)?'':coincidencia.NOMBRE;
-let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
-let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
-let apellido = apellido_p + ' ' + apellido_m;
- this.nombre_residente=nombre + ' ' + apellido;
+            let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
+            let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
+            let apellido = apellido_p + ' ' + apellido_m;
+            this.nombre_residente=nombre + ' ' + apellido;
             this.coincidencias = [];
             this.bloque_busqueda = false;
 

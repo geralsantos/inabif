@@ -33,6 +33,29 @@ Vue.component('pam-datos-generales-egreso', {
     updated:function(){
     },
     methods:{
+        inicializar(){
+            this.Fecha_Egreso = null;
+            this.MotivoEgreso = null;
+            this.Retiro_Voluntario = null;
+            this.Reinsercion_Familiar = null;
+            this.Traslado_Entidad_Salud = null;
+            this.Traslado_Otra_Entidad = null;
+            this.Fallecimiento = null;
+            this.RestitucionAseguramientoSaludo = null;
+            this.Restitucion_Derechos_DNI = null;
+            this.RestitucionReinsercionFamiliar = null;
+            this.id = null;
+
+            this.nombre_residente=null;
+            this.isLoading=false;
+            this.mes=moment().format("M");
+            this.anio=(new Date()).getFullYear();
+            this.coincidencias=[];
+            this.bloque_busqueda=false;
+            this.id_residente=null;
+            this.modal_lista=false;
+            this.pacientes = [];
+        },
         guardar(){
             if (this.id_residente==null) {
                 swal('Error', 'Residente no existe', 'warning');
@@ -60,6 +83,7 @@ Vue.component('pam-datos-generales-egreso', {
             this.$http.post('insertar_datos?view',{tabla:'pam_EgresoUsuario', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
+                   this.inicializar();
                     swal('', 'Registro Guardado', 'success');
 
                 }else{

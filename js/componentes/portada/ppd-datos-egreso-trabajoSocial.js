@@ -32,6 +32,30 @@ Vue.component('ppd-datos-egreso-trabajoSocial', {
     updated:function(){
     },
     methods:{
+
+        inicializar(){
+            this.CarIntervencionNutricional = null;
+            this.CarDesMetaPII = null;
+            this.CarInformeEvolutivo = null;
+            this.CarDesInforme = null;
+            this.CarCumplePlan = null;
+            this.CarUbicacionFamilia = null;
+            this.CarParticipacionfamilia = null;
+            this.CarPosibilidadReinsercion = null;
+            this.CarColocacionLaboral = null;
+            this.id = null;
+
+            this.nombre_residente=null;
+            this.isLoading=false;
+            this.mes=moment().format("M");
+            this.anio=(new Date()).getFullYear();
+            this.coincidencias=[];
+            this.bloque_busqueda=false;
+            this.id_residente=null;
+            this.modal_lista=false;
+            this.pacientes = [];
+
+        },
         guardar(){
             if (this.id_residente==null) {
                 swal('Error', 'Residente no existe', 'warning');
@@ -51,14 +75,11 @@ Vue.component('ppd-datos-egreso-trabajoSocial', {
                 Residente_Id: this.id_residente,
                 Periodo_Mes: moment().format("MM"),
                 Periodo_Anio:moment().format("YYYY")
-
-
-
             }
-
             this.$http.post('insertar_datos?view',{tabla:'CarEgresoTrabajoSocial', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
+                    this.inicializar();
                     swal('', 'Registro Guardado', 'success');
 
                 }else{
@@ -95,10 +116,10 @@ Vue.component('ppd-datos-egreso-trabajoSocial', {
         actualizar(coincidencia){
             this.id_residente = coincidencia.ID;               this.id=coincidencia.ID;
             let nombre=(coincidencia.NOMBRE==undefined)?'':coincidencia.NOMBRE;
-let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
-let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
-let apellido = apellido_p + ' ' + apellido_m;
- this.nombre_residente=nombre + ' ' + apellido;
+            let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
+            let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
+            let apellido = apellido_p + ' ' + apellido_m;
+            this.nombre_residente=nombre + ' ' + apellido;
             this.coincidencias = [];
             this.bloque_busqueda = false;
 
@@ -148,7 +169,6 @@ let apellido = apellido_p + ' ' + apellido_m;
             this.CarPosibilidadReinsercion = null;
             this.CarColocacionLaboral = null;
             this.id = null;
-
 
             this.id_residente = residente.ID;  this.id=residente.ID;
             let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;

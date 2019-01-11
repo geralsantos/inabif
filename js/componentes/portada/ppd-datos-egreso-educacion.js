@@ -30,6 +30,30 @@ Vue.component('ppd-datos-egreso-educacion', {
     updated:function(){
     },
     methods:{
+        inicializar(){
+            this.CarIntervencion = null;
+            this.CarDesMeta = null;
+            this.CarInformeEvolutivo = null;
+            this.CarDesInfome = null;
+            this.CarCumplimientoPlan = null;
+            this.CarAsistenciaEscolar = null;
+            this.CarDesempeAcademico = null;
+            this.id = null;
+
+            this.academicos= [];
+
+            this.nombre_residente=null;
+            this.isLoading=false;
+            this.mes=moment().format("M");
+            this.anio=(new Date()).getFullYear();
+            this.coincidencias=[];
+            this.bloque_busqueda=false;
+            this.id_residente=null;
+            this.modal_lista=false;
+            this.pacientes = [];
+
+            this.buscar_desempeno_academico();
+        },
         guardar(){
             if (this.id_residente==null) {
                 swal('Error', 'Residente no existe', 'warning');
@@ -52,6 +76,7 @@ Vue.component('ppd-datos-egreso-educacion', {
             this.$http.post('insertar_datos?view',{tabla:'CarEgresoEducacion', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
+                    this.inicializar();
                     swal('', 'Registro Guardado', 'success');
 
                 }else{
@@ -137,15 +162,15 @@ Vue.component('ppd-datos-egreso-educacion', {
         },
         elegir_residente(residente){
 
-            this.CarTipoIIEE = null;
-            this.CarInsertadoLaboralmente = null;
-            this.CarDesParticipacionLa = null;
-            this.CarFortalecimientoHabilidades = null;
-            this.CarFIActividades = null;
-            this.CarFFActividades = null;
-            this.CarNNAConcluyoHP = null;
-            this.CarNNAFortaliceHP = null;
+            this.CarIntervencion = null;
+            this.CarDesMeta = null;
+            this.CarInformeEvolutivo = null;
+            this.CarDesInfome = null;
+            this.CarCumplimientoPlan = null;
+            this.CarAsistenciaEscolar = null;
+            this.CarDesempeAcademico = null;
             this.id = null;
+
 
             this.id_residente = residente.ID;  this.id=residente.ID;
             let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
@@ -159,15 +184,15 @@ Vue.component('ppd-datos-egreso-educacion', {
 
                 if( response.body.atributos != undefined){
 
-                    this.CarTipoIIEE = response.body.atributos[0]["TIPO_INSTITUCION"];
-                    this.CarInsertadoLaboralmente = response.body.atributos[0]["INSERTADO_LABORA"];
-                    this.CarDesParticipacionLa = response.body.atributos[0]["DES_LABORA"];
-                    this.CarFortalecimientoHabilidades = response.body.atributos[0]["PARTICIPA_ACTIVIDADES"];
-                    this.CarFIActividades = response.body.atributos[0]["FECHA_INICIONA"];
-                    this.CarFFActividades = response.body.atributos[0]["FECHA_FINA"];
-                    this.CarNNAConcluyoHP = response.body.atributos[0]["CULMINO_ACTIVIDADES"];
-                    this.CarNNAFortaliceHP = response.body.atributos[0]["LOGRO_ACTIVIDADES"];
+                    this.CarIntervencion = response.body.atributos[0]["PLAN_EDUCACION"];
+                    this.CarDesMeta = response.body.atributos[0]["META_PII"];
+                    this.CarInformeEvolutivo = response.body.atributos[0]["INFORME_TECNICO"];
+                    this.CarDesInfome = response.body.atributos[0]["DES_INFORME"];
+                    this.CarCumplimientoPlan = response.body.atributos[0]["CUMPLE_PLAN"];
+                    this.CarAsistenciaEscolar = response.body.atributos[0]["ASISTENCIA_ESCOLAR"];
+                    this.CarDesempeAcademico = response.body.atributos[0]["DESEMPENO"];
                     this.id = response.body.atributos[0]["RESIDENTE_ID"];
+
 
                 }
              });

@@ -18,6 +18,8 @@ Vue.component('nna-datos-admision-residente', {
         motivosingreso:[],
         perfilesingreso1:[],
         perfilesingreso2:[],
+        pacientes:[],
+
         nombre_residente:null,
         isLoading:false,
         mes:moment().format("M"),
@@ -26,7 +28,7 @@ Vue.component('nna-datos-admision-residente', {
         bloque_busqueda:false,
         id_residente:null,
         modal_lista:false,
-        pacientes:[]
+
 
     }),
     created:function(){
@@ -40,6 +42,39 @@ Vue.component('nna-datos-admision-residente', {
 
     },
     methods:{
+        inicializar(){
+            this.Nro_Arte = null;
+            this.Nro_BioHuerto = null;
+            this.Nro_Zapateria =  null;
+            this.Nro_Carpinteria =  null;
+            this.Nro_Ceramica =  null;
+            this.Nro_Crianza =  null;
+            this.Nro_Dibujo =  null;
+            this.Nro_Tejido =  null;
+            this.Nro_Deportes =  null;
+            this.Nro_Taller_Pro =  null;
+            this.id = null;
+
+            this.instituciones=[];
+            this.motivosingreso=[];
+            this.perfilesingreso1=[];
+            this.perfilesingreso2=[];
+
+            this.nombre_residente=null;
+            this.isLoading=false;
+            this.mes=moment().format("M");
+            this.anio=(new Date()).getFullYear();
+            this.coincidencias=[];
+            this.bloque_busqueda=false;
+            this.id_residente=null;
+            this.modal_lista=false;
+            this.pacientes=[];
+
+
+            this.buscar_nna_perfiles_ingreso();
+            this.buscar_instituciones();
+            this.buscar_motivosingreso();
+        },
         guardar(){
             if (this.id_residente==null) {
                 swal('Error', 'Residente no existe', 'warning');
@@ -63,10 +98,12 @@ Vue.component('nna-datos-admision-residente', {
                 Periodo_Anio:moment().format("YYYY")
 
             }
-            console.log(valores);
+
             this.$http.post('insertar_datos?view',{tabla:'NNAAdmisionResidente', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
+
+                    this.inicializar();
                     swal('', 'Registro Guardado', 'success');
 
                 }else{

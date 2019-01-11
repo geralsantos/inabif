@@ -48,6 +48,45 @@ Vue.component('pam-atenciones-salud', {
     updated:function(){
     },
     methods:{
+        inicializar(){
+            this.Residente_Salida = null;
+            this.Salidas = null;
+            this.Atenciones_Cardiovascular = null;
+            this.Atenciones_Nefrologia = null;
+            this.Atenciones_Oncologia = null;
+            this.Atenciones_Neurocirugia = null;
+            this.Atenciones_Dermatologia = null;
+            this.Atenciones_Endocrinologo = null;
+            this.Atenciones_Gastroenterologia = null;
+            this.Atenciones_Hematologia = null;
+            this.Atenciones_Inmunologia = null;
+            this.AtencionesMedicFisiRehabilita = null;
+            this.Atenciones_Neumologia = null;
+            this.Atenciones_Nutricion = null;
+            this.Atenciones_Neurologia = null;
+            this.Atenciones_Oftalmologia = null;
+            this.AtencionOtorrinolaringologia = null;
+            this.Atenciones_Psiquiatria = null;
+            this.Atenciones_Traumatologia = null;
+            this.Atenciones_Urologia = null;
+            this.Atenciones_Odontologia = null;
+            this.MedicinaGeneral_Geriatrica = null;
+            this.Nro_Atenciones_OtrosServicios = null;
+            this.ResidenteHospitalizadoPeriodo = null;
+            this.Motivo_Hospitalizacion = null;
+            this.id = null;
+
+            this.nombre_residente=null;
+            this.isLoading=false;
+            this.mes=moment().format("M");
+            this.anio=(new Date()).getFullYear();
+            this.coincidencias=[];
+            this.bloque_busqueda=false;
+            this.id_residente=null;
+            this.modal_lista=false;
+            this.pacientes = [];
+
+        },
         guardar(){
             if (this.id_residente==null) {
                 swal('Error', 'Residente no existe', 'warning');
@@ -90,6 +129,7 @@ Vue.component('pam-atenciones-salud', {
             this.$http.post('insertar_datos?view',{tabla:'pam_AtencionesSalud', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
+                    this.inicializar();
                     swal('', 'Registro Guardado', 'success');
 
                 }else{

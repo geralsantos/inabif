@@ -32,6 +32,29 @@ Vue.component('nna-actividades-sociorecreativas', {
     updated:function(){
     },
     methods:{
+        inicializar(){
+            this.Nro_Arte = null;
+            this.Nro_BioHuerto = null;
+            this.Nro_Zapateria =  null;
+            this.Nro_Carpinteria =  null;
+            this.Nro_Ceramica =  null;
+            this.Nro_Crianza =  null;
+            this.Nro_Dibujo =  null;
+            this.Nro_Tejido =  null;
+            this.Nro_Deportes =  null;
+            this.Nro_Taller_Pro =  null;
+            this.id = null;
+
+            this.nombre_residente=null;
+            this.isLoading=false;
+            this.mes=moment().format("M");
+            this.anio=(new Date()).getFullYear();
+            this.coincidencias=[];
+            this.bloque_busqueda=false;
+            this.id_residente=null;
+            this.modal_lista=false;
+            this.pacientes=[];
+        },
         guardar(){
             if (this.id_residente==null) {
                 swal('Error', 'Residente no existe', 'warning');
@@ -59,6 +82,7 @@ Vue.component('nna-actividades-sociorecreativas', {
             this.$http.post('insertar_datos?view',{tabla:'NNAActividadesSociorecrea', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
+                    this.inicializar();
                     swal('', 'Registro Guardado', 'success');
 
                 }else{

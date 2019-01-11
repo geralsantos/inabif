@@ -30,6 +30,28 @@ Vue.component('nna-seguimientos-nutricion', {
     updated:function(){
     },
     methods:{
+        inicializar(){
+            this.Plan_Intervencion = null;
+            this.Meta_PAI = null;
+            this.Informe_Tecnico = null;
+            this.Cumple_Intervencion = null;
+            this.Estado_Nutricional_Peso = null;
+            this.Estado_Nutricional_Talla = null;
+            this.Hemoglobina = null;
+            this.Analisis_Hemoglobina = null;
+            this.id = null;
+
+            this.nombre_residente=null;
+            this.isLoading=false;
+            this.mes=moment().format("M");
+            this.anio=(new Date()).getFullYear();
+            this.coincidencias=[];
+            this.bloque_busqueda=false;
+            this.id_residente=null;
+            this.modal_lista=false;
+            this.pacientes = [];
+
+        },
         guardar(){
             if (this.id_residente==null) {
                 swal('Error', 'Residente no existe', 'warning');
@@ -55,6 +77,7 @@ Vue.component('nna-seguimientos-nutricion', {
             this.$http.post('insertar_datos?view',{tabla:'NNAnutricion_Semestral', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
+                    this.inicializar();
                     swal('', 'Registro Guardado', 'success');
 
                 }else{

@@ -53,6 +53,43 @@ Vue.component('pam-datos-identificacion-residente', {
         }
     },
     methods:{
+        inicializar(){
+            this.Ape_Paterno = null;
+            this.Ape_Materno = null;
+            this.Nom_Usuario = null;
+            this.pais_procedente_id = null;
+            this.departamento_procedente_id = null;
+            this.departamento_nacimiento_id = null;
+            this.provincia_nacimiento_id = null;
+            this.distrito_nacimiento_id = null;
+            this.Sexo = null;
+            this.Fecha_Nacimiento = null;
+            this.Edad = null;
+            this.Lengua_Materna = null;
+            this.id = null;
+
+            this.paises=[];
+            this.departamentos=[];
+            this.provincias=[];
+            this.distritos=[];
+            this.lenguas=[];
+            this.departamentos2=[];
+
+            this.nombre_residente=null;
+            this.isLoading=false;
+            this.mes=moment().format("M");
+            this.anio=(new Date()).getFullYear();
+            this.coincidencias=[];
+            this.bloque_busqueda=false;
+            this.id_residente=null;
+            this.modal_lista=false;
+            this.pacientes = [];
+
+            this.buscar_paises();
+            this.buscar_lenguas();
+            this.buscar_departamentos();
+            this.buscar_departamentos2();
+        },
         guardar(){
             /*if (this.id_residente==null) {
                 swal('Error', 'Residente no existe', 'success');
@@ -115,6 +152,7 @@ Vue.component('pam-datos-identificacion-residente', {
                         console.log(response.body.lastid);
                         this.$http.post('insertar_datos?view',{tabla:'pam_datos_identificacion', valores:valores}).then(function(response){
                             if( response.body.resultado ){
+                                this.inicializar();
                                 swal('', 'Registro Guardado', 'success');
                             }else{
                               swal("", "Un error ha ocurrido", "error");
@@ -125,6 +163,7 @@ Vue.component('pam-datos-identificacion-residente', {
                     valores.Residente_Id = this.id_residente;
                     this.$http.post('insertar_datos?view',{tabla:'pam_datos_identificacion', valores:valores}).then(function(response){
                         if( response.body.resultado ){
+                            this.inicializar();
                             swal('', 'Registro Guardado', 'success');
                         }else{
                           swal("", "Un error ha ocurrido", "error");
@@ -162,10 +201,10 @@ Vue.component('pam-datos-identificacion-residente', {
         actualizar(coincidencia){
             this.id_residente = coincidencia.ID;               this.id=coincidencia.ID;
             let nombre=(coincidencia.NOMBRE==undefined)?'':coincidencia.NOMBRE;
-let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
-let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
-let apellido = apellido_p + ' ' + apellido_m;
- this.nombre_residente=nombre + ' ' + apellido;
+            let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
+            let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
+            let apellido = apellido_p + ' ' + apellido_m;
+            this.nombre_residente=nombre + ' ' + apellido;
             this.coincidencias = [];
             this.bloque_busqueda = false;
 

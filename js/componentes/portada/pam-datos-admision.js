@@ -37,6 +37,36 @@ Vue.component('pam-datos-admision', {
     updated:function(){
     },
     methods:{
+        inicializar(){
+            this.movimiento_poblacional = null;
+            this.fecha_ingreso_usuario = null;
+            this.institucion_deriva = null;
+            this.motivo_ingreso_principal = null;
+            this.motivo_ingreso_secundario = null;
+            this.perfil_ingreso = null;
+            this.tipo_documento_ingreo_car = null;
+            this.numero_documento_ingreo_car = null;
+            this.id = null;
+
+            this.instituciones=[];
+            this.motivos=[];
+            this.motivos2=[];
+
+            this.nombre_residente=null;
+            this.isLoading=false;
+            this.mes=moment().format("M");
+            this.anio=(new Date()).getFullYear();
+            this.coincidencias=[];
+            this.bloque_busqueda=false;
+            this.id_residente=null;
+            this.modal_lista=false;
+            this.pacientes = [];
+
+            this.buscar_instituciones();
+            this.buscar_motivos();
+            this.buscar_motivos2();
+
+        },
         guardar(){
             if (this.id_residente==null) {
                 swal('Error', 'Residente no existe', 'warning');
@@ -62,6 +92,7 @@ Vue.component('pam-datos-admision', {
             this.$http.post('insertar_datos?view',{tabla:'pam_datos_admision_usuario', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
+                    this.inicializar();
                     swal('', 'Registro Guardado', 'success');
 
                 }else{
@@ -98,10 +129,10 @@ Vue.component('pam-datos-admision', {
         actualizar(coincidencia){
             this.id_residente = coincidencia.ID;               this.id=coincidencia.ID;
             let nombre=(coincidencia.NOMBRE==undefined)?'':coincidencia.NOMBRE;
-let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
-let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
-let apellido = apellido_p + ' ' + apellido_m;
- this.nombre_residente=nombre + ' ' + apellido;
+            let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
+            let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
+            let apellido = apellido_p + ' ' + apellido_m;
+            this.nombre_residente=nombre + ' ' + apellido;
             this.coincidencias = [];
             this.bloque_busqueda = false;
 

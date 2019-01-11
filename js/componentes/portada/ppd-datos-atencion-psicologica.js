@@ -28,6 +28,24 @@ Vue.component('ppd-datos-atencion-psicologica', {
     updated:function(){
     },
     methods:{
+        inicializar(){
+            this.CarNumHabilidadesBasicas = null;
+            this.CarNumHabilidadesConceptuales = null;
+            this.CarNumHabilidadesSociales = null;
+            this.CarNumHablidadesPracticas = null;
+            this.CarNumModificacionConducta = null;
+            this.id = null;
+
+            this.nombre_residente=null;
+            this.isLoading=false;
+            this.mes=moment().format("M");
+            this.anio=(new Date()).getFullYear();
+            this.coincidencias=[];
+            this.bloque_busqueda=false;
+            this.id_residente=null;
+            this.modal_lista=false;
+            this.pacientes = [];
+        },
         guardar(){
             if (this.id_residente==null) {
                 swal('Error', 'Residente no existe', 'warning');
@@ -47,6 +65,7 @@ Vue.component('ppd-datos-atencion-psicologica', {
             this.$http.post('insertar_datos?view',{tabla:'CarAtencionPsicologica', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
+                    this.inicializar();
                     swal('', 'Registro Guardado', 'success');
 
                 }else{

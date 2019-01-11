@@ -45,6 +45,41 @@ Vue.component('pam-datos-nutricion-salud', {
     updated:function(){
     },
     methods:{
+        inicializar(){
+            this.discapacidad = null;
+            this.discapacidad_fisica = null;
+            this.discapacidad_intelectual = null;
+            this.discapacidad_sensorial = null;
+            this.presenta_discapacidad_mental = null;
+            this.dx_certificado = null;
+            this.carnet_conadis = null;
+            this.grado_dependencia_pam = null;
+            this.motivo_dif_desplazamiento = null;
+            this.enfermedad_ingreso_1 = null;
+            this.tipo_patologia = null;
+            this.tipo_patologia_2 = null;
+            this.enfermedad_ingreso_2 = null;
+            this.nivel_hemoglobina = null;
+            this.presenta_anema = null;
+            this.peso = null;
+            this.talla = null;
+            this.estado_nutricional = null;
+            this.id = null;
+
+            this.patologias=[];
+
+            this.nombre_residente=null;
+            this.isLoading=false;
+            this.mes=moment().format("M");
+            this.anio=(new Date()).getFullYear();
+            this.coincidencias=[];
+            this.bloque_busqueda=false;
+            this.id_residente=null;
+            this.modal_lista=false;
+            this.pacientes = [];
+
+            this.buscar_patologias();
+        },
         guardar(){
             if (this.id_residente==null) {
                 swal('Error', 'Residente no existe', 'warning');
@@ -75,10 +110,11 @@ Vue.component('pam-datos-nutricion-salud', {
                         Periodo_Anio:moment().format("YYYY")
 
                     }
-                        console.log(valores)
+
             this.$http.post('insertar_datos?view',{tabla:'pam_datos_saludnutric', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
+                    this.inicializar();
                     swal('', 'Registro Guardado', 'success');
 
                 }else{
@@ -115,10 +151,10 @@ Vue.component('pam-datos-nutricion-salud', {
         actualizar(coincidencia){
             this.id_residente = coincidencia.ID;               this.id=coincidencia.ID;
             let nombre=(coincidencia.NOMBRE==undefined)?'':coincidencia.NOMBRE;
-let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
-let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
-let apellido = apellido_p + ' ' + apellido_m;
- this.nombre_residente=nombre + ' ' + apellido;
+            let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
+            let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
+            let apellido = apellido_p + ' ' + apellido_m;
+            this.nombre_residente=nombre + ' ' + apellido;
             this.coincidencias = [];
             this.bloque_busqueda = false;
 
