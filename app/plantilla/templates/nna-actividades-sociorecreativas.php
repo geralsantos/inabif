@@ -64,55 +64,55 @@
                         <div class="row">
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">N° Arte (Musica, danza, teatro)</label>
-                                <input type="number" min="0"  v-model="Nro_Arte" name="Nro_Arte" placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="Nro_Arte" name="Nro_Arte" placeholder="" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">N° Biohuerto</label>
-                                <input type="number" min="0"  v-model="Nro_BioHuerto" name="Nro_BioHuerto" placeholder="" class="form-control">  </div>
+                                <input type="number" min="0" max="31"   v-model="Nro_BioHuerto" name="Nro_BioHuerto" placeholder="" class="form-control">  </div>
                             </div>
                             <div class="form-group col-md-4">
                                 <div class=" ">
                                 <label for="text-input" class=" form-control-label">N° Calzado y Zapatería</label>
-                                <input type="number" min="0"  v-model="Nro_Zapateria" name="Nro_Zapateria" placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="Nro_Zapateria" name="Nro_Zapateria" placeholder="" class="form-control">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">N° Carpintería y Tallado en madera</label>
-                                <input type="number" min="0"  v-model="Nro_Carpinteria" name="Nro_Carpinteria" placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="Nro_Carpinteria" name="Nro_Carpinteria" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">N° Cerámica</label>
-                                <input type="number" min="0"  v-model="Nro_Ceramica" name="Nro_Ceramica" placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="Nro_Ceramica" name="Nro_Ceramica" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">N° Crianza de animales</label>
-                                <input type="number" min="0"  v-model="Nro_Crianza" name="Nro_Crianza" placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="Nro_Crianza" name="Nro_Crianza" placeholder="" class="form-control">
                             </div>
                         </div>
                         <div class="row">
 
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">N° Dibujo y pintura</label>
-                                <input type="number" min="0"  v-model="Nro_Dibujo" name="Nro_Dibujo" placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="Nro_Dibujo" name="Nro_Dibujo" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">N° Tejidos y Telares</label>
-                                <input type="number" min="0"  v-model="Nro_Tejido" name="Nro_Tejido" placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="Nro_Tejido" name="Nro_Tejido" placeholder="" class="form-control">
 
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">N° Futbol /Voley/ Artes marciales /Natación /Atletismo, entre otros</label>
-                                <input type="number" min="0"  v-model="Nro_Deportes" name="Nro_Deportes" placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="Nro_Deportes" name="Nro_Deportes" placeholder="" class="form-control">
 
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">Talleres Productivos (Cosmetología, electricidad, electrónica, mecánica, computación, ensamblaje, costura, vestido, panadería y reportería).</label>
-                                <input type="number" min="0"  v-model="Nro_Taller_Pro" name="Nro_Taller_Pro" placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="Nro_Taller_Pro" name="Nro_Taller_Pro" placeholder="" class="form-control">
                             </div>
                         </div>
 

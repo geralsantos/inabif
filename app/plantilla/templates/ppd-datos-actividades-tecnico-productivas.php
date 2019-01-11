@@ -65,55 +65,55 @@
                         <div class="row">
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">N° de veces que Participa en el taller de Biohuerto</label>
-                                <input type="number" min="0"  v-model="CarNumBiohuerto" name="CarNumBiohuerto" placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="CarNumBiohuerto" name="CarNumBiohuerto" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">N° de veces que Participa en el taller de Manualidades</label>
-                                <input type="number" min="0"  v-model="CarNumManualidades" name="CarNumManualidades" placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="CarNumManualidades" name="CarNumManualidades" placeholder="" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">N° de veces que Participa en el taller de Panadería- repostería</label>
-                                <input type="number" min="0"  v-model="CarNumReposteria" name="CarNumReposteria" placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="CarNumReposteria" name="CarNumReposteria" placeholder="" class="form-control">
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">N° de veces que participa de paseos o caminatas</label>
-                                <input type="number" min="0"  v-model="CarNumPaseos" name="CarNumPaseos" placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="CarNumPaseos" name="CarNumPaseos" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">N° de veces que participa de Visitas culturales</label>
-                                <input type="number" min="0"  v-model="CarNumCulturales" name="CarNumVCulturales" placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="CarNumCulturales" name="CarNumVCulturales" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">N° de veces que participa de Actividades cívicas y protocolares</label>
-                                <input type="number" min="0"  v-model="CarNumCivicas" name="CarNumCivicas" placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="CarNumCivicas" name="CarNumCivicas" placeholder="" class="form-control">
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">N° de veces que participa en deporte Fútbol</label>
-                                <input type="number" min="0"  v-model="CarNumFutbol" name="CarNumFutbol" placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="CarNumFutbol" name="CarNumFutbol" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">N° de veces que participa en deporte Natación</label>
-                                <input type="number" min="0"  v-model="CarNumNatacion" name="CarNumNatacion" placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="CarNumNatacion" name="CarNumNatacion" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">N° de veces que participa en Otros deportes</label>
-                                <input type="number" min="0"  v-model="CarNumDeportes" name="CarNumDeportes" placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="CarNumDeportes" name="CarNumDeportes" placeholder="" class="form-control">
                             </div>
                         </div>
                         <div class="row">
 
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">N° de veces que participa en actividades de enseñanza del Manejo de Dinero</label>
-                                <input type="number" min="0"  v-model="CArNumDinero" name="CArNumMDinero" placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="CArNumDinero" name="CArNumMDinero" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">N° de veces que participa en activisades para la toma de decisiones con apoyo</label>
-                                <input type="number" min="0"  v-model="CarNumDecisiones" name="CarNumDecisiones" placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="CarNumDecisiones" name="CarNumDecisiones" placeholder="" class="form-control">
                             </div>
                         </div>
                         <div class="row">

@@ -114,15 +114,15 @@
 
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Peso (Kg.)</label>
-                                <input type="number" step="0.01" v-model="Peso" name="Peso" placeholder="" class="form-control">
+                                <input type="number" min="0" step="0.01" v-model="Peso" name="Peso" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Talla (m)</label>
-                                <input type="number" step="0.01" v-model="Talla" name="Talla" placeholder="" class="form-control">
+                                <input type="number" min="0" step="0.01" v-model="Talla" name="Talla" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Hemoglobina (gr./dl)</label>
-                                <input type="number" step="0.01" v-model="Hemoglobina" name="Hemoglobina" placeholder="" class="form-control">
+                                <input type="number" min="0" step="0.01" v-model="Hemoglobina" name="Hemoglobina" placeholder="" class="form-control">
                             </div>
 
                         </div>

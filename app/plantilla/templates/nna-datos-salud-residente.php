@@ -246,7 +246,7 @@
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Semanas de Gestación </label>
-                                <input type="number" min="0"  v-model="Semanas_Gestacion" name="Semanas_Gestacion" placeholder="" class="form-control">
+                                <input type="number" min="0" max="40"   v-model="Semanas_Gestacion" name="Semanas_Gestacion" placeholder="" class="form-control">
                             </div>
                         </div>
                         <div class="row">
@@ -266,11 +266,11 @@
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Número de hijos de residentes en los CAR</label>
-                                <input type="number" min="0"  v-model="Nro_Hijos" name="Nro_Hijos" placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="Nro_Hijos" name="Nro_Hijos" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nivel de Hemoglobina (gr./dl.) </label>
-                                <input type="number" min="0"  step="0.01" v-model="Nivel_Hemoglobina" name="Nivel_Hemoglobina" placeholder="" class="form-control">
+                                <input type="number" min="0" step="0.01" v-model="Nivel_Hemoglobina" name="Nivel_Hemoglobina" placeholder="" class="form-control">
                             </div>
                         </div>
                         <div class="row">

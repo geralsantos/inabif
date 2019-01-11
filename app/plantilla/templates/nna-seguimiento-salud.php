@@ -139,14 +139,14 @@
                                 <select name="Diagnostico_Agudo_1" v-model="Diagnostico_Agudo_1" id="Diagnostico_Agudo_1" class="form-control">
                                     <option v-for="agudo in diag_agudo_cie_10" :value="agudo.ID">{{agudo.NOMBRE}}</option>
                                 </select>
-                           
+
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Diagnóstico  Agudo 2 (CIE-10)</label>
                                 <select name="Diagnostico_Agudo_2" v-model="Diagnostico_Agudo_2" id="Diagnostico_Agudo_2" class="form-control">
                                     <option v-for="agudo in diag_agudo_cie_10" :value="agudo.ID">{{agudo.NOMBRE}}</option>
                                 </select>
-                             
+
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Diagnóstico  Agudo 3 (CIE-10)</label>
@@ -289,114 +289,114 @@
                         <div class='row'>
                         <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº Atención en Medicina General</label>
-                                <input type="number" min="0" v-model="A_Medicina_General" name="A_Medicina_General"  placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"  v-model="A_Medicina_General" name="A_Medicina_General"  placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº Atención en Cirugía General</label>
-                                <input type="number" min="0" v-model="A_Cirujia_General" name="A_Cirujia_General"  placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"  v-model="A_Cirujia_General" name="A_Cirujia_General"  placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº Atención en Traumatología</label>
-                                <input type="number" min="0" v-model="A_Traumatologia" name="A_Traumatologia"  placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"  v-model="A_Traumatologia" name="A_Traumatologia"  placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº Atención en Odontología</label>
-                                <input type="number" min="0" v-model="A_Odontologia" name="A_Odontologia"  placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"  v-model="A_Odontologia" name="A_Odontologia"  placeholder="" class="form-control">
                             </div>
                         </div>
 
                         <div class='row'>
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº Atención en Medicina Interna</label>
-                                <input type="number" min="0" v-model="A_Medicina_Interna" name="A_Medicina_Interna"  placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"  v-model="A_Medicina_Interna" name="A_Medicina_Interna"  placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº  Atención en Cardiovascular</label>
-                                <input type="number" min="0" v-model="A_Cardiovascular" name="A_Cardiovascular"  placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"  v-model="A_Cardiovascular" name="A_Cardiovascular"  placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº  Atención en Dermatología</label>
-                                <input type="number" min="0" v-model="A_Dermatologia" name="A_Dermatologia"  placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"  v-model="A_Dermatologia" name="A_Dermatologia"  placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº Atención en Endocrinología</label>
-                                <input type="number" min="0" v-model="A_Endrocrinologia" name="A_Endrocrinologia"  placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"  v-model="A_Endrocrinologia" name="A_Endrocrinologia"  placeholder="" class="form-control">
                             </div>
                         </div>
 
                         <div class='row'>
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº Atención en Gastroenterología</label>
-                                <input type="number" min="0" v-model="A_Gastroentrologia" name="A_Gastroentrologia"  placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"  v-model="A_Gastroentrologia" name="A_Gastroentrologia"  placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº Atención en Gíneco-obstetricia</label>
-                                <input type="number" min="0" v-model="A_Gineco_Obstetricia" name="A_Gineco_Obstetricia"  placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"  v-model="A_Gineco_Obstetricia" name="A_Gineco_Obstetricia"  placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº Atención en Hematología</label>
-                                <input type="number" min="0" v-model="A_Hermatologia" name="A_Hermatologia"  placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"  v-model="A_Hermatologia" name="A_Hermatologia"  placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº Atención en Nefrología</label>
-                                <input type="number" min="0" v-model="A_Nefrologia" name="A_Nefrologia"  placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"  v-model="A_Nefrologia" name="A_Nefrologia"  placeholder="" class="form-control">
                             </div>
                         </div>
 
                             <div class='row'>
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº Atención en Infectología</label>
-                                <input type="number" min="0" v-model="A_Infectologia" name="A_Infectologia"  placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"  v-model="A_Infectologia" name="A_Infectologia"  placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº Atención en Inmunología y Alergias</label>
-                                <input type="number" min="0" v-model="A_Inmunologia" name="A_Inmunologia"  placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"  v-model="A_Inmunologia" name="A_Inmunologia"  placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº Atención en Reumatología</label>
-                                <input type="number" min="0" v-model="A_Reumatologia" name="A_Reumatologia"  placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"  v-model="A_Reumatologia" name="A_Reumatologia"  placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº Atención en Neumología</label>
-                                <input type="number" min="0" v-model="A_Neumologia" name="A_Neumologia"  placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"  v-model="A_Neumologia" name="A_Neumologia"  placeholder="" class="form-control">
                             </div>
                         </div>
                         <div class='row'>
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº Atención en Neurología</label>
-                                <input type="number" min="0" v-model="A_Neurologia" name="A_Neurologia"  placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"  v-model="A_Neurologia" name="A_Neurologia"  placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº Atención en Oftalmología</label>
-                                <input type="number" min="0" v-model="A_Oftalmologia" name="A_Oftalmologia"  placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"  v-model="A_Oftalmologia" name="A_Oftalmologia"  placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº Atención en Otorrinolaringología</label>
-                                <input type="number" min="0" v-model="A_Otorrinolaringologia" name="A_Otorrinolaringologia"  placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"  v-model="A_Otorrinolaringologia" name="A_Otorrinolaringologia"  placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº Atención en Oncología</label>
-                                <input type="number" min="0" v-model="A_Oncologia" name="A_Oncologia"  placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"  v-model="A_Oncologia" name="A_Oncologia"  placeholder="" class="form-control">
                             </div>
                         </div>
 
                         <div class='row'>
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº Atención en Psiquiatría</label>
-                                <input type="number" min="0" v-model="A_Psicriatica" name="A_Psicriatica"  placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"  v-model="A_Psicriatica" name="A_Psicriatica"  placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº Atención en Cirugía </label>
-                                <input type="number" min="0" v-model="A_Cirujia" name="A_Cirujia"  placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"  v-model="A_Cirujia" name="A_Cirujia"  placeholder="" class="form-control">
                             </div>
 
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº Atención en Urología</label>
-                                <input type="number" min="0" v-model="A_Urologia" name="A_Urologia"  placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"  v-model="A_Urologia" name="A_Urologia"  placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº Atención en Nutrición </label>
-                                <input type="number" min="0" v-model="A_Nutricion" name="A_Nutricion"  placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"  v-model="A_Nutricion" name="A_Nutricion"  placeholder="" class="form-control">
                             </div>
                         </div>
 
@@ -405,19 +405,19 @@
 
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº Atención en Pedriatría/CRED</label>
-                                <input type="number" min="0" v-model="A_Pedriatria" name="A_Pedriatria"  placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"  v-model="A_Pedriatria" name="A_Pedriatria"  placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº Atención en Medicina Física y Rehabilitación</label>
-                                <input type="number" min="0" v-model="A_Rehabilitacion" name="A_Rehabilitacion"  placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"  v-model="A_Rehabilitacion" name="A_Rehabilitacion"  placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº Atención en Ginecología del niño y adolescente</label>
-                                <input type="number" min="0" v-model="A_Gineco_Menores" name="A_Gineco_Menores"  placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"  v-model="A_Gineco_Menores" name="A_Gineco_Menores"  placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº Atención en Psicología</label>
-                                <input type="number" min="0" v-model="A_Psicologia" name="A_Psicologia" placeholder=""  class="form-control">
+                                <input type="number" min="0" max="31"  v-model="A_Psicologia" name="A_Psicologia" placeholder=""  class="form-control">
                             </div>
                         </div>
 
@@ -425,7 +425,7 @@
 
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Total de atenciones</label>
-                                <input type="number" min="0" v-model="Atencion_Total" name="Atencion_Total"  placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"  v-model="Atencion_Total" name="Atencion_Total"  placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">¿Usuario hospitalizado'</label>

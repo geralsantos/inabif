@@ -65,25 +65,25 @@
                         <div class="row">
                         <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">N° de veces que participa en Desarrollo de hablidades básicas para el aprendizaje (atención, concentración, imitación, seguimiento de órdenes)</label>
-                                <input type="number" min="0"  v-model="CarNumHabilidadesBasicas" name="CarNumHabilidadesBasicas" placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="CarNumHabilidadesBasicas" name="CarNumHabilidadesBasicas" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">N° de veces que participa en Desarrollo de hablidades conceptuales</label>
-                                <input type="number" min="0"  v-model="CarNumHabilidadesConceptuales" name="CarNumHabilidadesConceptuales" placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="CarNumHabilidadesConceptuales" name="CarNumHabilidadesConceptuales" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">N° de veces que participa en Desarrollo de hablidades sociales básicas (saludar, pedir un favor, contestar preguntas, etc.) </label>
-                                <input type="number" min="0"  v-model="CarNumHabilidadesSociales" name="CarNumHabilidadesSociales" placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="CarNumHabilidadesSociales" name="CarNumHabilidadesSociales" placeholder="" class="form-control">
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">N° de veces que participa en Desarrollo de hablidades prácticas básicas (hablar por teléfono, hacer uso de transporte público, uso del dinero, trabajo, etc). </label>
-                                <input type="number" min="0"  v-model="CarNumHablidadesPracticas" name="CarNumHablidadesPracticas" placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="CarNumHablidadesPracticas" name="CarNumHablidadesPracticas" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">N° de veces que participa en Modificación de conducta</label>
-                                <input type="number" min="0"  v-model="CarNumModificacionConducta" name="CarNumModificacionConducta" placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="CarNumModificacionConducta" name="CarNumModificacionConducta" placeholder="" class="form-control">
                             </div>
                         </div>
 

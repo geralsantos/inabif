@@ -176,17 +176,17 @@
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">N° de visitas familiares que recibe cada mes</label>
-                                <input type="number" min="0"  v-model="Nro_VisitasNNA" name="Nro_VisitasNNA" value='5' placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="Nro_VisitasNNA" name="Nro_VisitasNNA" value='5' placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">N° participaciones en escuela de padres </label>
-                                <input type="number" min="0"  v-model="Participacion_EscuelaP" name="Participacion_EscuelaP" value='5' placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="Participacion_EscuelaP" name="Participacion_EscuelaP" value='5' placeholder="" class="form-control">
                             </div>
                         </div>
                         <div class="row">
                         <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">N° consejerias y orientaciones a la familia</label>
-                                <input type="number" min="0"  v-model="Consegeria_Familiar" name="Consegeria_Familiar" value='5' placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="Consegeria_Familiar" name="Consegeria_Familiar" value='5' placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">Familia usa redes de soporte familiar?</label>
@@ -199,15 +199,15 @@
                         <div class="row">
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº de consejerias y orientaciones al residente </label>
-                                <input type="number" min="0"  v-model="Consejeria_residente" name="Consejeria_residente" value='5' placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="Consejeria_residente" name="Consejeria_residente" value='5' placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº Charlas Preventivo  - Promocionales </label>
-                                <input type="number" min="0"  v-model="Charlas" name="Charlas" value='5' placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="Charlas" name="Charlas" value='5' placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº Visitas Domiciliarias</label>
-                                <input type="number" min="0"  v-model="Visitas_Domicilarias" name="Visitas_Domicilarias" value='5' placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="Visitas_Domicilarias" name="Visitas_Domicilarias" value='5' placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Plan de Reinserción familiar</label>

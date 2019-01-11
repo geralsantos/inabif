@@ -93,63 +93,63 @@
                         <div class="row">
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº Intervenciones terapéutica individual</label>
-                                <input type="number" min="0"  v-model="Intervencion_Individual" name="Intervencion_Individual" placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="Intervencion_Individual" name="Intervencion_Individual" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº Intervenciones terapéutica grupal</label>
-                                <input type="number" min="0"  v-model="Intervencion_Grupal" name="Intervencion_Grupal"  placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="Intervencion_Grupal" name="Intervencion_Grupal"  placeholder="" class="form-control">
                             </div>
 
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº Consejerías y orientaciones psicológica</label>
-                                <input type="number" min="0"  v-model="Nro_OrientacionP"  name="Nro_OrientacionP" placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="Nro_OrientacionP"  name="Nro_OrientacionP" placeholder="" class="form-control">
                             </div>
 
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº Consejerías y orientaciones a la familia2</label>
-                                <input type="number" min="0"  v-model="Nro_OrientacionF" name="Nro_OrientacionF" placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="Nro_OrientacionF" name="Nro_OrientacionF" placeholder="" class="form-control">
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº Charlas Preventivo  - Promocionales Psicológicos</label>
-                                <input type="number" min="0"  v-model="Nro_Charlas" name="Nro_Charlas"  placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="Nro_Charlas" name="Nro_Charlas"  placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº participaciones en sesiones  Taller de Liderazgo</label>
-                                <input type="number" min="0"  v-model="Nro_TLiderazgo" name="Nro_TLiderazgo"  placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="Nro_TLiderazgo" name="Nro_TLiderazgo"  placeholder="" class="form-control">
                             </div>
 
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº participaciones en sesiones Taller de Autoestima</label>
-                                <input type="number" min="0"  v-model="Nro_TAutoestima" name="Nro_TAutoestima"  placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="Nro_TAutoestima" name="Nro_TAutoestima"  placeholder="" class="form-control">
                             </div>
 
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº participaciones en sesiones Taller de Sexualidad</label>
-                                <input type="number" min="0"  v-model="Nro_TSexualidad" name="Nro_TSexualidad"  placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="Nro_TSexualidad" name="Nro_TSexualidad"  placeholder="" class="form-control">
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº participaciones en sesiones Taller de prevención del embarazo en adolescentes</label>
-                                <input type="number" min="0"  v-model="Nro_TPrevencionEmb" name="Nro_TPrevencionEmb"  placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="Nro_TPrevencionEmb" name="Nro_TPrevencionEmb"  placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº participaciones en sesiones Taller de Igualdad de Género</label>
-                                <input type="number" min="0"  v-model="Nro_TIgualdadG" name="Nro_TIgualdadG"  placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="Nro_TIgualdadG" name="Nro_TIgualdadG"  placeholder="" class="form-control">
                             </div>
 
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº participaciones en sesiones  Taller de Violencia Familiar</label>
-                                <input type="number" min="0"  v-model="Nro_ViolenciaF" name="Nro_ViolenciaF"  placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="Nro_ViolenciaF" name="Nro_ViolenciaF"  placeholder="" class="form-control">
                             </div>
 
                             <div class="form-group col-md-3">
                                 <label for="text-input" class=" form-control-label">Nº participaciones en sesiones Taller de Salud mental</label>
-                                <input type="number" min="0"  v-model="Nro_SaludM" name="Nro_SaludM"  placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"   v-model="Nro_SaludM" name="Nro_SaludM"  placeholder="" class="form-control">
                             </div>
                         </div>
                         <div class="row">

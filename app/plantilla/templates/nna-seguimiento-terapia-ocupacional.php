@@ -65,27 +65,27 @@
                         <div class="row">
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Nº Talleres Educativos</label>
-                                <input type="number" min="0" v-model="Nro_Talleres_E" name="Nro_Talleres_E"  placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"  v-model="Nro_Talleres_E" name="Nro_Talleres_E"  placeholder="" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Nº Campañas Preventivo  - Promocionales</label>
-                                <input type="number" min="0" v-model="Nro_Campanas" name="Nro_Campanas"  placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"  v-model="Nro_Campanas" name="Nro_Campanas"  placeholder="" class="form-control">
                                     </div>
                             </div>
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Nº Atención en Terapia Física</label>
-                                <input type="number" min="0" v-model="Nro_Atencion_Fisi" name="Nro_Atencion_Fisi"  placeholder="" class="form-control">  </div>
+                                <input type="number" min="0" max="31"  v-model="Nro_Atencion_Fisi" name="Nro_Atencion_Fisi"  placeholder="" class="form-control">  </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Nº Atención en Terapia Ocupacional</label>
-                                <input type="number" min="0" v-model="Nro_Atencon_Ocupa" name="Nro_Atencon_Ocupa"  placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"  v-model="Nro_Atencon_Ocupa" name="Nro_Atencon_Ocupa"  placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Nº Atención en Terapia de Lenguaje</label>
-                                <input type="number" min="0" v-model="Nro_Atencion_Lengua" name="Nro_Atencion_Lengua"  placeholder="" class="form-control">
+                                <input type="number" min="0" max="31"  v-model="Nro_Atencion_Lengua" name="Nro_Atencion_Lengua"  placeholder="" class="form-control">
                             </div>
 
                         </div>
