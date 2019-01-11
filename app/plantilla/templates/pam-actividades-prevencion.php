@@ -83,7 +83,7 @@
                             <div class="form-group col-md-6">
                                 <div class=" "><label for="text-input" class=" form-control-label">N° de Veces que Participa</label>
                                 <select name="Nro_Participa" v-model="Nro_Participa" class="form-control">
-                                    <option v-for="i in 30" :value="i">{{i}}</option>
+                                    <option v-for="(i-1) in 30" :value="i">{{i}}</option>
                                 </select> </div>
                             </div>
                         </div>
