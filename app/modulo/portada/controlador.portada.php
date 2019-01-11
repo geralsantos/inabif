@@ -257,7 +257,7 @@ class portada extends App{
           $campo = "cir.Numero_Doc ";
           $left_join = " left join NNACondicionIResidente cir on (cir.residente_id=re.id) ";
         }
-		  $sql = "SELECT DISTINCT re.*, " .$campo." as dni_residente FROM Residente re ".$left_join." WHERE  re.ESTADO=1  AND re.centro_id = ".$_SESSION["usuario"][0]["ID_CENTRO"]." ORDER BY re.Id desc";
+		  echo $sql = "SELECT DISTINCT re.*, " .$campo." as dni_residente FROM Residente re ".$left_join." WHERE  re.ESTADO=1  AND re.centro_id = ".$_SESSION["usuario"][0]["ID_CENTRO"]." ORDER BY re.Id desc";
 		  $res = $modelo->executeQuery( $sql );
 		  if ($res) {
 			echo json_encode(array( "data"=>$res )) ;
