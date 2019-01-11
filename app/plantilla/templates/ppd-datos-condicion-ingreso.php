@@ -155,7 +155,22 @@
                                 <div class="form-group col-md-4">
                                     <label for="text-input" class=" form-control-label">Problemática familiar</label>
                                     <select name="CarProblematicaFam" v-model="CarProblematicaFam" class="form-control">
-                                        <option v-for="familiar in familiares" :value="familiar.ID">{{familiar.NOMBRE}}</option>
+                                        <option value="Ausentismo de madre por trabajo" >Ausentismo de madre por trabajo</option>
+                                        <option value="Conductual/experiencia en calle">Conductual/experiencia en calle</option>
+                                        <option value="Violencia sexual">Violencia sexual</option>
+                                        <option value="Desintegrada e incompleta">Desintegrada e incompleta</option>
+                                        <option value="Desinterés rol parental/ disfuncional / Disgregada">Desinterés rol parental/ disfuncional / Disgregada</option>
+                                        <option value="Drogadicción">Drogadicción</option>
+                                        <option value="Escasa preocupación">Escasa preocupación</option>
+                                        <option value="Inadecuada forma de crianza">Inadecuada forma de crianza</option>
+                                        <option value="Maltrato físico">Maltrato físico</option>
+                                        <option value="Experiencia en calle Multi problemática">Experiencia en calle Multi problemática</option>
+                                        <option value="Negligencia">Negligencia</option>
+                                        <option value="Orfandad">Orfandad</option>
+                                        <option value="Privado de su libertad">Privado de su libertad</option>
+                                        <option value="Prostitución">Prostitución</option>
+                                        <option value="Salud mental">Salud mental</option>
+                                        <option value="Otros">Otros</option>
                                     </select>
                                 </div>
                             </div>
