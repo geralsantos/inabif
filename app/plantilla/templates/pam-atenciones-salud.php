@@ -173,7 +173,7 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">Medicina general y/o Geriatrica</label>
+                                <label for="text-input" class=" form-control-label">Nº Atenciones Medicina general y/o Geriátrica"</label>
                                 <input type="number" min="0" max="31"   v-model="MedicinaGeneral_Geriatrica" name="MedicinaGeneral_Geriatrica" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">

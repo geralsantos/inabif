@@ -72,7 +72,7 @@
                                 </select> </div>
                             </div>
                             <div class="form-group col-md-8">
-                                <div class=" "><label for="text-input" class=" form-control-label">Descripción de la meta trazada en el pai</label>
+                                <div class=" "><label for="text-input" class=" form-control-label">Descripción de la meta trazada en el PAI</label>
                                 <textarea class="form-control" v-model="Meta_PAI" name="Meta_PAI" cols="30" rows="2"></textarea>
 
                                 </div>
