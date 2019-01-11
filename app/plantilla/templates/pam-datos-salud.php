@@ -83,8 +83,8 @@
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Posee informe técnico evolutivo</label>
                                 <select name="Informe_Tecnico" v-model="Informe_Tecnico" class="form-control">
-                                <option value="">Si</option>
-                                <option value="">No</option>
+                                <option value="Si">Si</option>
+                                <option value="No">No</option>
                                 </select> </div>
                             </div>
                             <div class="form-group col-md-8">
