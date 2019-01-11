@@ -80,7 +80,7 @@
                                 <label for="text-input" class=" form-control-label">Número de salidas a hospitales</label>
 
                                 <select name="CarNunSalidas" v-model="CarNunSalidas" class="form-control">
-                                        <option v-for="i in 30" :value="i">{{i}}</option>
+                                        <option v-for="index, i in 31" :value="i">{{i}}</option>
                                     </select>
                             </div>
 
@@ -226,7 +226,7 @@
                                 <label for="text-input" class=" form-control-label">Número de hospitalizaciones</label>
 
                                 <select name="CarNumHospitalizaciones" v-model="CarNumHospitalizaciones" class="form-control">
-                                        <option v-for="i in 30" :value="i">{{i}}</option>
+                                        <option v-for="index, i in 31" :value="i">{{i}}</option>
                                     </select>
                             </div>
                         </div>

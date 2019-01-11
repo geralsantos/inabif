@@ -16,6 +16,7 @@ Vue.component('pam-actividades-prevencion', {
         Nro_Participa_Otros:null,
         id:null,
 
+
         nombre_residente:null,
         isLoading:false,
         mes:moment().format("M"),

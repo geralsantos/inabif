@@ -84,7 +84,7 @@
                             <div class="form-group col-md-6">
                                 <div class=" "><label for="text-input" class=" form-control-label">N° de Veces que Participa</label>
                                 <select name="Nro_Arte" v-model="Nro_Arte" class="form-control">
-                                <option v-for="i in 30" :value="i">{{i}}</option>
+                                <option v-for="index, i in 31" :value="i">{{i}}</option>
                                     </select> </div>
                             </div>
 
@@ -101,7 +101,7 @@
                             <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">N° de Veces que Participa </label>
                                     <select name="Nro_Arte_Dibujo_Pintura" v-model="Nro_Arte_Dibujo_Pintura" class="form-control">
-                                    <option v-for="i in 30" :value="i">{{i}}</option>
+                                    <option v-for="index, i in 31" :value="i">{{i}}</option>
                                     </select>
                             </div>
 
@@ -117,7 +117,7 @@
                             <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">N° de Veces que Participa</label>
                                     <select name="Nro_Arte_Manualidades" v-model="Nro_Arte_Manualidades" class="form-control">
-                                    <option v-for="i in 30" :value="i">{{i}}</option>
+                                    <option v-for="index, i in 31" :value="i">{{i}}</option>
                                     </select>
                             </div>
 
@@ -134,7 +134,7 @@
                             <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">N° de Veces que Participa</label>
                                     <select name="Nro_Arte_Otros" v-model="Nro_Arte_Otros" class="form-control">
-                                    <option v-for="i in 30" :value="i">{{i}}</option>
+                                    <option v-for="index, i in 31" :value="i">{{i}}</option>
                                     </select>
                             </div>
                         </div>

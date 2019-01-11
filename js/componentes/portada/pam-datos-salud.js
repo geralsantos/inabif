@@ -55,7 +55,7 @@ Vue.component('pam-datos-salud', {
 
             }
 
-            this.$http.post('insertar_datos?view',{tabla:'pam_salud', valores:valores}).then(function(response){
+            this.$http.post('insertar_datos?view',{tabla:'pam_Salud', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
                     swal('', 'Registro Guardado', 'success');
@@ -101,7 +101,7 @@ Vue.component('pam-datos-salud', {
             this.coincidencias = [];
             this.bloque_busqueda = false;
 
-            this.$http.post('cargar_datos_residente?view',{tabla:'pam_salud', residente_id:this.id_residente }).then(function(response){
+            this.$http.post('cargar_datos_residente?view',{tabla:'pam_alud', residente_id:this.id_residente }).then(function(response){
 
                 if( response.body.atributos != undefined){
 
@@ -155,7 +155,7 @@ Vue.component('pam-datos-salud', {
             this.nombre_residente=nombre + ' ' + apellido;
             this.modal_lista = false;
 
-            this.$http.post('cargar_datos_residente?view',{tabla:'pam_salud', residente_id:this.id_residente }).then(function(response){
+            this.$http.post('cargar_datos_residente?view',{tabla:'pam_Salud', residente_id:this.id_residente }).then(function(response){
 
                 if( response.body.atributos != undefined){
 

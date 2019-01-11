@@ -83,7 +83,7 @@
                             <div class="form-group col-md-6">
                                 <div class=" "><label for="text-input" class=" form-control-label">N° de Veces que Participa</label>
                                 <select name="Nro_Participa" v-model="Nro_Participa" class="form-control">
-                                    <option v-for="i in 30" :value="i">{{i}}</option>
+                                    <option v-for="index, i in 31" :value="i">{{i}}</option>
                                 </select> </div>
                             </div>
                         </div>
@@ -100,8 +100,9 @@
                             <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">N° de Veces que Participa</label>
                                     <select name="Nro_Participa_Autoestima" v-model="Nro_Participa_Autoestima" class="form-control">
-                                        <option v-for="i in 30" :value="i">{{i}}</option>
+                                        <option v-for="index, i in 31" :value="i">{{i}}</option>
                                     </select>
+
                             </div>
                         </div>
                         <div class="row">
@@ -116,7 +117,7 @@
                             <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">N° de Veces que Participa</label>
                                     <select name="Nro_Participa_Divergentes" v-model="Nro_Participa_Divergentes" class="form-control">
-                                        <option v-for="i in 30" :value="i">{{i}}</option>
+                                        <option v-for="index, i in 31" :value="i">{{i}}</option>
                                     </select>
                             </div>
 
@@ -133,7 +134,7 @@
                             <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">N° de Veces que Participa</label>
                                     <select name="Nro_Participa_Emociones" v-model="Nro_Participa_Emociones" class="form-control">
-                                        <option v-for="i in 30" :value="i">{{i}}</option>
+                                        <option v-for="index, i in 31" :value="i">{{i}}</option>
                                     </select>
                             </div>
                         </div>
@@ -148,7 +149,7 @@
                             <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">N° de Veces que Participa</label>
                                     <select name="Nro_Participa_Cognitivas" v-model="Nro_Participa_Cognitivas" class="form-control">
-                                        <option v-for="i in 30" :value="i">{{i}}</option>
+                                        <option v-for="index, i in 31" :value="i">{{i}}</option>
                                     </select>
                             </div>
                         </div>
@@ -164,7 +165,7 @@
                             <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">N° de Veces que Participa</label>
                                     <select name="Nro_Participa_Otros" v-model="Nro_Participa_Otros" class="form-control">
-                                        <option v-for="i in 30" :value="i">{{i}}</option>
+                                        <option v-for="index, i in 31" :value="i">{{i}}</option>
                                     </select>
                             </div>
                         </div>
