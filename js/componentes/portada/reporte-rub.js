@@ -30,8 +30,7 @@ Vue.component('reporte-rub', {
             this.$http.post('mostrar_reporte_rub?view',{fecha_inicial:fecha_inicial, fecha_final:fecha_final}).then(function(response){
 
                 if( response.body.data != undefined){
-                    this.residentes = response.body.data;
-                    
+                    swal("Existen registros", "Si hay datos para este reporte, favor de hacer click en Descargar Reporte", "success")
                 }else{
                     swal("", "no hay datos para este reporte", "error")
                 }
