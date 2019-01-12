@@ -18,12 +18,12 @@ class portada extends App{
       $modelo = new modeloPortada();
       $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
       $centro_id = $_SESSION["usuario"][0]["CENTRO_ID"];
-      echo "geral";
-      if (empty($tipo_centro_id)) {
+
+     /* if (empty($tipo_centro_id)) {
         $tipo_centro_id = "SELECT tipo_centro_id FROM centro_atencion WHERE id=".$centro_id." and  estado = 1 order by id asc";
         $tipo_centro_id = $modelo->executeQuery( $tipo_centro_id )[0]["TIPO_CENTRO_ID"];
-        echo $_SESSION["usuario"][0]["TIPO_CENTRO_ID"] = $tipo_centro_id;
-      }
+        $_SESSION["usuario"][0]["TIPO_CENTRO_ID"] = $tipo_centro_id;
+      }*/
       //$bd = isset($_SESSION["usuario"][0]["database_name"]) ? $_SESSION["usuario"][0]["database_name"] : 'portal-kpi' ;
       //$usuario = "SELECT kpi_roles_id FROM kpi_usuarios WHERE id=".$_SESSION['usuario'][0]['id']." and estado = 1 limit 1";
       //$usuario = $modelo->executeQuery( $usuario );
@@ -535,7 +535,7 @@ class portada extends App{
       }
       $fecha = " BETWEEN $semestral ";
     }
-    echo $matrices = "select max(ca.id) as centro_id, max(ca.nom_ca) as nombre_centro, max(cad.fecha_matriz) as fecha_matriz, max(cad.ID) as id from centro_atencion_detalle cad
+    $matrices = "select max(ca.id) as centro_id, max(ca.nom_ca) as nombre_centro, max(cad.fecha_matriz) as fecha_matriz, max(cad.ID) as id from centro_atencion_detalle cad
       left join centro_atencion ca on(ca.id=cad.centro_id)  where ".$where." and to_char(cad.fecha_matriz,'YY-MON') ".$fecha." group by ca.id ";
     $matrices = $modelo->executeQuery($matrices);
 
