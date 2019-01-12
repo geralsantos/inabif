@@ -224,7 +224,8 @@ class portada extends App{
 	}
 	public function buscar_residente_nominal(){
 		if( $_POST['like']){
-		  $modelo = new modeloPortada();
+      $modelo = new modeloPortada();
+      $nivel = $_SESSION["usuario"][0]["NIVEL"];
 			if (SUPERVISOR == $nivel || USER_SEDE == $nivel) {
 				$tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
 				$where = " AND tipo_centro_id = ".$tipo_centro;
