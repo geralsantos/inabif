@@ -630,7 +630,7 @@ class portada extends App{
     $modelo = new modeloPortada();
     $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
     $fecha = " BETWEEN UPPER('".$_POST["fecha_inicial"]."') AND UPPER('".$_POST["fecha_final"]."')";
-
+    $nivel = $_SESSION["usuario"][0]["NIVEL"];
     if (USER_CENTRO == $nivel || SUPERVISOR == $nivel || RESPONSABLE_INFORMACION == $nivel) {
       $tipo_centro = $_SESSION["usuario"][0]["CENTRO_ID"];
       $where = "ca.id = ".$tipo_centro;
