@@ -11,7 +11,7 @@
                         <div class="card-body">
                             <div class="row" v-if="usuario.NIVEL == 2">
                                 <div class="col-md-3"><label class="form-control-label">Tipo de Centro Listo: </label></div>
-                                <div class="col-md-1"><input type="checkbox" class="form-control" ></div>
+                                <div class="col-md-1"><input type="checkbox" class="form-control" @change="completar_tipo_centro()" :checked="tipo_centro"></div>
                             </div>
                             <div class="table-responsive">
                                 <table class="table">

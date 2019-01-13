@@ -7,6 +7,7 @@ Vue.component('seguimiento-lista-1', {
         completo:false,
        centros:[],
        usuario:[],
+       tipo_centro:false,
 
         nombre_residente:null,
         isLoading:false,
@@ -127,6 +128,9 @@ let apellido = apellido_p + ' ' + apellido_m;
 
                 }
             });
+        },
+        completar_tipo_centro(){
+            swal("", "Cambio realizado", "success");
         },
         buscar_centros(){
             this.centros=[];
