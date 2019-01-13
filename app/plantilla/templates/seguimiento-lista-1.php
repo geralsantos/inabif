@@ -5,11 +5,14 @@
                         <div class="card-header">
                             <strong>Lista de Seguimiento</strong>
                             <h6>Período: {{periodo}}</h6>
-                            <label class="form-control-label">Tipo de Centro Listo</label><input type="checkbox" class="form-control" >
+                            
 
                         </div>
                         <div class="card-body">
-
+                            <div class="row">
+                                <div class="col-md-3"><label class="form-control-label">Tipo de Centro Listo: </label></div>
+                                <div class="col-md-1"><input type="checkbox" class="form-control" ></div>
+                            </div>
                             <div class="table-responsive">
                                 <table class="table">
                                 <thead class="thead-dark text-center">
