@@ -15,6 +15,7 @@
 
                                         <th scope="col">Centro</th>
                                         <th scope="col">Completo</th>
+                                        <th scope="col">Matriz Generada</th>
                                         <th scope="col">Fecha Cierre</th>
                                         <th scope="col">Cerrado</th>
                                         <th scope="col">Ver</th>
@@ -26,6 +27,7 @@
                                     <tr v-for="centro in centros">
                                         <td>{{centro.NOMBRE_CENTRO}}</td>
                                         <td>{{(isempty(centro.ESTADO_COMPLETO))?'NO':'SI'}}</td>
+                                        <td>{{(isempty(centro.FECHA_MATRIZ))?'NO':'SI'}}</td>
                                         <td>{{centro.FECHA_CIERRE}}</td>
                                         <td>{{(isempty(centro.FECHA_CIERRE))?'NO':'SI'}}</td>
                                         <td><button class="btn btn-primary" @click="ver_grupos(centro.ID_CENTRO)">Ver</button></td>
