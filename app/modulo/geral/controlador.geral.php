@@ -1,7 +1,7 @@
 <?php
 date_default_timezone_set('America/Lima');
 
-class geral extends App{
+class portada extends App{
     public function index(){
       if(!isset($_SESSION["usuario"])){
           $this->vista->reenviar("index", "acceso");
