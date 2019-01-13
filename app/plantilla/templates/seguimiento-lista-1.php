@@ -5,8 +5,6 @@
                         <div class="card-header">
                             <strong>Lista de Seguimiento</strong>
                             <h6>Período: {{periodo}}</h6>
-                            
-
                         </div>
                         <div class="card-body">
                             <div class="row" v-if="usuario.NIVEL == 2">
