@@ -105,6 +105,19 @@ Vue.component('seguimiento-lista-1', {
                 }
             });
         },
+        generar_matriz_general(){
+          
+            this.$http.post('generar_matriz?view',{id_centro:''}).then(function(response){
+
+                if( response.body.resultado ){
+                    swal("", "Matriz General Generada", "success");
+                    this.buscar_centros();
+                }else{
+                    swal("", "Ha ocurrido un error", "error");
+                    this.buscar_centros();
+                }
+            });
+        },
         ver_grupos(centro_id){
           //  alert(centro_id);
             this.mensaje_entre_componentes(centro_id);
