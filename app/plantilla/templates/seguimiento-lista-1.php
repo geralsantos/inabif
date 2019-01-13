@@ -23,8 +23,9 @@
                                 <div class="col-md-2">
                                     <button class="btn btn-success" @click="generar_matriz_general()">Generar Matriz General</button>
                                 </div>
-                                <br>
                             </div>
+                            
+                            <br>
                             <div class="table-responsive">
                                 <table class="table">
                                 <thead class="thead-dark text-center">
