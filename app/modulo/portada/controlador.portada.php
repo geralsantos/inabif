@@ -689,6 +689,7 @@ class portada extends App{
 		$filtro_centro = "tc.tipo_centro_id = ".$tipo_centro_id;
 		$innner_centro_atencion = "";
 	}
+	$fecha = " BETWEEN UPPER('".$_POST["fecha_inicial"]."') AND UPPER('".$_POST["fecha_final"]."')";
    /* $fecha = " BETWEEN UPPER('".$_POST["fecha_inicial"]."') AND UPPER('".$_POST["fecha_final"]."')";
 	$residentes = "select distinct re.id, re.nombre as nombre_residente, re.apellido_p, re.apellido_m, pa.nombre as nombre_pais , ubi.NOMDEPT as nombre_departamento, ubi.nomprov as nombre_provincia, ubi.nomdist as nombre_distrito, (CASE sexo WHEN 'h' THEN 'Hombre' ELSE 'Mujer' END) as sexo_residente ,re.fecha_creacion as fecha from residente re
 	inner join tipo_centro tc on(tc.id=re.tipo_centro_id)
@@ -717,7 +718,7 @@ class portada extends App{
 			break;
 	}
 	
-	$query = "SELECT ".$campos." FROM ".$from;
+	echo $query = "SELECT ".$campos." FROM ".$from." WHERE to_char(da.fecha_creacion,'DD-MON-YY') ".$fecha." AND (eg.fecha_creacion,'DD-MON-YY') ".$fecha;
 	$residentes = $modelo->executeQuery($query);
 	$grupo_html = "";
 	foreach ($residentes as $key => $value) {
