@@ -41,7 +41,7 @@ Vue.component('reporte-rub', {
             let fecha_inicial = moment(this.fecha_inicial, "YYYY-MM-DD").format("YY-MMM-DD");
             let fecha_final = moment(this.fecha_final, "YYYY-MM-DD").format("YY-MMM-DD");
             this.$http.post('descargar_reporte_matriz_rub?view',{fecha_inicial:fecha_inicial, fecha_final:fecha_final}).then(function(response){
-
+                console.log(response.body);
                 if( response.body.data != undefined){
                     tableToExcel('tbl_temp','ExcelExport',response.body.data);
                     this.data_reporte_rub = response.body.data;

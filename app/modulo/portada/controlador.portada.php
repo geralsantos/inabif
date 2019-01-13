@@ -744,7 +744,6 @@ class portada extends App{
 		  }
 
 	}
-	print_r($body_html);
     $table = '<table><thead>'.$head_html.'</thead><tbody>'.$body_html.'</tbody></table>';
     if ($body_html)
     {
