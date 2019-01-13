@@ -731,7 +731,7 @@ class portada extends App{
 	foreach ($residentes as $key => $value) {
 		if ($key==0) {
             $keys = array_keys($value);
-            $head_html .="<tr><th></th>";
+            $head_html .="<tr>";
             foreach ($keys as $key)
             {
               $head_html .="<th>$key</th>";
