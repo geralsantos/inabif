@@ -724,7 +724,7 @@ class portada extends App{
 			break;
 	}
 	$where = " WHERE to_char(da.fecha_edita,'DD-MON-YY') ".$fecha." AND to_char(eg.fecha_egreso,'DD-MON-YY') ".$fecha;
-	$query = "SELECT ".$campos." FROM ".$from;
+	echo $query = "SELECT ".$campos." FROM ".$from;
 	$residentes = $modelo->executeQuery($query);
 	$head_html = "";
 	$body_html = "";
