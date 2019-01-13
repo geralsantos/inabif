@@ -719,8 +719,8 @@ class portada extends App{
 		$parent_id="2,25";
 			break;
 	}
-	
-	echo $query = "SELECT ".$campos." FROM ".$from." WHERE to_char(da.fecha_creacion,'DD-MON-YY') ".$fecha." AND (eg.fecha_creacion,'DD-MON-YY') ".$fecha;
+	$where = " WHERE to_char(da.fecha_edita,'DD-MON-YY') ".$fecha." AND to_char(eg.fecha_egreso,'DD-MON-YY') ".$fecha;
+	$query = "SELECT ".$campos." FROM ".$from;
 	$residentes = $modelo->executeQuery($query);
 	$grupo_html = "";
 	foreach ($residentes as $key => $value) {
