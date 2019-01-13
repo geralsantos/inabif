@@ -85,13 +85,21 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <div class=" "><label for="text-input" class=" form-control-label">Código de Servicio</label>
-                                <input type="text" v-model="cod_serv" name="cod_serv" placeholder="" class="form-control"> </div>
+                               <label for="text-input" class=" form-control-label">Código de Servicio</label>
+                                <select name="cod_serv" v-model="cod_serv" class="form-control" >
+                                    <option value="SER007">SER007</option>
+                                    <option value="SER008">SER008</option>
+                                    <option value="SER009">SER009</option>
+                                </select>
                             </div>
                             
                             <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">Nombre del Servicio</label>
-                                <input type="text" v-model="nom_serv" name="nom_serv" placeholder="" class="form-control"> 
+                                <select name="nom_serv" v-model="nom_serv" class="form-control" >
+                                    <option value="CENTRO DE ACOGIDA RESIDENCIAL DE URGENCIA - USPNNA ">CENTRO DE ACOGIDA RESIDENCIAL DE URGENCIA - USPNNA </option>
+                                    <option value="CENTRO DE ATENCIÓN RESIDENCIAL - USPPAM">CENTRO DE ATENCIÓN RESIDENCIAL - USPPAM</option>
+                                    <option value="CENTRO DE ACOGIDA RESIDENCIAL - USPPD">CENTRO DE ACOGIDA RESIDENCIAL - USPPD</option>
+                                </select>
                             </div>
                         </div>
                         <div class="row">
@@ -153,15 +161,22 @@
                                 </div>
                             </div> 
                             <div class="form-group col-md-4">
-                                <div class=" "><label for="text-input" class=" form-control-label">Código de Linea </label>
-                                <input type="text" v-model="codigo_linea" name="codigo_linea" placeholder="" class="form-control"> 
+                                <label for="text-input" class=" form-control-label">Código de Linea </label>
+                        
+                                <select name="codigo_linea" v-model="codigo_linea" class="form-control" >
+                                    <option value="LIN001">LIN001</option>
+                                    <option value="LIN002">LIN002</option>
+                                    <option value="LIN003">LIN003</option>
+                                </select>
 
-                                </div>
                             </div>
                             <div class="form-group col-md-4">
-                                <div class=" "><label for="text-input" class=" form-control-label">Linea Intervención</label>
-                                <input type="text" v-model="linea_intervencion" name="linea_intervencion" placeholder="" class="form-control"> 
-                                </div>
+                                <label for="text-input" class=" form-control-label">Linea Intervención</label> 
+                                <select name="linea_intervencion" v-model="linea_intervencion" class="form-control" >
+                                    <option value="PROTECCIÓN INTEGRAL AL NIÑO, NIÑA Y ADOLESCENTE CON DISCAPACIDAD EN SITUACIÓN DE PRESUNTO ESTADO DE ABANDONO O ABANDONO">PROTECCIÓN INTEGRAL AL NIÑO, NIÑA Y ADOLESCENTE CON DISCAPACIDAD EN SITUACIÓN DE PRESUNTO ESTADO DE ABANDONO O ABANDONO</option>
+                                    <option value="PROTECCIÓN INTEGRAL A LA PERSONA ADULTA MAYOR EN SITUACIÓN DE ABANDONO O ABANDONO">PROTECCIÓN INTEGRAL A LA PERSONA ADULTA MAYOR EN SITUACIÓN DE ABANDONO O ABANDONO</option>
+                                    <option value="PROTECCIÓN INTEGRAL AL NIÑO, NIÑA Y ADOLESCENTE EN SITUACIÓN DE PRESUNTO ESTADO DE ABANDONO O ABANDONO">PROTECCIÓN INTEGRAL AL NIÑO, NIÑA Y ADOLESCENTE EN SITUACIÓN DE PRESUNTO ESTADO DE ABANDONO O ABANDONO</option>
+                                </select>
                             </div>
                             
                             
