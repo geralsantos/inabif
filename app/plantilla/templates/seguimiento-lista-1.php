@@ -20,7 +20,9 @@
                                 
                             </div>
                             <div class="row" v-if="usuario.NIVEL == 3">
-                                <button class="btn btn-success" @click="generar_matriz_general()">Generar Matriz General</button>
+                                <div class="col-md-2">
+                                    <button class="btn btn-success" @click="generar_matriz_general()">Generar Matriz General</button>
+                                </div>
                             </div>
                             <div class="table-responsive">
                                 <table class="table">
