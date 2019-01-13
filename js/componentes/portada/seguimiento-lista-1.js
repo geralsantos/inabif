@@ -131,7 +131,7 @@ let apellido = apellido_p + ' ' + apellido_m;
         buscar_centros(){
             this.centros=[];
             this.$http.post('buscar_centros?view',{}).then(function(response){
-
+                console.log(response.body.data);
                 if( response.body.data != undefined){
                     this.centros = response.body.data;
 
