@@ -722,23 +722,31 @@ class portada extends App{
 	$where = " WHERE to_char(da.fecha_edita,'DD-MON-YY') ".$fecha." AND to_char(eg.fecha_egreso,'DD-MON-YY') ".$fecha;
 	$query = "SELECT ".$campos." FROM ".$from;
 	$residentes = $modelo->executeQuery($query);
-	$grupo_html = "";
+	$head_html = "";
+	$body_html = "";
 	foreach ($residentes as $key => $value) {
 		if ($key==0) {
             $keys = array_keys($value);
-            $grupo_html .="<tr><th></th>";
+            $head_html .="<tr><th></th>";
             foreach ($keys as $key)
             {
-              $grupo_html .="<th>$key</th>";
+              $head_html .="<th>$key</th>";
             }
-            $grupo_html .="</tr>";
-          }
-	/*	$residente_html .="<tr><td>".$value["NOMBRE_RESIDENTE"]."</td><td>".$value["APELLIDO_P"]."</td><td>".$value["APELLIDO_M"]."</td><td>".$value["NOMBRE_PAIS"]."</td><td>".$value["NOMBRE_DEPARTAMENTO"]."</td><td>".$value["NOMBRE_PROVINCIA"]."</td><td>".$value["NOMBRE_DISTRITO"]."</td><td>".$value["SEXO_RESIDENTE"]."</td><td>".$value["FECHA"]."</td></tr>";*/
+            $head_html .="</tr>";
+          }else {
+			$body_html .="<tr>";
+			$keys = array_keys($value);
+            foreach ($keys as $key)
+            {
+              $body_html .="<td>".$value[$key]."</td>";
+			}
+			$body_html .="</tr>";
+		  }
+
 	}
-	print_r($grupo_html);
-    /*$table = '<table><thead><tr><th>Nombre del Residente</th><th>Apellido Paterno</th><th>Apellido Materno</th><th>País</th><th>Departamento Nacimiento</th><th>Provincia Nacimiento</th><th>Distrito Nacimiento</th><th>Sexo</th><th>Fecha Registro</th></tr></thead><tbody>'.$residente_html.'</tbody></table>';
-*/
-    if ($residentes)
+	print_r($body_html);
+    $table = '<table><thead>'.$head_html.'</thead><tbody>'.$body_html.'</tbody></table>';
+    if ($body_html)
     {
       echo json_encode(array("data"=>$table) ) ;
     }else{
