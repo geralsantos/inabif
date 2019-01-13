@@ -730,7 +730,8 @@ class geral extends App{
 	$query = "SELECT distinct ".$campos." FROM ".$from;
 	$residentes = $modelo->executeQuery($query);
 	$head_html = "";
-	$body_html = "";
+  $body_html = "";
+  $repite_residente = array();
 	foreach ($residentes as $key => $value) {
 		if ($key==0) {
             $keys = array_keys($value);
@@ -741,13 +742,17 @@ class geral extends App{
             }
             $head_html .="</tr>";
           }else {
-			$body_html .="<tr>";
-			$keys = array_keys($value);
-            foreach ($keys as $key)
-            {
-              $body_html .="<td>".$value[$key]."</td>";
-			}
-			$body_html .="</tr>";
+            if (!in_array($value["COD_RESIDENTE"],$repite_residente)) {
+              $body_html .="<tr>";
+              $keys = array_keys($value);
+              foreach ($keys as $key)
+              {
+                $body_html .="<td>".$value[$key]."</td>";
+              }
+              $body_html .="</tr>";
+              $repite_residente[] = $value["COD_RESIDENTE"];
+            }
+            
 		  }
 
 	}
