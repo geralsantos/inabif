@@ -5,7 +5,7 @@
                         <div class="card-header">
                             <strong>Lista de Seguimiento</strong>
                             <h6>Período: {{periodo}}</h6>
-                            <h6>Tipo de Centro Completo: <input type="checkbox" class="form-control" ></h6>
+                            <label class="form-control-label">Tipo de Centro Listo</label><input type="checkbox" class="form-control" >
 
                         </div>
                         <div class="card-body">
