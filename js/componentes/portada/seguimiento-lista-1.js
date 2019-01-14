@@ -18,6 +18,7 @@ Vue.component('seguimiento-lista-1', {
         this.buscar_centros();
         this.traer_datos_usuario();
         this.buscar_tipo_centro();
+        this.traer_tipo_centro_completado();
     },
     updated:function(){
     },
@@ -53,15 +54,14 @@ Vue.component('seguimiento-lista-1', {
             this.$http.post('traer_tipo_centro_completado?view',{}).then(function(response){
 
                 if( response.body.data != undefined){
-                    console.log( response.body.data[0]["ESTADO"])
-                 
+                  
                     if(response.body.data[0]["ESTADO"]==1){
                         this.tipo_centro = true;
                     }else{
                         this.tipo_centro = false;
                     }
                     
-                    console.log(this.tipo_centro );
+                 
                 }
             });
         },
