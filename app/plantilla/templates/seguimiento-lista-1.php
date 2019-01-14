@@ -13,7 +13,8 @@
                             </div>
                             <div class="row" v-if="usuario.NIVEL == 3">
                                 <div class="col-md-6">
-                                <ul>
+                                <label class="form-control-label">Tipo de centros completados</label>
+                                <ul style="list-style-type: none;">
                                     <li v-for="item in tipo_centro_completado">{{(item.TIPO_CENTRO_ID==1)?'PPD':''}}{{(item.TIPO_CENTRO_ID==2)?'PAM':''}}{{(item.TIPO_CENTRO_ID==3)?'NNA':''}}: {{(item.ESTADO==1)?'SI':'NO'}}</li>
                                 </ul>
                                 </div>
