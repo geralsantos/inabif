@@ -897,12 +897,14 @@ class portada extends App{
 	  $sql = "select * from tipo_centro_estado where tipo_centro_id=".$tipo_centro."  Periodo_Mes = ".date("m") . " AND Periodo_Anio = ".date("Y");
     $res = $modelo->executeQuery($sql );
     if($res){
-      $res = $modelo->updateData("tipo_centro_estado",array("estado"=>$estado),array("tipo_centro_id"=>$tipo_centro,"Periodo_Mes"=>date("m"),"Periodo_Anio"=>date("Y")));
+      echo 'update';
+     echo  $res2 = $modelo->updateData("tipo_centro_estado",array("estado"=>$estado),array("tipo_centro_id"=>$tipo_centro,"Periodo_Mes"=>date("m"),"Periodo_Anio"=>date("Y")));
     }else{
-      $res = $modelo->insertData("tipo_centro_estado",array("estado"=>1,"tipo_centro_id"=>$tipo_centro,"Periodo_Mes"=>date("m"),"Periodo_Anio"=>date("Y"),"usuario_crea"=>$_SESSION["usuario"][0]["ID"],"usuario_edita"=>$_SESSION["usuario"][0]["ID"] ));
+      echo 'inset';
+      echo $res2 = $modelo->insertData("tipo_centro_estado",array("estado"=>1,"tipo_centro_id"=>$tipo_centro,"Periodo_Mes"=>date("m"),"Periodo_Anio"=>date("Y"),"usuario_crea"=>$_SESSION["usuario"][0]["ID"],"usuario_edita"=>$_SESSION["usuario"][0]["ID"] ));
 
     }
-    if ($res){
+    if ($res2){
       echo json_encode(array("resultado"=>true) ) ;
     }else{
       return false;
