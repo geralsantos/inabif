@@ -100,6 +100,13 @@ Vue.component('ppd-datos-condicion-ingreso', {
                 swal('Error', 'Residente no existe', 'warning');
                 return false;
             }
+            if (this.CarTipoDoc == 1) {
+                if ((this.CarNumDoc).length>8 || (this.CarNumDoc).length<8) {
+                    swal('Error', 'El campo de Número de Documento debe ser de 8 digitos', 'warning');
+                    return false;
+                }
+            }
+            
             let valores = {
                 DNI:this.CarDocIngreso,
                 Tipo_Documento:this.CarTipoDoc,
