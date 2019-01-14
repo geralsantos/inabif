@@ -258,7 +258,7 @@ class portada extends App{
           $campo = "cir.Numero_Doc ";
           $left_join = " left join NNACondicionIResidente cir on (cir.residente_id=re.id) ";
         }
-		  $sql = "SELECT DISTINCT " .$campo." as dni_residente,re.nombre,re.id,re.apellido_p,re.apellido_m  FROM Residente re ".$left_join." WHERE  re.ESTADO=1  AND re.centro_id = ".$_SESSION["usuario"][0]["ID_CENTRO"]." ORDER BY re.Id desc";
+		  $sql = "SELECT DISTINCT " .$campo." as dni_residente,re.nombre,re.id,re.apellido_p,re.apellido_m  FROM Residente re ".$left_join." WHERE  re.ESTADO=1  AND re.centro_id = ".$_SESSION["usuario"][0]["ID_CENTRO"]." ORDER BY ".$campo." desc";
 		  $res = $modelo->executeQuery( $sql );
 		  $repite_residente = array();
 		  $arr = array();
