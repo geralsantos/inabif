@@ -258,7 +258,7 @@ class portada extends App{
           $campo = "(SELECT * FROM (select cir.Numero_Doc FROM NNACondicionIResidente cir WHERE cir.residente_id=re.id) WHERE ROWNUM=1) ";
           $left_join = " left join NNACondicionIResidente cir on (cir.residente_id=re.id) ";
         }
-		  $sql = "SELECT ".$campo." as dni_residente,re.nombre,re.id,re.apellido_p,re.apellido_m  FROM Residente re WHERE  re.ESTADO=1  AND re.centro_id = ".$_SESSION["usuario"][0]["ID_CENTRO"]." ORDER BY re.id desc";
+		  echo $sql = "SELECT ".$campo." as dni_residente,re.nombre,re.id,re.apellido_p,re.apellido_m  FROM Residente re WHERE  re.ESTADO=1  AND re.centro_id = ".$_SESSION["usuario"][0]["ID_CENTRO"]." ORDER BY re.id desc";
 		  $res = $modelo->executeQuery( $sql );
 		  $repite_residente = array();
 		  $arr = array();
