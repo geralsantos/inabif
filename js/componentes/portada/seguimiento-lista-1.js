@@ -59,7 +59,7 @@ Vue.component('seguimiento-lista-1', {
                         this.tipo_centro = false;
                     }
                     
-
+                    console.log(this.tipo_centro );
                 }
             });
         },
