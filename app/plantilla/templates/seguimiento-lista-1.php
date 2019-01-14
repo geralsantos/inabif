@@ -13,7 +13,7 @@
                             </div>
                             <div class="row" v-if="usuario.NIVEL == 3">
                                 <ul>
-                                    <li v-for="item in tipo_centro_completado">{{item.NOMBRE}}: {{(item.estado==1)?'SI':'NO'}}</li>
+                                    <li v-for="item in tipo_centro_completado">{{if(item.TIPO_CENTRO_ID==1){'PPD'}elseif(item.TIPO_CENTRO_ID==2){'PAM'}else{'NNA'}}}: {{(item.estado==1)?'SI':'NO'}}</li>
                                 </ul>
                                 
                             </div>
