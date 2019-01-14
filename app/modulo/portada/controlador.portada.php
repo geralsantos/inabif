@@ -876,4 +876,38 @@ class portada extends App{
     }
 	}
   }
+  public function traer_tipo_centro_completado(){
+    $modelo = new modeloPortada();
+    $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+	  $sql = "select * from tipo_centro_estado where  Periodo_Mes = ".date("m") . " AND Periodo_Anio = ".date("Y");
+    $res = $modelo->executeQuery($sql );
+  
+    if ($res){
+      echo json_encode(array("data"=>$res) ) ;
+    }else{
+      return false;
+    }
+ 
+  }
+
+  public function completar_tipo_centro(){
+    $modelo = new modeloPortada();
+    $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+    $estado = $_POST["estado"];
+	  $sql = "select * from tipo_centro_estado where tipo_centro=".$tipo_centro."  Periodo_Mes = ".date("m") . " AND Periodo_Anio = ".date("Y");
+    $res = $modelo->executeQuery($sql );
+    if($res){
+      $res = $modelo->updateData("tipo_centro_estado",array("estado"=>$estado),array("tipo_centro"=>$tipo_centro,"Periodo_Mes"=>date("m"),"Periodo_Anio"=>date("Y")));
+    }else{
+      $res = $modelo->insertData("tipo_centro_estado",array("estado"=>1,"tipo_centro"=>$tipo_centro,"Periodo_Mes"=>date("m"),"Periodo_Anio"=>date("Y"),"usuario_crea"=>$_SESSION["usuario"][0]["ID"],"usuario_edita"=>$_SESSION["usuario"][0]["ID"] ));
+
+    }
+    if ($res){
+      echo json_encode(array("resultado"=>true) ) ;
+    }else{
+      return false;
+    }
+ 
+  }
+  
 }
