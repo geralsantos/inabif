@@ -79,7 +79,7 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Número de Documento de Identidad</label>
-                                <input type="text" v-model="Numero_Doc" name="Numero_Doc" placeholder="" class="form-control"> </div>
+                                <input type="text" maxlength="8" min="0" v-model="Numero_Doc" name="Numero_Doc" placeholder="" class="form-control"> </div>
                             </div>
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">¿Sabe leer y escribir?</label>
