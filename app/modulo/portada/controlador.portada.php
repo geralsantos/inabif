@@ -260,8 +260,16 @@ class portada extends App{
         }
 		  $sql = "SELECT DISTINCT " .$campo." as dni_residente,re.nombre,re.id,re.apellido_p,re.apellido_m  FROM Residente re ".$left_join." WHERE  re.ESTADO=1  AND re.centro_id = ".$_SESSION["usuario"][0]["ID_CENTRO"]." ORDER BY re.Id desc";
 		  $res = $modelo->executeQuery( $sql );
-		  if ($res) {
-			echo json_encode(array( "data"=>$res )) ;
+		  $repite_residente = array();
+		  $arr = array();
+		  foreach ($res as $key => $value) {
+				if (!in_array($value["ID"],$repite_residente)) {
+					$arr[] = $value;				
+					$repite_residente[]=$value["ID"];
+				}
+		  }
+		  if ($arr) {
+			echo json_encode(array( "data"=>$arr )) ;
 		  }else{
 			return false;
 		  }
