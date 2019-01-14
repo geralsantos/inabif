@@ -212,7 +212,7 @@ class geral extends App{
           $like = "cir.Numero_Doc LIKE '%".$word."%'";
           $left_join = " left join NNACondicionIResidente cir on (cir.residente_id=re.id) ";
         }
-        $sql = "SELECT * FROM (SELECT DISTINCT re.*, ".$campo." as dni_residente  FROM Residente re ".$left_join."  WHERE (LOWER(re.Nombre) LIKE '%".$word."%' OR LOWER(re.APELLIDO_M) LIKE '%".$word."%' OR LOWER(re.APELLIDO_P) LIKE '%".$word."%' OR ".$like.") AND re.ESTADO=1 AND re.centro_id = ".$_SESSION["usuario"][0]["ID_CENTRO"]."  ORDER BY re.Id desc) WHERE ROWNUM<=10";
+        $sql = "SELECT * FROM (SELECT DISTINCT re.*, ".$campo." as dni_residente  FROM Residente re ".$left_join."  WHERE (LOWER(re.Nombre) LIKE '%".$word."%' OR LOWER(re.APELLIDO_M) LIKE '%".$word."%' OR LOWER(re.APELLIDO_P) LIKE '%".$word."%' OR ".$like." OR re.ID = '".$word."') AND re.ESTADO=1 AND re.centro_id = ".$_SESSION["usuario"][0]["ID_CENTRO"]."  ORDER BY re.Id desc) WHERE ROWNUM<=10";
         $res = $modelo->executeQuery( $sql );
         if ($res) {
           echo json_encode(array( "data"=>$res )) ;
