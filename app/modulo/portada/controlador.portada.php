@@ -249,27 +249,19 @@ class portada extends App{
       $modelo = new modeloPortada();
       $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
         if ($tipo_centro_id == PPD) {
-          $campo = "(SELECT * FROM (SELECT nd.Numero_Documento FROM CarCondicionIngreso nd where nd.residente_id=re.id) WHERE ROWNUM = 1";
+          $campo = "nd.Numero_Documento ";
           $left_join = " left join CarCondicionIngreso nd on (nd.residente_id=re.id) ";
         }else if($tipo_centro_id == PAM){
-          $campo = "(SELECT * FROM (SELECT dci.numero_documento_ingreso FROM pam_datosCondicionIngreso dci where dci.residente_id=re.id) WHERE ROWNUM=1 ) ";
+          $campo = "dci.numero_documento_ingreso ";
           $left_join = " left join pam_datosCondicionIngreso dci on (dci.residente_id=re.id) ";
         }else if($tipo_centro_id == NNA){
-          $campo = "(SELECT * FROM (select cir.Numero_Doc FROM NNACondicionIResidente cir WHERE cir.residente_id=re.id) WHERE ROWNUM=1) ";
+          $campo = "cir.Numero_Doc ";
           $left_join = " left join NNACondicionIResidente cir on (cir.residente_id=re.id) ";
         }
-		  echo $sql = "SELECT ".$campo." as dni_residente,re.nombre,re.id,re.apellido_p,re.apellido_m  FROM Residente re WHERE  re.ESTADO=1  AND re.centro_id = ".$_SESSION["usuario"][0]["ID_CENTRO"]." ORDER BY re.id desc";
+		  $sql = "SELECT DISTINCT re.*, " .$campo." as dni_residente FROM Residente re ".$left_join." WHERE  re.ESTADO=1  AND re.centro_id = ".$_SESSION["usuario"][0]["ID_CENTRO"]." ORDER BY re.Id desc";
 		  $res = $modelo->executeQuery( $sql );
-		  $repite_residente = array();
-		  $arr = array();
-		  foreach ($res as $key => $value) {
-				if (!in_array($value["ID"],$repite_residente)) {
-					$arr[] = $value;				
-					$repite_residente[]=$value["ID"];
-				}
-		  }
-		  if ($arr) {
-			echo json_encode(array( "data"=>$arr )) ;
+		  if ($res) {
+			echo json_encode(array( "data"=>$res )) ;
 		  }else{
 			return false;
 		  }
