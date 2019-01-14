@@ -53,7 +53,7 @@ Vue.component('seguimiento-lista-1', {
             this.$http.post('traer_tipo_centro_completado?view',{}).then(function(response){
 
                 if( response.body.data != undefined){
-                    console.log( response.body.data[0].estado)
+                    console.log( response.body.data[0])
                     if(response.body.data[0]["estado"]==1){
                         this.tipo_centro = true;
                     }else{
