@@ -744,7 +744,6 @@ class geral extends App{
             }
             $head_html .="</tr>";
           }else {
-            if (!in_array($value["COD_RESIDENTE"],$repite_residente)) {
               $body_html .="<tr>";
               $keys = array_keys($value);
               foreach ($keys as $key)
@@ -752,8 +751,6 @@ class geral extends App{
                 $body_html .="<td>".$value[$key]."</td>";
               }
               $body_html .="</tr>";
-              $repite_residente[] = $value["COD_RESIDENTE"];
-            }
             
 		  }
 
