@@ -54,7 +54,7 @@ Vue.component('seguimiento-lista-1', {
 
                 if( response.body.data != undefined){
                     console.log( response.body.data)
-                    if(response.body.data.estado==1){
+                    if(response.body.data[0].estado==1){
                         this.tipo_centro = true;
                     }else{
                         this.tipo_centro = false;
