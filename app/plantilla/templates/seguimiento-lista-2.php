@@ -24,7 +24,7 @@
                                 </tr>
                             </thead>
                             <tbody class="text-center">
-                                <tr v-for="grupo in grupos">
+                                <tr v-for="grupo in grupos" style="text-align:left;">
                                     <td>{{grupo.MODULO_NOMBRE}}</td>
                                     <td>{{grupo.ENCARGADO_NOMBRE}}</td>
                                     <td>{{(isempty(grupo.ESTADO_COMPLETO))?'NO':'SI'}}</td> <!-- SI O NO -->
