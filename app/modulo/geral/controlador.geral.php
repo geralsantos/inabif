@@ -730,7 +730,7 @@ class geral extends App{
 	}
   $where = " WHERE to_char(da.fecha_edita,'DD-MON-YY') ".$fecha." AND to_char(eg.fecha_egreso,'DD-MON-YY') ".$fecha;
   $orderby ="order by re.id,ci.id,iu.id,da.id,sn.id,eg.id,tdi.id  desc";
-	$query = "SELECT distinct ".$campos." FROM ".$from." WHERE re.id=97 ".$orderby;
+	echo $query = "SELECT * FROM (".$campos." FROM ".$from." WHERE re.id=97) t group by t.COD_RESIDENTE ";
 	$residentes = $modelo->executeQuery($query);
 	$head_html = "";
   $body_html = "";
