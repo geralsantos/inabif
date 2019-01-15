@@ -583,7 +583,7 @@ class geral extends App{
     echo $modulos = "select m.parent_id,m.nombre as nombre_modulo,usu.nombre as nombre_usuario,md.periodo_mes,m.nombre_tabla from modulos_detalle md
     left join modulos m on(m.id=md.modulo_id)
     left join usuarios usu on(usu.id=m.encargado_id)
-      where m.centro_id in (".$centros[0]["TIPO_CENTRO_ID"].") and ".$fecha." and md.periodo_anio = ".date("Y")." order by md.id desc";
+      where m.centro_id in (".$centros[0]["TIPO_CENTRO_ID"].") and to_char(cad.fecha_matriz,'YY-MON')   ".$fecha." and md.periodo_anio = ".date("Y")." order by md.id desc";
     $modulos = $modelo->executeQuery($modulos);
 
     foreach ($modulos as $key => $modulo)
