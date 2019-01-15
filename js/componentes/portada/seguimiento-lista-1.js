@@ -10,7 +10,7 @@ Vue.component('seguimiento-lista-1', {
        tipo_centro:false,
        tipo_centro_completado : [],
 
-    
+
     }),
     created:function(){
     },
@@ -26,8 +26,8 @@ Vue.component('seguimiento-lista-1', {
         console.log('Main Vue destroyed')
       },
     methods:{
-       
-       
+
+
         traer_datos_usuario(){
             this.$http.post('traer_datos_usuario?view',{}).then(function(response){
 
@@ -54,14 +54,14 @@ Vue.component('seguimiento-lista-1', {
             this.$http.post('traer_tipo_centro_completado?view',{}).then(function(response){
 
                 if( response.body.data != undefined){
-                  
+
                     if(response.body.data[0]["ESTADO"]==1){
                         this.tipo_centro = true;
                     }else{
                         this.tipo_centro = false;
                     }
-                    
-                 
+
+
                 }
             });
         },
@@ -79,16 +79,22 @@ Vue.component('seguimiento-lista-1', {
                 }else{
                     swal("", "Ha ocurrido un error", "error");
                 }
-            });     
+            });
         },
         buscar_centros(){
             this.centros=[];
             this.$http.post('buscar_centros?view',{}).then(function(response){
                 console.log(response.body.data);
                 if( response.body.data != undefined){
-                    this.centros = response.body.data;
 
+                    for (let index = 0; index < response.body.data.length; index++) {
+                       cosole.log(response.body.data[0]["FECHA_MATRIZ"])
+                       response.body.data[0]["FECHA_MATRIZ"]= moment(response.body.data[0]["FECHA_MATRIZ"], "YY-MMM-DD").format("YYYY-MM-DD"),
+                    }
+                    this.centros = response.body.data;
                 }
+
+
             });
 
         },
@@ -123,7 +129,7 @@ Vue.component('seguimiento-lista-1', {
             });
         },
         generar_matriz_general(){
-          
+
             this.$http.post('generar_matriz?view',{id_centro:''}).then(function(response){
 
                 if( response.body.resultado ){
