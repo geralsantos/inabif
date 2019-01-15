@@ -23,8 +23,9 @@ Vue.component('reporte-matriz-general', {
       },
     methods:{
         mostrar_matrices(){
-
-            let obj = {periodo_mes:this.periodo_mes,periodo_anio:this.periodo_anio};
+            let self = this;
+            let obj = {periodo_mes:moment(self.periodo_mes).format("M") ,periodo_anio:this.periodo_anio};
+            console.log(obj);
             this.$http.post('mostrar_matrices?view',obj).then(function(response){
 
                 if( response.body.data != undefined){
@@ -36,7 +37,7 @@ Vue.component('reporte-matriz-general', {
         },
         descargar_reporte_matriz_general(matriz_id){
 
-            let datos = {periodo_mes:this.periodo_mes,periodo_anio:this.periodo_anio,matriz_id:matriz_id};
+            let datos = {periodo_mes:moment(this.periodo_mes).format("MMM"),periodo_anio:this.periodo_anio,matriz_id:matriz_id};
             console.log(datos);
             this.$http.post('descargar_reporte_matriz_general?view',datos).then(function(response){
 
