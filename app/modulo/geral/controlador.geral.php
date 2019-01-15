@@ -565,8 +565,6 @@ class geral extends App{
     $aux = date('d', strtotime("{$month} + 1 month"));
 
     $last_day = date('d', strtotime("{$aux} - 1 day"));
-    $fecha = " BETWEEN UPPER('".date("01-M-y",strtotime($periodo_anio."-".$periodo_mes))."') AND UPPER('".date(($last_day."-M-y"),strtotime($periodo_anio."-".$periodo_mes))."')";
-
 
     $centro_html = "<table>";
     $centro_html .="<tr><th>Nombre del Centro</th><th>Tipo de Centro</th><th>Fecha Matriz </th></tr>";
@@ -580,10 +578,10 @@ class geral extends App{
     $centro_html .="<tr><th>".$centros[0]["NOMBRE_CENTRO"]."</th><th>".$centros[0]["NOMBRE_TIPO_CENTRO"]."</th><th>".$centros[0]["FECHA_MATRIZ"]."</th></tr></table>";
 
     $modulo_html = "<table>";
-    echo $modulos = "select m.parent_id,m.nombre as nombre_modulo,usu.nombre as nombre_usuario,md.periodo_mes,m.nombre_tabla from modulos_detalle md
+    $modulos = "select m.parent_id,m.nombre as nombre_modulo,usu.nombre as nombre_usuario,md.periodo_mes,m.nombre_tabla from modulos_detalle md
     left join modulos m on(m.id=md.modulo_id)
     left join usuarios usu on(usu.id=m.encargado_id)
-      where m.centro_id in (".$centros[0]["TIPO_CENTRO_ID"].") and to_char(cad.fecha_matriz,'DD-MON-YY')   ".$fecha." and md.periodo_anio = ".date("Y")." order by md.id desc";
+      where m.centro_id in (".$centros[0]["TIPO_CENTRO_ID"].") and md.periodo_mes = ".date("m",strtotime($periodo_mes))." and md.periodo_anio = ".$periodo_anio." order by md.id desc";
     $modulos = $modelo->executeQuery($modulos);
 
     foreach ($modulos as $key => $modulo)
@@ -592,7 +590,7 @@ class geral extends App{
 			$modulo_html .="<tr><th></th><th>Nombre del Modulo</th><th>Encargado</th><th>Periodo Mes</th></tr>";
 			$modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td><td>".$modulo["NOMBRE_USUARIO"]."</td><td>".$modulo["PERIODO_MES"]."</td></tr>";
 
-			$grupos = "select distinct * from ".$modulo["NOMBRE_TABLA"]." order by residente_id desc";
+      $grupos = "select distinct nt.* from ".$modulo["NOMBRE_TABLA"]." nt where nt.periodo_mes=".$periodo_mes." and nt.periodo_anio=".$periodo_anio."  order by nt.residente_id desc";
 			$grupos = $modelo->executeQuery($grupos);
 
       $grupo_html = "<table>";
