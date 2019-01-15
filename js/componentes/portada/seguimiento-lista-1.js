@@ -88,9 +88,10 @@ Vue.component('seguimiento-lista-1', {
                 if( response.body.data != undefined){
 
                     for (let index = 0; index < response.body.data.length; index++) {
-                       cosole.log(response.body.data[0]["FECHA_MATRIZ"])
+                       console.log(response.body.data[0]["FECHA_MATRIZ"]);
                        response.body.data[0]["FECHA_MATRIZ"]= moment(response.body.data[0]["FECHA_MATRIZ"], "YY-MMM-DD").format("YYYY-MM-DD"),
                     }
+                    console.log(response.body.data);
                     this.centros = response.body.data;
                 }
 
