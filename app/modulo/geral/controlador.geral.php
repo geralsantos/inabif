@@ -536,9 +536,9 @@ class geral extends App{
     /*  */
     $periodo_mes = $_POST["periodo_mes"];
     $periodo_anio = $_POST["periodo_anio"];
-    $fecha = " = UPPER('".date("M-y",strtotime($periodo_mes."-".$periodo_anio))."')";
+    $fecha = " = UPPER('".date("y-M",strtotime($periodo_anio."-".$periodo_mes))."')";
       echo $matrices = "select max(ca.id) as centro_id, max(ca.nom_ca) as nombre_centro, max(cad.fecha_matriz) as fecha_matriz, max(cad.ID) as id from centro_atencion_detalle cad
-        left join centro_atencion ca on(ca.id=cad.centro_id)  where ".$where." to_char(cad.fecha_matriz,'MON-YY') ".$fecha." group by ca.id ";
+        left join centro_atencion ca on(ca.id=cad.centro_id)  where ".$where." to_char(cad.fecha_matriz,'YY-MON') ".$fecha." group by ca.id ";
     $matrices = $modelo->executeQuery($matrices);
 
     if ($matrices)
