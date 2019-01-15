@@ -559,17 +559,16 @@ class geral extends App{
     $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
     $periodo = $_POST["periodo"];
     $matriz_id = $_POST["matriz_id"];
+    
+    $periodo_mes = $_POST["periodo_mes"];
+    $periodo_anio = $_POST["periodo_anio"];
+    $month = $periodo_anio."-".$periodo_mes;
+    $aux = date('d', strtotime("{$month} + 1 month"));
 
-    if ($periodo=="mensual") {
-      $fecha = " md.periodo_mes = ".date("m")." ";
-    }else {
-      if (floatval(date("m")) <= 6 ) {
-        $semestral = " md.periodo_mes >= 1 AND md.periodo_mes <= 6 ";
-      }else{
-        $semestral = " md.periodo_mes >= 7 AND md.periodo_mes <= 12 ";
-      }
-      $fecha = " BETWEEN $semestral ";
-    }
+    $last_day = date('d', strtotime("{$aux} - 1 day"));
+    $fecha = " BETWEEN UPPER('".date("01-M-y",strtotime($periodo_anio."-".$periodo_mes))."') AND UPPER('".date(($last_day."-M-y"),strtotime($periodo_anio."-".$periodo_mes))."')";
+
+
     $centro_html = "<table>";
     $centro_html .="<tr><th>Nombre del Centro</th><th>Tipo de Centro</th><th>Fecha Matriz </th></tr>";
 
