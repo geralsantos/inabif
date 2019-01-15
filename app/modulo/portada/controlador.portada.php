@@ -501,7 +501,7 @@ class portada extends App{
     $modelo = new modeloPortada();
     $nombre_centro = $modelo->executeQuery("select * from centro_atencion where id=". $_POST["id_centro"]." and estado = 1");
     $nombre_tabla = $_POST["nombre_tabla"];
-    $sql = "select re.nombre,re.apellido_p, nt.*  from ".$nombre_tabla." nt inner join residente re on (re.id=nt.residente_id) where to_char(nt.fecha_creacion, 'MON-YY') =UPPER('".date("M-y")."')";
+    $sql = "select re.nombre,re.apellido_p, nt.* EXCEPT nt.TIPO_CENTRO_ID from ".$nombre_tabla." nt inner join residente re on (re.id=nt.residente_id) where to_char(nt.fecha_creacion, 'MON-YY') =UPPER('".date("M-y")."')";
 
     $res = $modelo->executeQuery($sql );
     if ($res)
