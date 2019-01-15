@@ -543,7 +543,7 @@ class geral extends App{
     $fecha = " BETWEEN UPPER('".date("01-M-y",strtotime($periodo_anio."-".$periodo_mes))."') AND UPPER('".date(($last_day."-M-y"),strtotime($periodo_anio."-".$periodo_mes))."')";
 
       $matrices = "select max(ca.id) as centro_id, max(ca.nom_ca) as nombre_centro, to_char(max(cad.fecha_matriz),'DD-MON-YY HH24:MI') as fecha_matriz, max(cad.ID) as id from centro_atencion_detalle cad
-        left join centro_atencion ca on(ca.id=cad.centro_id)  where ".$where." to_char(cad.fecha_matriz,'YY-MON') ".$fecha." group by ca.id ";
+        left join centro_atencion ca on(ca.id=cad.centro_id)  where ".$where." to_char(cad.fecha_matriz,'DD-MON-YY') ".$fecha." group by ca.id ";
     $matrices = $modelo->executeQuery($matrices);
 
     if ($matrices)
@@ -583,7 +583,7 @@ class geral extends App{
     echo $modulos = "select m.parent_id,m.nombre as nombre_modulo,usu.nombre as nombre_usuario,md.periodo_mes,m.nombre_tabla from modulos_detalle md
     left join modulos m on(m.id=md.modulo_id)
     left join usuarios usu on(usu.id=m.encargado_id)
-      where m.centro_id in (".$centros[0]["TIPO_CENTRO_ID"].") and to_char(cad.fecha_matriz,'YY-MON')   ".$fecha." and md.periodo_anio = ".date("Y")." order by md.id desc";
+      where m.centro_id in (".$centros[0]["TIPO_CENTRO_ID"].") and to_char(cad.fecha_matriz,'DD-MON-YY')   ".$fecha." and md.periodo_anio = ".date("Y")." order by md.id desc";
     $modulos = $modelo->executeQuery($modulos);
 
     foreach ($modulos as $key => $modulo)
