@@ -557,7 +557,6 @@ class geral extends App{
   public function descargar_reporte_matriz_general(){
     $modelo = new modeloPortada();
     $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
-    $periodo = $_POST["periodo"];
     $matriz_id = $_POST["matriz_id"];
 
     $periodo_mes = $_POST["periodo_mes"];
