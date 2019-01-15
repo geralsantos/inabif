@@ -3,7 +3,7 @@ Vue.component('reporte-matriz-general', {
     data:()=>({
        // periodo:moment().format('MMMM YYYY'),
         matrices:[],
-        periodo_mes:'Enero',
+        periodo_mes:moment().format("M"),
         periodo_anio:moment().format("YYYY"),
        matriz_general:[],
        meses : [
