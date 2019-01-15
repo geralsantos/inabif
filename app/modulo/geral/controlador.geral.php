@@ -519,9 +519,9 @@ class geral extends App{
     }
   }
   public function mostrar_matrices(){
-    $modelo = new modeloPortada();
-      $nivel = $_SESSION["usuario"][0]["NIVEL"];
-  
+	$modelo = new modeloPortada();
+    $nivel = $_SESSION["usuario"][0]["NIVEL"];
+
     if (ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel) {
       $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
       $where = "";
@@ -534,23 +534,18 @@ class geral extends App{
     }
     /*usg, admin = matriz total */
     /*  */
-    $periodo_mes = $_POST["periodo_mes"];
-    $periodo_anio = $_POST["periodo_anio"];
     $fecha = " = UPPER('".date("d-".$periodo_mes."-".$periodo_anio)."') ";
-    //$semestral = "'".date("y")."-JAN' AND '".date("y")."-JUN'";
-          
-        //$fecha = " BETWEEN $semestral ";
       $matrices = "select max(ca.id) as centro_id, max(ca.nom_ca) as nombre_centro, max(cad.fecha_matriz) as fecha_matriz, max(cad.ID) as id from centro_atencion_detalle cad
         left join centro_atencion ca on(ca.id=cad.centro_id)  where ".$where." and to_char(cad.fecha_matriz,'YY-MON') ".$fecha." group by ca.id ";
-      $matrices = $modelo->executeQuery($matrices);
-  
-      if ($matrices)
-      {
-        echo json_encode(array("data"=>$matrices) ) ;
-      }else{
-        return false;
-      }
+    $matrices = $modelo->executeQuery($matrices);
+
+    if ($matrices)
+    {
+      echo json_encode(array("data"=>$matrices) ) ;
+    }else{
+      return false;
     }
+  }
 
   public function descargar_reporte_matriz_general(){
     $modelo = new modeloPortada();
