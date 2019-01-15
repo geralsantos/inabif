@@ -25,10 +25,13 @@
                                         </select>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 text-center" >
                                 <button class="btn btn-primary" @click="mostrar_matrices()">Mostrar</button>
 
+                                </div>
                             </div>
-                          
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead class="thead-dark text-center">
