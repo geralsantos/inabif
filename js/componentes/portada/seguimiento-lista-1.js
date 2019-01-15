@@ -84,11 +84,11 @@ Vue.component('seguimiento-lista-1', {
         buscar_centros(){
             this.centros=[];
             this.$http.post('buscar_centros?view',{}).then(function(response){
-                console.log(response.body.data);
+
                 if( response.body.data != undefined){
 
                     for (let index = 0; index < response.body.data.length; index++) {
-                       console.log(response.body.data[0]["FECHA_MATRIZ"]);
+
                        response.body.data[index]["FECHA_MATRIZ"]= (isempty(response.body.data[index]["FECHA_MATRIZ"]))?'': moment(response.body.data[index]["FECHA_MATRIZ"], "DD-MMM-YY").format("DD-MM-YYYY");
                     }
                     console.log(response.body.data);

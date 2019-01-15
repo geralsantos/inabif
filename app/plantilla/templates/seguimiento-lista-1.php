@@ -33,8 +33,8 @@
 
                                         <th scope="col">Centro</th>
                                         <th scope="col">Completo Autodeclarado (Registrador)</th>
-                                        <th scope="col">Matriz Generada (responsable de información)</th>
-                                        <th scope="col">FECHA</th>
+                                        <th scope="col">Matriz Generada <br>(responsable de información)</th>
+                                        <th scope="col">Fecha</th>
                                        <!--  <th scope="col">Fecha Cierre</th>
                                         <th scope="col">Cerrado</th> -->
                                         <th scope="col">Ver</th>
