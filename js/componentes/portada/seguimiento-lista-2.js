@@ -10,6 +10,7 @@ Vue.component('seguimiento-lista-2', {
         campos:[],
         nivel_usuario:null,
         mostrar_check:false,
+        nombre_centro:null
 
 
 
