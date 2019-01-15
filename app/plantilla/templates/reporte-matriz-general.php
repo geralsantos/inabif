@@ -8,14 +8,23 @@
                         </div>
                         <div class="card-body">
                             <div class="row form-group">
-                                <div class="form-group col-md-3">
-                                    <label for="text-input" class=" form-control-label">Período</label>
-                                    <select name="periodo" @change="mostrar_matrices()" v-model="periodo" id="periodo" class="form-control">
-                                        <option value="mensual">Mensual</option>
-                                        <option value="semestral">Semestral</option>
-                                    </select>
+                                <div class="form-group col-md-6">
+                                    <div class="form-group col-md-3">
+                                        <label for="text-input" class=" form-control-label">Mes</label>
+                                        <select name="periodo_mes" @change="mostrar_matrices()" v-model="periodo_mes" id="periodo_mes" class="form-control">
+                                            <option v-for="mes in meses" :value="mes">{{mes}}</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                        <label for="text-input" class=" form-control-label">Año</label>
+                                        <select name="periodo_anio" @change="mostrar_matrices()" v-model="periodo_anio" id="periodo_anio" class="form-control">
+                                        <option value="2018">2018</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2021">2021</option>
+                                        </select>
+                                    </div>
                                 </div>
-                                
                             </div>
                             <div class="table-responsive">
                                 <table class="table">

@@ -5,7 +5,9 @@ Vue.component('reporte-matriz-general', {
         matrices:[],
         periodo:'mes',
        matriz_general:[],
-
+       meses : [
+        "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio","Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre"
+    ]
 
     }),
     created:function(){
