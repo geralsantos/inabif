@@ -527,10 +527,10 @@ class geral extends App{
       $where = "";
     }else if (SUPERVISOR == $nivel || USER_SEDE== $nivel){
       $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
-      $where = "ca.tipo_centro_id = ".$tipo_centro." ";
+      $where = "ca.tipo_centro_id = ".$tipo_centro." and ";
     }else if (REGISTRADOR == $nivel || RESPONSABLE_INFORMACION== $nivel || USER_CENTRO== $nivel){
       $centro = $_SESSION["usuario"][0]["CENTRO_ID"];
-      $where = "ca.id = ".$centro." ";
+      $where = "ca.id = ".$centro." and ";
     }
     /*usg, admin = matriz total */
     /*  */
@@ -538,7 +538,7 @@ class geral extends App{
     $periodo_anio = $_POST["periodo_anio"];
     $fecha = " = UPPER('".date("M-y",strtotime($periodo_mes."-".$periodo_anio))."')";
       echo $matrices = "select max(ca.id) as centro_id, max(ca.nom_ca) as nombre_centro, max(cad.fecha_matriz) as fecha_matriz, max(cad.ID) as id from centro_atencion_detalle cad
-        left join centro_atencion ca on(ca.id=cad.centro_id)  where ".$where." and to_char(cad.fecha_matriz,'MON-YY') ".$fecha." group by ca.id ";
+        left join centro_atencion ca on(ca.id=cad.centro_id)  where ".$where." to_char(cad.fecha_matriz,'MON-YY') ".$fecha." group by ca.id ";
     $matrices = $modelo->executeQuery($matrices);
 
     if ($matrices)
