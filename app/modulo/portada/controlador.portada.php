@@ -482,6 +482,7 @@ class portada extends App{
   public function buscar_grupos(){
     $modelo = new modeloPortada();
     $id_centro = $_POST["id_centro"];
+    $nombre_centro = $modelo->executeQuery("select * from centro_atencion where id=". $_POST["id_centro"]." and estado = 1");
       $sql = "select distinct m.nombre as modulo_nombre,m.id as id_modulo, m.encargado_id,usu.nombre as encargado_nombre, md.estado_completo,md.fecha_edicion,m.nombre_tabla from modulos m
       left join modulos_detalle md on (md.modulo_id=m.Id)
       left join usuarios usu on (usu.id = m.encargado_id)
@@ -491,7 +492,7 @@ class portada extends App{
     $res = $modelo->executeQuery($sql );
     if ($res)
     {
-      echo json_encode(array("data"=>$res,"nivel_usuario"=>$_SESSION["usuario"][0]["NIVEL"]) ) ;
+      echo json_encode(array("data"=>$res,"nivel_usuario"=>$_SESSION["usuario"][0]["NIVEL"], "datos_centro"=>$nombre_centro) ) ;
     }else{
       return false;
     }

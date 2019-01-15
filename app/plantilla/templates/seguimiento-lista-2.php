@@ -5,6 +5,7 @@
                     <div class="card-header">
                         <strong>Autodeclaración de llenado total grupos y residentes</strong>
                         <h6>Período {{periodo}}</h6>
+                        <h6> {{nombre_centro}} </h6>
                     </div>
                     <div class="card-body">
 

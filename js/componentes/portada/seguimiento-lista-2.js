@@ -82,6 +82,7 @@ Vue.component('seguimiento-lista-2', {
                 if(response.body.data){
                     this.grupos = response.body.data;
                     this.nivel_usuario = response.body.nivel_usuario;
+                    this.nombre_centro = response.body.datos_centro;
 
                     console.log(this.grupos);
                 }else{
