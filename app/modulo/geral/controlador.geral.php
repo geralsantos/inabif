@@ -539,7 +539,7 @@ class geral extends App{
     $month = $periodo_anio."-".$periodo_mes;
     $aux = date('d', strtotime("{$month} + 1 month"));
 
-$last_day = date('Y-m-d', strtotime("{$aux} - 1 day"));
+$last_day = date('d', strtotime("{$aux} - 1 day"));
     $fecha = " BETWEEN UPPER('".date("01-M-y",strtotime($periodo_anio."-".$periodo_mes))."') AND UPPER('".date(($last_day."-M-y"),strtotime($periodo_anio."-".$periodo_mes))."')";
 
       echo $matrices = "select max(ca.id) as centro_id, max(ca.nom_ca) as nombre_centro, max(cad.fecha_matriz) as fecha_matriz, max(cad.ID) as id from centro_atencion_detalle cad
