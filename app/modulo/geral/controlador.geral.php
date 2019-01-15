@@ -542,7 +542,7 @@ class geral extends App{
     $last_day = date('d', strtotime("{$aux} - 1 day"));
     $fecha = " BETWEEN UPPER('".date("01-M-y",strtotime($periodo_anio."-".$periodo_mes))."') AND UPPER('".date(($last_day."-M-y"),strtotime($periodo_anio."-".$periodo_mes))."')";
 
-      $matrices = "select max(ca.id) as centro_id, max(ca.nom_ca) as nombre_centro, max(cad.fecha_matriz) as fecha_matriz, max(cad.ID) as id from centro_atencion_detalle cad
+      $matrices = "select max(ca.id) as centro_id, max(ca.nom_ca) as nombre_centro, to_char(max(cad.fecha_matriz),'DD-MON-YY HH24:MI') as fecha_matriz, max(cad.ID) as id from centro_atencion_detalle cad
         left join centro_atencion ca on(ca.id=cad.centro_id)  where ".$where." to_char(cad.fecha_matriz,'YY-MON') ".$fecha." group by ca.id ";
     $matrices = $modelo->executeQuery($matrices);
 
@@ -559,7 +559,7 @@ class geral extends App{
     $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
     $periodo = $_POST["periodo"];
     $matriz_id = $_POST["matriz_id"];
-    
+
     $periodo_mes = $_POST["periodo_mes"];
     $periodo_anio = $_POST["periodo_anio"];
     $month = $periodo_anio."-".$periodo_mes;
@@ -572,7 +572,7 @@ class geral extends App{
     $centro_html = "<table>";
     $centro_html .="<tr><th>Nombre del Centro</th><th>Tipo de Centro</th><th>Fecha Matriz </th></tr>";
 
-    $centros = "select distinct ca.nom_ca as nombre_centro,ca.tipo_centro_id,tc.nombre as nombre_tipo_centro,cad.fecha_matriz from centro_atencion_detalle cad
+    $centros = "select distinct ca.nom_ca as nombre_centro,ca.tipo_centro_id,tc.nombre as nombre_tipo_centro,to_char(cad.fecha_matriz,'DD-MON-YY HH24:MI') as fecha_matriz from centro_atencion_detalle cad
     left join centro_atencion ca on(ca.id=cad.centro_id)
     left join tipo_centro tc on(ca.tipo_centro_id=tc.id)
       where cad.id = ".$matriz_id."  order by cad.id desc";
