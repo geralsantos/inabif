@@ -88,7 +88,7 @@ Vue.component('seguimiento-lista-1', {
                 if( response.body.data != undefined){
 
                     for (let index = 0; index < response.body.data.length; index++) {
-
+                        console.log(response.body.data[index]["FECHA_MATRIZ"]);
                        response.body.data[index]["FECHA_MATRIZ"]= (isempty(response.body.data[index]["FECHA_MATRIZ"]))?'': moment(response.body.data[index]["FECHA_MATRIZ"], "DD-MMM-YY").format("DD-MM-YYYY");
                     }
                     console.log(response.body.data);
