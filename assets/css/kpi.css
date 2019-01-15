@@ -157,3 +157,19 @@ fieldset.legend-indicador {
 .campo_busqueda_residente{
     background-color: #bbedf7;
 }
+.check_supervisor {
+    width: 2.2em;
+    height: 2.2em;
+    -moz-appearance: none;
+    border: 1px solid #777;
+    border-radius: 3px;
+    background-color: #eee;
+    vertical-align: bottom;
+ }
+ .check_supervisor:active {
+    background-color: #ddd;
+ }
+ .check_supervisor:checked {
+    background-image: url("http://pngimages.net/sites/default/files/tick-off-png-image-97012.png");
+    background-size: contain;
+ }
