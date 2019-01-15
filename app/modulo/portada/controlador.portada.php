@@ -425,7 +425,7 @@ class portada extends App{
           left join tipo_centro tc on (ca.tipo_centro_id=tc.id)
           where ca.id=".$_SESSION["usuario"][0]["CENTRO_ID"]." and ca.estado = 1 AND rownum = 1 ORDER BY cad.fecha_matriz";
         }
-echo $sql;
+
         $res = $modelo->executeQuery($sql);
         if ($res)
         {
