@@ -524,111 +524,116 @@ class portada extends App{
     }
   }
   public function mostrar_matrices(){
-	$modelo = new modeloPortada();
-    $nivel = $_SESSION["usuario"][0]["NIVEL"];
-
-	if (SUPERVISOR == $nivel || USER_SEDE == $nivel || RESPONSABLE_INFORMACION == $nivel || ADMIN_CENTRAL == $nivel || USER_CENTRO == $nivel) {
-		$tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
-		$where = "ca.tipo_centro_id = ".$tipo_centro;
-	}else{
-		$id_centro = $_SESSION["usuario"][0]["CENTRO_ID"];
-		$where = "ca.id = ".$id_centro;
-  }
-  /*usg, admin = matriz total */
-  /*  */
-  $fecha = " = UPPER('".date("d-".$periodo_mes."-".$periodo_anio)."') ";
-
-    $matrices = "select max(ca.id) as centro_id, max(ca.nom_ca) as nombre_centro, max(cad.fecha_matriz) as fecha_matriz, max(cad.ID) as id from centro_atencion_detalle cad
-      left join centro_atencion ca on(ca.id=cad.centro_id)  where ".$where." and to_char(cad.fecha_matriz,'YY-MON') ".$fecha." group by ca.id ";
-    $matrices = $modelo->executeQuery($matrices);
-
-    if ($matrices)
-    {
-      echo json_encode(array("data"=>$matrices) ) ;
-    }else{
-      return false;
-    }
-  }
-
-  public function descargar_reporte_matriz_general(){
     $modelo = new modeloPortada();
-    $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
-    $periodo = $_POST["periodo"];
-    $matriz_id = $_POST["matriz_id"];
-
-    if ($periodo=="mensual") {
-      $fecha = " md.periodo_mes = ".date("m")." ";
-    }else {
-      if (floatval(date("m")) <= 6 ) {
-        $semestral = " md.periodo_mes >= 1 AND md.periodo_mes <= 6 ";
-      }else{
-        $semestral = " md.periodo_mes >= 7 AND md.periodo_mes <= 12 ";
+      $nivel = $_SESSION["usuario"][0]["NIVEL"];
+  
+      if (ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel) {
+        $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+        $where = "";
+      }else if (SUPERVISOR == $nivel || USER_SEDE== $nivel){
+        $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+        $where = "ca.tipo_centro_id = ".$tipo_centro." and ";
+      }else if (REGISTRADOR == $nivel || RESPONSABLE_INFORMACION== $nivel || USER_CENTRO== $nivel){
+        $centro = $_SESSION["usuario"][0]["CENTRO_ID"];
+        $where = "ca.id = ".$centro." and ";
       }
-      $fecha = " BETWEEN $semestral ";
+      /*usg, admin = matriz total */
+      /*  */
+      $periodo_mes = $_POST["periodo_mes"];
+      $periodo_anio = $_POST["periodo_anio"];
+      $month = $periodo_anio."-".$periodo_mes;
+      $aux = date('d', strtotime("{$month} + 1 month"));
+  
+      $last_day = date('d', strtotime("{$aux} - 1 day"));
+      $fecha = " BETWEEN UPPER('".date("01-M-y",strtotime($periodo_anio."-".$periodo_mes))."') AND UPPER('".date(($last_day."-M-y"),strtotime($periodo_anio."-".$periodo_mes))."')";
+  
+        $matrices = "select max(ca.id) as centro_id, max(ca.nom_ca) as nombre_centro, to_char(max(cad.fecha_matriz),'DD-MON-YY HH24:MI') as fecha_matriz, max(cad.ID) as id from centro_atencion_detalle cad
+          left join centro_atencion ca on(ca.id=cad.centro_id)  where ".$where." to_char(cad.fecha_matriz,'DD-MON-YY') ".$fecha." group by ca.id ";
+      $matrices = $modelo->executeQuery($matrices);
+  
+      if ($matrices)
+      {
+        echo json_encode(array("data"=>$matrices) ) ;
+      }else{
+        return false;
+      }
     }
-    $centro_html = "<table>";
-    $centro_html .="<tr><th>Nombre del Centro</th><th>Tipo de Centro</th><th>Fecha Matriz </th></tr>";
-
-    $centros = "select distinct ca.nom_ca as nombre_centro,ca.tipo_centro_id,tc.nombre as nombre_tipo_centro,cad.fecha_matriz from centro_atencion_detalle cad
-    left join centro_atencion ca on(ca.id=cad.centro_id)
-    left join tipo_centro tc on(ca.tipo_centro_id=tc.id)
-      where cad.id = ".$matriz_id."  order by cad.id desc";
-    $centros = $modelo->executeQuery($centros);
-
-    $centro_html .="<tr><th>".$centros[0]["NOMBRE_CENTRO"]."</th><th>".$centros[0]["NOMBRE_TIPO_CENTRO"]."</th><th>".$centros[0]["FECHA_MATRIZ"]."</th></tr></table>";
-
-    $modulo_html = "<table>";
-    $modulos = "select m.parent_id,m.nombre as nombre_modulo,usu.nombre as nombre_usuario,md.periodo_mes,m.nombre_tabla from modulos_detalle md
-    left join modulos m on(m.id=md.modulo_id)
-    left join usuarios usu on(usu.id=m.encargado_id)
-      where m.centro_id in (".$centros[0]["TIPO_CENTRO_ID"].") and ".$fecha." and md.periodo_anio = ".date("Y")." order by md.id desc";
-    $modulos = $modelo->executeQuery($modulos);
-
-    foreach ($modulos as $key => $modulo)
-    {
-		if (($modulo["NOMBRE_TABLA"])!="") {
-			$modulo_html .="<tr><th></th><th>Nombre del Modulo</th><th>Encargado</th><th>Periodo Mes</th></tr>";
-			$modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td><td>".$modulo["NOMBRE_USUARIO"]."</td><td>".$modulo["PERIODO_MES"]."</td></tr>";
-
-			$grupos = "select distinct * from ".$modulo["NOMBRE_TABLA"]." order by residente_id desc";
-			$grupos = $modelo->executeQuery($grupos);
-
-      $grupo_html = "<table>";
-      $residentes = [];
-			foreach ($grupos as $key => $grupo)
-			{
-				if (!in_array($grupo["RESIDENTE_ID"],$residentes)) {
-          if ($key==0) {
-            $keys = array_keys($grupo);
-            $grupo_html .="<tr><th></th>";
-            foreach ($keys as $key)
-            {
-              $grupo_html .="<th>$key</th>";
+  
+    public function descargar_reporte_matriz_general(){
+      $modelo = new modeloPortada();
+      $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+      $matriz_id = $_POST["matriz_id"];
+  
+      $periodo_mes = $_POST["periodo_mes"];
+      $periodo_anio = $_POST["periodo_anio"];
+      $month = $periodo_anio."-".$periodo_mes;
+      $aux = date('d', strtotime("{$month} + 1 month"));
+  
+      $last_day = date('d', strtotime("{$aux} - 1 day"));
+  
+      $centro_html = "<table>";
+      $centro_html .="<tr><th>Nombre del Centro</th><th>Tipo de Centro</th><th>Fecha Matriz </th></tr>";
+  
+      $centros = "select distinct ca.nom_ca as nombre_centro,ca.tipo_centro_id,tc.nombre as nombre_tipo_centro,to_char(cad.fecha_matriz,'DD-MON-YY HH24:MI') as fecha_matriz from centro_atencion_detalle cad
+      left join centro_atencion ca on(ca.id=cad.centro_id)
+      left join tipo_centro tc on(ca.tipo_centro_id=tc.id)
+        where cad.id = ".$matriz_id."  order by cad.id desc";
+      $centros = $modelo->executeQuery($centros);
+  
+      $centro_html .="<tr><th>".$centros[0]["NOMBRE_CENTRO"]."</th><th>".$centros[0]["NOMBRE_TIPO_CENTRO"]."</th><th>".$centros[0]["FECHA_MATRIZ"]."</th></tr></table>";
+  
+      $modulo_html = "<table>";
+      $modulos = "select m.parent_id,m.nombre as nombre_modulo,usu.nombre as nombre_usuario,md.periodo_mes,m.nombre_tabla from modulos_detalle md
+      left join modulos m on(m.id=md.modulo_id)
+      left join usuarios usu on(usu.id=m.encargado_id)
+        where m.centro_id in (".$centros[0]["TIPO_CENTRO_ID"].") and md.periodo_mes = ".date("m",strtotime($periodo_mes))." and md.periodo_anio = ".$periodo_anio." order by md.id desc";
+      $modulos = $modelo->executeQuery($modulos);
+  
+      foreach ($modulos as $key => $modulo)
+      {
+      if (($modulo["NOMBRE_TABLA"])!="") {
+        $modulo_html .="<tr><th></th><th>Nombre del Modulo</th><th>Encargado</th><th>Periodo Mes</th></tr>";
+        $modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td><td>".$modulo["NOMBRE_USUARIO"]."</td><td>".$modulo["PERIODO_MES"]."</td></tr>";
+  
+        $grupos = "select distinct nt.* from ".$modulo["NOMBRE_TABLA"]." nt where nt.periodo_mes=".date("m",strtotime($periodo_mes))." and nt.periodo_anio=".$periodo_anio."  order by nt.residente_id desc";
+        $grupos = $modelo->executeQuery($grupos);
+  
+        $grupo_html = "<table>";
+        $residentes = [];
+        foreach ($grupos as $key => $grupo)
+        {
+          if (!in_array($grupo["RESIDENTE_ID"],$residentes)) {
+            if ($key==0) {
+              $keys = array_keys($grupo);
+              $grupo_html .="<tr><th></th>";
+              foreach ($keys as $key)
+              {
+                $grupo_html .="<th>$key</th>";
+              }
+              $grupo_html .="</tr>";
             }
-            $grupo_html .="</tr>";
+            $grupo_values = array_values($grupo);
+            $grupo_html .= "<tr><td></td>";
+            foreach ($grupo_values as $key => $value) {
+              $grupo_html .="<td>".$value."</td>";
+            }
+            $grupo_html .= "</tr>";
+            $residentes[] = $grupo["RESIDENTE_ID"];
           }
-          $grupo_values = array_values($grupo);
-          $grupo_html .= "<tr><td></td>";
-          foreach ($grupo_values as $key => $value) {
-            $grupo_html .="<td>".$value."</td>";
-          }
-          $grupo_html .= "</tr>";
-          $residentes[] = $grupo["RESIDENTE_ID"];
         }
-			}
-			$modulo_html .=$grupo_html;
-    	}
-	}
-    $modulo_html .="</table>";
-    $table = '<table><tr><td>'.$centro_html.'</td></tr><tr><td>'.$modulo_html.'</td></tr></table>';
-
-    if ($modulos)
-    {
-      echo json_encode(array("data"=>$table) ) ;
-    }else{
-      return false;
+        $modulo_html .=$grupo_html;
+        }
     }
-  }
+      $modulo_html .="</table>";
+      $table = '<table><tr><td>'.$centro_html.'</td></tr><tr><td>'.$modulo_html.'</td></tr></table>';
+  
+      if ($modulos)
+      {
+        echo json_encode(array("data"=>$table) ) ;
+      }else{
+        return false;
+      }
+    }
   public function mostrar_reporte_rub(){
     /*$modelo = new modeloPortada();
     $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
