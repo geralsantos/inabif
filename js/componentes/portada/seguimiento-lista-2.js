@@ -69,6 +69,12 @@ Vue.component('seguimiento-lista-2', {
             input.id = "mensaje_entre_componentes_2";
             input.value = id_grupo;
             document.body.appendChild(input);
+
+            var input2 = document.createElement("input");
+            input2.type = "hidden";
+            input2.id = "id_centro";
+            input2.value = this.mensaje_entre_componentes_1;
+            document.body.appendChild(input2);
         },
         listar_grupos(){
             console.log("listar_grupos");
