@@ -386,7 +386,7 @@ class portada extends App{
     public function buscar_centros(){
         $modelo = new modeloPortada();
         if ($_SESSION["usuario"][0]["NIVEL"]==RESPONSABLE_INFORMACION) { //responsable de la información
-          $sql = "select distinct ca.id as id_centro,ca.NOM_CA as nombre_centro,cad.estado_completo, cad.fecha_matriz, cad.fecha_cierre   from centro_atencion ca
+          echo $sql = "select distinct ca.id as id_centro,ca.NOM_CA as nombre_centro,cad.estado_completo, cad.fecha_matriz, cad.fecha_cierre   from centro_atencion ca
           left join centro_atencion_detalle cad on (cad.centro_id=ca.id)
           left join tipo_centro tc on (ca.tipo_centro_id=tc.id)
           where ca.id=".$_SESSION["usuario"][0]["CENTRO_ID"]." and ca.estado = 1 AND rownum = 1 ORDER BY cad.fecha_matriz";
