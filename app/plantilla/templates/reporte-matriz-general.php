@@ -12,7 +12,7 @@
                                     <div class="form-group col-md-3">
                                         <label for="text-input" class=" form-control-label">Mes</label>
                                         <select name="periodo_mes" @change="mostrar_matrices()" v-model="periodo_mes" id="periodo_mes" class="form-control">
-                                            <option v-for="mes in meses" :value="mes">{{mes}}</option>
+                                            <option v-for="(row,index) in meses" :value="(index+1)">{{row}}</option>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-3">
