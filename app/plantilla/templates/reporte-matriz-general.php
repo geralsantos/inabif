@@ -26,6 +26,9 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="row">
+                            <button class="btn btn-primary" @click="mostrar_matrices()">Mostrar</button>
+                            </div>
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead class="thead-dark text-center">
