@@ -5,7 +5,7 @@ Vue.component('seguimiento-lista-3', {
 
         completado:false,
         showModal:false,
-        centro_id:null,
+        id_centro:null,
         nombre_centro:null,
 
         campos:[],
@@ -46,12 +46,12 @@ Vue.component('seguimiento-lista-3', {
             console.log("listar_campos");
             if(this.mensaje_entre_componentes_1==null){
                 let nombre_tabla = document.getElementById("mensaje_entre_componentes_2").value;
-                this.centro_id = document.getElementById("centro_id").value;
+                this.id_centro = document.getElementById("id_centro").value;
                 this.mensaje_entre_componentes_2 = nombre_tabla;
                 this.remover_mensaje_entre_componentes();
             }
 
-            this.$http.post('mostrar_modulo?view',{nombre_tabla:this.mensaje_entre_componentes_2, id_centro:this.centro_id}).then(function(response){
+            this.$http.post('mostrar_modulo?view',{nombre_tabla:this.mensaje_entre_componentes_2, id_centro:this.id_centro}).then(function(response){
                 if(response.body.data){
                     let arr = [];
                     let valores = response.body.data;
