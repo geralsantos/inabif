@@ -791,14 +791,7 @@ class geral extends App{
       return false;
     }
   }
-  public function buscar_columna ($=array()){
-    $keys = array_keys($grupo);
-    $grupo_html .="<tr><th></th>";
-    foreach ($keys as $key)
-    {
-      $grupo_html .="<th>$key</th>";
-    }
-  }
+  
   public function descargar_reporte_matriz_nominal(){
    /* ini_set('max_execution_time',0);
 ini_set('memory_limit', '600M');
