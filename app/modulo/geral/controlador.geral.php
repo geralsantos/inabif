@@ -792,6 +792,9 @@ class geral extends App{
     }
   }
   public function descargar_reporte_matriz_nominal(){
+   /* ini_set('max_execution_time',0);
+ini_set('memory_limit', '600M');
+ini_set('session.gc_maxlifetime','1200');*/
     $modelo = new modeloPortada();
     $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
     $id_residente = $_POST["id_residente"];
@@ -828,7 +831,7 @@ class geral extends App{
   
 	foreach ($centros as $key => $centro) 
 	{
-		$centro_html .="<tr><th>Nombre del Centro</th><th>Tipo de Centro</th></tr>";
+		$centro_html ="<tr><th>Nombre del Centro</th><th>Tipo de Centro</th></tr>";
 		$centro_html .="<tr><td>".$centro["NOMBRE_CENTRO"]."</td><td>".$centro["NOMBRE_TIPO_CENTRO"]."</td></tr>";
 
 		$modulos = "select m.parent_id,m.nombre as nombre_modulo,m.nombre_tabla from modulos m 
