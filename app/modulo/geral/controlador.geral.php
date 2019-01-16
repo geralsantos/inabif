@@ -836,7 +836,7 @@ ini_set('session.gc_maxlifetime','1200');*/
     $centro_html .="<tr><td>".$centro["NOMBRE_CENTRO"]."</td><td>".$centro["NOMBRE_TIPO_CENTRO"]."</td></tr>";
 
 		$modulos = "select m.parent_id,m.nombre as nombre_modulo,m.nombre_tabla from modulos m 
-			where m.centro_id in (".$centro["TIPO_CENTRO_ID"].") order by m.id desc";
+			where m.centro_id in (".$centro["TIPO_CENTRO_ID"].") order by m.id asc";
 		$modulos = $modelo->executeQuery($modulos);
     $html = "";
 		foreach ($modulos as $key => $modulo)
