@@ -845,27 +845,31 @@ ini_set('session.gc_maxlifetime','1200');*/
       {
         $modulo_html ="<tr><th></th><th>Nombre del Modulo</th></tr>";
         $modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td></tr>";
-				$grupos = "select distinct * from ".$modulo["NOMBRE_TABLA"]." where residente_id= ". $id_residente."";
+				$grupos = "select distinct * from ".$modulo["NOMBRE_TABLA"]." where residente_id= ". $id_residente." order by id desc";
 				$grupos = $modelo->executeQuery($grupos);
 
-				$grupo_html = "";
+        $grupo_html = "";
+        $residente_repite=array();
 				foreach ($grupos as $key => $grupo)
 				{
-					if ($key==0) {
-						$keys = array_keys($grupo);
-						$grupo_html .="<tr><th></th>";
-						foreach ($keys as $key)
-						{
-							$grupo_html .="<th>$key</th>";
-						}
-						$grupo_html .="</tr>";
-					}
-					$grupo_values = array_values($grupo);
-					$grupo_html .= "<tr><td></td>";
-					foreach ($grupo_values as $key => $value) {
-						$grupo_html .="<td>".$value."</td>";
-					}
-					$grupo_html .= "</tr>";
+					if (!in_array($grupo["RESIDENTE_ID"],$residente_repite)) {
+            if ($key==0) {
+              $keys = array_keys($grupo);
+              $grupo_html .="<tr><th></th>";
+              foreach ($keys as $key)
+              {
+                $grupo_html .="<th>$key</th>";
+              }
+              $grupo_html .="</tr>";
+            }
+            $grupo_values = array_values($grupo);
+            $grupo_html .= "<tr><td></td>";
+            foreach ($grupo_values as $key => $value) {
+              $grupo_html .="<td>".$value."</td>";
+            }
+            $grupo_html .= "</tr>";
+            $residente_repite[]=$grupo["RESIDENTE_ID"];
+          }
         }
 				$html .= $modulo_html.$grupo_html;
       }
