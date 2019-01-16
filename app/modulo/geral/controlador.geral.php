@@ -798,10 +798,10 @@ class geral extends App{
     $nivel = $_SESSION["usuario"][0]["NIVEL"];
     if (SUPERVISOR == $nivel || USER_SEDE == $nivel) {
       $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
-      $where = " ca.tipo_centro_id = ".$tipo_centro;
+      $where = " where ca.tipo_centro_id = ".$tipo_centro;
     }else if (REGISTRADOR ==$nivel || RESPONSABLE_INFORMACION ==$nivel || RESPONSABLE_INFORMACION ==$nivel){
       $centro_id = $_SESSION["usuario"][0]["CENTRO_ID"];
-      $where = " ca.centro_id = ".$centro_id;
+      $where = " where ca.centro_id = ".$centro_id;
     }else if(ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel){
       $where ="";
     }
@@ -822,8 +822,7 @@ class geral extends App{
 	$centro_html = "<table>";
 	$centro_html .="<tr><th>Nombre del Centro</th><th>Tipo de Centro</th><th>Fecha Matriz </th></tr>";
 	echo $centros = "select distinct ca.nom_ca as nombre_centro,ca.tipo_centro_id,tc.nombre as nombre_tipo_centro from centro_atencion ca 
-	left join tipo_centro tc on(ca.tipo_centro_id=tc.id) 
-	where ".$where." order by cad.id desc";
+	left join tipo_centro tc on(ca.tipo_centro_id=tc.id) ".$where." order by cad.id desc";
 	$centros = $modelo->executeQuery($centros);
 
 	foreach ($centros as $key => $centro) 
