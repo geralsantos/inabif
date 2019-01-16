@@ -868,9 +868,9 @@ class geral extends App{
 			}
 		}
 	}
-	$centro_html .="</table>";
+	$centro_html .=$modulo_html."</table>";
 	
-    $table = '<table><tr><td>'.$centro_html.'</td></tr><tr><td>'.$modulo_html.'</td></tr></table>';
+    $table = '<table><tr><td>'.$centro_html.'</td></tr></table>';
     if ($modulos)
     {
       echo json_encode(array("data"=>$table) ) ;
