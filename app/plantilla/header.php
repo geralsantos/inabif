@@ -279,7 +279,7 @@
             <div class="page-header float-right">
                 <div class="page-title">
                     <ol class="breadcrumb text-right">
-                        <li class="active"></li>
+                        <li class="active">Perfil: <?php $_SESSION["usuario"][0]["NIVEL"] ?></li>
                     </ol>
                 </div>
             </div>
