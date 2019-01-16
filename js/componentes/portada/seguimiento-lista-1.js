@@ -134,10 +134,11 @@ Vue.component('seguimiento-lista-1', {
             this.$http.post('generar_matriz_consolidado?view',{}).then(function(response){
 
                 if( response.body.resultado ){
+                    
                     swal("", "Matriz General Generada", "success");
                     this.buscar_centros();
                 }else{
-                    swal("", "Ha ocurrido un error", "error");
+                    swal("", response.body.mensaje, "error");
                     this.buscar_centros();
                 }
             });

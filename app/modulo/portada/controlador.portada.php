@@ -940,7 +940,7 @@ class portada extends App{
         if ($res){
           echo json_encode(array("resultado"=>true) ) ;
         }else{
-          return false;
+          echo json_encode(array("resultado"=>false, "mensaje"=>"Ha ocurrido un error") ) ;
         }
       }
 
