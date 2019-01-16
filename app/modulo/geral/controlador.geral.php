@@ -798,10 +798,10 @@ class geral extends App{
     $nivel = $_SESSION["usuario"][0]["NIVEL"];
     if (SUPERVISOR == $nivel || USER_SEDE == $nivel) {
       $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
-      $where = " AND ca.tipo_centro_id = ".$tipo_centro;
+      $where = " ca.tipo_centro_id = ".$tipo_centro;
     }else if (REGISTRADOR ==$nivel || RESPONSABLE_INFORMACION ==$nivel || RESPONSABLE_INFORMACION ==$nivel){
       $centro_id = $_SESSION["usuario"][0]["CENTRO_ID"];
-      $where = " AND ca.centro_id = ".$centro_id;
+      $where = " ca.centro_id = ".$centro_id;
     }else if(ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel){
       $where ="";
     }
@@ -819,46 +819,55 @@ class geral extends App{
 		$parent_id="2,25";
 			break;
 	}
-	$centro_html="";
-    $modulo_html = "<table>";
-	$modulos = "select m.nombre as nombre_modulo,m.nombre_tabla
-	from modulos m
-    where m.parent_id  in (".$parent_id.") ".$where." order by m.id asc";
-    $modulos = $modelo->executeQuery($modulos);
+	$centro_html = "<table>";
+	$centro_html .="<tr><th>Nombre del Centro</th><th>Tipo de Centro</th><th>Fecha Matriz </th></tr>";
+	$centros = "select distinct ca.nom_ca as nombre_centro,ca.tipo_centro_id,tc.nombre as nombre_tipo_centro from centro_atencion ca 
+	left join tipo_centro tc on(ca.tipo_centro_id=tc.id) 
+	where ".$where." order by cad.id desc";
+	$centros = $modelo->executeQuery($centros);
 
-    foreach ($modulos as $key => $modulo)
-    {
-		$modulo_html .="<tr><th></th><th>Nombre del Modulo</th></tr>";
-		$modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td></tr>";
+	foreach ($centros as $key => $centro) 
+	{
+		$centro_html .="<tr><th>".$centro["NOMBRE_CENTRO"]."</th><th>".$centro["NOMBRE_TIPO_CENTRO"]."</th></tr></table>";
 
-		$grupos = "select distinct * from ".$modulo["NOMBRE_TABLA"]." where residente_id= ". $id_residente." order by id desc";
-		$grupos = $modelo->executeQuery($grupos);
+		$modulo_html = "<table>";
+		$modulos = "select m.parent_id,m.nombre as nombre_modulo,m.nombre_tabla from modulos m 
+			where m.centro_id in (".$centro["TIPO_CENTRO_ID"].") order by md.id desc";
+		$modulos = $modelo->executeQuery($modulos);
+		$modulo_html = "<table>";
+		foreach ($modulos as $key => $modulo)
+		{
+			$modulo_html .="<tr><th></th><th>Nombre del Modulo</th></tr>";
+			$modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td></tr>";
 
-		$grupo_html = "<table>";
-      foreach ($grupos as $key => $grupo)
-      {
-        if ($key==0) {
-          $keys = array_keys($grupo);
-          $grupo_html .="<tr><th></th>";
-          foreach ($keys as $key)
-          {
-            $grupo_html .="<th>$key</th>";
-          }
-          $grupo_html .="</tr>";
-        }
-		$grupo_values = array_values($grupo);
+			$grupos = "select distinct * from ".$modulo["NOMBRE_TABLA"]." where residente_id= ". $id_residente." order by id desc";
+			$grupos = $modelo->executeQuery($grupos);
 
-        $grupo_html .= "<tr><td></td>";
-        foreach ($grupo_values as $key => $value) {
-          $grupo_html .="<td>".$value."</td>";
-        }
-        $grupo_html .= "</tr>";
-	  }
-      $modulo_html .=$grupo_html;
-    }
+			$grupo_html = "<table>";
+			foreach ($grupos as $key => $grupo)
+			{
+				if ($key==0) {
+					$keys = array_keys($grupo);
+					$grupo_html .="<tr><th></th>";
+					foreach ($keys as $key)
+					{
+						$grupo_html .="<th>$key</th>";
+					}
+					$grupo_html .="</tr>";
+				}
+				$grupo_values = array_values($grupo);
+				$grupo_html .= "<tr><td></td>";
+				foreach ($grupo_values as $key => $value) {
+					$grupo_html .="<td>".$value."</td>";
+				}
+				$grupo_html .= "</tr>";
+			}
+			$modulo_html .=$grupo_html;
+		}
+	}
+	
     $modulo_html .="</table>";
     $table = '<table><tr><td>'.$centro_html.'</td></tr><tr><td>'.$modulo_html.'</td></tr></table>';
-
     if ($modulos)
     {
       echo json_encode(array("data"=>$table) ) ;
