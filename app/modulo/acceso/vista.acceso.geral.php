@@ -224,6 +224,47 @@ if (isset($_GET["opcionejecutar"]) && $_GET["opcionejecutar"]!="") {
     die();
 }else{
  
+$arrcreateseq = ['
+alter table CarIdentificacionUsuario ADD centro_id int null','alter table CarDatosAdmision ADD centro_id int null
+','
+alter table CarCondicionIngreso ADD centro_id int null
+','
+alter table CarSaludNutricion ADD centro_id int null
+','
+alter table CarSaludMental ADD centro_id int null
+','
+alter table CarTerapia ADD centro_id int null
+','
+alter table CarActividades ADD centro_id int null
+','
+alter table CarAtencionPsicologica ADD centro_id int null
+','
+alter table CarEducacionCapacidades ADD centro_id int null
+','
+alter table CarTrabajoSocial ADD centro_id int null
+','
+alter table CarAtencionSalud ADD centro_id int null
+','
+alter table CarEgresoPsicologico ADD centro_id int null
+','
+alter table CarEgresoEducacion ADD centro_id int null
+','
+alter table CarEgresoSalud ADD centro_id int null
+','
+alter table CarTerapiaFisica ADD centro_id int null
+','
+alter table CarEgresoNutricion ADD centro_id int null
+','
+alter table CarEgresoTrabajoSocial ADD centro_id int null
+','
+alter table CarEgresoGeneral ADD centro_id int null
+','
+alter table Carproblematica_familiar ADD centro_id int null
+','
+alter table Cardesempeno_academico ADD centro_id int null'];
+foreach ($arrcreateseq as $key => $value) {
+    $mdl->createTable ($value);
+}
     
 /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
     */
