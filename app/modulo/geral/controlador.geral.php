@@ -795,6 +795,7 @@ class geral extends App{
     $modelo = new modeloPortada();
     $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
     $id_residente = $_POST["id_residente"];
+    $nivel = $_SESSION["usuario"][0]["NIVEL"];
     if (SUPERVISOR == $nivel || USER_SEDE == $nivel) {
       $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
       $where = " AND ca.tipo_centro_id = ".$tipo_centro;
