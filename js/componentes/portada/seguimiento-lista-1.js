@@ -11,6 +11,7 @@ Vue.component('seguimiento-lista-1', {
        tipo_centro_completado : [],
        fecha:null,
        acceso_generar :true,
+       acceso_completar:true
 
 
     }),
@@ -130,6 +131,27 @@ Vue.component('seguimiento-lista-1', {
                     swal("", "Ha ocurrido un error", "error");
                     this.buscar_centros();
                 }
+            });
+        },
+        verificar_centro(id_centro){
+            this.$http.post('buscar_grupos?view',{id_centro:id_centro}).then(function(response){
+                if(response.body.data){
+                    
+                    for (let index = 0; index < response.body.data.length; index++) {
+                        if(isempty(response.body.data[index]["FECHA_MATRIZ"])){
+                            this.acceso_completar= false;
+                        }
+                        
+                    }
+                    if(this.acceso_completar){
+                        this.completar_matriz(id_centro);
+                    }else{
+                        swal("", "No puede cambiar el estado hasta que los grupos estén completados", "error")
+                    }
+                }else{
+                    swal("", "Ha ocurrido un error", "error");
+                }
+
             });
         },
         generar_matriz(id_centro){
