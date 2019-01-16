@@ -831,7 +831,7 @@ class geral extends App{
 
 		$modulo_html = "<table>";
 		$modulos = "select m.parent_id,m.nombre as nombre_modulo,m.nombre_tabla from modulos m 
-			where m.centro_id in (".$centro["TIPO_CENTRO_ID"].") order by md.id desc";
+			where m.centro_id in (".$centro["TIPO_CENTRO_ID"].") ";
 		$modulos = $modelo->executeQuery($modulos);
 		$modulo_html = "<table>";
 		foreach ($modulos as $key => $modulo)
