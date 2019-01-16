@@ -223,7 +223,7 @@ if (isset($_GET["opcionejecutar"]) && $_GET["opcionejecutar"]!="") {
     }
     die();
 }else{
-
+    $x->executeQuery("insert into centro_atencion");
      /*
  
     print_r($x->executeQuery("delete from centro_atencion"));
@@ -284,7 +284,7 @@ if (isset($_GET["opcionejecutar"]) && $_GET["opcionejecutar"]!="") {
     "insert into centro_atencion (id,centro_id , codigo_entidad , nombre_entidad , cod_serv , ubigeo , cod_ca , nom_ca , direccion_car , area_residencia , codigo_linea , linea_intervencion , nom_serv , estado,usuario_crea,usuario_edita) values (55,3 , 'ENT002' , 'INABIF' , 'SER007' , '070101' , 'UNNA103' , 'CAR CASA ISABEL I' , 'AV. SALAVERRY S/N LARA (AL COSTADO DEL COLEGIO SANTISIMO SALVADOR)' , 'URBANO' , 'LIN002' , 'PROTECCIÓN INTEGRAL A LA PERSONA ADULTA MAYOR EN SITUACIÓN DE ABANDONO O ABANDONO' , 'CENTRO DE ACOGIDA RESIDENCIAL DE URGENCIA - USPNNA' , 1,1,1)",
     "insert into centro_atencion (id,centro_id , codigo_entidad , nombre_entidad , cod_serv , ubigeo , cod_ca , nom_ca , direccion_car , area_residencia , codigo_linea , linea_intervencion , nom_serv , estado,usuario_crea,usuario_edita) values (56,3 , 'ENT002' , 'INABIF' , 'SER007' , '070101' , 'UNNA104' , 'CAR CASA ISABEL II' , 'AV. SALAVERRY S/N LARA (AL COSTADO DEL COLEGIO SANTISIMO SALVADOR)' , 'URBANO' , 'LIN002' , 'PROTECCIÓN INTEGRAL A LA PERSONA ADULTA MAYOR EN SITUACIÓN DE ABANDONO O ABANDONO' , 'CENTRO DE ACOGIDA RESIDENCIAL DE URGENCIA - USPNNA' , 1,1,1)"];
     foreach ($arr as $key => $value) {
-        $x->executeQuery($value);
+        $x->executeQuery("insert into centro_atencion");
     }*/
 /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
     */
