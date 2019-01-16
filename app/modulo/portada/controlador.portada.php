@@ -145,7 +145,9 @@ class portada extends App{
         $_POST['valores']['Usuario_Crea'] =$_SESSION["usuario"][0]["ID"];
         $_POST['valores']['Usuario_Edita'] =$_SESSION["usuario"][0]["ID"];
         //aqui tu ejecutas la consulta
-
+        if ($_POST['tabla'] != "residente" && $_POST['tabla'] != "usuarios" && $_POST['tabla'] != "centro_atencion") {
+          $_POST['valores']['Centro_Id'] = $_SESSION["usuario"][0]["CENTRO_ID"];
+        }
         $res = $modelo->insertData( $_POST['tabla'],$_POST["valores"],$lastid[0]["NEXTVAL"]);
         if ($res) {
           if ($lastid) {
