@@ -23,6 +23,9 @@
                                 <div class="col-md-2">
                                     <button class="btn btn-success" @click="generar_matriz_general()">Generar Matriz General</button>
                                 </div>
+                                <div class="col-md-3">
+                                {{fecha}}
+                                </div>
                             </div>
 
                             <br>

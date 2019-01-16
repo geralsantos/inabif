@@ -9,6 +9,7 @@ Vue.component('seguimiento-lista-1', {
        usuario:[],
        tipo_centro:false,
        tipo_centro_completado : [],
+       fecha:null
 
 
     }),
@@ -138,6 +139,9 @@ Vue.component('seguimiento-lista-1', {
                     swal("", "Matriz General Generada", "success");
                     this.buscar_centros();
                 }else{
+                    if(response.body.fecha){
+                        this.fecha = "Fecha: " + response.body.fecha;
+                    }
                     swal("", response.body.mensaje, "error");
                     this.buscar_centros();
                 }

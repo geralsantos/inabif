@@ -934,7 +934,7 @@ class portada extends App{
     }else{
       $res = $modelo->executeQuery("select * from matriz_consolidado where Periodo_Mes = ".date("m") . " AND Periodo_Anio = ".date("Y"));
       if($res){
-        echo json_encode(array("resultado"=>false, "mensaje"=>"La matriz ya ha sido generada") ) ;
+        echo json_encode(array("resultado"=>false, "mensaje"=>"La matriz ya ha sido generada", "fecha"=>$res[0]["FECHA_CREACION"] ) );
       }else{
         $res = $modelo->insertData("matriz_consolidado",array("estado"=>1, "Periodo_Mes"=>date("m"),"Periodo_Anio"=>date("Y"),"usuario_crea"=>$_SESSION["usuario"][0]["ID"],"usuario_edita"=>$_SESSION["usuario"][0]["ID"] ));
         if ($res){
