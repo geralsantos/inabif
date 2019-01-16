@@ -872,7 +872,9 @@ ini_set('session.gc_maxlifetime','1200');*/
               $grupo_values = array_values($grupo);
               $grupo_html .= "<tr><td></td>";
               foreach ($grupo_values as $key => $value) {
-                $grupo_html .="<td>".$value."</td>";
+                if(count($keys)!=($key+1)){
+                  $grupo_html .="<td>".$value."</td>";
+                }
               }
               $grupo_html .= "</tr>";
               $residente_repite[]=$grupo["RESIDENTE_ID"];
