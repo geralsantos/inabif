@@ -225,33 +225,41 @@ if (isset($_GET["opcionejecutar"]) && $_GET["opcionejecutar"]!="") {
 }else{
  
 $arrcreateseq = ['
-alter table pam_datos_identificacion ADD centro_id int null','alter table pam_datos_admision_usuario  ADD centro_id int null
+alter table NNAActividadesSociorecrea ADD centro_id int null','alter table NNAAdmisionResidente  ADD centro_id int null
 ','
-alter table pam_datosCondicionIngreso ADD centro_id int null
+alter table NNACondicionIResidente ADD centro_id int null
 ','
-alter table pam_clasif_socioeconomico  ADD centro_id int null
+alter table NNAFamiliaresResidente  ADD centro_id int null
 ','
-alter table pam_datos_saludnutric  ADD centro_id int null
+alter table NNAInscripcionResidente  ADD centro_id int null
 ','
-alter table pam_salud_mental  ADD centro_id int null
+alter table NNADatosSaludResi  ADD centro_id int null
 ','
-alter table pam_ActividadSociorecrea ADD centro_id int null
+alter table NNAEgresoUsuario ADD centro_id int null
 ','
-alter table pam_ActividadPrevencion ADD centro_id int null
+alter table NNAEducacion ADD centro_id int null
 ','
-alter table pam_ActividadesSociales ADD centro_id int null
+alter table NNAFHabilidades ADD centro_id int null
 ','
-alter table pam_AtencionesSalud ADD centro_id int null
+alter table NNANutricion ADD centro_id int null
 ','
-alter table pam_Psicologico ADD centro_id int null
+alter table NNAPsicologico ADD centro_id int null
 ','
-alter table pam_Salud ADD centro_id int null
+alter table NNASalud ADD centro_id int null
 ','
-alter table pam_nutricion ADD centro_id int null
+alter table NNATerapiasOcupacionalL ADD centro_id int null
 ','
-alter table pam_trabajoSocial ADD centro_id int null
+alter table NNAEducacion_Semestral ADD centro_id int null
 ','
-alter table pam_EgresoUsuario ADD centro_id int null
+alter table NNAnutricion_Semestral ADD centro_id int null
+','
+alter table NNAPsicologico_Semestral ADD centro_id int null
+','
+alter table NNASalud_Semestral ADD centro_id int null
+','
+alter table NNAtrabajoSocial_Semestral ADD centro_id int null
+','
+alter table NNATrabajoSocial ADD centro_id int null
 '];
 foreach ($arrcreateseq as $key => $value) {
     $mdl->createTable ($value);
