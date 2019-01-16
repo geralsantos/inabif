@@ -69,7 +69,7 @@ Vue.component('seguimiento-lista-1', {
             });
         },
         completar_tipo_centro(){
-        
+
             if(this.tipo_centro ){
                 this.tipo_centro = false
             }else{
@@ -81,7 +81,7 @@ Vue.component('seguimiento-lista-1', {
                 return false;
             }
 
-         
+
             let estado = 1;
             if(this.tipo_centro){
                 estado = 0;
@@ -108,7 +108,7 @@ Vue.component('seguimiento-lista-1', {
                             this.acceso_generar = false;
                         }
                         console.log(response.body.data[index]["FECHA_MATRIZ"]);
-                       response.body.data[index]["FECHA_MATRIZ"]= (isempty(response.body.data[index]["FECHA_MATRIZ"]))?'': moment(response.body.data[index]["FECHA_MATRIZ"], "DD-MMM-YY").format("DD-MM-YYYY");
+                       response.body.data[index]["FECHA_MATRIZ"]= (isempty(response.body.data[index]["FECHA_MATRIZ"]))?'': moment(response.body.data[index]["FECHA_MATRIZ"], "YY-MMM-DD").format("DD-MM-YYYY");
                     }
                     console.log(response.body.data);
                     this.centros = response.body.data;
@@ -136,16 +136,16 @@ Vue.component('seguimiento-lista-1', {
         verificar_centro(id_centro){
             this.$http.post('buscar_grupos?view',{id_centro:id_centro}).then(function(response){
                 if(response.body.data){
-                    
+
                     for (let index = 0; index < response.body.data.length; index++) {
                         if(isempty(response.body.data[index]["ESTADO_COMPLETO"])){
                             this.acceso_completar= false;
                         }
-                        
+
                     }
                     if(this.acceso_completar){
                         this.completar_matriz(id_centro);
-                        
+
                     }else{
                         swal("", "No puede cambiar el estado hasta que los grupos estén completados", "error");
                         this.buscar_centros();
@@ -177,7 +177,7 @@ Vue.component('seguimiento-lista-1', {
             this.$http.post('generar_matriz_consolidado?view',{}).then(function(response){
 
                 if( response.body.resultado ){
-                    
+
                     swal("", "Matriz General Generada", "success");
                     this.buscar_centros();
                 }else{
