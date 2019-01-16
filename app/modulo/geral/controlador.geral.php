@@ -850,7 +850,7 @@ ini_set('session.gc_maxlifetime','1200');*/
       {
         $modulo_html ="<tr><th></th><th>Nombre del Modulo</th></tr>";
         $modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td></tr>";
-				$grupos = "select ".$campos[$modulo["NOMBRE_TABLA"]]." from ".$modulo["NOMBRE_TABLA"]." where  periodo_mes=".date("m")." and periodo_anio=".date("Y")." and residente_id= ". $id_residente." and centro_id=".$centro["ID"]." order by id desc";
+				echo $grupos = "select ".$campos[$modulo["NOMBRE_TABLA"]]." from ".$modulo["NOMBRE_TABLA"]." where  periodo_mes=".date("m")." and periodo_anio=".date("Y")." and residente_id= ". $id_residente." and centro_id=".$centro["ID"]." order by id desc";
 				$grupos = $modelo->executeQuery($grupos);
 
         $grupo_html = "";
