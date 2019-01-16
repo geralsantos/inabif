@@ -224,45 +224,12 @@ if (isset($_GET["opcionejecutar"]) && $_GET["opcionejecutar"]!="") {
     die();
 }else{
  
-$arrcreateseq = ['
-alter table NNAActividadesSociorecrea ADD centro_id int null','alter table NNAAdmisionResidente  ADD centro_id int null
-','
-alter table NNACondicionIResidente ADD centro_id int null
-','
-alter table NNAFamiliaresResidente  ADD centro_id int null
-','
-alter table NNAInscripcionResidente  ADD centro_id int null
-','
-alter table NNADatosSaludResi  ADD centro_id int null
-','
-alter table NNAEgresoUsuario ADD centro_id int null
-','
-alter table NNAEducacion ADD centro_id int null
-','
-alter table NNAFHabilidades ADD centro_id int null
-','
-alter table NNANutricion ADD centro_id int null
-','
-alter table NNAPsicologico ADD centro_id int null
-','
-alter table NNASalud ADD centro_id int null
-','
-alter table NNATerapiasOcupacionalL ADD centro_id int null
-','
-alter table NNAEducacion_Semestral ADD centro_id int null
-','
-alter table NNAnutricion_Semestral ADD centro_id int null
-','
-alter table NNAPsicologico_Semestral ADD centro_id int null
-','
-alter table NNASalud_Semestral ADD centro_id int null
-','
-alter table NNAtrabajoSocial_Semestral ADD centro_id int null
-','
-alter table NNATrabajoSocial ADD centro_id int null
-'];
-foreach ($arrcreateseq as $key => $value) {
-    $mdl->createTable ($value);
+$query = "select * from modulos where centro_id=1";
+$query = $x->executeQuery($query);
+foreach ($query as $key => $value) {
+    if ($value["NOMBRE_TABLA"]!="") {
+        print_r($x->executeQuery("UPDATE ".$value["NOMBRE_TABLA"]." set centro_id=44"));
+    }
 }
     
 /* $mdl->createTable ("drop sequence seq_Carproblematica_familiar");
