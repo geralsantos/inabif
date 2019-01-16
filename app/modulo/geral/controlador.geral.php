@@ -838,12 +838,13 @@ ini_set('session.gc_maxlifetime','1200');*/
 		$modulos = "select m.parent_id,m.nombre as nombre_modulo,m.nombre_tabla from modulos m 
 			where m.centro_id in (".$centro["TIPO_CENTRO_ID"].") ";
 		$modulos = $modelo->executeQuery($modulos);
-    $modulo_html ="<tr><th></th><th>Nombre del Modulo</th></tr>";
-    $modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td></tr>";
+    
 		foreach ($modulos as $key => $modulo)
 		{
       if (($modulo["NOMBRE_TABLA"])!="") 
       {
+        $modulo_html ="<tr><th></th><th>Nombre del Modulo</th></tr>";
+        $modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td></tr>";
 				$grupos = "select distinct * from ".$modulo["NOMBRE_TABLA"]." where residente_id= ". $id_residente."";
 				$grupos = $modelo->executeQuery($grupos);
 
@@ -866,6 +867,8 @@ ini_set('session.gc_maxlifetime','1200');*/
 					}
 					$grupo_html .= "</tr>";
         }
+				$html .= $grupo_html;
+
       }
     }
 	}
