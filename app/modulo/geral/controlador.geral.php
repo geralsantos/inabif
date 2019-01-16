@@ -866,10 +866,10 @@ class geral extends App{
 				}
 				$modulo_html .=$grupo_html;
 			}
-			$modulo_html .="</table>";
 		}
-		$centro_html .="</table>";
 	}
+	$centro_html .="</table>";
+	$modulo_html .="</table>";
 	
     $table = '<table><tr><td>'.$centro_html.'</td></tr><tr><td>'.$modulo_html.'</td></tr></table>';
     if ($modulos)
