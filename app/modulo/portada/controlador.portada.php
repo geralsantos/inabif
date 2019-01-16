@@ -924,5 +924,30 @@ class portada extends App{
     }
 
   }
+  public function generar_matriz_consolidado(){
+    $modelo = new modeloPortada();
+   
+	  $sql = "select * from tipo_centro_estado where estado=0 AND Periodo_Mes = ".date("m") . " AND Periodo_Anio = ".date("Y");
+    $res = $modelo->executeQuery($sql );
+    if($res){
+      echo json_encode(array("resultado"=>false, "mensaje"=>"No puede generar matriz hasta que todas las matrices de los tipos de centro estén generadas") ) ;
+    }else{
+      $res = $modelo->executeQuery("select * from matriz_consolidado where Periodo_Mes = ".date("m") . " AND Periodo_Anio = ".date("Y"));
+      if($res){
+        echo json_encode(array("resultado"=>false, "mensaje"=>"La matriz ya ha sido generada") ) ;
+      }else{
+        $res = $modelo->insertData("matriz_consolidado",array("estado"=>1,"tipo_centro_id"=>$tipo_centro,"Periodo_Mes"=>date("m"),"Periodo_Anio"=>date("Y"),"usuario_crea"=>$_SESSION["usuario"][0]["ID"],"usuario_edita"=>$_SESSION["usuario"][0]["ID"] ));
+        if ($res){
+          echo json_encode(array("resultado"=>true) ) ;
+        }else{
+          return false;
+        }
+      }
+
+    }
+    
+
+  }
+  
 
 }

@@ -131,7 +131,7 @@ Vue.component('seguimiento-lista-1', {
         },
         generar_matriz_general(){
 
-            this.$http.post('generar_matriz?view',{id_centro:''}).then(function(response){
+            this.$http.post('generar_matriz_consolidado?view',{}).then(function(response){
 
                 if( response.body.resultado ){
                     swal("", "Matriz General Generada", "success");
