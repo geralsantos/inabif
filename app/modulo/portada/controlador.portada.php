@@ -388,10 +388,10 @@ class portada extends App{
     public function buscar_centros(){
         $modelo = new modeloPortada();
         if ($_SESSION["usuario"][0]["NIVEL"]==RESPONSABLE_INFORMACION) { //responsable de la información
-          $sql = "select distinct ca.id as id_centro,ca.NOM_CA as nombre_centro,cad.estado_completo, cad.fecha_matriz, cad.fecha_cierre   from centro_atencion ca
+          $sql = "select distinct ca.id as id_centro,ca.NOM_CA as nombre_centro,cad.estado_completo, cad.fecha_matriz,cad.id, cad.fecha_cierre   from centro_atencion ca
           left join centro_atencion_detalle cad on (cad.centro_id=ca.id)
           left join tipo_centro tc on (ca.tipo_centro_id=tc.id)
-          where ca.id=".$_SESSION["usuario"][0]["CENTRO_ID"]." and ca.estado = 1 AND rownum = 1 ORDER BY cad.fecha_matriz";
+          where ca.id=".$_SESSION["usuario"][0]["CENTRO_ID"]." and ca.estado = 1 AND rownum = 1 ORDER BY cad.id desc";
         }else if($_SESSION["usuario"][0]["NIVEL"]==ADMIN_CENTRAL) //ADMIN_CENTRAL
         {
           $sql = "select max(ca.id) as id_centro,max(ca.NOM_CA ) as nombre_centro,max(cad.estado_completo) as estado_completo, max(cad.fecha_matriz) as fecha_matriz, max(cad.fecha_cierre) as fecha_cierre  from centro_atencion ca
@@ -528,7 +528,7 @@ class portada extends App{
   public function mostrar_matrices(){
     $modelo = new modeloPortada();
       $nivel = $_SESSION["usuario"][0]["NIVEL"];
-  
+
       if (ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel) {
         $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
         $where = "";
@@ -545,14 +545,14 @@ class portada extends App{
       $periodo_anio = $_POST["periodo_anio"];
       $month = $periodo_anio."-".$periodo_mes;
       $aux = date('d', strtotime("{$month} + 1 month"));
-  
+
       $last_day = date('d', strtotime("{$aux} - 1 day"));
       $fecha = " BETWEEN UPPER('".date("01-M-y",strtotime($periodo_anio."-".$periodo_mes))."') AND UPPER('".date(($last_day."-M-y"),strtotime($periodo_anio."-".$periodo_mes))."')";
-  
+
         $matrices = "select max(ca.id) as centro_id, max(ca.nom_ca) as nombre_centro, to_char(max(cad.fecha_matriz),'DD-MON-YY HH24:MI') as fecha_matriz, max(cad.ID) as id from centro_atencion_detalle cad
           left join centro_atencion ca on(ca.id=cad.centro_id)  where ".$where." to_char(cad.fecha_matriz,'DD-MON-YY') ".$fecha." group by ca.id ";
       $matrices = $modelo->executeQuery($matrices);
-  
+
       if ($matrices)
       {
         echo json_encode(array("data"=>$matrices) ) ;
@@ -560,46 +560,46 @@ class portada extends App{
         return false;
       }
     }
-  
+
     public function descargar_reporte_matriz_general(){
       $modelo = new modeloPortada();
       $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
       $matriz_id = $_POST["matriz_id"];
-  
+
       $periodo_mes = $_POST["periodo_mes"];
       $periodo_anio = $_POST["periodo_anio"];
       $month = $periodo_anio."-".$periodo_mes;
       $aux = date('d', strtotime("{$month} + 1 month"));
-  
+
       $last_day = date('d', strtotime("{$aux} - 1 day"));
-  
+
       $centro_html = "<table>";
       $centro_html .="<tr><th>Nombre del Centro</th><th>Tipo de Centro</th><th>Fecha Matriz </th></tr>";
-  
+
       $centros = "select distinct ca.nom_ca as nombre_centro,ca.tipo_centro_id,tc.nombre as nombre_tipo_centro,to_char(cad.fecha_matriz,'DD-MON-YY HH24:MI') as fecha_matriz from centro_atencion_detalle cad
       left join centro_atencion ca on(ca.id=cad.centro_id)
       left join tipo_centro tc on(ca.tipo_centro_id=tc.id)
         where cad.id = ".$matriz_id."  order by cad.id desc";
       $centros = $modelo->executeQuery($centros);
-  
+
       $centro_html .="<tr><th>".$centros[0]["NOMBRE_CENTRO"]."</th><th>".$centros[0]["NOMBRE_TIPO_CENTRO"]."</th><th>".$centros[0]["FECHA_MATRIZ"]."</th></tr></table>";
-  
+
       $modulo_html = "<table>";
       $modulos = "select m.parent_id,m.nombre as nombre_modulo,usu.nombre as nombre_usuario,md.periodo_mes,m.nombre_tabla from modulos_detalle md
       left join modulos m on(m.id=md.modulo_id)
       left join usuarios usu on(usu.id=m.encargado_id)
         where m.centro_id in (".$centros[0]["TIPO_CENTRO_ID"].") and md.periodo_mes = ".date("m",strtotime($periodo_mes))." and md.periodo_anio = ".$periodo_anio." order by md.id desc";
       $modulos = $modelo->executeQuery($modulos);
-  
+
       foreach ($modulos as $key => $modulo)
       {
       if (($modulo["NOMBRE_TABLA"])!="") {
         $modulo_html .="<tr><th></th><th>Nombre del Modulo</th><th>Encargado</th><th>Periodo Mes</th></tr>";
         $modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td><td>".$modulo["NOMBRE_USUARIO"]."</td><td>".$modulo["PERIODO_MES"]."</td></tr>";
-  
+
         $grupos = "select distinct nt.* from ".$modulo["NOMBRE_TABLA"]." nt where nt.periodo_mes=".date("m",strtotime($periodo_mes))." and nt.periodo_anio=".$periodo_anio."  order by nt.residente_id desc";
         $grupos = $modelo->executeQuery($grupos);
-  
+
         $grupo_html = "<table>";
         $residentes = [];
         foreach ($grupos as $key => $grupo)
@@ -628,7 +628,7 @@ class portada extends App{
     }
       $modulo_html .="</table>";
       $table = '<table><tr><td>'.$centro_html.'</td></tr><tr><td>'.$modulo_html.'</td></tr></table>';
-  
+
       if ($modulos)
       {
         echo json_encode(array("data"=>$table) ) ;
@@ -928,7 +928,7 @@ class portada extends App{
   }
   public function generar_matriz_consolidado(){
     $modelo = new modeloPortada();
-   
+
 	  $sql = "select * from tipo_centro_estado where estado=0 AND Periodo_Mes = ".date("m") . " AND Periodo_Anio = ".date("Y");
     $res = $modelo->executeQuery($sql );
     if($res){
@@ -947,9 +947,9 @@ class portada extends App{
       }
 
     }
-    
+
 
   }
-  
+
 
 }
