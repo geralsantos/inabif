@@ -250,15 +250,15 @@ class portada extends App{
       $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
         if ($tipo_centro_id == PPD) {
           $campo = "nd.Numero_Documento ";
-          $left_join = " left join CarCondicionIngreso nd on (nd.residente_id=max(re.id)) ";
+          $left_join = " left join CarCondicionIngreso nd on (nd.residente_id=re.id) ";
         }else if($tipo_centro_id == PAM){
           $campo = "dci.numero_documento_ingreso ";
-          $left_join = " left join pam_datosCondicionIngreso dci on (dci.residente_id=max(re.id)) ";
+          $left_join = " left join pam_datosCondicionIngreso dci on (dci.residente_id=re.id) ";
         }else if($tipo_centro_id == NNA){
           $campo = "cir.Numero_Doc ";
-          $left_join = " left join NNACondicionIResidente cir on (cir.residente_id=max(re.id)) ";
+          $left_join = " left join NNACondicionIResidente cir on (cir.residente_id=re.id) ";
         }
-		  $sql = "SELECT max(re.id) as id,max(re.nombre) as nombre,max(re.apellido_p) as apellido_p,max(re.apellido_m) as apellido_m,max(".$campo.") as dni_residente FROM Residente re ".$left_join." WHERE  re.ESTADO=1  AND re.centro_id = ".$_SESSION["usuario"][0]["ID_CENTRO"]." group by re.id ORDER BY re.Id desc";
+		  $sql = "SELECT distinct max(re.id) as id,max(re.nombre) as nombre,max(re.apellido_p) as apellido_p,max(re.apellido_m) as apellido_m,max(".$campo.") as dni_residente FROM Residente re ".$left_join." WHERE  re.ESTADO=1  AND re.centro_id = ".$_SESSION["usuario"][0]["ID_CENTRO"]." group by re.id ORDER BY re.Id desc";
 		  $res = $modelo->executeQuery( $sql );
 		  if ($res) {
 			echo json_encode(array( "data"=>$res )) ;
