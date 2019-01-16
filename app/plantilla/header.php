@@ -261,15 +261,27 @@
 
     </header><!-- /header -->
     <!-- Header-->
-
+<?php
+    if($_SESSION["usuario"][0]["TIPO_CENTRO_ID"]==1){
+            $nombre_tipo_centro= 'PPD';
+        } elseif($_SESSION["usuario"][0]["TIPO_CENTRO_ID"]==2){
+            $nombre_tipo_centro= 'PAM';
+        }elseif($_SESSION["usuario"][0]["TIPO_CENTRO_ID"]==3){
+            $nombre_tipo_centro= 'NNA';
+        }
+?>
     <div class="breadcrumbs">
         <div class="col-sm-8">
             <div class="page-header float-left">
                 <div class="page-title">
+                <?php if( $_SESSION["usuario"][0]["NIVEL"]==2 || $_SESSION["usuario"][0]["NIVEL"]==4 ):?>
+                <h1><?php echo $nombre_tipo_centro; ?></h1>
+                <?php else: ?>
                     <h1>INABIF</h1>
                         <span id="cabecera-centro-nombre">
-                        <p><?php echo $_SESSION["usuario"][0]["NOM_CA"]." (".$_SESSION["usuario"][0]["TIPO_CENTRO_NOMBRE"].")"; ?></p>
+                        <p><?php echo $_SESSION["usuario"][0]["NOM_CA"]; ?></p>
                         </span>
+            <?php endif;?>
                 </div>
             </div>
 
