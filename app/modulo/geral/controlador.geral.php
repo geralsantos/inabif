@@ -823,10 +823,11 @@ class geral extends App{
 	$centros = "select distinct ca.nom_ca as nombre_centro,ca.tipo_centro_id,tc.nombre as nombre_tipo_centro from centro_atencion ca 
 	left join tipo_centro tc on(ca.tipo_centro_id=tc.id) ".$where." ";
 	$centros = $modelo->executeQuery($centros);
-	$modulo_html = "";
+  $modulo_html = "";
+  $centro_html= "";
+  
 	foreach ($centros as $key => $centro) 
 	{
-    $centro_html= "";
 		$centro_html .="<tr><th>Nombre del Centro</th><th>Tipo de Centro</th></tr>";
 		$centro_html .="<tr><td>".$centro["NOMBRE_CENTRO"]."</td><td>".$centro["NOMBRE_TIPO_CENTRO"]."</td></tr>";
 
@@ -868,7 +869,7 @@ class geral extends App{
 	}
   $centro_html .=$modulo_html."</table>";
 	
-    $table = '<table><tr><td><table>'.$centro_html.'</table></td></tr></table>';
+    $table = '<table>'.$centro_html.'</table>';
     if ($modulos)
     {
       echo json_encode(array("data"=>$table) ) ;
