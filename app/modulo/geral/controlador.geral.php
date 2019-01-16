@@ -819,21 +819,21 @@ class geral extends App{
 		$parent_id="2,25";
 			break;
 	}
-	$centro_html = "<table>";
-	$centro_html .="<tr><th>Nombre del Centro</th><th>Tipo de Centro</th><th>Fecha Matriz </th></tr>";
+	
 	$centros = "select distinct ca.nom_ca as nombre_centro,ca.tipo_centro_id,tc.nombre as nombre_tipo_centro from centro_atencion ca 
 	left join tipo_centro tc on(ca.tipo_centro_id=tc.id) ".$where." ";
 	$centros = $modelo->executeQuery($centros);
 
 	foreach ($centros as $key => $centro) 
 	{
+		$centro_html .= "<table>";
+		$centro_html .="<tr><th>Nombre del Centro</th><th>Tipo de Centro</th></tr>";
 		$centro_html .="<tr><th>".$centro["NOMBRE_CENTRO"]."</th><th>".$centro["NOMBRE_TIPO_CENTRO"]."</th></tr></table>";
 
-		$modulo_html = "<table>";
 		$modulos = "select m.parent_id,m.nombre as nombre_modulo,m.nombre_tabla from modulos m 
 			where m.centro_id in (".$centro["TIPO_CENTRO_ID"].") ";
 		$modulos = $modelo->executeQuery($modulos);
-		$modulo_html = "<table>";
+		$modulo_html .= "<table>";
 		foreach ($modulos as $key => $modulo)
 		{
 			if (($modulo["NOMBRE_TABLA"])!="") {
@@ -864,7 +864,6 @@ class geral extends App{
 				}
 				$modulo_html .=$grupo_html;
 			}
-			
 		}
 	}
 	
