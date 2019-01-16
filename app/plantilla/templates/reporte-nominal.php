@@ -33,7 +33,7 @@
                             <div class="row form-group">
                                 <div class="col-12 col-md-1">
 
-                                    <button @click="mostrar_reporte_nominal()" class="btn btn-default"><i class="fa fa-send"></i> Buscar</button>
+                                <button class="btn btn-success" @click="descargar_reporte_matriz_nominal()">Descargar</button>
                                 </div>
                             </div>
                             <div class="table-responsive">

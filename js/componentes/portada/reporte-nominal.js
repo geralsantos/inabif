@@ -76,9 +76,9 @@ let apellido = apellido_p + ' ' + apellido_m;
             });
 
         },
-        descargar_reporte_matriz_nominal(residente){
+        descargar_reporte_matriz_nominal(){
 
-            let datos = {id_residente:this.id_residente,tipo_centro_id:residente.TIPO_CENTRO_ID};
+            let datos = {id_residente:this.id_residente};
             console.log(datos);
             this.$http.post('descargar_reporte_matriz_nominal?view',datos).then(function(response){
 

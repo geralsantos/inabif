@@ -793,9 +793,8 @@ class geral extends App{
   }
   public function descargar_reporte_matriz_nominal(){
     $modelo = new modeloPortada();
-    $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+    $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
     $id_residente = $_POST["id_residente"];
-    $tipo_centro_id = $_POST["tipo_centro_id"];
     if (SUPERVISOR == $nivel || USER_SEDE == $nivel) {
       $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
       $where = " AND ca.tipo_centro_id = ".$tipo_centro;
