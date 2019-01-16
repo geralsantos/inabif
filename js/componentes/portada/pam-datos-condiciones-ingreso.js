@@ -68,7 +68,7 @@ Vue.component('pam-datos-condiciones-ingreso', {
 
             this.buscar_niveleducativo();
             this.buscar_clasif_socioeconomica();
-            this.buscar_tipoparentesco();
+           // this.buscar_tipoparentesco();
 
         },
         guardar(){

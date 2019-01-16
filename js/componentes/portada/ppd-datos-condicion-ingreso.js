@@ -106,7 +106,7 @@ Vue.component('ppd-datos-condicion-ingreso', {
                     return false;
                 }
             }
-            
+
             let valores = {
                 DNI:this.CarDocIngreso,
                 Tipo_Documento:this.CarTipoDoc,

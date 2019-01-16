@@ -139,7 +139,13 @@
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Tipo de Parentesco</label>
                                 <select name="tipo_parentesco" v-model="tipo_parentesco" class="form-control">
-                                    <option v-for="parentesco in tipos_parentescos" :value="parentesco.ID">{{parentesco.NOMBRE}}</option>
+                                <option value="Ninguno">Ninguno</option>
+                                    <option value="Padre/Madre">Padre/Madre</option>
+                                    <option value="Hermano(a)">Hermano(a)</option>
+                                    <option value="Primos(a)">Primos(a)</option>
+                                    <option value="Hijo(a)">Hijo(a)</option>
+                                    <option value="Nieto">Nieto</option>
+                                <option value="Otros(as)">Otros(as)</option>
                                 </select>
                                 </div>
                             </div>
