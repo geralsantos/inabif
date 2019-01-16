@@ -274,12 +274,28 @@
             </div>
 
         </div>
+        <?php if($_SESSION["usuario"][0]["NIVEL"]==1){
+            $nombre_nivel= 'ADMINISTRADOR';
+        } elseif($_SESSION["usuario"][0]["NIVEL"]==2){
+            $nombre_nivel= 'SUPERVISOR';
+        }elseif($_SESSION["usuario"][0]["NIVEL"]==3){
+            $nombre_nivel= 'USER SEDE GESTIÓN';
+        }elseif($_SESSION["usuario"][0]["NIVEL"]==4){
+            $nombre_nivel= 'USER SEDE';
+        }elseif($_SESSION["usuario"][0]["NIVEL"]==5){
+            $nombre_nivel= 'RESPONSABLE DE INFORMACIÓN';
+        }elseif($_SESSION["usuario"][0]["NIVEL"]==6){
+            $nombre_nivel= 'REGISTRADOR';
+        }elseif($_SESSION["usuario"][0]["NIVEL"]==7){
+            $nombre_nivel= 'USER CENTRO';
+        }
+        ?>
 
         <div class="col-sm-4">
             <div class="page-header float-right">
                 <div class="page-title">
                     <ol class="breadcrumb text-right">
-                        <li class="active">Perfil: <?php $_SESSION["usuario"][0]["NIVEL"] ?></li>
+                        <li class="active">Perfil: <?php echo $nombre_nivel ?></li>
                     </ol>
                 </div>
             </div>
