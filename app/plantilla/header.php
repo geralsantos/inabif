@@ -294,9 +294,10 @@
         <div class="col-sm-4">
             <div class="page-header float-right">
                 <div class="page-title">
-                    <ol class="breadcrumb text-right">
-                        <li class="active">Perfil: <?php echo $nombre_nivel ?></li>
-                    </ol>
+                    <h1><?php echo $nombre_nivel; ?></h1>
+                        <span id="cabecera-centro-nombre">
+                        <p></p>
+                        </span>
                 </div>
             </div>
         </div>
