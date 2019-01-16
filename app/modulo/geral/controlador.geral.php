@@ -795,7 +795,7 @@ class geral extends App{
     $campos = "";
     switch ($tipo_centro_id) {
       case '1': /*ppd*/
-      $campos = array('CarIdentificacionUsuario'=>'Ape_Paterno as "Apellido paterno usuario",Ape_Materno as "Apellido materno usuario", Nom_Usuario as "Nombre Usuario", (SELECT nombre FROM paises WHERE id=CarIdentificacionUsuario.Pais_Procencia) as "País de procedencia del usuario",(SELECT NOMDEPT FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as "Departamento de nac del usuario",(SELECT NOMPROV FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as "Provincia de nac del usuario" ,(SELECT NOMPROV FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as "Distrito de nac del usuario",(CASE Sexo WHEN "h" THEN "Hombre" ELSE "Mujer" END) as Sexo,Fecha_Nacimiento,(SELECT nombre from pam_lengua_materna WHERE id = CarIdentificacionUsuario.Lengua_Materna) as Lengua Materna ');
+      $campos = array('CarIdentificacionUsuario'=>'Ape_Paterno as "Apellido paterno",Ape_Materno as "Apellido materno", Nom_Usuario as "Nombre Usuario",(SELECT nombre FROM paises WHERE id=CarIdentificacionUsuario.Pais_Procencia) as "Pai­s de procedencia",(SELECT NOMDEPT FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as "Departamento de nac",(SELECT NOMPROV FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as "Provincia de nac del" ,(SELECT NOMPROV FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as "Distrito de nac",(CASE Sexo WHEN \'h\' THEN 2 WHEN \'m\' THEN 1 END) as Sexo,Fecha_Nacimiento,(SELECT nombre from pam_lengua_materna WHERE id = CarIdentificacionUsuario.Lengua_Materna) as "Lengua Materna"');
       break;
       case '2': /*pam*/
       break;
@@ -850,7 +850,7 @@ ini_set('session.gc_maxlifetime','1200');*/
       {
         $modulo_html ="<tr><th></th><th>Nombre del Modulo</th></tr>";
         $modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td></tr>";
-				$grupos = "select ".$campos[$modulo["NOMBRE_TABLA"]]." from ".$modulo["NOMBRE_TABLA"]." where  periodo_mes=".date("m")." and periodo_anio=".date("Y")." and residente_id= ". $id_residente." and centro_id=".$centro["ID"]." order by id desc";
+				echo $grupos = "select ".$campos[$modulo["NOMBRE_TABLA"]]." from ".$modulo["NOMBRE_TABLA"]." where  periodo_mes=".date("n")." and periodo_anio=".date("Y")." and residente_id= ". $id_residente." and centro_id=".$centro["ID"]." order by id desc";
 				$grupos = $modelo->executeQuery($grupos);
 
         $grupo_html = "";
