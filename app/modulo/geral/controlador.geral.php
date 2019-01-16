@@ -871,9 +871,9 @@ ini_set('session.gc_maxlifetime','1200');*/
 			}
     }
 	}
-  $centro_html .=$modulo_html;
+  //$centro_html .=$modulo_html;
 	
-    $table = '<table>'.$centro_html.'</table>';
+    $table = '<table>'.$html.'</table>';
     if ($modulos)
     {
       echo json_encode(array("data"=>$table) ) ;
