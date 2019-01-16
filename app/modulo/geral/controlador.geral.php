@@ -832,7 +832,8 @@ ini_set('session.gc_maxlifetime','1200');*/
   $html2 ="";
 	foreach ($centros as $key => $centro) 
 	{
-		
+		$centro_html ="<tr><th>Nombre del Centro</th><th>Tipo de Centro</th></tr>";
+    $centro_html .="<tr><td>".$centro["NOMBRE_CENTRO"]."</td><td>".$centro["NOMBRE_TIPO_CENTRO"]."</td></tr>";
 
 		$modulos = "select m.parent_id,m.nombre as nombre_modulo,m.nombre_tabla from modulos m 
 			where m.centro_id in (".$centro["TIPO_CENTRO_ID"].") ";
@@ -870,8 +871,7 @@ ini_set('session.gc_maxlifetime','1200');*/
 				$html .= $modulo_html.$grupo_html;
 			}
     }
-    $centro_html ="<tr><th>Nombre del Centro</th><th>Tipo de Centro</th></tr>";
-    $centro_html .="<tr><td>".$centro["NOMBRE_CENTRO"]."</td><td>".$centro["NOMBRE_TIPO_CENTRO"]."</td></tr>";
+    
     $html2 .= $centro_html.$html;
 	}
   //$centro_html .=$modulo_html;
