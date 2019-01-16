@@ -7,7 +7,7 @@ Vue.component('seguimiento-lista-1', {
         completo:false,
        centros:[],
        usuario:[],
-       tipo_centro:false,
+       tipo_centro:true,
        tipo_centro_completado : [],
        fecha:null,
        acceso_generar :true,
