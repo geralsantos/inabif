@@ -936,7 +936,7 @@ class portada extends App{
       if($res){
         echo json_encode(array("resultado"=>false, "mensaje"=>"La matriz ya ha sido generada") ) ;
       }else{
-        $res = $modelo->insertData("matriz_consolidado",array("estado"=>1,"tipo_centro_id"=>$tipo_centro,"Periodo_Mes"=>date("m"),"Periodo_Anio"=>date("Y"),"usuario_crea"=>$_SESSION["usuario"][0]["ID"],"usuario_edita"=>$_SESSION["usuario"][0]["ID"] ));
+        $res = $modelo->insertData("matriz_consolidado",array("estado"=>1, "Periodo_Mes"=>date("m"),"Periodo_Anio"=>date("Y"),"usuario_crea"=>$_SESSION["usuario"][0]["ID"],"usuario_edita"=>$_SESSION["usuario"][0]["ID"] ));
         if ($res){
           echo json_encode(array("resultado"=>true) ) ;
         }else{
