@@ -140,7 +140,7 @@ Vue.component('seguimiento-lista-1', {
                     this.buscar_centros();
                 }else{
                     if(response.body.fecha){
-                        this.fecha = "Fecha: " + moment(response.body.fecha, "YY-MMM-DD").format("DD-MM-YYYY");
+                        this.fecha = "La matriz fue generada el: " + moment(response.body.fecha, "YY-MMM-DD").format("DD-MM-YYYY");
                     }
                     swal("", response.body.mensaje, "error");
                     this.buscar_centros();
