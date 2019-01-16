@@ -823,7 +823,7 @@ ini_set('session.gc_maxlifetime','1200');*/
 			break;
 	}
 	
-	$centros = "select distinct ca.nom_ca as nombre_centro,ca.tipo_centro_id,tc.nombre as nombre_tipo_centro from centro_atencion ca 
+	$centros = "select distinct ca.id,ca.nom_ca as nombre_centro,ca.tipo_centro_id,tc.nombre as nombre_tipo_centro from centro_atencion ca 
 	left join tipo_centro tc on(ca.tipo_centro_id=tc.id) ".$where." ";
 	$centros = $modelo->executeQuery($centros);
   $modulo_html = "";
@@ -845,7 +845,7 @@ ini_set('session.gc_maxlifetime','1200');*/
       {
         $modulo_html ="<tr><th></th><th>Nombre del Modulo</th></tr>";
         $modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td></tr>";
-				$grupos = "select nt.* from ".$modulo["NOMBRE_TABLA"]." nt where nt.residente_id= ". $id_residente." order by nt.id desc";
+				$grupos = "select nt.* from ".$modulo["NOMBRE_TABLA"]." nt where nt.tipo_centro_id=".$centro["TIPO_CENTRO_ID"]." and nt.periodo_mes=".date("m")." and nt.periodo_anio=".date("Y")." and nt.residente_id= ". $id_residente." order by nt.id desc";
 				$grupos = $modelo->executeQuery($grupos);
 
         $grupo_html = "";
