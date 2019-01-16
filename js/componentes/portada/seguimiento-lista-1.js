@@ -68,16 +68,14 @@ Vue.component('seguimiento-lista-1', {
             });
         },
         completar_tipo_centro(){
-            console.log(this.tipo_centro );
+        
             if(this.tipo_centro ){
                 this.tipo_centro = false
             }else{
                 this.tipo_centro = true
             }
-          if(this.acceso_generar==false){
-            console.log(this.tipo_centro );
+            if(this.acceso_generar==false){
                 this.tipo_centro = false;
-                console.log(this.tipo_centro )
                 swal("", "Todas las matrices deben estar generadas", "error");
                 return false;
             }
