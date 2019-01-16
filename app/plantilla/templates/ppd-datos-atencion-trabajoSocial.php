@@ -24,7 +24,7 @@
                                             Loading results...
                                         </li>
                                         <li  @click="actualizar(coincidencia)" class="autocomplete-result" v-for="coincidencia in coincidencias">
-                                            {{coincidencia.NOMBRE}} {{coincidencia.APELLIDO_P}} - {{coincidencia.DNI_RESIDENTE}} - {{coincidencia.DOCUMENTO}}
+                                            {{coincidencia.ID}} - {{coincidencia.NOMBRE}} {{coincidencia.APELLIDO_P}} - {{coincidencia.DNI_RESIDENTE}} - {{coincidencia.DOCUMENTO}}
                                         </li>
 
                                     </ul>
@@ -131,7 +131,7 @@
                         </div>
                          <!--
                         <div class="row">
-                       
+
                             <div class="form-group col-md-4">
                                         <label for="text-input" class=" form-control-label">Problemática familiar</label>
                                         <select name="CarProblematicaFam" v-model="CarProblematicaFam" class="form-control">

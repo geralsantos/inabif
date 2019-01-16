@@ -1,12 +1,12 @@
 <template id="cargar-archivos">
-  
+
     <div class="content mt-3">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
                     <strong>Formulario de Carga de Documentos</strong>
                 </div>
-                
+
                 <div class="card-body card-block">
                 <div class="row form-group">
                         <div class="col-12 col-md-1">
@@ -24,7 +24,7 @@
                                             Loading results...
                                         </li>
                                         <li  @click="actualizar(coincidencia)" class="autocomplete-result" v-for="coincidencia in coincidencias">
-                                            {{coincidencia.NOMBRE}} {{coincidencia.APELLIDO_P}} - {{coincidencia.DNI_RESIDENTE}} - {{coincidencia.DOCUMENTO}}
+                                            {{coincidencia.ID}} - {{coincidencia.NOMBRE}} {{coincidencia.APELLIDO_P}} - {{coincidencia.DNI_RESIDENTE}} - {{coincidencia.DOCUMENTO}}
                                         </li>
 
                                     </ul>
@@ -47,12 +47,12 @@
                         <td>{{archivo.NOMBRE}}</td>
                         <td>{{archivo.TIPO_DOCUMENTO}}</td>
                         <td>{{archivo.FECHA_CREACION}}</td>
-                        <td><a :href="'/inabif/app/cargas/'+archivo.NOMBRE" :download="archivo.NOMBRE" class="btn btn-primary" >Descargar</a> 
+                        <td><a :href="'/inabif/app/cargas/'+archivo.NOMBRE" :download="archivo.NOMBRE" class="btn btn-primary" >Descargar</a>
                         <button  class="btn btn-danger" @click="eliminar(archivo)">Eliminar</button> </td>
                     </tr>
                     </tbody>
                 </table>
-                    
+
                 </div>
             </div>
         </div>
@@ -142,7 +142,7 @@
                                 <option value="Referente familiar / afectivo">Referente familiar / afectivo</option>
                                 <option value="Tarjeta de vacunación">Tarjeta de vacunación</option>
                                 <option value="Otro">Otro</option>
-                                </select>                
+                                </select>
                             </div>
                         </div>
                         <div class="row">
@@ -153,8 +153,8 @@
                         <input type="file" id="archivo" v-model="archivo" name="archivo" value="archivo" class="form-control-file">
                         </div>
                         </div>
-                        
-                       
+
+
                         <div class="row">
                             <div class="col-md-12 text-center" >
                                 <button type="submit" class="btn btn-success btn-sm">
@@ -175,5 +175,5 @@
     </transition>
   </div>
     </div> <!-- .content -->
-    
+
 </template>
