@@ -791,7 +791,22 @@ class geral extends App{
       return false;
     }
   }
-  
+  public function campos_tipo_centro ($ipo_centro_id=""){
+    $campos = "";
+    switch ($tipo_centro_id) {
+      case '1': /*ppd*/
+      $campos = array("CarIdentificacionUsuario"=>"Ape_Paterno as 'Apellido paterno usuario',Ape_Materno as 'Apellido materno usuario', Nom_Usuario as 'Nombre Usuario', (SELECT nombre FROM paises WHERE id=CarIdentificacionUsuario.Pais_Procencia) as 'País de procedencia del usuario',(SELECT NOMDEPT FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as 'Departamento de nac del usuario',(SELECT NOMPROV FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as 'Provincia de nac del usuario' ,(SELECT NOMPROV FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as 'Distrito de nac del usuario',(CASE Sexo WHEN 'h' THEN 'Hombre' ELSE 'Mujer' END) as Sexo,Fecha_Nacimiento,(SELECT nombre from pam_lengua_materna WHERE id = CarIdentificacionUsuario.Lengua_Materna) as Lengua Materna ");
+      break;
+      case '2': /*pam*/
+      break;
+      case '3':
+      break;
+      default:
+      $parent_id="2,25";
+        break;
+    }
+    return $campos;
+  }
   public function descargar_reporte_matriz_nominal(){
    /* ini_set('max_execution_time',0);
 ini_set('memory_limit', '600M');
@@ -810,22 +825,8 @@ ini_set('session.gc_maxlifetime','1200');*/
       $where ="";
     }
     $campos = "";
-    echo $tipo_centro_id;
-    switch ($tipo_centro_id) {
-		case '1': /*ppd*/
-    $parent_id="2,25";
-    $campos = array("CarIdentificacionUsuario"=>"Ape_Paterno as 'Apellido paterno usuario',Ape_Materno as 'Apellido materno usuario', Nom_Usuario as 'Nombre Usuario', (SELECT nombre FROM paises WHERE id=CarIdentificacionUsuario.Pais_Procencia) as 'País de procedencia del usuario',(SELECT NOMDEPT FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as 'Departamento de nac del usuario',(SELECT NOMPROV FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as 'Provincia de nac del usuario' ,(SELECT NOMPROV FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as 'Distrito de nac del usuario',(CASE Sexo WHEN 'h' THEN 'Hombre' ELSE 'Mujer' END) as Sexo,Fecha_Nacimiento,(SELECT nombre from pam_lengua_materna WHERE id = CarIdentificacionUsuario.Lengua_Materna) as Lengua Materna ");
-		break;
-		case '2': /*pam*/
-		$parent_id="27,43";
-		break;
-		case '3':
-		$parent_id="46,70";
-		break;
-		default:
-		$parent_id="2,25";
-			break;
-	}
+    $tipo_centro_id;
+    
 	
 	$centros = "select distinct ca.id,ca.nom_ca as nombre_centro,ca.tipo_centro_id,tc.nombre as nombre_tipo_centro from centro_atencion ca 
 	left join tipo_centro tc on(ca.tipo_centro_id=tc.id) ".$where." order by ca.tipo_centro_id desc";
@@ -838,7 +839,7 @@ ini_set('session.gc_maxlifetime','1200');*/
 	{
 		$centro_html ="<tr><th>Nombre del Centro</th><th>Tipo de Centro</th></tr>";
     $centro_html .="<tr><td>".$centro["NOMBRE_CENTRO"]."</td><td>".$centro["NOMBRE_TIPO_CENTRO"]."</td></tr>";
-
+    $campos = $this->campos_tipo_centro($centro["TIPO_CENTRO_ID"]);
 		$modulos = "select m.parent_id,m.nombre as nombre_modulo,m.nombre_tabla from modulos m 
 			where m.centro_id in (".$centro["TIPO_CENTRO_ID"].") order by m.id asc";
 		$modulos = $modelo->executeQuery($modulos);
@@ -849,7 +850,7 @@ ini_set('session.gc_maxlifetime','1200');*/
       {
         $modulo_html ="<tr><th></th><th>Nombre del Modulo</th></tr>";
         $modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td></tr>";
-				echo $grupos = "select ".$campos[$modulo["NOMBRE_TABLA"]]." from ".$modulo["NOMBRE_TABLA"]." where  periodo_mes=".date("m")." and periodo_anio=".date("Y")." and residente_id= ". $id_residente." and centro_id=".$centro["ID"]." order by id desc";
+				$grupos = "select ".$campos[$modulo["NOMBRE_TABLA"]]." from ".$modulo["NOMBRE_TABLA"]." where  periodo_mes=".date("m")." and periodo_anio=".date("Y")." and residente_id= ". $id_residente." and centro_id=".$centro["ID"]." order by id desc";
 				$grupos = $modelo->executeQuery($grupos);
 
         $grupo_html = "";
