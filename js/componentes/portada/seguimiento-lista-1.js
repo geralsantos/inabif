@@ -76,7 +76,7 @@ Vue.component('seguimiento-lista-1', {
             }
             if(this.acceso_generar==false){
                 this.tipo_centro = false;
-                swal("", "Todas las matrices deben estar generadas", "error");
+                swal("", "No puedes completar hasta que todas las matrices deben estar generadas", "error");
                 return false;
             }
 
