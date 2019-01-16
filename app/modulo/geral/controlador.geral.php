@@ -835,7 +835,7 @@ class geral extends App{
 		$modulos = "select m.parent_id,m.nombre as nombre_modulo,m.nombre_tabla from modulos m 
 			where m.centro_id in (".$centro["TIPO_CENTRO_ID"].") ";
 		$modulos = $modelo->executeQuery($modulos);
-		$modulo_html .= "<table>";
+		$modulo_html .= "<tr>";
 		foreach ($modulos as $key => $modulo)
 		{
 			if (($modulo["NOMBRE_TABLA"])!="") {
@@ -845,7 +845,7 @@ class geral extends App{
 				$grupos = "select distinct * from ".$modulo["NOMBRE_TABLA"]." where residente_id= ". $id_residente."";
 				$grupos = $modelo->executeQuery($grupos);
 
-				$grupo_html = "<table>";
+				$grupo_html = "<tr>";
 				foreach ($grupos as $key => $grupo)
 				{
 					if ($key==0) {
@@ -869,7 +869,6 @@ class geral extends App{
 		}
 	}
 	$centro_html .="</table>";
-	$modulo_html .="</table>";
 	
     $table = '<table><tr><td>'.$centro_html.'</td></tr><tr><td>'.$modulo_html.'</td></tr></table>';
     if ($modulos)
