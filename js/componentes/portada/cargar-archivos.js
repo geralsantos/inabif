@@ -1,7 +1,7 @@
 Vue.component('cargar-archivos', {
     template:'#cargar-archivos',
     data:()=>({
-        
+
         showModal: false,
         archivo:null,
         archivos:[],
@@ -77,7 +77,7 @@ Vue.component('cargar-archivos', {
                     });
                 }
               });
-            
+
         },
         verRegistro(usuario){
             if (isempty(usuario)) {
@@ -112,7 +112,7 @@ Vue.component('cargar-archivos', {
                     this.showModal = true;
               //});
             }
-           
+
           },
         mostrar_formulario(){
             this.showModal = true;
@@ -122,8 +122,8 @@ Vue.component('cargar-archivos', {
             downloadLink('/inabif/app/cargas/'+archivo.NOMBRE);
         },
         actualizar(coincidencia){
-            this.id_residente = coincidencia.ID;     
-            this.nombre_residente = (coincidencia.NOMBRE==undefined)?'':coincidencia.NOMBRE;          
+            this.id_residente = coincidencia.ID;
+            this.nombre_residente = (coincidencia.NOMBRE==undefined)?'':coincidencia.NOMBRE;
             this.id=coincidencia.ID;
             this.coincidencias = [];
             this.bloque_busqueda = false;
@@ -131,7 +131,7 @@ Vue.component('cargar-archivos', {
             this.$http.post('cargar_datos?view',{tabla:'archivos_adjuntados', where:where }).then(function(response){
 
                 if( response.body.atributos != undefined){
-                    
+
                     this.id = response.body.atributos[0]["RESIDENTE_ID"];
                     this.archivos= response.body.atributos;
 
@@ -146,7 +146,7 @@ Vue.component('cargar-archivos', {
             this.id_residente = null;
 
             var word = this.nombre_residente;
-            if( word.length >= 4){
+            if( word.length >= 2){
                 this.coincidencias = [];
                 this.bloque_busqueda = true;
                 this.isLoading = true;
@@ -188,11 +188,11 @@ Vue.component('cargar-archivos', {
 
         },
         elegir_residente(residente){
-            
+
             this.id=null;
             this.archivos=[];
-            this.id_residente = residente.ID;     
-            this.nombre_residente = (residente.NOMBRE==undefined)?'':residente.NOMBRE;          
+            this.id_residente = residente.ID;
+            this.nombre_residente = (residente.NOMBRE==undefined)?'':residente.NOMBRE;
             this.id=residente.ID;
             this.bloque_busqueda = false;
             let where = {residente_id:this.id_residente}
@@ -200,7 +200,7 @@ Vue.component('cargar-archivos', {
             this.$http.post('cargar_datos?view',{tabla:'archivos_adjuntados', where:where }).then(function(response){
 
                 if( response.body.atributos != undefined){
-                    
+
                     this.id = response.body.atributos[0]["RESIDENTE_ID"];
                     this.archivos= response.body.atributos;
 

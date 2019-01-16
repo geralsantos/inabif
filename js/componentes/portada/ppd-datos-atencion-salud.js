@@ -156,7 +156,7 @@ Vue.component('ppd-datos-atencion-salud', {
             this.id_residente = null;
 
             var word = this.nombre_residente;
-            if( word.length >= 4){
+            if( word.length >= 2){
                 this.coincidencias = [];
                 this.bloque_busqueda = true;
                 this.isLoading = true;
