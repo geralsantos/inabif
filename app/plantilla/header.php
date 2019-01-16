@@ -274,14 +274,13 @@
         <div class="col-sm-8">
             <div class="page-header float-left">
                 <div class="page-title">
-                <?php if( $_SESSION["usuario"][0]["NIVEL"]==2 || $_SESSION["usuario"][0]["NIVEL"]==4 ):?>
-                <h1><?php echo $nombre_tipo_centro; ?></h1>
-                <?php else: ?>
-                    <h1>INABIF</h1>
-                        <span id="cabecera-centro-nombre">
-                        <p><?php echo $_SESSION["usuario"][0]["NOM_CA"]; ?></p>
-                        </span>
-            <?php endif;?>
+                    <?php if( $_SESSION["usuario"][0]["NIVEL"]==2 || $_SESSION["usuario"][0]["NIVEL"]==4 ):?>
+                    <h1><?php echo "TIPO DE CENTRO " . $nombre_tipo_centro; ?></h1>
+                    <?php elseif( $_SESSION["usuario"][0]["NIVEL"]==5 || $_SESSION["usuario"][0]["NIVEL"]==6 || $_SESSION["usuario"][0]["NIVEL"]==7):?>
+                    <?php echo $_SESSION["usuario"][0]["NOM_CA"]; ?>
+                    <?php else: ?>
+                        <h1>INABIF</h1>
+                    <?php endif;?>
                 </div>
             </div>
 
