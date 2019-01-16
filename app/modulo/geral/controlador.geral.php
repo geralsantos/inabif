@@ -809,6 +809,7 @@ ini_set('session.gc_maxlifetime','1200');*/
     }else if(ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel){
       $where ="";
     }
+    $campos = "";
     switch ($tipo_centro_id) {
 		case '1': /*ppd*/
     $parent_id="2,25";
