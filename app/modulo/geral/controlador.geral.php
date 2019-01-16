@@ -824,9 +824,9 @@ class geral extends App{
 	left join tipo_centro tc on(ca.tipo_centro_id=tc.id) ".$where." ";
 	$centros = $modelo->executeQuery($centros);
 	$modulo_html = "";
-
 	foreach ($centros as $key => $centro) 
 	{
+    $centro_html= "";
 		$centro_html .="<tr><th>Nombre del Centro</th><th>Tipo de Centro</th></tr>";
 		$centro_html .="<tr><td>".$centro["NOMBRE_CENTRO"]."</td><td>".$centro["NOMBRE_TIPO_CENTRO"]."</td></tr>";
 
