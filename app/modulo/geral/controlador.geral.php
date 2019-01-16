@@ -810,6 +810,7 @@ ini_set('session.gc_maxlifetime','1200');*/
       $where ="";
     }
     $campos = "";
+    echo $tipo_centro_id;
     switch ($tipo_centro_id) {
 		case '1': /*ppd*/
     $parent_id="2,25";
