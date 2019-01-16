@@ -867,10 +867,10 @@ ini_set('session.gc_maxlifetime','1200');*/
 					}
 					$grupo_html .= "</tr>";
         }
-				$html .= $grupo_html;
-
+				$html .= $modulo_html.$grupo_html;
       }
     }
+    $html2 .=$centro_html.$html;
 	}
   //$centro_html .=$modulo_html;
 	
