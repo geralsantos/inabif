@@ -791,7 +791,7 @@ class geral extends App{
       return false;
     }
   }
-  public function campos_tipo_centro ($ipo_centro_id=""){
+  public function campos_tipo_centro ($tipo_centro_id=""){
     $campos = "";
     switch ($tipo_centro_id) {
       case '1': /*ppd*/
