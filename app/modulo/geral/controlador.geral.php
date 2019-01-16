@@ -791,6 +791,14 @@ class geral extends App{
       return false;
     }
   }
+  public function buscar_columna ($=array()){
+    $keys = array_keys($grupo);
+    $grupo_html .="<tr><th></th>";
+    foreach ($keys as $key)
+    {
+      $grupo_html .="<th>$key</th>";
+    }
+  }
   public function descargar_reporte_matriz_nominal(){
    /* ini_set('max_execution_time',0);
 ini_set('memory_limit', '600M');
@@ -810,7 +818,8 @@ ini_set('session.gc_maxlifetime','1200');*/
     }
     switch ($tipo_centro_id) {
 		case '1': /*ppd*/
-		$parent_id="2,25";
+    $parent_id="2,25";
+    $campos = array("CarIdentificacionUsuario"=>"Ape_Paterno as 'Apellido paterno usuario',Ape_Materno as 'Apellido materno usuario', Nom_Usuario as 'Nombre Usuario', (SELECT nombre FROM paises WHERE id=CarIdentificacionUsuario.Pais_Procencia) as 'País de procedencia del usuario',(SELECT NOMDEPT FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as 'Departamento de nac del usuario',(SELECT NOMPROV FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as 'Provincia de nac del usuario' ,(SELECT NOMPROV FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as 'Distrito de nac del usuario',(CASE Sexo WHEN 'h' THEN 'Hombre' ELSE 'Mujer' END) as Sexo,Fecha_Nacimiento,(SELECT nombre from pam_lengua_materna WHERE id = CarIdentificacionUsuario.Lengua_Materna) as Lengua Materna ");
 		break;
 		case '2': /*pam*/
 		$parent_id="27,43";
@@ -841,11 +850,11 @@ ini_set('session.gc_maxlifetime','1200');*/
     $html = "";
 		foreach ($modulos as $key => $modulo)
 		{
-      if (($modulo["NOMBRE_TABLA"])!="") 
+      if (($modulo["NOMBRE_TABLA"])=="CarIdentificacionUsuario") 
       {
         $modulo_html ="<tr><th></th><th>Nombre del Modulo</th></tr>";
         $modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td></tr>";
-				$grupos = "select nt.* from ".$modulo["NOMBRE_TABLA"]." nt where nt.periodo_mes=".date("m")." and nt.periodo_anio=".date("Y")." and nt.residente_id= ". $id_residente." and nt.centro_id=".$centro["ID"]." order by nt.id desc";
+				$grupos = "select ".$campos[$modulo["NOMBRE_TABLA"]]." from ".$modulo["NOMBRE_TABLA"]." where  periodo_mes=".date("m")." and periodo_anio=".date("Y")." and residente_id= ". $id_residente." and centro_id=".$centro["ID"]." order by id desc";
 				$grupos = $modelo->executeQuery($grupos);
 
         $grupo_html = "";
@@ -853,22 +862,24 @@ ini_set('session.gc_maxlifetime','1200');*/
 				foreach ($grupos as $key => $grupo)
 				{
 					if (!in_array($grupo["RESIDENTE_ID"],$residente_repite)) {
-            if ($key==0) {
-              $keys = array_keys($grupo);
-              $grupo_html .="<tr><th></th>";
-              foreach ($keys as $key)
-              {
-                $grupo_html .="<th>$key</th>";
+            if ($this->buscar_columna($grupo,array("ID","RESIDENTE_ID","FECHA_CREACION",""))) {
+              if ($key==0) {
+                $keys = array_keys($grupo);
+                $grupo_html .="<tr><th></th>";
+                foreach ($keys as $key)
+                {
+                  $grupo_html .="<th>$key</th>";
+                }
+                $grupo_html .="</tr>";
               }
-              $grupo_html .="</tr>";
+              $grupo_values = array_values($grupo);
+              $grupo_html .= "<tr><td></td>";
+              foreach ($grupo_values as $key => $value) {
+                $grupo_html .="<td>".$value."</td>";
+              }
+              $grupo_html .= "</tr>";
+              $residente_repite[]=$grupo["RESIDENTE_ID"];
             }
-            $grupo_values = array_values($grupo);
-            $grupo_html .= "<tr><td></td>";
-            foreach ($grupo_values as $key => $value) {
-              $grupo_html .="<td>".$value."</td>";
-            }
-            $grupo_html .= "</tr>";
-            $residente_repite[]=$grupo["RESIDENTE_ID"];
           }
         }
 				$html .= $modulo_html.$grupo_html;
