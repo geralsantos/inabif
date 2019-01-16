@@ -140,7 +140,7 @@ Vue.component('seguimiento-lista-1', {
                     this.buscar_centros();
                 }else{
                     if(response.body.fecha){
-                        this.fecha = "Fecha: " + response.body.fecha;
+                        this.fecha = "Fecha: " + moment(response.body.fecha, "DD-MMM-YY").format("DD-MM-YYYY");
                     }
                     swal("", response.body.mensaje, "error");
                     this.buscar_centros();
