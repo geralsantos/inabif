@@ -9,7 +9,8 @@ Vue.component('seguimiento-lista-1', {
        usuario:[],
        tipo_centro:false,
        tipo_centro_completado : [],
-       fecha:null
+       fecha:null,
+       acceso_generar :true,
 
 
     }),
@@ -67,6 +68,9 @@ Vue.component('seguimiento-lista-1', {
             });
         },
         completar_tipo_centro(){
+            if(this.acceso_generar==false){
+                swal("", "Todas las matrices deben estar generadas", "error");
+            }
             let estado = 1;
             if(this.tipo_centro){
                 estado = 0;
@@ -89,6 +93,9 @@ Vue.component('seguimiento-lista-1', {
                 if( response.body.data != undefined){
 
                     for (let index = 0; index < response.body.data.length; index++) {
+                        if(isempty(response.body.data[index]["FECHA_MATRIZ"])){
+                            this.acceso_generar = false;
+                        }
                         console.log(response.body.data[index]["FECHA_MATRIZ"]);
                        response.body.data[index]["FECHA_MATRIZ"]= (isempty(response.body.data[index]["FECHA_MATRIZ"]))?'': moment(response.body.data[index]["FECHA_MATRIZ"], "DD-MMM-YY").format("DD-MM-YYYY");
                     }
