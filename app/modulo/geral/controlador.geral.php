@@ -795,7 +795,7 @@ class geral extends App{
     $campos = "";
     switch ($tipo_centro_id) {
       case '1': /*ppd*/
-      $campos = array('CarIdentificacionUsuario'=>'Ape_Paterno as "Apellido paterno",Ape_Materno as "Apellido materno", Nom_Usuario as "Nombre Usuario",(SELECT nombre FROM paises WHERE id=CarIdentificacionUsuario.Pais_Procencia) as "Pai­s de procedencia",(SELECT NOMDEPT FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as "Departamento de nac",(SELECT NOMPROV FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as "Provincia de nac del" ,(SELECT NOMPROV FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as "Distrito de nac",(CASE Sexo WHEN \'h\' THEN 2 WHEN \'m\' THEN 1 END) as Sexo,Fecha_Nacimiento,(SELECT nombre from pam_lengua_materna WHERE id = CarIdentificacionUsuario.Lengua_Materna) as "Lengua Materna"');
+      $campos = array('CarIdentificacionUsuario'=>'Ape_Paterno as "Apellido paterno",Ape_Materno as "Apellido materno", Nom_Usuario as "Nombre Usuario",(SELECT nombre FROM paises WHERE id=CarIdentificacionUsuario.Pais_Procencia) as "Pai­s de procedencia",(SELECT NOMDEPT FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as "Departamento de nac",(SELECT NOMPROV FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as "Provincia de nac del" ,(SELECT NOMPROV FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as "Distrito de nac",(CASE Sexo WHEN \'h\' THEN 2 WHEN \'m\' THEN 1 END) as Sexo,Fecha_Nacimiento,(SELECT nombre from pam_lengua_materna WHERE id = CarIdentificacionUsuario.Lengua_Materna) as "Lengua Materna",residente_id');
       break;
       case '2': /*pam*/
       break;
@@ -863,7 +863,9 @@ ini_set('session.gc_maxlifetime','1200');*/
                 $grupo_html .="<tr><th></th>";
                 foreach ($keys as $key)
                 {
-                  $grupo_html .="<th>$key</th>";
+                  if ($key != "RESIDENTE_ID") {
+                    $grupo_html .="<th>$key</th>";
+                  }
                 }
                 $grupo_html .="</tr>";
               }
