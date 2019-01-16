@@ -824,7 +824,7 @@ ini_set('session.gc_maxlifetime','1200');*/
 	}
 	
 	$centros = "select distinct ca.id,ca.nom_ca as nombre_centro,ca.tipo_centro_id,tc.nombre as nombre_tipo_centro from centro_atencion ca 
-	left join tipo_centro tc on(ca.tipo_centro_id=tc.id) ".$where." ";
+	left join tipo_centro tc on(ca.tipo_centro_id=tc.id) ".$where." order by ca.tipo_centro_id desc";
 	$centros = $modelo->executeQuery($centros);
   $modulo_html = "";
   $centro_html= "";
