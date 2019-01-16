@@ -795,7 +795,7 @@ class geral extends App{
     $campos = "";
     switch ($tipo_centro_id) {
       case '1': /*ppd*/
-      $campos = array('CarIdentificacionUsuario'=>'Ape_Paterno as "Apellido paterno",Ape_Materno as "Apellido materno", Nom_Usuario as "Nombre Usuario",(SELECT nombre FROM paises WHERE id=CarIdentificacionUsuario.Pais_Procencia) as "Pai­s de procedencia",(SELECT NOMDEPT FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as "Departamento de nac",(SELECT NOMPROV FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as "Provincia de nac del" ,(SELECT NOMPROV FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as "Distrito de nac",(CASE Sexo WHEN \'h\' THEN 2 WHEN \'m\' THEN 1 END) as Sexo,Fecha_Nacimiento,(SELECT nombre from pam_lengua_materna WHERE id = CarIdentificacionUsuario.Lengua_Materna) as "Lengua Materna",residente_id');
+      $campos = array('CarIdentificacionUsuario'=>'Ape_Paterno as "Apellido paterno",Ape_Materno as "Apellido materno", Nom_Usuario as "Nombre Usuario",(SELECT nombre FROM paises WHERE id=CarIdentificacionUsuario.Pais_Procencia) as "Pai­s de procedencia",(SELECT NOMDEPT FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as "Departamento de nac",(SELECT NOMPROV FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as "Provincia de nac del" ,(SELECT NOMPROV FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as "Distrito de nac",(CASE Sexo WHEN \'h\' THEN 2 WHEN \'m\' THEN 1 END) as Sexo,Fecha_Nacimiento,(SELECT nombre from pam_lengua_materna WHERE id = CarIdentificacionUsuario.Lengua_Materna) as "Lengua Materna",residente_id','CarDatosAdmision'=>'Fecha_Ingreso as "Fecha de Ingreso",(SELECT nombre FROM pam_instituciones WHERE id=CarDatosAdmision.Institucion_derivado) as "Entidad que lo deriva",Motivo_Ingreso  as "Motivo ingreso PRINCIPAL",Numero_Documento as "Número documento de Ingreso" ');
       break;
       case '2': /*pam*/
       break;
@@ -846,7 +846,7 @@ ini_set('session.gc_maxlifetime','1200');*/
     $html = "";
 		foreach ($modulos as $key => $modulo)
 		{
-      if (($modulo["NOMBRE_TABLA"])=="CarIdentificacionUsuario") 
+      if (($modulo["NOMBRE_TABLA"])=="CarIdentificacionUsuario" || ($modulo["NOMBRE_TABLA"])=="CarDatosAdmision") 
       {
         $modulo_html ="<tr><th></th><th>Nombre del Modulo</th></tr>";
         $modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td></tr>";
