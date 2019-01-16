@@ -225,43 +225,34 @@ if (isset($_GET["opcionejecutar"]) && $_GET["opcionejecutar"]!="") {
 }else{
  
 $arrcreateseq = ['
-alter table CarIdentificacionUsuario ADD centro_id int null','alter table CarDatosAdmision ADD centro_id int null
+alter table pam_datos_identificacion ADD centro_id int null','alter table pam_datos_admision_usuario  ADD centro_id int null
 ','
-alter table CarCondicionIngreso ADD centro_id int null
+alter table pam_datosCondicionIngreso ADD centro_id int null
 ','
-alter table CarSaludNutricion ADD centro_id int null
+alter table pam_clasif_socioeconomico  ADD centro_id int null
 ','
-alter table CarSaludMental ADD centro_id int null
+alter table pam_datos_saludnutric  ADD centro_id int null
 ','
-alter table CarTerapia ADD centro_id int null
+alter table pam_salud_mental  ADD centro_id int null
 ','
-alter table CarActividades ADD centro_id int null
+alter table pam_ActividadSociorecrea ADD centro_id int null
 ','
-alter table CarAtencionPsicologica ADD centro_id int null
+alter table pam_ActividadPrevencion ADD centro_id int null
 ','
-alter table CarEducacionCapacidades ADD centro_id int null
+alter table pam_ActividadesSociales ADD centro_id int null
 ','
-alter table CarTrabajoSocial ADD centro_id int null
+alter table pam_AtencionesSalud ADD centro_id int null
 ','
-alter table CarAtencionSalud ADD centro_id int null
+alter table pam_Psicologico ADD centro_id int null
 ','
-alter table CarEgresoPsicologico ADD centro_id int null
+alter table pam_Salud ADD centro_id int null
 ','
-alter table CarEgresoEducacion ADD centro_id int null
+alter table pam_nutricion ADD centro_id int null
 ','
-alter table CarEgresoSalud ADD centro_id int null
+alter table pam_trabajoSocial ADD centro_id int null
 ','
-alter table CarTerapiaFisica ADD centro_id int null
-','
-alter table CarEgresoNutricion ADD centro_id int null
-','
-alter table CarEgresoTrabajoSocial ADD centro_id int null
-','
-alter table CarEgresoGeneral ADD centro_id int null
-','
-alter table Carproblematica_familiar ADD centro_id int null
-','
-alter table Cardesempeno_academico ADD centro_id int null'];
+alter table pam_EgresoUsuario ADD centro_id int null
+'];
 foreach ($arrcreateseq as $key => $value) {
     $mdl->createTable ($value);
 }
@@ -924,6 +915,7 @@ drop sequence seq_CarEgresoGeneral
 drop sequence seq_Carproblematica_familiar
 ','
 drop sequence seq_Cardesempeno_academico'];
+
 $arrcreateseq = ['create sequence seq_CarCentroServicio','
 create sequence seq_CarIdentificacionUsuario','create sequence seq_CarDatosAdmision
 ','
