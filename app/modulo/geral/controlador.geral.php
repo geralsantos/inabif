@@ -823,12 +823,11 @@ class geral extends App{
 	$centros = "select distinct ca.nom_ca as nombre_centro,ca.tipo_centro_id,tc.nombre as nombre_tipo_centro from centro_atencion ca 
 	left join tipo_centro tc on(ca.tipo_centro_id=tc.id) ".$where." ";
 	$centros = $modelo->executeQuery($centros);
-	$centro_html="";
+	$centro_html="<table>";
 	$modulo_html = "";
 
 	foreach ($centros as $key => $centro) 
 	{
-		$centro_html .= "<table>";
 		$centro_html .="<tr><th>Nombre del Centro</th><th>Tipo de Centro</th></tr>";
 		$centro_html .="<tr><th>".$centro["NOMBRE_CENTRO"]."</th><th>".$centro["NOMBRE_TIPO_CENTRO"]."</th></tr>";
 
