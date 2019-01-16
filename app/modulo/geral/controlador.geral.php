@@ -870,7 +870,7 @@ ini_set('session.gc_maxlifetime','1200');*/
 			}
     }
 	}
-  $centro_html .=$modulo_html."</table>";
+  $centro_html .=$modulo_html;
 	
     $table = '<table>'.$centro_html.'</table>';
     if ($modulos)
