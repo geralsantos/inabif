@@ -536,6 +536,11 @@ class geral extends App{
     /*  */
     $periodo_mes = $_POST["periodo_mes"];
     $periodo_anio = $_POST["periodo_anio"];
+    $matriz_consolidado = "SELECT * FROM matriz_consolidado WHERE periodo_mes=".date("m",strtotime($periodo_mes))." AND periodo_anio=".$periodo_anio;
+    $matriz_consolidado = $modelo->executeQuery($matriz_consolidado);
+    if (!$matriz_consolidado) {
+      return false;
+    }
     $month = $periodo_anio."-".$periodo_mes;
     $aux = date('d', strtotime("{$month} + 1 month"));
 
@@ -763,16 +768,16 @@ class geral extends App{
     $modelo = new modeloPortada();
     $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
 	$id_residente = $_POST["id_residente"];
-	/*
+	
 	if (SUPERVISOR == $nivel || USER_SEDE == $nivel) {
 		$tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
-		$where = " AND tipo_centro_id = ".$tipo_centro;
-	}else if (REGISTRADOR ==$nivel || RESPONSABLE_INFORMACION ==$nivel){
+		$where = " AND ca.tipo_centro_id = ".$tipo_centro;
+	}else if (REGISTRADOR ==$nivel || RESPONSABLE_INFORMACION ==$nivel || RESPONSABLE_INFORMACION ==$nivel){
 		$centro_id = $_SESSION["usuario"][0]["CENTRO_ID"];
-		$where = " AND centro_id = ".$centro_id;
+		$where = " AND ca.centro_id = ".$centro_id;
 	}else if(ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel){
 		$where ="";
-	}*/
+	}
     $residente = "select distinct re.nombre as nombre_residente,tc.id as tipo_centro_id from residente re
 	inner join centro_atencion ca on(ca.id=re.centro_id)
 	inner join tipo_centro tc on(tc.id=re.tipo_centro_id)
@@ -791,6 +796,15 @@ class geral extends App{
     $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
     $id_residente = $_POST["id_residente"];
     $tipo_centro_id = $_POST["tipo_centro_id"];
+    if (SUPERVISOR == $nivel || USER_SEDE == $nivel) {
+      $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+      $where = " AND ca.tipo_centro_id = ".$tipo_centro;
+    }else if (REGISTRADOR ==$nivel || RESPONSABLE_INFORMACION ==$nivel || RESPONSABLE_INFORMACION ==$nivel){
+      $centro_id = $_SESSION["usuario"][0]["CENTRO_ID"];
+      $where = " AND ca.centro_id = ".$centro_id;
+    }else if(ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel){
+      $where ="";
+    }
     switch ($tipo_centro_id) {
 		case '1': /*ppd*/
 		$parent_id="2,25";
@@ -809,7 +823,7 @@ class geral extends App{
     $modulo_html = "<table>";
 	$modulos = "select m.nombre as nombre_modulo,m.nombre_tabla
 	from modulos m
-    where m.centro_id in (".$tipo_centro_id.") and m.parent_id  in (".$parent_id.") order by m.id desc";
+    where m.parent_id  in (".$parent_id.") ".$where." order by m.id desc";
     $modulos = $modelo->executeQuery($modulos);
 
     foreach ($modulos as $key => $modulo)
