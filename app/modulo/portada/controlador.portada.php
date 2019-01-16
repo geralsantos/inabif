@@ -422,11 +422,11 @@ class portada extends App{
 		  $sql = "select max(ca.id) as id_centro,max(ca.NOM_CA ) as nombre_centro,max(cad.estado_completo) as estado_completo, max(cad.fecha_matriz) as fecha_matriz, max(cad.fecha_cierre) as fecha_cierre from centro_atencion ca left join centro_atencion_detalle cad on (cad.centro_id=ca.id) left join tipo_centro tc on (ca.tipo_centro_id=tc.id) where ca.estado = 1 group by ca.id order by ca.id desc";
         }else if($_SESSION["usuario"][0]["NIVEL"]==USER_SEDE) //USER_SEDE
         {
-          $sql = "select max(ca.id) as id_centro,max(ca.NOM_CA ) as nombre_centro,max(cad.estado_completo) as estado_completo, max(cad.fecha_matriz) as fecha_matriz, cad.id, max(cad.fecha_cierre) as fecha_cierre  from centro_atencion ca
+          $sql = "select max(ca.id) as id_centro,max(ca.NOM_CA ) as nombre_centro,max(cad.estado_completo) as estado_completo, max(cad.fecha_matriz) as fecha_matriz, max(cad.fecha_cierre) as fecha_cierre  from centro_atencion ca
           left join centro_atencion_detalle cad on (cad.centro_id=ca.id)
           left join tipo_centro tc on (ca.tipo_centro_id=tc.id)
           where tc.id=".$_SESSION["usuario"][0]["TIPO_CENTRO_ID"]." and ca.estado = 1 group by ca.id order by ca.id desc";
-        }else if($_SESSION["usuario"][0]["NIVEL"]==REGISTRADOR) //USER_SEDE
+        }else if($_SESSION["usuario"][0]["NIVEL"]==REGISTRADOR) //REGISTRADOR
         {
           $sql = "select distinct ca.id as id_centro,ca.NOM_CA as nombre_centro,cad.estado_completo, cad.fecha_matriz, cad.id, cad.fecha_cierre  from centro_atencion ca
           left join centro_atencion_detalle cad on (cad.centro_id=ca.id)
