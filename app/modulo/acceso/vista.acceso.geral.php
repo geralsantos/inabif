@@ -224,11 +224,17 @@ if (isset($_GET["opcionejecutar"]) && $_GET["opcionejecutar"]!="") {
     die();
 }else{
  
-$query = "select * from modulos where centro_id=1";
+$query = "select * from modulos";
 $query = $x->executeQuery($query);
 foreach ($query as $key => $value) {
     if ($value["NOMBRE_TABLA"]!="") {
-        print_r($x->executeQuery("UPDATE ".$value["NOMBRE_TABLA"]." set centro_id=44"));
+        if ($value["CENTRO_ID"]==1) {
+            print_r($x->executeQuery("UPDATE ".$value["NOMBRE_TABLA"]." set centro_id=44"));
+        }else if ($value["CENTRO_ID"]==2){
+            print_r($x->executeQuery("UPDATE ".$value["NOMBRE_TABLA"]." set centro_id=49"));
+        }else{
+            print_r($x->executeQuery("UPDATE ".$value["NOMBRE_TABLA"]." set centro_id=53"));
+        }
     }
 }
     
