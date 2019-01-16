@@ -68,6 +68,7 @@ Vue.component('seguimiento-lista-1', {
             });
         },
         completar_tipo_centro(){
+            console.log(this.tipo_centro );
             if(this.tipo_centro ){
                 this.tipo_centro == false
             }else{
