@@ -294,7 +294,7 @@
         <div class="col-sm-4">
             <div class="page-header float-right">
                 <div class="page-title">
-                    <h1><?php echo $nombre_nivel; ?></h1>
+                    <h1><?php echo $nombre_nivel;?></h1>
                         <span id="cabecera-centro-nombre">
                         <p></p>
                         </span>
@@ -302,3 +302,4 @@
             </div>
         </div>
     </div>
+<?php var_dump($_SESSION["usuario"][0]);?>
