@@ -145,11 +145,14 @@ Vue.component('seguimiento-lista-1', {
                     }
                     if(this.acceso_completar){
                         this.completar_matriz(id_centro);
+                        
                     }else{
-                        swal("", "No puede cambiar el estado hasta que los grupos estén completados", "error")
+                        swal("", "No puede cambiar el estado hasta que los grupos estén completados", "error");
+                        this.buscar_centros();
                     }
                 }else{
                     swal("", "Ha ocurrido un error", "error");
+                    this.buscar_centros();
                 }
 
             });
