@@ -850,7 +850,7 @@ ini_set('session.gc_maxlifetime','1200');*/
       {
         $modulo_html ="<tr><th></th><th>Nombre del Modulo</th></tr>";
         $modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td></tr>";
-				echo $grupos = "select ".$campos[$modulo["NOMBRE_TABLA"]]." from ".$modulo["NOMBRE_TABLA"]." where  periodo_mes=".date("n")." and periodo_anio=".date("Y")." and residente_id= ". $id_residente." and centro_id=".$centro["ID"]." order by id desc";
+				$grupos = "select ".$campos[$modulo["NOMBRE_TABLA"]]." from ".$modulo["NOMBRE_TABLA"]." where  periodo_mes=".date("n")." and periodo_anio=".date("Y")." and residente_id= ". $id_residente." and centro_id=".$centro["ID"]." order by id desc";
 				$grupos = $modelo->executeQuery($grupos);
 
         $grupo_html = "";
@@ -858,7 +858,6 @@ ini_set('session.gc_maxlifetime','1200');*/
 				foreach ($grupos as $key => $grupo)
 				{
 					if (!in_array($grupo["RESIDENTE_ID"],$residente_repite)) {
-            if ($this->buscar_columna($grupo,array("ID","RESIDENTE_ID","FECHA_CREACION",""))) {
               if ($key==0) {
                 $keys = array_keys($grupo);
                 $grupo_html .="<tr><th></th>";
@@ -875,7 +874,6 @@ ini_set('session.gc_maxlifetime','1200');*/
               }
               $grupo_html .= "</tr>";
               $residente_repite[]=$grupo["RESIDENTE_ID"];
-            }
           }
         }
 				$html .= $modulo_html.$grupo_html;
