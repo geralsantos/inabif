@@ -830,7 +830,7 @@ class geral extends App{
 	{
 		$centro_html .= "<table>";
 		$centro_html .="<tr><th>Nombre del Centro</th><th>Tipo de Centro</th></tr>";
-		$centro_html .="<tr><th>".$centro["NOMBRE_CENTRO"]."</th><th>".$centro["NOMBRE_TIPO_CENTRO"]."</th></tr></table>";
+		$centro_html .="<tr><th>".$centro["NOMBRE_CENTRO"]."</th><th>".$centro["NOMBRE_TIPO_CENTRO"]."</th></tr>";
 
 		$modulos = "select m.parent_id,m.nombre as nombre_modulo,m.nombre_tabla from modulos m 
 			where m.centro_id in (".$centro["TIPO_CENTRO_ID"].") ";
@@ -866,8 +866,9 @@ class geral extends App{
 				}
 				$modulo_html .=$grupo_html;
 			}
+			$modulo_html .="</table>";
 		}
-		$modulo_html .="</table>";
+		$centro_html .="</table>";
 	}
 	
     $table = '<table><tr><td>'.$centro_html.'</td></tr><tr><td>'.$modulo_html.'</td></tr></table>';
