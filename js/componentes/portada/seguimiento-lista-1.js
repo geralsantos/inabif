@@ -70,6 +70,7 @@ Vue.component('seguimiento-lista-1', {
         completar_tipo_centro(){
             if(this.acceso_generar==false){
                 swal("", "Todas las matrices deben estar generadas", "error");
+                return false;
             }
             let estado = 1;
             if(this.tipo_centro){
