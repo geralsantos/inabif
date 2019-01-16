@@ -823,6 +823,8 @@ class geral extends App{
 	$centros = "select distinct ca.nom_ca as nombre_centro,ca.tipo_centro_id,tc.nombre as nombre_tipo_centro from centro_atencion ca 
 	left join tipo_centro tc on(ca.tipo_centro_id=tc.id) ".$where." ";
 	$centros = $modelo->executeQuery($centros);
+	$centro_html="";
+	$modulo_html = "";
 
 	foreach ($centros as $key => $centro) 
 	{
@@ -865,9 +867,9 @@ class geral extends App{
 				$modulo_html .=$grupo_html;
 			}
 		}
+		$modulo_html .="</table>";
 	}
 	
-    $modulo_html .="</table>";
     $table = '<table><tr><td>'.$centro_html.'</td></tr><tr><td>'.$modulo_html.'</td></tr></table>';
     if ($modulos)
     {
