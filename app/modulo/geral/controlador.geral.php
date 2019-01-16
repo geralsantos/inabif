@@ -823,13 +823,12 @@ class geral extends App{
 	$centros = "select distinct ca.nom_ca as nombre_centro,ca.tipo_centro_id,tc.nombre as nombre_tipo_centro from centro_atencion ca 
 	left join tipo_centro tc on(ca.tipo_centro_id=tc.id) ".$where." ";
 	$centros = $modelo->executeQuery($centros);
-	$centro_html="<table>";
 	$modulo_html = "";
-
 	foreach ($centros as $key => $centro) 
 	{
-		$centro_html ="<tr><th>Nombre del Centro</th><th>Tipo de Centro</th></tr>";
-		$centro_html ="<tr><th>".$centro["NOMBRE_CENTRO"]."</th><th>".$centro["NOMBRE_TIPO_CENTRO"]."</th></tr>";
+    $centro_html= "";
+		$centro_html .="<tr><th>Nombre del Centro</th><th>Tipo de Centro</th></tr>";
+		$centro_html .="<tr><td>".$centro["NOMBRE_CENTRO"]."</td><td>".$centro["NOMBRE_TIPO_CENTRO"]."</td></tr>";
 
 		$modulos = "select m.parent_id,m.nombre as nombre_modulo,m.nombre_tabla from modulos m 
 			where m.centro_id in (".$centro["TIPO_CENTRO_ID"].") ";
@@ -838,8 +837,8 @@ class geral extends App{
 		foreach ($modulos as $key => $modulo)
 		{
 			if (($modulo["NOMBRE_TABLA"])!="") {
-				$modulo_html ="<tr><th></th><th>Nombre del Modulo</th></tr>";
-				$modulo_html ="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td></tr>";
+				$modulo_html .="<tr><th></th><th>Nombre del Modulo</th></tr>";
+				$modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td></tr>";
 
 				$grupos = "select distinct * from ".$modulo["NOMBRE_TABLA"]." where residente_id= ". $id_residente."";
 				$grupos = $modelo->executeQuery($grupos);
@@ -865,11 +864,11 @@ class geral extends App{
 				}
 				$modulo_html .=$grupo_html;
 			}
-		}
+    }
 	}
-	$centro_html .=$modulo_html."</table>";
+  $centro_html .=$modulo_html."</table>";
 	
-    $table = '<table><tr><td>'.$centro_html.'</td></tr></table>';
+    $table = '<table><tr><td><table>'.$centro_html.'</table></td></tr></table>';
     if ($modulos)
     {
       echo json_encode(array("data"=>$table) ) ;
