@@ -841,8 +841,8 @@ ini_set('session.gc_maxlifetime','1200');*/
 		foreach ($modulos as $key => $modulo)
 		{
 			if (($modulo["NOMBRE_TABLA"])!="") {
-				$modulo_html .="<tr><th></th><th>Nombre del Modulo</th></tr>";
-				$modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td></tr>";
+				$modulo_html ="<tr><th></th><th>Nombre del Modulo</th></tr>";
+				$modulo_html ="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td></tr>";
 
 				$grupos = "select distinct * from ".$modulo["NOMBRE_TABLA"]." where residente_id= ". $id_residente."";
 				$grupos = $modelo->executeQuery($grupos);
