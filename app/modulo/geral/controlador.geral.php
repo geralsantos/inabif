@@ -823,7 +823,7 @@ class geral extends App{
     $modulo_html = "<table>";
 	$modulos = "select m.nombre as nombre_modulo,m.nombre_tabla
 	from modulos m
-    where m.parent_id  in (".$parent_id.") ".$where." order by m.id desc";
+    where m.parent_id  in (".$parent_id.") ".$where." order by m.id asc";
     $modulos = $modelo->executeQuery($modulos);
 
     foreach ($modulos as $key => $modulo)
@@ -831,7 +831,7 @@ class geral extends App{
 		$modulo_html .="<tr><th></th><th>Nombre del Modulo</th></tr>";
 		$modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td></tr>";
 
-		$grupos = "select distinct * from ".$modulo["NOMBRE_TABLA"]." where residente_id= ". $id_residente." order by id desc";
+		echo $grupos = "select distinct * from ".$modulo["NOMBRE_TABLA"]." where residente_id= ". $id_residente." order by id desc";
 		$grupos = $modelo->executeQuery($grupos);
 
 		$grupo_html = "<table>";
