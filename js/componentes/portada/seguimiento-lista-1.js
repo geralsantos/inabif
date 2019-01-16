@@ -138,7 +138,7 @@ Vue.component('seguimiento-lista-1', {
                 if(response.body.data){
                     
                     for (let index = 0; index < response.body.data.length; index++) {
-                        if(isempty(response.body.data[index]["FECHA_MATRIZ"])){
+                        if(isempty(response.body.data[index]["ESTADO_COMPLETO"])){
                             this.acceso_completar= false;
                         }
                         
