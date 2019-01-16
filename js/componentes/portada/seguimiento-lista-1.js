@@ -7,7 +7,7 @@ Vue.component('seguimiento-lista-1', {
         completo:false,
        centros:[],
        usuario:[],
-       tipo_centro:true,
+       tipo_centro:false,
        tipo_centro_completado : [],
        fecha:null,
        acceso_generar :true,
@@ -68,13 +68,13 @@ Vue.component('seguimiento-lista-1', {
             });
         },
         completar_tipo_centro(){
-       /*     if(this.acceso_generar==false){
+          if(this.acceso_generar==false){
                 this.tipo_centro = false;
                 swal("", "Todas las matrices deben estar generadas", "error");
                 return false;
             }
 
-            */
+         
             let estado = 1;
             if(this.tipo_centro){
                 estado = 0;
