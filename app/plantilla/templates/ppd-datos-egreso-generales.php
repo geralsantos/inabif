@@ -126,7 +126,7 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">CONSTANCIA DE NACIMIENTO</label>
+                                <label for="text-input" class=" form-control-label">Constancia de Nacimiento</label>
                                 <select name="CarConstanciaNacimiento" v-model="CarConstanciaNacimiento" class="form-control">
                                 <option value="Si">Si</option>
                                     <option value="No">No</option>
