@@ -18,7 +18,8 @@ class modeloPortada extends MySQL{
     $res = $this->executeQuery($sql );
     if ($res)
     {
-      echo json_encode(array("data"=>$res) ) ;
+     // echo json_encode(array("data"=>$res) ) ;
+     return $res;
     }else{
       return false;
     }

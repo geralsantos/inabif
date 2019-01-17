@@ -439,7 +439,7 @@ class portada extends App{
         if ($res){
           foreach ($centros as $key => $value) {
             $contador=0;
-            $grupos = buscar_grupos( $value["ID_CENTRO"]);
+            $grupos = $modelo->buscar_grupos( $value["ID_CENTRO"]);
             foreach($grupos as $key2 => $value2){
               if($value2["ESTADO_COMPLETO"] == ''){
                 $contador++;
