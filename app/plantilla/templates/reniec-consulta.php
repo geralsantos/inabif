@@ -15,22 +15,24 @@
                         </div>
                     </div>
 <br>
-                    <div class="form-group col-md-6">
-                        <label for="text-input" class=" form-control-label">Buscar Residente <i class="fa fa-search" aria-hidden="true"></i></label>
-                        <div class="autocomplete">
-                            <input type="text"  v-model="nombre_residente" class="form-control campo_busqueda_residente" @keyup="buscar_residente()" placeholder="Nombre, Apellido o DNI"/>
-                            <ul  id="autocomplete-results" class="autocomplete-results" v-if="bloque_busqueda">
-                                <li class="loading" v-if="isLoading">
-                                    Loading results...
-                                </li>
-                                <li  @click="actualizar(coincidencia)" class="autocomplete-result" v-for="coincidencia in coincidencias">
-                                    {{coincidencia.ID}} - {{coincidencia.NOMBRE}} {{coincidencia.APELLIDO_P}} - {{coincidencia.DNI_RESIDENTE}} - {{coincidencia.DOCUMENTO}}
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
                     <form  class="form-horizontal"  v-on:submit.prevent="guardar">
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="text-input" class=" form-control-label">Buscar Residente <i class="fa fa-search" aria-hidden="true"></i></label>
+                                <div class="autocomplete">
+                                    <input type="text"  v-model="nombre_residente" class="form-control campo_busqueda_residente" @keyup="buscar_residente()" placeholder="Nombre, Apellido o DNI"/>
+                                    <ul  id="autocomplete-results" class="autocomplete-results" v-if="bloque_busqueda">
+                                        <li class="loading" v-if="isLoading">
+                                            Loading results...
+                                        </li>
+                                        <li  @click="actualizar(coincidencia)" class="autocomplete-result" v-for="coincidencia in coincidencias">
+                                            {{coincidencia.ID}} - {{coincidencia.NOMBRE}} {{coincidencia.APELLIDO_P}} - {{coincidencia.DNI_RESIDENTE}} - {{coincidencia.DOCUMENTO}}
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <div class=" "><label for="text-input" class=" form-control-label">Apellidos Paterno</label>
