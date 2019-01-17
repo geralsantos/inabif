@@ -15,7 +15,6 @@
                         </div>
                     </div>
 <br>
-                <div class="row">
                     <div class="form-group col-md-6">
                         <label for="text-input" class=" form-control-label">Buscar Residente <i class="fa fa-search" aria-hidden="true"></i></label>
                         <div class="autocomplete">
@@ -68,7 +67,6 @@
                             </div>
                         </div>
                     </form>
-                </div>
                 </div>
             </div>
         </div>
