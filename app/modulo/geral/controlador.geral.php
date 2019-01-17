@@ -970,12 +970,10 @@ ini_set('session.gc_maxlifetime','1200');*/
       echo "geral";
       $soap_client = new SoapClient("https://ws5.pide.gob.pe/services/ReniecConsultaDni?wsdl");
       echo "geral2";
-    $vec = array("symbol"=>"DOX");
-    $quote = $soap_client->GetQuote($vec);
-    echo "geral3";
-    echo $quote->GetQuoteResult;
-    } catch (SoapFault $exception) {
-      echo $exception->getMessage();
-    }
+      echo "geral3";
+      print_r($soap_client);
+      } catch (SoapFault $exception) {
+        echo $exception->getMessage();
+      }
   }
 }
