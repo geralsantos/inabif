@@ -91,7 +91,7 @@ Vue.component('seguimiento-lista-1', {
             }
             this.$http.post('completar_tipo_centro?view',{estado:estado}).then(function(response){
                 if( response.body.resultado){
-                    this.buscar_tipo_centro();
+                    this.traer_tipo_centro_completado();
                     swal("", "Cambio realizado", "success");
                 }else{
                     swal("", "Ha ocurrido un error", "error");
