@@ -963,7 +963,7 @@ ini_set('session.gc_maxlifetime','1200');*/
   public function consulta_reniec(){
     $modelo = new modeloPortada();
     $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
-    $id_residente = $_POST["id_residente"];
+    $dni = $_POST["dni"];
     $nivel = $_SESSION["usuario"][0]["NIVEL"];
 
     try {
