@@ -199,7 +199,7 @@ class portada extends App{
     public function ejecutar_consulta(){
       if( $_POST['like']){
         $modelo = new modeloPortada();
-        $word = strtolower($_POST['like']);
+      echo   $word = ($_POST['like']);
         $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
         if ($tipo_centro_id == PPD) {
           $campo = "nd.Numero_Documento ";
