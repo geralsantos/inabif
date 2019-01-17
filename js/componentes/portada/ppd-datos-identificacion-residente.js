@@ -108,13 +108,13 @@ Vue.component('ppd-datos-identificacion-residente', {
                   swal("", "Un error ha ocurrido", "error");
                 }
             });*/
-            let valores_arr = Object.values(valores);
+           /* let valores_arr = Object.values(valores);
                 for (let index = 0; index < valores_arr.length; index++) {
                     if (isempty(valores_arr[index])) {
                         swal('Error', 'Debe llenar todos los campos', 'warning');
                         return false;
                     }
-                }
+                }*/
                 if (isempty(this.id_residente)) {
                     let valores_residente = {
 
