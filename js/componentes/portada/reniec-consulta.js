@@ -1,6 +1,10 @@
 Vue.component('reniec-consulta', {
     template:'#reniec-consulta',
     data:()=>({
+        Apellido_p:null,
+        Apellido_m:null,
+        Nombres:null,
+        NumDoc:null,
         nombre_residente:null,
         isLoading:false,
         mes:moment().format("M"),
@@ -55,6 +59,10 @@ Vue.component('reniec-consulta', {
             this.coincidencias = [];
             this.bloque_busqueda = false;
 
+            this.Apellido_p = coincidencia.APELLIDO_P;
+            this.Apellido_m = coincidencia.APELLIDO_M;
+            this.Nombres = coincidencia.NOMBRE;
+            this.NumDoc = coincidencia.DNI_RESIDENTE;
             /*this.$http.post('cargar_datos_residente?view',{tabla:'CarIdentificacionUsuario', residente_id:this.id_residente }).then(function(response){
 
                 if( response.body.atributos != undefined){

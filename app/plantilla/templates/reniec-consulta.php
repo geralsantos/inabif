@@ -31,8 +31,44 @@
                             </ul>
                         </div>
                     </div>
+                    <form  class="form-horizontal"  v-on:submit.prevent="guardar">
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <div class=" "><label for="text-input" class=" form-control-label">Apellidos Paterno</label>
+                                <input type="text" v-model="Apellido_p" name="Apellido_p" placeholder="" class="form-control"> 
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <div class=" "><label for="text-input" class=" form-control-label">Apellido Materno</label>
+                                <input type="text" v-model="Apellido_m" name="Apellido_m" placeholder="" class="form-control"> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <div class=" "><label for="text-input" class=" form-control-label">Nombres</label>
+                                <input type="text" v-model="Nombres" name="Nombres" placeholder="" class="form-control"> </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <div class=" "><label for="text-input" class=" form-control-label">Número de documento</label>
+                                <input type="text" v-model="NumDoc" name="NumDoc" placeholder="" class="form-control"> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 text-center" >
+                                <button type="submit" class="btn btn-success btn-sm">
+                                    <i class="fa fa-send"></i> Consultar Reniec
+                                </button>
+                            </div>
+                            <div class="col-md-12 text-center" >
+                                <button type="submit" class="btn btn-success btn-sm">
+                                    <i class="fa fa-send"></i> Actualizar Reniec
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                    
                 </div>
             </div>
         </div>
