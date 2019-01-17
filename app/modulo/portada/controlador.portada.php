@@ -438,7 +438,7 @@ class portada extends App{
         $centros = $res;
         if ($res){
           foreach ($centros as $key => $value) {
-            $contador==0;
+            $contador=0;
             $grupos = buscar_grupos( $value["ID_CENTRO"]);
             foreach($grupos as $key2 => $value2){
               if($value2["ESTADO_COMPLETO"] == ''){
