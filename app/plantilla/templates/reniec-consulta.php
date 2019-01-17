@@ -62,7 +62,10 @@
                                     <i class="fa fa-send"></i> Consultar Reniec
                                 </button>
                             </div>
-                            <div class="col-md-12 text-center" >
+                            
+                        </div>
+                        <div class="row">
+                        <div class="col-md-12 text-center" >
                                 <button type="submit" class="btn btn-success btn-sm">
                                     <i class="fa fa-send"></i> Actualizar Reniec
                                 </button>
