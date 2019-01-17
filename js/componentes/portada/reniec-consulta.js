@@ -35,19 +35,7 @@ Vue.component('reniec-consulta', {
     created:function(){
     },
     mounted:function(){
-        this.buscar_paises();
-        this.buscar_lenguas();
-        this.buscar_departamentos();
-    },
-    updated:function(){
-    },
-    watch:{
-        Depatamento_Procedencia:function(val){
-            this.buscar_provincias();
-        },
-        Fecha_Nacimiento:function(val){
-            this.Edad = moment().diff(val, 'year');
-        }
+     
     },
     methods:{
         inicializar(){
