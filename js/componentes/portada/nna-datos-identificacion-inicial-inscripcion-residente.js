@@ -104,10 +104,10 @@ Vue.component('nna-datos-identificacion-inicial-inscripcion-residente', {
                 residente_apellido_materno: this.Ape_Materno,
                 residente_nombre: this.Nom_Usuario,
                 pais_procedente_id: this.pais_procedente_id,
-                departamento_procedente_id: this.departamento_procedente_id,
-                departamento_nacimiento_id: this.departamento_nacimiento_id,
-                provincia_nacimiento_id: this.provincia_nacimiento_id,
-                distrito_nacimiento_id: this.distrito_nacimiento_id,
+                departamento_procedente_id: this.departamento_procedente_id || null,
+                departamento_nacimiento_id: this.departamento_nacimiento_id || null,
+                provincia_nacimiento_id: this.provincia_nacimiento_id || null,
+                distrito_nacimiento_id: this.distrito_nacimiento_id || null,
                 sexo: this.Sexo,
                 fecha_nacimiento:  moment(this.Fecha_Nacimiento, "YYYY-MM-DD").format("YY-MMM-DD"),
                 edad: this.Edad,
@@ -116,7 +116,7 @@ Vue.component('nna-datos-identificacion-inicial-inscripcion-residente', {
                 Periodo_Mes: moment().format("MM"),
                 Periodo_Anio:moment().format("YYYY")
                 }
-                let valores_arr = Object.values(valores);
+                /*let valores_arr = Object.values(valores);
                 for (let index = 0; index < valores_arr.length; index++) {
                     if (isempty(valores_arr[index])) {
                        if(valores_arr[index]!='0'){
@@ -125,7 +125,7 @@ Vue.component('nna-datos-identificacion-inicial-inscripcion-residente', {
                        }
 
                     }
-                }
+                }*/
                 if (isempty(this.id_residente)) {
                     let valores_residente = {
 
@@ -133,9 +133,9 @@ Vue.component('nna-datos-identificacion-inicial-inscripcion-residente', {
                         apellido_p : this.Ape_Paterno,
                         apellido_m : this.Ape_Materno,
                         pais_id : this.pais_procedente_id,
-                        departamento_naci_cod : this.departamento_nacimiento_id,
-                        provincia_naci_cod : this.provincia_nacimiento_id,
-                        distrito_naci_cod : this.distrito_nacimiento_id,
+                        departamento_naci_cod : this.departamento_nacimiento_id || null,
+                        provincia_naci_cod : this.provincia_nacimiento_id || null,
+                        distrito_naci_cod : this.distrito_nacimiento_id || null,
                         sexo: this.Sexo,
                         fecha_naci :  moment(this.Fecha_Nacimiento, "YYYY-MM-DD").format("YY-MMM-DD"),
                         edad: this.Edad,
