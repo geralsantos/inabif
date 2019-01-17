@@ -117,6 +117,23 @@ Vue.component('reniec-consulta', {
             this.Nombres = residente.NOMBRE;
             this.NumDoc = residente.DNI_RESIDENTE;
 
+        },
+        consulta_reniec(){
+            if (!isempty(this.id_residente)) {
+                let where = {dni:this.NumDoc}
+                this.$http.post('consulta_reniec?view',where).then(function(response){
+
+                    if( response.body.data != undefined){
+                        this.modal_lista = true;
+                        this.isLoading = false;
+                        this.pacientes = response.body.data;
+                    }else{
+                        swal("", "No existe él residente", "error")
+                    }
+                });
+            }else{
+                swal("", "No hay residente seleccionado", "error")
+            }
         }
 
     }
