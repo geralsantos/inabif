@@ -1,6 +1,7 @@
 Vue.component('reniec-consulta', {
     template:'#reniec-consulta',
     data:()=>({
+        nombre_residente:null,
         isLoading:false,
         mes:moment().format("M"),
         anio:(new Date()).getFullYear(),
