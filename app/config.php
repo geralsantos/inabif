@@ -72,4 +72,4 @@ $READY = array("");
 define ('URL_ARCHIVOS_ADJUNTOS',APP.DS.'cargas');
 define( "URL_PDF", SITE_URL_DIR."app/cargas/" );
 define( "URL_PDF_2", SITE_URL_DIR."portal/index" );
-define("NUSOAP",APP.DS.'libreria'.DS.'nusoap'.DS.'nusoap-0.9.5'.DS.'lib'.'nusoap.php');
+define("NUSOAP",APP.DS.'libreria'.DS.'nusoap'.DS.'nusoap-0.9.5'.DS.'lib'.DS.'nusoap.php');
