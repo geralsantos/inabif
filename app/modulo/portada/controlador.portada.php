@@ -196,6 +196,21 @@ class portada extends App{
         return false;
       }
     }
+    public function inhabilitar_centro(){
+
+      if( $_POST['tabla']){
+        $modelo = new modeloPortada();
+        $id = $_POST["id"];
+        $res = $modelo->updateData("centro_atencion",array("estado"=>0),array("id"=>$id));
+        if ($res) {
+            echo json_encode(array("resultado"=>true )) ;
+        }else{
+          return false;
+        }
+      }else{
+        return false;
+      }
+    }
     public function ejecutar_consulta(){
       if( $_POST['like']){
         $modelo = new modeloPortada();

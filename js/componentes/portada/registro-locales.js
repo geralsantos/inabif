@@ -110,7 +110,7 @@ Vue.component('registro-locales', {
               .then((willDelete) => {
                 if (willDelete) {
                     let where = {id:centro.ID}
-                    this.$http.post('delete_datos?view',{tabla:'centro_atencion',where:where}).then(function(response){
+                    this.$http.post('inhabilitar_centro?view',{tabla:'centro_atencion',where:where}).then(function(response){
                         if( response.body.resultado ){
                             swal("Local Eliminado!", {
                                 icon: "success",
