@@ -54,7 +54,7 @@ Vue.component('seguimiento-lista-1', {
             });
         },
         buscar_tipo_centro(){
-            this.$http.post('traer_tipo_centro_completado?view',{}).then(function(response){
+            this.$http.post('buscar_tipo_centro?view',{}).then(function(response){
 
                 if( response.body.data != undefined){
                     console.log( response.body.data)
