@@ -35,20 +35,20 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <div class=" "><label for="text-input" class=" form-control-label">Apellidos Paterno</label>
-                                <input type="text" v-model="Apellido_p" name="Apellido_p" placeholder="" class="form-control"> 
+                                <div class=" "><label for="text-input" class=" form-control-label">Apellido Paterno</label>
+                                <input type="text" v-model="Apellido_p" disabled name="Apellido_p" placeholder="" class="form-control"> 
                                 </div>
                             </div>
                             <div class="form-group col-md-6">
                                 <div class=" "><label for="text-input" class=" form-control-label">Apellido Materno</label>
-                                <input type="text" v-model="Apellido_m" name="Apellido_m" placeholder="" class="form-control"> 
+                                <input type="text" v-model="Apellido_m" disabled name="Apellido_m" placeholder="" class="form-control"> 
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <div class=" "><label for="text-input" class=" form-control-label">Nombres</label>
-                                <input type="text" v-model="Nombres" name="Nombres" placeholder="" class="form-control"> </div>
+                                <input type="text" v-model="Nombres" disabled name="Nombres" placeholder="" class="form-control"> </div>
                             </div>
                             <div class="form-group col-md-6">
                                 <div class=" "><label for="text-input" class=" form-control-label">Número de documento</label>
