@@ -435,9 +435,30 @@ class portada extends App{
         }
 
         $res = $modelo->executeQuery($sql);
-        if ($res)
-        {
-          echo json_encode(array("data"=>$res,"nivel_usuario"=>$_SESSION["usuario"][0]["NIVEL"]) ) ;
+        $centros = $res
+        if ($res){
+          foreach ($centros as $key => $value) {
+            $contador==0;
+            $grupos = buscar_grupos( $value["ID_CENTRO"]);
+            foreach($grupos as $key2 => $value2){
+              if($value2["ESTADO_COMPLETO"] == ''){
+                $contador++;
+                break;
+              }
+            }
+            if($contador==0){
+              $insert = $modelo->insertData("centro_atencion_detalle",array("centro_id"=>$value["ID_CENTRO"],"estado_completo"=>1,"usuario_crea"=>$_SESSION["usuario"][0]["ID"],"usuario_edita"=>$_SESSION["usuario"][0]["ID"] ));
+              if($insert){
+                $centros["completado"] = 'SI';
+              }
+            }else{
+              $centros["completado"] = 'NO';
+            }
+
+          }
+
+         
+          echo json_encode(array("data"=>$centros,"nivel_usuario"=>$_SESSION["usuario"][0]["NIVEL"]) ) ;
         }else{
           return false;
         }
