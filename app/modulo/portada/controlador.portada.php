@@ -200,8 +200,8 @@ class portada extends App{
 
       if( $_POST['tabla']){
         $modelo = new modeloPortada();
-        $id = $_POST["id"];
-        $res = $modelo->updateData("centro_atencion",array("estado"=>0),array("id"=>$id));
+        $where = $_POST["where"];
+        $res = $modelo->updateData("centro_atencion",array("estado"=>0),$where);
         if ($res) {
             echo json_encode(array("resultado"=>true )) ;
         }else{
