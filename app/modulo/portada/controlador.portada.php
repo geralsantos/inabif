@@ -813,140 +813,65 @@ class portada extends App{
       return false;
     }
   }
-  public function campos_tipo_centro ($tipo_centro_id=""){
-    $campos = "";
-    switch ($tipo_centro_id) {
-      case '1': /*ppd*/
-      $campos = array('CarIdentificacionUsuario'=>'Ape_Paterno as "Apellido paterno",Ape_Materno as "Apellido materno", Nom_Usuario as "Nombre Usuario",(SELECT nombre FROM paises WHERE id=CarIdentificacionUsuario.Pais_Procencia) as "Pai­s de procedencia",(SELECT NOMDEPT FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as "Departamento de nac",(SELECT NOMPROV FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as "Provincia de nac del" ,(SELECT NOMPROV FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as "Distrito de nac",(CASE Sexo WHEN \'h\' THEN 2 WHEN \'m\' THEN 1 END) as Sexo,Fecha_Nacimiento,(SELECT nombre from pam_lengua_materna WHERE id = CarIdentificacionUsuario.Lengua_Materna) as "Lengua Materna"','CarDatosAdmision'=>'Fecha_Ingreso as "Fecha de Ingreso",(SELECT nombre FROM pam_instituciones WHERE id=CarDatosAdmision.Institucion_derivado) as "Entidad que lo deriva",Motivo_Ingreso  as "Motivo ingreso PRINCIPAL",Numero_Documento as "Número documento de Ingreso"','CarCondicionIngreso'=>'DNI as "DNI",(SELECT nombre FROM pam_tipo_documento_identidad WHERE id=CarCondicionIngreso.Tipo_Documento) as "Tipo de Documento", Numero_Documento as "Número de Documento", Posee_Pension as "Pensión", (SELECT nombre FROM pam_tipo_pension WHERE id=CarCondicionIngreso.Tipo_Pension) as "Tipo de Pensión",Lee_Escribe as "Sabe Leer y Escribir", (SELECT nombre FROM pam_nivel_educativo where id=CarCondicionIngreso.id) as "Nivel Educativo", (SELECT nombre FROM pam_clasif_socioeconomico where id = CarCondicionIngreso.Clasficacion_Socioeconomica) as "SISFOH",(SELECT nombre FROM pam_tipo_seguro_salud WHERE id=CarCondicionIngreso.Tipo_Seguro) as "Aseguramiento"','CarSaludNutricion'=>array('Discapacidad, Discapacidad_Fisica as "Presenta discap. física", Discapacidad_Intelectual as "Presenta discap. intelectual", Discapacidad_Sensorial as "Presenta discap. sensorial", Discapacidad_mental as "Presenta discap. mental",Carnet_CONADIS as "Carnet CONADIS",Motivo_Movilidad as "Dificultad Desplazamiento",Patologia1 as "Patología Crónica 1", (SELECT nombre FROM pam_tipo_patologia WHERE id =CarSaludNutricion.Tipo_Patologia1) as "Tipo de Patología",Especifique1  as "Especifique"','Nivel_Hemoglobina as "Nivel de Hemoglobina", Peso as "Peso (Kg.)",Talla as "Talla (m)",Estado_Nutricional as "Estado Nutricional(IMC)"'),'CarSaludMental'=>'');
-      break;
-      case '2': /*pam*/
-      $campos = array('pam_datos_identificacion'=>'residente_apellido_paterno as "Apellido paterno",residente_apellido_materno as "Apellido materno", residente_nombre as "Nombre Usuario",(SELECT nombre FROM paises WHERE id=pam_datos_identificacion.pais_procedente_id) as "Pai­s de procedencia",(SELECT NOMDEPT FROM ubigeo WHERE coddist=pam_datos_identificacion.distrito_nacimiento_id) as "Departamento de nac",(SELECT NOMPROV FROM ubigeo WHERE coddist=pam_datos_identificacion.distrito_nacimiento_id) as "Provincia de nac del" ,(SELECT NOMPROV FROM ubigeo WHERE coddist=pam_datos_identificacion.distrito_nacimiento_id) as "Distrito de nac",(CASE sexo WHEN \'h\' THEN 2 WHEN \'m\' THEN 1 END) as Sexo,fecha_nacimiento,(SELECT nombre from pam_lengua_materna WHERE id = pam_datos_identificacion.lengua_materna) as "Lengua Materna"','CarDatosAdmision'=>'Fecha_Ingreso as "Fecha de Ingreso",(SELECT nombre FROM pam_instituciones WHERE id=CarDatosAdmision.Institucion_derivado) as "Entidad que lo deriva",Motivo_Ingreso  as "Motivo ingreso PRINCIPAL",Numero_Documento as "Número documento de Ingreso"','CarCondicionIngreso'=>'DNI as "DNI",(SELECT nombre FROM pam_tipo_documento_identidad WHERE id=CarCondicionIngreso.Tipo_Documento) as "Tipo de Documento", Numero_Documento as "Número de Documento", Posee_Pension as "Pensión", (SELECT nombre FROM pam_tipo_pension WHERE id=CarCondicionIngreso.Tipo_Pension) as "Tipo de Pensión",Lee_Escribe as "Sabe Leer y Escribir", (SELECT nombre FROM pam_nivel_educativo where id=CarCondicionIngreso.id) as "Nivel Educativo", (SELECT nombre FROM pam_clasif_socioeconomico where id = CarCondicionIngreso.Clasficacion_Socioeconomica) as "SISFOH",(SELECT nombre FROM pam_tipo_seguro_salud WHERE id=CarCondicionIngreso.Tipo_Seguro) as "Aseguramiento"','CarSaludNutricion'=>array('Discapacidad, Discapacidad_Fisica as "Presenta discap. física", Discapacidad_Intelectual as "Presenta discap. intelectual", Discapacidad_Sensorial as "Presenta discap. sensorial", Discapacidad_mental as "Presenta discap. mental",Carnet_CONADIS as "Carnet CONADIS",Motivo_Movilidad as "Dificultad Desplazamiento",Patologia1 as "Patología Crónica 1", (SELECT nombre FROM pam_tipo_patologia WHERE id =CarSaludNutricion.Tipo_Patologia1) as "Tipo de Patología",Especifique1  as "Especifique"','Nivel_Hemoglobina as "Nivel de Hemoglobina", Peso as "Peso (Kg.)",Talla as "Talla (m)",Estado_Nutricional as "Estado Nutricional(IMC)"'),'CarSaludMental'=>'');
-      break;
-      case '3':
-      break;
-      default:
-      $parent_id="2,25";
-        break;
-    }
-    return $campos;
-  }
   public function descargar_reporte_matriz_nominal(){
-   /* ini_set('max_execution_time',0);
-ini_set('memory_limit', '600M');
-ini_set('session.gc_maxlifetime','1200');*/
     $modelo = new modeloPortada();
-    $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+    $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
     $id_residente = $_POST["id_residente"];
-    $nivel = $_SESSION["usuario"][0]["NIVEL"];
-    if (SUPERVISOR == $nivel || USER_SEDE == $nivel) {
-      $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
-      $where = " where ca.tipo_centro_id = ".$tipo_centro;
-    }else if (REGISTRADOR ==$nivel || RESPONSABLE_INFORMACION ==$nivel || RESPONSABLE_INFORMACION ==$nivel){
-      $centro_id = $_SESSION["usuario"][0]["CENTRO_ID"];
-      $where = " where ca.centro_id = ".$centro_id;
-    }else if(ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel){
-      $where ="";
-    }
-    $campos = "";
-    $tipo_centro_id;
-    
-	
-	$centros = "select distinct ca.id,ca.nom_ca as nombre_centro,ca.tipo_centro_id,tc.nombre as nombre_tipo_centro from centro_atencion ca 
-	left join tipo_centro tc on(ca.tipo_centro_id=tc.id) ".$where." order by ca.tipo_centro_id desc";
-	$centros = $modelo->executeQuery($centros);
-  $modulo_html = "";
-  $centro_html= "";
-  $html ="";
-  $html2 ="";
-	foreach ($centros as $key => $centro) 
-	{
-		$centro_html ="<tr><th>Nombre del Centro</th><th>Tipo de Centro</th></tr>";
-    $centro_html .="<tr><td>".$centro["NOMBRE_CENTRO"]."</td><td>".$centro["NOMBRE_TIPO_CENTRO"]."</td></tr>";
-    $campos = $this->campos_tipo_centro($centro["TIPO_CENTRO_ID"]);
-		$modulos = "select m.parent_id,m.nombre as nombre_modulo,m.nombre_tabla from modulos m 
-			where m.centro_id in (".$centro["TIPO_CENTRO_ID"].") order by m.id asc";
-		$modulos = $modelo->executeQuery($modulos);
-    $html = "";
-		foreach ($modulos as $key => $modulo)
-		{
-      
-      if (($modulo["NOMBRE_TABLA"])=="CarIdentificacionUsuario" || ($modulo["NOMBRE_TABLA"])=="CarDatosAdmision" || ($modulo["NOMBRE_TABLA"])=="CarCondicionIngreso" || ($modulo["NOMBRE_TABLA"])=="CarSaludNutricion"  ) 
-      {
-        $modulo_html ="<tr><th></th><th>Nombre del Modulo</th></tr>";
-        $modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td></tr>";
-        if (is_array($campos[$modulo["NOMBRE_TABLA"]])) {
-          foreach ($campos[$modulo["NOMBRE_TABLA"]] as $key => $value) {
-            $grupos = "select ".$value.",residente_id from ".$modulo["NOMBRE_TABLA"]." where  periodo_mes=".date("n")." and periodo_anio=".date("Y")." and residente_id= ". $id_residente." and centro_id=".$centro["ID"]." order by id desc";
-            $grupos = $modelo->executeQuery($grupos);
-            $grupo_html = "";
-            $residente_repite=array();
-            foreach ($grupos as $key => $grupo)
-            {
-              if (!in_array($grupo["RESIDENTE_ID"],$residente_repite)) {
-                  if ($key==0) {
-                    $keys = array_keys($grupo);
-                    $grupo_html .="<tr><th></th>";
-                    foreach ($keys as $key)
-                    {
-                      if ($key != "RESIDENTE_ID") {
-                        $grupo_html .="<th>$key</th>";
-                      }
-                    }
-                    $grupo_html .="</tr>";
-                  }
-                  $grupo_values = array_values($grupo);
-                  $grupo_html .= "<tr><td></td>";
-                  foreach ($grupo_values as $key => $value) {
-                    if(count($keys)!=($key+1)){
-                      $grupo_html .="<td>".$value."</td>";
-                    }
-                  }
-                  $grupo_html .= "</tr>";
-                  $residente_repite[]=$grupo["RESIDENTE_ID"];
-              }
-            }
-            $html .= $modulo_html.$grupo_html;
-          }
-        }else {
-          $grupos = "select ".$campos[$modulo["NOMBRE_TABLA"]].",residente_id from ".$modulo["NOMBRE_TABLA"]." where  periodo_mes=".date("n")." and periodo_anio=".date("Y")." and residente_id= ". $id_residente." and centro_id=".$centro["ID"]." order by id desc";
-          $grupos = $modelo->executeQuery($grupos);
-
-          $grupo_html = "";
-          $residente_repite=array();
-          foreach ($grupos as $key => $grupo)
-          {
-            if (!in_array($grupo["RESIDENTE_ID"],$residente_repite)) {
-                if ($key==0) {
-                  $keys = array_keys($grupo);
-                  $grupo_html .="<tr><th></th>";
-                  foreach ($keys as $key)
-                  {
-                    if ($key != "RESIDENTE_ID") {
-                      $grupo_html .="<th>$key</th>";
-                    }
-                  }
-                  $grupo_html .="</tr>";
-                }
-                $grupo_values = array_values($grupo);
-                $grupo_html .= "<tr><td></td>";
-                foreach ($grupo_values as $key => $value) {
-                  if(count($keys)!=($key+1)){
-                    $grupo_html .="<td>".$value."</td>";
-                  }
-                }
-                $grupo_html .= "</tr>";
-                $residente_repite[]=$grupo["RESIDENTE_ID"];
-            }
-          }
-          $html .= $modulo_html.$grupo_html;
-        }
-      }
-    }
-    $html2 .=$centro_html.$html;
+    $tipo_centro_id = $_POST["tipo_centro_id"];
+    switch ($tipo_centro_id) {
+		case '1': /*ppd*/
+		$parent_id="2,25";
+		break;
+		case '2': /*pam*/
+		$parent_id="27,43";
+		break;
+		case '3':
+		$parent_id="46,70";
+		break;
+		default:
+		$parent_id="2,25";
+			break;
 	}
-  //$centro_html .=$modulo_html;
-	
-    $table = '<table>'.$html2.'</table>';
+	$centro_html="";
+    $modulo_html = "<table>";
+	$modulos = "select m.nombre as nombre_modulo,m.nombre_tabla
+	from modulos m
+    where m.centro_id in (".$tipo_centro_id.") and m.parent_id  in (".$parent_id.") order by m.id desc";
+    $modulos = $modelo->executeQuery($modulos);
+
+    foreach ($modulos as $key => $modulo)
+    {
+		$modulo_html .="<tr><th></th><th>Nombre del Modulo</th></tr>";
+		$modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td></tr>";
+
+		$grupos = "select distinct * from ".$modulo["NOMBRE_TABLA"]." where residente_id= ". $id_residente." order by id desc";
+		$grupos = $modelo->executeQuery($grupos);
+
+		$grupo_html = "<table>";
+      foreach ($grupos as $key => $grupo)
+      {
+        if ($key==0) {
+          $keys = array_keys($grupo);
+          $grupo_html .="<tr><th></th>";
+          foreach ($keys as $key)
+          {
+            $grupo_html .="<th>$key</th>";
+          }
+          $grupo_html .="</tr>";
+        }
+		$grupo_values = array_values($grupo);
+
+        $grupo_html .= "<tr><td></td>";
+        foreach ($grupo_values as $key => $value) {
+          $grupo_html .="<td>".$value."</td>";
+        }
+        $grupo_html .= "</tr>";
+	  }
+      $modulo_html .=$grupo_html;
+    }
+    $modulo_html .="</table>";
+    $table = '<table><tr><td>'.$centro_html.'</td></tr><tr><td>'.$modulo_html.'</td></tr></table>';
+
     if ($modulos)
     {
       echo json_encode(array("data"=>$table) ) ;
