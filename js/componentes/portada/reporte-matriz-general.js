@@ -24,7 +24,7 @@ Vue.component('reporte-matriz-general', {
     methods:{
         mostrar_matrices(){
             let self = this;
-            let obj = {periodo_mes:moment(self.periodo_mes).format("MMM") ,periodo_anio:this.periodo_anio};
+            let obj = {periodo_mes:moment(self.periodo_mes,"M").format("MMM") ,periodo_anio:this.periodo_anio};
             console.log(obj);
             this.$http.post('mostrar_matrices?view',obj).then(function(response){
 
