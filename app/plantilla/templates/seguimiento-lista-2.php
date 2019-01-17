@@ -29,7 +29,7 @@
                                 <tr v-for="grupo in grupos" style="text-align:left;">
                                     <td>{{grupo.MODULO_NOMBRE}}</td>
                                     <td>{{grupo.ENCARGADO_NOMBRE}}</td>
-                                    <td>{{(isempty(grupo.ESTADO_COMPLETO))?'NO':'SI'}}</td> <!-- SI O NO -->
+                                    <td>{{(grupo.ESTADO_COMPLETO==1)?'SI':'NO'}}</td> <!-- SI O NO -->
                                     <td>{{grupo.FECHA_EDICION}}</td>
                                     <td class="btn btn-primary" @click="ver_modulo(grupo.NOMBRE_TABLA)">Ver</td>
                                     <td v-if="nivel_usuario==6"><label class="form-control-label">Completado</label><input type="checkbox" class="form-control" :id="grupo.ID_MODULO" @change="completar_grupo(grupo.ID_MODULO)" :checked="(grupo.ESTADO_COMPLETO==1)" class="form-control" ></td>
