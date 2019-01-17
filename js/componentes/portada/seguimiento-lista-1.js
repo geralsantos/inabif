@@ -70,9 +70,10 @@ Vue.component('seguimiento-lista-1', {
             });
         },
         completar_tipo_centro(){
-
+            let estado = 1;
             if(this.tipo_centro ){
                 this.tipo_centro = false
+                estado = 0;
             }else{
                 this.tipo_centro = true
             }
@@ -83,13 +84,7 @@ Vue.component('seguimiento-lista-1', {
             }
 
 
-            let estado = 1;
-            if(this.tipo_centro){
-                estado = 0;
-                this.tipo_centro=false;
-            }else{
-                this.tipo_centro=true;
-            }
+
             this.$http.post('completar_tipo_centro?view',{estado:estado}).then(function(response){
                 if( response.body.resultado){
 
