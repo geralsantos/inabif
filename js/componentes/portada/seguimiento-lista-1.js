@@ -157,9 +157,14 @@ Vue.component('seguimiento-lista-1', {
 
             });
         },
-        generar_matriz(id_centro){
-            console.log("generar_matriz");
-            this.$http.post('generar_matriz?view',{id_centro:id_centro}).then(function(response){
+        generar_matriz(centro){
+        
+            if(centro.COMPLETADO=='NO'){
+                swal("", "No puede generar matriz hasta que los grupos del centro estén completos", "error");
+               return false;
+            }
+
+            this.$http.post('generar_matriz?view',{id_centro:centro.ID_CENTRO}).then(function(response){
 
                 if( response.body.resultado ){
                     swal("", "Matriz Generada", "success");
