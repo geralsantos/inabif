@@ -58,7 +58,7 @@ Vue.component('reniec-consulta', {
             this.nombre_residente=nombre + ' ' + apellido;
             this.coincidencias = [];
             this.bloque_busqueda = false;
-
+            console.log(coincidencia);
             this.Apellido_p = coincidencia.APELLIDO_P;
             this.Apellido_m = coincidencia.APELLIDO_M;
             this.Nombres = coincidencia.NOMBRE;
