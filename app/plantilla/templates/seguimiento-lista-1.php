@@ -48,7 +48,7 @@
                                 <tbody class="text-center">
                                     <tr v-for="centro in centros" style="text-align:left;">
                                         <td>{{centro.NOMBRE_CENTRO}}</td>
-                                        <td>{{(isempty(centro.ESTADO_COMPLETO))?'NO':'SI'}}</td>
+                                        <td>{{centro.ESTADO_COMPLETADO}}</td>
                                         <td>{{(isempty(centro.FECHA_MATRIZ))?'NO':'SI'}}</td>
                                         <td>{{(isempty(centro.FECHA_MATRIZ))?'':centro.FECHA_MATRIZ}}</td>
                                         <!-- <td>{{centro.FECHA_CIERRE}}</td>
