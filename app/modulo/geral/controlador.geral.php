@@ -969,9 +969,10 @@ ini_set('session.gc_maxlifetime','1200');*/
     try {
       echo "geral";
       $soap_client = new nusoap_client("https://ws5.pide.gob.pe/services/ReniecConsultaDni?wsdl",true);
+      $result = $soap_client->call("consultar");
       echo "geral2";
       echo "geral3";
-      print_r($soap_client);
+      print_r($result);
       } catch (SoapFault $exception) {
         echo $exception->getMessage();
       }
