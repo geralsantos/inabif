@@ -626,7 +626,7 @@ class portada extends App{
       $centro_html = "<table>";
       $centro_html .="<tr><th>Nombre del Centro</th><th>Tipo de Centro</th><th>Fecha Matriz </th></tr>";
 
-      $centros = "select distinct ca.nom_ca as nombre_centro,ca.tipo_centro_id,tc.nombre as nombre_tipo_centro,to_char(cad.fecha_matriz,'DD-MON-YY HH24:MI') as fecha_matriz from centro_atencion_detalle cad
+      echo $centros = "select distinct ca.nom_ca as nombre_centro,ca.tipo_centro_id,tc.nombre as nombre_tipo_centro,to_char(cad.fecha_matriz,'DD-MON-YY HH24:MI') as fecha_matriz from centro_atencion_detalle cad
       left join centro_atencion ca on(ca.id=cad.centro_id)
       left join tipo_centro tc on(ca.tipo_centro_id=tc.id)
         where ".$matriz_id." ca.estado=1 order by cad.id desc";
