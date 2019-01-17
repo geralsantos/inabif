@@ -91,6 +91,7 @@ Vue.component('seguimiento-lista-1', {
             }
             this.$http.post('completar_tipo_centro?view',{estado:estado}).then(function(response){
                 if( response.body.resultado){
+                    this.buscar_tipo_centro();
                     swal("", "Cambio realizado", "success");
                 }else{
                     swal("", "Ha ocurrido un error", "error");
@@ -158,7 +159,7 @@ Vue.component('seguimiento-lista-1', {
             });
         },
         generar_matriz(centro){
-        
+
             if(centro.COMPLETADO=='NO'){
                 swal("", "No puede generar matriz hasta que los grupos del centro estén completos", "error");
                return false;
