@@ -87,6 +87,7 @@
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Departamento de Nacimiento</label>
                                 <select name="Depatamento_Procedencia" v-model="Depatamento_Procedencia" @change="buscar_provincias()" class="form-control">
+                                    <option value="" selected="selected">Ninguno</option>
                                     <option v-for="departamento in departamentos" :value="departamento.CODDEPT">{{departamento.NOMDEPT}}</option>
                                 </select>
                                 </div>
@@ -94,6 +95,8 @@
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Provincia de Nacimiento</label>
                                 <select name="Provincia_Procedencia" v-model="Provincia_Procedencia" @change="buscar_distritos()" class="form-control">
+                                <option value="" selected="selected">Ninguno</option>
+                                    
                                     <option v-for="provincia in provincias" :value="provincia.CODPROV">{{provincia.NOMPROV}}</option>
                                 </select>
                                 </div>
@@ -103,6 +106,7 @@
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Distrito de Nacimiento</label>
                                 <select name="Distrito_Procedencia" v-model="Distrito_Procedencia" class="form-control">
+                                <option value="" selected="selected">Ninguno</option>
                                     <option v-for="distrito in distritos" :value="distrito.CODDIST">{{distrito.NOMDIST}}</option>
                                 </select>
                                 </div>
