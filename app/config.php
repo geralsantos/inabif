@@ -68,8 +68,8 @@ define ('TITULO_DEFAULT','PORTAL DE CONSULTA');
 $CSS = array("bootstrap/bootstrap.min","bootstrap/bootstrap-theme-yeti.min","global");
 $JS  = array("bootstrap/bootstrap.min", "global");
 $READY = array("");
-
 //AUXILIARES
 define ('URL_ARCHIVOS_ADJUNTOS',APP.DS.'cargas');
 define( "URL_PDF", SITE_URL_DIR."app/cargas/" );
 define( "URL_PDF_2", SITE_URL_DIR."portal/index" );
+define("NUSOAP",APP.DS.'libreria'.DS.'nusoap'.DS.'nusoap.php');
