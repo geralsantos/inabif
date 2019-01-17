@@ -203,7 +203,7 @@ class portada extends App{
         $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
         if ($tipo_centro_id == PPD) {
           $campo = "nd.Numero_Documento ";
-          $like = "nd.Numero_Documento LIKE '%".$word."%'";
+          echo $like = "nd.Numero_Documento LIKE '%".$word."%'";
           $left_join = " left join CarCondicionIngreso nd on (nd.residente_id=re.id) ";
         }else if($tipo_centro_id == PAM){
           $campo = "dci.numero_documento_ingreso ";
