@@ -531,7 +531,7 @@ class portada extends App{
       left join modulos_detalle md on (md.modulo_id=m.Id)
       left join usuarios usu on (usu.id = m.encargado_id)
       left join centro_atencion ca on (ca.tipo_centro_id=m.centro_id)
-      where ca.id = ".$id_centro." order by m.id desc";
+      where ca.id = ".$id_centro." and ca.estado = 1 order by m.id desc";
 
     $res = $modelo->executeQuery($sql );
     if ($res)
@@ -592,7 +592,7 @@ class portada extends App{
       $fecha = " BETWEEN UPPER('".date("01-M-y",strtotime($periodo_anio."-".$periodo_mes))."') AND UPPER('".date(($last_day."-M-y"),strtotime($periodo_anio."-".$periodo_mes))."')";
 
         $matrices = "select max(ca.id) as centro_id, max(ca.nom_ca) as nombre_centro, to_char(max(cad.fecha_matriz),'DD-MON-YY HH24:MI') as fecha_matriz, max(cad.ID) as id from centro_atencion_detalle cad
-          left join centro_atencion ca on(ca.id=cad.centro_id)  where ".$where." to_char(cad.fecha_matriz,'DD-MON-YY') ".$fecha." group by ca.id ";
+          left join centro_atencion ca on(ca.id=cad.centro_id)  where ".$where." to_char(cad.fecha_matriz,'DD-MON-YY') ".$fecha." and ca.estado = 1 group by ca.id ";
       $matrices = $modelo->executeQuery($matrices);
 
       if ($matrices)
@@ -621,7 +621,7 @@ class portada extends App{
       $centros = "select distinct ca.nom_ca as nombre_centro,ca.tipo_centro_id,tc.nombre as nombre_tipo_centro,to_char(cad.fecha_matriz,'DD-MON-YY HH24:MI') as fecha_matriz from centro_atencion_detalle cad
       left join centro_atencion ca on(ca.id=cad.centro_id)
       left join tipo_centro tc on(ca.tipo_centro_id=tc.id)
-        where cad.id = ".$matriz_id."  order by cad.id desc";
+        where cad.id = ".$matriz_id." and ca.estado=1 order by cad.id desc";
       $centros = $modelo->executeQuery($centros);
 
       $centro_html .="<tr><th>".$centros[0]["NOMBRE_CENTRO"]."</th><th>".$centros[0]["NOMBRE_TIPO_CENTRO"]."</th><th>".$centros[0]["FECHA_MATRIZ"]."</th></tr></table>";
@@ -818,7 +818,7 @@ class portada extends App{
     $residente = "select distinct re.nombre as nombre_residente,tc.id as tipo_centro_id from residente re
 	inner join centro_atencion ca on(ca.id=re.centro_id)
 	inner join tipo_centro tc on(tc.id=re.tipo_centro_id)
-	where re.id = ".$id_residente." order by re.id desc";
+	where re.id = ".$id_residente." and ca.estado=1 order by re.id desc";
     $residente = $modelo->executeQuery($residente);
 
     if ($residente)
