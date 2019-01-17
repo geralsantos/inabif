@@ -1,5 +1,5 @@
-Vue.component('ppd-datos-identificacion-residente', {
-    template:'#ppd-datos-identificacion-residente',
+Vue.component('reniec-consulta', {
+    template:'#reniec-consulta',
     data:()=>({
         Ape_Paterno:null,
         Ape_Materno:null,
