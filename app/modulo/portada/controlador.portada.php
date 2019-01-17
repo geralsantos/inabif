@@ -581,10 +581,17 @@ class portada extends App{
         $centro = $_SESSION["usuario"][0]["CENTRO_ID"];
         $where = "ca.id = ".$centro." and ";
       }
+      
       /*usg, admin = matriz total */
       /*  */
       $periodo_mes = $_POST["periodo_mes"];
       $periodo_anio = $_POST["periodo_anio"];
+      
+      $matriz_consolidado = "SELECT * FROM matriz_consolidado WHERE periodo_mes=".date("m",strtotime($periodo_mes))." AND periodo_anio=".$periodo_anio;
+      $matriz_consolidado = $modelo->executeQuery($matriz_consolidado);
+      if (!$matriz_consolidado) {
+        return false;
+      }
       $month = $periodo_anio."-".$periodo_mes;
       $aux = date('d', strtotime("{$month} + 1 month"));
 
