@@ -435,7 +435,7 @@ class portada extends App{
         }
 
         $res = $modelo->executeQuery($sql);
-        $centros = $res
+        $centros = $res;
         if ($res){
           foreach ($centros as $key => $value) {
             $contador==0;
@@ -447,10 +447,9 @@ class portada extends App{
               }
             }
             if($contador==0){
-              $insert = $modelo->insertData("centro_atencion_detalle",array("centro_id"=>$value["ID_CENTRO"],"estado_completo"=>1,"usuario_crea"=>$_SESSION["usuario"][0]["ID"],"usuario_edita"=>$_SESSION["usuario"][0]["ID"] ));
-              if($insert){
+              
                 $centros["completado"] = 'SI';
-              }
+              
             }else{
               $centros["completado"] = 'NO';
             }
