@@ -448,10 +448,10 @@ class portada extends App{
             }
             if($contador==0){
               
-                $centros[$key]["completado"] = 'SI';
+                $centros[$key]["COMPLETADO"] = 'SI';
               
             }else{
-              $centros[$key]["completado"] = 'NO';
+              $centros[$key]["COMPLETADO"] = 'NO';
             }
 
           }
