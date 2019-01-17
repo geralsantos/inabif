@@ -36,7 +36,7 @@
                 </div>
             </div>
         </div>
-        <div v-if="showModal">
+        <div v-if="modal_lista">
         <transition name="modal">
                 <div class="modal-mask">
                     <div class="modal-wrapper">
