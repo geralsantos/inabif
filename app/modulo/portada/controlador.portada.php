@@ -445,22 +445,22 @@ class portada extends App{
             $contador=0;
             $grupos = $modelo->buscar_grupos( $value["ID_CENTRO"]);
             foreach($grupos as $key2 => $value2){
-              if($value2["ESTADO_COMPLETO"] == ''){
+              if($value2["ESTADO_COMPLETO"] != 1){
                 $contador++;
                 break;
               }
             }
             if($contador==0){
-              
+
                 $centros[$key]["COMPLETADO"] = 'SI';
-              
+
             }else{
               $centros[$key]["COMPLETADO"] = 'NO';
             }
 
           }
 
-         
+
           echo json_encode(array("data"=>$centros,"nivel_usuario"=>$_SESSION["usuario"][0]["NIVEL"]) ) ;
         }else{
           return false;
