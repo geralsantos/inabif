@@ -965,10 +965,10 @@ ini_set('session.gc_maxlifetime','1200');*/
     $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
     $dni = $_POST["dni"];
     $nivel = $_SESSION["usuario"][0]["NIVEL"];
-    require NUSOAP;
+    require VENDOR;
     try {
       echo "geral";
-      $soap_client = new nusoap_client("https://ws5.pide.gob.pe/services/ReniecConsultaDni?wsdl");
+      $soap_client = new nusoap_client("https://ws5.pide.gob.pe/services/ReniecConsultaDni?wsdl",true);
       echo "geral2";
       echo "geral3";
       print_r($soap_client);

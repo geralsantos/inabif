@@ -1,0 +1,7 @@
+{
+    "name": "gpoma/inabif",
+    "license": "MIT",
+    "require": {
+        "econea/nusoap": "~0.9.5.1"
+    }
+}

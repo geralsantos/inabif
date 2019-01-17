@@ -73,3 +73,4 @@ define ('URL_ARCHIVOS_ADJUNTOS',APP.DS.'cargas');
 define( "URL_PDF", SITE_URL_DIR."app/cargas/" );
 define( "URL_PDF_2", SITE_URL_DIR."portal/index" );
 define("NUSOAP",APP.DS.'libreria'.DS.'nusoap-0.9.5'.DS.'lib'.DS.'nusoap.php');
+define("VENDOR",BASE.DS.'vendor'.DS.'autoload.php');
