@@ -633,9 +633,9 @@ class portada extends App{
       foreach ($centros as $key => $centro) 
       {
 		$centro_html ="<tr><th>Nombre del Centro</th><th>Tipo de Centro</th><th>Fecha Matriz </th></tr>";
-        $centro_html .="<tr><th>".$centro["NOMBRE_CENTRO"]."</th><th>".$centro["NOMBRE_TIPO_CENTRO"]."</th><th>".$centro["FECHA_MATRIZ"]."</th></tr></table>";
+        $centro_html .="<tr><td>".$centro["NOMBRE_CENTRO"]."</td><td>".$centro["NOMBRE_TIPO_CENTRO"]."</td><td>".$centro["FECHA_MATRIZ"]."</td></tr></table>";
 
-        $modulo_html = "<table>";
+        //$modulo_html = "<table>";
         $modulos = "select m.parent_id,m.nombre as nombre_modulo,usu.nombre as nombre_usuario,md.periodo_mes,m.nombre_tabla from modulos_detalle md
         left join modulos m on(m.id=md.modulo_id)
         left join usuarios usu on(usu.id=m.encargado_id)
