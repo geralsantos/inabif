@@ -34,32 +34,7 @@
                             </div>
                         </div>
                         <div class="table-responsive">
-                            <table class="table">
-                                <thead class="thead-dark text-center">
-                                    <tr>
-                                    <th scope="col">Código</th>
-                                    <th scope="col">DNI</th>
-                                    <th scope="col">Paterno</th>
-                                    <th scope="col">Materno</th>
-                                    <th scope="col">Nombre</th>
-                                    <th scope="col">PIDE</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="text-center">
-                                    <tr v-for="residente in residente_seleccionado">
-                                    <td>{{residente.ID}}</td>
-                                    <td>{{residente.}}</td>
-                                    <td>{{residente.NOMBRE_RESIDENTE}}</td>
-                                    <td>{{residente.NOMBRE_RESIDENTE}}</td>
-                                    <td>{{residente.NOMBRE_RESIDENTE}}</td>
-                                    <td>{{residente.NOMBRE_RESIDENTE}}</td>
-
-                                        <td><button class="btn btn-success" @click="descargar_reporte_matriz_nominal(residente)">Descargar</button></td>
-
-                                    </tr>
-
-                                </tbody>
-                            </table>
+                           
                         </div>
                         <div class="row">
                             <div class="col-md-6 text-center" >
