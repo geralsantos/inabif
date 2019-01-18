@@ -799,7 +799,7 @@ class geral extends App{
 'Ape_Paterno as "Apellido paterno",Ape_Materno as "Apellido materno",
 Nom_Usuario as "Nombre Usuario",
 (SELECT nombre FROM paises WHERE id=CarIdentificacionUsuario.Distrito_Procedencia) as "Pai­s de procedencia",
-(SELECT NOMDEPT FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Departamento_Procedencia) as "Departamento de nac",
+(SELECT NOMDEPT FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as "Departamento de nac",
 (SELECT NOMPROV FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as "Provincia de nac" ,
 (SELECT NOMPROV FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as "Distrito de nac",
 (CASE Sexo WHEN \'h\' THEN 2 WHEN \'m\' THEN 1 END) as "Sexo",
