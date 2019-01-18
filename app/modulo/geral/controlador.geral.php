@@ -928,8 +928,11 @@ ini_set('session.gc_maxlifetime','1200');*/
           }
           $html .= $modulo_html.$grupo_html;
         }
+      }else{ 
+        $html = "";
       }
     }
+    
     $html2 .=$centro_html.$html;
 	}
   //$centro_html .=$modulo_html;
