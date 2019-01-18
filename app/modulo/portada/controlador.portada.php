@@ -1067,8 +1067,7 @@ Salud_AUS as "Asegura. uni. de Salud-AUS",
 Partida_Naci as "Partida de Nacimiento",
 DNI as "DNI",
 Educacion as "Educación",
-Reinsecion_Familiar as "Reinserción Familiar"',
-'NNAEgresoUsuario'=>'Fecha_Egreso as "Fecha de Egreso",Motivo_Egreso as "Motivo de Egreso",Detalle_Motivo  as "Detalle del motivo del egreso",Salud_AUS  as "Aseg. universal de Salud-AUS", Partida_Naci as "¿Partida de Nacimiento?", DNI  as "¿DNI?", Educacion as "¿Educación?", Reinsecion_Familiar  as "Reinserción Familiar"');
+Reinsecion_Familiar as "Reinserción Familiar"');
       break;
       default:
       $parent_id="2,25";
