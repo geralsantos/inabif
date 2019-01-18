@@ -848,7 +848,7 @@ ini_set('session.gc_maxlifetime','1200');*/
 		foreach ($modulos as $key => $modulo)
 		{
       
-      if (isset($campos[$modulo["NOMBRE_TABLA"]]) ) 
+      if (!empty($campos[$modulo["NOMBRE_TABLA"]])) 
       {
         $modulo_html ="<tr><th></th><th>Nombre del Modulo</th></tr>";
         $modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td></tr>";
