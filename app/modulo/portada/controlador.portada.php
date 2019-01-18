@@ -244,28 +244,47 @@ class portada extends App{
        }
 	}
 	public function buscar_residente_nominal(){
-		if( $_POST['like']){
+    if( $_POST['like']){
       $modelo = new modeloPortada();
-      $nivel = $_SESSION["usuario"][0]["NIVEL"];
-			if (SUPERVISOR == $nivel || USER_SEDE == $nivel) {
+       $word = strtolower($_POST['like']);
+      $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+      if ($tipo_centro_id == PPD) {
+        $campo = "nd.Numero_Documento ";
+        $like = "nd.Numero_Documento LIKE '%".$word."%'";
+        $left_join = " left join CarCondicionIngreso nd on (nd.residente_id=re.id) ";
+      }else if($tipo_centro_id == PAM){
+        $campo = "dci.numero_documento_ingreso ";
+        $like = "dci.numero_documento_ingreso LIKE '%".$word."%'";
+        $left_join = " left join pam_datosCondicionIngreso dci on (dci.residente_id=re.id) ";
+      }else if($tipo_centro_id == NNA){
+        $campo = "cir.Numero_Doc ";
+        $like = "cir.Numero_Doc LIKE '%".$word."%'";
+        $left_join = " left join NNACondicionIResidente cir on (cir.residente_id=re.id) ";
+      }
+
+      if (SUPERVISOR == $nivel || USER_SEDE == $nivel) {
 				$tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
-				$where = " AND tipo_centro_id = ".$tipo_centro;
+				$where = " AND re.tipo_centro_id = ".$tipo_centro;
 			}else if (REGISTRADOR ==$nivel || RESPONSABLE_INFORMACION ==$nivel){
 				$centro_id = $_SESSION["usuario"][0]["CENTRO_ID"];
-				$where = " AND centro_id = ".$centro_id;
+				$where = " AND re.centro_id = ".$centro_id;
 			}else if(ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel){
 				$where ="";
 			}
-			$sql = "SELECT * FROM (SELECT * FROM Residente WHERE (Nombre LIKE '%".$_POST['like']."%' OR APELLIDO_M LIKE '%".$_POST['like']."%' OR APELLIDO_P LIKE '%".$_POST['like']."%' OR Documento LIKE '%".$_POST['like']."%') AND ESTADO=1 ".$where." ORDER BY Id desc) WHERE ROWNUM<=10";
-			$res = $modelo->executeQuery( $sql );
-			if ($res) {
-			echo json_encode(array( "data"=>$res )) ;
-			}else{
-			return false;
-			}
+      $codigolike="";
+      if (is_numeric($word)) {
+        $codigolike = " OR re.id ='".$word."'";
+      }
+      $sql = "SELECT * FROM (SELECT DISTINCT re.*, ".$campo." as dni_residente  FROM Residente re ".$left_join."  WHERE (LOWER(re.Nombre) LIKE '%".$word."%' OR LOWER(re.APELLIDO_M) LIKE '%".$word."%' OR LOWER(re.APELLIDO_P) LIKE '%".$word."%' OR ".$like.$codigolike." ) AND re.ESTADO=1 ".$where."  ORDER BY re.Id desc) WHERE ROWNUM<=10";
+      $res = $modelo->executeQuery( $sql );
+      if ($res) {
+        echo json_encode(array( "data"=>$res )) ;
+      }else{
+        return false;
+      }
 
-		 }
-    }
+     }
+}
     public function ejecutar_consulta_lista_nominal(){
       $modelo = new modeloPortada();
       $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
