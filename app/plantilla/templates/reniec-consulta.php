@@ -33,28 +33,28 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="form-group col-md-6">
-                                <div class=" "><label for="text-input" class=" form-control-label">Apellido Paterno</label>
-                                <input type="text" v-model="Apellido_p" disabled name="Apellido_p" placeholder="" class="form-control"> 
-                                </div>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <div class=" "><label for="text-input" class=" form-control-label">Apellido Materno</label>
-                                <input type="text" v-model="Apellido_m" disabled name="Apellido_m" placeholder="" class="form-control"> 
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-md-6">
-                                <div class=" "><label for="text-input" class=" form-control-label">Nombres</label>
-                                <input type="text" v-model="Nombres" disabled name="Nombres" placeholder="" class="form-control"> </div>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <div class=" "><label for="text-input" class=" form-control-label">Número de documento</label>
-                                <input type="text" v-model="NumDoc" name="NumDoc" placeholder="" class="form-control"> 
-                                </div>
-                            </div>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class="thead-dark text-center">
+                                    <tr>
+                                    <th scope="col">Código</th>
+                                    <th scope="col">DNI</th>
+                                    <th scope="col">Paterno</th>
+                                    <th scope="col">Materno</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">PIDE</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-center">
+                                    <tr v-for="residente in residentes">
+                                        <td>{{residente.NOMBRE_RESIDENTE}}</td>
+
+                                        <td><button class="btn btn-success" @click="descargar_reporte_matriz_nominal(residente)">Descargar</button></td>
+
+                                    </tr>
+
+                                </tbody>
+                            </table>
                         </div>
                         <div class="row">
                             <div class="col-md-6 text-center" >
