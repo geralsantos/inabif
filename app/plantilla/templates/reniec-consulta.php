@@ -48,11 +48,11 @@
                                 <tbody class="text-center">
                                     <tr v-for="residente in residente_seleccionado">
                                     <td>{{residente.ID}}</td>
-                                    <td>{{residente.NOMBRE_RESIDENTE}}</td>
-                                    <td>{{residente.NOMBRE_RESIDENTE}}</td>
-                                    <td>{{residente.NOMBRE_RESIDENTE}}</td>
-                                    <td>{{residente.NOMBRE_RESIDENTE}}</td>
-                                    <td>{{residente.NOMBRE_RESIDENTE}}</td>
+                                    <td>{{residente.DNI_RESIDENTE}}</td>
+                                    <td>{{residente.APELLIDO_P}}</td>
+                                    <td>{{residente.APELLIDO_M}}</td>
+                                    <td>{{residente.NOMBRE}}</td>
+                                    <td>{{residente.PIDE}}</td>
 
                                         <td><button class="btn btn-success" @click="descargar_reporte_matriz_nominal(residente)">Descargar</button></td>
 
