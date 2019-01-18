@@ -873,6 +873,8 @@ ini_set('session.gc_maxlifetime','1200');*/
                         foreach ($grupo_values as $key2 => $value) {
                           if($index==$key2){
                             $grupo_html .="<td>".$value."</td></tr>";
+                            $contar++;
+
                             break;
                           }
                         }
@@ -911,6 +913,7 @@ ini_set('session.gc_maxlifetime','1200');*/
                       foreach ($grupo_values as $key2 => $value) {
                         if($index==$key2){
                           $grupo_html .="<td>".$value."</td></tr>";
+                          $contar++;
                           break;
                         }
                       }
@@ -928,7 +931,6 @@ ini_set('session.gc_maxlifetime','1200');*/
           }
           $html .= $modulo_html.$grupo_html;
         }
-        $contar++;
       }
     }
     if ($contar==0) {
