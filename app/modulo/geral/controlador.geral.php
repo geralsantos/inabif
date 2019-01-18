@@ -879,15 +879,16 @@ ini_set('session.gc_maxlifetime','1200');*/
                         $grupo_html .= "</tr>";
                     }
                   }
-                  $grupo_html .="</tr>";
+                  $grupo_html .="</tr>"."<tr><td>&nbsp;</td></tr>";
                 }
                 $residente_repite[]=$grupo["RESIDENTE_ID"];
               }
             }
             if(empty($grupos)){
               $modulo_html = "";
+              $grupo_html = "";
             }
-            $html .= $modulo_html.$grupo_html."<tr><td>&nbsp;</td></tr>";
+            $html .= $modulo_html.$grupo_html;
           }
         }else {
           $grupos = "select ".$campos[$modulo["NOMBRE_TABLA"]].",residente_id from ".$modulo["NOMBRE_TABLA"]." where  periodo_mes=".date("n")." and periodo_anio=".date("Y")." and residente_id= ". $id_residente." and centro_id=".$centro["ID"]." order by id desc";
@@ -923,8 +924,9 @@ ini_set('session.gc_maxlifetime','1200');*/
           }
           if(empty($grupos)){
             $modulo_html = "";
+            $grupo_html = "";
           }
-          $html .= $modulo_html.$grupo_html."<tr><td>&nbsp;</td></tr>";
+          $html .= $modulo_html.$grupo_html;
         }
       }
     }
