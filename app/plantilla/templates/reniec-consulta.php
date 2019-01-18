@@ -59,16 +59,12 @@
                             </table>
                         </div>
                         <div class="row">
-                            <div class="col-md-6 text-center" >
+                            <div class="col-md-3 text-center" >
                                 <button type="button" @click="consulta_reniec()" class="btn btn-success btn-sm">
                                     <i class="fa fa-send"></i> Consultar Reniec
                                 </button>
                             </div>
-                            <div class="col-md-6 text-center" >
-                                <button type="submit" class="btn btn-success btn-sm">
-                                    <i class="fa fa-send"></i> Actualizar Reniec
-                                </button>
-                            </div>
+                            
                         </div>
                       
                     </form>
