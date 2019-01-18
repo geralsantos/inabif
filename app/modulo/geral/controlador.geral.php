@@ -894,26 +894,28 @@ ini_set('session.gc_maxlifetime','1200');*/
           foreach ($grupos as $key => $grupo)
           {
             if (!in_array($grupo["RESIDENTE_ID"],$residente_repite)) {
-                if ($key==0) {
-                  $keys = array_keys($grupo);
-                  $grupo_html .="<tr><th></th>";
-                  foreach ($keys as $key)
-                  {
-                    if ($key != "RESIDENTE_ID") {
-                      $grupo_html .="<th>$key</th>";
-                    }
+              if ($key==0) {
+                $keys = array_keys($grupo);
+                //$grupo_html .="<tr>";
+                foreach ($keys as $index=>$key)
+                {
+                  if ($key != "RESIDENTE_ID") {
+                    $grupo_html .="<tr><th>$key</th>";
+                      $grupo_values = array_values($grupo);
+                      //$grupo_html .= "<tr>";
+                      foreach ($grupo_values as $key2 => $value) {
+                        if($index==$key2){
+                          $grupo_html .="<td>".$value."</td></tr>";
+                          break;
+                        }
+                      }
+                      $grupo_html .= "</tr>";
                   }
-                  $grupo_html .="</tr>";
                 }
-                $grupo_values = array_values($grupo);
-                $grupo_html .= "<tr><td></td>";
-                foreach ($grupo_values as $key => $value) {
-                  if(count($keys)!=($key+1)){
-                    $grupo_html .="<td>".$value."</td>";
-                  }
-                }
-                $grupo_html .= "</tr>";
-                $residente_repite[]=$grupo["RESIDENTE_ID"];
+                $grupo_html .="</tr>";
+              }
+              
+              $residente_repite[]=$grupo["RESIDENTE_ID"];
             }
           }
           $html .= $modulo_html.$grupo_html;
@@ -924,7 +926,8 @@ ini_set('session.gc_maxlifetime','1200');*/
 	}
   //$centro_html .=$modulo_html;
     $ht = '<table style="width:100%">
-    <tr><th colspan="2" style="background-color:yellow">DATOS DE CONDICIÓN DE INGRESO</th>
+    <tr>
+      <th colspan="2" style="background-color:yellow">DATOS DE CONDICIÓN DE INGRESO</th>
       </tr>
     <tr>
       <th>Fecha de ingreso:</th>
