@@ -996,8 +996,7 @@ Traslado_Otra_Entidad as "Traslado a otra Entidad",
 Fallecimiento as "Fallecimiento",
 RestitucionAseguramientoSaludo as "Cumpl. de rest.derechos salud",
 Restitucion_Derechos_DNI as "Cumpl. de rest.derechos dni",
-RestitucionReinsercionFamiliar as "Reinserción Familiar"',
-'pam_EgresoUsuario'=>'Fecha_Egreso as "Fecha de Egreso",Motivo_Egreso as "Motivo de Egreso",Retiro_Voluntario as "Retiro Voluntario",Reinsercion_Familiar as "Reinserción Familiar", Traslado_Entidad_Salud  as "Traslado a Entidad de Salud", Traslado_Otra_Entidad as "Traslado a otra Entidad", Fallecimiento, RestitucionAseguramientoSaludo  as "Cumpl.derechos Aseguramiento",Restitucion_Derechos_DNI as "Cumpl.derechos - DNI",RestitucionReinsercionFamiliar  as "Cumpl.Reinserción Familiar"');
+RestitucionReinsercionFamiliar as "Reinserción Familiar"' );
       break;
       case '3':
       $campos = array('NNAInscripcionResidente'=>
