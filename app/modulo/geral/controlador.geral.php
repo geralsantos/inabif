@@ -867,7 +867,7 @@ ini_set('session.gc_maxlifetime','1200');*/
                   foreach ($keys as $index=>$key)
                   {
                     if ($key != "RESIDENTE_ID") {
-                      $grupo_html .="<tr><th  style='color:white;'>$key</th>";
+                      $grupo_html .="<tr><th>$key</th>";
                         $grupo_values = array_values($grupo);
                         //$grupo_html .= "<tr>";
                         foreach ($grupo_values as $key2 => $value) {
@@ -907,7 +907,7 @@ ini_set('session.gc_maxlifetime','1200');*/
                 foreach ($keys as $index=>$key)
                 {
                   if ($key != "RESIDENTE_ID") {
-                    $grupo_html .="<tr><th style='color:white;'>$key</th>";
+                    $grupo_html .="<tr><th>$key</th>";
                       $grupo_values = array_values($grupo);
                       //$grupo_html .= "<tr>";
                       foreach ($grupo_values as $key2 => $value) {
