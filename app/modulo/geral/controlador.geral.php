@@ -848,8 +848,8 @@ ini_set('session.gc_maxlifetime','1200');*/
     $contar = 0;
 		foreach ($modulos as $key => $modulo)
 		{
-      $modulo_html ="<tr><th></th><th style='background-color:yellow'>Nombre del Modulo</th></tr>";
-      $modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td></tr>";
+      $modulo_html ="";
+      $modulo_html .="<tr><td></td><td style='background-color:yellow'>".$modulo["NOMBRE_MODULO"]."</td></tr>";
       if (!empty($campos[$modulo["NOMBRE_TABLA"]])) 
       {
         if (is_array($campos[$modulo["NOMBRE_TABLA"]])) {
