@@ -919,21 +919,7 @@ Numero_Documento as "Número documento de ingreso"',
 
     'DATOS DEL ESTADO PSICOLÓGICO DEL USUARIO'=>
     '\'\' as "Tras. comport. y/o disociales",
-    \'\' as "Tipo de transtorno"',
-
-    'NNAEgresoUsuario'=>
-'Fecha_Egreso as "Fecha de egreso",
-Motivo_Egreso as "Motivo de egreso",
-Traslado as "Traslado",
-Reinsercion as "Reinserción Familiar",
-Grado_Parentesco as "Grado de Parentesco",
-Retiro_Voluntario as "Retiro Voluntario",
-Fallecimiento as "Fallecimiento",
-Constancia_Naci as "Constancia de Nacimiento",
-Carnet_CONADIS as "Carnet CONADIS",
-DNI as "DNI",
-Restitucion as "Restitución Familiar",
-Restitucion_Derechos as "Cumplimiento de restitución de derechos"','CarEgresoGeneral'=>'Fecha_Egreso as "Fecha de Egreso",Motivo_Egreso as "Motivo de Egreso",Retiro_Voluntario as "Retiro Voluntario",Reinsercion, Grado_Parentesco as "Grado de Parentesco", Traslado, Fallecimiento, Restitucion_derechos as "Restitución de Derechos",AUS,Constancia_Naci as "Constancia de Nacimiento",Carnet_CONADIS as "CONADIS",DNI as "Documento de Identidad", Restitucion','CarEgresoSalud'=>'Plan_Medico as "Plan Médico",Meta_PII as "Meta Trazada",Informe_Tecnico as "Informe Técnico Evolutivo", Des_Informe as "Desc.Técnico Evolutivo",Cumple_Plan as "Cumpl. plan de intervención",Enfermedades_Cronicas  as "Enfermedades crónicas",Especificar');
+    \'\' as "Tipo de transtorno"');
       break;
       case '2': /*pam*/
       $campos = array('pam_datos_identificacion'=>
