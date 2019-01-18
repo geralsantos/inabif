@@ -847,7 +847,7 @@ Numero_Documento as "Número documento de ingreso"',
 
     'CarCondicionIngreso'=>
     '\'\' as "Tras. comport. y/o disociales",
-    Tipo_Transtorno as "Tipo de transtorno"',
+    \'\' as "Tipo de transtorno"',
 
     'NNAEgresoUsuario'=>
 'Fecha_Egreso as "Fecha de egreso",
