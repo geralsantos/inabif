@@ -841,11 +841,11 @@ Numero_Documento as "Número documento de ingreso"',
    Talla as "Talla (m)",
    Estado_Nutricional as "Estado Nutricional(IMC)"',
 
-   'CarCondicionIngreso'=>
+   'DATOS FAMILIARES Y SOCIALES DEL USUARIO (Trabajo Social)'=>
    'Familiares as "Cuenta con familiares",
     Parentesco as "Tipo de parentesco"',
 
-    'CarCondicionIngreso'=>
+    'DATOS DEL ESTADO PSICOLÓGICO DEL USUARIO'=>
     '\'\' as "Tras. comport. y/o disociales",
     \'\' as "Tipo de transtorno"',
 
