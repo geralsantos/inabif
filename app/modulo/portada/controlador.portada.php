@@ -996,7 +996,7 @@ Traslado_Otra_Entidad as "Traslado a otra Entidad",
 Fallecimiento as "Fallecimiento",
 RestitucionAseguramientoSaludo as "Cumpl. de rest.derechos salud",
 Restitucion_Derechos_DNI as "Cumpl. de rest.derechos dni",
-RestitucionReinsercionFamiliar as "Reinserción Familiar"' );
+RestitucionReinsercionFamiliar as "Reinserción Familiar"');
       break;
       case '3':
       $campos = array('NNAInscripcionResidente'=>
@@ -1067,7 +1067,8 @@ Salud_AUS as "Asegura. uni. de Salud-AUS",
 Partida_Naci as "Partida de Nacimiento",
 DNI as "DNI",
 Educacion as "Educación",
-Reinsecion_Familiar as "Reinserción Familiar"');
+Reinsecion_Familiar as "Reinserción Familiar"',
+'NNAEgresoUsuario'=>'Fecha_Egreso as "Fecha de Egreso",Motivo_Egreso as "Motivo de Egreso",Detalle_Motivo  as "Detalle del motivo del egreso",Salud_AUS  as "Aseg. universal de Salud-AUS", Partida_Naci as "¿Partida de Nacimiento?", DNI  as "¿DNI?", Educacion as "¿Educación?", Reinsecion_Familiar  as "Reinserción Familiar"');
       break;
       default:
       $parent_id="2,25";
