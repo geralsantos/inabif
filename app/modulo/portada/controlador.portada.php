@@ -261,7 +261,7 @@ class portada extends App{
         $like = "cir.Numero_Doc LIKE '%".$word."%'";
         $left_join = " left join NNACondicionIResidente cir on (cir.residente_id=re.id) ";
       }
-
+      $nivel = $_SESSION["usuario"][0]["NIVEL"];
       if (SUPERVISOR == $nivel || USER_SEDE == $nivel) {
 				$tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
 				$where = " AND re.tipo_centro_id = ".$tipo_centro;
