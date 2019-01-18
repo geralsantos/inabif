@@ -108,11 +108,7 @@ Vue.component('reniec-consulta', {
             let apellido = apellido_p + ' ' + apellido_m;
             this.nombre_residente=nombre + ' ' + apellido;
             this.modal_lista = false;
-
-            this.Apellido_p = residente.APELLIDO_P;
-            this.Apellido_m = residente.APELLIDO_M;
-            this.Nombres = residente.NOMBRE;
-            this.NumDoc = residente.DNI_RESIDENTE;
+            this.residente_seleccionado.push(residente);
 
         },
         consulta_reniec(){
