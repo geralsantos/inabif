@@ -258,7 +258,7 @@ class geral extends App{
           $campo = "cir.Numero_Doc ";
           $left_join = " left join NNACondicionIResidente cir on (cir.residente_id=re.id) ";
         }
-		  $sql = "SELECT DISTINCT re.*, " .$campo." as dni_residente FROM Residente re ".$left_join." WHERE  re.ESTADO=1  AND re.centro_id = ".$_SESSION["usuario"][0]["ID_CENTRO"]." ORDER BY re.Id desc";
+		  $sql = "SELECT DISTINCT re.*, " .$campo." as dni_residente FROM Residente re ".$left_join." WHERE  re.ESTADO=1 ORDER BY re.Id desc";
 		  $res = $modelo->executeQuery( $sql );
 		  if ($res) {
 			echo json_encode(array( "data"=>$res )) ;
@@ -923,7 +923,47 @@ ini_set('session.gc_maxlifetime','1200');*/
     $html2 .=$centro_html.$html;
 	}
   //$centro_html .=$modulo_html;
-	
+    $ht = '<table style="width:100%">
+    <tr><th colspan="2" style="background-color:yellow">DATOS DE CONDICIÓN DE INGRESO</th>
+      </tr>
+    <tr>
+      <th>Fecha de ingreso:</th>
+      <td>19-03-2018</td>
+    </tr>
+    <tr>
+      <th>Motivo de ingreso</th>
+      <td>Abandono</td>
+    </tr>
+  </table>
+  <br>
+  
+  <table style="width:100%">
+    <tr><th colspan="2" style="background-color:yellow">DATOS DE ADMISIÓN DEL USUARIO</th>
+      </tr>
+    <tr>
+      <th>Fecha de ingreso:</th>
+      <td>19-03-2018</td>
+    </tr>
+    <tr>
+      <th>Motivo de ingreso</th>
+      <td>Abandono</td>
+    </tr>
+  </table>
+  <br>
+  <h2>DATOS GENERALES DE EGRESO</h2>
+  <br>
+  <table style="width:100%">
+  <tr><th colspan="2" style="background-color:yellow">DATOS DE EGRESO DEL USUARIO</th>
+      </tr>
+    <tr>
+      <th>Fecha de Egreso:</th>
+      <td>19-03-2018</td>
+    </tr>
+    <tr>
+      <th>Motivo de egreso</th>
+      <td>Muerte natural</td>
+    </tr>
+  </table>';
     $table = '<table>'.$html2.'</table>';
     if ($modulos)
     {
