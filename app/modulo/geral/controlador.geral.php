@@ -798,11 +798,11 @@ class geral extends App{
       $campos = array('CarIdentificacionUsuario'=>
 'Ape_Paterno as "Apellido paterno",Ape_Materno as "Apellido materno",
 Nom_Usuario as "Nombre Usuario",
-(SELECT nombre FROM paises WHERE id=CarIdentificacionUsuario.Distrito_Procedencia) as "Pai­s de procedencia",
+(SELECT nombre FROM paises WHERE id=CarIdentificacionUsuario.Pais_Procencia) as "Pai­s de procedencia",
 (SELECT NOMDEPT FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as "Departamento de nac",
 (SELECT NOMPROV FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as "Provincia de nac" ,
 (SELECT NOMPROV FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as "Distrito de nac",
-(CASE Sexo WHEN \'h\' THEN 2 WHEN \'m\' THEN 1 END) as "Sexo",
+(CASE Sexo WHEN \'h\' THEN \'Hombre\' WHEN \'m\' THEN \'Mujer\' END) as "Sexo",
 Fecha_Nacimiento as "Fecha de Nacimiento",
 (SELECT nombre from pam_lengua_materna WHERE id = CarIdentificacionUsuario.Lengua_Materna) as "Lengua Materna"',
 
