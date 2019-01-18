@@ -1088,7 +1088,7 @@ ini_set('session.gc_maxlifetime','1200');*/
       $where = " where ca.tipo_centro_id = ".$tipo_centro;
     }else if (REGISTRADOR ==$nivel || RESPONSABLE_INFORMACION ==$nivel || RESPONSABLE_INFORMACION ==$nivel){
       $centro_id = $_SESSION["usuario"][0]["CENTRO_ID"];
-      $where = " where ca.centro_id = ".$centro_id;
+      $where = " where ca.id = ".$centro_id;
     }else if(ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel){
       $where ="";
     }
