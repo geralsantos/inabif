@@ -867,12 +867,12 @@ ini_set('session.gc_maxlifetime','1200');*/
                   foreach ($keys as $index=>$key)
                   {
                     if ($key != "RESIDENTE_ID") {
-                      $grupo_html .="<tr><th style='border:0.5px solid;'>$key</th>";
+                      $grupo_html .="<tr><th style='border:1px solid;'>$key</th>";
                         $grupo_values = array_values($grupo);
                         //$grupo_html .= "<tr>";
                         foreach ($grupo_values as $key2 => $value) {
                           if($index==$key2){
-                            $grupo_html .="<td style='border:0.5px solid;'>".$value."</td></tr>";
+                            $grupo_html .="<td style='border:1px solid;'>".$value."</td></tr>";
                             $contar++;
 
                             break;
@@ -907,12 +907,12 @@ ini_set('session.gc_maxlifetime','1200');*/
                 foreach ($keys as $index=>$key)
                 {
                   if ($key != "RESIDENTE_ID") {
-                    $grupo_html .="<tr><th style='border:0.5px solid;'>$key</th>";
+                    $grupo_html .="<tr><th style='border:1px solid;'>$key</th>";
                       $grupo_values = array_values($grupo);
                       //$grupo_html .= "<tr>";
                       foreach ($grupo_values as $key2 => $value) {
                         if($index==$key2){
-                          $grupo_html .="<td style='border:0.5px solid;'>".$value."</td></tr>";
+                          $grupo_html .="<td style='border:1px solid;'>".$value."</td></tr>";
                           $contar++;
                           break;
                         }
