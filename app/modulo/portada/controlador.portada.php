@@ -1270,7 +1270,7 @@ ini_set('session.gc_maxlifetime','1200');*/
     }else{
       return false;
     }
-  
+  }
   public function adjuntar_archivo(Type $var = null)
   {
 
