@@ -848,7 +848,7 @@ ini_set('session.gc_maxlifetime','1200');*/
     $contar = 0;
 		foreach ($modulos as $key => $modulo)
 		{
-      $modulo_html ="<tr><th></th><th>Nombre del Modulo</th></tr>";
+      $modulo_html ="<tr><th></th><th style='background-color:yellow'>Nombre del Modulo</th></tr>";
       $modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td></tr>";
       if (!empty($campos[$modulo["NOMBRE_TABLA"]])) 
       {
@@ -886,7 +886,7 @@ ini_set('session.gc_maxlifetime','1200');*/
                 $residente_repite[]=$grupo["RESIDENTE_ID"];
               }
             }
-            if(empty($grupos)){
+            if($contar==0){
               $modulo_html = "";
               $grupo_html = "";
             }
@@ -925,7 +925,7 @@ ini_set('session.gc_maxlifetime','1200');*/
               $residente_repite[]=$grupo["RESIDENTE_ID"];
             }
           }
-          if(empty($grupos)){
+          if($contar==0){
             $modulo_html = "";
             $grupo_html = "";
           }
