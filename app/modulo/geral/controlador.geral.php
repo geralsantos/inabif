@@ -829,7 +829,7 @@ ini_set('session.gc_maxlifetime','1200');*/
     $tipo_centro_id;
     
 	
-	$centros = "select distinct ca.id,ca.nom_ca as nombre_centro,ca.tipo_centro_id,tc.nombre as nombre_tipo_centro from centro_atencion ca 
+	$centros = "select distinct ca.id,ca.nom_ca as nombre_centro,ca.tipo_centro_id,tc.nombre as nombre_tipo_centro,tc.codigo from centro_atencion ca 
 	left join tipo_centro tc on(ca.tipo_centro_id=tc.id) ".$where." order by ca.tipo_centro_id desc";
 	$centros = $modelo->executeQuery($centros);
   $modulo_html = "";
@@ -839,7 +839,7 @@ ini_set('session.gc_maxlifetime','1200');*/
 	foreach ($centros as $key => $centro) 
 	{
 		$centro_html ="<tr><th>Nombre del Centro</th><th>Tipo de Centro</th></tr>";
-    $centro_html .="<tr><td>".$centro["NOMBRE_CENTRO"]."</td><td>".$centro["NOMBRE_TIPO_CENTRO"]."</td></tr>";
+    $centro_html .="<tr><td>".$centro["NOMBRE_CENTRO"]."</td><td>".$centro["NOMBRE_TIPO_CENTRO"]." - ".$centro["CODIGO"]."</td></tr>";
     $campos = $this->campos_tipo_centro($centro["TIPO_CENTRO_ID"]);
 		$modulos = "select m.parent_id,m.nombre as nombre_modulo,m.nombre_tabla from modulos m 
 			where m.centro_id in (".$centro["TIPO_CENTRO_ID"].") order by m.id asc";
