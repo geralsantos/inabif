@@ -848,10 +848,10 @@ ini_set('session.gc_maxlifetime','1200');*/
     $contar = 0;
 		foreach ($modulos as $key => $modulo)
 		{
+      $modulo_html ="<tr><th></th><th>Nombre del Modulo</th></tr>";
+      $modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td></tr>";
       if (!empty($campos[$modulo["NOMBRE_TABLA"]])) 
       {
-        $modulo_html ="<tr><th></th><th>Nombre del Modulo</th></tr>";
-        $modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td></tr>";
         if (is_array($campos[$modulo["NOMBRE_TABLA"]])) {
           foreach ($campos[$modulo["NOMBRE_TABLA"]] as $key => $value) {
             $grupos = "select ".$value.",residente_id from ".$modulo["NOMBRE_TABLA"]." where  periodo_mes=".date("n")." and periodo_anio=".date("Y")." and residente_id= ". $id_residente." and centro_id=".$centro["ID"]." order by id desc";
