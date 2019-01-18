@@ -861,7 +861,7 @@ Constancia_Naci as "Constancia de Nacimiento",
 Carnet_CONADIS as "Carnet CONADIS",
 DNI as "DNI",
 Restitucion as "Restitución Familiar",
-Restitucion_Derechos as "Cumplimiento de restitución de derechos"');
+Restitucion_Derechos as "Cumplimiento de restitución de derechos"','CarEgresoGeneral'=>'Fecha_Egreso as "Fecha de Egreso",Motivo_Egreso as "Motivo de Egreso",Retiro_Voluntario as "Retiro Voluntario",Reinsercion, Grado_Parentesco as "Grado de Parentesco", Traslado, Fallecimiento, Restitucion_derechos as "Restitución de Derechos",AUS,Constancia_Naci as "Constancia de Nacimiento",Carnet_CONADIS as "CONADIS",DNI as "Documento de Identidad", Restitucion');
       break;
       case '2': /*pam*/
       $campos = array('pam_datos_identificacion'=>
