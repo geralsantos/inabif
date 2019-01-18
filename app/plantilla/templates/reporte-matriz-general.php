@@ -11,13 +11,13 @@
                                 <div class="form-group col-md-6">
                                     <div class="form-group col-md-3">
                                         <label for="text-input" class=" form-control-label">Mes</label>
-                                        <select name="periodo_mes" @change="mostrar_matrices()" v-model="periodo_mes" id="periodo_mes" class="form-control">
+                                        <select name="periodo_mes" v-model="periodo_mes" id="periodo_mes" class="form-control">
                                             <option v-for="(row,index) in meses" :value="(index+1)">{{row}}</option>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-3">
                                         <label for="text-input" class=" form-control-label">Año</label>
-                                        <select name="periodo_anio" @change="mostrar_matrices()" v-model="periodo_anio" id="periodo_anio" class="form-control">
+                                        <select name="periodo_anio" v-model="periodo_anio" id="periodo_anio" class="form-control">
                                         <option value="2018">2018</option>
                                         <option value="2019">2019</option>
                                         <option value="2020">2020</option>
@@ -28,7 +28,20 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-3 " >
+                                <?php
+                                //usg y admin
+                                    if ($_SESSION["usuario"][0]["NIVEL"]=="3" || $_SESSION["usuario"][0]["NIVEL"]=="1") {
+                                        ?>
+                                <button class="btn btn-primary" @click="descargar_reporte_matriz_general('')" >Descargar Matriz General</button>
+
+                                        <?php
+                                    }else{
+                                        ?>
                                 <button class="btn btn-primary" @click="mostrar_matrices()">Mostrar</button>
+
+                                        <?php
+                                    }                               
+                                ?>
                                 </div>
                             </div>
                             <div class="table-responsive">
