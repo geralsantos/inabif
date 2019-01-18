@@ -913,12 +913,12 @@ ini_set('session.gc_maxlifetime','1200');*/
                       $grupo_html .= "</tr>";
                   }
                 }
-                $grupo_html .="</tr>";
+                $grupo_html .="</tr>"."<tr><td>&nbsp;</td></tr>";
               }
               $residente_repite[]=$grupo["RESIDENTE_ID"];
             }
           }
-          $html .= $modulo_html.$grupo_html;
+          $html .= $modulo_html.$grupo_html."<tr><td>&nbsp;</td></tr>";
         }
       }
     }
