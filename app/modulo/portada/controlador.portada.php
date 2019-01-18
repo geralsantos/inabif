@@ -1153,7 +1153,7 @@ ini_set('session.gc_maxlifetime','1200');*/
                 $residente_repite[]=$grupo["RESIDENTE_ID"];
               }
             }
-            if($contar==0){
+            if(empty($grupos)){
               $modulo_html = "";
               $grupo_html = "";
             }
@@ -1192,7 +1192,7 @@ ini_set('session.gc_maxlifetime','1200');*/
               $residente_repite[]=$grupo["RESIDENTE_ID"];
             }
           }
-          if($contar==0){
+          if(empty($grupos)){
             $modulo_html = "";
             $grupo_html = "";
           }
