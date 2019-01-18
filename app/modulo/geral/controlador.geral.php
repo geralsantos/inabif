@@ -845,9 +845,9 @@ ini_set('session.gc_maxlifetime','1200');*/
 			where m.centro_id in (".$centro["TIPO_CENTRO_ID"].") order by m.id asc";
 		$modulos = $modelo->executeQuery($modulos);
     $html = "";
+    $contar = 0;
 		foreach ($modulos as $key => $modulo)
 		{
-      
       if (!empty($campos[$modulo["NOMBRE_TABLA"]])) 
       {
         $modulo_html ="<tr><th></th><th>Nombre del Modulo</th></tr>";
@@ -928,11 +928,12 @@ ini_set('session.gc_maxlifetime','1200');*/
           }
           $html .= $modulo_html.$grupo_html;
         }
-      }else{ 
-        $centro_html = "";
+        $contar++;
       }
     }
-    
+    if ($contar==0) {
+      $centro_html = "";
+    }
     $html2 .=$centro_html.$html;
 	}
   //$centro_html .=$modulo_html;
