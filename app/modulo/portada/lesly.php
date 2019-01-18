@@ -214,3 +214,49 @@ Fallecimiento as "Fallecimiento",
 RestitucionAseguramientoSaludo as "Cumplimiento de restitución de derechos salud",
 Restitucion_Derechos_DNI as "Cumplimiento de restitución de derechos dni",
 RestitucionReinsercionFamiliar as "Cumplimiento de restitución de derechos Reinserción Familiar"');
+
+
+// ESTRUCTURA DE LA TABLA
+<h2>DATOS GENERALES DE INGRESO</h2>
+
+<table style="width:100%">
+	<tr><th colspan="2" style="background-color:yellow">DATOS DE CONDICIÓN DE INGRESO</th>
+    </tr>
+  <tr>
+    <th>Fecha de ingreso:</th>
+    <td>19-03-2018</td>
+  </tr>
+  <tr>
+    <th>Motivo de ingreso</th>
+    <td>Abandono</td>
+  </tr>
+</table>
+<br>
+
+<table style="width:100%">
+	<tr><th colspan="2" style="background-color:yellow">DATOS DE ADMISIÓN DEL USUARIO</th>
+    </tr>
+  <tr>
+    <th>Fecha de ingreso:</th>
+    <td>19-03-2018</td>
+  </tr>
+  <tr>
+    <th>Motivo de ingreso</th>
+    <td>Abandono</td>
+  </tr>
+</table>
+<br>
+<h2>DATOS GENERALES DE EGRESO</h2>
+<br>
+<table style="width:100%">
+<tr><th colspan="2" style="background-color:yellow">DATOS DE EGRESO DEL USUARIO</th>
+    </tr>
+  <tr>
+    <th>Fecha de Egreso:</th>
+    <td>19-03-2018</td>
+  </tr>
+  <tr>
+    <th>Motivo de egreso</th>
+    <td>Muerte natural</td>
+  </tr>
+</table>
