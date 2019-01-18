@@ -848,8 +848,8 @@ ini_set('session.gc_maxlifetime','1200');*/
 		foreach ($modulos as $key => $modulo)
 		{
       
-      if (($modulo["NOMBRE_TABLA"])=="CarIdentificacionUsuario" || ($modulo["NOMBRE_TABLA"])=="CarDatosAdmision" || ($modulo["NOMBRE_TABLA"])=="CarCondicionIngreso" || ($modulo["NOMBRE_TABLA"])=="CarSaludNutricion"  ) 
-      {
+      /*if (($modulo["NOMBRE_TABLA"])=="CarIdentificacionUsuario" || ($modulo["NOMBRE_TABLA"])=="CarDatosAdmision" || ($modulo["NOMBRE_TABLA"])=="CarCondicionIngreso" || ($modulo["NOMBRE_TABLA"])=="CarSaludNutricion"  ) 
+      {*/
         $modulo_html ="<tr><th></th><th>Nombre del Modulo</th></tr>";
         $modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td></tr>";
         if (is_array($campos[$modulo["NOMBRE_TABLA"]])) {
@@ -920,7 +920,7 @@ ini_set('session.gc_maxlifetime','1200');*/
           }
           $html .= $modulo_html.$grupo_html;
         }
-      }
+      //}
     }
     $html2 .=$centro_html.$html;
 	}
