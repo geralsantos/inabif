@@ -93,7 +93,7 @@ let apellido = apellido_p + ' ' + apellido_m;
         mostrar_lista_residentes(){
             this.id_residente = null;
             this.isLoading = true;
-                this.$http.post('ejecutar_consulta_lista?view',{}).then(function(response){
+                this.$http.post('ejecutar_consulta_lista_nominal?view',{}).then(function(response){
 
                     if( response.body.data != undefined){
                         this.modal_lista = true;
