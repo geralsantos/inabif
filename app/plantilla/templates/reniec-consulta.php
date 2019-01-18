@@ -53,9 +53,6 @@
                                     <td>{{residente.APELLIDO_M}}</td>
                                     <td>{{residente.NOMBRE}}</td>
                                     <td>{{residente.PIDE}}</td>
-
-                                        <td><button class="btn btn-success" @click="descargar_reporte_matriz_nominal(residente)">Descargar</button></td>
-
                                     </tr>
 
                                 </tbody>
