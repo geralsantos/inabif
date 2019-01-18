@@ -929,7 +929,7 @@ ini_set('session.gc_maxlifetime','1200');*/
           $html .= $modulo_html.$grupo_html;
         }
       }else{ 
-        $html = "";
+        $centro_html = "";
       }
     }
     
