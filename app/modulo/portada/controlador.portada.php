@@ -1,1 +1,1553 @@
-<?php /*** PHP Encode v1.0 by zeura.com ***/ $XnNhAWEnhoiqwciqpoHH=file(__FILE__);eval(base64_decode("aWYoIWZ1bmN0aW9uX2V4aXN0cygiWWl1bklVWTc2YkJodWhOWUlPOCIpKXtmdW5jdGlvbiBZaXVuSVVZNzZiQmh1aE5ZSU84KCRnLCRiPTApeyRhPWltcGxvZGUoIlxuIiwkZyk7JGQ9YXJyYXkoNjU1LDIzNiw0MCk7aWYoJGI9PTApICRmPXN1YnN0cigkYSwkZFswXSwkZFsxXSk7ZWxzZWlmKCRiPT0xKSAkZj1zdWJzdHIoJGEsJGRbMF0rJGRbMV0sJGRbMl0pO2Vsc2UgJGY9dHJpbShzdWJzdHIoJGEsJGRbMF0rJGRbMV0rJGRbMl0pKTtyZXR1cm4oJGYpO319"));eval(base64_decode(YiunIUY76bBhuhNYIO8($XnNhAWEnhoiqwciqpoHH)));eval(ZsldkfhGYU87iyihdfsow(YiunIUY76bBhuhNYIO8($XnNhAWEnhoiqwciqpoHH,2),YiunIUY76bBhuhNYIO8($XnNhAWEnhoiqwciqpoHH,1)));__halt_compiler();aWYoIWZ1bmN0aW9uX2V4aXN0cygiWnNsZGtmaEdZVTg3aXlpaGRmc293Iikpe2Z1bmN0aW9uIFpzbGRrZmhHWVU4N2l5aWhkZnNvdygkYSwkaCl7aWYoJGg9PXNoYTEoJGEpKXtyZXR1cm4oZ3ppbmZsYXRlKGJhc2U2NF9kZWNvZGUoJGEpKSk7fWVsc2V7ZWNobygiRXJyb3I6IEZpbGUgTW9kaWZpZWQiKTt9fX0=f2d9c4c16b960ae3bcc564fe6d36abb049c305817X1bc+PG0eizXOX/MMZRAnJDkZLsxMnuUima5O6yPonUEbVOfDYuFERCEhwQoAFwL/anX5FfkYc85e28nKpv/9jpngswM7gQgC7edXarbBEzPTM93T093T23pR071tK5tDdebMXuyvkp8B0rcuKWOVg5obuwe8fuyjbbTz7/7PPPFp4dRWQdhLG9tInzNnb8ZUQG6/XPn39G4N96c+G5C3K58RexG/jE9ZfO21ab5xLiXra+cCOsfdeaj+fzyWz6ythEGzt0A+P7dgqI/3bjazfaO3rtRrG9dxQ6jv/atcOWQSs1OsSwFwsnCgxEjZW4ET/UotDeuRt7TsuY+O7CTUvc5GO9cMIQGkqx2fgKymmDkRNFUAIIGMVh8K6V5pQjvwUBD0pZq2C58YKo1WYwCTK7kOF4AekT33lD2Mcp44jSvrsOrIXjA16WuwToPIq/2v/+lXE+OZ1Zw/H0/GxmTUbG92kdlYqrJXnZ3iPgNWk5q3X8rqXh0m4Tic9ZRI35+Hg8PCdaxrOz2QnhnyC0/gIp9ZcX47MxcZd9o5ti2zWI7S8JAabYSyTUAQnCpROSi3cASuxoYTwpQ4BTeO/IeessNrHzvzdO+K6VAWyXU49Upzi2qVaeivSjnvjZ6+1eIHrFA4hWvrRj+8KOHMu3Vw4MKvJnUhWWPCYmHdze3t/XrkmeSE3zghJ/AMQKA8+JEu5gCoeLFNYk7Zs826Ttm+7S/J5zS2KW567cmBwY+c0XcUdAtOViacd997XjJb3HevgHRUTuiymNAD4IpV4/Yl0VGayXCd+wsyon6wij1FxRLwWEPNJBu1AJohrnYuN6y3NIaglYDfRFvPJywDG5RQFS+HXo+rEVtpJyW/SW1LbjOSsgQdQhu2s7hF8TFN19aejvXoS2v7iGVBvUraw7L4PQsSEnrQXIRMSHoj0IVTMi65V5OjiDYQWDygQW99O2tUJMu10DtpCdSzsJ/6RyrLX9RK+HIiDqymmHtpXUIQBNKoLiK1PpTQZbRq1XtBivTSl1k+jetHDoxJvQF2UpOM0r5BsTgqTvu8E67hsGnYF4v4q4tuu5kGaa/HMLC7UprffoqU2uQ+eyb/wvH+T+4MAg1NToGzgV7l2FwWa958bOingODOO9fYOg6tqLg6srz+kbi8Dz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
+<?php
+date_default_timezone_set('America/Lima');
+
+class portada extends App{
+    public function index(){
+      if(!isset($_SESSION["usuario"])){
+          $this->vista->reenviar("index", "acceso");
+      }
+      $this->vista->setTitle("Inicio");
+    }
+    public function cerrar(){
+      unset($_SESSION);
+      session_destroy();
+      $this->vista->reenviar("index");
+    }
+    public function list_modulos()
+    {
+      $modelo = new modeloPortada();
+      $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+      $centro_id = $_SESSION["usuario"][0]["CENTRO_ID"];
+
+     /* if (empty($tipo_centro_id)) {
+        $tipo_centro_id = "SELECT tipo_centro_id FROM centro_atencion WHERE id=".$centro_id." and  estado = 1 order by id asc";
+        $tipo_centro_id = $modelo->executeQuery( $tipo_centro_id )[0]["TIPO_CENTRO_ID"];
+        $_SESSION["usuario"][0]["TIPO_CENTRO_ID"] = $tipo_centro_id;
+      }*/
+      //$bd = isset($_SESSION["usuario"][0]["database_name"]) ? $_SESSION["usuario"][0]["database_name"] : 'portal-kpi' ;
+      //$usuario = "SELECT kpi_roles_id FROM kpi_usuarios WHERE id=".$_SESSION['usuario'][0]['id']." and estado = 1 limit 1";
+      //$usuario = $modelo->executeQuery( $usuario );
+      //$_SESSION["nivelusuario"] = $usuario[0]['kpi_roles_id'];
+      $modulos = "SELECT * FROM modulos WHERE centro_id=".$tipo_centro_id." and  estado = 1 order by id asc";
+      $modulos = $modelo->executeQuery( $modulos );
+      $tree = $this->buildTree($modulos);
+      $treeHtml = $this->buildTreeHtml($tree);
+      print_r($treeHtml);
+    }
+    public function buildTree($elements, $parentId = 0) {
+      $branch = array();
+      foreach ($elements as $element) {
+          if ($element['PARENT_ID'] == $parentId) {
+              $children = $this->buildTree($elements, $element['ID']);
+              if ($children) {
+                  $element['children'] = $children;
+              }
+              $branch[] = $element;
+          }
+
+      }
+      return $branch;
+  }
+  public function buildTreeHtml($elements,$opt="")
+  {
+    $branch = array();
+    $li = '';
+    foreach ($elements as $element)
+    {
+      /*<a href="#node11" class="list-group-item level-0" data-toggle="collapse"
+    aria-expanded="true" id="gardening">Gardening
+        <i class="fa fa-caret-down"></i>
+    </a>
+    <div class="collapse" id="node11">
+        <a href="#node13" class="list-group-item level-1" data-toggle="collapse" id="lawn-chemicals">Lawn Chemicals
+        <i class="fa fa-caret-down"></i>
+        </a>
+        <div class="collapse" id="node13">
+            <a href="gardening/lawn-chemicals/moss-control/" class="list-group-item level-2" id="moss-control">Moss Control</a>
+        </div>
+    </div>*/
+    $li = $li  . (isset($element['children']) ? ('
+    <a href="#node'.$element['ID'].'" class="list-group-item level-0" data-toggle="collapse" aria-expanded="true" id="gardening">'.$element['NOMBRE'].'
+        <i class="fa fa-caret-down"></i>
+    </a>
+    <div class="collapse tabulacionMenu" id="node'.$element['ID'].'">
+    '. $this->buildTreeHtml($element['children'],'childs').'
+    </div>
+      ') :
+        ('
+        <a href="#'.$element['URL_TEMPLATE'].'" class="list-group-item level-2" id="moss-control">'.$element['NOMBRE'].'</a>') ) ;
+     // if (in_array($_SESSION["nivelusuario"],(explode(',',$element["niveles"])))) {
+       /* $li = $li  . (isset($element['children']) ? ('
+                      <li class="menu-item-has-children dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
+                            <i class="menu-icon ' . $element["ICON"] . '"></i>' . $element['NOMBRE'] .'
+                          </a>
+                          <ul class="sub-menu children dropdown-menu">
+                          '. $this->buildTreeHtml($element['children'],'childs').'
+                          </ul>
+                          </li>
+                        ') :
+                          ('<li data-url="'.$element['URL_TEMPLATE'].'">
+                            <i class="'.$element["ICON"].'"></i>
+                            <a style="font-size:1em;" href="#'.$element['URL_TEMPLATE'].'" class=""> '.$element['NOMBRE'].'</a>
+                          </li>') ) ;*/
+     // }
+
+
+    }
+    return $li;
+  }
+    public function enviar(){
+        $this->vista->reenviar("index", "portal");
+    }
+
+    public function cargar_datos(){
+
+      if( $_POST['tabla'] && $_POST['where'] ){
+
+        $_POST['where']["estado"] = 1;
+        $modelo = new modeloPortada();
+        $res = $modelo->selectData( $_POST['tabla'], $_POST['where'] );
+        if ($res) {
+          echo json_encode(array( "atributos"=>$res )) ;
+        }else{
+          return false;
+        }
+      }else{
+        return false;
+      }
+
+    }
+    public function insertar_datos(){
+
+      if( $_POST['tabla'] && $_POST['valores'] ){
+        $modelo = new modeloPortada();
+        //$modelo->executeQuery("delete from CarActividades");
+        $lastid = false;
+        if (isset($_POST['lastid'])) {
+          if ($_POST['lastid']) {
+            $sql = "SELECT seq_".$_POST['tabla'].".NEXTVAL FROM DUAL";
+            $lastid = $modelo->executeQuery( $sql );
+          }
+        }
+        /*if (!$lastid) {
+          $_POST['valores']['Residente_Id'] = $_SESSION["usuario"][0]["ID"];
+        }*/
+        if ($_POST['tabla']!="usuarios" && $_POST['tabla']!="centro_atencion") {
+          $_POST['valores']['Tipo_Centro_Id'] = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+        }
+        if ($_POST['tabla'] == "residente") {
+          $_POST['valores']['centro_id'] = $_SESSION["usuario"][0]["ID_CENTRO"];
+        }
+        $_POST['valores']['Fecha_Creacion'] = date("y-M-d");
+        $_POST['valores']['Estado'] = 1;
+        //$_POST['valores']['Fecha_Edicion'] = date("Y-m-d H:i:s");
+        $_POST['valores']['Usuario_Crea'] =$_SESSION["usuario"][0]["ID"];
+        $_POST['valores']['Usuario_Edita'] =$_SESSION["usuario"][0]["ID"];
+        //aqui tu ejecutas la consulta
+        if ($_POST['tabla'] != "residente" && $_POST['tabla'] != "usuarios" && $_POST['tabla'] != "centro_atencion") {
+          $_POST['valores']['Centro_Id'] = $_SESSION["usuario"][0]["CENTRO_ID"];
+        }
+        $res = $modelo->insertData( $_POST['tabla'],$_POST["valores"],$lastid[0]["NEXTVAL"]);
+        if ($res) {
+          if ($lastid) {
+            echo json_encode(array("resultado"=>true,"lastid"=>$lastid[0]["NEXTVAL"] )) ;
+          }else{
+            echo json_encode(array("resultado"=>true )) ;
+          }
+        }else{
+          return false;
+        }
+
+      }else{
+        return false;
+      }
+    }
+    public function update_datos(){
+
+      if( $_POST['tabla'] && $_POST['valores'] ){
+        $modelo = new modeloPortada();
+
+        $_POST['valores']['Estado'] = 1;
+        $_POST['valores']['Usuario_Crea'] =$_SESSION["usuario"][0]["ID"];
+        $_POST['valores']['Usuario_Edita'] =$_SESSION["usuario"][0]["ID"];
+
+        $res = $modelo->updateData( $_POST['tabla'],$_POST["valores"],$_POST["where"]);
+        if ($res) {
+            echo json_encode(array("resultado"=>true )) ;
+        }else{
+          return false;
+        }
+      }else{
+        return false;
+      }
+    }
+    public function delete_datos(){
+
+      if( $_POST['tabla']){
+        $modelo = new modeloPortada();
+        $res = $modelo->deleteData( $_POST['tabla'],$_POST["where"]);
+        if ($res) {
+            echo json_encode(array("resultado"=>true )) ;
+        }else{
+          return false;
+        }
+      }else{
+        return false;
+      }
+    }
+    public function inhabilitar_centro(){
+
+      if( $_POST['tabla']){
+        $modelo = new modeloPortada();
+        $where = $_POST["where"];
+        $res = $modelo->updateData("centro_atencion",array("estado"=>0),$where);
+        if ($res) {
+            echo json_encode(array("resultado"=>true )) ;
+        }else{
+          return false;
+        }
+      }else{
+        return false;
+      }
+    }
+    public function ejecutar_consulta(){
+      if( $_POST['like']){
+        $modelo = new modeloPortada();
+         $word = strtolower($_POST['like']);
+        $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+        if ($tipo_centro_id == PPD) {
+          $campo = "nd.Numero_Documento ";
+          $like = "nd.Numero_Documento LIKE '%".$word."%'";
+          $left_join = " left join CarCondicionIngreso nd on (nd.residente_id=re.id) ";
+        }else if($tipo_centro_id == PAM){
+          $campo = "dci.numero_documento_ingreso ";
+          $like = "dci.numero_documento_ingreso LIKE '%".$word."%'";
+          $left_join = " left join pam_datosCondicionIngreso dci on (dci.residente_id=re.id) ";
+        }else if($tipo_centro_id == NNA){
+          $campo = "cir.Numero_Doc ";
+          $like = "cir.Numero_Doc LIKE '%".$word."%'";
+          $left_join = " left join NNACondicionIResidente cir on (cir.residente_id=re.id) ";
+        }
+        $codigolike="";
+        if (is_numeric($word)) {
+          $codigolike = " OR re.id ='".$word."'";
+        }
+        $nivel = $_SESSION["usuario"][0]["NIVEL"];
+      if (SUPERVISOR == $nivel || USER_SEDE == $nivel) {
+				$tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+				$where = " AND re.tipo_centro_id = ".$tipo_centro;
+			}else if (REGISTRADOR ==$nivel || RESPONSABLE_INFORMACION ==$nivel){
+				$centro_id = $_SESSION["usuario"][0]["CENTRO_ID"];
+				$where = " AND re.centro_id = ".$centro_id;
+			}else if(ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel){
+				$where ="";
+			}
+        $sql = "SELECT * FROM (SELECT DISTINCT re.*, ".$campo." as dni_residente  FROM Residente re ".$left_join."  WHERE (LOWER(re.Nombre) LIKE '%".$word."%' OR LOWER(re.APELLIDO_M) LIKE '%".$word."%' OR LOWER(re.APELLIDO_P) LIKE '%".$word."%' OR ".$like.$codigolike." ) AND re.ESTADO=1 ".$where."  ORDER BY re.Id desc) WHERE ROWNUM<=10";
+        $res = $modelo->executeQuery( $sql );
+        if ($res) {
+          echo json_encode(array( "data"=>$res )) ;
+        }else{
+          return false;
+        }
+
+       }
+	}
+	public function buscar_residente_nominal(){
+    if( $_POST['like']){
+      $modelo = new modeloPortada();
+       $word = strtolower($_POST['like']);
+      $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+      if ($tipo_centro_id == PPD) {
+        $campo = "nd.Numero_Documento ";
+        $like = "nd.Numero_Documento LIKE '%".$word."%'";
+        $left_join = " left join CarCondicionIngreso nd on (nd.residente_id=re.id) ";
+      }else if($tipo_centro_id == PAM){
+        $campo = "dci.numero_documento_ingreso ";
+        $like = "dci.numero_documento_ingreso LIKE '%".$word."%'";
+        $left_join = " left join pam_datosCondicionIngreso dci on (dci.residente_id=re.id) ";
+      }else if($tipo_centro_id == NNA){
+        $campo = "cir.Numero_Doc ";
+        $like = "cir.Numero_Doc LIKE '%".$word."%'";
+        $left_join = " left join NNACondicionIResidente cir on (cir.residente_id=re.id) ";
+      }
+      $nivel = $_SESSION["usuario"][0]["NIVEL"];
+      if (SUPERVISOR == $nivel || USER_SEDE == $nivel) {
+				$tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+				$where = " AND re.tipo_centro_id = ".$tipo_centro;
+			}else if (REGISTRADOR ==$nivel || RESPONSABLE_INFORMACION ==$nivel){
+				$centro_id = $_SESSION["usuario"][0]["CENTRO_ID"];
+				$where = " AND re.centro_id = ".$centro_id;
+			}else if(ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel){
+				$where ="";
+			}
+      $codigolike="";
+      if (is_numeric($word)) {
+        $codigolike = " OR re.id ='".$word."'";
+      }
+      $sql = "SELECT * FROM (SELECT DISTINCT re.*, ".$campo." as dni_residente  FROM Residente re ".$left_join."  WHERE (LOWER(re.Nombre) LIKE '%".$word."%' OR LOWER(re.APELLIDO_M) LIKE '%".$word."%' OR LOWER(re.APELLIDO_P) LIKE '%".$word."%' OR ".$like.$codigolike." ) AND re.ESTADO=1 ".$where."  ORDER BY re.Id desc) WHERE ROWNUM<=10";
+      $res = $modelo->executeQuery( $sql );
+      if ($res) {
+        echo json_encode(array( "data"=>$res )) ;
+      }else{
+        return false;
+      }
+
+     }
+}
+    public function ejecutar_consulta_lista_nominal(){
+      $modelo = new modeloPortada();
+      $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+        if ($tipo_centro_id == PPD) {
+          $campo = "nd.Numero_Documento ";
+          $left_join = " left join CarCondicionIngreso nd on (nd.residente_id=re.id) ";
+        }else if($tipo_centro_id == PAM){
+          $campo = "dci.numero_documento_ingreso ";
+          $left_join = " left join pam_datosCondicionIngreso dci on (dci.residente_id=re.id) ";
+        }else if($tipo_centro_id == NNA){
+          $campo = "cir.Numero_Doc ";
+          $left_join = " left join NNACondicionIResidente cir on (cir.residente_id=re.id) ";
+        }
+		  $sql = "SELECT max(re.id) as id,max(re.nombre) as nombre,max(re.apellido_p) as apellido_p,max(re.apellido_m) as apellido_m,max(".$campo.") as dni_residente FROM Residente re ".$left_join." WHERE  re.ESTADO=1  group by re.id ORDER BY re.Id desc";
+		  $res = $modelo->executeQuery( $sql );
+		  if ($res) {
+			echo json_encode(array( "data"=>$res )) ;
+		  }else{
+			return false;
+		  }
+	  }
+	public function ejecutar_consulta_lista(){
+      $modelo = new modeloPortada();
+      $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+        if ($tipo_centro_id == PPD) {
+          $campo = "nd.Numero_Documento ";
+          $left_join = " left join CarCondicionIngreso nd on (nd.residente_id=re.id) ";
+        }else if($tipo_centro_id == PAM){
+          $campo = "dci.numero_documento_ingreso ";
+          $left_join = " left join pam_datosCondicionIngreso dci on (dci.residente_id=re.id) ";
+        }else if($tipo_centro_id == NNA){
+          $campo = "cir.Numero_Doc ";
+          $left_join = " left join NNACondicionIResidente cir on (cir.residente_id=re.id) ";
+        }
+        $nivel = $_SESSION["usuario"][0]["NIVEL"];
+        if (SUPERVISOR == $nivel || USER_SEDE == $nivel) {
+            $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+            $where = " AND re.tipo_centro_id = ".$tipo_centro;
+        }else if (REGISTRADOR ==$nivel || RESPONSABLE_INFORMACION ==$nivel){
+            $centro_id = $_SESSION["usuario"][0]["CENTRO_ID"];
+            $where = " AND re.centro_id = ".$centro_id;
+        }else if(ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel){
+            $where ="";
+        }
+		  $sql = "SELECT max(re.id) as id,max(re.nombre) as nombre,max(re.apellido_p) as apellido_p,max(re.apellido_m) as apellido_m,max(".$campo.") as dni_residente FROM Residente re ".$left_join." WHERE  re.ESTADO=1 ".$where." group by re.id ORDER BY re.Id desc";
+		  $res = $modelo->executeQuery( $sql );
+		  if ($res) {
+			echo json_encode(array( "data"=>$res )) ;
+		  }else{
+			return false;
+		  }
+	  }
+    public function cargar_datos_residente(){
+      if( $_POST['tabla'] && $_POST['residente_id']){
+        $modelo = new modeloPortada();
+        $sql = "SELECT * FROM (SELECT * FROM ".strtoupper($_POST["tabla"])." WHERE RESIDENTE_ID = ".$_POST["residente_id"]." AND ESTADO=1 order by Id desc) WHERE ROWNUM=1";
+        $res = $modelo->executeQuery( $sql );
+        if ($res) {
+          echo json_encode(array( "atributos"=>$res )) ;
+        }else{
+          return false;
+        }
+
+       }
+    }
+    public function buscar(){
+      if( $_POST['tabla']){
+        $modelo = new modeloPortada();
+        $codigo = isset($_POST['codigo']) ? " CODIGO='".$_POST['codigo']."' AND " : "";
+        $orderby = isset($_POST['orderby']) ? ("order by ".$_POST['orderby']) : "";
+        $sql = "SELECT * FROM ".$_POST['tabla']." WHERE ".$codigo." ESTADO=1 ".$orderby;
+        $res = $modelo->executeQuery( $sql );
+        if ($res) {
+          echo json_encode(array( "data"=>$res )) ;
+        }else{
+          return false;
+        }
+
+       }
+    }
+    public function selectData(){
+      if( $_POST['tabla']){
+        $modelo = new modeloPortada();
+
+        $res = $modelo->selectData( $_POST["tabla"],$_POST["where"] );
+        if ($res) {
+          echo json_encode(array( "data"=>$res )) ;
+        }else{
+          return false;
+        }
+       }
+    }
+    public function buscar_entidad(){
+      if( $_POST['tabla']){
+
+        $modelo = new modeloPortada();
+        $sql = "SELECT * FROM (SELECT * FROM ".strtoupper($_POST["tabla"])." WHERE tipo_centro_id = ".$_POST["tipo_centro_id"]." AND ESTADO=1 order by Id desc) WHERE ROWNUM=1";
+        $res = $modelo->executeQuery( $sql );
+        if ($res) {
+          echo json_encode(array( "data"=>$res )) ;
+        }else{
+          return false;
+        }
+       }
+    }
+    public function buscar_departamentos(){
+      if( $_POST['tabla']){
+        $modelo = new modeloPortada();
+        $sql = "select coddept,nomdept from ".$_POST['tabla']." where estado = 1 group by coddept,nomdept";
+        $res = $modelo->executeQuery( $sql );
+        if ($res) {
+          echo json_encode(array( "data"=>$res )) ;
+        }else{
+          return false;
+        }
+
+       }
+    }
+    public function buscar_provincia(){
+      if( $_POST['tabla']){
+        $modelo = new modeloPortada();
+        $sql = "select codprov ,nomprov from ".$_POST['tabla']." where estado = 1 and SUBSTR(codprov,0,2)='".$_POST["cod"]."' group by codprov ,nomprov";
+        $res = $modelo->executeQuery( $sql );
+        if ($res) {
+          echo json_encode(array( "data"=>$res )) ;
+        }else{
+          return false;
+        }
+
+       }
+    }
+    public function buscar_distritos(){
+      if( $_POST['tabla']){
+        $modelo = new modeloPortada();
+        $sql = "select coddist, nomdist  from ".$_POST['tabla']." where estado = 1 and SUBSTR(coddist,0,4)= '".$_POST["cod"]."' group by coddist, nomdist";
+        $res = $modelo->executeQuery( $sql );
+        if ($res) {
+          echo json_encode(array( "data"=>$res )) ;
+        }else{
+          return false;
+        }
+
+       }
+    }
+    public function traer_datos_usuario(){
+        $modelo = new modeloPortada();
+        $sql = "select *  from usuarios where estado = 1 and id =".$_SESSION["usuario"][0]["ID"];
+        $res = $modelo->executeQuery( $sql );
+        if ($res) {
+          echo json_encode(array("data"=>$res)) ;
+        }else{
+          return false;
+        }
+    }
+    public function buscar_centro(){
+      $modelo = new modeloPortada();
+
+        $sql = "select ca.* from centro_atencion ca
+        left join tipo_centro tc on (ca.tipo_centro_id=tc.id)
+        where ca.id=".$_SESSION["usuario"][0]["CENTRO_ID"]." and ca.estado = 1";
+
+      $res = $modelo->executeQuery($sql );
+      if ($res)
+      {
+        echo json_encode(array("data"=>$res) ) ;
+      }else{
+        return false;
+      }
+  }
+    public function buscar_centros(){
+        $modelo = new modeloPortada();
+        if ($_SESSION["usuario"][0]["NIVEL"]==RESPONSABLE_INFORMACION) { //responsable de la información
+          $sql = "select distinct ca.id as id_centro,ca.NOM_CA as nombre_centro,cad.estado_completo, cad.fecha_matriz, cad.id, cad.fecha_cierre   from centro_atencion ca
+          left join centro_atencion_detalle cad on (cad.centro_id=ca.id)
+          left join tipo_centro tc on (ca.tipo_centro_id=tc.id)
+          where ca.id=".$_SESSION["usuario"][0]["CENTRO_ID"]." and ca.estado = 1 AND rownum = 1 ORDER BY cad.id desc";
+        }else if($_SESSION["usuario"][0]["NIVEL"]==ADMIN_CENTRAL) //ADMIN_CENTRAL
+        {
+          $sql = "select max(ca.id) as id_centro,max(ca.NOM_CA ) as nombre_centro,max(cad.estado_completo) as estado_completo, max(cad.fecha_matriz) as fecha_matriz,
+          max(cad.fecha_cierre) as fecha_cierre, cad.id  from centro_atencion ca
+          left join centro_atencion_detalle cad on (cad.centro_id=ca.id)
+          left join tipo_centro tc on (ca.tipo_centro_id=tc.id)
+          where ca.estado = 1 group by ca.id order by ca.id desc";
+		    }else if($_SESSION["usuario"][0]["NIVEL"]==USER_CENTRO) //USER CENTRO: SOLO VE SU SEDE ASIGNADA
+        {
+          $sql = "select distinct ca.id as id_centro,ca.NOM_CA as nombre_centro,cad.estado_completo, cad.fecha_matriz,
+          cad.id, cad.fecha_cierre  from centro_atencion ca
+          left join centro_atencion_detalle cad on (cad.centro_id=ca.id)
+          left join tipo_centro tc on (ca.tipo_centro_id=tc.id)
+          where ca.id=".$_SESSION["usuario"][0]["CENTRO_ID"]." and ca.estado = 1 AND rownum = 1 ORDER BY cad.id desc";
+		    }else if($_SESSION["usuario"][0]["NIVEL"]==SUPERVISOR) //SUPERVISOR VE TODAS LAS SEDES DE SU TIPO DE CENTRO
+        {
+          $sql = "select max(ca.id) as id_centro,max(ca.NOM_CA ) as nombre_centro,max(cad.estado_completo) as estado_completo, max(cad.fecha_matriz) as fecha_matriz,
+         max(cad.fecha_cierre) as fecha_cierre  from centro_atencion ca
+          left join centro_atencion_detalle cad on (cad.centro_id=ca.id)
+          left join tipo_centro tc on (ca.tipo_centro_id=tc.id)
+          where tc.id=".$_SESSION["usuario"][0]["TIPO_CENTRO_ID"]." and ca.estado = 1 group by ca.id order by ca.id desc";
+        }else if($_SESSION["usuario"][0]["NIVEL"]==USER_SEDE_GESTION) //USER_SEDE_GESTIÓN
+        {
+          /*$sql = "select distinct ca.id as id_centro,ca.NOM_CA as nombre_centro,cad.estado_completo, cad.fecha_matriz, cad.fecha_cierre  from centro_atencion ca
+          left join centro_atencion_detalle cad on (cad.centro_id=ca.id)
+          left join tipo_centro tc on (ca.tipo_centro_id=tc.id)
+		  where tc.id=".$_SESSION["usuario"][0]["TIPO_CENTRO_ID"]." and ca.estado = 1 ";*/
+		  $sql = "select max(ca.id) as id_centro,max(ca.NOM_CA ) as nombre_centro,max(cad.estado_completo) as estado_completo, max(cad.fecha_matriz) as fecha_matriz, max(cad.fecha_cierre) as fecha_cierre from centro_atencion ca left join centro_atencion_detalle cad on (cad.centro_id=ca.id) left join tipo_centro tc on (ca.tipo_centro_id=tc.id) where ca.estado = 1 group by ca.id order by ca.id desc";
+        }else if($_SESSION["usuario"][0]["NIVEL"]==USER_SEDE) //USER_SEDE
+        {
+          $sql = "select max(ca.id) as id_centro,max(ca.NOM_CA ) as nombre_centro,max(cad.estado_completo) as estado_completo, max(cad.fecha_matriz) as fecha_matriz, max(cad.fecha_cierre) as fecha_cierre  from centro_atencion ca
+          left join centro_atencion_detalle cad on (cad.centro_id=ca.id)
+          left join tipo_centro tc on (ca.tipo_centro_id=tc.id)
+          where tc.id=".$_SESSION["usuario"][0]["TIPO_CENTRO_ID"]." and ca.estado = 1 group by ca.id order by ca.id desc";
+        }else if($_SESSION["usuario"][0]["NIVEL"]==REGISTRADOR) //REGISTRADOR
+        {
+          $sql = "select distinct ca.id as id_centro,ca.NOM_CA as nombre_centro,cad.estado_completo, cad.fecha_matriz, cad.id, cad.fecha_cierre  from centro_atencion ca
+          left join centro_atencion_detalle cad on (cad.centro_id=ca.id)
+          left join tipo_centro tc on (ca.tipo_centro_id=tc.id)
+          where ca.id=".$_SESSION["usuario"][0]["CENTRO_ID"]." and ca.estado = 1 AND rownum = 1 ORDER BY cad.id desc";
+        }
+
+        $res = $modelo->executeQuery($sql);
+        $centros = $res;
+        if ($res){
+          foreach ($centros as $key => $value) {
+            $contador=0;
+            $grupos = $modelo->buscar_grupos( $value["ID_CENTRO"]);
+            foreach($grupos as $key2 => $value2){
+              if($value2["ESTADO_COMPLETO"] != 1){
+                $contador++;
+                break;
+              }
+            }
+            if($contador==0){
+
+                $centros[$key]["COMPLETADO"] = 'SI';
+
+            }else{
+              $centros[$key]["COMPLETADO"] = 'NO';
+            }
+
+          }
+
+
+          echo json_encode(array("data"=>$centros,"nivel_usuario"=>$_SESSION["usuario"][0]["NIVEL"]) ) ;
+        }else{
+          return false;
+        }
+    }
+    public function completar_matriz(){
+      $modelo = new modeloPortada();
+      $sql = "";
+      $res = $modelo->insertData("centro_atencion_detalle",array("centro_id"=>$_POST["id_centro"],"estado_completo"=>1,"usuario_crea"=>$_SESSION["usuario"][0]["ID"],"usuario_edita"=>$_SESSION["usuario"][0]["ID"] ));
+
+      if ($res)
+      {
+        echo json_encode(array("resultado"=>true) ) ;
+      }else{
+        return false;
+      }
+  }
+  public function completar_grupo(){
+    $modelo = new modeloPortada();
+
+    $sql = "select * from modulos_detalle where modulo_id = " . $_POST["id_modulo"] ." AND Periodo_Mes = ".date("m") . " AND Periodo_Anio = ".date("Y");
+    $res = $modelo->executeQuery($sql );
+    if($res){
+      $res = $modelo->updateData("modulos_detalle",array("estado_completo"=>$_POST["estado_completo"]),array("modulo_id"=>$_POST["id_modulo"],"Periodo_Mes"=>date("m"),"Periodo_Anio"=>date("Y")));
+    }else{
+      $res = $modelo->insertData("modulos_detalle",array("modulo_id"=>$_POST["id_modulo"],"estado_completo"=>1,"Periodo_Mes"=>date("m"),"Periodo_Anio"=>date("Y"),"usuario_crea"=>$_SESSION["usuario"][0]["ID"],"usuario_edita"=>$_SESSION["usuario"][0]["ID"] ));
+
+    }
+    if ($res){
+      echo json_encode(array("resultado"=>true) ) ;
+    }else{
+      return false;
+    }
+
+}
+  public function generar_matriz(){
+    $modelo = new modeloPortada();
+    $sql = "";
+    $res = $modelo->insertData("centro_atencion_detalle",array("centro_id"=>$_POST["id_centro"],"estado_completo"=>1,"fecha_matriz"=>date("d-M-y g.i.s"),"usuario_crea"=>$_SESSION["usuario"][0]["ID"],"usuario_edita"=>$_SESSION["usuario"][0]["ID"] ));
+
+    if ($res)
+    {
+      echo json_encode(array("resultado"=>true) ) ;
+    }else{
+      return false;
+    }
+  }
+  public function buscar_grupos(){
+    $modelo = new modeloPortada();
+    $id_centro = $_POST["id_centro"];
+    $nombre_centro = $modelo->executeQuery("select * from centro_atencion where id=". $_POST["id_centro"]." and estado = 1");
+      $sql = "select distinct m.nombre as modulo_nombre,m.id as id_modulo, m.encargado_id,usu.nombre as encargado_nombre, md.estado_completo,md.fecha_edicion,m.nombre_tabla from modulos m
+      left join modulos_detalle md on (md.modulo_id=m.Id)
+      left join usuarios usu on (usu.id = m.encargado_id)
+      left join centro_atencion ca on (ca.tipo_centro_id=m.centro_id)
+      where ca.id = ".$id_centro." and ca.estado = 1 order by m.id desc";
+
+    $res = $modelo->executeQuery($sql );
+    if ($res)
+    {
+      echo json_encode(array("data"=>$res,"nivel_usuario"=>$_SESSION["usuario"][0]["NIVEL"], "datos_centro"=>$nombre_centro) ) ;
+    }else{
+      return false;
+    }
+  }
+  public function mostrar_modulo(){
+    $modelo = new modeloPortada();
+    $nombre_centro = $modelo->executeQuery("select * from centro_atencion where id=". $_POST["id_centro"]." and estado = 1");
+    $nombre_tabla = $_POST["nombre_tabla"];
+    $sql = "select re.nombre,re.apellido_p, nt.* from ".$nombre_tabla." nt inner join residente re on (re.id=nt.residente_id) where to_char(nt.fecha_creacion, 'MON-YY') =UPPER('".date("M-y")."')";
+
+    $res = $modelo->executeQuery($sql );
+    if ($res)
+    {
+      echo json_encode(array("data"=>$res, "datos_centro"=>$nombre_centro) ) ;
+    }else{
+      return false;
+    }
+  }
+  public function listar_usuarios(){
+    $modelo = new modeloPortada();
+    $sql = "select usu.*,nu.nombre as nivel_nombre from usuarios usu left join niveles_usuarios nu on (usu.nivel=nu.id)";
+
+    $res = $modelo->executeQuery($sql );
+    if ($res)
+    {
+      echo json_encode(array("data"=>$res) ) ;
+    }else{
+      return false;
+    }
+  }
+  public function mostrar_matrices(){
+    $modelo = new modeloPortada();
+      $nivel = $_SESSION["usuario"][0]["NIVEL"];
+
+      if (ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel) {
+        $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+        $where = "";
+      }else if (SUPERVISOR == $nivel || USER_SEDE== $nivel){
+        $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+        $where = "ca.tipo_centro_id = ".$tipo_centro." and ";
+      }else if (REGISTRADOR == $nivel || RESPONSABLE_INFORMACION== $nivel || USER_CENTRO== $nivel){
+        $centro = $_SESSION["usuario"][0]["CENTRO_ID"];
+        $where = "ca.id = ".$centro." and ";
+      }
+      
+      /*usg, admin = matriz total */
+      /*  */
+      $periodo_mes = $_POST["periodo_mes"];
+      $periodo_anio = $_POST["periodo_anio"];
+
+      $matriz_consolidado = "SELECT * FROM matriz_consolidado WHERE periodo_mes=".date("m",strtotime($periodo_mes))." AND periodo_anio=".$periodo_anio;
+      $matriz_consolidado = $modelo->executeQuery($matriz_consolidado);
+      if (!$matriz_consolidado) {
+        return false;
+      }
+      $month = $periodo_anio."-".$periodo_mes;
+      $aux = date('d', strtotime("{$month} + 1 month"));
+
+      $last_day = date('d', strtotime("{$aux} - 1 day"));
+      $fecha = " BETWEEN UPPER('".date("01-M-y",strtotime($periodo_anio."-".$periodo_mes))."') AND UPPER('".date(($last_day."-M-y"),strtotime($periodo_anio."-".$periodo_mes))."')";
+
+        $matrices = "select max(ca.id) as centro_id, max(ca.nom_ca) as nombre_centro, to_char(max(cad.fecha_matriz),'DD-MON-YY HH24:MI') as fecha_matriz, max(cad.ID) as id from centro_atencion_detalle cad
+          left join centro_atencion ca on(ca.id=cad.centro_id)  where ".$where." to_char(cad.fecha_matriz,'DD-MON-YY') ".$fecha." and ca.estado = 1 group by ca.id ";
+      $matrices = $modelo->executeQuery($matrices);
+
+      if ($matrices)
+      {
+        echo json_encode(array("data"=>$matrices) ) ;
+      }else{
+        return false;
+      }
+    }
+
+    public function descargar_reporte_matriz_general(){
+      $modelo = new modeloPortada();
+	  $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+	  
+      
+	  $matriz_id = isset($_POST["matriz_id"]) ? ($_POST["matriz_id"]!=""?" cad.id = ".$_POST["matriz_id"]." and ":"") : "";
+      $periodo_mes = $_POST["periodo_mes"];
+      $periodo_anio = $_POST["periodo_anio"];
+      $month = $periodo_anio."-".$periodo_mes;
+      $aux = date('d', strtotime("{$month} + 1 month"));
+
+      $last_day = date('d', strtotime("{$aux} - 1 day"));
+
+	  $fecha = " BETWEEN UPPER('".date("01-M-y",strtotime($periodo_anio."-".$periodo_mes))."') AND UPPER('".date(($last_day."-M-y"),strtotime($periodo_anio."-".$periodo_mes))."')";
+        $matriz_consolidado = "SELECT * FROM matriz_consolidado WHERE periodo_mes=".date("m",strtotime($periodo_mes))." AND periodo_anio=".$periodo_anio;
+        $matriz_consolidado = $modelo->executeQuery($matriz_consolidado);
+        if (!$matriz_consolidado) {
+          return false;
+        }
+      $centros = "select  max(ca.id),max(ca.nom_ca) as nombre_centro,max(ca.tipo_centro_id) as tipo_centro_id,max(tc.nombre) as nombre_tipo_centro,to_char(max(cad.fecha_matriz),'DD-MON-YY HH24:MI') as fecha_matriz,max(cad.id) from centro_atencion_detalle cad
+      left join centro_atencion ca on(ca.id=cad.centro_id)
+      left join tipo_centro tc on(ca.tipo_centro_id=tc.id)
+        where ".$matriz_id." to_char(cad.fecha_matriz,'DD-MON-YY') ".$fecha." and ca.estado=1 group by ca.id order by ca.id desc";
+      $centros = $modelo->executeQuery($centros);
+	  $html2 ="";
+      foreach ($centros as $key => $centro) 
+      {
+		$centro_html ="<tr><th>Nombre del Centro</th><th>Tipo de Centro</th><th>Fecha Matriz </th></tr>";
+        $centro_html .="<tr><td>".$centro["NOMBRE_CENTRO"]."</td><td>".$centro["NOMBRE_TIPO_CENTRO"]."</td><td>".$centro["FECHA_MATRIZ"]."</td></tr>";
+
+        //$modulo_html = "<table>";
+        $modulos = "select m.parent_id,m.nombre as nombre_modulo,usu.nombre as nombre_usuario,md.periodo_mes,m.nombre_tabla from modulos_detalle md
+        left join modulos m on(m.id=md.modulo_id)
+        left join usuarios usu on(usu.id=m.encargado_id)
+          where m.centro_id in (".$centro["TIPO_CENTRO_ID"].") and md.periodo_mes = ".date("m",strtotime($periodo_mes))." and md.periodo_anio = ".$periodo_anio." order by md.id desc";
+        $modulos = $modelo->executeQuery($modulos);
+		$html = "";
+        foreach ($modulos as $key => $modulo)
+        {
+        if (($modulo["NOMBRE_TABLA"])!="") {
+          $modulo_html ="<tr><th></th><th>Nombre del Modulo</th><th>Encargado</th><th>Periodo Mes</th></tr>";
+          $modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td><td>".$modulo["NOMBRE_USUARIO"]."</td><td>".$modulo["PERIODO_MES"]."</td></tr>";
+			
+          $grupos = "select distinct nt.* from ".$modulo["NOMBRE_TABLA"]." nt where nt.periodo_mes=".date("m",strtotime($periodo_mes))." and nt.periodo_anio=".$periodo_anio."  order by nt.id desc";
+          $grupos = $modelo->executeQuery($grupos);
+
+          $grupo_html = "";
+          $residentes = [];
+          foreach ($grupos as $key => $grupo)
+          {
+            if (!in_array($grupo["RESIDENTE_ID"],$residentes)) {
+              if ($key==0) {
+                $keys = array_keys($grupo);
+                $grupo_html .="<tr><th></th>";
+                foreach ($keys as $key)
+                {
+                  $grupo_html .="<th>$key</th>";
+                }
+                $grupo_html .="</tr>";
+              }
+              $grupo_values = array_values($grupo);
+              $grupo_html .= "<tr><td></td>";
+              foreach ($grupo_values as $key => $value) {
+                $grupo_html .="<td>".$value."</td>";
+              }
+              $grupo_html .= "</tr>";
+              $residentes[] = $grupo["RESIDENTE_ID"];
+            }
+		  }
+		  $html .= $modulo_html.$grupo_html;
+          //$modulo_html .=$grupo_html;
+          }
+		}
+		$html2 .=$centro_html.$html;
+      }
+      
+      //$modulo_html .="</table>";
+      //$table = '<table><tr><td>'.$centro_html.'</td></tr><tr><td>'.$modulo_html.'</td></tr></table>';
+	  $table = '<table>'.$html2.'</table>';
+      if ($modulos)
+      {
+        echo json_encode(array("data"=>$table) ) ;
+      }else{
+        return false;
+      }
+    }
+    public function descargar_reporte_matriz_general_2(){
+        $modelo = new modeloPortada();
+        $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+        
+        
+        $matriz_id = isset($_POST["matriz_id"]) ? ($_POST["matriz_id"]!=""?" cad.id = ".$_POST["matriz_id"]." and ":"") : "";
+        $periodo_mes = $_POST["periodo_mes"];
+        $periodo_anio = $_POST["periodo_anio"];
+        $month = $periodo_anio."-".$periodo_mes;
+        $matriz_consolidado = "SELECT * FROM matriz_consolidado WHERE periodo_mes=".date("m",strtotime($periodo_mes))." AND periodo_anio=".$periodo_anio;
+      $matriz_consolidado = $modelo->executeQuery($matriz_consolidado);
+      if (!$matriz_consolidado) {
+        return false;
+      }
+        $aux = date('d', strtotime("{$month} + 1 month"));
+  
+        $last_day = date('d', strtotime("{$aux} - 1 day"));
+  
+        $fecha = " BETWEEN UPPER('".date("01-M-y",strtotime($periodo_anio."-".$periodo_mes))."') AND UPPER('".date(($last_day."-M-y"),strtotime($periodo_anio."-".$periodo_mes))."')";
+  
+
+        $modulos = "select cu.*,cda.* from 
+        CarIdentificacionUsuario cu 
+        , CarDatosAdmision cda 
+        , CarCondicionIngreso cci
+        , residente re where re.id = 97";
+        $modulos = $modelo->executeQuery($modulos);
+        $residentes = array();
+        $grupo_html = "";
+        foreach ($modulos as $key => $grupo) {
+          //if (!in_array($grupo["RESIDENTE_ID"],$residentes)) {
+            if ($key==0) {
+              $keys = array_keys($grupo);
+              $grupo_html .="<tr><th></th>";
+              foreach ($keys as $key)
+              {
+                $grupo_html .="<th>$key</th>";
+              }
+              $grupo_html .="</tr>";
+            }
+            $grupo_values = array_values($grupo);
+            $grupo_html .= "<tr><td></td>";
+            foreach ($grupo_values as $key => $value) {
+              $grupo_html .="<td>".$value."</td>";
+            }
+            $grupo_html .= "</tr>";
+           // $residentes[] = $grupo["RESIDENTE_ID"];
+          //}
+        }
+        $table = '<table>'.$grupo_html.'</table>';
+        if ($modulos)
+        {
+          echo json_encode(array("data"=>$table) ) ;
+          return true;
+        }else{
+          return false;
+        }
+
+
+        $centros = "select  max(ca.id),max(ca.nom_ca) as nombre_centro,max(ca.tipo_centro_id) as tipo_centro_id,max(tc.nombre) as nombre_tipo_centro,to_char(max(cad.fecha_matriz),'DD-MON-YY HH24:MI') as fecha_matriz,max(cad.id) from centro_atencion_detalle cad
+        left join centro_atencion ca on(ca.id=cad.centro_id)
+        left join tipo_centro tc on(ca.tipo_centro_id=tc.id)
+          where ".$matriz_id." to_char(cad.fecha_matriz,'DD-MON-YY') ".$fecha." and ca.estado=1 group by ca.id order by ca.id desc";
+        $centros = $modelo->executeQuery($centros);
+        $html2 ="";
+        foreach ($centros as $key => $centro) 
+        {
+          $centro_html ="<tr><th>Nombre del Centro</th><th>Tipo de Centro</th><th>Fecha Matriz </th></tr>";
+          $centro_html .="<tr><td>".$centro["NOMBRE_CENTRO"]."</td><td>".$centro["NOMBRE_TIPO_CENTRO"]."</td><td>".$centro["FECHA_MATRIZ"]."</td></tr>";
+  
+          //$modulo_html = "<table>";
+          $modulos = "select m.parent_id,m.nombre as nombre_modulo,usu.nombre as nombre_usuario,md.periodo_mes,m.nombre_tabla from modulos_detalle md
+          left join modulos m on(m.id=md.modulo_id)
+          left join usuarios usu on(usu.id=m.encargado_id)
+            where m.centro_id in (".$centro["TIPO_CENTRO_ID"].") and md.periodo_mes = ".date("m",strtotime($periodo_mes))." and md.periodo_anio = ".$periodo_anio." order by md.id desc";
+          $modulos = $modelo->executeQuery($modulos);
+          $html = "";
+          foreach ($modulos as $key => $modulo)
+          {
+          if (($modulo["NOMBRE_TABLA"])!="") {
+            $modulo_html ="<tr><th></th><th>Nombre del Modulo</th><th>Encargado</th><th>Periodo Mes</th></tr>";
+            $modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td><td>".$modulo["NOMBRE_USUARIO"]."</td><td>".$modulo["PERIODO_MES"]."</td></tr>";
+              
+            $grupos = "select distinct nt.* from ".$modulo["NOMBRE_TABLA"]." nt where nt.periodo_mes=".date("m",strtotime($periodo_mes))." and nt.periodo_anio=".$periodo_anio."  order by nt.id desc";
+            $grupos = $modelo->executeQuery($grupos);
+  
+            $grupo_html = "";
+            $residentes = [];
+            foreach ($grupos as $key => $grupo)
+            {
+              if (!in_array($grupo["RESIDENTE_ID"],$residentes)) {
+                if ($key==0) {
+                  $keys = array_keys($grupo);
+                  $grupo_html .="<tr><th></th>";
+                  foreach ($keys as $key)
+                  {
+                    $grupo_html .="<th>$key</th>";
+                  }
+                  $grupo_html .="</tr>";
+                }
+                $grupo_values = array_values($grupo);
+                $grupo_html .= "<tr><td></td>";
+                foreach ($grupo_values as $key => $value) {
+                  $grupo_html .="<td>".$value."</td>";
+                }
+                $grupo_html .= "</tr>";
+                $residentes[] = $grupo["RESIDENTE_ID"];
+              }
+            }
+            $html .= $modulo_html.$grupo_html;
+            //$modulo_html .=$grupo_html;
+            }
+          }
+          $html2 .=$centro_html.$html;
+        }
+        
+        //$modulo_html .="</table>";
+        //$table = '<table><tr><td>'.$centro_html.'</td></tr><tr><td>'.$modulo_html.'</td></tr></table>';
+        $table = '<table>'.$html2.'</table>';
+        if ($modulos)
+        {
+          echo json_encode(array("data"=>$table) ) ;
+        }else{
+          return false;
+        }
+      }
+  public function mostrar_reporte_rub(){
+    /*$modelo = new modeloPortada();
+    $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+    $fecha = " BETWEEN UPPER('".$_POST["fecha_inicial"]."') AND UPPER('".$_POST["fecha_final"]."')";
+    $nivel = $_SESSION["usuario"][0]["NIVEL"];
+    if (USER_CENTRO == $nivel || SUPERVISOR == $nivel || RESPONSABLE_INFORMACION == $nivel) {
+      $tipo_centro = $_SESSION["usuario"][0]["CENTRO_ID"];
+      $where = "ca.id = ".$tipo_centro;
+    }else{
+      $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+      $where = "ca.tipo_centro_id = ".$tipo_centro_id;
+    }
+
+    echo $residentes = "select  re.nombre as nombre_residente,re.apellido_p,re.apellido_m,re.fecha_creacion as fecha
+    from residente re
+    inner join centro_atencion ca on (re.centro_id=ca.id)
+	  inner join tipo_centro tc on(tc.id=re.tipo_centro_id)
+	  where to_char(re.fecha_creacion,'DD-MON-YY') ".$fecha." and ".$where." order by re.id desc";
+    $residentes = $modelo->executeQuery($residentes);*/
+    $modelo = new modeloPortada();
+    $nivel = $_SESSION["usuario"][0]["NIVEL"];
+    $innner_centro_atencion = "inner join centro_atencion ca on(ca.tipo_centro_id=tc.id) ";
+
+    if (USER_CENTRO == $nivel || SUPERVISOR == $nivel || RESPONSABLE_INFORMACION == $nivel) {
+      $tipo_centro = $_SESSION["usuario"][0]["CENTRO_ID"];
+      $filtro_centro = "ca.id = ".$tipo_centro;
+    }else{
+      $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+      $filtro_centro = "tc.tipo_centro_id = ".$tipo_centro_id;
+      $innner_centro_atencion = "";
+    }
+      $fecha = " BETWEEN UPPER('".$_POST["fecha_inicial"]."') AND UPPER('".$_POST["fecha_final"]."')";
+    $residentes = "select distinct re.id, re.nombre as nombre_residente, re.apellido_p, re.apellido_m, pa.nombre as nombre_pais , ubi.NOMDEPT as nombre_departamento, ubi.nomprov as nombre_provincia, ubi.nomdist as nombre_distrito, (CASE sexo WHEN 'h' THEN 'Hombre' ELSE 'Mujer' END) as sexo_residente ,re.fecha_creacion as fecha from residente re
+    inner join tipo_centro tc on(tc.id=re.tipo_centro_id)
+    ".$innner_centro_atencion."
+    inner join paises pa on(pa.id=re.pais_id)
+    inner join ubigeo ubi on(ubi.coddist=re.distrito_naci_cod)
+    where to_char(re.fecha_creacion,'DD-MON-YY') ".$fecha." AND ".$filtro_centro." ";
+    $residentes = $modelo->executeQuery($residentes);
+
+    if ($residentes)
+    {
+      echo json_encode(array("data"=>$residentes) ) ;
+    }else{
+      return false;
+    }
+  }
+  public function descargar_reporte_matriz_rub(){
+    $modelo = new modeloPortada();
+	$nivel = $_SESSION["usuario"][0]["NIVEL"];
+	$innner_centro_atencion = "inner join centro_atencion ca on(ca.tipo_centro_id=tc.id) ";
+
+	if (USER_CENTRO == $nivel || SUPERVISOR == $nivel || RESPONSABLE_INFORMACION == $nivel) {
+		$centro_id = $_SESSION["usuario"][0]["CENTRO_ID"];
+		$filtro_centro = "ca.id = ".$centro_id;
+	}else{
+		$tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+		$filtro_centro = "tc.tipo_centro_id = ".$tipo_centro_id;
+		$innner_centro_atencion = "";
+	}
+	$fecha = " BETWEEN UPPER('".$_POST["fecha_inicial"]."') AND UPPER('".$_POST["fecha_final"]."')";
+   /* $fecha = " BETWEEN UPPER('".$_POST["fecha_inicial"]."') AND UPPER('".$_POST["fecha_final"]."')";
+	$residentes = "select distinct re.id, re.nombre as nombre_residente, re.apellido_p, re.apellido_m, pa.nombre as nombre_pais , ubi.NOMDEPT as nombre_departamento, ubi.nomprov as nombre_provincia, ubi.nomdist as nombre_distrito, (CASE sexo WHEN 'h' THEN 'Hombre' ELSE 'Mujer' END) as sexo_residente ,re.fecha_creacion as fecha from residente re
+	inner join tipo_centro tc on(tc.id=re.tipo_centro_id)
+	".$innner_centro_atencion."
+	inner join paises pa on(pa.id=re.pais_id)
+	inner join ubigeo ubi on(ubi.coddist=re.distrito_naci_cod)
+	where to_char(re.fecha_creacion,'DD-MON-YY') ".$fecha." AND ".$filtro_centro." ";
+	$residentes = $modelo->executeQuery($residentes);*/
+  $residente_html = "";
+  $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+    switch ($tipo_centro_id) {
+		case '1': /*ppd*/
+		$parent_id="2,25";
+		/*$campos = array("CarCentroServicio"=>"COD_ENTIDAD,NOM_ENTIDAD as ENTIDAD,COD_LINEA,LINEA_INTERVENCION,COD_SERVICIO,NOM_SERVICIO,UBIGEO_INE as UBIGEO_CA,(select NOMDEPT,NOMPROV,NOMDIST from ubigeo where CODDIST=CarCentroServicio.UBIGEO_INE) as UBIGEO_TODO,CENTRO_POBLADO as CCPP_CA,CENTRO_RESIDENCIA as AREA_RES_CA,COD_CENTROATENCION as COD_CA,NOM_CENTROATENCION AS NOM_CA,re.id as COD_RESIDENTE,re.NOMBRE AS NOM_RESIDENTE, re.apellido_pd AS APE_PAT_RESIDENTE, re.apellido_m as APE_MAT_RESIDENTE, ");*/
+		/*$campos = "cs.COD_ENTIDAD,cs.NOM_ENTIDAD as ENTIDAD,cs.COD_LINEA,cs.LINEA_INTERVENCION,cs.COD_SERVICIO,cs.NOM_SERVICIO,cs.UBIGEO_INE as UBIGEO_CA,(select NOMDEPT,NOMPROV,NOMDIST from ubigeo where CODDIST=cs.UBIGEO_INE) as UBIGEO_TODO,cs.CENTRO_POBLADO as CCPP_CA,cs.CENTRO_RESIDENCIA as AREA_RES_CA,cs.COD_CENTROATENCION as COD_CA,cs.NOM_CENTROATENCION AS NOM_CA,re.id as COD_RESIDENTE,re.NOMBRE AS NOM_RESIDENTE, re.apellido_pd AS APE_PAT_RESIDENTE, re.apellido_m as APE_MAT_RESIDENTE, ci.Tipo_Documento as TIP_DOC_USU, ci.Numero_Documento as NRO_DOC_USU,iu.Fecha_Nacimiento as FEC_NAC_RESIDENTE, iu.Edad as EDAD_RESIDENTE, iu.Sexo as SEXO_RESIDENTE, '' as DIR_USU, re.distrito_naci_cod as UBIGEO_USU,(select NOMDEPT,NOMPROV,NOMDIST from ubigeo where CODDIST=re.distrito_naci_cod) as UBIGEO_USU,ci.FECHA_CREACION as FEC_INGRESO, '' as PERFIL_ING,da.Institucion_derivado as VIA_ING, sn.Discapacidad as FLG_DISCAP, re.Estado as EST_RESIDENTE,eg.Fecha_Egreso as FEC_EGRE, eg.Motivo_Egreso as MOTIVO_EGRE, da.Fecha_Reingreso as FEC_REING, '' as Grupo etario,eg.Traslado as TRASLADO, eg.Fallecimiento as FALLECIMIENTO,eg.Reinsercion AS Reinsercion, eg.Aus as ASEGURAMIENTO_UNIVERSAL, eg.Constancia_Naci as PARTIDA_DE_NACIMIENTO, eg.DNI AS DNI,'' as EDUCACION ,eg.Reinsercion AS Reinsercion_Familiar ";
+		$from = " residente re inner join CarCentroServicio cs on (re.id = cs.residente_id ) left join CarCondicionIngreso ci on (ci.Residente_Id=re.id) left join CarIdentificacionUsuario iu on (iu.Residente_Id=re.id) left join CarDatosAdmision da on (da.Residente_Id=re.id) left join CarSaludNutricion sn on (sn.Residente_Id=re.id) left join CarEgresoGeneral eg on (eg.Residente_Id=re.id)";*/
+		$campos = "cs.COD_ENTIDAD,cs.NOM_ENTIDAD as ENTIDAD,cs.COD_LINEA,cs.LINEA_INTERVENCION,cs.COD_SERVICIO,cs.NOM_SERVICIO,cs.UBIGEO_INE as UBIGEO_CA,cs.CENTRO_POBLADO as CCPP_CA,cs.CENTRO_RESIDENCIA as AREA_RES_CA,cs.COD_CENTROATENCION as COD_CA,cs.NOM_CENTROATENCION AS NOM_CA,re.id as COD_RESIDENTE,re.NOMBRE AS NOM_RESIDENTE, re.apellido_p AS APE_PAT_RESIDENTE, re.apellido_m as APE_MAT_RESIDENTE, ci.Tipo_Documento as TIP_DOC_USU, ci.Numero_Documento as NRO_DOC_USU,iu.Fecha_Nacimiento as FEC_NAC_RESIDENTE, iu.Edad as EDAD_RESIDENTE, iu.Sexo as SEXO_RESIDENTE, '' as DIR_USU, re.distrito_naci_cod as UBIGEO_USU,ci.FECHA_CREACION as FEC_INGRESO, '' as PERFIL_ING,da.Institucion_derivado as VIA_ING, sn.Discapacidad as FLG_DISCAP, re.Estado as EST_RESIDENTE,eg.Fecha_Egreso as FEC_EGRE, eg.Motivo_Egreso as MOTIVO_EGRE, da.Fecha_Reingreso as FEC_REING, '' as Grupo_etario,eg.Traslado as TRASLADO, eg.Fallecimiento as FALLECIMIENTO,eg.Reinsercion AS Reinsercion, eg.Aus as ASEGURAMIENTO_UNIVERSAL, eg.Constancia_Naci as PARTIDA_DE_NACIMIENTO, eg.DNI AS DNI,'' as EDUCACION ,eg.Reinsercion AS Reinsercion_Familiar ";
+		$from = " residente re left join CarCentroServicio cs on (re.id = cs.residente_id ) left join CarCondicionIngreso ci on (ci.Residente_Id=re.id) left join CarIdentificacionUsuario iu on (iu.Residente_Id=re.id) left join CarDatosAdmision da on (da.Residente_Id=re.id) left join CarSaludNutricion sn on (sn.Residente_Id=re.id) left join CarEgresoGeneral eg on (eg.Residente_Id=re.id)";
+		break;
+		case '2': /*pam*/
+		$parent_id="27,43";
+		break;
+		case '3':
+		$parent_id="46,70";
+		break;
+		default:
+		$parent_id="2,25";
+			break;
+	}
+	$where = " WHERE to_char(da.fecha_edita,'DD-MON-YY') ".$fecha." AND to_char(eg.fecha_egreso,'DD-MON-YY') ".$fecha;
+	$query = "SELECT distinct ".$campos." FROM ".$from;
+	$residentes = $modelo->executeQuery($query);
+	$head_html = "";
+	$body_html = "";
+	foreach ($residentes as $key => $value) {
+		if ($key==0) {
+            $keys = array_keys($value);
+            $head_html .="<tr>";
+            foreach ($keys as $key)
+            {
+              $head_html .="<th>$key</th>";
+            }
+            $head_html .="</tr>";
+          }else {
+			$body_html .="<tr>";
+			$keys = array_keys($value);
+            foreach ($keys as $key)
+            {
+              $body_html .="<td>".$value[$key]."</td>";
+			}
+			$body_html .="</tr>";
+		  }
+
+	}
+    $table = '<table><thead>'.$head_html.'</thead><tbody>'.$body_html.'</tbody></table>';
+    if ($body_html)
+    {
+      echo json_encode(array("data"=>$table) ) ;
+    }else{
+      return false;
+    }
+  }
+  public function mostrar_reporte_nominal(){
+    $modelo = new modeloPortada();
+    $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+	$id_residente = $_POST["id_residente"];
+	/*
+	if (SUPERVISOR == $nivel || USER_SEDE == $nivel) {
+		$tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+		$where = " AND tipo_centro_id = ".$tipo_centro;
+	}else if (REGISTRADOR ==$nivel || RESPONSABLE_INFORMACION ==$nivel){
+		$centro_id = $_SESSION["usuario"][0]["CENTRO_ID"];
+		$where = " AND centro_id = ".$centro_id;
+	}else if(ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel){
+		$where ="";
+	}*/
+    $residente = "select distinct re.nombre as nombre_residente,tc.id as tipo_centro_id from residente re
+	inner join centro_atencion ca on(ca.id=re.centro_id)
+	inner join tipo_centro tc on(tc.id=re.tipo_centro_id)
+	where re.id = ".$id_residente." and ca.estado=1 order by re.id desc";
+    $residente = $modelo->executeQuery($residente);
+
+    if ($residente)
+    {
+      echo json_encode(array("data"=>$residente) ) ;
+    }else{
+      return false;
+    }
+  }
+  public function campos_tipo_centro ($tipo_centro_id=""){
+    $campos = "";
+    switch ($tipo_centro_id) {
+      case '1': /*ppd*/
+      $campos = array('CarIdentificacionUsuario'=>
+'Ape_Paterno as "Apellido paterno",Ape_Materno as "Apellido materno",
+Nom_Usuario as "Nombre Usuario",
+(SELECT nombre FROM paises WHERE id=CarIdentificacionUsuario.Pais_Procencia) as "Pai­s de procedencia",
+(SELECT NOMDEPT FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as "Departamento de nac",
+(SELECT NOMPROV FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as "Provincia de nac" ,
+(SELECT NOMPROV FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as "Distrito de nac",
+(CASE Sexo WHEN \'h\' THEN \'Hombre\' WHEN \'m\' THEN \'Mujer\' END) as "Sexo",
+Fecha_Nacimiento as "Fecha de Nacimiento",
+(SELECT nombre from pam_lengua_materna WHERE id = CarIdentificacionUsuario.Lengua_Materna) as "Lengua Materna"',
+
+'CarDatosAdmision'=>
+'Fecha_Ingreso as "Fecha de ingreso",
+(SELECT nombre FROM pam_instituciones WHERE id=CarDatosAdmision.Institucion_derivado) as "Entidad deriva",
+Motivo_Ingreso  as "Motivo ingreso PRINCIPAL(exp)",
+\'\'  as "Motivo ingreso PRINCIPAL(real)",
+Numero_Documento as "Número documento de ingreso"',
+
+'CarCondicionIngreso'=>
+'DNI as "DNI al ingreso",
+(SELECT nombre FROM pam_tipo_documento_identidad WHERE id=CarCondicionIngreso.Tipo_Documento) as "Tipo documento de identidad",
+ Numero_Documento as "Número documento de ingreso",
+ Posee_Pension as "Pensión",
+ (SELECT nombre FROM pam_tipo_pension WHERE id=CarCondicionIngreso.Tipo_Pension) as "Tipo de pensión",
+ Lee_Escribe as "Sabe Leer y Escribir",
+ (SELECT nombre FROM pam_nivel_educativo where id=CarCondicionIngreso.Nivel_Educativo) as "Nivel Educativo",
+ (SELECT nombre FROM pam_clasif_socioeconomico where id = CarCondicionIngreso.Clasficacion_Socioeconomica) as "Clasificación Socio. (SISFOH)",\'\' as "Cobertura médica",
+ (SELECT nombre FROM pam_tipo_seguro_salud WHERE id=CarCondicionIngreso.Tipo_Seguro) as "Tipo de aseguramiento"',
+
+ 'CarSaludNutricion'=>'Discapacidad as "Discapacidad",
+ Discapacidad_Fisica as "Presenta discap. física",
+ Discapacidad_Intelectual as "Presenta discap. intelectual",
+  Discapacidad_Sensorial as "Presenta discap. sensorial",
+  Discapacidad_mental as "Presenta discap. mental",
+  Carnet_CONADIS as "Tiene carnet de CONADIS",
+  \'\' as "Grado dependencia de la PAM",
+  Motivo_Movilidad as "Motivo de dificultad Desplaz.",
+  Patologia1 as "Patología Crónica 1",
+  (SELECT nombre FROM pam_tipo_patologia WHERE id =CarSaludNutricion.Tipo_Patologia1) as "Tipo de Patología",
+  Especifique1  as "Especifique"',
+
+  'CarSaludNutricion'=>'Nivel_Hemoglobina as "Nivel de Hemoglobina",
+   Peso as "Peso (Kg.)",
+   Talla as "Talla (m)",
+   Estado_Nutricional as "Estado Nutricional(IMC)"',
+
+   'DATOS FAMILIARES Y SOCIALES DEL USUARIO (Trabajo Social)'=>
+   'Familiares as "Cuenta con familiares",
+    Parentesco as "Tipo de parentesco"',
+
+    'DATOS DEL ESTADO PSICOLÓGICO DEL USUARIO'=>
+    '\'\' as "Tras. comport. y/o disociales",
+    \'\' as "Tipo de transtorno"',
+'CarEgresoGeneral'=>'Fecha_Egreso as "Fecha de Egreso",Motivo_Egreso as "Motivo de Egreso",Retiro_Voluntario as "Retiro Voluntario",Reinsercion, Grado_Parentesco as "Grado de Parentesco", Traslado, Fallecimiento, Restitucion_derechos as "Restitución de Derechos",AUS,Constancia_Naci as "Constancia de Nacimiento",Carnet_CONADIS as "CONADIS",DNI as "Documento de Identidad", Restitucion','CarEgresoSalud'=>'Plan_Medico as "Plan Médico",Meta_PII as "Meta Trazada",Informe_Tecnico as "Informe Técnico Evolutivo", Des_Informe as "Desc.Técnico Evolutivo",Cumple_Plan as "Cumpl. plan de intervención",Enfermedades_Cronicas  as "Enfermedades crónicas",Especificar');
+      break;
+      case '2': /*pam*/
+      $campos = array('pam_datos_identificacion'=>
+     'residente_apellido_paterno as "Apellido paterno",
+     residente_apellido_materno as "Apellido materno",
+     residente_nombre as "Nombre Usuario",
+     (SELECT nombre FROM paises WHERE id=pam_datos_identificacion.pais_procedente_id) as "Pai­s de procedencia",
+     (SELECT NOMDEPT FROM ubigeo WHERE coddist=pam_datos_identificacion.distrito_nacimiento_id) as "Departamento de nac",
+     (SELECT NOMPROV FROM ubigeo WHERE coddist=pam_datos_identificacion.distrito_nacimiento_id) as "Provincia de nac",
+     (SELECT NOMPROV FROM ubigeo WHERE coddist=pam_datos_identificacion.distrito_nacimiento_id) as "Distrito de nac",
+     (CASE sexo WHEN \'h\' THEN 2 WHEN \'m\' THEN 1 END) as "Sexo",
+     fecha_nacimiento as "Fecha de Nacimiento",
+     (SELECT nombre from pam_lengua_materna WHERE id = pam_datos_identificacion.lengua_materna) as "Lengua Materna"',
+
+
+     'pam_datos_admision_usuario'=>
+     'fecha_ingreso_usuario as "Fecha de Ingreso",
+     (SELECT nombre FROM pam_instituciones_deriva WHERE id=pam_datos_admision_usuario.institucion_deriva) as "Entidad que lo deriva",
+     (SELECT nombre FROM pam_motivos_ingreso WHERE id = pam_datos_admision_usuario.motivo_ingreso_principal) as "Motivo ingreso PRINCIPAL(exp)",
+     (SELECT nombre FROM pam_motivos_ingreso WHERE id = pam_datos_admision_usuario.motivo_ingreso_secundario)as "Motivo ingreso PRINCIPAL(real)",
+     numero_documento_ingreo_car as "Número documento de ingreso",
+     perfil_ingreso as "Perfil de Ingreso"',
+
+     'pam_datosCondicionIngreso'=>
+     'documento_entidad as "DNI al ingreso",
+     tipo_documento_entidad as "Tipo documento de identidad",
+     numero_documento_ingreso as "Número documento de ingreso",
+     \'\' as "Pensión",
+     tipo_pension as "Tipo de pensión",
+     leer_escribir as "Sabe Leer y Escribir",
+     (SELECT nombre FROM pam_nivel_educativo where id=pam_datosCondicionIngreso.nivel_educativo) as "Nivel Educativo",
+     \'\' as "Cobertura médica",
+     (SELECT nombre FROM pam_clasif_socioeconomico where id = pam_datosCondicionIngreso.SISFOH) as "Clasif.Socioeconómica(SISFOH)",
+     (SELECT nombre FROM pam_tipo_seguro_salud WHERE id=pam_datosCondicionIngreso.aseguramiento_salud) as "Tipo de aseguramiento"',
+
+
+'pam_datos_saludnutric'=>
+'discapacidad as "Discapacidad",
+discapacidad_fisica as "Presenta discap. física",
+discapacidad_intelectual as "Presenta discap. intelectual",
+discapacidad_sensorial as "Presenta discap. sensorial",
+presenta_discapacidad_mental as  "Presenta discap. mental",
+carnet_conadis as "Tiene carnet del CONADIS",
+grado_dependencia_pam as "Grado dependencia PAM",
+motivo_dif_desplazamiento as "Motivo dif. con el desplaza.",
+enfermedad_ingreso_1 as "Patología crónica 1",
+(SELECT nombre FROM pam_tipo_patologia WHERE id =pam_datos_saludnutric.tipo_patologia) as "Tipo de patología",
+\'\' as "Especifique"',
+
+'pam_datos_saludnutric'=>
+'nivel_hemoglobina as "Nivel de Hemoglobina",
+peso as "Peso (Kg.)",
+talla as "Talla (m)",
+estado_nutricional as "Estado Nutricional(IMC)"',
+
+'pam_datosCondicionIngreso'=>
+'familiar_ubicados as "Cuenta con familiares",
+tipo_parentesco as "Tipo de parentesco"',
+
+'pam_salud_mental'=>
+'trastorno_disociales as "Tras. comport. y/o disociales",
+tipo_trastorno as "Tipo de transtorno"',
+
+
+'pam_EgresoUsuario'=>
+'Fecha_Egreso as "Fecha de egreso",
+MotivoEgreso as "Motivo de egreso",
+Retiro_Voluntario as "Retiro Voluntario",
+Reinsercion_Familiar as "Reinserción familiar",
+
+Traslado_Entidad_Salud as "Traslado a entidad de salud",
+Traslado_Otra_Entidad as "Traslado a otra Entidad",
+Fallecimiento as "Fallecimiento",
+RestitucionAseguramientoSaludo as "Cumpl. de rest.derechos salud",
+Restitucion_Derechos_DNI as "Cumpl. de rest.derechos dni",
+RestitucionReinsercionFamiliar as "Reinserción Familiar"');
+      break;
+      case '3':
+      $campos = array('NNAInscripcionResidente'=>
+'residente_apellido_paterno as "Apellido paterno",
+residente_apellido_materno as "Apellido materno",
+residente_nombre as "Nombre usuario",
+(SELECT nombre FROM paises WHERE id=NNAInscripcionResidente.pais_procedente_id) as "Pai­s de procedencia",
+(SELECT NOMDEPT FROM ubigeo WHERE coddist=NNAInscripcionResidente.distrito_nacimiento_id) as "Departamento de nac",
+(SELECT NOMPROV FROM ubigeo WHERE coddist=NNAInscripcionResidente.distrito_nacimiento_id) as "Provincia de nac" ,
+(SELECT NOMPROV FROM ubigeo WHERE coddist=NNAInscripcionResidente.distrito_nacimiento_id) as "Distrito de nac",
+(CASE sexo WHEN \'h\' THEN \'Hombre\' WHEN \'m\' THEN \'Mujer\' END) as "Sexo",
+fecha_nacimiento as "Fecha de nacimiento" ,
+(SELECT nombre from pam_lengua_materna WHERE id = NNAInscripcionResidente.lengua_materna) as "Lengua materna"',
+
+'NNAAdmisionResidente'=>
+'Fecha_Ingreso as "Fecha de Ingreso",
+(SELECT nombre FROM nna_instituciones WHERE id=NNAAdmisionResidente.Institucion_Derivacion) as "Entidad que lo deriva",
+(SELECT nombre FROM nna_motivos_ingreso WHERE id=NNAAdmisionResidente.Motivo_Ingreso)  as "Motivo ingreso PRINCIPAL(exp)",
+(SELECT nombre FROM nna_motivos_ingreso WHERE id=NNAAdmisionResidente.Motivo_Ingreso)  as "Motivo ingreso PRINCIPAL(real)",
+Numero_Doc as "Número documento de ingreso",
+Perfil_Ingreso_P as "Perfil de ingreso"',
+
+'NNACondicionIResidente'=>
+'Numero_Doc as "DNI al ingreso",
+Tipo_Doc as "Tipo documento de identidad",
+\'\' as "Número documento de ingreso",
+\'\' as "Pensión",
+Lee_Escribe as "¿Sabe leer y escribir?",
+(SELECT nombre FROM pam_nivel_educativo WHERE id=NNACondicionIResidente.Nivel_Educativo) as "Nivel Educativo",
+(SELECT nombre FROM pam_tipo_seguro_salud WHERE id=NNACondicionIResidente.Tipo_Seguro) as "Tipo de Seguro de Salud",
+(SELECT nombre FROM pam_clasif_socioeconomico WHERE id=NNACondicionIResidente.SISFOH) as "Clasif.Socioeconómica(SISFOH)",
+\'\' as "Cobertura médica",
+\'\' as "Tipo de aseguramiento"',
+
+'NNADatosSaludResi'=>
+'Discapacidad as "Discapacidad",
+Discapacidad_Fisica as "Presenta discap. física",
+Discapaciada_Intelectual as "Presenta discap. intelectual",
+Discapacidad_Sensorial as "Presenta discap. sensorial",
+Discapacidad_Mental as "Presenta discap. mental",
+Carnet_CANADIS as "Tiene carnet del CONADIS",
+\'\' as "Grado de dependencia de PAM",
+\'\' as "Motivo dif. con el desplaza.",
+\'\' as "Patología crónica 1",
+\'\' as "Tipo de patología",
+\'\' as "Especifique"',
+
+
+'NNADatosSaludResi'=>
+'Nivel_Hemoglobina as "Nivel de Hemoglobina",
+Peso as "Peso (Kg.)",
+Talla as "Talla (m)",
+Estado_Nutricional1 as "Estado Nutricional (IMC)"',
+
+'NNAFamiliaresResidente'=>
+'Familiares as "Cuenta con familiares",
+Parentesco as "Tipo de parentesco"',
+
+'NNADatosSaludResi'=>
+'Transtornos_Comportamiento as "Tras. comport. y/o disociales",
+Tipo_Transtorno as "Tipo de transtorno"',
+
+'NNAEgresoUsuario'=>
+'Fecha_Egreso as "Fecha de egreso",
+MotivoEgreso as "Motivo de egreso",
+Detalle_Motivo as "Detalle del motivo del egreso",
+Salud_AUS as "Asegura. uni. de Salud-AUS",
+Partida_Naci as "Partida de Nacimiento",
+DNI as "DNI",
+Educacion as "Educación",
+Reinsecion_Familiar as "Reinserción Familiar"');
+      break;
+      default:
+      $parent_id="2,25";
+        break;
+    }
+    return $campos;
+  }
+  public function descargar_reporte_matriz_nominal(){
+   /* ini_set('max_execution_time',0);
+ini_set('memory_limit', '600M');
+ini_set('session.gc_maxlifetime','1200');*/
+    $modelo = new modeloPortada();
+    $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+    $id_residente = $_POST["id_residente"];
+    $nivel = $_SESSION["usuario"][0]["NIVEL"];
+    if (SUPERVISOR == $nivel || USER_SEDE == $nivel) {
+      $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+      $where = " where ca.tipo_centro_id = ".$tipo_centro;
+    }else if (REGISTRADOR ==$nivel || RESPONSABLE_INFORMACION ==$nivel || RESPONSABLE_INFORMACION ==$nivel){
+      $centro_id = $_SESSION["usuario"][0]["CENTRO_ID"];
+      $where = " where ca.id = ".$centro_id;
+    }else if(ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel){
+      $where ="";
+    }
+    $campos = "";
+    $tipo_centro_id;
+    
+	
+	$centros = "select distinct ca.id,ca.nom_ca as nombre_centro,ca.tipo_centro_id,tc.nombre as nombre_tipo_centro,tc.codigo from centro_atencion ca 
+	left join tipo_centro tc on(ca.tipo_centro_id=tc.id) ".$where." order by ca.tipo_centro_id desc";
+	$centros = $modelo->executeQuery($centros);
+  $modulo_html = "";
+  $centro_html= "";
+  $html ="";
+  $html2 ="";
+	foreach ($centros as $key => $centro) 
+	{
+		$centro_html ="<tr><th>Nombre del Centro</th><th>Tipo de Centro</th></tr>";
+    $centro_html .="<tr><td>".$centro["NOMBRE_CENTRO"]."</td><td>".$centro["NOMBRE_TIPO_CENTRO"]." - ".$centro["CODIGO"]."</td></tr>";
+    $campos = $this->campos_tipo_centro($centro["TIPO_CENTRO_ID"]);
+		$modulos = "select m.parent_id,m.nombre as nombre_modulo,m.nombre_tabla from modulos m 
+			where m.centro_id in (".$centro["TIPO_CENTRO_ID"].") order by m.id asc";
+		$modulos = $modelo->executeQuery($modulos);
+    $html = "";
+    $contar = 0;
+    
+		foreach ($modulos as $key => $modulo)
+		{
+      $contar_modulos = 1;
+      $modulo_html ="";
+      $modulo_html .="<tr><td></td><td style='background-color:yellow'>".($contar_modulos).". ".$modulo["NOMBRE_MODULO"]."</td></tr>";
+      if (!empty($campos[$modulo["NOMBRE_TABLA"]])) 
+      {
+        if (is_array($campos[$modulo["NOMBRE_TABLA"]])) {
+          foreach ($campos[$modulo["NOMBRE_TABLA"]] as $key => $value) {
+            $grupos = "select ".$value.",residente_id from ".$modulo["NOMBRE_TABLA"]." where  periodo_mes=".date("n")." and periodo_anio=".date("Y")." and residente_id= ". $id_residente." and centro_id=".$centro["ID"]." order by id desc";
+            $grupos = $modelo->executeQuery($grupos);
+            $grupo_html = "";
+            $residente_repite=array();
+            foreach ($grupos as $key => $grupo)
+            {
+              if (!in_array($grupo["RESIDENTE_ID"],$residente_repite)) {
+                if ($key==0) {
+                  $keys = array_keys($grupo);
+                  //$grupo_html .="<tr>";
+                  foreach ($keys as $index=>$key)
+                  {
+                    if ($key != "RESIDENTE_ID") {
+                      $grupo_html .="<tr><th style='border:1px solid;'>$key</th>";
+                        $grupo_values = array_values($grupo);
+                        //$grupo_html .= "<tr>";
+                        foreach ($grupo_values as $key2 => $value) {
+                          if($index==$key2){
+                            $grupo_html .="<td style='border:1px solid;'>".$value."</td></tr>";
+                            $contar++;
+
+                            break;
+                          }
+                        }
+                        $grupo_html .= "</tr>";
+                    }
+                  }
+                  $grupo_html .="</tr>"."<tr><td>&nbsp;</td></tr>";
+                }
+                $residente_repite[]=$grupo["RESIDENTE_ID"];
+              }
+            }
+            if(empty($grupos)){
+              $contar_modulos=1;
+              $modulo_html = "";
+              $grupo_html = "";
+            }
+            $html .= $modulo_html.$grupo_html;
+          }
+        }else {
+          $grupos = "select ".$campos[$modulo["NOMBRE_TABLA"]].",residente_id from ".$modulo["NOMBRE_TABLA"]." where  periodo_mes=".date("n")." and periodo_anio=".date("Y")." and residente_id= ". $id_residente." and centro_id=".$centro["ID"]." order by id desc";
+          $grupos = $modelo->executeQuery($grupos);
+
+          $grupo_html = "";
+          $residente_repite=array();
+          foreach ($grupos as $key => $grupo)
+          {
+            if (!in_array($grupo["RESIDENTE_ID"],$residente_repite)) {
+              if ($key==0) {
+                $keys = array_keys($grupo);
+                //$grupo_html .="<tr>";
+                foreach ($keys as $index=>$key)
+                {
+                  if ($key != "RESIDENTE_ID") {
+                    $grupo_html .="<tr><th style='border:1px solid;'>$key</th>";
+                      $grupo_values = array_values($grupo);
+                      //$grupo_html .= "<tr>";
+                      foreach ($grupo_values as $key2 => $value) {
+                        if($index==$key2){
+                          $grupo_html .="<td style='border:1px solid;'>".$value."</td></tr>";
+                          $contar++;
+                          break;
+                        }
+                      }
+                      $grupo_html .= "</tr>";
+                  }
+                }
+                $grupo_html .="</tr>"."<tr><td>&nbsp;</td></tr>";
+              }
+              $residente_repite[]=$grupo["RESIDENTE_ID"];
+            }
+          }
+          if(empty($grupos)){
+            $contar_modulos =0;
+            $modulo_html = "";
+            $grupo_html = "";
+          }
+          $html .= $modulo_html.$grupo_html;
+        }
+      }
+    }
+    if ($contar==0) {
+      $centro_html = "";
+    }
+    $html2 .=$centro_html.$html;
+	}
+  //$centro_html .=$modulo_html;
+    $ht = '<table style="width:100%">
+    <tr>
+      <th colspan="2" style="background-color:yellow">DATOS DE CONDICIÓN DE INGRESO</th>
+      </tr>
+    <tr>
+      <th>Fecha de ingreso:</th>
+      <td>19-03-2018</td>
+    </tr>
+    <tr>
+      <th>Motivo de ingreso</th>
+      <td>Abandono</td>
+    </tr>
+  </table>
+  <br>
+  
+  <table style="width:100%">
+    <tr><th colspan="2" style="background-color:yellow">DATOS DE ADMISIÓN DEL USUARIO</th>
+      </tr>
+    <tr>
+      <th>Fecha de ingreso:</th>
+      <td>19-03-2018</td>
+    </tr>
+    <tr>
+      <th>Motivo de ingreso</th>
+      <td>Abandono</td>
+    </tr>
+  </table>
+  <br>
+  <h2>DATOS GENERALES DE EGRESO</h2>
+  <br>
+  <table style="width:100%">
+  <tr><th colspan="2" style="background-color:yellow">DATOS DE EGRESO DEL USUARIO</th>
+      </tr>
+    <tr>
+      <th>Fecha de Egreso:</th>
+      <td>19-03-2018</td>
+    </tr>
+    <tr>
+      <th>Motivo de egreso</th>
+      <td>Muerte natural</td>
+    </tr>
+  </table>';
+    $table = '<table>'.$html2.'</table>';
+    if ($modulos)
+    {
+      echo json_encode(array("data"=>$table) ) ;
+    }else{
+      return false;
+    }
+  }
+  public function adjuntar_archivo(Type $var = null)
+  {
+
+	$upload_folder  = "/var/www/html/inabif/app/cargas/";
+
+	$nombre_archivo = $_FILES['archivo']['name'];
+	$tipo_archivo   = $_FILES['archivo']['type'];
+	$tamano_archivo = $_FILES['archivo']['size'];
+	$tmp_archivo    = $_FILES['archivo']['tmp_name'];
+	$extension		= pathinfo($nombre_archivo, PATHINFO_EXTENSION);
+	$result=[];
+  $fichero_subido = $upload_folder . basename($nombre_archivo);
+  $id_residente = $_POST["residente_id"];
+  $tipo_documento = $_POST["tipo_documento"];
+	if (move_uploaded_file($tmp_archivo, $fichero_subido))
+	{
+    $modelo = new modeloPortada();
+    $valores = array("residente_id"=>$id_residente,"tipo_documento"=>$tipo_documento,"centro_id"=>$_SESSION["usuario"][0]["ID_CENTRO"],"tipo_centro_id"=>$_SESSION["usuario"][0]["TIPO_CENTRO_ID"],"nombre"=>$nombre_archivo,"ruta"=>$fichero_subido,"tipo"=>$extension,"tamano"=>$tamano_archivo,"fecha_creacion"=> date("y-M-d g.i.s"),"usuario_crea"=>$_SESSION["usuario"][0]["ID"],"usuario_edita"=>$_SESSION["usuario"][0]["ID"]);
+    $res = $modelo->insertData('archivos_adjuntados',$valores);
+    if ($res)
+    {
+      echo json_encode(array("resultado"=>true) ) ;
+    }else{
+      return false;
+    }
+	}
+  }
+  public function traer_tipo_centro_completado(){
+    $modelo = new modeloPortada();
+    $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+	  $sql = "select * from tipo_centro_estado where  Periodo_Mes = ".date("m") . " AND Periodo_Anio = ".date("Y");
+    $res = $modelo->executeQuery($sql );
+
+    if ($res){
+      echo json_encode(array("data"=>$res) ) ;
+    }else{
+      return false;
+    }
+
+  }
+
+  public function buscar_tipo_centro(){
+    $modelo = new modeloPortada();
+    $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+    $sql = "select * from tipo_centro_estado where tipo_centro_id=".$tipo_centro."  AND Periodo_Mes = ".date("m") . " AND Periodo_Anio = ".date("Y");
+    $res = $modelo->executeQuery($sql );
+    if ($res){
+      echo json_encode(array("data"=>$res[0]) ) ;
+    }else{
+      return false;
+    }
+  }
+
+  public function completar_tipo_centro(){
+    $modelo = new modeloPortada();
+    $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+    $estado = $_POST["estado"];
+	  $sql = "select * from tipo_centro_estado where tipo_centro_id=".$tipo_centro."  AND Periodo_Mes = ".date("m") . " AND Periodo_Anio = ".date("Y");
+
+    $res = $modelo->executeQuery($sql );
+
+    if($res){
+
+      $res2 = $modelo->updateData("tipo_centro_estado",array("estado"=>$estado),array("tipo_centro_id"=>$tipo_centro,"Periodo_Mes"=>date("m"),"Periodo_Anio"=>date("Y")));
+    }else{
+
+      $res2 = $modelo->insertData("tipo_centro_estado",array("estado"=>1,"tipo_centro_id"=>$tipo_centro,"Periodo_Mes"=>date("m"),"Periodo_Anio"=>date("Y"),"usuario_crea"=>$_SESSION["usuario"][0]["ID"],"usuario_edita"=>$_SESSION["usuario"][0]["ID"] ));
+
+    }
+    if ($res2){
+      echo json_encode(array("resultado"=>true) ) ;
+    }else{
+      return false;
+    }
+
+  }
+  public function generar_matriz_consolidado(){
+    $modelo = new modeloPortada();
+
+	  $sql = "select * from tipo_centro_estado where estado=0 AND Periodo_Mes = ".date("m") . " AND Periodo_Anio = ".date("Y");
+    $res = $modelo->executeQuery($sql );
+    if($res){
+      echo json_encode(array("resultado"=>false, "mensaje"=>"No puede generar matriz hasta que todas las matrices de los tipos de centro estén generadas") ) ;
+    }else{
+      $res = $modelo->executeQuery("select * from matriz_consolidado where Periodo_Mes = ".date("m") . " AND Periodo_Anio = ".date("Y"));
+      if($res){
+        echo json_encode(array("resultado"=>false, "mensaje"=>"La matriz ya ha sido generada", "fecha"=>$res[0]["FECHA_CREACION"]) );
+      }else{
+        $res = $modelo->insertData("matriz_consolidado",array("estado"=>1, "Fecha_Creacion"=>date("d-M-y g.i.s"), "Periodo_Mes"=>date("m"),"Periodo_Anio"=>date("Y"),"usuario_crea"=>$_SESSION["usuario"][0]["ID"],"usuario_edita"=>$_SESSION["usuario"][0]["ID"] ));
+        if ($res){
+          echo json_encode(array("resultado"=>true) ) ;
+        }else{
+          echo json_encode(array("resultado"=>false, "mensaje"=>"Ha ocurrido un error") ) ;
+        }
+      }
+
+    }
+
+
+  }
+  public function consulta_reniec(){
+    $modelo = new modeloPortada();
+    $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+    $dni = $_POST["dni"];
+    $nivel = $_SESSION["usuario"][0]["NIVEL"];
+    require VENDOR;
+    try {
+      echo "geral";
+      $client = new nusoap_client("https://ws5.pide.gob.pe/services/ReniecConsultaDni?wsdl",true);
+      $client->soap_defencoding = 'UTF-8';
+      $client->decode_utf8 = FALSE;
+      $result = $client->call("consultar",array("nuDniConsulta"=>76934495,"nuDniUsuario"=>45050812,"nuRucUsuario"=>20507920722,"password"=>45050812));
+      echo "geral2";
+      echo "geral3";
+      print_r($result);
+      } catch (SoapFault $exception) {
+        echo $exception->getMessage();
+      }
+  }
+
+}
+
