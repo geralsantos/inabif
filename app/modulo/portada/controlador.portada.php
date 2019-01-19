@@ -779,7 +779,9 @@ class portada extends App{
 
         $modulos = "select cu.residente_id,cu.Ape_Paterno ,cda.Fecha_Ingreso  from 
         CarIdentificacionUsuario cu 
-        ,CarDatosAdmision cda  ";
+        ,CarDatosAdmision cda 
+        ,residente re
+        where cu.residente_id(+)=re.id and cda.residente_id(+)=re.id";
         $modulos = $modelo->executeQuery($modulos);
         $residentes = array();
         $grupo_html = "";
