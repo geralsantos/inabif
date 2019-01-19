@@ -777,9 +777,9 @@ class portada extends App{
         $fecha = " BETWEEN UPPER('".date("01-M-y",strtotime($periodo_anio."-".$periodo_mes))."') AND UPPER('".date(($last_day."-M-y"),strtotime($periodo_anio."-".$periodo_mes))."')";
   
 
-        $modulos = "select cu.*,cda.* from 
+        $modulos = "select cu.residente_id,cu.Ape_Paterno ,cda.Fecha_Ingreso  from 
         CarIdentificacionUsuario cu 
-        ,CarDatosAdmision cda  ";
+        ,CarDatosAdmision cda where cu.residente_id(+)=cda.residente_id ";
         $modulos = $modelo->executeQuery($modulos);
         $residentes = array();
         $grupo_html = "";
