@@ -39,7 +39,7 @@ Vue.component('reporte-matriz-general', {
 
             let datos = {periodo_mes:moment(this.periodo_mes,"M").format("MMM"),periodo_anio:this.periodo_anio,matriz_id:matriz_id};
             console.log(datos);
-            this.$http.post('descargar_reporte_matriz_general?view',datos).then(function(response){
+            this.$http.post('descargar_reporte_matriz_general_2?view',datos).then(function(response){
 
                 if( response.body.data != undefined){
                     tableToExcel('tbl_temp','ExcelExport',response.body.data);
