@@ -779,12 +779,12 @@ class portada extends App{
 
         $modulos = "select cu.*,cda.* from 
         CarIdentificacionUsuario cu 
-        ,CarDatosAdmision cda where cu.residente_id(+)=cda.residente_id   ";
+        ,CarDatosAdmision cda where cu.residente_id(+)=cda.residente_id ";
         $modulos = $modelo->executeQuery($modulos);
         $residentes = array();
         $grupo_html = "";
         foreach ($modulos as $key => $grupo) {
-          if (!in_array($grupo["RESIDENTE_ID"],$residentes)) {
+         // if (!in_array($grupo["RESIDENTE_ID"],$residentes)) {
             if ($key==0) {
               $keys = array_keys($grupo);
               $grupo_html .="<tr><th></th>";
@@ -801,7 +801,7 @@ class portada extends App{
             }
             $grupo_html .= "</tr>";
             $residentes[] = $grupo["RESIDENTE_ID"];
-          }
+         // }
         }
         $table = '<table>'.$grupo_html.'</table>';
         if ($modulos)
