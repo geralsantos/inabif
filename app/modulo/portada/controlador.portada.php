@@ -785,7 +785,7 @@ class portada extends App{
         ,CarSaludMental csm    
         ,centro_atencion ca 
         ,residente re
-        where cu.residente_id(+)=re.id and ca.id(+)= re.centro_id and cda.residente_id(+)=re.id and re.tipo_centro_id=1';
+        where cu.residente_id(+)=re.id and ca.id(+)= re.centro_id and cda.residente_id(+)=re.id and cci.residente_id(+)=re.id and csn.residente_id(+)=re.id and csm.residente_id(+)=re.id and re.tipo_centro_id=1';
         $modulos = $modelo->executeQuery($modulos);
         $residentes = array();
         $grupo_html = "";
