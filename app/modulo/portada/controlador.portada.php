@@ -1092,27 +1092,14 @@ Numero_Documento as "Número documento de ingreso"',
     
 
 
+   'DATOS FAMILIARES Y SOCIALES DEL USUARIO (Trabajo Social)'=>
+   'Familiares as "Cuenta con familiares",
+    Parentesco as "Tipo de parentesco"',
 
-    'CarEgresoSalud'=>
-    'Plan_Medico as "Posee plan de intervención médico  individual?",
-    Meta_PII as "Descripción de la meta trazada en el PII",
-    Informe_Tecnico as "Posee informe técnico evolutivo?",
-    Des_Informe as "Descripción del informe evolutivo",
-    Cumple_Plan as "Cumplimiento del plan de intervención",
-    Enfermedades_Cronicas as "Enfermedades crónicas degenerativas?",
-    Especificar as "Especificar la enfermedad"',
-    
-    'CarEgresoTrabajoSocial'=>
-    'Plan_Social as "¿Posee plan de intervención social?",
-    Meta_PII as "Descripción de la meta trazada en el PII",
-    Informe_Tecnico as "¿Posee informe técnico evolutivo?",
-    Des_Informe as "Descripción del informe evolutivo",
-    Cumple_Plan as "Cumplimiento del plan de intervención",
-    Ubicacion_Familia as "Ubicación de la familia",
-    Participacion_Familia as "Participación activa de la familia",
-    Reinsercion as "Posibilidad de Reinserción",
-    Colocacion_Laboral as "Posibilidad de Colocación Laboral"',
 
+    'DATOS DEL ESTADO PSICOLÓGICO DEL USUARIO'=>
+    '\'\' as "Tras. comport. y/o disociales",
+    \'\' as "Tipo de transtorno"',
 'CarEgresoGeneral'=>'Fecha_Egreso as "Fecha de Egreso",Motivo_Egreso as "Motivo de Egreso",Retiro_Voluntario as "Retiro Voluntario",Reinsercion, Grado_Parentesco as "Grado de Parentesco", Traslado, Fallecimiento, Restitucion_derechos as "Restitución de Derechos",AUS,Constancia_Naci as "Constancia de Nacimiento",Carnet_CONADIS as "CONADIS",DNI as "Documento de Identidad", Restitucion','CarEgresoSalud'=>'Plan_Medico as "Plan Médico",Meta_PII as "Meta Trazada",Informe_Tecnico as "Informe Técnico Evolutivo", Des_Informe as "Desc.Técnico Evolutivo",Cumple_Plan as "Cumpl. plan de intervención",Enfermedades_Cronicas  as "Enfermedades crónicas",Especificar');
       break;
       case '2': /*pam*/
