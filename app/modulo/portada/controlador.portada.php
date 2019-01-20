@@ -1092,20 +1092,20 @@ Numero_Documento as "Número documento de ingreso"',
     
 
    'CarEgresoSalud'=>
-   'Plan_Medico as "Posee plan de intervención",
+   'Plan_Medico as "Plan de intervención",
    Meta_PII as "Meta trazada en el PII",
    Informe_Tecnico as "Posee inf. técnico evolutivo",
-   Des_Informe as "Descripción del inf. evolutivo",
+   Des_Informe as "Descripción inf. evolutivo",
    Cumple_Plan as "Plan de intervención",
-   Enfermedades_Cronicas as "Enfermedades crónicas deg.?",
+   Enfermedades_Cronicas as "Enfermedades crónicas deg.",
    Especificar as "Especificar la enfermedad"',
    
    'CarEgresoTrabajoSocial'=>
    'Plan_Social as "Plan de intervención social",
    Meta_PII as "Meta trazada en el PII",
    Informe_Tecnico as "Posee inf. técnico evolutivo",
-   Des_Informe as "Descripción del inf. evolutivo",
-   Cumple_Plan as "Cumplimiento del plan de int.",
+   Des_Informe as "Descripción inf. evolutivo",
+   Cumple_Plan as "Cumplimiento del plan",
    Ubicacion_Familia as "Ubicación de la familia",
    Participacion_Familia as "Participación de la familia",
    Reinsercion as "Posibilidad de Reinserción",
