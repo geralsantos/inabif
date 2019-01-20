@@ -1075,7 +1075,7 @@ Numero_Documento as "Número documento de ingreso"',
  (SELECT nombre FROM pam_clasif_socioeconomico where id = CarCondicionIngreso.Clasficacion_Socioeconomica) as "Clasificación Socio. (SISFOH)",\'\' as "Cobertura médica",
  (SELECT nombre FROM pam_tipo_seguro_salud WHERE id=CarCondicionIngreso.Tipo_Seguro) as "Tipo de aseguramiento"',
 
- 'CarSaludNutricion'=>'Discapacidad as "Discapacidad",
+ 'CarSaludNutricion'=>array('Discapacidad as "Discapacidad",
  Discapacidad_Fisica as "Presenta discap. física",
  Discapacidad_Intelectual as "Presenta discap. intelectual",
   Discapacidad_Sensorial as "Presenta discap. sensorial",
@@ -1085,12 +1085,10 @@ Numero_Documento as "Número documento de ingreso"',
   Motivo_Movilidad as "Motivo de dificultad Desplaz.",
   Patologia1 as "Patología Crónica 1",
   (SELECT nombre FROM pam_tipo_patologia WHERE id =CarSaludNutricion.Tipo_Patologia1) as "Tipo de Patología",
-  Especifique1  as "Especifique"',
-
-  'CarSaludNutricion'=>'Nivel_Hemoglobina as "Nivel de Hemoglobina",
+  Especifique1  as "Especifique"'), array('Nivel_Hemoglobina as "Nivel de Hemoglobina",
    Peso as "Peso (Kg.)",
    Talla as "Talla (m)",
-   Estado_Nutricional as "Estado Nutricional(IMC)"',
+   Estado_Nutricional as "Estado Nutricional(IMC)"'),
 
    'DATOS FAMILIARES Y SOCIALES DEL USUARIO (Trabajo Social)'=>
    'Familiares as "Cuenta con familiares",
