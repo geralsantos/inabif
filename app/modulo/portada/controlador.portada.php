@@ -779,18 +779,9 @@ class portada extends App{
 /*ccs.Nom_Entidad, ccs.Cod_Linea ,ccs.Linea_Intervencion , ccs.Cod_Servicio , ccs.Nom_Servicio, ccs.Ubigeo_Ine, ccs.Departamento_CAtencion, ccs.Provincia_CAtencion, ccs.Distrito_CAtencion, ccs.Centro_Poblado, ccs.Centro_Residencia*/
         $modulos = 'select cu.residente_id as Codigoresidente from 
         CarIdentificacionUsuario cu 
-        ,CarDatosAdmision cda 
-        ,CarCondicionIngreso cci
-        ,CarSaludNutricion csn
-        ,CarSaludMental csm  
-        ,CarTerapia ct 
-        ,CarActividades cac 
-        ,CarAtencionPsicologica cap 
-        ,CarEducacionCapacidades cec 
-        ,CarTrabajoSocial cts 
         ,centro_atencion ca 
         ,residente re
-        where cu.residente_id(+)=re.id and ca.id(+)= re.centro_id and cda.residente_id(+)=re.id and re.tipo_centro_id=1';
+        where cu.residente_id(+)=re.id and ca.id(+)= re.centro_id  and re.tipo_centro_id=1';
         $modulos = $modelo->executeQuery($modulos);
         $residentes = array();
         $grupo_html = "";
