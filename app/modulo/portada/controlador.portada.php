@@ -1046,60 +1046,81 @@ class portada extends App{
     switch ($tipo_centro_id) {
       case '1': /*ppd*/
       $campos = array('CarIdentificacionUsuario'=>
-'Ape_Paterno as "Apellido paterno",Ape_Materno as "Apellido materno",
-Nom_Usuario as "Nombre Usuario",
-(SELECT nombre FROM paises WHERE id=CarIdentificacionUsuario.Pais_Procencia) as "Pai­s de procedencia",
-(SELECT NOMDEPT FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as "Departamento de nac",
-(SELECT NOMPROV FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as "Provincia de nac" ,
-(SELECT NOMPROV FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as "Distrito de nac",
-(CASE Sexo WHEN \'h\' THEN \'Hombre\' WHEN \'m\' THEN \'Mujer\' END) as "Sexo",
-Fecha_Nacimiento as "Fecha de Nacimiento",
-(SELECT nombre from pam_lengua_materna WHERE id = CarIdentificacionUsuario.Lengua_Materna) as "Lengua Materna"',
-
-'CarDatosAdmision'=>
-'Fecha_Ingreso as "Fecha de ingreso",
-(SELECT nombre FROM pam_instituciones WHERE id=CarDatosAdmision.Institucion_derivado) as "Entidad deriva",
-Motivo_Ingreso  as "Motivo ingreso PRINCIPAL(exp)",
-\'\'  as "Motivo ingreso PRINCIPAL(real)",
-Numero_Documento as "Número documento de ingreso"',
-
-'CarCondicionIngreso'=>
-'DNI as "DNI al ingreso",
-(SELECT nombre FROM pam_tipo_documento_identidad WHERE id=CarCondicionIngreso.Tipo_Documento) as "Tipo documento de identidad",
- Numero_Documento as "Número documento de ingreso",
- Posee_Pension as "Pensión",
- (SELECT nombre FROM pam_tipo_pension WHERE id=CarCondicionIngreso.Tipo_Pension) as "Tipo de pensión",
- Lee_Escribe as "Sabe Leer y Escribir",
- (SELECT nombre FROM pam_nivel_educativo where id=CarCondicionIngreso.Nivel_Educativo) as "Nivel Educativo",
- (SELECT nombre FROM pam_clasif_socioeconomico where id = CarCondicionIngreso.Clasficacion_Socioeconomica) as "Clasificación Socio. (SISFOH)",\'\' as "Cobertura médica",
- (SELECT nombre FROM pam_tipo_seguro_salud WHERE id=CarCondicionIngreso.Tipo_Seguro) as "Tipo de aseguramiento"',
-
- 'CarSaludNutricion'=>'Discapacidad as "Discapacidad",
- Discapacidad_Fisica as "Presenta discap. física",
- Discapacidad_Intelectual as "Presenta discap. intelectual",
-  Discapacidad_Sensorial as "Presenta discap. sensorial",
-  Discapacidad_mental as "Presenta discap. mental",
-  Carnet_CONADIS as "Tiene carnet de CONADIS",
-  \'\' as "Grado dependencia de la PAM",
-  Motivo_Movilidad as "Motivo de dificultad Desplaz.",
-  Patologia1 as "Patología Crónica 1",
-  (SELECT nombre FROM pam_tipo_patologia WHERE id =CarSaludNutricion.Tipo_Patologia1) as "Tipo de Patología",
-  Especifique1  as "Especifique"',
-
-  'CarSaludNutricion'=>'Nivel_Hemoglobina as "Nivel de Hemoglobina",
-   Peso as "Peso (Kg.)",
-   Talla as "Talla (m)",
-   Estado_Nutricional as "Estado Nutricional(IMC)"',
-
-   'DATOS FAMILIARES Y SOCIALES DEL USUARIO (Trabajo Social)'=>
-   'Familiares as "Cuenta con familiares",
-    Parentesco as "Tipo de parentesco"',
-
-    'DATOS DEL ESTADO PSICOLÓGICO DEL USUARIO'=>
-    '\'\' as "Tras. comport. y/o disociales",
-    \'\' as "Tipo de transtorno"',
-'CarEgresoGeneral'=>'Fecha_Egreso as "Fecha de Egreso",Motivo_Egreso as "Motivo de Egreso",Retiro_Voluntario as "Retiro Voluntario",Reinsercion, Grado_Parentesco as "Grado de Parentesco", Traslado, Fallecimiento, Restitucion_derechos as "Restitución de Derechos",AUS,Constancia_Naci as "Constancia de Nacimiento",Carnet_CONADIS as "CONADIS",DNI as "Documento de Identidad", Restitucion','CarEgresoSalud'=>'Plan_Medico as "Plan Médico",Meta_PII as "Meta Trazada",Informe_Tecnico as "Informe Técnico Evolutivo", Des_Informe as "Desc.Técnico Evolutivo",Cumple_Plan as "Cumpl. plan de intervención",Enfermedades_Cronicas  as "Enfermedades crónicas",Especificar');
-      break;
+      'Ape_Paterno as "Apellido paterno",Ape_Materno as "Apellido materno",
+      Nom_Usuario as "Nombre Usuario",
+      (SELECT nombre FROM paises WHERE id=CarIdentificacionUsuario.Pais_Procencia) as "Pai­s de procedencia",
+      (SELECT NOMDEPT FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as "Departamento de nac",
+      (SELECT NOMPROV FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as "Provincia de nac" ,
+      (SELECT NOMPROV FROM ubigeo WHERE coddist=CarIdentificacionUsuario.Distrito_Procedencia) as "Distrito de nac",
+      (CASE Sexo WHEN \'h\' THEN \'Hombre\' WHEN \'m\' THEN \'Mujer\' END) as "Sexo",
+      Fecha_Nacimiento as "Fecha de Nacimiento",
+      (SELECT nombre from pam_lengua_materna WHERE id = CarIdentificacionUsuario.Lengua_Materna) as "Lengua Materna"',
+      
+      'CarDatosAdmision'=>
+      'Fecha_Ingreso as "Fecha de ingreso",
+      (SELECT nombre FROM pam_instituciones WHERE id=CarDatosAdmision.Institucion_derivado) as "Entidad deriva",
+      Motivo_Ingreso  as "Motivo ingreso PRINCIPAL(exp)",
+      \'\'  as "Motivo ingreso PRINCIPAL(real)",
+      Numero_Documento as "Número documento de ingreso"',
+      
+      'CarCondicionIngreso'=>
+      'DNI as "DNI al ingreso",
+      (SELECT nombre FROM pam_tipo_documento_identidad WHERE id=CarCondicionIngreso.Tipo_Documento) as "Tipo documento de identidad",
+       Numero_Documento as "Número documento de ingreso",
+       Posee_Pension as "Pensión",
+       (SELECT nombre FROM pam_tipo_pension WHERE id=CarCondicionIngreso.Tipo_Pension) as "Tipo de pensión",
+       Lee_Escribe as "Sabe Leer y Escribir",
+       (SELECT nombre FROM pam_nivel_educativo where id=CarCondicionIngreso.Nivel_Educativo) as "Nivel Educativo",
+       (SELECT nombre FROM pam_clasif_socioeconomico where id = CarCondicionIngreso.Clasficacion_Socioeconomica) as "Clasificación Socio. (SISFOH)",\'\' as "Cobertura médica",
+       (SELECT nombre FROM pam_tipo_seguro_salud WHERE id=CarCondicionIngreso.Tipo_Seguro) as "Tipo de aseguramiento"',
+      
+       'CarSaludNutricion'=>'Discapacidad as "Discapacidad",
+       Discapacidad_Fisica as "Presenta discap. física",
+       Discapacidad_Intelectual as "Presenta discap. intelectual",
+        Discapacidad_Sensorial as "Presenta discap. sensorial",
+        Discapacidad_mental as "Presenta discap. mental",
+        Carnet_CONADIS as "Tiene carnet de CONADIS",
+        \'\' as "Grado dependencia de la PAM",
+        Motivo_Movilidad as "Motivo de dificultad Desplaz.",
+        Patologia1 as "Patología Crónica 1",
+        (SELECT nombre FROM pam_tipo_patologia WHERE id =CarSaludNutricion.Tipo_Patologia1) as "Tipo de Patología",
+        Especifique1  as "Especifique"',
+      
+        'CarSaludNutricion'=>'Nivel_Hemoglobina as "Nivel de Hemoglobina",
+         Peso as "Peso (Kg.)",
+         Talla as "Talla (m)",
+         Estado_Nutricional as "Estado Nutricional(IMC)"',
+      
+         'DATOS FAMILIARES Y SOCIALES DEL USUARIO (Trabajo Social)'=>
+         'Familiares as "Cuenta con familiares",
+          Parentesco as "Tipo de parentesco"',
+      
+          'DATOS DEL ESTADO PSICOLÓGICO DEL USUARIO'=>
+          '\'\' as "Tras. comport. y/o disociales",
+          \'\' as "Tipo de transtorno"',
+      
+          "CarEgresoSalud"=>
+          'Plan_Medico as "Posee plan de intervención médico  individual?",
+          Meta_PII as "Descripción de la meta trazada en el PII",
+          Informe_Tecnico as "Posee informe técnico evolutivo?",
+          Des_Informe as "Descripción del informe evolutivo",
+          Cumple_Plan as "umplimiento del plan de intervención",
+          Enfermedades_Cronicas as "Enfermedades crónicas degenerativas?",
+          Especificar as "Especificar"',
+      
+          "CarEgresoTrabajoSocial"=>
+          'Plan_Social as "¿Posee plan de intervención social?",
+          Meta_PIIas "Descripción de la meta trazada en el PII",
+          Informe_Tecnico as "¿Posee informe técnico evolutivo?",
+          Des_Informe as "Descripción del informe evolutivo",
+          Cumple_Plan as "Cumplimiento del plan de intervención",
+          Ubicacion_Familia as "Ubicación de la familia",
+          Participacion_Familia as "Participación activa de la familia",
+          Reinsercion as "Posibilidad de Reinserción",
+          Colocacion_Laboral as "Posibilidad de Colocación Laboral"',
+      
+          'CarEgresoGeneral'=>'Fecha_Egreso as "Fecha de Egreso",Motivo_Egreso as "Motivo de Egreso",Retiro_Voluntario as "Retiro Voluntario",Reinsercion, Grado_Parentesco as "Grado de Parentesco", Traslado, Fallecimiento, Restitucion_derechos as "Restitución de Derechos",AUS,Constancia_Naci as "Constancia de Nacimiento",Carnet_CONADIS as "CONADIS",DNI as "Documento de Identidad", Restitucion','CarEgresoSalud'=>'Plan_Medico as "Plan Médico",Meta_PII as "Meta Trazada",Informe_Tecnico as "Informe Técnico Evolutivo", Des_Informe as "Desc.Técnico Evolutivo",Cumple_Plan as "Cumpl. plan de intervención",Enfermedades_Cronicas  as "Enfermedades crónicas",Especificar');
+            break;
       case '2': /*pam*/
       $campos = array('pam_datos_identificacion'=>
      'residente_apellido_paterno as "Apellido paterno",
