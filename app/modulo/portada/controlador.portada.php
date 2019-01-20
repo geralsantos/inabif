@@ -777,7 +777,7 @@ class portada extends App{
         $fecha = " BETWEEN UPPER('".date("01-M-y",strtotime($periodo_anio."-".$periodo_mes))."') AND UPPER('".date(($last_day."-M-y"),strtotime($periodo_anio."-".$periodo_mes))."')";
   
 
-        $modulos = 'select cu.residente_id as Codigo,cu.Ape_Paterno ,cda.Fecha_Ingreso  from 
+        $modulos = 'select cu.residente_id as Codigoresidente,cu.Ape_Paterno ,cda.Fecha_Ingreso  from 
         CarIdentificacionUsuario cu 
         ,CarDatosAdmision cda 
         ,residente re
@@ -786,7 +786,7 @@ class portada extends App{
         $residentes = array();
         $grupo_html = "";
         foreach ($modulos as $key => $grupo) {
-          if (!in_array($grupo["CODIGO"],$residentes)) {
+          if (!in_array($grupo["CODIGORESIDENTE"],$residentes)) {
             if ($key==0) {
               $keys = array_keys($grupo);
               $grupo_html .="<tr><th></th>";
@@ -802,7 +802,7 @@ class portada extends App{
               $grupo_html .="<td>".$value."</td>";
             }
             $grupo_html .= "</tr>";
-            $residentes[] = $grupo["CODIGO"];
+            $residentes[] = $grupo["CODIGORESIDENTE"];
           }
         }
         $table = '<table>'.$grupo_html.'</table>';
