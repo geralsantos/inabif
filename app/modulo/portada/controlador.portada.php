@@ -776,12 +776,13 @@ class portada extends App{
   
         $fecha = " BETWEEN UPPER('".date("01-M-y",strtotime($periodo_anio."-".$periodo_mes))."') AND UPPER('".date(($last_day."-M-y"),strtotime($periodo_anio."-".$periodo_mes))."')";
   
-
-        $modulos = 'select cu.residente_id as Codigoresidente,cu.Ape_Paterno ,cda.Fecha_Ingreso  from 
+/*ccs.Nom_Entidad, ccs.Cod_Linea ,ccs.Linea_Intervencion , ccs.Cod_Servicio , ccs.Nom_Servicio, ccs.Ubigeo_Ine, ccs.Departamento_CAtencion, ccs.Provincia_CAtencion, ccs.Distrito_CAtencion, ccs.Centro_Poblado, ccs.Centro_Residencia*/
+        $modulos = 'select cu.residente_id as Codigoresidente,ca.Cod_Entidad,cu.Ape_Paterno ,cda.Fecha_Ingreso  from 
         CarIdentificacionUsuario cu 
         ,CarDatosAdmision cda 
+        ,centro_atencion ca 
         ,residente re
-        where cu.residente_id(+)=re.id and cda.residente_id(+)=re.id';
+        where cu.residente_id(+)=re.id and ca.id(+)= re.centro_id and cda.residente_id(+)=re.id';
         $modulos = $modelo->executeQuery($modulos);
         $residentes = array();
         $grupo_html = "";
