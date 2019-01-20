@@ -1091,6 +1091,25 @@ Numero_Documento as "Número documento de ingreso"',
    Estado_Nutricional as "Estado Nutricional(IMC)"'),
     
 
+   'CarEgresoSalud'=>
+   'Plan_Medico as "Posee plan de intervención médico  individual?",
+   Meta_PII as "Descripción de la meta trazada en el PII",
+   Informe_Tecnico as "Posee informe técnico evolutivo?",
+   Des_Informe as "Descripción del informe evolutivo",
+   Cumple_Plan as "Cumplimiento del plan de intervención",
+   Enfermedades_Cronicas as "Enfermedades crónicas degenerativas?",
+   Especificar as "Especificar la enfermedad"',
+   
+   'CarEgresoTrabajoSocial'=>
+   'Plan_Social as "¿Posee plan de intervención social?",
+   Meta_PII as "Descripción de la meta trazada en el PII",
+   Informe_Tecnico as "¿Posee informe técnico evolutivo?",
+   Des_Informe as "Descripción del informe evolutivo",
+   Cumple_Plan as "Cumplimiento del plan de intervención",
+   Ubicacion_Familia as "Ubicación de la familia",
+   Participacion_Familia as "Participación activa de la familia",
+   Reinsercion as "Posibilidad de Reinserción",
+   Colocacion_Laboral as "Posibilidad de Colocación Laboral"',
 
    'DATOS FAMILIARES Y SOCIALES DEL USUARIO (Trabajo Social)'=>
    'Familiares as "Cuenta con familiares",
