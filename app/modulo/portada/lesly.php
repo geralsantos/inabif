@@ -267,3 +267,90 @@ RestitucionReinsercionFamiliar as "Cumplimiento de restitución de derechos Rein
 
 // NNA
 
+$campos = array('NNAInscripcionResidente'=>
+'residente_apellido_paterno as "Apellido paterno",
+residente_apellido_materno as "Apellido materno",
+residente_nombre as "Nombre usuario",
+(SELECT nombre FROM paises WHERE id=NNAInscripcionResidente.pais_procedente_id) as "Pai­s de procedencia",
+(SELECT NOMDEPT FROM ubigeo WHERE coddist=NNAInscripcionResidente.distrito_nacimiento_id) as "Departamento de nac",
+(SELECT NOMPROV FROM ubigeo WHERE coddist=NNAInscripcionResidente.distrito_nacimiento_id) as "Provincia de nac" ,
+(SELECT NOMPROV FROM ubigeo WHERE coddist=NNAInscripcionResidente.distrito_nacimiento_id) as "Distrito de nac",
+(CASE sexo WHEN \'h\' THEN \'Hombre\' WHEN \'m\' THEN \'Mujer\' END) as "Sexo",
+fecha_nacimiento as "Fecha de nacimiento" ,
+(SELECT nombre from pam_lengua_materna WHERE id = NNAInscripcionResidente.lengua_materna) as "Lengua materna"',
+
+'NNAAdmisionResidente'=>
+'Fecha_Ingreso as "Fecha de Ingreso",
+(SELECT nombre FROM nna_instituciones WHERE id=NNAAdmisionResidente.Institucion_Derivacion) as "Entidad que lo deriva",
+(SELECT nombre FROM nna_motivos_ingreso WHERE id=NNAAdmisionResidente.Motivo_Ingreso)  as "Motivo ingreso PRINCIPAL(exp)",
+(SELECT nombre FROM nna_motivos_ingreso WHERE id=NNAAdmisionResidente.Motivo_Ingreso)  as "Motivo ingreso PRINCIPAL(real)",
+Numero_Doc as "Número documento de ingreso",
+Perfil_Ingreso_P as "Perfil de ingreso"',
+
+'NNACondicionIResidente'=>
+'Numero_Doc as "DNI al ingreso",
+Tipo_Doc as "Tipo documento de identidad",
+\'\' as "Número documento de ingreso",
+\'\' as "Pensión",
+Lee_Escribe as "¿Sabe leer y escribir?",
+(SELECT nombre FROM pam_nivel_educativo WHERE id=NNACondicionIResidente.Nivel_Educativo) as "Nivel Educativo",
+(SELECT nombre FROM pam_tipo_seguro_salud WHERE id=NNACondicionIResidente.Tipo_Seguro) as "Tipo de Seguro de Salud",
+(SELECT nombre FROM pam_clasif_socioeconomico WHERE id=NNACondicionIResidente.SISFOH) as "Clasif.Socioeconómica(SISFOH)",
+\'\' as "Cobertura médica",
+\'\' as "Tipo de aseguramiento"',
+
+'NNADatosSaludResi'=>
+'Discapacidad as "Discapacidad",
+Discapacidad_Fisica as "Presenta discap. física",
+Discapaciada_Intelectual as "Presenta discap. intelectual",
+Discapacidad_Sensorial as "Presenta discap. sensorial",
+Discapacidad_Mental as "Presenta discap. mental",
+Carnet_CANADIS as "Tiene carnet del CONADIS",
+\'\' as "Grado de dependencia de PAM",
+\'\' as "Motivo dif. con el desplaza.",
+\'\' as "Patología crónica 1",
+\'\' as "Tipo de patología",
+\'\' as "Especifique"',
+
+
+'NNADatosSaludResi'=>
+'Nivel_Hemoglobina as "Nivel de Hemoglobina",
+Peso as "Peso (Kg.)",
+Talla as "Talla (m)",
+Estado_Nutricional1 as "Estado Nutricional (IMC)"',
+
+'NNAFamiliaresResidente'=>
+'Familiares as "Cuenta con familiares",
+Parentesco as "Tipo de parentesco"',
+
+'NNADatosSaludResi'=>
+'Transtornos_Comportamiento as "Tras. comport. y/o disociales",
+Tipo_Transtorno as "Tipo de transtorno"',
+
+'NNASalud_Semestral'=>
+'Plan_Intervencion as "Plan de intervención",
+Meta_PAI as "Meta trazada en el PAI",
+Informe_tecnico as "Posee informe técnico evolutivo",
+Cumple_Intervencion as "Cumplimiento del Plan de intervención",
+Control_CRED as "Control CRED acorde a la Edad?",
+Vacunacion as "Esquema de vacunación acorde a la Edad?"',
+
+'NNAtrabajoSocial_Semestral'=>
+'Plan_Intervencion as "Plan de Intervención ",
+Meta_PAI as "Meta trazada en el PAI",
+Informe_Tecnico as "¿Posee informe técnico evolutivo?",
+Cumple_Intervencion as "¿Cumplimiento del Plan de intervención?",
+ParticipacionF_Activa as "¿Participación activa familiar?",
+Reinsercion_Familiar as "¿Plan de Reinserción familiar?",
+FamiliaR_Soporte as "¿Familia usa las redes de soporte social?"',
+
+'NNAEgresoUsuario'=>
+'Fecha_Egreso as "Fecha de egreso",
+MotivoEgreso as "Motivo de egreso",
+Detalle_Motivo as "Detalle del motivo del egreso",
+Salud_AUS as "Asegura. uni. de Salud-AUS",
+Partida_Naci as "Partida de Nacimiento",
+DNI as "DNI",
+Educacion as "Educación",
+Reinsecion_Familiar as "Reinserción Familiar"');
+      break;
