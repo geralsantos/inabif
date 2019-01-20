@@ -85,7 +85,7 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">¿Cumplimiento del Plan de intervención</label>
+                                <label for="text-input" class=" form-control-label">¿Cumplimiento del Plan de intervención?</label>
                                     <select name="Cumple_Intervencion" v-model="Cumple_Intervencion" id="Cumple_Intervencion" class="form-control">
                                     <option value="Cumplida">Cumplida</option>
                                     <option value="En proceso">En proceso</option>
