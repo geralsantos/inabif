@@ -1091,6 +1091,14 @@ Numero_Documento as "Número documento de ingreso"',
    Estado_Nutricional as "Estado Nutricional(IMC)"'),
     
 
+   'CarEgresoSalud'=>
+   'Plan_Medico as "Posee plan de intervención",
+   Meta_PII as "Descripción de la meta trazada en el PII",
+   Informe_Tecnico as "Posee informe técnico evolutivo?",
+   Des_Informe as "Descripción del informe evolutivo",
+   Cumple_Plan as "Cumplimiento del plan de intervención",
+   Enfermedades_Cronicas as "Enfermedades crónicas degenerativas?",
+   Especificar as "Especificar la enfermedad"',
    
    'CarEgresoTrabajoSocial'=>
    'Plan_Social as "¿Posee plan de intervención social?",
