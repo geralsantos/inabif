@@ -782,7 +782,7 @@ class portada extends App{
         ,CarDatosAdmision cda 
         ,centro_atencion ca 
         ,residente re
-        where cu.residente_id(+)=re.id and ca.id(+)= re.centro_id and cda.residente_id(+)=re.id';
+        where cu.residente_id(+)=re.id and ca.id(+)= re.centro_id and cda.residente_id(+)=re.id and re.tipo_centro_id=1';
         $modulos = $modelo->executeQuery($modulos);
         $residentes = array();
         $grupo_html = "";
