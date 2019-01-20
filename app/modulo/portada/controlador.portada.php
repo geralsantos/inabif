@@ -1097,80 +1097,96 @@ Numero_Documento as "Número documento de ingreso"',
       break;
       case '2': /*pam*/
       $campos = array('pam_datos_identificacion'=>
-     'residente_apellido_paterno as "Apellido paterno",
-     residente_apellido_materno as "Apellido materno",
-     residente_nombre as "Nombre Usuario",
-     (SELECT nombre FROM paises WHERE id=pam_datos_identificacion.pais_procedente_id) as "Pai­s de procedencia",
-     (SELECT NOMDEPT FROM ubigeo WHERE coddist=pam_datos_identificacion.distrito_nacimiento_id) as "Departamento de nac",
-     (SELECT NOMPROV FROM ubigeo WHERE coddist=pam_datos_identificacion.distrito_nacimiento_id) as "Provincia de nac",
-     (SELECT NOMPROV FROM ubigeo WHERE coddist=pam_datos_identificacion.distrito_nacimiento_id) as "Distrito de nac",
-     (CASE sexo WHEN \'h\' THEN 2 WHEN \'m\' THEN 1 END) as "Sexo",
-     fecha_nacimiento as "Fecha de Nacimiento",
-     (SELECT nombre from pam_lengua_materna WHERE id = pam_datos_identificacion.lengua_materna) as "Lengua Materna"',
-
-
-     'pam_datos_admision_usuario'=>
-     'fecha_ingreso_usuario as "Fecha de Ingreso",
-     (SELECT nombre FROM pam_instituciones_deriva WHERE id=pam_datos_admision_usuario.institucion_deriva) as "Entidad que lo deriva",
-     (SELECT nombre FROM pam_motivos_ingreso WHERE id = pam_datos_admision_usuario.motivo_ingreso_principal) as "Motivo ingreso PRINCIPAL(exp)",
-     (SELECT nombre FROM pam_motivos_ingreso WHERE id = pam_datos_admision_usuario.motivo_ingreso_secundario)as "Motivo ingreso PRINCIPAL(real)",
-     numero_documento_ingreo_car as "Número documento de ingreso",
-     perfil_ingreso as "Perfil de Ingreso"',
-
-     'pam_datosCondicionIngreso'=>
-     'documento_entidad as "DNI al ingreso",
-     tipo_documento_entidad as "Tipo documento de identidad",
-     numero_documento_ingreso as "Número documento de ingreso",
-     \'\' as "Pensión",
-     tipo_pension as "Tipo de pensión",
-     leer_escribir as "Sabe Leer y Escribir",
-     (SELECT nombre FROM pam_nivel_educativo where id=pam_datosCondicionIngreso.nivel_educativo) as "Nivel Educativo",
-     \'\' as "Cobertura médica",
-     (SELECT nombre FROM pam_clasif_socioeconomico where id = pam_datosCondicionIngreso.SISFOH) as "Clasif.Socioeconómica(SISFOH)",
-     (SELECT nombre FROM pam_tipo_seguro_salud WHERE id=pam_datosCondicionIngreso.aseguramiento_salud) as "Tipo de aseguramiento"',
-
-
-'pam_datos_saludnutric'=>
-'discapacidad as "Discapacidad",
-discapacidad_fisica as "Presenta discap. física",
-discapacidad_intelectual as "Presenta discap. intelectual",
-discapacidad_sensorial as "Presenta discap. sensorial",
-presenta_discapacidad_mental as  "Presenta discap. mental",
-carnet_conadis as "Tiene carnet del CONADIS",
-grado_dependencia_pam as "Grado dependencia PAM",
-motivo_dif_desplazamiento as "Motivo dif. con el desplaza.",
-enfermedad_ingreso_1 as "Patología crónica 1",
-(SELECT nombre FROM pam_tipo_patologia WHERE id =pam_datos_saludnutric.tipo_patologia) as "Tipo de patología",
-\'\' as "Especifique"',
-
-'pam_datos_saludnutric'=>
-'nivel_hemoglobina as "Nivel de Hemoglobina",
-peso as "Peso (Kg.)",
-talla as "Talla (m)",
-estado_nutricional as "Estado Nutricional(IMC)"',
-
-'pam_datosCondicionIngreso'=>
-'familiar_ubicados as "Cuenta con familiares",
-tipo_parentesco as "Tipo de parentesco"',
-
-'pam_salud_mental'=>
-'trastorno_disociales as "Tras. comport. y/o disociales",
-tipo_trastorno as "Tipo de transtorno"',
-
-
-'pam_EgresoUsuario'=>
-'Fecha_Egreso as "Fecha de egreso",
-MotivoEgreso as "Motivo de egreso",
-Retiro_Voluntario as "Retiro Voluntario",
-Reinsercion_Familiar as "Reinserción familiar",
-
-Traslado_Entidad_Salud as "Traslado a entidad de salud",
-Traslado_Otra_Entidad as "Traslado a otra Entidad",
-Fallecimiento as "Fallecimiento",
-RestitucionAseguramientoSaludo as "Cumpl. de rest.derechos salud",
-Restitucion_Derechos_DNI as "Cumpl. de rest.derechos dni",
-RestitucionReinsercionFamiliar as "Reinserción Familiar"');
-      break;
+      'residente_apellido_paterno as "Apellido paterno",
+      residente_apellido_materno as "Apellido materno",
+      residente_nombre as "Nombre Usuario",
+      (SELECT nombre FROM paises WHERE id=pam_datos_identificacion.pais_procedente_id) as "Pai­s de procedencia",
+      (SELECT NOMDEPT FROM ubigeo WHERE coddist=pam_datos_identificacion.distrito_nacimiento_id) as "Departamento de nac",
+      (SELECT NOMPROV FROM ubigeo WHERE coddist=pam_datos_identificacion.distrito_nacimiento_id) as "Provincia de nac",
+      (SELECT NOMPROV FROM ubigeo WHERE coddist=pam_datos_identificacion.distrito_nacimiento_id) as "Distrito de nac",
+      (CASE sexo WHEN \'h\' THEN 2 WHEN \'m\' THEN 1 END) as "Sexo",
+      fecha_nacimiento as "Fecha de Nacimiento",
+      (SELECT nombre from pam_lengua_materna WHERE id = pam_datos_identificacion.lengua_materna) as "Lengua Materna"',
+ 
+ 
+      'pam_datos_admision_usuario'=>
+      'fecha_ingreso_usuario as "Fecha de Ingreso",
+      (SELECT nombre FROM pam_instituciones_deriva WHERE id=pam_datos_admision_usuario.institucion_deriva) as "Entidad que lo deriva",
+      (SELECT nombre FROM pam_motivos_ingreso WHERE id = pam_datos_admision_usuario.motivo_ingreso_principal) as "Motivo ingreso PRINCIPAL(exp)",
+      (SELECT nombre FROM pam_motivos_ingreso WHERE id = pam_datos_admision_usuario.motivo_ingreso_secundario)as "Motivo ingreso PRINCIPAL(real)",
+      numero_documento_ingreo_car as "Número documento de ingreso",
+      perfil_ingreso as "Perfil de Ingreso"',
+ 
+      'pam_datosCondicionIngreso'=>
+      'documento_entidad as "DNI al ingreso",
+      tipo_documento_entidad as "Tipo documento de identidad",
+      numero_documento_ingreso as "Número documento de ingreso",
+      \'\' as "Pensión",
+      tipo_pension as "Tipo de pensión",
+      leer_escribir as "Sabe Leer y Escribir",
+      (SELECT nombre FROM pam_nivel_educativo where id=pam_datosCondicionIngreso.nivel_educativo) as "Nivel Educativo",
+      \'\' as "Cobertura médica",
+      (SELECT nombre FROM pam_clasif_socioeconomico where id = pam_datosCondicionIngreso.SISFOH) as "Clasif.Socioeconómica(SISFOH)",
+      (SELECT nombre FROM pam_tipo_seguro_salud WHERE id=pam_datosCondicionIngreso.aseguramiento_salud) as "Tipo de aseguramiento"',
+ 
+ 
+ 'pam_datos_saludnutric'=>
+ 'discapacidad as "Discapacidad",
+ discapacidad_fisica as "Presenta discap. física",
+ discapacidad_intelectual as "Presenta discap. intelectual",
+ discapacidad_sensorial as "Presenta discap. sensorial",
+ presenta_discapacidad_mental as  "Presenta discap. mental",
+ carnet_conadis as "Tiene carnet del CONADIS",
+ grado_dependencia_pam as "Grado dependencia PAM",
+ motivo_dif_desplazamiento as "Motivo dif. con el desplaza.",
+ enfermedad_ingreso_1 as "Patología crónica 1",
+ (SELECT nombre FROM pam_tipo_patologia WHERE id =pam_datos_saludnutric.tipo_patologia) as "Tipo de patología",
+ \'\' as "Especifique"',
+ 
+ 'pam_datos_saludnutric'=>
+ 'nivel_hemoglobina as "Nivel de Hemoglobina",
+ peso as "Peso (Kg.)",
+ talla as "Talla (m)",
+ estado_nutricional as "Estado Nutricional(IMC)"',
+ 
+ 'pam_datosCondicionIngreso'=>
+ 'familiar_ubicados as "Cuenta con familiares",
+ tipo_parentesco as "Tipo de parentesco"',
+ 
+ 'pam_salud_mental'=>
+ 'trastorno_disociales as "Tras. comport. y/o disociales",
+ tipo_trastorno as "Tipo de transtorno"',
+ 
+ 'pam_Salud'=>
+ 'Plan_Intervencion as "Posee plan de intervención en Salud",
+ Meta_PAI as "Descripción de la meta trazada en el PAI",
+ Informe_Tecnico as "Posee informe técnico evolutivo",
+ Des_Informe_Tecnico as "Descripción del informe evolutivo",
+ Cumple_Intervencion as "Cumplimiento del plan de intervención",
+ Grado_PAM as "Grado dependencia de las PAM",
+ EnfermedaCronicasDegenerativas as "Enfermedades crónicas degenerativas",
+ Especificar_Enfermedad as "Especificar la enfermedad"',
+ 
+ 'pam_trabajoSocial'=>
+ 'Plan_Intervencion as "¿Posee plan de intervención en Trabajo Social",
+ Meta_PAI as "Descripción de la meta trazada en el PAI",
+ Informe_Tecnico as "¿Posee informe técnico evolutivo?",
+ Des_Informe_Tecnico as "Descripción del informe evolutivo",
+ Cumple_Intervencion as "Cumplimiento del plan de intervención"',
+ 
+ 'pam_EgresoUsuario'=>
+ 'Fecha_Egreso as "Fecha de egreso",
+ MotivoEgreso as "Motivo de egreso",
+ Retiro_Voluntario as "Retiro Voluntario",
+ Reinsercion_Familiar as "Reinserción familiar",
+ 
+ Traslado_Entidad_Salud as "Traslado a entidad de salud",
+ Traslado_Otra_Entidad as "Traslado a otra Entidad",
+ Fallecimiento as "Fallecimiento",
+ RestitucionAseguramientoSaludo as "Cumpl. de rest.derechos salud",
+ Restitucion_Derechos_DNI as "Cumpl. de rest.derechos dni",
+ RestitucionReinsercionFamiliar as "Reinserción Familiar"');
+ break;
       case '3':
       $campos = array('NNAInscripcionResidente'=>
 'residente_apellido_paterno as "Apellido paterno",
