@@ -786,7 +786,7 @@ class portada extends App{
         $residentes = array();
         $grupo_html = "";
         foreach ($modulos as $key => $grupo) {
-          if (!in_array($grupo["CODIGORESIDENTE"],$residentes)) {
+         // if (!in_array($grupo["CODIGORESIDENTE"],$residentes)) {
             if ($key==0) {
               $keys = array_keys($grupo);
               $grupo_html .="<tr><th></th>";
@@ -802,8 +802,8 @@ class portada extends App{
               $grupo_html .="<td>".$value."</td>";
             }
             $grupo_html .= "</tr>";
-            $residentes[] = $grupo["CODIGORESIDENTE"];
-          }
+           // $residentes[] = $grupo["CODIGORESIDENTE"];
+         // }
         }
         $table = '<table>'.$grupo_html.'</table>';
         if ($modulos)
