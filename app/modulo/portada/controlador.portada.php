@@ -1,6 +1,6 @@
 <?php
 date_default_timezone_set('America/Lima');
-
+ini_set('memory_limit', '300M');
 class portada extends App{
     public function index(){
       if(!isset($_SESSION["usuario"])){
