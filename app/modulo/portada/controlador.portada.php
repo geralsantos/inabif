@@ -790,32 +790,45 @@ class portada extends App{
           $where = " and cu.centro_id = ".$centro." and cda.centro_id = ".$centro." and cci.centro_id = ".$centro." and csn.centro_id = ".$centro." and csm.centro_id = ".$centro." and ct.centro_id = ".$centro." and cac.centro_id = ".$centro." and cap.centro_id = ".$centro." and cec.centro_id = ".$centro." and cts.centro_id = ".$centro." and cas.centro_id = ".$centro." and cep.centro_id = ".$centro." and cee.centro_id = ".$centro." and ces.centro_id = ".$centro." and ctf.centro_id = ".$centro." and cen.centro_id = ".$centro." and cets.centro_id = ".$centro." and ceg.centro_id = ".$centro." and ca.id = ".$centro." and re.centro_id = ".$centro." ";
         }
         include 'consultas_preparadas.php';
-        
-        
-        $ppd_matriz_general = $modelo->executeQuery($ppd_matriz_general);
-        $residentes = array();
-        $grupo_html = "";
-        foreach ($ppd_matriz_general as $key => $grupo) {
-          if (!in_array($grupo["CODIGORESIDENTE"],$residentes)) {
-            if ($key==0) {
-              $keys = array_keys($grupo);
-              $grupo_html .="<tr><th></th>";
-              foreach ($keys as $key)
-              {
-                $grupo_html .="<th style='background-color:yellow;'>".strtoupper($key)."</th>";
-              }
-              $grupo_html .="</tr>";
-            }
-            $grupo_values = array_values($grupo);
-            $grupo_html .= "<tr>";
-            foreach ($grupo_values as $key => $value) {
-              $grupo_html .="<td style='text-align:left;'>".$value."</td>";
-            }
-            $grupo_html .= "</tr>";
-            $residentes[] = $grupo["CODIGORESIDENTE"];
-          }
+        if (ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel) {
+          $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+          /* no afecta en la consulta ya que se listan todos los centros de todos los tipos de centros */
+        }else if (SUPERVISOR == $nivel || USER_SEDE== $nivel){
+          $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+          $modulos = $modulos[$tipo_centro];
+        }else if (REGISTRADOR == $nivel || RESPONSABLE_INFORMACION== $nivel || USER_CENTRO== $nivel){
+          $centro = $_SESSION["usuario"][0]["CENTRO_ID"];
+          /*no afecta en la consulta ya que en lineas más arriba ya se usa la condición que sea solo el centro del usuario*/
         }
-        $table = '<table>'.$grupo_html.'</table>';
+        $html_modulo = "";
+        foreach ($modulos as $key => $modulo)
+        {
+          $modulo = $modelo->executeQuery($modulo);
+          $residentes = array();
+          $grupo_html = "";
+          foreach ($modulo as $key => $grupo) {
+            if (!in_array($grupo["CODIGORESIDENTE"],$residentes)) {
+              if ($key==0) {
+                $keys = array_keys($grupo);
+                $grupo_html .="<tr><th></th>";
+                foreach ($keys as $key)
+                {
+                  $grupo_html .="<th style='background-color:yellow;'>".strtoupper($key)."</th>";
+                }
+                $grupo_html .="</tr>";
+              }
+              $grupo_values = array_values($grupo);
+              $grupo_html .= "<tr>";
+              foreach ($grupo_values as $key => $value) {
+                $grupo_html .="<td style='text-align:left;'>".$value."</td>";
+              }
+              $grupo_html .= "</tr>";
+              $residentes[] = $grupo["CODIGORESIDENTE"];
+            }
+          }
+          $html_modulo = $html_modulo . $grupo_html."<tr><td></td></tr><tr><td></td></tr>";
+        }
+        $table = '<table>'.$html_modulo.'</table>';
         if ($modulos)
         {
           echo json_encode(array("data"=>$table) ) ;
@@ -823,75 +836,7 @@ class portada extends App{
         }else{
           return false;
         }
-
-
-        $centros = "select  max(ca.id),max(ca.nom_ca) as nombre_centro,max(ca.tipo_centro_id) as tipo_centro_id,max(tc.nombre) as nombre_tipo_centro,to_char(max(cad.fecha_matriz),'DD-MON-YY HH24:MI') as fecha_matriz,max(cad.id) from centro_atencion_detalle cad
-        left join centro_atencion ca on(ca.id=cad.centro_id)
-        left join tipo_centro tc on(ca.tipo_centro_id=tc.id)
-          where ".$matriz_id." to_char(cad.fecha_matriz,'DD-MON-YY') ".$fecha." and ca.estado=1 group by ca.id order by ca.id desc";
-        $centros = $modelo->executeQuery($centros);
-        $html2 ="";
-        foreach ($centros as $key => $centro) 
-        {
-          $centro_html ="<tr><th>Nombre del Centro</th><th>Tipo de Centro</th><th>Fecha Matriz </th></tr>";
-          $centro_html .="<tr><td>".$centro["NOMBRE_CENTRO"]."</td><td>".$centro["NOMBRE_TIPO_CENTRO"]."</td><td>".$centro["FECHA_MATRIZ"]."</td></tr>";
-  
-          //$modulo_html = "<table>";
-          $modulos = "select m.parent_id,m.nombre as nombre_modulo,usu.nombre as nombre_usuario,md.periodo_mes,m.nombre_tabla from modulos_detalle md
-          left join modulos m on(m.id=md.modulo_id)
-          left join usuarios usu on(usu.id=m.encargado_id)
-            where m.centro_id in (".$centro["TIPO_CENTRO_ID"].") and md.periodo_mes = ".date("m",strtotime($periodo_mes))." and md.periodo_anio = ".$periodo_anio." order by md.id desc";
-          $modulos = $modelo->executeQuery($modulos);
-          $html = "";
-          foreach ($modulos as $key => $modulo)
-          {
-          if (($modulo["NOMBRE_TABLA"])!="") {
-            $modulo_html ="<tr><th></th><th>Nombre del Modulo</th><th>Encargado</th><th>Periodo Mes</th></tr>";
-            $modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td><td>".$modulo["NOMBRE_USUARIO"]."</td><td>".$modulo["PERIODO_MES"]."</td></tr>";
-              
-            $grupos = "select distinct nt.* from ".$modulo["NOMBRE_TABLA"]." nt where nt.periodo_mes=".date("m",strtotime($periodo_mes))." and nt.periodo_anio=".$periodo_anio."  order by nt.id desc";
-            $grupos = $modelo->executeQuery($grupos);
-  
-            $grupo_html = "";
-            $residentes = [];
-            foreach ($grupos as $key => $grupo)
-            {
-              if (!in_array($grupo["RESIDENTE_ID"],$residentes)) {
-                if ($key==0) {
-                  $keys = array_keys($grupo);
-                  $grupo_html .="<tr><th></th>";
-                  foreach ($keys as $key)
-                  {
-                    $grupo_html .="<th>$key</th>";
-                  }
-                  $grupo_html .="</tr>";
-                }
-                $grupo_values = array_values($grupo);
-                $grupo_html .= "<tr><td></td>";
-                foreach ($grupo_values as $key => $value) {
-                  $grupo_html .="<td>".$value."</td>";
-                }
-                $grupo_html .= "</tr>";
-                $residentes[] = $grupo["RESIDENTE_ID"];
-              }
-            }
-            $html .= $modulo_html.$grupo_html;
-            //$modulo_html .=$grupo_html;
-            }
-          }
-          $html2 .=$centro_html.$html;
-        }
-        
-        //$modulo_html .="</table>";
-        //$table = '<table><tr><td>'.$centro_html.'</td></tr><tr><td>'.$modulo_html.'</td></tr></table>';
-        $table = '<table>'.$html2.'</table>';
-        if ($modulos)
-        {
-          echo json_encode(array("data"=>$table) ) ;
-        }else{
-          return false;
-        }
-      }
+    }
   public function mostrar_reporte_rub(){
     /*$modelo = new modeloPortada();
     $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
