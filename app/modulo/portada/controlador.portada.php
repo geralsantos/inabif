@@ -778,8 +778,7 @@ class portada extends App{
   
 /*ccs.Nom_Entidad, ccs.Cod_Linea ,ccs.Linea_Intervencion , ccs.Cod_Servicio , ccs.Nom_Servicio, ccs.Ubigeo_Ine, ccs.Departamento_CAtencion, ccs.Provincia_CAtencion, ccs.Distrito_CAtencion, ccs.Centro_Poblado, ccs.Centro_Residencia*/
 
-
-
+        $nivel = $_SESSION["usuario"][0]["NIVEL"];
         if (ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel) {
           $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
           $where = "";
