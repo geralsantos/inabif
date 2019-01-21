@@ -1112,7 +1112,7 @@ Numero_Documento as "Número documento de ingreso"',
    Reinsercion as "Posibilidad de Reinserción",
    Colocacion_Laboral as "Posibilidad Colocación Lab."',
 
-   'DATOS FAMILIARES Y SOCIALES DEL USUARIO (Trabajo Social)'=>
+   '(Trabajo Social)'=>
    'Familiares as "Cuenta con familiares",
     Parentesco as "Tipo de parentesco"',
 
@@ -1185,21 +1185,21 @@ Numero_Documento as "Número documento de ingreso"',
  tipo_trastorno as "Tipo de transtorno"',
  
  'pam_Salud'=>
- 'Plan_Intervencion as "Posee plan de intervención en Salud",
- Meta_PAI as "Descripción de la meta trazada en el PAI",
- Informe_Tecnico as "Posee informe técnico evolutivo",
- Des_Informe_Tecnico as "Descripción del informe evolutivo",
- Cumple_Intervencion as "Cumplimiento del plan de intervención",
+ 'Plan_Intervencion as "Plan de intervención,
+ Meta_PAI as "Meta trazada en el PAI",
+ Informe_Tecnico as "Informe técnico evolutivo",
+ Des_Informe_Tecnico as "Descripción",
+ Cumple_Intervencion as "Cumplimiento del plan ",
  Grado_PAM as "Grado dependencia de las PAM",
- EnfermedaCronicasDegenerativas as "Enfermedades crónicas degenerativas",
- Especificar_Enfermedad as "Especificar la enfermedad"',
+ EnfermedaCronicasDegenerativas as "Enfermedades crónicas deg.",
+ Especificar_Enfermedad as "Especificar"',
  
  'pam_trabajoSocial'=>
- 'Plan_Intervencion as "¿Posee plan de intervención en Trabajo Social",
- Meta_PAI as "Descripción de la meta trazada en el PAI",
- Informe_Tecnico as "¿Posee informe técnico evolutivo?",
- Des_Informe_Tecnico as "Descripción del informe evolutivo",
- Cumple_Intervencion as "Cumplimiento del plan de intervención"',
+ 'Plan_Intervencion as "Plan de intervención",
+ Meta_PAI as "Meta trazada en el PAI",
+ Informe_Tecnico as "Informe técnico evolutivo",
+ Des_Informe_Tecnico as "Descripción ",
+ Cumple_Intervencion as "Cumplimiento del plan "',
  
  'pam_EgresoUsuario'=>
  'Fecha_Egreso as "Fecha de egreso",
@@ -1278,19 +1278,19 @@ Numero_Documento as "Número documento de ingreso"',
       'NNASalud_Semestral'=>
       'Plan_Intervencion as "Plan de intervención",
       Meta_PAI as "Meta trazada en el PAI",
-      Informe_tecnico as "Posee informe técnico evolutivo",
-      Cumple_Intervencion as "Cumplimiento del Plan de intervención",
-      Control_CRED as "Control CRED acorde a la Edad?",
-      Vacunacion as "Esquema de vacunación acorde a la Edad?"',
+      Informe_tecnico as "Informe técnico evolutivo",
+      Cumple_Intervencion as "Cumplimiento del Plan",
+      Control_CRED as "Control CRED acorde a la Edad",
+      Vacunacion as "Esq. de vac. acorde a la Edad"',
       
       'NNAtrabajoSocial_Semestral'=>
       'Plan_Intervencion as "Plan de Intervención ",
       Meta_PAI as "Meta trazada en el PAI",
-      Informe_Tecnico as "¿Posee informe técnico evolutivo?",
-      Cumple_Intervencion as "¿Cumplimiento del Plan de intervención?",
-      ParticipacionF_Activa as "¿Participación activa familiar?",
-      Reinsercion_Familiar as "¿Plan de Reinserción familiar?",
-      FamiliaR_Soporte as "¿Familia usa las redes de soporte social?"',
+      Informe_Tecnico as "Informe técnico evolutivo",
+      Cumple_Intervencion as "Cumplimiento del Plan",
+      ParticipacionF_Activa as "Participación activa familiar",
+      Reinsercion_Familiar as "Plan de Reinserción familiar",
+      FamiliaR_Soporte as "Fam. usa las RSS"',
       
       'NNAEgresoUsuario'=>
       'Fecha_Egreso as "Fecha de egreso",
