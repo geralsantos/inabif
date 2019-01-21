@@ -805,7 +805,6 @@ class portada extends App{
         {
          
             $modulo = $modelo->executeQuery($modulo);
-            print_r($modulo);
             $residentes = array();
             $grupo_html = "";
             if ($modulo) {
