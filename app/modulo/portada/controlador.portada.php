@@ -814,9 +814,9 @@ class portada extends App{
               $grupo_html .="</tr>";
             }
             $grupo_values = array_values($grupo);
-            $grupo_html .= "<tr><td></td>";
+            $grupo_html .= "<tr>";
             foreach ($grupo_values as $key => $value) {
-              $grupo_html .="<td>".$value."</td>";
+              $grupo_html .="<td style='background-color:yellow;'>".$value."</td>";
             }
             $grupo_html .= "</tr>";
             $residentes[] = $grupo["CODIGORESIDENTE"];
