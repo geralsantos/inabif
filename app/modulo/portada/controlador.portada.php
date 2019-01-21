@@ -811,7 +811,7 @@ class portada extends App{
                 if (!in_array($grupo["CODIGORESIDENTE"],$residentes)) {
                   if ($key==0) {
                     $keys = array_keys($grupo);
-                    $grupo_html .="<tr><th></th>";
+                    $grupo_html .="<tr>";
                     foreach ($keys as $key)
                     {
                       $grupo_html .="<th style='background-color:yellow;'>".strtoupper($key)."</th>";
