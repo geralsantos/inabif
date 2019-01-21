@@ -1350,7 +1350,7 @@ ini_set('session.gc_maxlifetime','1200');*/
 		{
       $contar_modulos = 1;
       $modulo_html ="";
-      $modulo_html .="<tr><td></td><td style='background-color:yellow'>".($contar_modulos).". ".$modulo["NOMBRE_MODULO"]."</td></tr>";
+      $modulo_html .="<tr><td style='background-color:yellow' colspan='2'>".($contar_modulos).". ".$modulo["NOMBRE_MODULO"]."</td></tr>";
       if (!empty($campos[$modulo["NOMBRE_TABLA"]])) 
       {
         if (is_array($campos[$modulo["NOMBRE_TABLA"]])) {
