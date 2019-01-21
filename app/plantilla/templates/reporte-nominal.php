@@ -11,7 +11,7 @@
                                 <div class="form-group col-md-10">
                                     <label for="text-input" class=" form-control-label">Ingrese el nombre del residente</label>
                                     <div class="autocomplete">
-                                        <input type="text"  v-model="nombre_residente" class="form-control campo_busqueda_residente" @keyup="buscar_residente()" placeholder="Nombre, Apellido o DNI"/>
+                                        <input type="text"  v-model="nombre_residente" class="form-control campo_busqueda_residente" @keyup="buscar_residente()" placeholder="Código, Nombre, Apellido o DNI"/>
                                         <ul  id="autocomplete-results" class="autocomplete-results" v-if="bloque_busqueda">
                                             <li class="loading" v-if="isLoading">
                                                 Loading results...

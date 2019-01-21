@@ -784,7 +784,7 @@ class portada extends App{
           $where = "";
         }else if (SUPERVISOR == $nivel || USER_SEDE== $nivel){
           $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
-          $where = "ca.tipo_centro_id = ".$tipo_centro." and ";
+          $where = "";
         }else if (REGISTRADOR == $nivel || RESPONSABLE_INFORMACION== $nivel || USER_CENTRO== $nivel){
           $centro = $_SESSION["usuario"][0]["CENTRO_ID"];
           $where = " and cu.centro_id(+)= ".$centro." and cda.centro_id(+)= ".$centro." and cci.centro_id(+)= ".$centro." and csn.centro_id(+)= ".$centro." and csm.centro_id(+)= ".$centro." and ct.centro_id(+)= ".$centro." and cac.centro_id(+)= ".$centro." and cap.centro_id(+)= ".$centro." and cec.centro_id(+)= ".$centro." and cts.centro_id(+)= ".$centro." and cas.centro_id(+)= ".$centro." and cep.centro_id(+)= ".$centro." and cee.centro_id(+)= ".$centro." and ces.centro_id(+)= ".$centro." and ctf.centro_id(+)= ".$centro." and cen.centro_id(+)= ".$centro." and cets.centro_id(+)= ".$centro." and ceg.centro_id(+)= ".$centro." and ca.id(+)= ".$centro." and re.centro_id(+)= ".$centro." ";
@@ -795,7 +795,7 @@ class portada extends App{
           /* no afecta en la consulta ya que se listan todos los centros de todos los tipos de centros */
         }else if (SUPERVISOR == $nivel || USER_SEDE== $nivel){
           $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
-          $modulos = $modulos[$tipo_centro];
+          $modulos = [$modulos[$tipo_centro]];
         }else if (REGISTRADOR == $nivel || RESPONSABLE_INFORMACION== $nivel || USER_CENTRO== $nivel){
           $centro = $_SESSION["usuario"][0]["CENTRO_ID"];
           $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
