@@ -37,6 +37,7 @@ Vue.component('pam-actividades-sociales', {
             this.Atencion_Social = null;
             this.Visita_Familiares = null;
             this.Nro_Visitas = null;
+            this.Visitas_Amigos = null;
             this.Nro_Visitas_Amigos = null;
             this.Descriptivo_Persona_Visita = null;
             this.Aseguramiento_Universal_Salud = null;
@@ -66,6 +67,7 @@ Vue.component('pam-actividades-sociales', {
                 Atencion_Social:this.Atencion_Social,
                 Visita_Familiares:this.Visita_Familiares,
                 Nro_Visitas:this.Nro_Visitas,
+                Visitas_Amigos:this.Visitas_Amigos,
                 Nro_Visitas_Amigos:this.Nro_Visitas_Amigos,
                 Descriptivo_Persona_Visita:this.Descriptivo_Persona_Visita,
                 Aseguramiento_Universal_Salud:this.Aseguramiento_Universal_Salud,
@@ -167,6 +169,7 @@ Vue.component('pam-actividades-sociales', {
             this.Visita_Familiares = null;
             this.Nro_Visitas = null;
             this.Nro_Visitas_Amigos = null;
+            this.Visitas_Amigos = null;
             this.Descriptivo_Persona_Visita = null;
             this.Aseguramiento_Universal_Salud = null;
             this.Fecha_Emision_Obtencion_Seguro = null;
@@ -191,6 +194,7 @@ Vue.component('pam-actividades-sociales', {
                     this.Atencion_Social = response.body.atributos[0]["ATENCION_SOCIAL"];
                     this.Visita_Familiares = response.body.atributos[0]["VISITA_FAMILIARES"];
                     this.Nro_Visitas = response.body.atributos[0]["NRO_VISITAS"];
+                    this.Visitas_Amigos = response.body.atributos[0]["VISITAS_AMIGOS"];
                     this.Nro_Visitas_Amigos = response.body.atributos[0]["NRO_VISITAS_AMIGOS"];
                     this.Descriptivo_Persona_Visita = response.body.atributos[0]["DESCRIPTIVO_PERSONA_VISITA"];
                     this.Aseguramiento_Universal_Salud = response.body.atributos[0]["ASEGURAMIENTO_UNIVERSAL_SALUD"];
