@@ -308,7 +308,17 @@ class portada extends App{
           $campo = "cir.Numero_Doc ";
           $left_join = " left join NNACondicionIResidente cir on (cir.residente_id=re.id) ";
         }
-		  $sql = "SELECT max(re.id) as id,max(re.nombre) as nombre,max(re.apellido_p) as apellido_p,max(re.apellido_m) as apellido_m,max(".$campo.") as dni_residente FROM Residente re ".$left_join." WHERE  re.ESTADO=1  group by re.id ORDER BY re.Id desc";
+        $nivel = $_SESSION["usuario"][0]["NIVEL"];
+      if (SUPERVISOR == $nivel || USER_SEDE == $nivel) {
+				$tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+				$where = " AND re.tipo_centro_id = ".$tipo_centro;
+			}else if (REGISTRADOR ==$nivel || RESPONSABLE_INFORMACION ==$nivel){
+				$centro_id = $_SESSION["usuario"][0]["CENTRO_ID"];
+				$where = " AND re.centro_id = ".$centro_id;
+			}else if(ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel){
+				$where ="";
+			}
+		  $sql = "SELECT max(re.id) as id,max(re.nombre) as nombre,max(re.apellido_p) as apellido_p,max(re.apellido_m) as apellido_m,max(".$campo.") as dni_residente FROM Residente re ".$left_join." WHERE  re.ESTADO=1 ".$where."  group by re.id ORDER BY re.Id desc";
 		  $res = $modelo->executeQuery( $sql );
 		  if ($res) {
 			echo json_encode(array( "data"=>$res )) ;
