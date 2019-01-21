@@ -803,7 +803,6 @@ class portada extends App{
         $html_modulo = "";
         foreach ($modulos as $key => $modulo)
         {
-         
             $modulo = $modelo->executeQuery($modulo);
             $residentes = array();
             $grupo_html = "";
