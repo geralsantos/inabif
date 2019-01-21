@@ -1112,7 +1112,7 @@ Numero_Documento as "Número documento de ingreso"',
    Reinsercion as "Posibilidad de Reinserción",
    Colocacion_Laboral as "Posibilidad Colocación Lab."',
 
-   '(Trabajo Social)'=>
+   'DATOS FAMILIARES Y SOCIALES DEL USUARIO (Trabajo Social)'=>
    'Familiares as "Cuenta con familiares",
     Parentesco as "Tipo de parentesco"',
 
@@ -1350,8 +1350,9 @@ ini_set('session.gc_maxlifetime','1200');*/
 		foreach ($modulos as $key => $modulo)
 		{
       $contar_modulos = 1;
+      $contar_modulos_2 = 1;
       $modulo_html ="";
-      $modulo_html .="<tr><td style='background-color:yellow' colspan='2'>".($contar_modulos).". ".$modulo["NOMBRE_MODULO"]."</td></tr>";
+      $modulo_html .="<tr><td style='background-color:yellow' colspan='2'>".($contar_modulos_2).". ".$modulo["NOMBRE_MODULO"]."</td></tr>";
       if (!empty($campos[$modulo["NOMBRE_TABLA"]])) 
       {
         if (is_array($campos[$modulo["NOMBRE_TABLA"]])) {
@@ -1436,6 +1437,7 @@ ini_set('session.gc_maxlifetime','1200');*/
           $html .= $modulo_html.$grupo_html;
         }
       }
+      $contar_modulos_2++;
     }
     if ($contar==0) {
       $centro_html = "";
