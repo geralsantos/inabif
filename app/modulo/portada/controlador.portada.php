@@ -467,27 +467,27 @@ class portada extends App{
     public function buscar_centros(){
         $modelo = new modeloPortada();
         if ($_SESSION["usuario"][0]["NIVEL"]==RESPONSABLE_INFORMACION) { //responsable de la información
-          $sql = "select distinct ca.id as id_centro,ca.NOM_CA as nombre_centro,cad.estado_completo, cad.fecha_matriz, cad.id, cad.fecha_cierre   from centro_atencion ca
+          $sql = "select distinct ca.id as id_centro,ca.NOM_CA as nombre_centro, ca.COD_CA as codigo_centro, cad.estado_completo, cad.fecha_matriz, cad.id, cad.fecha_cierre   from centro_atencion ca
           left join centro_atencion_detalle cad on (cad.centro_id=ca.id)
           left join tipo_centro tc on (ca.tipo_centro_id=tc.id)
           where ca.id=".$_SESSION["usuario"][0]["CENTRO_ID"]." and ca.estado = 1 AND rownum = 1 ORDER BY cad.id desc";
         }else if($_SESSION["usuario"][0]["NIVEL"]==ADMIN_CENTRAL) //ADMIN_CENTRAL
         {
-          $sql = "select max(ca.id) as id_centro,max(ca.NOM_CA ) as nombre_centro,max(cad.estado_completo) as estado_completo, max(cad.fecha_matriz) as fecha_matriz,
+          $sql = "select max(ca.id) as id_centro,max(ca.NOM_CA ) as nombre_centro, ca.COD_CA as codigo_centro, max(cad.estado_completo) as estado_completo, max(cad.fecha_matriz) as fecha_matriz,
           max(cad.fecha_cierre) as fecha_cierre, cad.id  from centro_atencion ca
           left join centro_atencion_detalle cad on (cad.centro_id=ca.id)
           left join tipo_centro tc on (ca.tipo_centro_id=tc.id)
           where ca.estado = 1 group by ca.id order by ca.id desc";
 		    }else if($_SESSION["usuario"][0]["NIVEL"]==USER_CENTRO) //USER CENTRO: SOLO VE SU SEDE ASIGNADA
         {
-          $sql = "select distinct ca.id as id_centro,ca.NOM_CA as nombre_centro,cad.estado_completo, cad.fecha_matriz,
+          $sql = "select distinct ca.id as id_centro,ca.NOM_CA as nombre_centro, ca.COD_CA as codigo_centro, cad.estado_completo, cad.fecha_matriz,
           cad.id, cad.fecha_cierre  from centro_atencion ca
           left join centro_atencion_detalle cad on (cad.centro_id=ca.id)
           left join tipo_centro tc on (ca.tipo_centro_id=tc.id)
           where ca.id=".$_SESSION["usuario"][0]["CENTRO_ID"]." and ca.estado = 1 AND rownum = 1 ORDER BY cad.id desc";
 		    }else if($_SESSION["usuario"][0]["NIVEL"]==SUPERVISOR) //SUPERVISOR VE TODAS LAS SEDES DE SU TIPO DE CENTRO
         {
-          $sql = "select max(ca.id) as id_centro,max(ca.NOM_CA ) as nombre_centro,max(cad.estado_completo) as estado_completo, max(cad.fecha_matriz) as fecha_matriz,
+          $sql = "select max(ca.id) as id_centro,max(ca.NOM_CA ) as nombre_centro, ca.COD_CA as codigo_centro, max(cad.estado_completo) as estado_completo, max(cad.fecha_matriz) as fecha_matriz,
          max(cad.fecha_cierre) as fecha_cierre  from centro_atencion ca
           left join centro_atencion_detalle cad on (cad.centro_id=ca.id)
           left join tipo_centro tc on (ca.tipo_centro_id=tc.id)
@@ -498,16 +498,16 @@ class portada extends App{
           left join centro_atencion_detalle cad on (cad.centro_id=ca.id)
           left join tipo_centro tc on (ca.tipo_centro_id=tc.id)
 		  where tc.id=".$_SESSION["usuario"][0]["TIPO_CENTRO_ID"]." and ca.estado = 1 ";*/
-		  $sql = "select max(ca.id) as id_centro,max(ca.NOM_CA ) as nombre_centro,max(cad.estado_completo) as estado_completo, max(cad.fecha_matriz) as fecha_matriz, max(cad.fecha_cierre) as fecha_cierre from centro_atencion ca left join centro_atencion_detalle cad on (cad.centro_id=ca.id) left join tipo_centro tc on (ca.tipo_centro_id=tc.id) where ca.estado = 1 group by ca.id order by ca.id desc";
+		  $sql = "select max(ca.id) as id_centro,max(ca.NOM_CA ) as nombre_centro, ca.COD_CA as codigo_centro, max(cad.estado_completo) as estado_completo, max(cad.fecha_matriz) as fecha_matriz, max(cad.fecha_cierre) as fecha_cierre from centro_atencion ca left join centro_atencion_detalle cad on (cad.centro_id=ca.id) left join tipo_centro tc on (ca.tipo_centro_id=tc.id) where ca.estado = 1 group by ca.id order by ca.id desc";
         }else if($_SESSION["usuario"][0]["NIVEL"]==USER_SEDE) //USER_SEDE
         {
-          $sql = "select max(ca.id) as id_centro,max(ca.NOM_CA ) as nombre_centro,max(cad.estado_completo) as estado_completo, max(cad.fecha_matriz) as fecha_matriz, max(cad.fecha_cierre) as fecha_cierre  from centro_atencion ca
+          $sql = "select max(ca.id) as id_centro,max(ca.NOM_CA ) as nombre_centro, ca.COD_CA as codigo_centro,max(cad.estado_completo) as estado_completo, max(cad.fecha_matriz) as fecha_matriz, max(cad.fecha_cierre) as fecha_cierre  from centro_atencion ca
           left join centro_atencion_detalle cad on (cad.centro_id=ca.id)
           left join tipo_centro tc on (ca.tipo_centro_id=tc.id)
           where tc.id=".$_SESSION["usuario"][0]["TIPO_CENTRO_ID"]." and ca.estado = 1 group by ca.id order by ca.id desc";
         }else if($_SESSION["usuario"][0]["NIVEL"]==REGISTRADOR) //REGISTRADOR
         {
-          $sql = "select distinct ca.id as id_centro,ca.NOM_CA as nombre_centro,cad.estado_completo, cad.fecha_matriz, cad.id, cad.fecha_cierre  from centro_atencion ca
+          $sql = "select distinct ca.id as id_centro,ca.NOM_CA as nombre_centro, ca.COD_CA as codigo_centro, cad.estado_completo, cad.fecha_matriz, cad.id, cad.fecha_cierre  from centro_atencion ca
           left join centro_atencion_detalle cad on (cad.centro_id=ca.id)
           left join tipo_centro tc on (ca.tipo_centro_id=tc.id)
           where ca.id=".$_SESSION["usuario"][0]["CENTRO_ID"]." and ca.estado = 1 AND rownum = 1 ORDER BY cad.id desc";
@@ -641,7 +641,7 @@ class portada extends App{
         $centro = $_SESSION["usuario"][0]["CENTRO_ID"];
         $where = "ca.id = ".$centro." and ";
       }
-      
+
       /*usg, admin = matriz total */
       /*  */
       $periodo_mes = $_POST["periodo_mes"];
@@ -673,8 +673,8 @@ class portada extends App{
     public function descargar_reporte_matriz_general(){
       $modelo = new modeloPortada();
 	  $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
-	  
-      
+
+
 	  $matriz_id = isset($_POST["matriz_id"]) ? ($_POST["matriz_id"]!=""?" cad.id = ".$_POST["matriz_id"]." and ":"") : "";
       $periodo_mes = $_POST["periodo_mes"];
       $periodo_anio = $_POST["periodo_anio"];
@@ -695,7 +695,7 @@ class portada extends App{
         where ".$matriz_id." to_char(cad.fecha_matriz,'DD-MON-YY') ".$fecha." and ca.estado=1 group by ca.id order by ca.id desc";
       $centros = $modelo->executeQuery($centros);
 	  $html2 ="";
-      foreach ($centros as $key => $centro) 
+      foreach ($centros as $key => $centro)
       {
 		$centro_html ="<tr><th>Nombre del Centro</th><th>Tipo de Centro</th><th>Fecha Matriz </th></tr>";
         $centro_html .="<tr><td>".$centro["NOMBRE_CENTRO"]."</td><td>".$centro["NOMBRE_TIPO_CENTRO"]."</td><td>".$centro["FECHA_MATRIZ"]."</td></tr>";
@@ -712,7 +712,7 @@ class portada extends App{
         if (($modulo["NOMBRE_TABLA"])!="") {
           $modulo_html ="<tr><th></th><th>Nombre del Modulo</th><th>Encargado</th><th>Periodo Mes</th></tr>";
           $modulo_html .="<tr><td></td><td>".$modulo["NOMBRE_MODULO"]."</td><td>".$modulo["NOMBRE_USUARIO"]."</td><td>".$modulo["PERIODO_MES"]."</td></tr>";
-			
+
           $grupos = "select distinct nt.* from ".$modulo["NOMBRE_TABLA"]." nt where nt.periodo_mes=".date("m",strtotime($periodo_mes))." and nt.periodo_anio=".$periodo_anio."  order by nt.id desc";
           $grupos = $modelo->executeQuery($grupos);
 
@@ -745,7 +745,7 @@ class portada extends App{
 		}
 		$html2 .=$centro_html.$html;
       }
-      
+
       //$modulo_html .="</table>";
       //$table = '<table><tr><td>'.$centro_html.'</td></tr><tr><td>'.$modulo_html.'</td></tr></table>';
 	  $table = '<table>'.$html2.'</table>';
@@ -759,8 +759,8 @@ class portada extends App{
     public function descargar_reporte_matriz_general_2(){
         $modelo = new modeloPortada();
         $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
-        
-        
+
+
 
         $matriz_id = isset($_POST["matriz_id"]) ? ($_POST["matriz_id"]!=""?" cad.id = ".$_POST["matriz_id"]." and ":"") : "";
         $periodo_mes = $_POST["periodo_mes"];
@@ -773,9 +773,9 @@ class portada extends App{
       }
         $aux = date('d', strtotime("{$month} + 1 month"));
         $last_day = date('d', strtotime("{$aux} - 1 day"));
-  
+
         $fecha = " BETWEEN UPPER('".date("01-M-y",strtotime($periodo_anio."-".$periodo_mes))."') AND UPPER('".date(($last_day."-M-y"),strtotime($periodo_anio."-".$periodo_mes))."')";
-  
+
 /*ccs.Nom_Entidad, ccs.Cod_Linea ,ccs.Linea_Intervencion , ccs.Cod_Servicio , ccs.Nom_Servicio, ccs.Ubigeo_Ine, ccs.Departamento_CAtencion, ccs.Provincia_CAtencion, ccs.Distrito_CAtencion, ccs.Centro_Poblado, ccs.Centro_Residencia*/
 
         $nivel = $_SESSION["usuario"][0]["NIVEL"];
@@ -800,7 +800,7 @@ class portada extends App{
           $centro = $_SESSION["usuario"][0]["CENTRO_ID"];
           $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
           $modulos = [$modulos[$tipo_centro]];
-         
+
         }
         $html_modulo = "";
         foreach ($modulos as $key => $modulo)
@@ -1039,7 +1039,7 @@ Numero_Documento as "Número documento de ingreso"',
    Peso as "Peso (Kg.)",
    Talla as "Talla (m)",
    Estado_Nutricional as "Estado Nutricional(IMC)"'),
-    
+
 
    'CarEgresoSalud'=>
    'Plan_Medico as "Plan de intervención",
@@ -1049,7 +1049,7 @@ Numero_Documento as "Número documento de ingreso"',
    Cumple_Plan as "Plan de intervención",
    Enfermedades_Cronicas as "Enfermedades crónicas deg.",
    Especificar as "Especificar la enfermedad"',
-   
+
    'CarEgresoTrabajoSocial'=>
    'Plan_Social as "Plan de intervención social",
    Meta_PII as "Meta trazada en el PII",
@@ -1083,8 +1083,8 @@ Numero_Documento as "Número documento de ingreso"',
       (CASE sexo WHEN \'h\' THEN 2 WHEN \'m\' THEN 1 END) as "Sexo",
       fecha_nacimiento as "Fecha de Nacimiento",
       (SELECT nombre from pam_lengua_materna WHERE id = pam_datos_identificacion.lengua_materna) as "Lengua Materna"',
- 
- 
+
+
       'pam_datos_admision_usuario'=>
       'fecha_ingreso_usuario as "Fecha de Ingreso",
       (SELECT nombre FROM pam_instituciones_deriva WHERE id=pam_datos_admision_usuario.institucion_deriva) as "Entidad que lo deriva",
@@ -1092,7 +1092,7 @@ Numero_Documento as "Número documento de ingreso"',
       (SELECT nombre FROM pam_motivos_ingreso WHERE id = pam_datos_admision_usuario.motivo_ingreso_secundario)as "Motivo ingreso PRINCIPAL(real)",
       numero_documento_ingreo_car as "Número documento de ingreso",
       perfil_ingreso as "Perfil de Ingreso"',
- 
+
       'pam_datosCondicionIngreso'=>
       'documento_entidad as "DNI al ingreso",
       tipo_documento_entidad as "Tipo documento de identidad",
@@ -1104,8 +1104,8 @@ Numero_Documento as "Número documento de ingreso"',
       \'\' as "Cobertura médica",
       (SELECT nombre FROM pam_clasif_socioeconomico where id = pam_datosCondicionIngreso.SISFOH) as "Clasif.Socioeconómica(SISFOH)",
       (SELECT nombre FROM pam_tipo_seguro_salud WHERE id=pam_datosCondicionIngreso.aseguramiento_salud) as "Tipo de aseguramiento"',
- 
- 
+
+
  'pam_datos_saludnutric'=>
  'discapacidad as "Discapacidad",
  discapacidad_fisica as "Presenta discap. física",
@@ -1118,21 +1118,21 @@ Numero_Documento as "Número documento de ingreso"',
  enfermedad_ingreso_1 as "Patología crónica 1",
  (SELECT nombre FROM pam_tipo_patologia WHERE id =pam_datos_saludnutric.tipo_patologia) as "Tipo de patología",
  \'\' as "Especifique"',
- 
+
  'pam_datos_saludnutric'=>
  'nivel_hemoglobina as "Nivel de Hemoglobina",
  peso as "Peso (Kg.)",
  talla as "Talla (m)",
  estado_nutricional as "Estado Nutricional(IMC)"',
- 
+
  'pam_datosCondicionIngreso'=>
  'familiar_ubicados as "Cuenta con familiares",
  tipo_parentesco as "Tipo de parentesco"',
- 
+
  'pam_salud_mental'=>
  'trastorno_disociales as "Tras. comport. y/o disociales",
  tipo_trastorno as "Tipo de transtorno"',
- 
+
  'pam_Salud'=>
  'Plan_Intervencion as "Plan de intervención,
  Meta_PAI as "Meta trazada en el PAI",
@@ -1142,20 +1142,20 @@ Numero_Documento as "Número documento de ingreso"',
  Grado_PAM as "Grado dependencia de las PAM",
  EnfermedaCronicasDegenerativas as "Enfermedades crónicas deg.",
  Especificar_Enfermedad as "Especificar"',
- 
+
  'pam_trabajoSocial'=>
  'Plan_Intervencion as "Plan de intervención",
  Meta_PAI as "Meta trazada en el PAI",
  Informe_Tecnico as "Informe técnico evolutivo",
  Des_Informe_Tecnico as "Descripción ",
  Cumple_Intervencion as "Cumplimiento del plan "',
- 
+
  'pam_EgresoUsuario'=>
  'Fecha_Egreso as "Fecha de egreso",
  MotivoEgreso as "Motivo de egreso",
  Retiro_Voluntario as "Retiro Voluntario",
  Reinsercion_Familiar as "Reinserción familiar",
- 
+
  Traslado_Entidad_Salud as "Traslado a entidad de salud",
  Traslado_Otra_Entidad as "Traslado a otra Entidad",
  Fallecimiento as "Fallecimiento",
@@ -1175,7 +1175,7 @@ Numero_Documento as "Número documento de ingreso"',
       (CASE sexo WHEN \'h\' THEN \'Hombre\' WHEN \'m\' THEN \'Mujer\' END) as "Sexo",
       fecha_nacimiento as "Fecha de nacimiento" ,
       (SELECT nombre from pam_lengua_materna WHERE id = NNAInscripcionResidente.lengua_materna) as "Lengua materna"',
-      
+
       'NNAAdmisionResidente'=>
       'Fecha_Ingreso as "Fecha de Ingreso",
       (SELECT nombre FROM nna_instituciones WHERE id=NNAAdmisionResidente.Institucion_Derivacion) as "Entidad que lo deriva",
@@ -1183,7 +1183,7 @@ Numero_Documento as "Número documento de ingreso"',
       (SELECT nombre FROM nna_motivos_ingreso WHERE id=NNAAdmisionResidente.Motivo_Ingreso)  as "Motivo ingreso PRINCIPAL(real)",
       Numero_Doc as "Número documento de ingreso",
       Perfil_Ingreso_P as "Perfil de ingreso"',
-      
+
       'NNACondicionIResidente'=>
       'Numero_Doc as "DNI al ingreso",
       Tipo_Doc as "Tipo documento de identidad",
@@ -1195,7 +1195,7 @@ Numero_Documento as "Número documento de ingreso"',
       (SELECT nombre FROM pam_clasif_socioeconomico WHERE id=NNACondicionIResidente.SISFOH) as "Clasif.Socioeconómica(SISFOH)",
       \'\' as "Cobertura médica",
       \'\' as "Tipo de aseguramiento"',
-      
+
       'NNADatosSaludResi'=>
       'Discapacidad as "Discapacidad",
       Discapacidad_Fisica as "Presenta discap. física",
@@ -1208,22 +1208,22 @@ Numero_Documento as "Número documento de ingreso"',
       \'\' as "Patología crónica 1",
       \'\' as "Tipo de patología",
       \'\' as "Especifique"',
-      
-      
+
+
       'NNADatosSaludResi'=>
       'Nivel_Hemoglobina as "Nivel de Hemoglobina",
       Peso as "Peso (Kg.)",
       Talla as "Talla (m)",
       Estado_Nutricional1 as "Estado Nutricional (IMC)"',
-      
+
       'NNAFamiliaresResidente'=>
       'Familiares as "Cuenta con familiares",
       Parentesco as "Tipo de parentesco"',
-      
+
       'NNADatosSaludResi'=>
       'Transtornos_Comportamiento as "Tras. comport. y/o disociales",
       Tipo_Transtorno as "Tipo de transtorno"',
-      
+
       'NNASalud_Semestral'=>
       'Plan_Intervencion as "Plan de intervención",
       Meta_PAI as "Meta trazada en el PAI",
@@ -1231,7 +1231,7 @@ Numero_Documento as "Número documento de ingreso"',
       Cumple_Intervencion as "Cumplimiento del Plan",
       Control_CRED as "Control CRED acorde a la Edad",
       Vacunacion as "Esq. de vac. acorde a la Edad"',
-      
+
       'NNAtrabajoSocial_Semestral'=>
       'Plan_Intervencion as "Plan de Intervención ",
       Meta_PAI as "Meta trazada en el PAI",
@@ -1240,7 +1240,7 @@ Numero_Documento as "Número documento de ingreso"',
       ParticipacionF_Activa as "Participación activa familiar",
       Reinsercion_Familiar as "Plan de Reinserción familiar",
       FamiliaR_Soporte as "Fam. usa las RSS"',
-      
+
       'NNAEgresoUsuario'=>
       'Fecha_Egreso as "Fecha de egreso",
       MotivoEgreso as "Motivo de egreso",
@@ -1276,21 +1276,21 @@ ini_set('session.gc_maxlifetime','1200');*/
     }
     $campos = "";
     $tipo_centro_id;
-    
-	
-	$centros = "select distinct ca.id,ca.nom_ca as nombre_centro,ca.tipo_centro_id,tc.nombre as nombre_tipo_centro,tc.codigo from centro_atencion ca 
+
+
+	$centros = "select distinct ca.id,ca.nom_ca as nombre_centro,ca.tipo_centro_id,tc.nombre as nombre_tipo_centro,tc.codigo from centro_atencion ca
 	left join tipo_centro tc on(ca.tipo_centro_id=tc.id) ".$where." order by ca.tipo_centro_id desc";
 	$centros = $modelo->executeQuery($centros);
   $modulo_html = "";
   $centro_html= "";
   $html ="";
   $html2 ="";
-	foreach ($centros as $key => $centro) 
+	foreach ($centros as $key => $centro)
 	{
 		$centro_html ="<tr><th>Nombre del Centro</th><th>Tipo de Centro</th></tr>";
     $centro_html .="<tr><td>".$centro["NOMBRE_CENTRO"]."</td><td>".$centro["NOMBRE_TIPO_CENTRO"]." - ".$centro["CODIGO"]."</td></tr>";
     $campos = $this->campos_tipo_centro($centro["TIPO_CENTRO_ID"]);
-		$modulos = "select m.parent_id,m.nombre as nombre_modulo,m.nombre_tabla from modulos m 
+		$modulos = "select m.parent_id,m.nombre as nombre_modulo,m.nombre_tabla from modulos m
 			where m.centro_id in (".$centro["TIPO_CENTRO_ID"].") order by m.id asc";
 		$modulos = $modelo->executeQuery($modulos);
     $html = "";
@@ -1299,13 +1299,13 @@ ini_set('session.gc_maxlifetime','1200');*/
 		foreach ($modulos as $key => $modulo)
 		{
       $contar_modulos = 1;
-     
+
       $modulo_html ="";
       $modulo_html .="<tr><td style='background-color:#DDA0DD' colspan='2'>".($contar_modulos_2).". ".$modulo["NOMBRE_MODULO"]."</td></tr>";
-  
-      if (!empty($campos[$modulo["NOMBRE_TABLA"]])) 
+
+      if (!empty($campos[$modulo["NOMBRE_TABLA"]]))
       {
-        $contar_modulos_2++; 
+        $contar_modulos_2++;
         if (is_array($campos[$modulo["NOMBRE_TABLA"]])) {
           foreach ($campos[$modulo["NOMBRE_TABLA"]] as $key => $value) {
             $grupos = "select ".$value.",residente_id from ".$modulo["NOMBRE_TABLA"]." where  periodo_mes=".date("n")." and periodo_anio=".date("Y")." and residente_id= ". $id_residente." and centro_id=".$centro["ID"]." order by id desc";
@@ -1388,7 +1388,7 @@ ini_set('session.gc_maxlifetime','1200');*/
           $html .= $modulo_html.$grupo_html;
         }
       }
-      
+
     }
     if ($contar==0) {
       $centro_html = "";
@@ -1410,7 +1410,7 @@ ini_set('session.gc_maxlifetime','1200');*/
     </tr>
   </table>
   <br>
-  
+
   <table style="width:100%">
     <tr><th colspan="2" style="background-color:yellow">DATOS DE ADMISIÓN DEL USUARIO</th>
       </tr>

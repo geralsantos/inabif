@@ -35,6 +35,7 @@
                                     <tr>
 
                                         <th scope="col">Centro</th>
+                                        <th scope="col">Código</th>
                                         <th scope="col">Completo Autodeclarado (Registrador)</th>
                                         <th scope="col">Matriz Generada <br>(Responsable de información)</th>
                                         <th scope="col">Fecha Generación <br>Matriz Centro</th>
@@ -48,13 +49,14 @@
                                 <tbody class="text-center">
                                     <tr v-for="centro in centros" style="text-align:left;">
                                         <td>{{centro.NOMBRE_CENTRO}}</td>
+                                        <td>{{centro.NOMBRE_CENTRO}}</td>
                                         <td>{{centro.COMPLETADO}}</td>
                                         <td>{{(isempty(centro.FECHA_MATRIZ))?'NO':'SI'}}</td>
                                         <td>{{(isempty(centro.FECHA_MATRIZ))?'':centro.FECHA_MATRIZ}}</td>
                                         <!-- <td>{{centro.FECHA_CIERRE}}</td>
                                         <td>{{(isempty(centro.FECHA_CIERRE))?'NO':'SI'}}</td> -->
                                         <td><button class="btn btn-primary" @click="ver_grupos(centro.ID_CENTRO)">Ver</button></td>
-                                       
+
                                         <td v-if="mostrar_completado"> <button class="btn btn-success" @click="generar_matriz(centro)">Generar Matriz</button></td>
 
                                     </tr>
