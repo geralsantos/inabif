@@ -798,7 +798,9 @@ class portada extends App{
           $modulos = $modulos[$tipo_centro];
         }else if (REGISTRADOR == $nivel || RESPONSABLE_INFORMACION== $nivel || USER_CENTRO== $nivel){
           $centro = $_SESSION["usuario"][0]["CENTRO_ID"];
-          /*no afecta en la consulta ya que en lineas más arriba ya se usa la condición que sea solo el centro del usuario*/
+          $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+          $modulos = [$modulos[$tipo_centro]];
+         
         }
         $html_modulo = "";
         foreach ($modulos as $key => $modulo)
