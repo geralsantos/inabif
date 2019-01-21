@@ -804,7 +804,7 @@ class portada extends App{
         foreach ($modulos as $key => $modulo)
         {
          
-            $modulo = is_array($modulo)?$modulo[0]:$modulo;
+           echo $modulo = is_array($modulo)?$modulo[0]:$modulo;
 
             $modulo = $modelo->executeQuery($modulo);
             $residentes = array();
