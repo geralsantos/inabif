@@ -761,6 +761,7 @@ class portada extends App{
         $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
         
         
+
         $matriz_id = isset($_POST["matriz_id"]) ? ($_POST["matriz_id"]!=""?" cad.id = ".$_POST["matriz_id"]." and ":"") : "";
         $periodo_mes = $_POST["periodo_mes"];
         $periodo_anio = $_POST["periodo_anio"];
@@ -776,11 +777,26 @@ class portada extends App{
         $fecha = " BETWEEN UPPER('".date("01-M-y",strtotime($periodo_anio."-".$periodo_mes))."') AND UPPER('".date(($last_day."-M-y"),strtotime($periodo_anio."-".$periodo_mes))."')";
   
 /*ccs.Nom_Entidad, ccs.Cod_Linea ,ccs.Linea_Intervencion , ccs.Cod_Servicio , ccs.Nom_Servicio, ccs.Ubigeo_Ine, ccs.Departamento_CAtencion, ccs.Provincia_CAtencion, ccs.Distrito_CAtencion, ccs.Centro_Poblado, ccs.Centro_Residencia*/
+
+
+
+        if (ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel) {
+          $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+          $where = "";
+        }else if (SUPERVISOR == $nivel || USER_SEDE== $nivel){
+          $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+          $where = "ca.tipo_centro_id = ".$tipo_centro." and ";
+        }else if (REGISTRADOR == $nivel || RESPONSABLE_INFORMACION== $nivel || USER_CENTRO== $nivel){
+          $centro = $_SESSION["usuario"][0]["CENTRO_ID"];
+          $where = " and cu.centro_id = ".$centro." and cda.centro_id = ".$centro." and cci.centro_id = ".$centro." and csn.centro_id = ".$centro." and csm.centro_id = ".$centro." and ct.centro_id = ".$centro." and cac.centro_id = ".$centro." and cap.centro_id = ".$centro." and cec.centro_id = ".$centro." and cts.centro_id = ".$centro." and cas.centro_id = ".$centro." and cep.centro_id = ".$centro." and cee.centro_id = ".$centro." and ces.centro_id = ".$centro." and ctf.centro_id = ".$centro." and cen.centro_id = ".$centro." and cets.centro_id = ".$centro." and ceg.centro_id = ".$centro." and ca.centro_id = ".$centro." and re.centro_id = ".$centro." ";
+        }
         include 'consultas_preparadas.php';
+        
+        
         $ppd_matriz_general = $modelo->executeQuery($ppd_matriz_general);
         $residentes = array();
         $grupo_html = "";
-        foreach ($modulos as $key => $grupo) {
+        foreach ($ppd_matriz_general as $key => $grupo) {
           if (!in_array($grupo["CODIGORESIDENTE"],$residentes)) {
             if ($key==0) {
               $keys = array_keys($grupo);
