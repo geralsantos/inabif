@@ -803,8 +803,8 @@ class portada extends App{
         $html_modulo = "";
         foreach ($modulos as $key => $modulo)
         {
-          if (!empty($modulo[0])) {
-            echo $modulo = $modulo[0];
+         
+            $modulo = is_array($modulo)?$modulo[0]:$modulo;
 
             $modulo = $modelo->executeQuery($modulo);
             $residentes = array();
@@ -832,8 +832,6 @@ class portada extends App{
               }
               $html_modulo = $html_modulo . $grupo_html."<tr><td></td></tr><tr><td></td></tr>";
             }
-          }else {
-          }
         }
         $table = '<table>'.$html_modulo.'</table>';
         if ($modulos)
