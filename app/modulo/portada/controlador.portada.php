@@ -1347,14 +1347,14 @@ ini_set('session.gc_maxlifetime','1200');*/
 		$modulos = $modelo->executeQuery($modulos);
     $html = "";
     $contar = 0;
-    
+    $contar_modulos_2 = 1;
 		foreach ($modulos as $key => $modulo)
 		{
       $contar_modulos = 1;
-      $contar_modulos_2 = 1;
+     
       $modulo_html ="";
-      $modulo_html .="<tr><td style='background-color:yellow' colspan='2'>".($contar_modulos_2).". ".$modulo["NOMBRE_MODULO"]."</td></tr>";
-      $contar_modulos_2++;
+      $modulo_html .="<tr><td style='background-color:#DDA0DD' colspan='2'>".($contar_modulos_2).". ".$modulo["NOMBRE_MODULO"]."</td></tr>";
+  
       if (!empty($campos[$modulo["NOMBRE_TABLA"]])) 
       {
         
@@ -1440,7 +1440,7 @@ ini_set('session.gc_maxlifetime','1200');*/
           $html .= $modulo_html.$grupo_html;
         }
       }
-      
+      $contar_modulos_2++;
     }
     if ($contar==0) {
       $centro_html = "";
