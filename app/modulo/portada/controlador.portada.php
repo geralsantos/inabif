@@ -1116,7 +1116,7 @@ Numero_Documento as "Número documento de ingreso"',
       (SELECT nombre FROM pam_tipo_seguro_salud WHERE id=pam_datosCondicionIngreso.aseguramiento_salud) as "Tipo de aseguramiento"',
 
 
- 'pam_datos_saludnutric'=>
+ 'pam_datos_saludnutric'=>array(
  'discapacidad as "Discapacidad",
  discapacidad_fisica as "Presenta discap. física",
  discapacidad_intelectual as "Presenta discap. intelectual",
@@ -1127,13 +1127,10 @@ Numero_Documento as "Número documento de ingreso"',
  motivo_dif_desplazamiento as "Motivo dif. con el desplaza.",
  enfermedad_ingreso_1 as "Patología crónica 1",
  (SELECT nombre FROM pam_tipo_patologia WHERE id =pam_datos_saludnutric.tipo_patologia) as "Tipo de patología",
- \'\' as "Especifique"',
-
- 'pam_datos_saludnutric'=>
- 'nivel_hemoglobina as "Nivel de Hemoglobina",
+ \'\' as "Especifique"','nivel_hemoglobina as "Nivel de Hemoglobina",
  peso as "Peso (Kg.)",
  talla as "Talla (m)",
- estado_nutricional as "Estado Nutricional(IMC)"',
+ estado_nutricional as "Estado Nutricional(IMC)"'),
 
  'pam_datosCondicionIngreso'=>
  'familiar_ubicados as "Cuenta con familiares",
