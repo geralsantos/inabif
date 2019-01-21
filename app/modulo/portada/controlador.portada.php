@@ -803,31 +803,35 @@ class portada extends App{
         $html_modulo = "";
         foreach ($modulos as $key => $modulo)
         {
-          $modulo = $modulo;
-          $modulo = $modelo->executeQuery($modulo);
-          $residentes = array();
-          $grupo_html = "";
-          foreach ($modulo as $key => $grupo) {
-            if (!in_array($grupo["CODIGORESIDENTE"],$residentes)) {
-              if ($key==0) {
-                $keys = array_keys($grupo);
-                $grupo_html .="<tr><th></th>";
-                foreach ($keys as $key)
-                {
-                  $grupo_html .="<th style='background-color:yellow;'>".strtoupper($key)."</th>";
+          if (!empty($modulo)) {
+            $modulo = $modulo;
+            $modulo = $modelo->executeQuery($modulo);
+            $residentes = array();
+            $grupo_html = "";
+            if ($modulo) {
+              foreach ($modulo as $key => $grupo) {
+                if (!in_array($grupo["CODIGORESIDENTE"],$residentes)) {
+                  if ($key==0) {
+                    $keys = array_keys($grupo);
+                    $grupo_html .="<tr><th></th>";
+                    foreach ($keys as $key)
+                    {
+                      $grupo_html .="<th style='background-color:yellow;'>".strtoupper($key)."</th>";
+                    }
+                    $grupo_html .="</tr>";
+                  }
+                  $grupo_values = array_values($grupo);
+                  $grupo_html .= "<tr>";
+                  foreach ($grupo_values as $key => $value) {
+                    $grupo_html .="<td style='text-align:left;'>".$value."</td>";
+                  }
+                  $grupo_html .= "</tr>";
+                  $residentes[] = $grupo["CODIGORESIDENTE"];
                 }
-                $grupo_html .="</tr>";
               }
-              $grupo_values = array_values($grupo);
-              $grupo_html .= "<tr>";
-              foreach ($grupo_values as $key => $value) {
-                $grupo_html .="<td style='text-align:left;'>".$value."</td>";
-              }
-              $grupo_html .= "</tr>";
-              $residentes[] = $grupo["CODIGORESIDENTE"];
+              $html_modulo = $html_modulo . $grupo_html."<tr><td></td></tr><tr><td></td></tr>";
             }
           }
-          $html_modulo = $html_modulo . $grupo_html."<tr><td></td></tr><tr><td></td></tr>";
         }
         $table = '<table>'.$html_modulo.'</table>';
         if ($modulos)
