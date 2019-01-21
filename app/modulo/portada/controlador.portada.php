@@ -776,7 +776,7 @@ class portada extends App{
         $fecha = " BETWEEN UPPER('".date("01-M-y",strtotime($periodo_anio."-".$periodo_mes))."') AND UPPER('".date(($last_day."-M-y"),strtotime($periodo_anio."-".$periodo_mes))."')";
   
 /*ccs.Nom_Entidad, ccs.Cod_Linea ,ccs.Linea_Intervencion , ccs.Cod_Servicio , ccs.Nom_Servicio, ccs.Ubigeo_Ine, ccs.Departamento_CAtencion, ccs.Provincia_CAtencion, ccs.Distrito_CAtencion, ccs.Centro_Poblado, ccs.Centro_Residencia*/
-        include './consultas_preparadas.php';
+        include 'consultas_preparadas.php';
         $ppd_matriz_general = $modelo->executeQuery($ppd_matriz_general);
         $residentes = array();
         $grupo_html = "";
