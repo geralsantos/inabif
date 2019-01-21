@@ -1141,7 +1141,7 @@ Numero_Documento as "Número documento de ingreso"',
  tipo_trastorno as "Tipo de transtorno"',
 
  'pam_Salud'=>
- 'Plan_Intervencion as "Plan de intervención,
+ 'Plan_Intervencion as "Plan de intervención",
  Meta_PAI as "Meta trazada en el PAI",
  Informe_Tecnico as "Informe técnico evolutivo",
  Des_Informe_Tecnico as "Descripción",
@@ -1355,7 +1355,7 @@ ini_set('session.gc_maxlifetime','1200');*/
             $html .= $modulo_html.$grupo_html;
           }
         }else {
-          echo $grupos = "select ".$campos[$modulo["NOMBRE_TABLA"]].",residente_id from ".$modulo["NOMBRE_TABLA"]." where  periodo_mes=".date("n")." and periodo_anio=".date("Y")." and residente_id= ". $id_residente." and centro_id=".$centro["ID"]." order by id desc";
+          $grupos = "select ".$campos[$modulo["NOMBRE_TABLA"]].",residente_id from ".$modulo["NOMBRE_TABLA"]." where  periodo_mes=".date("n")." and periodo_anio=".date("Y")." and residente_id= ". $id_residente." and centro_id=".$centro["ID"]." order by id desc";
           $grupos = $modelo->executeQuery($grupos);
 
           $grupo_html = "";
