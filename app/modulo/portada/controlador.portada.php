@@ -1357,7 +1357,7 @@ ini_set('session.gc_maxlifetime','1200');*/
   
       if (!empty($campos[$modulo["NOMBRE_TABLA"]])) 
       {
-        
+        $contar_modulos_2++; 
         if (is_array($campos[$modulo["NOMBRE_TABLA"]])) {
           foreach ($campos[$modulo["NOMBRE_TABLA"]] as $key => $value) {
             $grupos = "select ".$value.",residente_id from ".$modulo["NOMBRE_TABLA"]." where  periodo_mes=".date("n")." and periodo_anio=".date("Y")." and residente_id= ". $id_residente." and centro_id=".$centro["ID"]." order by id desc";
@@ -1440,7 +1440,7 @@ ini_set('session.gc_maxlifetime','1200');*/
           $html .= $modulo_html.$grupo_html;
         }
       }
-      $contar_modulos_2++;
+      
     }
     if ($contar==0) {
       $centro_html = "";
