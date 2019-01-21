@@ -178,8 +178,14 @@
                                     <option value="PROTECCIÓN INTEGRAL AL NIÑO, NIÑA Y ADOLESCENTE EN SITUACIÓN DE PRESUNTO ESTADO DE ABANDONO O ABANDONO">PROTECCIÓN INTEGRAL AL NIÑO, NIÑA Y ADOLESCENTE EN SITUACIÓN DE PRESUNTO ESTADO DE ABANDONO O ABANDONO</option>
                                 </select>
                             </div>
-                            
-                            
+                             
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="text-input" class=" form-control-label">Centro Poblado del centro de atención </label>
+                                <input type="text" v-model="centro_poblado" name="centro_poblado" placeholder="" class="form-control"> 
+                             
+                            </div> 
                         </div>
                         <div class="row">
                             <div class="col-md-12 text-center" >

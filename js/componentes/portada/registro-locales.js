@@ -34,6 +34,7 @@ Vue.component('registro-locales', {
         Depatamento_Procedencia:null,
         Provincia_Procedencia:null,
         Distrito_Procedencia:null,
+        centro_poblado :null,
     }),
     created:function(){
     },
@@ -68,6 +69,7 @@ Vue.component('registro-locales', {
                 telefono :this.telefono,
                 direccion_car :this.direccion_car,
                 area_residencia :this.area_residencia,
+                centro_poblado :this.centro_poblado ,
                 codigo_linea :this.codigo_linea,
                 linea_intervencion :this.linea_intervencion,
                 nom_serv :this.nom_serv,
@@ -143,6 +145,7 @@ Vue.component('registro-locales', {
                 this.Depatamento_Procedencia=null;
                 this.Provincia_Procedencia=null;
                 this.Distrito_Procedencia=null;
+                this.centro_poblado =null
                 this.nom_serv=null;
                 this.showModal = true;
             }else{
@@ -162,6 +165,7 @@ Vue.component('registro-locales', {
                 this.telefono=centro.TELEFONO;
                 this.direccion_car=centro.DIRECCION_CAR;
                 this.area_residencia=centro.AREA_RESIDENCIA;
+                this.centro_poblado =centro.CENTRO_POBLADO;
                 this.codigo_linea=centro.CODIGO_LINEA;
                 this.linea_intervencion=centro.LINEA_INTERVENCION;
                 this.nom_serv=centro.NOM_SERV;
