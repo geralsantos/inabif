@@ -181,7 +181,7 @@
                              
                         </div>
                         <div class="row">
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-12">
                                 <label for="text-input" class=" form-control-label">Centro Poblado del centro de atención </label>
                                 <input type="text" v-model="centro_poblado" name="centro_poblado" placeholder="" class="form-control"> 
                              
