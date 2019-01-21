@@ -55,7 +55,7 @@ Vue.component('nna-seguimiento-fortalecimiento-habilidades', {
 
                 Participacion:this.Participacion,
                 FInicio_Actividades:moment(this.FInicio_Actividades).format("YY-MMM-DD"),
-                FFin_Actividades:moment(this.FFin_Actividades).format("YY-MMM-DD"),
+                FFin_Actividades: isempty(this.FFin_Actividades) ? null : moment(this.FFin_Actividades).format("YY-MMM-DD"),
                 Termino_Actividades :this.Termino_Actividades,
                 Fortalecer_Actividades :this.Fortalecer_Actividades,
 
@@ -64,7 +64,7 @@ Vue.component('nna-seguimiento-fortalecimiento-habilidades', {
                 Periodo_Anio:moment().format("YYYY")
 
             }
-
+            
             this.$http.post('insertar_datos?view',{tabla:'NNAFHabilidades', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
