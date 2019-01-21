@@ -832,7 +832,6 @@ class portada extends App{
               $html_modulo = $html_modulo . $grupo_html."<tr><td></td></tr><tr><td></td></tr>";
             }
           }else {
-            print_r($modulo);
           }
         }
         $table = '<table>'.$html_modulo.'</table>';
