@@ -1293,8 +1293,8 @@ ini_set('session.gc_maxlifetime','1200');*/
     $centro_html .="<tr><td>".$centro["NOMBRE_CENTRO"]."</td><td>".$centro["NOMBRE_TIPO_CENTRO"]." - ".$centro["CODIGO"]."</td></tr>";
     $campos = $this->campos_tipo_centro($centro["TIPO_CENTRO_ID"]);
     $orderby = $centro["TIPO_CENTRO_ID"]=="2"?"m.id asc":"m.parent_id asc";
-		echo $modulos = "select m.parent_id,m.nombre as nombre_modulo,m.nombre_tabla from modulos m
-			where m.centro_id in (".$centro["TIPO_CENTRO_ID"].") and  order by ".$orderby;
+		$modulos = "select m.parent_id,m.nombre as nombre_modulo,m.nombre_tabla from modulos m
+			where m.centro_id in (".$centro["TIPO_CENTRO_ID"].") order by ".$orderby;
 		$modulos = $modelo->executeQuery($modulos);
     $html = "";
     $contar = 0;
