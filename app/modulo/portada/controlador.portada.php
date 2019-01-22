@@ -1300,6 +1300,7 @@ ini_set('session.gc_maxlifetime','1200');*/
     $contar = 0;
     $contar_modulos_2 = 1;
     $fasenombrerepite=array();
+    $nombretabla = "";
 		foreach ($modulos as $key => $modulo)
 		{
       $contar_modulos = 1;
@@ -1321,7 +1322,6 @@ ini_set('session.gc_maxlifetime','1200');*/
           }
         }
       }
-      echo $nombretabla;
       if (!empty($nombretabla))
       {
         $modulo_html ="";
