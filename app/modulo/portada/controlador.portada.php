@@ -1325,14 +1325,14 @@ ini_set('session.gc_maxlifetime','1200');*/
       
       if (!empty($nombretabla) && $nombretabla!="" && !empty($modulo["NOMBRE_TABLA"]) && $modulo["NOMBRE_TABLA"]!="")
       {
+
         $modulo_html ="";
-       
         $modulo_html .=$fasenombrehtml."<tr><td style='background-color:#DDA0DD' colspan='2'>".($contar_modulos_2).". ".$modulo["NOMBRE_MODULO"]."</td></tr>";
 
         $contar_modulos_2++;
         if (is_array($valortabla)) {
           foreach ($valortabla as $key => $value) {
-            $grupos = "select ".$value.",residente_id from ".$modulo["NOMBRE_TABLA"]." where  periodo_mes=".date("n")." and periodo_anio=".date("Y")." and residente_id= ". $id_residente." and centro_id=".$centro["ID"]." order by id desc";
+            echo $grupos = "select ".$value.",residente_id from ".$modulo["NOMBRE_TABLA"]." where  periodo_mes=".date("n")." and periodo_anio=".date("Y")." and residente_id= ". $id_residente." and centro_id=".$centro["ID"]." order by id desc";
             $grupos = $modelo->executeQuery($grupos);
             $grupo_html = "";
             $residente_repite=array();
