@@ -1305,9 +1305,10 @@ ini_set('session.gc_maxlifetime','1200');*/
       $contar_modulos = 1;
       $fasenombre ="";
       $fasenombrehtml ="";
-      print_r($campos);
       foreach ($campos as $key => $value) {
         if (isset(explode(" | ",$key)[0] ) ) {
+      print_r($key);
+
           if (explode(" | ",$key)[1]==$modulo["NOMBRE_TABLA"]) {
             $nombretabla=explode(" | ",$key)[1];
             $valortabla=$value;
