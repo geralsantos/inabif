@@ -1300,10 +1300,10 @@ ini_set('session.gc_maxlifetime','1200');*/
     $contar = 0;
     $contar_modulos_2 = 1;
     $fasenombrerepite=array();
-    $nombretabla = "";
 		foreach ($modulos as $key => $modulo)
 		{
       $contar_modulos = 1;
+      $nombretabla = "";
       $fasenombre ="";
       $fasenombrehtml ="";
 
