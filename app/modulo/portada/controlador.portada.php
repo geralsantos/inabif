@@ -1081,7 +1081,7 @@ Numero_Documento as "Número documento de ingreso"',
 'CarEgresoGeneral'=>'Fecha_Egreso as "Fecha de Egreso",Motivo_Egreso as "Motivo de Egreso",Retiro_Voluntario as "Retiro Voluntario",Reinsercion, Grado_Parentesco as "Grado de Parentesco", Traslado, Fallecimiento, Restitucion_derechos as "Restitución de Derechos",AUS,Constancia_Naci as "Constancia de Nacimiento",Carnet_CONADIS as "CONADIS",DNI as "Documento de Identidad", Restitucion');
       break;
       case '2': /*pam*/
-      $campos = array('pam_datos_identificacion'=>
+      $campos = array('DATOS GENERALES DE INGRESO DEL RESIDENTE | pam_datos_identificacion'=>
       'residente_apellido_paterno as "Apellido paterno",
       residente_apellido_materno as "Apellido materno",
       residente_nombre as "Nombre Usuario",
@@ -1135,7 +1135,7 @@ Numero_Documento as "Número documento de ingreso"',
  'trastorno_disociales as "Tras. comport. y/o disociales",
  tipo_trastorno as "Tipo de transtorno"',
 
- 'pam_Salud'=>
+ 'DATOS GENERALES DE INGRESO DEL RESIDENTE | pam_Salud'=>
  'Plan_Intervencion as "Plan de intervención",
  Meta_PAI as "Meta trazada en el PAI",
  Informe_Tecnico as "Informe técnico evolutivo",
@@ -1145,14 +1145,14 @@ Numero_Documento as "Número documento de ingreso"',
  EnfermedaCronicasDegenerativas as "Enfermedades crónicas deg.",
  Especificar_Enfermedad as "Especificar"',
 
- 'pam_trabajoSocial'=>
+ 'DATOS GENERALES DE INGRESO DEL RESIDENTE | pam_trabajoSocial'=>
  'Plan_Intervencion as "Plan de intervención",
  Meta_PAI as "Meta trazada en el PAI",
  Informe_Tecnico as "Informe técnico evolutivo",
  Des_Informe_Tecnico as "Descripción ",
  Cumple_Intervencion as "Cumplimiento del plan "',
 
- 'pam_EgresoUsuario'=>
+ 'DATOS GENERALES DE INGRESO DEL RESIDENTE | pam_EgresoUsuario'=>
  'Fecha_Egreso as "Fecha de egreso",
  MotivoEgreso as "Motivo de egreso",
  Retiro_Voluntario as "Retiro Voluntario",
@@ -1299,15 +1299,23 @@ ini_set('session.gc_maxlifetime','1200');*/
     $html = "";
     $contar = 0;
     $contar_modulos_2 = 1;
+    $fasenombrerepite=array();
 		foreach ($modulos as $key => $modulo)
 		{
       $contar_modulos = 1;
 
-      $modulo_html ="";
-      $modulo_html .="<tr><td style='background-color:#DDA0DD' colspan='2'>".($contar_modulos_2).". ".$modulo["NOMBRE_MODULO"]."</td></tr>";
-
       if (!empty($campos[$modulo["NOMBRE_TABLA"]]))
       {
+        $modulo_html ="";
+        $fasenombre ="";
+        if (isset(explode(" | ",$campos[$modulo["NOMBRE_TABLA"]])[0])) {
+          if (!in_array(explode(" | ",$campos[$modulo["NOMBRE_TABLA"]])[0],$fasenombrerepite)) {
+            $fasenombre = "<tr><td>".explode(" | ",$campos[$modulo["NOMBRE_TABLA"]])[0]."</td></tr>";
+            $fasenombrerepite[]=$fasenombre;
+          }
+        }
+        $modulo_html .=$fasenombre."<tr><td style='background-color:#DDA0DD' colspan='2'>".($contar_modulos_2).". ".$modulo["NOMBRE_MODULO"]."</td></tr>";
+
         $contar_modulos_2++;
         if (is_array($campos[$modulo["NOMBRE_TABLA"]])) {
           foreach ($campos[$modulo["NOMBRE_TABLA"]] as $key => $value) {
