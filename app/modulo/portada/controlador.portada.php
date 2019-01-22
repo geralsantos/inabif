@@ -1294,7 +1294,7 @@ ini_set('session.gc_maxlifetime','1200');*/
     $campos = $this->campos_tipo_centro($centro["TIPO_CENTRO_ID"]);
     $orderby = $centro["TIPO_CENTRO_ID"]=="2"?"m.id asc":"m.parent_id asc";
 		$modulos = "select m.parent_id,m.nombre as nombre_modulo,m.nombre_tabla from modulos m
-			where m.centro_id in (".$centro["TIPO_CENTRO_ID"].") order by ".$orderby;
+			where m.centro_id in (".$centro["TIPO_CENTRO_ID"].") and  order by ".$orderby;
 		$modulos = $modelo->executeQuery($modulos);
     $html = "";
     $contar = 0;
@@ -1323,7 +1323,7 @@ ini_set('session.gc_maxlifetime','1200');*/
         }
       }
       
-      if (!empty($nombretabla) && $nombretabla!="")
+      if (!empty($nombretabla) && $nombretabla!="" && !empty($modulo["NOMBRE_TABLA"]) && $modulo["NOMBRE_TABLA"]!="")
       {
         echo "geral".$modulo["NOMBRE_TABLA"];
         $modulo_html ="";
