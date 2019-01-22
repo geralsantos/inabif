@@ -1311,7 +1311,7 @@ ini_set('session.gc_maxlifetime','1200');*/
         $contar_modulos_2++;
         if (is_array($campos[$modulo["NOMBRE_TABLA"]])) {
           foreach ($campos[$modulo["NOMBRE_TABLA"]] as $key => $value) {
-            echo $grupos = "select ".$value.",residente_id from ".$modulo["NOMBRE_TABLA"]." where  periodo_mes=".date("n")." and periodo_anio=".date("Y")." and residente_id= ". $id_residente." and centro_id=".$centro["ID"]." order by id desc";
+            $grupos = "select ".$value.",residente_id from ".$modulo["NOMBRE_TABLA"]." where  periodo_mes=".date("n")." and periodo_anio=".date("Y")." and residente_id= ". $id_residente." and centro_id=".$centro["ID"]." order by id desc";
             $grupos = $modelo->executeQuery($grupos);
             $grupo_html = "";
             $residente_repite=array();
@@ -1351,7 +1351,7 @@ ini_set('session.gc_maxlifetime','1200');*/
             $html .= $modulo_html.$grupo_html;
           }
         }else {
-          echo $grupos = "select ".$campos[$modulo["NOMBRE_TABLA"]].",residente_id from ".$modulo["NOMBRE_TABLA"]." where  periodo_mes=".date("n")." and periodo_anio=".date("Y")." and residente_id= ". $id_residente." and centro_id=".$centro["ID"]."";
+          $grupos = "select ".$campos[$modulo["NOMBRE_TABLA"]].",residente_id from ".$modulo["NOMBRE_TABLA"]." where  periodo_mes=".date("n")." and periodo_anio=".date("Y")." and residente_id= ". $id_residente." and centro_id=".$centro["ID"]."";
           $grupos = $modelo->executeQuery($grupos);
 
           $grupo_html = "";
