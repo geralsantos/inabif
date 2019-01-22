@@ -1102,8 +1102,7 @@ Numero_Documento as "Número documento de ingreso"',
       numero_documento_ingreo_car as "Número documento de ingreso",
       perfil_ingreso as "Perfil de Ingreso"',
 
-      'pam_datosCondicionIngreso'=>
-      'documento_entidad as "DNI al ingreso",
+      'pam_datosCondicionIngreso'=>array('documento_entidad as "DNI al ingreso",
       tipo_documento_entidad as "Tipo documento de identidad",
       numero_documento_ingreso as "Número documento de ingreso",
       \'\' as "Pensión",
@@ -1112,7 +1111,8 @@ Numero_Documento as "Número documento de ingreso"',
       (SELECT nombre FROM pam_nivel_educativo where id=pam_datosCondicionIngreso.nivel_educativo) as "Nivel Educativo",
       \'\' as "Cobertura médica",
       (SELECT nombre FROM pam_clasif_socioeconomico where id = pam_datosCondicionIngreso.SISFOH) as "Clasif.Socioeconómica(SISFOH)",
-      (SELECT nombre FROM pam_tipo_seguro_salud WHERE id=pam_datosCondicionIngreso.aseguramiento_salud) as "Tipo de aseguramiento"',
+      (SELECT nombre FROM pam_tipo_seguro_salud WHERE id=pam_datosCondicionIngreso.aseguramiento_salud) as "Tipo de aseguramiento"', 'familiar_ubicados as "Cuenta con familiares",
+      tipo_parentesco as "Tipo de parentesco"'),
 
 
  'pam_datos_saludnutric'=>array(
@@ -1130,10 +1130,6 @@ Numero_Documento as "Número documento de ingreso"',
  peso as "Peso (Kg.)",
  talla as "Talla (m)",
  estado_nutricional as "Estado Nutricional(IMC)"'),
-
- 'pam_datosCondicionIngreso'=>
- 'familiar_ubicados as "Cuenta con familiares",
- tipo_parentesco as "Tipo de parentesco"',
 
  'pam_salud_mental'=>
  'trastorno_disociales as "Tras. comport. y/o disociales",
