@@ -1322,9 +1322,10 @@ ini_set('session.gc_maxlifetime','1200');*/
           }
         }
       }
-      echo $nombretabla."@".$modulo["NOMBRE_TABLA"]."º";
+      
       if (!empty($nombretabla))
       {
+        echo $nombretabla."@".$modulo["NOMBRE_TABLA"]."º";
         $modulo_html ="";
        
         $modulo_html .=$fasenombrehtml."<tr><td style='background-color:#DDA0DD' colspan='2'>".($contar_modulos_2).". ".$modulo["NOMBRE_MODULO"]."</td></tr>";
