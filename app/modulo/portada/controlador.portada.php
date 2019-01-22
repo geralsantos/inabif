@@ -1323,7 +1323,7 @@ ini_set('session.gc_maxlifetime','1200');*/
         }
       }
       
-      if (!empty($nombretabla))
+      if (!empty($nombretabla) || $nombretabla!="")
       {
         echo $nombretabla."@".$modulo["NOMBRE_TABLA"]."º";
         $modulo_html ="";
