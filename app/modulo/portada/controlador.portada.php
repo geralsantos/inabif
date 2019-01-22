@@ -1110,7 +1110,7 @@ Numero_Documento as "Número documento de ingreso"',
       leer_escribir as "Sabe Leer y Escribir",
       (SELECT nombre FROM pam_nivel_educativo where id=pam_datosCondicionIngreso.nivel_educativo) as "Nivel Educativo",
       \'\' as "Cobertura médica",
-      (SELECT nombre FROM pam_clasif_socioeconomico where id = pam_datosCondicionIngreso.SISFOH) as "Clasif.Socioeconómica(SISFOH)",
+      (SELECT nombre FROM pam_clasif_socioeconomico where id = pam_datosCondicionIngreso.SISFOH) as "Clas.Socioeconómica(SISFOH)",
       (SELECT nombre FROM pam_tipo_seguro_salud WHERE id=pam_datosCondicionIngreso.aseguramiento_salud) as "Tipo de aseguramiento"', 'familiar_ubicados as "Cuenta con familiares",
       tipo_parentesco as "Tipo de parentesco"'),
 
