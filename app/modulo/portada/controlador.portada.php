@@ -1006,7 +1006,7 @@ class portada extends App{
     $campos = "";
     switch ($tipo_centro_id) {
       case '1': /*ppd*/
-      $campos = array('CarIdentificacionUsuario'=>
+      $campos = array('DATOS GENERALES DE INGRESO DEL RESIDENTE | CarIdentificacionUsuario'=>
 'Ape_Paterno as "Apellido paterno",Ape_Materno as "Apellido materno",
 Nom_Usuario as "Nombre Usuario",
 (SELECT nombre FROM paises WHERE id=CarIdentificacionUsuario.Pais_Procencia) as "Pai­s de procedencia",
@@ -1017,14 +1017,14 @@ Nom_Usuario as "Nombre Usuario",
 Fecha_Nacimiento as "Fecha de Nacimiento",
 (SELECT nombre from pam_lengua_materna WHERE id = CarIdentificacionUsuario.Lengua_Materna) as "Lengua Materna"',
 
-'CarDatosAdmision'=>
+'DATOS GENERALES DE INGRESO DEL RESIDENTE | CarDatosAdmision'=>
 'Fecha_Ingreso as "Fecha de ingreso",
 (SELECT nombre FROM pam_instituciones WHERE id=CarDatosAdmision.Institucion_derivado) as "Entidad deriva",
 Motivo_Ingreso  as "Motivo ingreso PRINCIPAL(exp)",
 \'\'  as "Motivo ingreso PRINCIPAL(real)",
 Numero_Documento as "Número documento de ingreso"',
 
-'CarCondicionIngreso'=>
+'DATOS GENERALES DE INGRESO DEL RESIDENTE CarCondicionIngreso'=>
 'DNI as "DNI al ingreso",
 (SELECT nombre FROM pam_tipo_documento_identidad WHERE id=CarCondicionIngreso.Tipo_Documento) as "Tipo documento de identidad",
  Numero_Documento as "Número documento de ingreso",
@@ -1035,7 +1035,7 @@ Numero_Documento as "Número documento de ingreso"',
  (SELECT nombre FROM pam_clasif_socioeconomico where id = CarCondicionIngreso.Clasficacion_Socioeconomica) as "Clasificación Socio. (SISFOH)",\'\' as "Cobertura médica",
  (SELECT nombre FROM pam_tipo_seguro_salud WHERE id=CarCondicionIngreso.Tipo_Seguro) as "Tipo de aseguramiento"',
 
- 'CarSaludNutricion'=>array('Discapacidad as "Discapacidad",
+ 'DATOS GENERALES DE INGRESO DEL RESIDENTE | CarSaludNutricion'=>array('Discapacidad as "Discapacidad",
  Discapacidad_Fisica as "Presenta discap. física",
  Discapacidad_Intelectual as "Presenta discap. intelectual",
   Discapacidad_Sensorial as "Presenta discap. sensorial",
@@ -1054,11 +1054,11 @@ Numero_Documento as "Número documento de ingreso"',
    'Familiares as "Cuenta con familiares",
     Parentesco as "Tipo de parentesco"',
 
-    'CarSaludMental'=>
+    'DATOS GENERALES DE INGRESO DEL RESIDENTE | CarSaludMental'=>
     'Transtorno_Neurologico as "¿Trastornos Neurológicos?",
     (SELECT nombre FROM pam_tipo_transtorno_conducta where id=CarSaludMental.Tipo_Transtorno) as "Tipo de trastorno de conducta"',
 
-   'CarEgresoSalud'=>
+   'DATOS DE SEGUIMIENTO DEL RESIDENTE   | CarEgresoSalud'=>
    'Plan_Medico as "Plan de intervención",
    Meta_PII as "Meta trazada en el PII",
    Informe_Tecnico as "Posee inf. técnico evolutivo",
@@ -1067,7 +1067,7 @@ Numero_Documento as "Número documento de ingreso"',
    Enfermedades_Cronicas as "Enfermedades crónicas deg.",
    Especificar as "Especificar la enfermedad"',
 
-   'CarEgresoTrabajoSocial'=>
+   'DATOS DE SEGUIMIENTO DEL RESIDENTE | CarEgresoTrabajoSocial'=>
    'Plan_Social as "Plan de intervención social",
    Meta_PII as "Meta trazada en el PII",
    Informe_Tecnico as "Posee inf. técnico evolutivo",
@@ -1078,7 +1078,7 @@ Numero_Documento as "Número documento de ingreso"',
    Reinsercion as "Posibilidad de Reinserción",
    Colocacion_Laboral as "Posibilidad Colocación Lab."',
 
-'CarEgresoGeneral'=>'Fecha_Egreso as "Fecha de Egreso",Motivo_Egreso as "Motivo de Egreso",Retiro_Voluntario as "Retiro Voluntario",Reinsercion, Grado_Parentesco as "Grado de Parentesco", Traslado, Fallecimiento, Restitucion_derechos as "Restitución de Derechos",AUS,Constancia_Naci as "Constancia de Nacimiento",Carnet_CONADIS as "CONADIS",DNI as "Documento de Identidad", Restitucion');
+'DATOS DE EGRESO DEL RESIDENTE | CarEgresoGeneral'=>'Fecha_Egreso as "Fecha de Egreso",Motivo_Egreso as "Motivo de Egreso",Retiro_Voluntario as "Retiro Voluntario",Reinsercion, Grado_Parentesco as "Grado de Parentesco", Traslado, Fallecimiento, Restitucion_derechos as "Restitución de Derechos",AUS,Constancia_Naci as "Constancia de Nacimiento",Carnet_CONADIS as "CONADIS",DNI as "Documento de Identidad", Restitucion');
       break;
       case '2': /*pam*/
       $campos = array('DATOS GENERALES DE INGRESO DEL RESIDENTE | pam_datos_identificacion'=>
@@ -1094,7 +1094,7 @@ Numero_Documento as "Número documento de ingreso"',
       (SELECT nombre from pam_lengua_materna WHERE id = pam_datos_identificacion.lengua_materna) as "Lengua Materna"',
 
 
-      'pam_datos_admision_usuario'=>
+      'DATOS GENERALES DE INGRESO DEL RESIDENTE | pam_datos_admision_usuario'=>
       'fecha_ingreso_usuario as "Fecha de Ingreso",
       (SELECT nombre FROM pam_instituciones_deriva WHERE id=pam_datos_admision_usuario.institucion_deriva) as "Entidad que lo deriva",
       (SELECT nombre FROM pam_motivos_ingreso WHERE id = pam_datos_admision_usuario.motivo_ingreso_principal) as "Motivo ingreso PRINCIPAL(exp)",
@@ -1102,7 +1102,7 @@ Numero_Documento as "Número documento de ingreso"',
       numero_documento_ingreo_car as "Número documento de ingreso",
       perfil_ingreso as "Perfil de Ingreso"',
 
-      'pam_datosCondicionIngreso'=>array('documento_entidad as "DNI al ingreso",
+      'DATOS GENERALES DE INGRESO DEL RESIDENTE | pam_datosCondicionIngreso'=>array('documento_entidad as "DNI al ingreso",
       tipo_documento_entidad as "Tipo documento de identidad",
       numero_documento_ingreso as "Número documento de ingreso",
       \'\' as "Pensión",
@@ -1115,7 +1115,7 @@ Numero_Documento as "Número documento de ingreso"',
       tipo_parentesco as "Tipo de parentesco"'),
 
 
- 'pam_datos_saludnutric'=>array(
+ 'DATOS GENERALES DE INGRESO DEL RESIDENTE | pam_datos_saludnutric'=>array(
  'discapacidad as "Discapacidad",
  discapacidad_fisica as "Presenta discap. física",
  discapacidad_intelectual as "Presenta discap. intelectual",
@@ -1131,11 +1131,11 @@ Numero_Documento as "Número documento de ingreso"',
  talla as "Talla (m)",
  estado_nutricional as "Estado Nutricional(IMC)"'),
 
- 'pam_salud_mental'=>
+ 'DATOS GENERALES DE INGRESO DEL RESIDENTE | pam_salud_mental'=>
  'trastorno_disociales as "Tras. comport. y/o disociales",
  tipo_trastorno as "Tipo de transtorno"',
 
- 'DATOS GENERALES DE INGRESO DEL RESIDENTE | pam_Salud'=>
+ 'DATOS DE SEGUIMIENTO DEL RESIDENTE | pam_Salud'=>
  'Plan_Intervencion as "Plan de intervención",
  Meta_PAI as "Meta trazada en el PAI",
  Informe_Tecnico as "Informe técnico evolutivo",
@@ -1145,7 +1145,7 @@ Numero_Documento as "Número documento de ingreso"',
  EnfermedaCronicasDegenerativas as "Enfermedades crónicas deg.",
  Especificar_Enfermedad as "Especificar"',
 
- 'DATOS GENERALES DE INGRESO DEL RESIDENTE | pam_trabajoSocial'=>
+ 'DATOS DE SEGUIMIENTO DEL RESIDENTE | pam_trabajoSocial'=>
  'Plan_Intervencion as "Plan de intervención",
  Meta_PAI as "Meta trazada en el PAI",
  Informe_Tecnico as "Informe técnico evolutivo",
@@ -1303,22 +1303,31 @@ ini_set('session.gc_maxlifetime','1200');*/
 		foreach ($modulos as $key => $modulo)
 		{
       $contar_modulos = 1;
-
-      if (!empty($campos[$modulo["NOMBRE_TABLA"]]))
-      {
-        $modulo_html ="";
-        $fasenombre ="";
-        if (isset(explode(" | ",$campos[$modulo["NOMBRE_TABLA"]])[0])) {
-          if (!in_array(explode(" | ",$campos[$modulo["NOMBRE_TABLA"]])[0],$fasenombrerepite)) {
-            $fasenombre = "<tr><td>".explode(" | ",$campos[$modulo["NOMBRE_TABLA"]])[0]."</td></tr>";
-            $fasenombrerepite[]=$fasenombre;
+      $fasenombre ="";
+      $fasenombrehtml ="";
+      foreach ($campos as $key => $value) {
+        if (isset(explode(" | ",$key)[0] ) ) {
+          if (explode(" | ",$key)[1]==$modulo["NOMBRE_TABLA"]) {
+            $nombretabla=explode(" | ",$key)[1];
+            $valortabla=$value;
+            $fasenombre=explode(" | ",$key)[0];
+            if (!in_array($fasenombre,$fasenombrerepite)) {
+              $fasenombrehtml = "<tr><td>".$fasenombre."</td></tr>";
+              $fasenombrerepite[]=$fasenombre;
+            }
+            break;
           }
         }
-        $modulo_html .=$fasenombre."<tr><td style='background-color:#DDA0DD' colspan='2'>".($contar_modulos_2).". ".$modulo["NOMBRE_MODULO"]."</td></tr>";
+      }
+      if (!empty($nombretabla))
+      {
+        $modulo_html ="";
+       
+        $modulo_html .=$fasenombrehtml."<tr><td style='background-color:#DDA0DD' colspan='2'>".($contar_modulos_2).". ".$modulo["NOMBRE_MODULO"]."</td></tr>";
 
         $contar_modulos_2++;
-        if (is_array($campos[$modulo["NOMBRE_TABLA"]])) {
-          foreach ($campos[$modulo["NOMBRE_TABLA"]] as $key => $value) {
+        if (is_array($valortabla)) {
+          foreach ($valortabla as $key => $value) {
             $grupos = "select ".$value.",residente_id from ".$modulo["NOMBRE_TABLA"]." where  periodo_mes=".date("n")." and periodo_anio=".date("Y")." and residente_id= ". $id_residente." and centro_id=".$centro["ID"]." order by id desc";
             $grupos = $modelo->executeQuery($grupos);
             $grupo_html = "";
@@ -1359,7 +1368,7 @@ ini_set('session.gc_maxlifetime','1200');*/
             $html .= $modulo_html.$grupo_html;
           }
         }else {
-          $grupos = "select ".$campos[$modulo["NOMBRE_TABLA"]].",residente_id from ".$modulo["NOMBRE_TABLA"]." where  periodo_mes=".date("n")." and periodo_anio=".date("Y")." and residente_id= ". $id_residente." and centro_id=".$centro["ID"]."";
+          $grupos = "select ".$valortabla.",residente_id from ".$modulo["NOMBRE_TABLA"]." where  periodo_mes=".date("n")." and periodo_anio=".date("Y")." and residente_id= ". $id_residente." and centro_id=".$centro["ID"]."";
           $grupos = $modelo->executeQuery($grupos);
 
           $grupo_html = "";
