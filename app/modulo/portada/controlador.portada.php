@@ -1285,7 +1285,7 @@ ini_set('session.gc_maxlifetime','1200');*/
     if (SUPERVISOR == $nivel || USER_SEDE == $nivel) {
       $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
       $where = " where ca.tipo_centro_id = ".$tipo_centro;
-    }else if (REGISTRADOR ==$nivel || RESPONSABLE_INFORMACION ==$nivel || RESPONSABLE_INFORMACION ==$nivel){
+    }else if (REGISTRADOR ==$nivel || RESPONSABLE_INFORMACION ==$nivel || USER_CENTRO ==$nivel){
       $centro_id = $_SESSION["usuario"][0]["CENTRO_ID"];
       $where = " where ca.id = ".$centro_id;
     }else if(ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel){
@@ -1302,6 +1302,7 @@ ini_set('session.gc_maxlifetime','1200');*/
   $centro_html= "";
   $html ="";
   $html2 ="";
+  $contar = 0;
 	foreach ($centros as $key => $centro)
 	{
 		$centro_html ="<tr><th>Nombre del Centro</th><th>Tipo de Centro</th></tr>";
@@ -1312,7 +1313,6 @@ ini_set('session.gc_maxlifetime','1200');*/
 			where m.centro_id in (".$centro["TIPO_CENTRO_ID"].") order by ".$orderby;
 		$modulos = $modelo->executeQuery($modulos);
     
-    $contar = 0;
     $contar_modulos_2 = 1;
     $fasenombrerepite=array();
 		foreach ($modulos as $key => $modulo)
