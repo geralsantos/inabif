@@ -794,12 +794,26 @@ class portada extends App{
           $where = "";
         }else if (SUPERVISOR == $nivel || USER_SEDE== $nivel){
           $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
-          $where = "";
+          if ($tipo_centro == PPD) {
+            $where = " and cu.tipo_centro_id(+)= ".$tipo_centro." and cda.tipo_centro_id(+)= ".$tipo_centro." and cci.tipo_centro_id(+)= ".$tipo_centro." and csn.tipo_centro_id(+)= ".$tipo_centro." and csm.tipo_centro_id(+)= ".$tipo_centro." and ct.tipo_centro_id(+)= ".$tipo_centro." and cac.tipo_centro_id(+)= ".$tipo_centro." and cap.tipo_centro_id(+)= ".$tipo_centro." and cec.tipo_centro_id(+)= ".$tipo_centro." and cts.tipo_centro_id(+)= ".$tipo_centro." and cas.tipo_centro_id(+)= ".$tipo_centro." and cep.tipo_centro_id(+)= ".$tipo_centro." and cee.tipo_centro_id(+)= ".$tipo_centro." and ces.tipo_centro_id(+)= ".$tipo_centro." and ctf.tipo_centro_id(+)= ".$tipo_centro." and cen.tipo_centro_id(+)= ".$tipo_centro." and cets.tipo_centro_id(+)= ".$tipo_centro." and ceg.tipo_centro_id(+)= ".$tipo_centro." and ca.tipo_centro_id(+)= ".$tipo_centro." and re.tipo_centro_id(+)= ".$tipo_centro." ";
+          }else if($tipo_centro == PAM){
+            $where = " and pdi.tipo_centro_id(+)= ".$tipo_centro." and pdau.tipo_centro_id(+)= ".$tipo_centro." and pdci.tipo_centro_id(+)= ".$tipo_centro." and pds.tipo_centro_id(+)= ".$tipo_centro." and psm.tipo_centro_id(+)= ".$tipo_centro." and pap.tipo_centro_id(+)= ".$tipo_centro." and pas.tipo_centro_id(+)= ".$tipo_centro." and pasa.tipo_centro_id(+)= ".$tipo_centro." and pps.tipo_centro_id(+)= ".$tipo_centro." and ps.tipo_centro_id(+)= ".$tipo_centro." and pn.tipo_centro_id(+)= ".$tipo_centro." and pt.tipo_centro_id(+)= ".$tipo_centro." and peu.tipo_centro_id(+)= ".$tipo_centro." and ca.tipo_centro_id(+)= ".$tipo_centro." and re.tipo_centro_id(+)= ".$tipo_centro." ";
+          }else if($tipo_centro == NNA){
+            $where = " and nir.tipo_centro_id(+)= ".$tipo_centro." and nar.tipo_centro_id(+)= ".$tipo_centro." and nci.tipo_centro_id(+)= ".$tipo_centro." and nfr.tipo_centro_id(+)= ".$tipo_centro." and nds.tipo_centro_id(+)= ".$tipo_centro." and nts.tipo_centro_id(+)= ".$tipo_centro." and nas.tipo_centro_id(+)= ".$tipo_centro." and ns.tipo_centro_id(+)= ".$tipo_centro." and nn.tipo_centro_id(+)= ".$tipo_centro." and ntol.tipo_centro_id(+)= ".$tipo_centro." and ne.tipo_centro_id(+)= ".$tipo_centro." and nfh.tipo_centro_id(+)= ".$tipo_centro." and np.tipo_centro_id(+)= ".$tipo_centro." and nps.tipo_centro_id(+)= ".$tipo_centro." and nss.tipo_centro_id(+)= ".$tipo_centro." and nns.tipo_centro_id(+)= ".$tipo_centro." and nes.tipo_centro_id(+)= ".$tipo_centro." and ntss.tipo_centro_id(+)= ".$tipo_centro." and neu.tipo_centro_id(+)= ".$tipo_centro." and  ca.id(+)= ".$tipo_centro." and re.tipo_centro_id(+)= ".$tipo_centro." ";
+          }
         }else if (REGISTRADOR == $nivel || RESPONSABLE_INFORMACION== $nivel || USER_CENTRO== $nivel){
           $centro = $_SESSION["usuario"][0]["CENTRO_ID"];
-          $where = " and cu.centro_id(+)= ".$centro." and cda.centro_id(+)= ".$centro." and cci.centro_id(+)= ".$centro." and csn.centro_id(+)= ".$centro." and csm.centro_id(+)= ".$centro." and ct.centro_id(+)= ".$centro." and cac.centro_id(+)= ".$centro." and cap.centro_id(+)= ".$centro." and cec.centro_id(+)= ".$centro." and cts.centro_id(+)= ".$centro." and cas.centro_id(+)= ".$centro." and cep.centro_id(+)= ".$centro." and cee.centro_id(+)= ".$centro." and ces.centro_id(+)= ".$centro." and ctf.centro_id(+)= ".$centro." and cen.centro_id(+)= ".$centro." and cets.centro_id(+)= ".$centro." and ceg.centro_id(+)= ".$centro." and ca.id(+)= ".$centro." and re.centro_id(+)= ".$centro." ";
+          if ($tipo_centro == PPD) {
+            $where = " and cu.centro_id(+)= ".$centro." and cda.centro_id(+)= ".$centro." and cci.centro_id(+)= ".$centro." and csn.centro_id(+)= ".$centro." and csm.centro_id(+)= ".$centro." and ct.centro_id(+)= ".$centro." and cac.centro_id(+)= ".$centro." and cap.centro_id(+)= ".$centro." and cec.centro_id(+)= ".$centro." and cts.centro_id(+)= ".$centro." and cas.centro_id(+)= ".$centro." and cep.centro_id(+)= ".$centro." and cee.centro_id(+)= ".$centro." and ces.centro_id(+)= ".$centro." and ctf.centro_id(+)= ".$centro." and cen.centro_id(+)= ".$centro." and cets.centro_id(+)= ".$centro." and ceg.centro_id(+)= ".$centro." and ca.id(+)= ".$centro." and re.centro_id(+)= ".$centro." ";
+          }else if($tipo_centro == PAM){
+            $where = " and pdi.centro_id(+)= ".$centro." and pdau.centro_id(+)= ".$centro." and pdci.centro_id(+)= ".$centro." and pds.centro_id(+)= ".$centro." and psm.centro_id(+)= ".$centro." and pap.centro_id(+)= ".$centro." and pas.centro_id(+)= ".$centro." and pasa.centro_id(+)= ".$centro." and pps.centro_id(+)= ".$centro." and ps.centro_id(+)= ".$centro." and pn.centro_id(+)= ".$centro." and pt.centro_id(+)= ".$centro." and peu.centro_id(+)= ".$centro." and ca.id(+)= ".$centro." and re.centro_id(+)= ".$centro." ";
+          }else if($tipo_centro == NNA){
+            $where = " and nir.centro_id(+)= ".$centro." and nar.centro_id(+)= ".$centro." and nci.centro_id(+)= ".$centro." and nfr.centro_id(+)= ".$centro." and nds.centro_id(+)= ".$centro." and nts.centro_id(+)= ".$centro." and nas.centro_id(+)= ".$centro." and ns.centro_id(+)= ".$centro." and nn.centro_id(+)= ".$centro." and ntol.centro_id(+)= ".$centro." and ne.centro_id(+)= ".$centro." and nfh.centro_id(+)= ".$centro." and np.centro_id(+)= ".$centro." and nps.centro_id(+)= ".$centro." and nss.centro_id(+)= ".$centro." and nns.centro_id(+)= ".$centro." and nes.centro_id(+)= ".$centro." and ntss.centro_id(+)= ".$centro." and neu.centro_id(+)= ".$centro." and  ca.id(+)= ".$centro." and re.centro_id(+)= ".$centro." ";
+          }
         }
+        
         include 'consultas_preparadas.php';
+        
         if (ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel) {
           $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
           /* no afecta en la consulta ya que se listan todos los centros de todos los tipos de centros */
@@ -1152,7 +1166,7 @@ Numero_Documento as "Número documento de ingreso"',
  Des_Informe_Tecnico as "Descripción ",
  Cumple_Intervencion as "Cumplimiento del plan "',
 
- 'DATOS DE EGRESO DEL USUARIO | pam_EgresoUsuario'=>
+ 'DATOS GENERALES DE INGRESO DEL RESIDENTE | pam_EgresoUsuario'=>
  'Fecha_Egreso as "Fecha de egreso",
  MotivoEgreso as "Motivo de egreso",
  Retiro_Voluntario as "Retiro Voluntario",
@@ -1166,7 +1180,7 @@ Numero_Documento as "Número documento de ingreso"',
  RestitucionReinsercionFamiliar as "Reinserción Familiar"');
  break;
       case '3':
-      $campos = array('DATOS GENERALES DE INGRESO DEL RESIDENTE | NNAInscripcionResidente'=>
+      $campos = array('NNAInscripcionResidente'=>
       'residente_apellido_paterno as "Apellido paterno",
       residente_apellido_materno as "Apellido materno",
       residente_nombre as "Nombre usuario",
@@ -1178,7 +1192,7 @@ Numero_Documento as "Número documento de ingreso"',
       fecha_nacimiento as "Fecha de nacimiento" ,
       (SELECT nombre from pam_lengua_materna WHERE id = NNAInscripcionResidente.lengua_materna) as "Lengua materna"',
 
-      'DATOS GENERALES DE INGRESO DEL RESIDENTE | NNAAdmisionResidente'=>
+      'NNAAdmisionResidente'=>
       'Fecha_Ingreso as "Fecha de Ingreso",
       (SELECT nombre FROM nna_instituciones WHERE id=NNAAdmisionResidente.Institucion_Derivacion) as "Entidad que lo deriva",
       (SELECT nombre FROM nna_motivos_ingreso WHERE id=NNAAdmisionResidente.Motivo_Ingreso)  as "Motivo ingreso PRINCIPAL(exp)",
@@ -1186,7 +1200,7 @@ Numero_Documento as "Número documento de ingreso"',
       Numero_Doc as "Número documento de ingreso",
       Perfil_Ingreso_P as "Perfil de ingreso"',
 
-      'DATOS GENERALES DE INGRESO DEL RESIDENTE | NNACondicionIResidente'=>
+      'NNACondicionIResidente'=>
       'Numero_Doc as "DNI al ingreso",
       Tipo_Doc as "Tipo documento de identidad",
       \'\' as "Número documento de ingreso",
@@ -1198,7 +1212,7 @@ Numero_Documento as "Número documento de ingreso"',
       \'\' as "Cobertura médica",
       \'\' as "Tipo de aseguramiento"',
 
-      'DATOS GENERALES DE INGRESO DEL RESIDENTE | NNADatosSaludResi'=>
+      'NNADatosSaludResi'=>
       'Discapacidad as "Discapacidad",
       Discapacidad_Fisica as "Presenta discap. física",
       Discapaciada_Intelectual as "Presenta discap. intelectual",
@@ -1212,21 +1226,21 @@ Numero_Documento as "Número documento de ingreso"',
       \'\' as "Especifique"',
 
 
-      'DATOS GENERALES DE INGRESO DEL RESIDENTE | NNADatosSaludResi'=>
+      'NNADatosSaludResi'=>
       'Nivel_Hemoglobina as "Nivel de Hemoglobina",
       Peso as "Peso (Kg.)",
       Talla as "Talla (m)",
       Estado_Nutricional1 as "Estado Nutricional (IMC)"',
 
-      'DATOS GENERALES DE INGRESO DEL RESIDENTE | NNAFamiliaresResidente'=>
+      'NNAFamiliaresResidente'=>
       'Familiares as "Cuenta con familiares",
       Parentesco as "Tipo de parentesco"',
 
-      'DATOS GENERALES DE INGRESO DEL RESIDENTE | NNADatosSaludResi'=>
+      'NNADatosSaludResi'=>
       'Transtornos_Comportamiento as "Tras. comport. y/o disociales",
       Tipo_Transtorno as "Tipo de transtorno"',
 
-      'DATOS DE SEGUIMIENTO DEL USUARIO | NNASalud_Semestral'=>
+      'NNASalud_Semestral'=>
       'Plan_Intervencion as "Plan de intervención",
       Meta_PAI as "Meta trazada en el PAI",
       Informe_tecnico as "Informe técnico evolutivo",
@@ -1234,7 +1248,7 @@ Numero_Documento as "Número documento de ingreso"',
       Control_CRED as "Control CRED acorde a la Edad",
       Vacunacion as "Esq. de vac. acorde a la Edad"',
 
-      'DATOS DE SEGUIMIENTO DEL USUARIO | NNAtrabajoSocial_Semestral'=>
+      'NNAtrabajoSocial_Semestral'=>
       'Plan_Intervencion as "Plan de Intervención ",
       Meta_PAI as "Meta trazada en el PAI",
       Informe_Tecnico as "Informe técnico evolutivo",
@@ -1243,7 +1257,7 @@ Numero_Documento as "Número documento de ingreso"',
       Reinsercion_Familiar as "Plan de Reinserción familiar",
       FamiliaR_Soporte as "Fam. usa las RSS"',
 
-      'DATOS DE EGRESO DEL USUARIO | NNAEgresoUsuario'=>
+      'NNAEgresoUsuario'=>
       'Fecha_Egreso as "Fecha de egreso",
       MotivoEgreso as "Motivo de egreso",
       Detalle_Motivo as "Detalle del motivo del egreso",
@@ -1316,7 +1330,7 @@ ini_set('session.gc_maxlifetime','1200');*/
             $valortabla=$value;
             $fasenombre=explode(" | ",$key)[0];
             if (!in_array($fasenombre,$fasenombrerepite)) {
-              $fasenombrehtml = "<tr><td style='background-color:yellow;'>".$fasenombre."</td></tr>";
+              $fasenombrehtml = "<tr><td>".$fasenombre."</td></tr>";
               $fasenombrerepite[]=$fasenombre;
             }
             break;
@@ -1326,6 +1340,7 @@ ini_set('session.gc_maxlifetime','1200');*/
       
       if (!empty($nombretabla) && $nombretabla!="" && !empty($modulo["NOMBRE_TABLA"]) && $modulo["NOMBRE_TABLA"]!="")
       {
+
         $modulo_html ="";
         $modulo_html .=$fasenombrehtml."<tr><td style='background-color:#DDA0DD' colspan='2'>".($contar_modulos_2).". ".$modulo["NOMBRE_MODULO"]."</td></tr>";
         $contar_modulos_2++;
@@ -1371,7 +1386,7 @@ ini_set('session.gc_maxlifetime','1200');*/
             $html .= $modulo_html.$grupo_html;
           }
         }else {
-         $grupos = "select ".$valortabla.",residente_id from ".$modulo["NOMBRE_TABLA"]." where  periodo_mes=".date("n")." and periodo_anio=".date("Y")." and residente_id= ". $id_residente." and centro_id=".$centro["ID"]." order by id desc";
+         $grupos = "select ".$valortabla.",residente_id from ".$modulo["NOMBRE_TABLA"]." where  periodo_mes=".date("n")." and periodo_anio=".date("Y")." and residente_id= ". $id_residente." and centro_id=".$centro["ID"]."";
           $grupos = $modelo->executeQuery($grupos);
 
           $grupo_html = "";
