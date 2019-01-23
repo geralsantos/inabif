@@ -1387,7 +1387,7 @@ ini_set('session.gc_maxlifetime','1200');*/
             $html .= $modulo_html.$grupo_html;
           }
         }else {
-         $grupos = "select ".$valortabla.",residente_id from ".$modulo["NOMBRE_TABLA"]." where  periodo_mes=".date("n")." and periodo_anio=".date("Y")." and residente_id= ". $id_residente." and centro_id=".$centro["ID"]."";
+         $grupos = "select ".$valortabla.",residente_id from ".$modulo["NOMBRE_TABLA"]." where  periodo_mes=".date("n")." and periodo_anio=".date("Y")." and residente_id= ". $id_residente." and centro_id=".$centro["ID"]." order by id desc";
           $grupos = $modelo->executeQuery($grupos);
 
           $grupo_html = "";
