@@ -76,9 +76,18 @@
             format: 'yyyy-mm-dd'
           });
         });
+function geral_table(){
+  $("#tbl_temp").tableExport({
+  formats: ["xlsx","txt", "csv"], //Tipo de archivos a exportar ("xlsx","txt", "csv", "xls")
+  position: 'button',  // Posicion que se muestran los botones puedes ser: (top, bottom)
+  bootstrap: false,//Usar lo estilos de css de bootstrap para los botones (true, false)
+  fileName: "ListadoPaises",    //Nombre del archivo 
+})();
 
-   /* setTimeout(() => {
-      var blob = new Blob(["<table><tr><td>hola</td></tr></table>"], {type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8"});
-    saveAs(blob, "hello world.xlsx");
-    }, 5000);*/
+}
+    setTimeout(() => {
+      geral_table();
+    /*  var blob = new Blob(["<table><tr><td>hola</td></tr></table>"], {type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8"});
+    saveAs(blob, "hello world.xlsx");*/
+    }, 5000);
 </script>
