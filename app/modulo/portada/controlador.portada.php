@@ -1181,7 +1181,7 @@ Numero_Documento as "Número documento de ingreso"',
  RestitucionReinsercionFamiliar as "Reinserción Familiar"');
  break;
       case '3':
-      $campos = array('NNAInscripcionResidente'=>
+      $campos = array('DATOS GENERALES DE INGRESO DEL USUARIO | NNAInscripcionResidente'=>
       'residente_apellido_paterno as "Apellido paterno",
       residente_apellido_materno as "Apellido materno",
       residente_nombre as "Nombre usuario",
@@ -1193,7 +1193,7 @@ Numero_Documento as "Número documento de ingreso"',
       fecha_nacimiento as "Fecha de nacimiento" ,
       (SELECT nombre from pam_lengua_materna WHERE id = NNAInscripcionResidente.lengua_materna) as "Lengua materna"',
 
-      'NNAAdmisionResidente'=>
+      'DATOS GENERALES DE INGRESO DEL USUARIO | NNAAdmisionResidente'=>
       'Fecha_Ingreso as "Fecha de Ingreso",
       (SELECT nombre FROM nna_instituciones WHERE id=NNAAdmisionResidente.Institucion_Derivacion) as "Entidad que lo deriva",
       (SELECT nombre FROM nna_motivos_ingreso WHERE id=NNAAdmisionResidente.Motivo_Ingreso)  as "Motivo ingreso PRINCIPAL(exp)",
@@ -1201,7 +1201,7 @@ Numero_Documento as "Número documento de ingreso"',
       Numero_Doc as "Número documento de ingreso",
       Perfil_Ingreso_P as "Perfil de ingreso"',
 
-      'NNACondicionIResidente'=>
+      'DATOS GENERALES DE INGRESO DEL USUARIO | NNACondicionIResidente'=>
       'Numero_Doc as "DNI al ingreso",
       Tipo_Doc as "Tipo documento de identidad",
       \'\' as "Número documento de ingreso",
@@ -1213,7 +1213,7 @@ Numero_Documento as "Número documento de ingreso"',
       \'\' as "Cobertura médica",
       \'\' as "Tipo de aseguramiento"',
 
-      'NNADatosSaludResi'=>
+      'DATOS GENERALES DE INGRESO DEL USUARIO | NNADatosSaludResi'=>
       'Discapacidad as "Discapacidad",
       Discapacidad_Fisica as "Presenta discap. física",
       Discapaciada_Intelectual as "Presenta discap. intelectual",
@@ -1227,21 +1227,21 @@ Numero_Documento as "Número documento de ingreso"',
       \'\' as "Especifique"',
 
 
-      'NNADatosSaludResi'=>
+      'DATOS GENERALES DE INGRESO DEL USUARIO | NNADatosSaludResi'=>
       'Nivel_Hemoglobina as "Nivel de Hemoglobina",
       Peso as "Peso (Kg.)",
       Talla as "Talla (m)",
       Estado_Nutricional1 as "Estado Nutricional (IMC)"',
 
-      'NNAFamiliaresResidente'=>
+      'DATOS GENERALES DE INGRESO DEL USUARIO | NNAFamiliaresResidente'=>
       'Familiares as "Cuenta con familiares",
       Parentesco as "Tipo de parentesco"',
 
-      'NNADatosSaludResi'=>
+      'DATOS GENERALES DE INGRESO DEL USUARIO | NNADatosSaludResi'=>
       'Transtornos_Comportamiento as "Tras. comport. y/o disociales",
       Tipo_Transtorno as "Tipo de transtorno"',
 
-      'NNASalud_Semestral'=>
+      'DATOS DE SEGUIMIENTO DEL USUARIO | NNASalud_Semestral'=>
       'Plan_Intervencion as "Plan de intervención",
       Meta_PAI as "Meta trazada en el PAI",
       Informe_tecnico as "Informe técnico evolutivo",
@@ -1249,7 +1249,7 @@ Numero_Documento as "Número documento de ingreso"',
       Control_CRED as "Control CRED acorde a la Edad",
       Vacunacion as "Esq. de vac. acorde a la Edad"',
 
-      'NNAtrabajoSocial_Semestral'=>
+      'DATOS DE SEGUIMIENTO DEL USUARIO | NNAtrabajoSocial_Semestral'=>
       'Plan_Intervencion as "Plan de Intervención ",
       Meta_PAI as "Meta trazada en el PAI",
       Informe_Tecnico as "Informe técnico evolutivo",
@@ -1258,7 +1258,7 @@ Numero_Documento as "Número documento de ingreso"',
       Reinsercion_Familiar as "Plan de Reinserción familiar",
       FamiliaR_Soporte as "Fam. usa las RSS"',
 
-      'NNAEgresoUsuario'=>
+      'DATOS DE EGRESO DEL USUARIO | NNAEgresoUsuario'=>
       'Fecha_Egreso as "Fecha de egreso",
       MotivoEgreso as "Motivo de egreso",
       Detalle_Motivo as "Detalle del motivo del egreso",
