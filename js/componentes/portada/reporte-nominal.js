@@ -82,7 +82,7 @@ let apellido = apellido_p + ' ' + apellido_m;
             let datos = {id_residente:this.id_residente};
             //console.log(datos);
             let self = this
-            window.open(('descargar_reporte_matriz_nominal?view&id_resident='+self.id_residente),'_blank');
+            window.open(('descargar_reporte_matriz_nominal?view&id_residente='+self.id_residente),'_blank');
             this.$http.post('descargar_reporte_matriz_nominal?view',datos,{headers: {'Content-Type': 'application/x-www-form-urlencoded'}}).then(function(response){
 
                 if( response.body.data != undefined){
