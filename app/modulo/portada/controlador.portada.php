@@ -1440,7 +1440,7 @@ ini_set('session.gc_maxlifetime','1200');*/
     if ($modulos)
     {
       $file="descarga.xlsx";
-      header("Content-type: application/vnd.ms-excel");
+      header("Content-type: application/octet-stream");
       header("Content-Disposition: attachment; filename=$file");
       echo $table;
       //echo json_encode(array("data"=>$table) ) ;
