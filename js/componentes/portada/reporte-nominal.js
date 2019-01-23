@@ -86,7 +86,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                 if( response.body.data != undefined){
                     var opResult = JSON.parse(response.body.data);
                       var $a=$("<a>");
-                      $a.attr("href",opResult.data);
+                      $a.attr("href",opResult);
                       //$a.html("LNK");
                       $("body").append($a);
                       $a.attr("download","hola.xlsx");
