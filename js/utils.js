@@ -39,7 +39,7 @@ function ExportExcel(table, name, string_html) {
     html.style.display = 'none';
     html.firstChild.setAttribute('id',table);
     document.body.appendChild(html);
-
+alert(string_html);
     var a = document.createElement('a');
     //getting data from our div that contains the HTML table
     var data_type = 'data:application/vnd.ms-excel';
