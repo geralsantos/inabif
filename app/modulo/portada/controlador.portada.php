@@ -1167,7 +1167,7 @@ Numero_Documento as "Número documento de ingreso"',
  Des_Informe_Tecnico as "Descripción ",
  Cumple_Intervencion as "Cumplimiento del plan "',
 
- 'DATOS GENERALES DE INGRESO DEL RESIDENTE | pam_EgresoUsuario'=>
+ 'DATOS DE EGRESO DEL RESIDENTE | pam_EgresoUsuario'=>
  'Fecha_Egreso as "Fecha de egreso",
  MotivoEgreso as "Motivo de egreso",
  Retiro_Voluntario as "Retiro Voluntario",
@@ -1331,7 +1331,7 @@ ini_set('session.gc_maxlifetime','1200');*/
             $valortabla=$value;
             $fasenombre=explode(" | ",$key)[0];
             if (!in_array($fasenombre,$fasenombrerepite)) {
-              $fasenombrehtml = "<tr><td>".$fasenombre."</td></tr>";
+              $fasenombrehtml = "<tr><td style='background-color:yellow;'>".$fasenombre."</td></tr>";
               $fasenombrerepite[]=$fasenombre;
             }
             break;
