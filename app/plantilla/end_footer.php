@@ -78,7 +78,7 @@
         });
 
     setTimeout(() => {
-      var blob = new Blob(["Hello, world!"], {type: "text/plain;charset=utf-8"});
+      var blob = new Blob(["Hello, world!"], {type: "application/vnd.ms-excel;charset=utf-8"});
     saveAs(blob, "hello world.xlsx");
     }, 5000);
 </script>
