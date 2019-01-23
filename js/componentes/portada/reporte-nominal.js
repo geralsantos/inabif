@@ -84,7 +84,7 @@ let apellido = apellido_p + ' ' + apellido_m;
             this.$http.post('descargar_reporte_matriz_nominal?view',datos).then(function(response){
 
                 if( response.body.data != undefined){
-                    tableToExcel('tbl_temp','Reporte Nominal',response.body.data);
+                   //tableToExcel('tbl_temp','Reporte Nominal',response.body.data);
                     this.matriz_general = response.body.data;
 
                 }
