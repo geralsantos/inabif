@@ -85,13 +85,7 @@ let apellido = apellido_p + ' ' + apellido_m;
 
                 if( response.body.data != undefined){
                     var opResult = JSON.parse(response.body.data);
-                      var $a=$("<a>");
-                      $a.attr("href",opResult);
-                      //$a.html("LNK");
-                      $("body").append($a);
-                      $a.attr("download","hola.xlsx");
-                      $a[0].click();
-                      $a.remove();
+                      
                     //ExportExcel("tbl_temp","",response.body.data);
                    //tableToExcel('tbl_temp','Reporte Nominal',response.body.data);
                     this.matriz_general = response.body.data;
