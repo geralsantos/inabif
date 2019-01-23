@@ -297,7 +297,7 @@ class portada extends App{
 }
     public function ejecutar_consulta_lista_nominal(){
       $modelo = new modeloPortada();
-      $campo="";
+      $campo="";$left_join;
        $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
         if ($tipo_centro_id == PPD) {
           $campo = "nd.Numero_Documento ";
@@ -1284,7 +1284,7 @@ ini_set('session.gc_maxlifetime','1200');*/
     $nivel = $_SESSION["usuario"][0]["NIVEL"];
     if (SUPERVISOR == $nivel || USER_SEDE == $nivel) {
       $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
-      $where = " where ca.tipo_centro_id = ".$tipo_centro;
+      $where = " where ca.tipo_centro_id = ".$tipo_centro_id;
     }else if (REGISTRADOR ==$nivel || RESPONSABLE_INFORMACION ==$nivel || USER_CENTRO ==$nivel){
       $centro_id = $_SESSION["usuario"][0]["CENTRO_ID"];
       $where = " where ca.id = ".$centro_id;
