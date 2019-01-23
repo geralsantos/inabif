@@ -266,15 +266,20 @@ class portada extends App{
       if ($tipo_centro_id == PPD) {
         $campo = "nd.Numero_Documento ";
         $like = "nd.Numero_Documento LIKE '%".$word."%'";
-        $left_join = " left join CarCondicionIngreso nd on (nd.residente_id=re.id) ";
+        $left_join = ", CarCondicionIngreso nd ";
+        $where_join = "and nd.residente_id(+)=re.id ";
+
       }else if($tipo_centro_id == PAM){
         $campo = "dci.numero_documento_ingreso ";
         $like = "dci.numero_documento_ingreso LIKE '%".$word."%'";
-        $left_join = " left join pam_datosCondicionIngreso dci on (dci.residente_id=re.id) ";
+        $left_join = ", pam_datosCondicionIngreso dci ";
+        $where_join = "and dci.residente_id(+)=re.id ";
+
       }else if($tipo_centro_id == NNA){
         $campo = "cir.Numero_Doc ";
         $like = "cir.Numero_Doc LIKE '%".$word."%'";
-        $left_join = " left join NNACondicionIResidente cir on (cir.residente_id=re.id) ";
+        $left_join = ", NNACondicionIResidente cir ";
+        $where_join = "and cir.residente_id(+)=re.id ";
       }
       $nivel = $_SESSION["usuario"][0]["NIVEL"];
       if (SUPERVISOR == $nivel || USER_SEDE == $nivel) {
@@ -304,15 +309,20 @@ class portada extends App{
       $modelo = new modeloPortada();
       $campo="";$left_join;
        $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
-        if ($tipo_centro_id == PPD) {
+       if ($tipo_centro_id == PPD) {
           $campo = "nd.Numero_Documento ";
-          $left_join = " left join CarCondicionIngreso nd on (nd.residente_id=re.id) ";
+          $left_join = ", CarCondicionIngreso nd ";
+          $where_join = "and nd.residente_id(+)=re.id ";
+
         }else if($tipo_centro_id == PAM){
           $campo = "dci.numero_documento_ingreso ";
-          $left_join = " left join pam_datosCondicionIngreso dci on (dci.residente_id=re.id) ";
+          $left_join = ", pam_datosCondicionIngreso dci ";
+          $where_join = "and dci.residente_id(+)=re.id ";
+
         }else if($tipo_centro_id == NNA){
           $campo = "cir.Numero_Doc ";
-          $left_join = " left join NNACondicionIResidente cir on (cir.residente_id=re.id) ";
+          $left_join = ", NNACondicionIResidente cir ";
+          $where_join = "and cir.residente_id(+)=re.id ";
         }
         $nivel = $_SESSION["usuario"][0]["NIVEL"];
       if (SUPERVISOR == $nivel || USER_SEDE == $nivel) {
@@ -324,7 +334,7 @@ class portada extends App{
 			}else if(ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel){
 				$where ="";
 			}
-		  $sql = "SELECT max(re.id) as id,max(re.nombre) as nombre,max(re.apellido_p) as apellido_p,max(re.apellido_m) as apellido_m,max(".$campo.") as dni_residente FROM Residente re ".$left_join." WHERE  re.ESTADO=1 ".$where."  group by re.id ORDER BY re.Id desc";
+		  $sql = "SELECT max(re.id) as id,max(re.nombre) as nombre,max(re.apellido_p) as apellido_p,max(re.apellido_m) as apellido_m,max(".$campo.") as dni_residente FROM Residente re ".$left_join." WHERE  re.ESTADO=1 ".$where." ".$where_join."  group by re.id ORDER BY re.Id desc";
 		  $res = $modelo->executeQuery( $sql );
 		  if ($res) {
 			echo json_encode(array( "data"=>$res )) ;
@@ -335,16 +345,21 @@ class portada extends App{
 	public function ejecutar_consulta_lista(){
       $modelo = new modeloPortada();
       $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
-        if ($tipo_centro_id == PPD) {
-          $campo = "nd.Numero_Documento ";
-          $left_join = " left join CarCondicionIngreso nd on (nd.residente_id=re.id) ";
-        }else if($tipo_centro_id == PAM){
-          $campo = "dci.numero_documento_ingreso ";
-          $left_join = " left join pam_datosCondicionIngreso dci on (dci.residente_id=re.id) ";
-        }else if($tipo_centro_id == NNA){
-          $campo = "cir.Numero_Doc ";
-          $left_join = " left join NNACondicionIResidente cir on (cir.residente_id=re.id) ";
-        }
+      if ($tipo_centro_id == PPD) {
+        $campo = "nd.Numero_Documento ";
+        $left_join = ", CarCondicionIngreso nd ";
+        $where_join = "and nd.residente_id(+)=re.id ";
+
+      }else if($tipo_centro_id == PAM){
+        $campo = "dci.numero_documento_ingreso ";
+        $left_join = ", pam_datosCondicionIngreso dci ";
+        $where_join = "and dci.residente_id(+)=re.id ";
+
+      }else if($tipo_centro_id == NNA){
+        $campo = "cir.Numero_Doc ";
+        $left_join = ", NNACondicionIResidente cir ";
+        $where_join = "and cir.residente_id(+)=re.id ";
+      }
         $nivel = $_SESSION["usuario"][0]["NIVEL"];
         if (SUPERVISOR == $nivel || USER_SEDE == $nivel) {
             $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
@@ -355,7 +370,7 @@ class portada extends App{
         }else if(ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel){
             $where ="";
         }
-		  $sql = "SELECT max(re.id) as id,max(re.nombre) as nombre,max(re.apellido_p) as apellido_p,max(re.apellido_m) as apellido_m,max(".$campo.") as dni_residente FROM Residente re ".$left_join." WHERE  re.ESTADO=1 ".$where." group by re.id ORDER BY re.Id desc";
+		  $sql = "SELECT max(re.id) as id,max(re.nombre) as nombre,max(re.apellido_p) as apellido_p,max(re.apellido_m) as apellido_m,max(".$campo.") as dni_residente FROM Residente re ".$left_join." WHERE  re.ESTADO=1 ".$where." ".$where_join." group by re.id ORDER BY re.Id desc";
 		  $res = $modelo->executeQuery( $sql );
 		  if ($res) {
 			echo json_encode(array( "data"=>$res )) ;
