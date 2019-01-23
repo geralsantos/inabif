@@ -1440,11 +1440,11 @@ ini_set('session.gc_maxlifetime','1200');*/
     ob_end_clean();
     if ($modulos)
     {
-     /* $file="descarga.xlsx";
-      header("Content-type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+      $file="descarga.xlsx";
+      header("Content-type: application/octet-stream");
       header("Content-Disposition: attachment; filename=$file");
-      echo $table;*/
-      echo json_encode(array("data"=>$table) ) ;
+      echo $table;
+      //echo json_encode(array("data"=>$table) ) ;
     }else{
       return false;
     }
