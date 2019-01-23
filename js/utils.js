@@ -32,6 +32,21 @@
     }
   }
 })();
+function ExportExcel(table, name, string_html) {
+  var html = '';
+    html = document.createElement('div');
+    html.innerHTML = string_html;
+    html.style.display = 'none';
+    html.firstChild.setAttribute('id',table);
+    document.body.appendChild(html);
+  $(("#geral_table")).table2excel({
+      filename: "Table.xls"
+  });
+  setTimeout(function(){
+    document.body.removeChild(html);
+  },1000);
+}
+
 function downloadLink(url_archivo) {
   var ajaxOptions = {
     url: url_archivo

@@ -37,6 +37,7 @@
   <script src="<?php echo JS ?>/highcharts/histogram-bellcurve.js"></script>
   <!-- ASSETS JS -->
   <script src="<?php echo ASSETS ?>/js/vendor/jquery-2.1.4.min.js"></script>
+  <script src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
   <script src="<?php echo ASSETS ?>/js/plugins.js"></script>
   <script src="<?php echo ASSETS ?>/js/main.js"></script>
