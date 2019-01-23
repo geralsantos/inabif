@@ -1065,9 +1065,9 @@ Numero_Documento as "Número documento de ingreso"',
    Talla as "Talla (m)",
    Estado_Nutricional as "Estado Nutricional(IMC)"'),
 
-   'DATOS FAMILIARES Y SOCIALES DEL USUARIO (Trabajo Social)'=>
-   'Familiares as "Cuenta con familiares",
-    Parentesco as "Tipo de parentesco"',
+   'DATOS FAMILIARES Y SOCIALES DEL USUARIO (Trabajo Social) | NNAtrabajoSocial_Semestral'=>
+   '\'\' as "Cuenta con familiares",
+    \'\' as "Tipo de parentesco"',
 
     'DATOS GENERALES DE INGRESO DEL RESIDENTE | CarSaludMental'=>
     'Transtorno_Neurologico as "¿Trastornos Neurológicos?",
