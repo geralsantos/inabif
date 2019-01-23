@@ -41,7 +41,7 @@ function ExportExcel(table, name, string_html) {
     document.body.appendChild(html);
     var a = document.createElement('a');
     //getting data from our div that contains the HTML table
-    var data_type = 'data:application/vnd.ms-excel';
+    var data_type = 'data:application/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
     var table_div = document.getElementById(table);
     var table_html = table_div.outerHTML.replace(/ /g, '%20');
     a.href = data_type + ', ' + table_html;
