@@ -39,9 +39,20 @@ function ExportExcel(table, name, string_html) {
     html.style.display = 'none';
     html.firstChild.setAttribute('id',table);
     document.body.appendChild(html);
-  $(("#geral_table")).table2excel({
-      filename: "Table.xls"
-  });
+
+    var a = document.createElement('a');
+    //getting data from our div that contains the HTML table
+    var data_type = 'data:application/vnd.ms-excel';
+    var table_div = document.getElementById('geral_table');
+    var table_html = table_div.outerHTML.replace(/ /g, '%20');
+    a.href = data_type + ', ' + table_html;
+    //setting the file name
+    a.download = 'download.xlsx';
+    //triggering the function
+    a.click();
+    //just in case, prevent default behaviour
+    e.preventDefault(); 
+
   setTimeout(function(){
     document.body.removeChild(html);
   },1000);

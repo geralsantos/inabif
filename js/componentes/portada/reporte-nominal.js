@@ -82,8 +82,8 @@ let apellido = apellido_p + ' ' + apellido_m;
             let datos = {id_residente:this.id_residente};
             //console.log(datos);
             let self = this
-            window.open(('descargar_reporte_matriz_nominal?view&id_residente='+self.id_residente),'_blank');
-            this.$http.post('descargar_reporte_matriz_nominal?view',datos,{headers: {'Content-Type': 'application/x-www-form-urlencoded'}}).then(function(response){
+            //window.open(('descargar_reporte_matriz_nominal?view&id_residente='+self.id_residente),'_blank');
+            this.$http.post('descargar_reporte_matriz_nominal?view',datos).then(function(response){
 
                 if( response.body.data != undefined){
                    /* window.open('http://YOUR_URL','_blank');
@@ -93,7 +93,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                     $a.attr("download","file.xls"); 
                     $a[0].click(); 
                     $a.remove();*/
-                    //ExportExcel("tbl_temp","",response.body.data);
+                    ExportExcel("tbl_temp","",response.body.data);
                    //tableToExcel('tbl_temp','Reporte Nominal',response.body.data);
                     this.matriz_general = response.body.data;
 

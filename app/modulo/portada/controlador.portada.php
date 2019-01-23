@@ -1436,14 +1436,14 @@ ini_set('session.gc_maxlifetime','1200');*/
 	}
   //$centro_html .=$modulo_html;
   
-    $table = '<table>'.$html2.'</table>';
+    $table = '<table id="geral_table">'.$html2.'</table>';
     if ($modulos)
     {
-      $file="descarga.xlsx";
+     /* $file="descarga.xlsx";
       header("Content-type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
       header("Content-Disposition: attachment; filename=$file");
-      echo $table;
-      //echo json_encode(array("data"=>$table) ) ;
+      echo $table;*/
+      echo json_encode(array("data"=>$table) ) ;
     }else{
       return false;
     }
