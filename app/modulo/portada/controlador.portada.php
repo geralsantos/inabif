@@ -1316,7 +1316,7 @@ ini_set('session.gc_maxlifetime','1200');*/
             $valortabla=$value;
             $fasenombre=explode(" | ",$key)[0];
             if (!in_array($fasenombre,$fasenombrerepite)) {
-              $fasenombrehtml = "<tr><td>".$fasenombre."</td></tr>";
+              $fasenombrehtml = "<tr><td style='background-color:yellow;'>".$fasenombre."</td></tr>";
               $fasenombrerepite[]=$fasenombre;
             }
             break;
