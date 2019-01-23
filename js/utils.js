@@ -43,12 +43,12 @@ function ExportExcel(table, name, string_html) {
     var a = document.createElement('a');
     //getting data from our div that contains the HTML table
     
-    /*$(table).tableExport({
+    $(table).tableExport({
       formats: ["xlsx","txt", "csv"], //Tipo de archivos a exportar ("xlsx","txt", "csv", "xls")
       position: 'button',  // Posicion que se muestran los botones puedes ser: (top, bottom)
       bootstrap: false,//Usar lo estilos de css de bootstrap para los botones (true, false)
       fileName: "ListadoPaises",    //Nombre del archivo 
-    })();*/
+    })();
     //just in case, prevent default behaviour
     //e.preventDefault(); 
 /*
