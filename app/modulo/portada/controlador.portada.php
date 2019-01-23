@@ -312,7 +312,7 @@ class portada extends App{
         $nivel = $_SESSION["usuario"][0]["NIVEL"];
       if (SUPERVISOR == $nivel || USER_SEDE == $nivel) {
 				$tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
-				$where = " AND re.tipo_centro_id = ".$tipo_centro;
+				$where = " AND re.tipo_centro_id = ".$tipo_centro_id;
 			}else if (REGISTRADOR ==$nivel || RESPONSABLE_INFORMACION ==$nivel){
 				$centro_id = $_SESSION["usuario"][0]["CENTRO_ID"];
 				$where = " AND re.centro_id = ".$centro_id;
