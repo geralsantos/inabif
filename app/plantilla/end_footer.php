@@ -65,6 +65,14 @@
   </div>
     </footer>
   </body>
+  <script>
+   $("#tbl_temp").tableExport({
+  formats: ["xlsx","txt", "csv"], //Tipo de archivos a exportar ("xlsx","txt", "csv", "xls")
+  position: 'button',  // Posicion que se muestran los botones puedes ser: (top, bottom)
+  bootstrap: false,//Usar lo estilos de css de bootstrap para los botones (true, false)
+  fileName: "ListadoPaises",    //Nombre del archivo 
+})
+  </script>
 </html>
 <script>
     jQuery('p').tooltip({ boundary: 'window' })
@@ -77,12 +85,7 @@
           });
         });
 
-  $("#tbl_temp").tableExport({
-  formats: ["xlsx","txt", "csv"], //Tipo de archivos a exportar ("xlsx","txt", "csv", "xls")
-  position: 'button',  // Posicion que se muestran los botones puedes ser: (top, bottom)
-  bootstrap: false,//Usar lo estilos de css de bootstrap para los botones (true, false)
-  fileName: "ListadoPaises",    //Nombre del archivo 
-})
+ 
 
 
     setTimeout(() => {
