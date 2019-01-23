@@ -1039,7 +1039,7 @@ Motivo_Ingreso  as "Motivo ingreso PRINCIPAL(exp)",
 \'\'  as "Motivo ingreso PRINCIPAL(real)",
 Numero_Documento as "Número documento de ingreso"',
 
-'DATOS GENERALES DE INGRESO DEL RESIDENTE CarCondicionIngreso'=>
+'DATOS GENERALES DE INGRESO DEL RESIDENTE | CarCondicionIngreso'=>
 'DNI as "DNI al ingreso",
 (SELECT nombre FROM pam_tipo_documento_identidad WHERE id=CarCondicionIngreso.Tipo_Documento) as "Tipo documento de identidad",
  Numero_Documento as "Número documento de ingreso",
@@ -1073,7 +1073,7 @@ Numero_Documento as "Número documento de ingreso"',
     'Transtorno_Neurologico as "¿Trastornos Neurológicos?",
     (SELECT nombre FROM pam_tipo_transtorno_conducta where id=CarSaludMental.Tipo_Transtorno) as "Tipo de trastorno de conducta"',
 
-   'DATOS DE SEGUIMIENTO DEL RESIDENTE   | CarEgresoSalud'=>
+   'DATOS DE SEGUIMIENTO DEL RESIDENTE | CarEgresoSalud'=>
    'Plan_Medico as "Plan de intervención",
    Meta_PII as "Meta trazada en el PII",
    Informe_Tecnico as "Posee inf. técnico evolutivo",
