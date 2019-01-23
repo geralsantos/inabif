@@ -81,10 +81,18 @@ let apellido = apellido_p + ' ' + apellido_m;
 
             let datos = {id_residente:this.id_residente};
             console.log(datos);
-            this.$http.post('descargar_reporte_matriz_nominal?view',datos).then(function(response){
+            this.$http.post('descargar_reporte_matriz_nominal?view',datos,{headers: {'Content-Type': 'application/x-www-form-urlencoded'}).then(function(response){
 
                 if( response.body.data != undefined){
-                    ExportExcel("tbl_temp","",response.body.data);
+                    var opResult = JSON.parse(response.body.data);
+                      var $a=$("<a>");
+                      $a.attr("href",opResult.data);
+                      //$a.html("LNK");
+                      $("body").append($a);
+                      $a.attr("download","hola.xlsx");
+                      $a[0].click();
+                      $a.remove();
+                    //ExportExcel("tbl_temp","",response.body.data);
                    //tableToExcel('tbl_temp','Reporte Nominal',response.body.data);
                     this.matriz_general = response.body.data;
 

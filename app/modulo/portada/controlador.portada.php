@@ -1436,7 +1436,7 @@ ini_set('session.gc_maxlifetime','1200');*/
 	}
   //$centro_html .=$modulo_html;
   
-    $table = '<table id="geral_table" >'.$html2.'</table>';
+    $table = '<table>'.$html2.'</table>';
     if ($modulos)
     {
       $file="demo.xls";
