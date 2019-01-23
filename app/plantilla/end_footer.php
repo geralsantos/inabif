@@ -21,6 +21,10 @@
     window['moment-range'].extendMoment(moment);
   </script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>  
+    <script src="<?php echo ASSETS ?>/js/filesaver.min.js"></script>
+    <script src="<?php echo ASSETS ?>/js/blob.min.js"></script>
+    <script src="<?php echo ASSETS ?>/js/xlsx.core.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/TableExport/3.3.13/js/tableexport.min.js"></script>
 
   <script type="text/javascript" src="<?php echo JS ?>/utils.js"></script>
 
@@ -72,17 +76,17 @@
             format: 'yyyy-mm-dd'
           });
         });
-function geral_table(){
+
   $("#tbl_temp").tableExport({
   formats: ["xlsx","txt", "csv"], //Tipo de archivos a exportar ("xlsx","txt", "csv", "xls")
   position: 'button',  // Posicion que se muestran los botones puedes ser: (top, bottom)
   bootstrap: false,//Usar lo estilos de css de bootstrap para los botones (true, false)
   fileName: "ListadoPaises",    //Nombre del archivo 
-})();
+})
 
-}
+
     setTimeout(() => {
-      geral_table();
+    //  geral_table();
     /*  var blob = new Blob(["<table><tr><td>hola</td></tr></table>"], {type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8"});
     saveAs(blob, "hello world.xlsx");*/
     }, 5000);
