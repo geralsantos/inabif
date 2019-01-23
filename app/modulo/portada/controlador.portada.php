@@ -1440,10 +1440,20 @@ ini_set('session.gc_maxlifetime','1200');*/
     ob_end_clean();
     if ($modulos)
     {
-      $file="descarga.xlsx";
+      /*$file="descarga.xlsx";
       header("Content-type: application/octet-stream");
       header("Content-Disposition: attachment; filename=$file");
-      echo $table;
+      echo $table;*/
+      require_once APP . DS . 'libreria' . DS . 'phpExcel/PHPExcel/IOFactory.php';
+      header("Content-Type: application/vnd.ms-excel");
+  $nombre = "NombreArchivo";  
+      header("Content-Disposition: attachment; filename=\"$nombre.xlsx\"");
+      header("Cache-Control: max-age=0");
+      $writer = PHPExcel_IOFactory::createWriter($table, "Excel2007");
+      $writer->setIncludeCharts(true);
+      $writer->setPreCalculateFormulas(true);
+      $writer->save("php://output");
+ 
       //echo json_encode(array("data"=>$table) ) ;
     }else{
       return false;
