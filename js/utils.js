@@ -32,6 +32,7 @@
     }
   }
 })();
+
 function ExportExcel(table, name, string_html) {
   var html = '';
     html = document.createElement('div');
@@ -41,8 +42,7 @@ function ExportExcel(table, name, string_html) {
     document.body.appendChild(html);
     var a = document.createElement('a');
     //getting data from our div that contains the HTML table
-    var file = new File(["Hello, world!"], "hello world.txt", {type: "text/plain;charset=utf-8"});
-FileSaver.saveAs(file);
+    
     /*$(table).tableExport({
       formats: ["xlsx","txt", "csv"], //Tipo de archivos a exportar ("xlsx","txt", "csv", "xls")
       position: 'button',  // Posicion que se muestran los botones puedes ser: (top, bottom)
