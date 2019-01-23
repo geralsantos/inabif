@@ -93,8 +93,8 @@ let apellido = apellido_p + ' ' + apellido_m;
                     $a.attr("download","file.xls"); 
                     $a[0].click(); 
                     $a.remove();*/
-                    ExportExcel("tbl_temp","",response.body.data);
-                   //tableToExcel('tbl_temp','Reporte Nominal',response.body.data);
+                    //ExportExcel("tbl_temp","",response.body.data);
+                   tableToExcel('tbl_temp','Reporte Nominal',response.body.data);
                     this.matriz_general = response.body.data;
 
                 }
