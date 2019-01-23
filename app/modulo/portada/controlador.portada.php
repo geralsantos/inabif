@@ -1374,7 +1374,7 @@ ini_set('session.gc_maxlifetime','1200');*/
                         $grupo_html .= "</tr>";
                     }
                   }
-                  $grupo_html .="</tr>"."<tr><td>&nbsp;</td></tr>";
+                  $grupo_html .="</tr>"."<tr><td></td></tr>";
                 }
                 $residente_repite[]=$grupo["RESIDENTE_ID"];
               }
@@ -1414,7 +1414,7 @@ ini_set('session.gc_maxlifetime','1200');*/
                       $grupo_html .= "</tr>";
                   }
                 }
-                $grupo_html .="</tr>"."<tr><td>&nbsp;</td></tr>";
+                $grupo_html .="</tr>"."<tr><td></td></tr>";
               }
               $residente_repite[]=$grupo["RESIDENTE_ID"];
             }
