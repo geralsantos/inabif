@@ -20,7 +20,7 @@
   <script type="text/javascript">
     window['moment-range'].extendMoment(moment);
   </script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  
     <script src="<?php echo ASSETS ?>/js/filesaver.min.js"></script>
     <script src="<?php echo ASSETS ?>/js/blob.min.js"></script>
     <script src="<?php echo ASSETS ?>/js/xlsx.core.min.js"></script>
