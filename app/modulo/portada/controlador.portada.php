@@ -1152,7 +1152,7 @@ Numero_Documento as "Número documento de ingreso"',
  Des_Informe_Tecnico as "Descripción ",
  Cumple_Intervencion as "Cumplimiento del plan "',
 
- 'DATOS GENERALES DE INGRESO DEL RESIDENTE | pam_EgresoUsuario'=>
+ 'DATOS DE EGRESO DEL USUARIO | pam_EgresoUsuario'=>
  'Fecha_Egreso as "Fecha de egreso",
  MotivoEgreso as "Motivo de egreso",
  Retiro_Voluntario as "Retiro Voluntario",
@@ -1326,7 +1326,6 @@ ini_set('session.gc_maxlifetime','1200');*/
       
       if (!empty($nombretabla) && $nombretabla!="" && !empty($modulo["NOMBRE_TABLA"]) && $modulo["NOMBRE_TABLA"]!="")
       {
-        echo $nombretabla;
         $modulo_html ="";
         $modulo_html .=$fasenombrehtml."<tr><td style='background-color:#DDA0DD' colspan='2'>".($contar_modulos_2).". ".$modulo["NOMBRE_MODULO"]."</td></tr>";
         $contar_modulos_2++;
