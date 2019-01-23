@@ -1439,7 +1439,11 @@ ini_set('session.gc_maxlifetime','1200');*/
     $table = '<table id="geral_table" >'.$html2.'</table>';
     if ($modulos)
     {
-      echo json_encode(array("data"=>$table) ) ;
+      $file="demo.xls";
+      header("Content-type: application/vnd.ms-excel");
+      header("Content-Disposition: attachment; filename=$file");
+      echo $table;
+      //echo json_encode(array("data"=>$table) ) ;
     }else{
       return false;
     }
