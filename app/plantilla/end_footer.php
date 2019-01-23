@@ -24,7 +24,7 @@
     <script src="<?php echo ASSETS ?>/js/filesaver.min.js"></script>
     <script src="<?php echo ASSETS ?>/js/blob.min.js"></script>
     <script src="<?php echo ASSETS ?>/js/xlsx.core.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/TableExport/3.3.13/js/tableexport.min.js"></script>
+    <script src="<?php echo ASSETS ?>/js/tableexport.min.js"></script>
 
   <script type="text/javascript" src="<?php echo JS ?>/utils.js"></script>
 
