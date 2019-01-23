@@ -1439,7 +1439,7 @@ ini_set('session.gc_maxlifetime','1200');*/
     $table = '<table>'.$html2.'</table>';
     if ($modulos)
     {
-      $file="demo.xls";
+      $file="descarga.xlsx";
       header("Content-type: application/vnd.ms-excel");
       header("Content-Disposition: attachment; filename=$file");
       echo $table;
