@@ -1447,7 +1447,7 @@ ini_set('session.gc_maxlifetime','1200');*/
           $writer->setIncludeCharts(true);
           $writer->setPreCalculateFormulas(true);
           $writer->save("php://output");
-         echo json_encode(array("data"=>$table) ) ;
+         //echo json_encode(array("data"=>$table) ) ;
           exit;
     }else{
       return false;
