@@ -85,9 +85,9 @@
           });
         });
 
-    setTimeout(() => {
+  /*  setTimeout(() => {
     //  geral_table();
       var blob = new Blob(["<table><tr><td>hola</td></tr></table>"], {type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8"});
     saveAs(blob, "hello world.xlsx");
-    }, 5000);
+    }, 5000);*/
 </script>
