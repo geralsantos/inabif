@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="<?php echo ASSETS ?>/css/cs-skin-elastic.css">
     <link rel="stylesheet" href="<?php echo ASSETS ?>/css/kpi.css">
     <link rel="stylesheet" href="<?php echo ASSETS ?>/scss/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/TableExport/3.3.13/css/tableexport.min.css">
     <link href="<?php echo ASSETS ?>/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
