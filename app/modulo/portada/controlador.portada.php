@@ -219,15 +219,20 @@ class portada extends App{
         if ($tipo_centro_id == PPD) {
           $campo = "nd.Numero_Documento ";
           $like = "nd.Numero_Documento LIKE '%".$word."%'";
-          $left_join = " left join CarCondicionIngreso nd on (nd.residente_id=re.id) ";
+          $left_join = ", CarCondicionIngreso nd ";
+          $where_join = "and nd.residente_id(+)=re.id ";
+
         }else if($tipo_centro_id == PAM){
           $campo = "dci.numero_documento_ingreso ";
           $like = "dci.numero_documento_ingreso LIKE '%".$word."%'";
-          $left_join = " left join pam_datosCondicionIngreso dci on (dci.residente_id=re.id) ";
+          $left_join = ", pam_datosCondicionIngreso dci ";
+          $where_join = "and dci.residente_id(+)=re.id ";
+
         }else if($tipo_centro_id == NNA){
           $campo = "cir.Numero_Doc ";
           $like = "cir.Numero_Doc LIKE '%".$word."%'";
-          $left_join = " left join NNACondicionIResidente cir on (cir.residente_id=re.id) ";
+          $left_join = ", NNACondicionIResidente cir ";
+          $where_join = "and cir.residente_id(+)=re.id ";
         }
         $codigolike="";
         if (is_numeric($word)) {
@@ -243,7 +248,7 @@ class portada extends App{
 			}else if(ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel){
 				$where ="";
 			}
-        $sql = "SELECT * FROM (SELECT DISTINCT re.*, ".$campo." as dni_residente  FROM Residente re ".$left_join."  WHERE (LOWER(re.Nombre) LIKE '%".$word."%' OR LOWER(re.APELLIDO_M) LIKE '%".$word."%' OR LOWER(re.APELLIDO_P) LIKE '%".$word."%' OR ".$like.$codigolike." ) AND re.ESTADO=1 ".$where."  ORDER BY re.Id desc) WHERE ROWNUM<=10";
+        $sql = "SELECT * FROM (SELECT DISTINCT re.*, ".$campo." as dni_residente  FROM Residente re ".$left_join."  WHERE (LOWER(re.Nombre) LIKE '%".$word."%' OR LOWER(re.APELLIDO_M) LIKE '%".$word."%' OR LOWER(re.APELLIDO_P) LIKE '%".$word."%' OR ".$like.$codigolike." ) AND re.ESTADO=1 ".$where." ".$where_join."  ORDER BY re.Id desc) WHERE ROWNUM<=10";
         $res = $modelo->executeQuery( $sql );
         if ($res) {
           echo json_encode(array( "data"=>$res )) ;
