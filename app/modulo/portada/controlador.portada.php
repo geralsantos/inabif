@@ -297,7 +297,8 @@ class portada extends App{
 }
     public function ejecutar_consulta_lista_nominal(){
       $modelo = new modeloPortada();
-      $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+      $campo="";
+      echo $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
         if ($tipo_centro_id == PPD) {
           $campo = "nd.Numero_Documento ";
           $left_join = " left join CarCondicionIngreso nd on (nd.residente_id=re.id) ";
@@ -813,7 +814,7 @@ class portada extends App{
         }
         
         include 'consultas_preparadas.php';
-        
+
         if (ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel) {
           $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
           /* no afecta en la consulta ya que se listan todos los centros de todos los tipos de centros */
