@@ -1280,7 +1280,7 @@ ini_set('memory_limit', '600M');
 ini_set('session.gc_maxlifetime','1200');*/
     $modelo = new modeloPortada();
     $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
-    $id_residente = $_GET["id_residente"];
+    $id_residente = $_POST["id_residente"];
     $nivel = $_SESSION["usuario"][0]["NIVEL"];
     if (SUPERVISOR == $nivel || USER_SEDE == $nivel) {
       $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
