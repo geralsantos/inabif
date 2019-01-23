@@ -42,7 +42,7 @@ cas.Num_Infec_contagiosa as "N° Atenc.Infecto-contagiosas",cas.Num_Inmunologia 
        
        ps.Plan_Intervencion as "Posee Plan Intervención.", ps.Meta_PAI as "Des.Meta Trazada en el PAI", ps.Informe_Tecnico as "Posee info. técnic. evolutivo",ps.Des_Informe_Tecnico as "Descr. del informe evolutivo", ps.Cumple_Intervencion as "Cump. plan de intervención",ps.Grado_PAM as "Grado dependencia de las PAM",ps.EnfermedaCronicasDegenerativas as "Enfermed. crónicas degenerat.",ps.Especificar_Enfermedad as "Especificar Enfermedad",
        
-       ps.Plan_Intervencion as "posee plan nutricional",ps.Meta_PAI as "Des meta trazada en el PAI",ps.Informe_Tecnico as "Posee inf. técnico evolutivo",ps.Des_Informe_Tecnico as "Des del informe evolutivo", ps.Cumple_Intervencion as "Cump. plan de intervención.",ps.Estado_Nutricional_IMC as "Estado Nutricional(IMC)", ps.Peso as "Peso(Kg. )", ps.Talla as "Talla(m )", ps.Hemoglobina as "Hemoglobina (gr./dl)"
+       pn.Plan_Intervencion as "posee plan nutricional",pn.Meta_PAI as "Des meta trazada en el PAI",pn.Informe_Tecnico as "Posee inf. técnico evolutivo",pn.Des_Informe_Tecnico as "Des del informe evolutivo", pn.Cumple_Intervencion as "Cump. plan de intervención.",pn.Estado_Nutricional_IMC as "Estado Nutricional(IMC)", pn.Peso as "Peso(Kg. )", pn.Talla as "Talla(m )", pn.Hemoglobina as "Hemoglobina (gr./dl)"
        ,
        pt.Plan_Intervencion as "plan interv. Trabajo Social", pt.Meta_PAI as "Meta trazada en el PAI.", pt.Informe_Tecnico as "Informe técnico evolutivo",pt.Des_Informe_Tecnico as "Des Informe evolutivo",pt.Cumple_Intervencion as "Cump.plan de intervención",
        
