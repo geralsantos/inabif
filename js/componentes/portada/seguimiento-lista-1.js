@@ -179,7 +179,7 @@ Vue.component('seguimiento-lista-1', {
             this.$http.post('buscar_fecha_matriz_general?view',{}).then(function(response){
                 if( response.body.resultado ){
                     if(response.body.fecha){
-                        this.fecha = "La matriz fue generada el: " + moment(response.body.fecha, "DD-MMM-YY").format("DD-MM-YYYY HH:mm:ss");
+                        this.fecha = "La matriz fue generada el: " + moment(response.body.fecha, "DD-MMM-YY HH:mm:ss").format("DD-MM-YYYY HH:mm:ss");
                     }
                 }
 
