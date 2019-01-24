@@ -955,7 +955,10 @@ class portada extends App{
 		$tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
 		$filtro_centro = "tc.tipo_centro_id = ".$tipo_centro_id;
 		$innner_centro_atencion = "";
-	}
+  }
+  $anio = date("Y",strtotime($_POST["fecha_inicial"]));
+  $mes = date("F",strtotime($_POST["fecha_final"])); 
+  $fecha_inicial = date("d-m-Y",strtotime($_POST["fecha_final"])); 
 	$fecha = " BETWEEN UPPER('".$_POST["fecha_inicial"]."') AND UPPER('".$_POST["fecha_final"]."')";
    /* $fecha = " BETWEEN UPPER('".$_POST["fecha_inicial"]."') AND UPPER('".$_POST["fecha_final"]."')";
 	$residentes = "select distinct re.id, re.nombre as nombre_residente, re.apellido_p, re.apellido_m, pa.nombre as nombre_pais , ubi.NOMDEPT as nombre_departamento, ubi.nomprov as nombre_provincia, ubi.nomdist as nombre_distrito, (CASE sexo WHEN 'h' THEN 'Hombre' ELSE 'Mujer' END) as sexo_residente ,re.fecha_creacion as fecha from residente re
@@ -967,25 +970,9 @@ class portada extends App{
 	$residentes = $modelo->executeQuery($residentes);*/
   $residente_html = "";
   $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
-    switch ($tipo_centro_id) {
-		case '1': /*ppd*/
-		$parent_id="2,25";
-		/*$campos = array("CarCentroServicio"=>"COD_ENTIDAD,NOM_ENTIDAD as ENTIDAD,COD_LINEA,LINEA_INTERVENCION,COD_SERVICIO,NOM_SERVICIO,UBIGEO_INE as UBIGEO_CA,(select NOMDEPT,NOMPROV,NOMDIST from ubigeo where CODDIST=CarCentroServicio.UBIGEO_INE) as UBIGEO_TODO,CENTRO_POBLADO as CCPP_CA,CENTRO_RESIDENCIA as AREA_RES_CA,COD_CENTROATENCION as COD_CA,NOM_CENTROATENCION AS NOM_CA,re.id as COD_RESIDENTE,re.NOMBRE AS NOM_RESIDENTE, re.apellido_pd AS APE_PAT_RESIDENTE, re.apellido_m as APE_MAT_RESIDENTE, ");*/
-		/*$campos = "cs.COD_ENTIDAD,cs.NOM_ENTIDAD as ENTIDAD,cs.COD_LINEA,cs.LINEA_INTERVENCION,cs.COD_SERVICIO,cs.NOM_SERVICIO,cs.UBIGEO_INE as UBIGEO_CA,(select NOMDEPT,NOMPROV,NOMDIST from ubigeo where CODDIST=cs.UBIGEO_INE) as UBIGEO_TODO,cs.CENTRO_POBLADO as CCPP_CA,cs.CENTRO_RESIDENCIA as AREA_RES_CA,cs.COD_CENTROATENCION as COD_CA,cs.NOM_CENTROATENCION AS NOM_CA,re.id as COD_RESIDENTE,re.NOMBRE AS NOM_RESIDENTE, re.apellido_pd AS APE_PAT_RESIDENTE, re.apellido_m as APE_MAT_RESIDENTE, ci.Tipo_Documento as TIP_DOC_USU, ci.Numero_Documento as NRO_DOC_USU,iu.Fecha_Nacimiento as FEC_NAC_RESIDENTE, iu.Edad as EDAD_RESIDENTE, iu.Sexo as SEXO_RESIDENTE, '' as DIR_USU, re.distrito_naci_cod as UBIGEO_USU,(select NOMDEPT,NOMPROV,NOMDIST from ubigeo where CODDIST=re.distrito_naci_cod) as UBIGEO_USU,ci.FECHA_CREACION as FEC_INGRESO, '' as PERFIL_ING,da.Institucion_derivado as VIA_ING, sn.Discapacidad as FLG_DISCAP, re.Estado as EST_RESIDENTE,eg.Fecha_Egreso as FEC_EGRE, eg.Motivo_Egreso as MOTIVO_EGRE, da.Fecha_Reingreso as FEC_REING, '' as Grupo etario,eg.Traslado as TRASLADO, eg.Fallecimiento as FALLECIMIENTO,eg.Reinsercion AS Reinsercion, eg.Aus as ASEGURAMIENTO_UNIVERSAL, eg.Constancia_Naci as PARTIDA_DE_NACIMIENTO, eg.DNI AS DNI,'' as EDUCACION ,eg.Reinsercion AS Reinsercion_Familiar ";
-		$from = " residente re inner join CarCentroServicio cs on (re.id = cs.residente_id ) left join CarCondicionIngreso ci on (ci.Residente_Id=re.id) left join CarIdentificacionUsuario iu on (iu.Residente_Id=re.id) left join CarDatosAdmision da on (da.Residente_Id=re.id) left join CarSaludNutricion sn on (sn.Residente_Id=re.id) left join CarEgresoGeneral eg on (eg.Residente_Id=re.id)";*/
-		$campos = "cs.COD_ENTIDAD,cs.NOM_ENTIDAD as ENTIDAD,cs.COD_LINEA,cs.LINEA_INTERVENCION,cs.COD_SERVICIO,cs.NOM_SERVICIO,cs.UBIGEO_INE as UBIGEO_CA,cs.CENTRO_POBLADO as CCPP_CA,cs.CENTRO_RESIDENCIA as AREA_RES_CA,cs.COD_CENTROATENCION as COD_CA,cs.NOM_CENTROATENCION AS NOM_CA,re.id as COD_RESIDENTE,re.NOMBRE AS NOM_RESIDENTE, re.apellido_p AS APE_PAT_RESIDENTE, re.apellido_m as APE_MAT_RESIDENTE, ci.Tipo_Documento as TIP_DOC_USU, ci.Numero_Documento as NRO_DOC_USU,iu.Fecha_Nacimiento as FEC_NAC_RESIDENTE, iu.Edad as EDAD_RESIDENTE, iu.Sexo as SEXO_RESIDENTE, '' as DIR_USU, re.distrito_naci_cod as UBIGEO_USU,ci.FECHA_CREACION as FEC_INGRESO, '' as PERFIL_ING,da.Institucion_derivado as VIA_ING, sn.Discapacidad as FLG_DISCAP, re.Estado as EST_RESIDENTE,eg.Fecha_Egreso as FEC_EGRE, eg.Motivo_Egreso as MOTIVO_EGRE, da.Fecha_Reingreso as FEC_REING, '' as Grupo_etario,eg.Traslado as TRASLADO, eg.Fallecimiento as FALLECIMIENTO,eg.Reinsercion AS Reinsercion, eg.Aus as ASEGURAMIENTO_UNIVERSAL, eg.Constancia_Naci as PARTIDA_DE_NACIMIENTO, eg.DNI AS DNI,'' as EDUCACION ,eg.Reinsercion AS Reinsercion_Familiar ";
-		$from = " residente re left join CarCentroServicio cs on (re.id = cs.residente_id ) left join CarCondicionIngreso ci on (ci.Residente_Id=re.id) left join CarIdentificacionUsuario iu on (iu.Residente_Id=re.id) left join CarDatosAdmision da on (da.Residente_Id=re.id) left join CarSaludNutricion sn on (sn.Residente_Id=re.id) left join CarEgresoGeneral eg on (eg.Residente_Id=re.id)";
-		break;
-		case '2': /*pam*/
-		$parent_id="27,43";
-		break;
-		case '3':
-		$parent_id="46,70";
-		break;
-		default:
-		$parent_id="2,25";
-			break;
-	}
+  
+  include 'consultas_preparadas_rub.php';
+
 	$where = " WHERE to_char(da.fecha_edita,'DD-MON-YY') ".$fecha." AND to_char(eg.fecha_egreso,'DD-MON-YY') ".$fecha;
 	$query = "SELECT distinct ".$campos." FROM ".$from;
 	$residentes = $modelo->executeQuery($query);
