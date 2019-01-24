@@ -876,7 +876,7 @@ class portada extends App{
               }
               $html_modulo = $html_modulo . $grupo_html."<tr><td></td></tr><tr><td></td></tr>";
             }
-            break;
+            //break;
         }
         $table = '<table>'.$html_modulo.'</table>';
         if ($modulos)
