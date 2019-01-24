@@ -873,7 +873,7 @@ class portada extends App{
         foreach ($modulos as $key => $modulo)
         {
           if (ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel) {
-          $modulo = $modulo.$tipo_centro_dependiente[$key].' '.$centro_id_dependiente[$key].' order by re.id desc';
+          $modulo = $modulo.$tipo_centro_dependiente[$key].' '.$centro_id_dependiente[$key];
           if ($key == PPD) {
             $modulo = $modulo.' order by cu.residente_id desc';
             }else if($key == PAM){
