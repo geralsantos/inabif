@@ -848,24 +848,38 @@ class portada extends App{
         }else if (SUPERVISOR == $nivel || USER_SEDE== $nivel){
           $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
           $modulos = [$modulos[$tipo_centro]];
+          if ($tipo_centro == PPD) {
+            $modulo = $modulo.' order by cu.residente_id desc';
+            }else if($tipo_centro == PAM){
+            $modulo = $modulo.' order by pdi.residente_id desc';
+            }else if($tipo_centro == NNA){
+            $modulo = $modulo.' order by nir.residente_id desc';
+            }
         }else if (REGISTRADOR == $nivel || RESPONSABLE_INFORMACION== $nivel || USER_CENTRO== $nivel){
           $centro = $_SESSION["usuario"][0]["CENTRO_ID"];
           $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+          $modulos = $modulos[$tipo_centro];
+          if ($tipo_centro == PPD) {
+            $modulo = $modulo.' order by cu.residente_id desc';
+            }else if($tipo_centro == PAM){
+            $modulo = $modulo.' order by pdi.residente_id desc';
+            }else if($tipo_centro == NNA){
+            $modulo = $modulo.' order by nir.residente_id desc';
+            }
           $modulos = [$modulos[$tipo_centro]];
+
         }
         $html_modulo = "";
         foreach ($modulos as $key => $modulo)
         {
           if (ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel) {
           $modulo = $modulo.$tipo_centro_dependiente[$key].' '.$centro_id_dependiente[$key].' order by re.id desc';
-          }else {
-            if ($tipo_centro == PPD) {
+          if ($key == PPD) {
             $modulo = $modulo.' order by cu.residente_id desc';
-              
-            }else if($tipo_centro == PAM){
+            }else if($key == PAM){
             $modulo = $modulo.' order by pdi.residente_id desc';
              
-            }else if($tipo_centro == NNA){
+            }else if($key == NNA){
             $modulo = $modulo.' order by nir.residente_id desc';
             }
           }
