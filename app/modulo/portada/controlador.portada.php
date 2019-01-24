@@ -859,7 +859,15 @@ class portada extends App{
           if (ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel) {
           $modulo = $modulo.$tipo_centro_dependiente[$key].' '.$centro_id_dependiente[$key].' order by re.id desc';
           }else {
-            $modulo = $modulo.' order by re.id desc';
+            if ($tipo_centro == PPD) {
+            $modulo = $modulo.' order by cu.residente_id desc';
+              
+            }else if($tipo_centro == PAM){
+            $modulo = $modulo.' order by pdi.residente_id desc';
+             
+            }else if($tipo_centro == NNA){
+            $modulo = $modulo.' order by nir.residente_id desc';
+            }
           }
             $modulo = $modelo->executeQuery($modulo);
             $residentes = array();
