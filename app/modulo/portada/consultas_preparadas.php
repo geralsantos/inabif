@@ -94,12 +94,20 @@ cas.Num_Infec_contagiosa as "N° Atenc.Infecto-contagiosas",cas.Num_Inmunologia 
          nas.Nro_Arte as "N°Arte (Musica,danza,teatro)",nas.Nro_BioHuerto as "N° Biohuerto",nas.Nro_Zapateria as "N° Calzado y Zapatería",nas.Nro_Carpinteria as "N.Carpintería/Tallad.madera", nas.Nro_Ceramica as "N° Cerámica",nas.Nro_Crianza as "n° crianza animales",nas.Nro_Dibujo as "N° Dibujo y pintura.",nas.Nro_Tejido as "N° Tejidos y Telares",nas.Nro_Deportes as "N° Deporte - Entre otros",nas.Nro_Taller_Pro as "Talleres Productivos",
 
          ns.Intervencion as "Plan de intervención de salud",(SELECT nombre FROM diag_psiquiatrico_cie_10 where id =ns.Diagnostico_Psiquiatrico_1) as "Diag.Psiquiátr. 1 (CIE-10)",
-        (SELECT nombre FROM diag_psiquiatrico_cie_10 where id =ns.Diagnostico_Psiquiatrico_2) as "Diag.Psiquiátr. 2 (CIE-10)",
-        (SELECT nombre FROM diag_psiquiatrico_cie_10 where id =ns.Diagnostico_Psiquiatrico_3) as "Diag.Psiquiátr. 3 (CIE-10)",
-
-        (SELECT nombre FROM diag_neurologico_cie_10 where id =ns.Diagnostico_Neurologico_1) as "Diag.Neurológ. 1 (CIE-10)",
-        (SELECT nombre FROM diag_neurologico_cie_10 where id =ns.Diagnostico_Neurologico_2) as "Diag.Neurológ. 2 (CIE-10)",
-        (SELECT nombre FROM diag_neurologico_cie_10 where id =ns.Diagnostico_Neurologico_3) as "Diag.Neurológ. 3 (CIE-10)"
+         (SELECT nombre FROM diag_psiquiatrico_cie_10 where id =ns.Diagnostico_Psiquiatrico_2) as "Diag.Psiquiátr. 2 (CIE-10)",
+         (SELECT nombre FROM diag_psiquiatrico_cie_10 where id =ns.Diagnostico_Psiquiatrico_3) as "Diag.Psiquiátr. 3 (CIE-10)",
+ 
+         (SELECT nombre FROM diag_neurologico_cie_10 where id =ns.Diagnostico_Neurologico_1) as "Diag.Neurológ. 1 (CIE-10)",
+         (SELECT nombre FROM diag_neurologico_cie_10 where id =ns.Diagnostico_Neurologico_2) as "Diag.Neurológ. 2 (CIE-10)",
+         (SELECT nombre FROM diag_neurologico_cie_10 where id =ns.Diagnostico_Neurologico_3) as "Diag.Neurológ. 3 (CIE-10)",
+ 
+         (SELECT nombre FROM diag_cronico_cie_10 where id =ns.Diagnostico_Cronico_1) as "Diag.Crónico. 1 (CIE-10)",
+         (SELECT nombre FROM diag_cronico_cie_10 where id =ns.Diagnostico_Cronico_2) as "Diag.Crónico. 2 (CIE-10)",
+         (SELECT nombre FROM diag_cronico_cie_10 where id =ns.Diagnostico_Cronico_3) as "Diag.Crónico. 3 (CIE-10)",
+ 
+         (SELECT nombre FROM diag_agudo_cie_10 where id =ns.Diagnostico_Agudo_1) as "Diag.Agudo. 1 (CIE-10)",
+         (SELECT nombre FROM diag_agudo_cie_10 where id =ns.Diagnostico_Agudo_2) as "Diag.Agudo. 2 (CIE-10)",
+         (SELECT nombre FROM diag_agudo_cie_10 where id =ns.Diagnostico_Agudo_3) as "Diag.Agudo. 3 (CIE-10)"
           
         
 
