@@ -847,7 +847,7 @@ class portada extends App{
           /* no afecta en la consulta ya que se listan todos los centros de todos los tipos de centros */
         }else if (SUPERVISOR == $nivel || USER_SEDE== $nivel){
           $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
-          $modulos = [$modulos[$tipo_centro]];
+          $modulos = $modulos[$tipo_centro];
           if ($tipo_centro == PPD) {
             $modulos = $modulos.' order by cu.residente_id desc';
             }else if($tipo_centro == PAM){
@@ -855,6 +855,7 @@ class portada extends App{
             }else if($tipo_centro == NNA){
             $modulos = $modulos.' order by nir.residente_id desc';
             }
+            $modulos = [$modulos];
         }else if (REGISTRADOR == $nivel || RESPONSABLE_INFORMACION== $nivel || USER_CENTRO== $nivel){
           $centro = $_SESSION["usuario"][0]["CENTRO_ID"];
           $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
@@ -866,7 +867,7 @@ class portada extends App{
             }else if($tipo_centro == NNA){
             $modulos = $modulos.' order by nir.residente_id desc';
             }
-          $modulos = [$modulos[$tipo_centro]];
+          $modulos = [$modulos];
 
         }
         $html_modulo = "";
