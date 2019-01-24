@@ -857,7 +857,9 @@ class portada extends App{
         foreach ($modulos as $key => $modulo)
         {
           if (ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel) {
-          $modulo = $modulo.$tipo_centro_dependiente[$key].' '.$centro_id_dependiente[$key];
+          $modulo = $modulo.$tipo_centro_dependiente[$key].' '.$centro_id_dependiente[$key].' order by re.id desc';
+          }else {
+            $modulo = $modulo.' order by re.id desc';
           }
             $modulo = $modelo->executeQuery($modulo);
             $residentes = array();
