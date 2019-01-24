@@ -94,26 +94,28 @@ cas.Num_Infec_contagiosa as "N° Atenc.Infecto-contagiosas",cas.Num_Inmunologia 
          nas.Nro_Arte as "N°Arte (Musica,danza,teatro)",nas.Nro_BioHuerto as "N° Biohuerto",nas.Nro_Zapateria as "N° Calzado y Zapatería",nas.Nro_Carpinteria as "N.Carpintería/Tallad.madera", nas.Nro_Ceramica as "N° Cerámica",nas.Nro_Crianza as "n° crianza animales",nas.Nro_Dibujo as "N° Dibujo y pintura.",nas.Nro_Tejido as "N° Tejidos y Telares",nas.Nro_Deportes as "N° Deporte - Entre otros",nas.Nro_Taller_Pro as "Talleres Productivos",
 
          ns.Intervencion as "Plan de intervención de salud",(SELECT nombre FROM diag_psiquiatrico_cie_10 where id =ns.Diagnostico_Psiquiatrico_1) as "Diag.Psiquiátr. 1 (CIE-10)",
-        (SELECT nombre FROM diag_psiquiatrico_cie_10 where id =ns.Diagnostico_Psiquiatrico_2) as "Diag.Psiquiátr. 2 (CIE-10)",
-        (SELECT nombre FROM diag_psiquiatrico_cie_10 where id =ns.Diagnostico_Psiquiatrico_3) as "Diag.Psiquiátr. 3 (CIE-10)",
-
-        (SELECT nombre FROM diag_neurologico_cie_10 where id =ns.Diagnostico_Neurologico_1) as "Diag.Neurológ. 1 (CIE-10)",
-        (SELECT nombre FROM diag_neurologico_cie_10 where id =ns.Diagnostico_Neurologico_2) as "Diag.Neurológ. 2 (CIE-10)",
-        (SELECT nombre FROM diag_neurologico_cie_10 where id =ns.Diagnostico_Neurologico_3) as "Diag.Neurológ. 3 (CIE-10)",
-
-        (SELECT nombre FROM diag_cronico_cie_10 where id =ns.Diagnostico_Cronico_1) as "Diag.Crónico. 1 (CIE-10)",
-        (SELECT nombre FROM diag_cronico_cie_10 where id =ns.Diagnostico_Cronico_2) as "Diag.Crónico. 2 (CIE-10)",
-        (SELECT nombre FROM diag_cronico_cie_10 where id =ns.Diagnostico_Cronico_3) as "Diag.Crónico. 3 (CIE-10)",
-
-        (SELECT nombre FROM diag_agudo_cie_10 where id =ns.Diagnostico_Agudo_1) as "Diag.Agudo. 1 (CIE-10)",
-        (SELECT nombre FROM diag_agudo_cie_10 where id =ns.Diagnostico_Agudo_2) as "Diag.Agudo. 2 (CIE-10)",
-        (SELECT nombre FROM diag_agudo_cie_10 where id =ns.Diagnostico_Agudo_3) as "Diag.Agudo. 3 (CIE-10)",
-
-        ns.VIH as "Residente presenta VIH",ns.ETS as "Residente presenta ETS",ns.TBC as "TBC",ns.HepatitisA as "Residente presen. HEPATITIS A",ns.HepatitisB as "Residente presen. HEPATITIS B",ns.Caries as "Residente presenta Caries",ns.Discapacidad,ns.Discapacidad_Fisica as "Presenta discapacidad física",ns.Discapacidad_Intelectual as "Presenta discap. intelectual.",ns.Discapacidad_Sensorial as "Presenta discap. sensorial.",ns.Discapacidad_Mental as "Presenta discap. mental.",ns.SIS,ns.ESSALUD,ns.Tipo_Seguro as "Otro tipo de Seguro de Salud",ns.CONADIS, ns.A_Medicina_General as "Nº Atención Medicina General",ns.A_Cirujia_General as "Nº Atención Cirugía General",ns.A_Traumatologia as "N° Atencion traumatología",
-        ns.A_Odontologia as "N° Atencion odontología",ns.A_Medicina_Interna as "N° Atencion Med.Interna",ns.A_Cardiovascular as "N° Atencion Cardiovascular",ns.A_Dermatologia as "N° Atencion Dematología",ns.A_Endrocrinologia as "N° Atencion Endocrinología", ns.A_Gastroentrologia as "N° Aten. Gastroenterología",
-        
-        ns.A_Gineco_Obstetricia as "N° Atenc.gineco-obstetricia",ns.A_Hermatologia as "N° Atencion hematología", ns.A_Nefrologia as "N° Atención Nefrología" ,
-        ns.A_Infectologia as "N° Atenc. Infectología",ns.A_Inmunologia as "N° Atenc.Inmunología",ns.A_Reumatologia as "N° Atención Reumatología.",ns.A_Neumologia as "N° Atenciones Neumología",ns.A_Neurologia as "N° Atencion Neurología",ns.A_Oftalmologia as "N° Atencion oftalmología", ns.A_Otorrinolaringologia as "N°Atenc.OTORRINOLARINGOLOGIA",ns.A_Oncologia as "N° Atencion Oncología",ns.A_Psicriatica as "N° Atencion psiquiatría",ns.A_Cirujia as "N° Atencion cirugía", ns.A_Urologia as "N° Atencion urología",ns.A_Nutricion as "N° Atencion nutrición",ns.A_Pedriatria as "Nº Atención Pedriatría/CRED",ns.A_Rehabilitacion as "Nº Aten.Medicina Física/Rehab",ns.A_Gineco_Menores as "Nº Atención Ginecología Menor",ns.A_Psicologia as "Nº Atención en Psicología",ns.Atencion_Total as "Sumar atenciones",ns.Hospitalizado as "Usuario hospitalizado",ns.Emergencia as "Aten. Emergencia hospitales",ns.CRED as "Inscrito en CRED",ns.Inmunizacion as "Carné de inmunización"
+         (SELECT nombre FROM diag_psiquiatrico_cie_10 where id =ns.Diagnostico_Psiquiatrico_2) as "Diag.Psiquiátr. 2 (CIE-10)",
+         (SELECT nombre FROM diag_psiquiatrico_cie_10 where id =ns.Diagnostico_Psiquiatrico_3) as "Diag.Psiquiátr. 3 (CIE-10)",
+ 
+         (SELECT nombre FROM diag_neurologico_cie_10 where id =ns.Diagnostico_Neurologico_1) as "Diag.Neurológ. 1 (CIE-10)",
+         (SELECT nombre FROM diag_neurologico_cie_10 where id =ns.Diagnostico_Neurologico_2) as "Diag.Neurológ. 2 (CIE-10)",
+         (SELECT nombre FROM diag_neurologico_cie_10 where id =ns.Diagnostico_Neurologico_3) as "Diag.Neurológ. 3 (CIE-10)",
+ 
+         (SELECT nombre FROM diag_cronico_cie_10 where id =ns.Diagnostico_Cronico_1) as "Diag.Crónico. 1 (CIE-10)",
+         (SELECT nombre FROM diag_cronico_cie_10 where id =ns.Diagnostico_Cronico_2) as "Diag.Crónico. 2 (CIE-10)",
+         (SELECT nombre FROM diag_cronico_cie_10 where id =ns.Diagnostico_Cronico_3) as "Diag.Crónico. 3 (CIE-10)",
+ 
+         (SELECT nombre FROM diag_agudo_cie_10 where id =ns.Diagnostico_Agudo_1) as "Diag.Agudo. 1 (CIE-10)",
+         (SELECT nombre FROM diag_agudo_cie_10 where id =ns.Diagnostico_Agudo_2) as "Diag.Agudo. 2 (CIE-10)",
+         (SELECT nombre FROM diag_agudo_cie_10 where id =ns.Diagnostico_Agudo_3) as "Diag.Agudo. 3 (CIE-10)",
+ 
+         ns.VIH as "Residente presenta VIH",ns.ETS as "Residente presenta ETS",ns.TBC as "TBC",ns.HepatitisA as "Residente presen. HEPATITIS A",ns.HepatitisB as "Residente presen. HEPATITIS B",ns.Caries as "Residente presenta Caries",ns.Discapacidad,ns.Discapacidad_Fisica as "Presenta discapacidad física",ns.Discapacidad_Intelectual as "Presenta discap. intelectual.",ns.Discapacidad_Sensorial as "Presenta discap. sensorial.",ns.Discapacidad_Mental as "Presenta discap. mental.",ns.SIS,ns.ESSALUD,ns.Tipo_Seguro as "Otro tipo de Seguro de Salud",ns.CONADIS, ns.A_Medicina_General as "Nº Atención Medicina General",ns.A_Cirujia_General as "Nº Atención Cirugía General",ns.A_Traumatologia as "N° Atencion traumatología",
+         ns.A_Odontologia as "N° Atencion odontología",ns.A_Medicina_Interna as "N° Atencion Med.Interna",ns.A_Cardiovascular as "N° Atencion Cardiovascular",ns.A_Dermatologia as "N° Atencion Dematología",ns.A_Endrocrinologia as "N° Atencion Endocrinología", ns.A_Gastroentrologia as "N° Aten. Gastroenterología",
+         
+         ns.A_Gineco_Obstetricia as "N° Atenc.gineco-obstetricia",ns.A_Hermatologia as "N° Atencion hematología", ns.A_Nefrologia as "N° Atención Nefrología" ,
+         ns.A_Infectologia as "N° Atenc. Infectología",ns.A_Inmunologia as "N° Atenc.Inmunología",ns.A_Reumatologia as "N° Atención Reumatología.",ns.A_Neumologia as "N° Atenciones Neumología",ns.A_Neurologia as "N° Atencion Neurología",ns.A_Oftalmologia as "N° Atencion oftalmología", ns.A_Otorrinolaringologia as "N°Atenc.OTORRINOLARINGOLOGIA",ns.A_Oncologia as "N° Atencion Oncología",ns.A_Psicriatica as "N° Atencion psiquiatría",ns.A_Cirujia as "N° Atencion cirugía", ns.A_Urologia as "N° Atencion urología",ns.A_Nutricion as "N° Atencion nutrición",ns.A_Pedriatria as "Nº Atención Pedriatría/CRED",ns.A_Rehabilitacion as "Nº Aten.Medic. Física/Rehab",ns.A_Gineco_Menores as "Nº Atenc. Ginecología Menor",ns.A_Psicologia as "Nº Atención en Psicología",ns.Atencion_Total as "Sumar atenciones",ns.Hospitalizado as "Usuario hospitalizado",ns.Emergencia as "Aten. Emergencia hospitales",ns.CRED as "Inscrito en CRED",ns.Inmunizacion as "Carné de inmunización"
+           
+         
           
         
 
