@@ -1557,28 +1557,33 @@ ini_set('session.gc_maxlifetime','1200');*/
   }
   public function generar_matriz_consolidado(){
     $modelo = new modeloPortada();
-
-	  $sql = "select * from tipo_centro_estado where estado=0 AND Periodo_Mes = ".date("m") . " AND Periodo_Anio = ".date("Y");
+    
+       $sql = "select * from tipo_centro_estado where estado=0 AND Periodo_Mes = ".date("m") . " AND Periodo_Anio = ".date("Y");
     $res = $modelo->executeQuery($sql );
     if($res){
-      echo json_encode(array("resultado"=>false, "mensaje"=>"No puede generar matriz hasta que todas las matrices de los tipos de centro estén generadas") ) ;
+    echo json_encode(array("resultado"=>false, "mensaje"=>"No puede generar matriz hasta que todas las matrices de los tipos de centro estén generadas") ) ;
     }else{
-      $res = $modelo->executeQuery("select * from matriz_consolidado where Periodo_Mes = ".date("m") . " AND Periodo_Anio = ".date("Y"));
-      if($res){
-        echo json_encode(array("resultado"=>false, "mensaje"=>"La matriz ya ha sido generada", "fecha"=>$res[0]["FECHA_CREACION"]) );
-      }else{
-        $res = $modelo->insertData("matriz_consolidado",array("estado"=>1, "Fecha_Creacion"=>date("d-M-y g.i.s"), "Periodo_Mes"=>date("m"),"Periodo_Anio"=>date("Y"),"usuario_crea"=>$_SESSION["usuario"][0]["ID"],"usuario_edita"=>$_SESSION["usuario"][0]["ID"] ));
-        if ($res){
-          echo json_encode(array("resultado"=>true) ) ;
-        }else{
-          echo json_encode(array("resultado"=>false, "mensaje"=>"Ha ocurrido un error") ) ;
-        }
-      }
-
+    $res = $modelo->executeQuery("select * from matriz_consolidado where Periodo_Mes = ".date("m") . " AND Periodo_Anio = ".date("Y"));
+    if($res){
+    $res = $modelo->updateData( "matriz_consolidado",array("fecha_edicion"=>date("d-M-y g.i.s")),array("id"=>$res[0]["id"]));
+    $result = $modelo->executeQuery("select * from matriz_consolidado where Periodo_Mes = ".date("m") . " AND Periodo_Anio = ".date("Y"));
+    if($res){
+    echo json_encode(array("resultado"=>true, "mensaje"=>"La matriz ya ha actualizada", "fecha"=>$result[0]["FECHA_EDICION"]) );
+    }else{
+    echo json_encode(array("resultado"=>false, "mensaje"=>"Ha ocurrido un error") ) ;
     }
-
-
-  }
+    
+    }else{
+    $res = $modelo->insertData("matriz_consolidado",array("estado"=>1, "Fecha_Creacion"=>date("d-M-y g.i.s"), "Periodo_Mes"=>date("m"),"Periodo_Anio"=>date("Y"),"usuario_crea"=>$_SESSION["usuario"][0]["ID"],"usuario_edita"=>$_SESSION["usuario"][0]["ID"] ));
+    if ($res){
+    echo json_encode(array("resultado"=>true) ) ;
+    }else{
+    echo json_encode(array("resultado"=>false, "mensaje"=>"Ha ocurrido un error") ) ;
+    }
+    }
+    
+    }
+    }
   public function consulta_reniec(){
     $modelo = new modeloPortada();
     $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
