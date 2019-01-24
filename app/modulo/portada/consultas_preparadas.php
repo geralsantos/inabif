@@ -80,14 +80,30 @@ cas.Num_Infec_contagiosa as "N° Atenc.Infecto-contagiosas",cas.Num_Inmunologia 
         
         nar.Movimiento_Poblacional as "Movimiento Poblacional",nar.Fecha_Ingreso as "Fecha de Ingreso del Usuario",nar.Fecha_Registro as "Fecha de Reingreso",(SELECT nombre FROM nna_instituciones where id=nar.Institucion_Derivacion) as "Institución que lo Derivó",(SELECT nombre FROM nna_motivos_ingreso where id =nar.Motivo_Ingreso) as "Mótivo de Ingreso",(SELECT nombre FROM nna_perfiles_ingreso WHERE id=nar.Perfil_Ingreso_P) as "PRINCIPAL PERFIL ING.primario",(SELECT nombre FROM nna_perfiles_ingreso WHERE id=nar.Perfil_Ingreso_S) as "PRINCIPAL PERFIL ING.secund.", nar.Tipo_Doc as "T.Documento Ingreso CAR", nar.Numero_Doc as "Número documento ingreso CAR",nar.Situacion_Legal as "Situación Legal",
         
-        nci.Tipo_Doc as "Tipo documento identidad", nci.Numero_Doc as "Número Documento Identidad",nci.Lee_Escribe as "sabe Leer y Escribir",(SELECT nombre FROM pam_nivel_educativo WHERE id = nci.Nivel_Educativo and codigo=\'pam\') as "Nivel Educativo",(SELECT nombre FROM pam_tipo_seguro_salud where id=nci.Tipo_Seguro) as "Tipo de seguro de salud",(SELECT nombre FROM pam_clasif_socioeconomico WHERE id=nci.SISFOH ) as "Clasificación Socioeconómica" 
+        nci.Tipo_Doc as "Tipo documento identidad", nci.Numero_Doc as "Número Documento Identidad",nci.Lee_Escribe as "sabe Leer y Escribir",(SELECT nombre FROM pam_nivel_educativo WHERE id = nci.Nivel_Educativo and codigo=\'pam\') as "Nivel Educativo",(SELECT nombre FROM pam_tipo_seguro_salud where id=nci.Tipo_Seguro) as "Tipo de seguro de salud",(SELECT nombre FROM pam_clasif_socioeconomico WHERE id=nci.SISFOH ) as "Clasificación Socioeconómica",     
+
+        nfr.Familiares as "Familiares Ubicados",(SELECT nombre FROM pam_tipo_parentesco where id=cci.Parentesco and codigo=\'ppd\') as "Tipo de parentesco",nfr.Tipo_Familia as "Tipo de Familia",(SELECT nombre FROM Nnaproblematica_familiar where id=nfr.Problematica_Familiar) as "Problemática Familiar",
+
+
+        nds.Discapacidad,nds.Discapacidad_Fisica as "Presenta Discap. Física",nds.Discapaciada_Intelectual as "Presenta Discap. Intelectual",nds.Discapacidad_Sensorial  as "Presenta Discap. Sensorial",nds.Discapacidad_Mental as "Presenta Discap. Mental",nds.Certificado as "El Dx es certificado", nds.Carnet_CANADIS "Tiene carnet del CONADIS",nds.Transtornos_Neuro as "Trastornos Neurológico",nds.Des_Transtorno_Neuro as "Especif.Trastorno Neurológico", nds.CRED as "Atenciones CRED",nds.Vacunas as "Recibió Vacunas", nds.Patologia_1 as "patología crónica 1",nds.Diagnostico_S1 as "Diagnósticos 1 según CIE 10",nds.Patologia_2 as "Patología Crónica 2",nds.Diagnostico_S3 as "Diagnósticos 3 según CIE 10",nds.Transtornos_Comportamiento as "Tr.Comportamiento/disociales",
+        nds.Tipo_Transtorno as "Tipo de Trastorno",nds.Gestante,nds.Semanas_Gestacion as "Semanas de Gestación",nds.Control_Prenatal as "Acudido Control Parental",nds.Hijos as "NNA tiene hijos", nds.Nro_Hijos as "Número de hijos en CAR",
+        nds.Nivel_Hemoglobina as "Nivel de Hemoglobina",nds.Anemia as "Presenta Anemia",nds.Peso as "Peso(Kg.)", nds.Talla as "Talla(m)", nds.Estado_Nutricional1 as "Estado nutricional 1(imc)",nds.Estado_Nutricional2 as "Estado nutricional 2(imc)",
+        
+        psm.trastorno_disociales as "Trast.compor. y/o disociales",psm.tipo_trastorno as "Tipo de Trastorno.",psm.Terapia_Fisica_Rehabilitacion as "Terap.Fisica y Rehabilitación",psm.Arte as "Arte (Musica, danza, teatro)",psm.Nro_Arte as "n° participa Arte en el mes", psm.Dibujo_Pintura as "Dibujo y pintura",psm.Nro_Arte_Dibujo_Pintura as "N° participa en Arte",psm.Manualidades,psm.Nro_Arte_Manualidades as "N° Participa en Arte.",psm.Otros as "Otros",psm.Nro_Arte_Otros as "Veces Participa en Arte",
+        
+        nts.Fase_Intervencion as "Fase de Intervención",nts.Estado_Usuario as "Estado del Usuario",nts.Plan_Intervencion  as "Plan Intervención",nts.SituacionL_NNA  as "Situación Legal NNA",nts.Familia_NNA  as "¿Cuenta con Familia Ubicada?",nts.SoporteF_NNA  as "NNa Cuenta Soporte FAmiliar",nts.Des_SoporteF as "Persona brindan sop. familiar",nts.Tipo_Familia as "Tipo de Familia.",nts.Problematica_Fami as "Problemática Familiar.", nts.NNA_Soporte_Fami as "NNA brindan sop. familiar",nts.Familia_SISFOH as "Familia Cuenta SISFOH", nts.Resultado_Clasificacion as "Resultado Clasificación",nts.Nro_VisitasNNA as "visitas fami. recibe cada NNA",nts.Participacion_EscuelaP as "N.Partici. Escuelas de Padres",nts.Consegeria_Familiar as "Consejerías/orientac. familia",nts.Soporte_Social as "Fami. usa redes sop. social",nts.Consejeria_Residentes as "N° Consej./orienta. Residente",nts.Charlas as "Nº Charlas Preven. - Promo.",nts.Visitas_Domicilarias as "Nº Visitas Domiciliarias", nts.Reinsercion_Familiar as "Plan de Reinserción familiar",nts.DNI as "Residente cuenta con DNI",nts.AUS_SIS as "Residente cuenta con AUS/SIS", nts.CONADIS as "Residen cuenta carnet CONADIS"
+        
 
         from 
         NNAInscripcionResidente nir 
         ,NNAAdmisionResidente nar 
         ,NNACondicionIResidente nci
+        ,NNAFamiliaresResidente nfr
+        ,NNADatosSaludResi nds 
+        ,NNATrabajoSocial nts  
+       
         ,centro_atencion ca 
         ,residente re
-        where nir.residente_id(+)=re.id and ca.id(+)= re.centro_id and nar.residente_id(+)=re.id and nci.residente_id(+)=re.id and re.tipo_centro_id=3 and ( (to_char(nir.fecha_creacion(+),\'DD-MON-YY\') '.$fecha.') and (to_char(ca.fecha_creacion(+),\'DD-MON-YY\') '.$fecha.') and (to_char(nar.fecha_creacion(+),\'DD-MON-YY\') '.$fecha.') and (to_char(nci.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') )  '.$where));
+        where nir.residente_id(+)=re.id and ca.id(+)= re.centro_id and nar.residente_id(+)=re.id and nci.residente_id(+)=re.id and nfr.residente_id(+)=re.id and nds.residente_id(+)=re.id and  re.tipo_centro_id=3 and ( (to_char(nir.fecha_creacion(+),\'DD-MON-YY\') '.$fecha.') and (to_char(ca.fecha_creacion(+),\'DD-MON-YY\') '.$fecha.') and (to_char(nar.fecha_creacion(+),\'DD-MON-YY\') '.$fecha.') and (to_char(nci.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(nfr.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(nds.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(nts.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.')  )   '.$where));
 
 ?>
