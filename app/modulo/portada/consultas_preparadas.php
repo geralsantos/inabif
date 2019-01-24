@@ -130,9 +130,9 @@ cas.Num_Infec_contagiosa as "N° Atenc.Infecto-contagiosas",cas.Num_Inmunologia 
 
        nss.Plan_Intervencion as "Plan de intervención salud.", nss.Meta_PAI as "Meta trazada en el PAI",nss.Informe_tecnico as "Posee info.técnico evolutivo",nss.Cumple_Intervencion as "CumpL. Plan de intervención", nss.Control_CRED as "Control CRED acorde a la Edad", nss.Vacunacion as "Esqu. vacunación acorde Edad",
 
-       nns.Plan_Intervencion as "Plan interven. nutricional.", nns.Meta_PAI as "Meta trazada en el PAI.",nns.Informe_Tecnico as "Posee infor.técnico evolutivo",nns.Cumple_Intervencion as "Cumplimiento P. intervención", nns.Estado_Nutricional_Peso as "estado nutricional 1 (Peso)", nns.Estado_Nutricional_Talla as "estado nutricional (tall)",nns.Hemoglobina as "Hemoglobina",nns.Analisis_Hemoglobina as "Análisis de la hemoglobina",
+       nns.Plan_Intervencion as "Plan interven. nutricional.", nns.Meta_PAI as "Meta trazada en el PAI.",nns.Informe_Tecnico as "Posee info.técnico evolutivo",nns.Cumple_Intervencion as "Cumplimiento P. intervención", nns.Estado_Nutricional_Peso as "estado nutricional 1 (Peso)", nns.Estado_Nutricional_Talla as "estado nutricional (tall)",nns.Hemoglobina as "Hemoglobina",nns.Analisis_Hemoglobina as "Análisis de la hemoglobina",
 
-       nes.Plan_Intervencion as "Plan intervención educativo", nes.Meta_PAI as "Meta traza. en el PAI.",nes.Informe_Tecnico as "Posee infor.técnico.evolutiv.",nes.Cumple_Intervencion as "Cumplimiento Pl. intervención", nes.Provino_Ano as "Residente Promovido de año", nes.Desempeno as "Desempeño académico favorable"
+       nes.Plan_Intervencion as "Plan intervención educativo", nes.Meta_PAI as "Meta traza. en el PAI.",nes.Informe_Tecnico as "Posee info.técnico.evolutiv.",nes.Cumple_Intervencion as "Cumpli. Plan intervención", nes.Provino_Ano as "Residente Promovido de año", nes.Desempeno as "Desempeño acad. favorable"
 
         from 
         NNAInscripcionResidente nir 
