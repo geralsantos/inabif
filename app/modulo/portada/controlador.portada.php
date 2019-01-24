@@ -849,22 +849,22 @@ class portada extends App{
           $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
           $modulos = [$modulos[$tipo_centro]];
           if ($tipo_centro == PPD) {
-            $modulo = $modulo.' order by cu.residente_id desc';
+            $modulos = $modulos.' order by cu.residente_id desc';
             }else if($tipo_centro == PAM){
-            $modulo = $modulo.' order by pdi.residente_id desc';
+            $modulos = $modulos.' order by pdi.residente_id desc';
             }else if($tipo_centro == NNA){
-            $modulo = $modulo.' order by nir.residente_id desc';
+            $modulos = $modulos.' order by nir.residente_id desc';
             }
         }else if (REGISTRADOR == $nivel || RESPONSABLE_INFORMACION== $nivel || USER_CENTRO== $nivel){
           $centro = $_SESSION["usuario"][0]["CENTRO_ID"];
           $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
           $modulos = $modulos[$tipo_centro];
           if ($tipo_centro == PPD) {
-            $modulo = $modulo.' order by cu.residente_id desc';
+            $modulos = $modulos.' order by cu.residente_id desc';
             }else if($tipo_centro == PAM){
-            $modulo = $modulo.' order by pdi.residente_id desc';
+            $modulos = $modulos.' order by pdi.residente_id desc';
             }else if($tipo_centro == NNA){
-            $modulo = $modulo.' order by nir.residente_id desc';
+            $modulos = $modulos.' order by nir.residente_id desc';
             }
           $modulos = [$modulos[$tipo_centro]];
 
