@@ -1,6 +1,8 @@
 <?php
 date_default_timezone_set('America/Lima');
-
+ini_set('max_execution_time',0);
+ini_set('memory_limit', '600M');
+ini_set('session.gc_maxlifetime','1200');
 class portada extends App{
     public function index(){
       if(!isset($_SESSION["usuario"])){
