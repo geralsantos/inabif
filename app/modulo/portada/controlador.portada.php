@@ -1401,7 +1401,7 @@ ini_set('session.gc_maxlifetime','1200');*/
             }
             if(empty($grupos)){
               $contar_modulos=1;
-              //$modulo_html = "";
+              $modulo_html = "";
               $grupo_html = "";
             }
             $html .= $modulo_html.$grupo_html;
@@ -1441,7 +1441,7 @@ ini_set('session.gc_maxlifetime','1200');*/
           }
           if(empty($grupos)){
             $contar_modulos =0;
-            //$modulo_html = "";
+            $modulo_html = "";
             $grupo_html = "";
           }
           $html .= $modulo_html.$grupo_html;
