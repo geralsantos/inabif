@@ -1588,7 +1588,7 @@ ini_set('session.gc_maxlifetime','1200');*/
       $modelo = new modeloPortada();
       $res = $modelo->executeQuery("select * from matriz_consolidado where Periodo_Mes = ".date("m") . " AND Periodo_Anio = ".date("Y"));
       if($res){
-        echo json_encode(array("resultado"=>true, "fecha"=>$result[0]["FECHA_EDICION"]) );
+        echo json_encode(array("resultado"=>true, "fecha"=>$res[0]["FECHA_EDICION"]) );
       }else{
         echo json_encode(array("resultado"=>false, "mensaje"=>"Ha ocurrido un error") ) ;
       }
