@@ -100,6 +100,6 @@ cas.Num_Infec_contagiosa as "N° Atenc.Infecto-contagiosas",cas.Num_Inmunologia 
 
         ,centro_atencion ca 
         ,residente re
-        where nir.residente_id(+)=re.id and ca.id(+)= re.centro_id and nar.residente_id(+)=re.id and nci.residente_id(+)=re.id and nfr.residente_id(+)=re.id and nds.residente_id(+)=re.id and nts.residente_id(+)=re.id and re.tipo_centro_id=3 and ( (to_char(nir.fecha_creacion(+),\'DD-MON-YY\') '.$fecha.') and (to_char(ca.fecha_creacion(+),\'DD-MON-YY\') '.$fecha.') and (to_char(nar.fecha_creacion(+),\'DD-MON-YY\') '.$fecha.') and (to_char(nci.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(nfr.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(nts.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and  (to_char(nds.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') )  '.$where));
+        where nir.residente_id(+)=re.id and ca.id(+)= re.centro_id and nar.residente_id(+)=re.id and nci.residente_id(+)=re.id and nfr.residente_id(+)=re.id and nds.residente_id(+)=re.id and re.tipo_centro_id=3 and ( (to_char(nir.fecha_creacion(+),\'DD-MON-YY\') '.$fecha.') and (to_char(ca.fecha_creacion(+),\'DD-MON-YY\') '.$fecha.') and (to_char(nar.fecha_creacion(+),\'DD-MON-YY\') '.$fecha.') and (to_char(nci.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(nfr.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and  (to_char(nds.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') )  '.$where));
 
 ?>
