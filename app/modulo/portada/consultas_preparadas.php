@@ -125,7 +125,14 @@ cas.Num_Infec_contagiosa as "N° Atenc.Infecto-contagiosas",cas.Num_Inmunologia 
  
        np.Plan_Intervencion as "Plan Interven. Psicológico",np.Presentacion_periodo as "Plan de Interven.psicológico",(SELECT nombre FROM nna_perfiles_ingreso where id = np.Perfil_Id) as "PRINCIPAL PERFIL ACTUAL", np.Intervencion_Individual as "N.Interven. terapeut. indiv.",np.Intervencion_Grupal as "N.Interven. terapéut. grupal", np.Nro_OrientacionP as "N. Consej./orientacio. psico.",np.Nro_OrientacionF as "N.Consej./orientacio familia2",np.Nro_Charlas as "N. charlas Preven./Prom.Psico",np.Nro_TLiderazgo as "Partici.Sesion. Taller Lider",np.Nro_TAutoestima as "Partici.Sesion.Tall. autoes.", np.Nro_TSexualidad as "Partici.Sesion.Tall. sexual.",np.Nro_TPrevencionEmb as "Ta.preven. embar. adolescente",np.Nro_TIgualdadG as "Taller igualdad genero",np.Nro_ViolenciaF as "TAller violencia Familiar",np.Nro_SaludM as "TAller salud mental",
 
-       nps.Plan_Intervencion as "plan interven. psicológico",nps.Des_Meta as "Desc.meta trazada en el pai",nps.Informe_Tecnico as "Posee info.técnico evolutivo",nps.Des_Informe_Tecnico as "Desc. del informe evolutivo", nps.Cumple_Intervencion as "Cump. plan de intervención", nps.Transtorno_Depresivo as "Presencia trastorno depresivo", nps.Severidad_Trans_Depresivo as "Severidad trastorno depresivo"
+       nps.Plan_Intervencion as "plan interven. psicológico",nps.Des_Meta as "Desc.meta trazada en el pai",nps.Informe_Tecnico as "Posee info.técnico evolutivo",nps.Des_Informe_Tecnico as "Desc. del informe evolutivo", nps.Cumple_Intervencion as "Cump. plan de intervención", nps.Transtorno_Depresivo as "Presencia trastorno depresivo", nps.Severidad_Trans_Depresivo as "Severidad trastorno depresivo",
+
+
+       nss.Plan_Intervencion as "Plan de intervención salud.", nss.Meta_PAI as "Meta trazada en el PAI",nss.Informe_tecnico as "Posee info.técnico evolutivo",nss.Cumple_Intervencion as "CumpL. Plan de intervención", nss.Control_CRED as "Control CRED acorde a la Edad", nss.Vacunacion as "Esqu. vacunación acorde Edad",
+
+       nns.Plan_Intervencion as "Plan interven. nutricional.", nns.Meta_PAI as "Meta trazada en el PAI.",nns.Informe_Tecnico as "Posee infor.técnico evolutivo",nns.Cumple_Intervencion as "Cumplimiento P. intervención", nns.Estado_Nutricional_Peso as "estado nutricional 1 (Peso)", nns.Estado_Nutricional_Talla as "estado nutricional (tall)",nns.Hemoglobina as "Hemoglobina",nns.Analisis_Hemoglobina as "Análisis de la hemoglobina",
+
+       nes.Plan_Intervencion as "Plan intervención educativo", nes.Meta_PAI as "Meta traza. en el PAI.",nes.Informe_Tecnico as "Posee infor.técnico.evolutiv.",nes.Cumple_Intervencion as "Cumplimiento Pl. intervención", nes.Provino_Ano as "Residente Promovido de año", nes.Desempeno as "Desempeño académico favorable"
 
         from 
         NNAInscripcionResidente nir 
@@ -139,13 +146,16 @@ cas.Num_Infec_contagiosa as "N° Atenc.Infecto-contagiosas",cas.Num_Inmunologia 
         ,NNANutricion nn 
         ,NNATerapiasOcupacionalL ntol 
         ,NNAEducacion ne 
-
- ,NNAFHabilidades nfh 
+        ,NNAFHabilidades nfh 
         ,NNAPsicologico np 
         ,NNAPsicologico_Semestral nps
 
+ ,NNASalud_Semestral nss 
+        ,NNAnutricion_Semestral nns
+        ,NNAEducacion_Semestral nes 
+
         ,centro_atencion ca 
         ,residente re
-        where nir.residente_id(+)=re.id and ca.id(+)= re.centro_id and nar.residente_id(+)=re.id and nci.residente_id(+)=re.id and nfr.residente_id(+)=re.id and nds.residente_id(+)=re.id and nts.residente_id(+)=re.id and nas.residente_id(+)=re.id and ns.residente_id(+)=re.id and nn.residente_id(+)=re.id and ntol.residente_id(+)=re.id and ne.residente_id(+)=re.id and nfh.residente_id(+)=re.id and np.residente_id(+)=re.id and nps.residente_id(+)=re.id and  re.tipo_centro_id=3 and ( (to_char(nir.fecha_creacion(+),\'DD-MON-YY\') '.$fecha.') and (to_char(ca.fecha_creacion(+),\'DD-MON-YY\') '.$fecha.') and (to_char(nar.fecha_creacion(+),\'DD-MON-YY\') '.$fecha.') and (to_char(nci.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(nfr.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and  (to_char(nds.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(nts.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(nas.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(ns.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(nn.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(ntol.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(ne.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(nfh.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(np.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.')  and (to_char(nps.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') )  '.$where));
+        where nir.residente_id(+)=re.id and ca.id(+)= re.centro_id and nar.residente_id(+)=re.id and nci.residente_id(+)=re.id and nfr.residente_id(+)=re.id and nds.residente_id(+)=re.id and nts.residente_id(+)=re.id and nas.residente_id(+)=re.id and ns.residente_id(+)=re.id and nn.residente_id(+)=re.id and ntol.residente_id(+)=re.id and ne.residente_id(+)=re.id and nfh.residente_id(+)=re.id and np.residente_id(+)=re.id and nps.residente_id(+)=re.id and  nss.residente_id(+)=re.id and nns.residente_id(+)=re.id and nes.residente_id(+)=re.id and  re.tipo_centro_id=3 and ( (to_char(nir.fecha_creacion(+),\'DD-MON-YY\') '.$fecha.') and (to_char(ca.fecha_creacion(+),\'DD-MON-YY\') '.$fecha.') and (to_char(nar.fecha_creacion(+),\'DD-MON-YY\') '.$fecha.') and (to_char(nci.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(nfr.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and  (to_char(nds.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(nts.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(nas.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(ns.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(nn.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(ntol.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(ne.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(nfh.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(np.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.')  and (to_char(nps.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(nss.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(nns.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(nes.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.'))  '.$where));
 
 ?>
