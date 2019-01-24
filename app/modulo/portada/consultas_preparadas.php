@@ -119,9 +119,13 @@ cas.Num_Infec_contagiosa as "N° Atenc.Infecto-contagiosas",cas.Num_Inmunologia 
        
        ntol.Nro_Talleres_E as "Nº Talleres Educativos", ntol.Nro_Campanas as "N.Camp. Preven/Promocionales", ntol.Nro_Atencion_Fisi as "N.Atención en Terapia Física",ntol.Nro_Atencon_Ocupa as "N. Aten. Terapia Ocupacional", ntol.Nro_Atencion_Lengua as "N.Aten. Terapia de Lenguaje",
        
-       ne.Plan_Intervencion as "plan interv. Educativo", ne.Sistema_Educativo as "Matriculado sistema educativo", ne.NEducativo as "Nivel que cursa",ne.Grado,ne.Asitencia as "Acude mes centro estudios",ne.Nro_Asistencia as "N. de días de asistencia.",ne.Nro_Reforzamientos as "N. sesiones reforza. escolar",ne.Nro_Aprestamiento as "N. de Aprestamiento Escolar",ne.Nro_Consejera as "n. consejerías/orientaciones",ne.Estado_Participacion as "entrena. profes./técnico",ne.ActividadOficio as "Especificar actividad/oficio"
+       ne.Plan_Intervencion as "plan interv. Educativo", ne.Sistema_Educativo as "Matriculado sistema educativo", ne.NEducativo as "Nivel que cursa",ne.Grado,ne.Asitencia as "Acude mes centro estudios",ne.Nro_Asistencia as "N. de días de asistencia.",ne.Nro_Reforzamientos as "N. sesiones reforza. escolar",ne.Nro_Aprestamiento as "N. de Aprestamiento Escolar",ne.Nro_Consejera as "n. consejerías/orientaciones",ne.Estado_Participacion as "entrena. profes./técnico",ne.ActividadOficio as "Especificar actividad/oficio",
           
-        
+         nfh.Participacion as "NNA activ personales/sociales",nfh.FInicio_Actividades as "Fecha inicio Actividades NNA",nfh.FFin_Actividades as "Fecha fin actividades NNA",nfh.Termino_Actividades as "NNA concluyó actividades",nfh.Fortalecer_Actividades as "NNA logró fortalecer habilid.",
+ 
+       np.Plan_Intervencion as "Plan Interven. Psicológico",np.Presentacion_periodo as "Plan de Interven. psicológico",(SELECT nombre FROM nna_perfiles_ingreso where id = np.Perfil_Id) as "PRINCIPAL PERFIL ACTUAL", np.Intervencion_Individual as "Nº Interven. terapeut. indiv.",np.Intervencion_Grupal as "Nº Interven. terapéut. grupal", np.Nro_OrientacionP as "Nº Consej./orientacio. psico.",np.Nro_OrientacionF as "NºConsej./orientacio familia2",np.Nro_Charlas as "N° charlas Preven./Prom.Psico",np.Nro_TLiderazgo as "Partici.Sesion. Taller Lider",np.Nro_TAutoestima as "Partici.Sesion.Tall. autoes.", np.Nro_TSexualidad as "Partici.Sesion.Tall. sexual.",np.Nro_TPrevencionEmb as "Ta.preven. embar. adolescente",np.Nro_TIgualdadG as "Taller igualdad genero",np.Nro_ViolenciaF as "TAller violencia Familiar",np.Nro_SaludM as "TAller salud mental",
+
+       nps.Plan_Intervencion as "plan intervención psicológico",nps.Des_Meta as "Desc.meta trazada en el pai",nps.Informe_Tecnico as "Posee info. técnico evolutivo",nps.Des_Informe_Tecnico as "Desc. del informe evolutivo", nps.Cumple_Intervencion as "Cump. plan de intervención", nps.Transtorno_Depresivo as "Presencia trastorno depresivo", nps.Severidad_Trans_Depresivo as "Severidad trastorno depresivo"
 
         from 
         NNAInscripcionResidente nir 
@@ -132,14 +136,16 @@ cas.Num_Infec_contagiosa as "N° Atenc.Infecto-contagiosas",cas.Num_Inmunologia 
         ,NNATrabajoSocial nts  
         ,NNAActividadesSociorecrea nas 
         ,NNASalud ns 
-
- ,NNANutricion nn 
+        ,NNANutricion nn 
         ,NNATerapiasOcupacionalL ntol 
         ,NNAEducacion ne 
 
+ ,NNAFHabilidades nfh 
+        ,NNAPsicologico np 
+        ,NNAPsicologico_Semestral nps
 
         ,centro_atencion ca 
         ,residente re
-        where nir.residente_id(+)=re.id and ca.id(+)= re.centro_id and nar.residente_id(+)=re.id and nci.residente_id(+)=re.id and nfr.residente_id(+)=re.id and nds.residente_id(+)=re.id and nts.residente_id(+)=re.id and nas.residente_id(+)=re.id and ns.residente_id(+)=re.id and nn.residente_id(+)=re.id and ntol.residente_id(+)=re.id and ne.residente_id(+)=re.id and  re.tipo_centro_id=3 and ( (to_char(nir.fecha_creacion(+),\'DD-MON-YY\') '.$fecha.') and (to_char(ca.fecha_creacion(+),\'DD-MON-YY\') '.$fecha.') and (to_char(nar.fecha_creacion(+),\'DD-MON-YY\') '.$fecha.') and (to_char(nci.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(nfr.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and  (to_char(nds.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(nts.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(nas.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(ns.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(nn.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(ntol.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(ne.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') )  '.$where));
+        where nir.residente_id(+)=re.id and ca.id(+)= re.centro_id and nar.residente_id(+)=re.id and nci.residente_id(+)=re.id and nfr.residente_id(+)=re.id and nds.residente_id(+)=re.id and nts.residente_id(+)=re.id and nas.residente_id(+)=re.id and ns.residente_id(+)=re.id and nn.residente_id(+)=re.id and ntol.residente_id(+)=re.id and ne.residente_id(+)=re.id and nfh.residente_id(+)=re.id and np.residente_id(+)=re.id and nps.residente_id(+)=re.id and  re.tipo_centro_id=3 and ( (to_char(nir.fecha_creacion(+),\'DD-MON-YY\') '.$fecha.') and (to_char(ca.fecha_creacion(+),\'DD-MON-YY\') '.$fecha.') and (to_char(nar.fecha_creacion(+),\'DD-MON-YY\') '.$fecha.') and (to_char(nci.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(nfr.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and  (to_char(nds.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(nts.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(nas.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(ns.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(nn.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(ntol.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(ne.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(nfh.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(np.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.')  and (to_char(nps.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') )  '.$where));
 
 ?>
