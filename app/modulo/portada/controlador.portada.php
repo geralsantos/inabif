@@ -959,52 +959,56 @@ class portada extends App{
   $anio = date("Y",strtotime($_POST["fecha_inicial"]));
   $mes = date("F",strtotime($_POST["fecha_final"])); 
   $fecha_inicial = date("d-m-Y",strtotime($_POST["fecha_final"])); 
-	$fecha = " BETWEEN UPPER('".$_POST["fecha_inicial"]."') AND UPPER('".$_POST["fecha_final"]."')";
-   /* $fecha = " BETWEEN UPPER('".$_POST["fecha_inicial"]."') AND UPPER('".$_POST["fecha_final"]."')";
-	$residentes = "select distinct re.id, re.nombre as nombre_residente, re.apellido_p, re.apellido_m, pa.nombre as nombre_pais , ubi.NOMDEPT as nombre_departamento, ubi.nomprov as nombre_provincia, ubi.nomdist as nombre_distrito, (CASE sexo WHEN 'h' THEN 'Hombre' ELSE 'Mujer' END) as sexo_residente ,re.fecha_creacion as fecha from residente re
-	inner join tipo_centro tc on(tc.id=re.tipo_centro_id)
-	".$innner_centro_atencion."
-	inner join paises pa on(pa.id=re.pais_id)
-	inner join ubigeo ubi on(ubi.coddist=re.distrito_naci_cod)
-	where to_char(re.fecha_creacion,'DD-MON-YY') ".$fecha." AND ".$filtro_centro." ";
-	$residentes = $modelo->executeQuery($residentes);*/
-  $residente_html = "";
-  $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+  $fecha_final = date("d-m-Y",strtotime($_POST["fecha_final"])); 
+	$fecha = " BETWEEN UPPER('".$fecha_inicial."') AND UPPER('".$fecha_final."')";
+  
   
   include 'consultas_preparadas_rub.php';
 
-	$where = " WHERE to_char(da.fecha_edita,'DD-MON-YY') ".$fecha." AND to_char(eg.fecha_egreso,'DD-MON-YY') ".$fecha;
-	$query = "SELECT distinct ".$campos." FROM ".$from;
-	$residentes = $modelo->executeQuery($query);
-	$head_html = "";
-	$body_html = "";
-	foreach ($residentes as $key => $value) {
-		if ($key==0) {
-            $keys = array_keys($value);
-            $head_html .="<tr>";
-            foreach ($keys as $key)
-            {
-              $head_html .="<th>$key</th>";
-            }
-            $head_html .="</tr>";
-          }else {
-			$body_html .="<tr>";
-			$keys = array_keys($value);
-            foreach ($keys as $key)
-            {
-              $body_html .="<td>".$value[$key]."</td>";
-			}
-			$body_html .="</tr>";
-		  }
+  $where = " WHERE to_char(da.fecha_edita,'DD-MON-YY') ".$fecha." AND to_char(ceg.fecha_egreso,'DD-MON-YY') ".$fecha;
+  
 
-	}
-    $table = '<table><thead>'.$head_html.'</thead><tbody>'.$body_html.'</tbody></table>';
-    if ($body_html)
-    {
-      echo json_encode(array("data"=>$table) ) ;
-    }else{
-      return false;
+	foreach ($modulos as $key => $modulo)
+  {
+    if (ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel) {
+      $modulo = $modulo.$tipo_centro_dependiente[$key].' '.$centro_id_dependiente[$key];
     }
+      $modulo = $modelo->executeQuery($modulo);
+      $residentes = array();
+      $grupo_html = "";
+      if ($modulo) {
+        foreach ($modulo as $key => $grupo) {
+          if (!in_array($grupo["CODIGORESIDENTE"],$residentes)) {
+            if ($key==0) {
+              $keys = array_keys($grupo);
+              $grupo_html .="<tr>";
+              foreach ($keys as $key)
+              {
+                $grupo_html .="<th style='background-color:yellow;'>".strtoupper($key)."</th>";
+              }
+              $grupo_html .="</tr>";
+            }
+            $grupo_values = array_values($grupo);
+            $grupo_html .= "<tr>";
+            foreach ($grupo_values as $key => $value) {
+              $grupo_html .="<td style='text-align:left;'>".$value."</td>";
+            }
+            $grupo_html .= "</tr>";
+            $residentes[] = $grupo["CODIGORESIDENTE"];
+          }
+        }
+        $html_modulo = $html_modulo . $grupo_html."<tr><td></td></tr><tr><td></td></tr>";
+      }
+      //break;
+  }
+  $table = '<table>'.$html_modulo.'</table>';
+  if ($modulos)
+  {
+    echo json_encode(array("data"=>$table) ) ;
+    return true;
+  }else{
+    return false;
+  }
   }
   public function mostrar_reporte_nominal(){
     $modelo = new modeloPortada();
