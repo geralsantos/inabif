@@ -135,7 +135,7 @@ cas.Num_Infec_contagiosa as "N° Atenc.Infecto-contagiosas",cas.Num_Inmunologia 
 
        nes.Plan_Intervencion as "Plan intervención educativo", nes.Meta_PAI as "Meta traza. en el PAI.",nes.Informe_Tecnico as "Posee infor.técnico.evolutiv.",nes.Cumple_Intervencion as "Cumplimiento Pl. intervención", nes.Provino_Ano as "Residente Promovido de año", nes.Desempeno as "Desempeño académico favorable",
 
-       ntss.Plan_Intervencion as "Plan intervención trab.social", ntss.Meta_PAI as "Meta trazad. en el PAI.",ntss.Informe_Tecnico as "Posee infor.técnico.evoluti.",ntss.Cumple_Intervencion as "Cumplimiento Pla. intervención", ntss.ParticipacionF_Activa as "PARTICIPACIÓN ACTIVA FAMILIAR", ntss.Reinsercion_Familiar as "Plan de Reinserción familiar.",ntss.FamiliaR_Soporte as "Familia usa redes sop. social",
+       ntss.Plan_Intervencion as "Plan intervención trab.social", ntss.Meta_PAI as "Meta trazad. en el PAI.",ntss.Informe_Tecnico as "Posee infor.técnico.evoluti.",ntss.Cumple_Intervencion as "Cumpl. Plan intervención", ntss.ParticipacionF_Activa as "PARTICIPACIÓN ACTIVA FAMILIAR", ntss.Reinsercion_Familiar as "Plan de Reinserción familiar.",ntss.FamiliaR_Soporte as "Familia usa redes sop. social",
        
        neu.Fecha_Egreso,neu.MotivoEgreso as "Motivo del Egreso",neu.Detalle_Motivo as "Detalle del motivo del egreso",neu.Salud_AUS as "Asegura. Univ.l de Salud-AUS",neu.Partida_Naci as "Partida de Nacimiento", neu.DNI as "DNI", neu.Educacion, neu.Reinsecion_Familiar as "Reinseción Familiar"
 
