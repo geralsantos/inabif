@@ -857,7 +857,7 @@ class portada extends App{
         foreach ($modulos as $key => $modulo)
         {
           if (ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel) {
-            $modulo = $modulo.$tipo_centro_dependiente[$key].' '.$centro_id_dependiente[$key];
+            echo $modulo = $modulo.$tipo_centro_dependiente[$key].' '.$centro_id_dependiente[$key];
           }
             $modulo = $modelo->executeQuery($modulo);
             $residentes = array();
