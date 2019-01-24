@@ -35,7 +35,7 @@ and ( (to_char(cu.fecha_creacion(+),\'DD-MON-YY\') '.$fecha.') and (to_char(ca.f
 
 '2'=>('\''.$anio.'\' as "Año",\''.$mes.'\' as "Periodo",\''.$fecha_inicial.'\' as "FEC_ENVIO",ca.CODIGO_ENTIDAD as "Código de la Entidad",ca.nombre_entidad as "Nombre de la Entidad", ca.codigo_linea as "Código de la Linea" ,ca.linea_intervencion as "Línea de Intervención" , ca.cod_serv as "Código del Servicio" , ca.nom_serv as "Nombre del Servicio", ca.ubigeo as "Ubigeo Según el INEI", (SELECT NOMDEPT FROM ubigeo WHERE CODDIST=ca.ubigeo) as "Departamento Centro Atención", (SELECT NOMPROV FROM ubigeo WHERE CODDIST=ca.ubigeo) as "Provincia Centro Atención", (SELECT NOMDIST FROM ubigeo WHERE CODDIST=ca.ubigeo) as "Distrito Centro Atención",ca.centro_poblado as "C.Poblado centro atención" , ca.area_residencia as "Área de Residencia",ca.cod_ca as "Código Centro Atención",ca.nom_ca as "Nombre Centro Atención",ca.fecha_creacion as "Fecha de Registro",
 
-pdi.residente_id as Codigoresidente,pdi.residente_nombre as "Nombre Usuario",pdi.residente_apellido_paterno as "Apellido Paterno", pdi.residente_apellido_materno as "Apellido Materno", pdci.tipo_documento_entidad as Tipo doc. identidad",pdci.numero_documento_ingreso as "Número del documento",pdi.fecha_nacimiento as "Fecha de Nacimiento",pdi.edad,pdi.sexo,(SELECT CODDIST FROM ubigeo WHERE CODDIST=pdi.distrito_nacimiento_id ) as "UBIGEO nacimiento",(SELECT NOMDEPT FROM ubigeo WHERE CODDIST=pdi.distrito_nacimiento_id) as "Departamento Nacimiento", (SELECT NOMPROV FROM ubigeo WHERE CODDIST=pdi.distrito_nacimiento_id ) as "Provincia Nacimiento", (SELECT NOMDIST FROM ubigeo WHERE CODDIST=pdi.distrito_nacimiento_id ) as "Distrito Nacimiento",
+pdi.residente_id as Codigoresidente,pdi.residente_nombre as "Nombre Usuario",pdi.residente_apellido_paterno as "Apellido Paterno", pdi.residente_apellido_materno as "Apellido Materno", pdci.tipo_documento_entidad as "Tipo doc. identidad",pdci.numero_documento_ingreso as "Número del documento",pdi.fecha_nacimiento as "Fecha de Nacimiento",pdi.edad,pdi.sexo,(SELECT CODDIST FROM ubigeo WHERE CODDIST=pdi.distrito_nacimiento_id ) as "UBIGEO nacimiento",(SELECT NOMDEPT FROM ubigeo WHERE CODDIST=pdi.distrito_nacimiento_id) as "Departamento Nacimiento", (SELECT NOMPROV FROM ubigeo WHERE CODDIST=pdi.distrito_nacimiento_id ) as "Provincia Nacimiento", (SELECT NOMDIST FROM ubigeo WHERE CODDIST=pdi.distrito_nacimiento_id ) as "Distrito Nacimiento",
 
 pdau.fecha_ingreso_usuario as "Fecha de Ingreso",(SELECT nombre FROM pam_motivos_ingreso where id =pdau.motivo_ingreso_principal) as "Mótivo de Ingreso Principal",(SELECT nombre FROM pam_instituciones_deriva where id=pdau.institucion_deriva) as "Institución que lo Derivó",
 
@@ -60,17 +60,23 @@ and ( (to_char(pdi.fecha_creacion(+),\'DD-MON-YY\') '.$fecha.') and (to_char(ca.
 
 '3'=>('\''.$anio.'\' as "Año",\''.$mes.'\' as "Periodo",\''.$fecha_inicial.'\' as "FEC_ENVIO",ca.CODIGO_ENTIDAD as "Código de la Entidad",ca.nombre_entidad as "Nombre de la Entidad", ca.codigo_linea as "Código de la Linea" ,ca.linea_intervencion as "Línea de Intervención" , ca.cod_serv as "Código del Servicio" , ca.nom_serv as "Nombre del Servicio", ca.ubigeo as "Ubigeo Según el INEI", (SELECT NOMDEPT FROM ubigeo WHERE CODDIST=ca.ubigeo) as "Departamento Centro Atención", (SELECT NOMPROV FROM ubigeo WHERE CODDIST=ca.ubigeo) as "Provincia Centro Atención", (SELECT NOMDIST FROM ubigeo WHERE CODDIST=ca.ubigeo) as "Distrito Centro Atención",ca.centro_poblado as "C.Poblado centro atención" , ca.area_residencia as "Área de Residencia",ca.cod_ca as "Código Centro Atención",ca.nom_ca as "Nombre Centro Atención",ca.fecha_creacion as "Fecha de Registro",
 
-pdi.residente_id as Codigoresidente,pdi.residente_nombre as "Nombre Usuario",pdi.residente_apellido_paterno as "Apellido Paterno", pdi.residente_apellido_materno as "Apellido Materno", pdci.tipo_documento_entidad as Tipo doc. identidad",pdci.numero_documento_ingreso as "Número del documento",pdi.fecha_nacimiento as "Fecha de Nacimiento",pdi.edad,pdi.sexo,(SELECT CODDIST FROM ubigeo WHERE CODDIST=pdi.distrito_nacimiento_id ) as "UBIGEO nacimiento",(SELECT NOMDEPT FROM ubigeo WHERE CODDIST=pdi.distrito_nacimiento_id) as "Departamento Nacimiento", (SELECT NOMPROV FROM ubigeo WHERE CODDIST=pdi.distrito_nacimiento_id ) as "Provincia Nacimiento", (SELECT NOMDIST FROM ubigeo WHERE CODDIST=pdi.distrito_nacimiento_id ) as "Distrito Nacimiento",
+nir.residente_id as Codigoresidente,nir.Nom_Usuario as "Nombre Usuario",nir.Ape_Paterno as "Apellido Paterno", nir.Ape_Materno as "Apellido Materno", 
 
-pdau.fecha_ingreso_usuario as "Fecha de Ingreso",(SELECT nombre FROM pam_motivos_ingreso where id =pdau.motivo_ingreso_principal) as "Mótivo de Ingreso Principal",(SELECT nombre FROM pam_instituciones_deriva where id=pdau.institucion_deriva) as "Institución que lo Derivó",
+nci.Tipo_Doc as "Tipo doc. identidad",nci.Numero_Doc as "Número del documento",
 
-pds.discapacidad,pds.discapacidad_fisica as "Presenta Discap. Física",\'\' as "EST_USU",
+nir.Fecha_Nacimiento as "Fecha de Nacimiento",nir.Edad,nir.Sexo,(SELECT CODDIST FROM ubigeo WHERE CODDIST=nir.distrito_nacimiento_id ) as "UBIGEO nacimiento",(SELECT NOMDEPT FROM ubigeo WHERE CODDIST=nir.distrito_nacimiento_id) as "Departamento Nacimiento", (SELECT NOMPROV FROM ubigeo WHERE CODDIST=nir.distrito_nacimiento_id ) as "Provincia Nacimiento", (SELECT NOMDIST FROM ubigeo WHERE CODDIST=nir.distrito_nacimiento_id ) as "Distrito Nacimiento",
 
-peu.Fecha_Egreso,peu.MotivoEgreso as "Motivo del Egreso",
+nar.Fecha_Ingreso as "Fecha de Ingreso",(SELECT nombre FROM nna_perfiles_ingreso where id =nar.Perfil_Ingreso_P) as "Mótivo de Ingreso Principal",(SELECT nombre FROM nna_instituciones where id=nar.Institucion_Derivacion) as "Institución que lo Derivó",
 
-pdau.Fecha_Reingreso as "Fecha de Reingreso",\'\' as "GRupo Etario", \'\' as "DEtalle motivo Egreso",
+nds.Discapacidad,nds.Discapacidad_Fisica as "Presenta Discap. Física",\'\' as "EST_USU",
 
-\'\' as "AUS",\'\' as "Partida de NAcimiento",peu.documento_entidad as "DNI",(SELECT nombre FROM pam_nivel_educativo WHERE id = pdci.nivel_educativo and codigo=\'pam\') as "Nivel Educativo",peu.Reinsercion_Familiar as "Reinserción Familiar."
+neu.Fecha_Egreso,neu.MotivoEgreso as "Motivo del Egreso",
+
+nar.Fecha_Registro as "Fecha de Reingreso",\'\' as "GRupo Etario", 
+
+neu.Detalle_Motivo as "DEtalle motivo Egreso",neu.Salud_AUS as "Asegura. Univ.l de Salud-AUS",neu.Partida_Naci as "Partida de Nacimiento"
+
+\'\' as "AUS",\'\' as "Partida de NAcimiento",neu.documento_entidad as "DNI",(SELECT nombre FROM pam_nivel_educativo WHERE id = pdci.nivel_educativo and codigo=\'pam\') as "Nivel Educativo",neu.Reinsercion_Familiar as "Reinserción Familiar.",neu.DNI as "DNI", neu.Educacion, neu.Reinsecion_Familiar as "Reinseción Familiar"
 
 from  NNAInscripcionResidente nir 
 ,NNAAdmisionResidente nar 
