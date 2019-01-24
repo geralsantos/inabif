@@ -80,87 +80,14 @@ cas.Num_Infec_contagiosa as "N° Atenc.Infecto-contagiosas",cas.Num_Inmunologia 
         
         nar.Movimiento_Poblacional as "Movimiento Poblacional",nar.Fecha_Ingreso as "Fecha de Ingreso del Usuario",nar.Fecha_Registro as "Fecha de Reingreso",(SELECT nombre FROM nna_instituciones where id=nar.Institucion_Derivacion) as "Institución que lo Derivó",(SELECT nombre FROM nna_motivos_ingreso where id =nar.Motivo_Ingreso) as "Mótivo de Ingreso",(SELECT nombre FROM nna_perfiles_ingreso WHERE id=nar.Perfil_Ingreso_P) as "PRINCIPAL PERFIL ING.primario",(SELECT nombre FROM nna_perfiles_ingreso WHERE id=nar.Perfil_Ingreso_S) as "PRINCIPAL PERFIL ING.secund.", nar.Tipo_Doc as "T.Documento Ingreso CAR", nar.Numero_Doc as "Número documento ingreso CAR",nar.Situacion_Legal as "Situación Legal",
         
-        nci.Tipo_Doc as "Tipo documento identidad", nci.Numero_Doc as "Número Documento Identidad",nci.Lee_Escribe as "sabe Leer y Escribir",(SELECT nombre FROM pam_nivel_educativo WHERE id = nci.Nivel_Educativo and codigo=\'pam\') as "Nivel Educativo",(SELECT nombre FROM pam_tipo_seguro_salud where id=nci.Tipo_Seguro) as "Tipo de seguro de salud",(SELECT nombre FROM pam_clasif_socioeconomico WHERE id=nci.SISFOH ) as "Clasificación Socioeconómica",     
-
-        nfr.Familiares as "Familiares Ubicados",(SELECT nombre FROM pam_tipo_parentesco where id=cci.Parentesco and codigo=\'ppd\') as "Tipo de parentesco",nfr.Tipo_Familia as "Tipo de Familia",(SELECT nombre FROM Nnaproblematica_familiar where id=nfr.Problematica_Familiar) as "Problemática Familiar",
-
-
-        nds.Discapacidad,nds.Discapacidad_Fisica as "Presenta Discap. Física",nds.Discapaciada_Intelectual as "Presenta Discap. Intelectual",nds.Discapacidad_Sensorial  as "Presenta Discap. Sensorial",nds.Discapacidad_Mental as "Presenta Discap. Mental",nds.Certificado as "El Dx es certificado", nds.Carnet_CANADIS "Tiene carnet del CONADIS",nds.Transtornos_Neuro as "Trastornos Neurológico",nds.Des_Transtorno_Neuro as "Especif.Trastorno Neurológico", nds.CRED as "Atenciones CRED",nds.Vacunas as "Recibió Vacunas", nds.Patologia_1 as "patología crónica 1",nds.Diagnostico_S1 as "Diagnósticos 1 según CIE 10",nds.Patologia_2 as "Patología Crónica 2",nds.Diagnostico_S3 as "Diagnósticos 3 según CIE 10",nds.Transtornos_Comportamiento as "Tr.Comportamiento/disociales",
-        nds.Tipo_Transtorno as "Tipo de Trastorno",nds.Gestante,nds.Semanas_Gestacion as "Semanas de Gestación",nds.Control_Prenatal as "Acudido Control Parental",nds.Hijos as "NNA tiene hijos", nds.Nro_Hijos as "Número de hijos en CAR",
-        nds.Nivel_Hemoglobina as "Nivel de Hemoglobina",nds.Anemia as "Presenta Anemia",nds.Peso as "Peso(Kg.)", nds.Talla as "Talla(m)", nds.Estado_Nutricional1 as "Estado nutricional 1(imc)",nds.Estado_Nutricional2 as "Estado nutricional 2(imc)",
-        
-        psm.trastorno_disociales as "Trast.compor. y/o disociales",psm.tipo_trastorno as "Tipo de Trastorno.",psm.Terapia_Fisica_Rehabilitacion as "Terap.Fisica y Rehabilitación",psm.Arte as "Arte (Musica, danza, teatro)",psm.Nro_Arte as "n° participa Arte en el mes", psm.Dibujo_Pintura as "Dibujo y pintura",psm.Nro_Arte_Dibujo_Pintura as "N° participa en Arte",psm.Manualidades,psm.Nro_Arte_Manualidades as "N° Participa en Arte.",psm.Otros as "Otros",psm.Nro_Arte_Otros as "Veces Participa en Arte",
-        
-        nts.Fase_Intervencion as "Fase de Intervención",nts.Estado_Usuario as "Estado del Usuario",nts.Plan_Intervencion  as "Plan Intervención",nts.SituacionL_NNA  as "Situación Legal NNA",nts.Familia_NNA  as "¿Cuenta con Familia Ubicada?",nts.SoporteF_NNA  as "NNa Cuenta Soporte FAmiliar",nts.Des_SoporteF as "Persona brindan sop. familiar",nts.Tipo_Familia as "Tipo de Familia.",nts.Problematica_Fami as "Problemática Familiar.", nts.NNA_Soporte_Fami as "NNA brindan sop. familiar",nts.Familia_SISFOH as "Familia Cuenta SISFOH", nts.Resultado_Clasificacion as "Resultado Clasificación",nts.Nro_VisitasNNA as "visitas fami. recibe cada NNA",nts.Participacion_EscuelaP as "N.Partici. Escuelas de Padres",nts.Consegeria_Familiar as "Consejerías/orientac. familia",nts.Soporte_Social as "Fami. usa redes sop. social",nts.Consejeria_Residentes as "N° Consej./orienta. Residente",nts.Charlas as "Nº Charlas Preven. - Promo.",nts.Visitas_Domicilarias as "Nº Visitas Domiciliarias", nts.Reinsercion_Familiar as "Plan de Reinserción familiar",nts.DNI as "Residente cuenta con DNI",nts.AUS_SIS as "Residente cuenta con AUS/SIS", nts.CONADIS as "Residen cuenta carnet CONADIS",
-        
-        nas.Nro_Arte as "N°Arte (Musica,danza,teatro)",nas.Nro_BioHuerto as "N° Biohuerto",nas.Nro_Zapateria as "N° Calzado y Zapatería",nas.Nro_Carpinteria as "N° Carpintería/Tallado madera", nas.Nro_Ceramica as "N° Cerámica",nas.Nro_Crianza as "n° crianza animales",nas.Nro_Dibujo as "N° Dibujo y pintura.",nas.Nro_Tejido as "N° Tejidos y Telares",nas.Nro_Deportes as "N° Deporte - Entre otros",nas.Nro_Taller_Pro as "Talleres Productivos",
-        
-        ns.Intervencion as "Plan de intervención de salud",(SELECT nombre FROM diag_psiquiatrico_cie_10 where id =ns.Diagnostico_Psiquiatrico_1) as "Diag.Psiquiátr. 1 (CIE-10)",
-        (SELECT nombre FROM diag_psiquiatrico_cie_10 where id =ns.Diagnostico_Psiquiatrico_2) as "Diag.Psiquiátr. 2 (CIE-10)",
-        (SELECT nombre FROM diag_psiquiatrico_cie_10 where id =ns.Diagnostico_Psiquiatrico_3) as "Diag.Psiquiátr. 3 (CIE-10)",
-
-        (SELECT nombre FROM diag_neurologico_cie_10 where id =ns.Diagnostico_Neurologico_1) as "Diag.Neurológ. 1 (CIE-10)",
-        (SELECT nombre FROM diag_neurologico_cie_10 where id =ns.Diagnostico_Neurologico_2) as "Diag.Neurológ. 2 (CIE-10)",
-        (SELECT nombre FROM diag_neurologico_cie_10 where id =ns.Diagnostico_Neurologico_3) as "Diag.Neurológ. 3 (CIE-10)",
-
-        (SELECT nombre FROM diag_cronico_cie_10 where id =ns.Diagnostico_Cronico_1) as "Diag.Crónico. 1 (CIE-10)",
-        (SELECT nombre FROM diag_cronico_cie_10 where id =ns.Diagnostico_Cronico_2) as "Diag.Crónico. 2 (CIE-10)",
-        (SELECT nombre FROM diag_cronico_cie_10 where id =ns.Diagnostico_Cronico_3) as "Diag.Crónico. 3 (CIE-10)",
-
-        (SELECT nombre FROM diag_agudo_cie_10 where id =ns.Diagnostico_Agudo_1) as "Diag.Agudo. 1 (CIE-10)",
-        (SELECT nombre FROM diag_agudo_cie_10 where id =ns.Diagnostico_Agudo_2) as "Diag.Agudo. 2 (CIE-10)",
-        (SELECT nombre FROM diag_agudo_cie_10 where id =ns.Diagnostico_Agudo_3) as "Diag.Agudo. 3 (CIE-10)",
-
-        ns.VIH as "Residente presenta VIH",ns.ETS as "Residente presenta ETS",ns.TBC as "TBC",ns.HepatitisA as "Residente presen. HEPATITIS A",ns.HepatitisB as "Residente presen. HEPATITIS B",ns.Caries as "Residente presenta Caries",ns.Discapacidad,ns.Discapacidad_Fisica as "Presenta discapacidad física",ns.Discapacidad_Intelectual as "Presenta discap. intelectual.",ns.Discapacidad_Sensorial as "Presenta discap. sensorial.",ns.Discapacidad_Mental as "Presenta discap. mental.",ns.SIS,ns.ESSALUD,ns.Tipo_Seguro as "Otro tipo de Seguro de Salud",ns.CONADIS, ns.A_Medicina_General as "Nº Atención Medicina General",ns.A_Cirujia_General as "Nº Atención Cirugía General",ns.A_Traumatologia as "N° Atencion traumatología",
-        ns.A_Odontologia as "N° Atencion odontología",ns.A_Medicina_Interna as "N° Atencion Med.Interna",ns.A_Cardiovascular as "N° Atencion Cardiovascular",ns.A_Dermatologia as "N° Atencion Dematología",ns.A_Endrocrinologia as "N° Atencion Endocrinología", ns.A_Gastroentrologia as "N° Atención Gastroenterología",
-        
-        ns.A_Gineco_Obstetricia as "N° Atenc.gineco-obstetricia",ns.A_Hermatologia as "N° Atencion hematología", ns.A_Nefrologia as "N° Atención Nefrología" 
-        ns.A_Infectologia as "N° Atenc. Infectología",ns.A_Inmunologia as "N° Atenc.Inmunología",ns.A_Reumatologia as "N° Atención Reumatología.",ns.A_Neumologia as "N° Atenciones Neumología",ns.A_Neurologia as "N° Atencion Neurología",ns.A_Oftalmologia as "N° Atencion oftalmología", ns.A_Otorrinolaringologia as "N°Atenc.OTORRINOLARINGOLOGIA",ns.A_Oncologia as "N° Atencion Oncología",ns.A_Psicriatica as "N° Atencion psiquiatría",ns.A_Cirujia as "N° Atencion cirugía", ns.A_Urologia as "N° Atencion urología",ns.A_Nutricion as "N° Atencion nutrición",ns.A_Pedriatria as "Nº Atención Pedriatría/CRED",ns.A_Rehabilitacion as "Nº Aten.Medicina Física/Rehab",ns.A_Gineco_Menores as "Nº Atención Ginecología Menor",ns.A_Psicologia as "Nº Atención en Psicología",ns.Atencion_Total as "Sumar atenciones",ns.Hospitalizado as "Usuario hospitalizado",ns.Emergencia as "Aten. Emergencia hospitales",ns.CRED as "Inscrito en CRED",ns.Inmunizacion as "Carné de inmunización"
-       
-       ,nn.Intervencion as "Plan intervención nutricional", nn.Peso,nn.Talla ,nn.Anemia as "Residente presenta Anemia",
-       
-       ntol.Nro_Talleres_E as "Nº Talleres Educativos", ntol.Nro_Campanas as "Nº Camp. Preven/Promocionales", ntol.Nro_Atencion_Fisi as "Nº Atención en Terapia Física",ntol.Nro_Atencon_Ocupa as "Nº Aten. Terapia Ocupacional", ntol.Nro_Atencion_Lengua as "Nº Aten. Terapia de Lenguaje",
-       
-       ne.Plan_Intervencion as "plan interv. Educativo", ne.Sistema_Educativo as "Matriculado sistema educativo", ne.NEducativo as "Nivel que cursa",ne.Grado,ne.Asitencia as "Acude mes centro estudios",ne.Nro_Asistencia as "N° de días de asistencia.",ne.Nro_Reforzamientos as "N° sesiones reforza. escolar",ne.Nro_Aprestamiento as "N° de Aprestamiento Escolar",ne.Nro_Consejera as "n° consejerías/orientaciones",ne.Estado_Participacion as "entrenamiento profes./técnico",ne.ActividadOficio as "Especificar actividad/oficio",
-       
-       nfh.Participacion as "NNA activ personales/sociales",nfh.FInicio_Actividades as "Fecha inicio Actividades NNA",nfh.FFin_Actividades as "Fecha fin actividades NNA",nfh.Termino_Actividades as "NNA concluyó actividades",nfh.Fortalecer_Actividades as "NNA logró fortalecer habilid.",
- 
-       np.Plan_Intervencion as "Plan Interven. Psicológico",np.Presentacion_periodo as "Plan de Interven. psicológico",(SELECT nombre FROM nna_perfiles_ingreso where id = np.Perfil_Id) as "PRINCIPAL PERFIL ACTUAL", np.Intervencion_Individual as "Nº Interven. terapeut. indiv.",np.Intervencion_Grupal as "Nº Interven. terapéut. grupal", np.Nro_OrientacionP as "Nº Consej./orientacio. psico.",np.Nro_OrientacionF as "NºConsej./orientacio familia2",np.Nro_Charlas as "N° charlas Preven./Prom.Psico",np.Nro_TLiderazgo as "Partici.Sesion. Taller Lider",np.Nro_TAutoestima as "Partici.Sesion.Tall. autoes.", np.Nro_TSexualidad as "Partici.Sesion.Tall. sexual.",np.Nro_TPrevencionEmb as "Ta.preven. embar. adolescente",np.Nro_TIgualdadG as "Taller igualdad genero",np.Nro_ViolenciaF as "TAller violencia Familiar",np.Nro_SaludM as "TAller salud mental",
-
-       nps.Plan_Intervencion as "plan intervención psicológico",nps.Des_Meta as "Desc.meta trazada en el pai",nps.Informe_Tecnico as "Posee info. técnico evolutivo",nps.Des_Informe_Tecnico as "Desc. del informe evolutivo", nps.Cumple_Intervencion as "Cump. plan de intervención", nps.Transtorno_Depresivo as "Presencia trastorno depresivo", nps.Severidad_Trans_Depresivo as "Severidad trastorno depresivo",
-
-       nss.Plan_Intervencion as "Plan de intervención salud.", nss.Meta_PAI as "Meta trazada en el PAI",nss.Informe_tecnico as "Posee info.técnico evolutivo",nss.Cumple_Intervencion as "CumpL. Plan de intervención", nss.Control_CRED as "Control CRED acorde a la Edad", nss.Vacunacion as "Esqu. vacunación acorde Edad",
-
-       nns.Plan_Intervencion as "Plan interven. nutricional.", nns.Meta_PAI as "Meta trazada en el PAI.",nns.Informe_Tecnico as "Posee infor.técnico evolutivo",nns.Cumple_Intervencion as "Cumplimiento P. intervención", nns.Estado_Nutricional_Peso as "estado nutricional 1 (Peso)", nns.Estado_Nutricional_Talla as "estado nutricional (tall)",nns.Hemoglobina as "Hemoglobina",nns.Analisis_Hemoglobina as "Análisis de la hemoglobina",
-
-       nes.Plan_Intervencion as "Plan intervención educativo", nes.Meta_PAI as "Meta traza. en el PAI.",nes.Informe_Tecnico as "Posee infor.técnico.evolutiv.",nes.Cumple_Intervencion as "Cumplimiento Pl. intervención", nes.Provino_Ano as "Residente Promovido de año", nes.Desempeno as "Desempeño académico favorable",
-
-       ntss.Plan_Intervencion as "Plan intervención trab.social", ntss.Meta_PAI as "Meta trazad. en el PAI.",ntss.Informe_Tecnico as "Posee infor.técnico.evoluti.",ntss.Cumple_Intervencion as "Cumpl. Plan intervención", ntss.ParticipacionF_Activa as "PARTICIPACIÓN ACTIVA FAMILIAR", ntss.Reinsercion_Familiar as "Plan de Reinserción familiar.",ntss.FamiliaR_Soporte as "Familia usa redes sop. social",
-       
-       neu.Fecha_Egreso,neu.MotivoEgreso as "Motivo del Egreso",neu.Detalle_Motivo as "Detalle del motivo del egreso",neu.Salud_AUS as "Asegura. Univ.l de Salud-AUS",neu.Partida_Naci as "Partida de Nacimiento", neu.DNI as "DNI", neu.Educacion, neu.Reinsecion_Familiar as "Reinseción Familiar"
+        nci.Tipo_Doc as "Tipo documento identidad", nci.Numero_Doc as "Número Documento Identidad",nci.Lee_Escribe as "sabe Leer y Escribir",(SELECT nombre FROM pam_nivel_educativo WHERE id = nci.Nivel_Educativo and codigo=\'pam\') as "Nivel Educativo",(SELECT nombre FROM pam_tipo_seguro_salud where id=nci.Tipo_Seguro) as "Tipo de seguro de salud",(SELECT nombre FROM pam_clasif_socioeconomico WHERE id=nci.SISFOH ) as "Clasificación Socioeconómica" 
 
         from 
         NNAInscripcionResidente nir 
         ,NNAAdmisionResidente nar 
         ,NNACondicionIResidente nci
-        ,NNAFamiliaresResidente nfr
-        ,NNADatosSaludResi nds 
-        ,NNATrabajoSocial nts  
-        ,NNAActividadesSociorecrea nas 
-        ,NNASalud ns 
-        ,NNANutricion nn 
-        ,NNATerapiasOcupacionalL ntol 
-        ,NNAEducacion ne 
-        ,NNAFHabilidades nfh 
-        ,NNAPsicologico np 
-        ,NNAPsicologico_Semestral nps 
-        ,NNASalud_Semestral nss 
-        ,NNAnutricion_Semestral nns
-        ,NNAEducacion_Semestral nes 
-        ,NNAtrabajoSocial_Semestral ntss 
-        ,NNAEgresoUsuario neu
         ,centro_atencion ca 
         ,residente re
-        where nir.residente_id(+)=re.id and ca.id(+)= re.centro_id and nar.residente_id(+)=re.id and nci.residente_id(+)=re.id and nfr.residente_id(+)=re.id and nds.residente_id(+)=re.id and nts.residente_id(+)=re.id and nas.residente_id(+)=re.id and ns.residente_id(+)=re.id and nn.residente_id(+)=re.id and ntol.residente_id(+)=re.id and ne.residente_id(+)=re.id and nfh.residente_id(+)=re.id and np.residente_id(+)=re.id and nps.residente_id(+)=re.id and nss.residente_id(+)=re.id and nns.residente_id(+)=re.id and nes.residente_id(+)=re.id and ntss.residente_id(+)=re.id and neu.residente_id(+)=re.id and re.tipo_centro_id=3 and ( (to_char(nir.fecha_creacion(+),\'DD-MON-YY\') '.$fecha.') and (to_char(ca.fecha_creacion(+),\'DD-MON-YY\') '.$fecha.') and (to_char(nar.fecha_creacion(+),\'DD-MON-YY\') '.$fecha.') and (to_char(nci.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(nfr.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(nds.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(nts.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(nas.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(ns.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(nn.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(ntol.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(ne.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(nfh.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(np.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.')  and (to_char(nps.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(nss.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(nns.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(nes.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(ntss.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') and (to_char(neu.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') )  '.$where));
+        where nir.residente_id(+)=re.id and ca.id(+)= re.centro_id and nar.residente_id(+)=re.id and nci.residente_id(+)=re.id and re.tipo_centro_id=3 and ( (to_char(nir.fecha_creacion(+),\'DD-MON-YY\') '.$fecha.') and (to_char(ca.fecha_creacion(+),\'DD-MON-YY\') '.$fecha.') and (to_char(nar.fecha_creacion(+),\'DD-MON-YY\') '.$fecha.') and (to_char(nci.fecha_creacion(+),\'DD-MON-YY\')  '.$fecha.') )  '.$where));
 
 ?>
