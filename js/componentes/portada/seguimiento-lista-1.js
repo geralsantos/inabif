@@ -22,6 +22,7 @@ Vue.component('seguimiento-lista-1', {
         this.traer_datos_usuario();
         this.buscar_tipo_centro();
         this.traer_tipo_centro_completado();
+        this.buscar_fecha_matriz_general();
     },
     updated:function(){
     },
@@ -174,6 +175,16 @@ Vue.component('seguimiento-lista-1', {
                 }
             });
         },
+        buscar_fecha_matriz_general(){
+            this.$http.post('buscar_fecha_matriz_general?view',{}).then(function(response){
+                if( response.body.resultado ){
+                    if(response.body.fecha){
+                        this.fecha = "La matriz fue generada el: " + moment(response.body.fecha, "YY-MMM-DD").format("DD-MM-YYYY HH:mm:ss");
+                    }
+                }
+
+            });
+        },
         generar_matriz_general(){
 
             this.$http.post('generar_matriz_consolidado?view',{}).then(function(response){
@@ -181,12 +192,12 @@ Vue.component('seguimiento-lista-1', {
                 if( response.body.resultado ){
 
                     swal("", "Matriz General Generada", "success");
+                    this.buscar_fecha_matriz_general();
                     this.buscar_centros();
                 }else{
-                    if(response.body.fecha){
-                        this.fecha = "La matriz fue generada el: " + moment(response.body.fecha, "YY-MMM-DD").format("DD-MM-YYYY");
-                    }
+
                     swal("", response.body.mensaje, "error");
+                    this.buscar_fecha_matriz_general();
                     this.buscar_centros();
                 }
             });

@@ -832,7 +832,7 @@ class portada extends App{
             $where = " and nir.centro_id(+)= ".$centro." and nar.centro_id(+)= ".$centro." and nci.centro_id(+)= ".$centro." and nfr.centro_id(+)= ".$centro." and nds.centro_id(+)= ".$centro." and nts.centro_id(+)= ".$centro." and nas.centro_id(+)= ".$centro." and ns.centro_id(+)= ".$centro." and nn.centro_id(+)= ".$centro." and ntol.centro_id(+)= ".$centro." and ne.centro_id(+)= ".$centro." and nfh.centro_id(+)= ".$centro." and np.centro_id(+)= ".$centro." and nps.centro_id(+)= ".$centro." and nss.centro_id(+)= ".$centro." and nns.centro_id(+)= ".$centro." and nes.centro_id(+)= ".$centro." and ntss.centro_id(+)= ".$centro." and neu.centro_id(+)= ".$centro." and  ca.id(+)= ".$centro." and re.centro_id(+)= ".$centro." ";
           }
         }
-        
+
         include 'consultas_preparadas.php';
 
         if (ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel) {
@@ -1333,7 +1333,7 @@ ini_set('session.gc_maxlifetime','1200');*/
 		$modulos = "select m.parent_id,m.nombre as nombre_modulo,m.nombre_tabla from modulos m
 			where m.centro_id in (".$centro["TIPO_CENTRO_ID"].") order by ".$orderby;
 		$modulos = $modelo->executeQuery($modulos);
-    
+
     $contar_modulos_2 = 1;
     $fasenombrerepite=array();
 		foreach ($modulos as $key => $modulo)
@@ -1359,7 +1359,7 @@ ini_set('session.gc_maxlifetime','1200');*/
           }
         }
       }
-      
+
       if (!empty($nombretabla) && $nombretabla!="" && !empty($modulo["NOMBRE_TABLA"]) && $modulo["NOMBRE_TABLA"]!="")
       {
 
@@ -1456,7 +1456,7 @@ ini_set('session.gc_maxlifetime','1200');*/
     $html2 .=$centro_html.$html;
 	}
   //$centro_html .=$modulo_html;
- //ob_start(); 
+ //ob_start();
     $table = '<table id="geral_table">'.$html2.'</table>';
    // ob_end_clean();
     if ($modulos)
@@ -1465,7 +1465,7 @@ ini_set('session.gc_maxlifetime','1200');*/
       header("Content-type: application/octet-stream");
       header("Content-Disposition: attachment; filename=$file");
       echo $table;*/
-     
+
       echo json_encode(array("data"=>$table) ) ;
     }else{
       return false;
@@ -1557,32 +1557,41 @@ ini_set('session.gc_maxlifetime','1200');*/
   }
   public function generar_matriz_consolidado(){
     $modelo = new modeloPortada();
-    
+
        $sql = "select * from tipo_centro_estado where estado=0 AND Periodo_Mes = ".date("m") . " AND Periodo_Anio = ".date("Y");
-    $res = $modelo->executeQuery($sql );
-    if($res){
-    echo json_encode(array("resultado"=>false, "mensaje"=>"No puede generar matriz hasta que todas las matrices de los tipos de centro estén generadas") ) ;
-    }else{
-    $res = $modelo->executeQuery("select * from matriz_consolidado where Periodo_Mes = ".date("m") . " AND Periodo_Anio = ".date("Y"));
-    if($res){
-    $res = $modelo->updateData( "matriz_consolidado",array("fecha_edicion"=>date("d-M-y g.i.s")),array("id"=>$res[0]["id"]));
-    $result = $modelo->executeQuery("select * from matriz_consolidado where Periodo_Mes = ".date("m") . " AND Periodo_Anio = ".date("Y"));
-    if($res){
-    echo json_encode(array("resultado"=>true, "mensaje"=>"La matriz ya ha actualizada", "fecha"=>$result[0]["FECHA_EDICION"]) );
-    }else{
-    echo json_encode(array("resultado"=>false, "mensaje"=>"Ha ocurrido un error") ) ;
+      $res = $modelo->executeQuery($sql );
+      if($res){
+        echo json_encode(array("resultado"=>false, "mensaje"=>"No puede generar matriz hasta que todas las matrices de los tipos de centro estén generadas") ) ;
+      }else{
+        $res = $modelo->executeQuery("select * from matriz_consolidado where Periodo_Mes = ".date("m") . " AND Periodo_Anio = ".date("Y"));
+      if($res){
+        $res = $modelo->updateData( "matriz_consolidado",array("fecha_edicion"=>date("d-M-y g.i.s")),array("id"=>$res[0]["ID"]));
+
+        if($res){
+          echo json_encode(array("resultado"=>true, "mensaje"=>"La matriz ha sido actualizada"));
+        }else{
+          echo json_encode(array("resultado"=>false, "mensaje"=>"Ha ocurrido un error") ) ;
+        }
+
+      }else{
+      $res = $modelo->insertData("matriz_consolidado",array("estado"=>1, "Fecha_Creacion"=>date("d-M-y g.i.s"), "Periodo_Mes"=>date("m"),"Periodo_Anio"=>date("Y"),"usuario_crea"=>$_SESSION["usuario"][0]["ID"],"usuario_edita"=>$_SESSION["usuario"][0]["ID"] ));
+      if ($res){
+      echo json_encode(array("resultado"=>true) ) ;
+      }else{
+      echo json_encode(array("resultado"=>false, "mensaje"=>"Ha ocurrido un error") ) ;
+      }
+      }
+
+      }
     }
-    
-    }else{
-    $res = $modelo->insertData("matriz_consolidado",array("estado"=>1, "Fecha_Creacion"=>date("d-M-y g.i.s"), "Periodo_Mes"=>date("m"),"Periodo_Anio"=>date("Y"),"usuario_crea"=>$_SESSION["usuario"][0]["ID"],"usuario_edita"=>$_SESSION["usuario"][0]["ID"] ));
-    if ($res){
-    echo json_encode(array("resultado"=>true) ) ;
-    }else{
-    echo json_encode(array("resultado"=>false, "mensaje"=>"Ha ocurrido un error") ) ;
-    }
-    }
-    
-    }
+    public function buscar_fecha_matriz_general(){
+      $modelo = new modeloPortada();
+      $res = $modelo->executeQuery("select * from matriz_consolidado where Periodo_Mes = ".date("m") . " AND Periodo_Anio = ".date("Y"));
+      if($res){
+        echo json_encode(array("resultado"=>true, "fecha"=>$result[0]["FECHA_EDICION"]) );
+      }else{
+        echo json_encode(array("resultado"=>false, "mensaje"=>"Ha ocurrido un error") ) ;
+      }
     }
   public function consulta_reniec(){
     $modelo = new modeloPortada();
