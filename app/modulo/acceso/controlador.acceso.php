@@ -14,7 +14,7 @@ class acceso extends App{
                 $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
                 $centro_id = $_SESSION["usuario"][0]["CENTRO_ID"];
                 if (empty($tipo_centro_id)) {
-                    $tipo_centro_id = "SELECT tipo_centro_id FROM centro_atencion WHERE id=".$centro_id." and  estado = 1 order by id asc";
+                    echo $tipo_centro_id = "SELECT tipo_centro_id FROM centro_atencion WHERE id=".$centro_id." and  estado = 1 order by id asc";
                     $tipo_centro_id = $modelo->executeQuery( $tipo_centro_id )[0]["TIPO_CENTRO_ID"];
                     $_SESSION["usuario"][0]["TIPO_CENTRO_ID"] = $tipo_centro_id;
                   }
