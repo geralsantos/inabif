@@ -19,6 +19,7 @@ class acceso extends App{
                     $_SESSION["usuario"][0]["TIPO_CENTRO_ID"] = $tipo_centro_id;
                   }
                   echo  $tipo_centro_id;
+                  die();
                 $this->vista->reenviar("index", "portada");
             }else{
                 $this->vista->MensajeAlerta("Usuario no válido.","error");
