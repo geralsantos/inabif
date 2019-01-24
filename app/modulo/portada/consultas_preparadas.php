@@ -109,7 +109,8 @@ cas.Num_Infec_contagiosa as "N° Atenc.Infecto-contagiosas",cas.Num_Inmunologia 
          (SELECT nombre FROM diag_agudo_cie_10 where id =ns.Diagnostico_Agudo_2) as "Diag.Agudo. 2 (CIE-10)",
          (SELECT nombre FROM diag_agudo_cie_10 where id =ns.Diagnostico_Agudo_3) as "Diag.Agudo. 3 (CIE-10)",
  
-         ns.VIH as "Residente presenta VIH",ns.ETS as "Residente presenta ETS",ns.TBC as "TBC",ns.HepatitisA as "Residente presen. HEPATITIS A",ns.HepatitisB as "Residente presen. HEPATITIS B",ns.Caries as "Residente presenta Caries",ns.Discapacidad,ns.Discapacidad_Fisica as "Presenta discapacidad física",ns.Discapacidad_Intelectual as "Presenta discap. intelectual.",ns.Discapacidad_Sensorial as "Presenta discap. sensorial.",ns.Discapacidad_Mental as "Presenta discap. mental.",ns.SIS,ns.ESSALUD,ns.Tipo_Seguro as "Otro tipo de Seguro de Salud",ns.CONADIS, ns.A_Medicina_General as "Nº Atención Medicina General",ns.A_Cirujia_General as "Nº Atención Cirugía General",ns.A_Traumatologia as "N° Atencion traumatología"
+         ns.VIH as "Residente presenta VIH",ns.ETS as "Residente presenta ETS",ns.TBC as "TBC",ns.HepatitisA as "Residente presen. HEPATITIS A",ns.HepatitisB as "Residente presen. HEPATITIS B",ns.Caries as "Residente presenta Caries",ns.Discapacidad,ns.Discapacidad_Fisica as "Presenta discapacidad física",ns.Discapacidad_Intelectual as "Presenta discap. intelectual.",ns.Discapacidad_Sensorial as "Presenta discap. sensorial.",ns.Discapacidad_Mental as "Presenta discap. mental.",ns.SIS,ns.ESSALUD,ns.Tipo_Seguro as "Otro tipo de Seguro de Salud",ns.CONADIS, ns.A_Medicina_General as "Nº Atención Medicina General",ns.A_Cirujia_General as "Nº Atención Cirugía General",ns.A_Traumatologia as "N° Atencion traumatología",
+         ns.A_Odontologia as "N° Atencion odontología",ns.A_Medicina_Interna as "N° Atencion Med.Interna",ns.A_Cardiovascular as "N° Atencion Cardiovascular"
           
         
 
