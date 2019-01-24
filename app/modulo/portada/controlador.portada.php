@@ -1576,7 +1576,7 @@ ini_set('session.gc_maxlifetime','1200');*/
       }else{
       $res = $modelo->insertData("matriz_consolidado",array("estado"=>1, "Fecha_Creacion"=>date("d-M-y g.i.s"), "Periodo_Mes"=>date("m"),"Periodo_Anio"=>date("Y"),"usuario_crea"=>$_SESSION["usuario"][0]["ID"],"usuario_edita"=>$_SESSION["usuario"][0]["ID"] ));
       if ($res){
-      echo json_encode(array("resultado"=>true) ) ;
+      echo json_encode(array("resultado"=>true, "mensaje"=>"Matriz General Generada") ) ;
       }else{
       echo json_encode(array("resultado"=>false, "mensaje"=>"Ha ocurrido un error") ) ;
       }

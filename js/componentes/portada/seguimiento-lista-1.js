@@ -179,7 +179,7 @@ Vue.component('seguimiento-lista-1', {
             this.$http.post('buscar_fecha_matriz_general?view',{}).then(function(response){
                 if( response.body.resultado ){
                     if(response.body.fecha){
-                        this.fecha = "La matriz fue generada el: " + moment(response.body.fecha, "YY-MMM-DD").format("DD-MM-YYYY HH:mm:ss");
+                        this.fecha = "La matriz fue generada el: " + moment(response.body.fecha, "DD-MMM-YY").format("DD-MM-YYYY HH:mm:ss");
                     }
                 }
 
@@ -191,7 +191,7 @@ Vue.component('seguimiento-lista-1', {
 
                 if( response.body.resultado ){
 
-                    swal("", "Matriz General Generada", "success");
+                    swal("", response.body.mensaje, "success");
                     this.buscar_fecha_matriz_general();
                     this.buscar_centros();
                 }else{
