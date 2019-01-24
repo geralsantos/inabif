@@ -12,13 +12,13 @@ class acceso extends App{
             if(!empty($usuario)){
                 $_SESSION["usuario"] = $usuario;
                 $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
-              echo $centro_id = $_SESSION["usuario"][0]["CENTRO_ID"];
-              die();
+                $centro_id = $_SESSION["usuario"][0]["CENTRO_ID"];
                 if (empty($tipo_centro_id)) {
                     $tipo_centro_id = "SELECT tipo_centro_id FROM centro_atencion WHERE id=".$centro_id." and  estado = 1 order by id asc";
                     $tipo_centro_id = $modelo->executeQuery( $tipo_centro_id )[0]["TIPO_CENTRO_ID"];
                     $_SESSION["usuario"][0]["TIPO_CENTRO_ID"] = $tipo_centro_id;
                   }
+                  echo  $tipo_centro_id;
                 $this->vista->reenviar("index", "portada");
             }else{
                 $this->vista->MensajeAlerta("Usuario no válido.","error");
