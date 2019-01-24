@@ -859,7 +859,7 @@ class portada extends App{
         }else if (REGISTRADOR == $nivel || RESPONSABLE_INFORMACION== $nivel || USER_CENTRO== $nivel){
           $centro = $_SESSION["usuario"][0]["CENTRO_ID"];
           $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
-          echo $modulos = $modulos[$tipo_centro];
+          $modulos = $modulos[$tipo_centro];
           if ($tipo_centro == PPD) {
             $modulos = $modulos.' order by cu.residente_id desc';
             }else if($tipo_centro == PAM){
