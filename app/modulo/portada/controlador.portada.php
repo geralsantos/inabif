@@ -884,7 +884,6 @@ class portada extends App{
             $modulo = $modulo.' order by nir.residente_id desc';
             }
           }
-          echo $modulo;
             $modulo = $modelo->executeQuery($modulo);
             $residentes = array();
             $grupo_html = "";
