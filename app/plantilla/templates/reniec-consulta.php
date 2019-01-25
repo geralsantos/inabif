@@ -92,7 +92,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row" v-if="!isempty(Apellido_p)">
+                    <div class="row" v-if="!isempty(id_residente)">
                         <div class="col-md-4 text-center">
                             <select name="cboopcionreniec" id="cboopcionreniec" v-model="cboopcionreniec" class="form-control">
                                 <option value="No se consultó, falta de datos">No se consultó, falta de datos</option>
