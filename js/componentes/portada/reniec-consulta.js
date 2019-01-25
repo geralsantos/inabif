@@ -133,7 +133,6 @@ Vue.component('reniec-consulta', {
                         {
                             this.data_reniec.NumDoc = this.NumDoc;
                             this.data_reniec.Apellido_p = data_reniec.Envelope.Body.consultarResponse.return.datosPersona.apPrimer;
-                            this.Apellido_p = data_reniec.Envelope.Body.consultarResponse.return.datosPersona.apPrimer;
                             this.data_reniec.Apellido_m = data_reniec.Envelope.Body.consultarResponse.return.datosPersona.apSegundo;
                             this.data_reniec.Nombres = data_reniec.Envelope.Body.consultarResponse.return.datosPersona.prenombres;
                        console.log(this.data_reniec);
