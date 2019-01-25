@@ -1,5 +1,5 @@
-Vue.component('reniec-consulta', {
-    template:'#reniec-consulta',
+Vue.component('pide-consulta', {
+    template:'#pide-consulta',
     data:()=>({
         Apellido_p:null,
         Apellido_m:null,

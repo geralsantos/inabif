@@ -1,4 +1,4 @@
-<template id="reniec-consulta">
+<template id="pide-consulta">
   
     <div class="content mt-3">
         <div class="col-lg-12">
