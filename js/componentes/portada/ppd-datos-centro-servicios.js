@@ -34,7 +34,6 @@ Vue.component('ppd-datos-centro-servicios', {
     },
     mounted:function(){
         this.cargar_departamentos();
-        this.buscar_centro();
     },
     updated:function(){
     },
@@ -72,6 +71,8 @@ Vue.component('ppd-datos-centro-servicios', {
             this.$http.post('buscar_distritos?view',{tabla:'ubigeo', cod:this.CarProv}).then(function(response){
                 if( response.body.data != undefined){
                     this.distritos= response.body.data;
+                    this.buscar_centro();
+
                 }
              });
         },
