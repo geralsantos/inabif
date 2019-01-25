@@ -82,7 +82,7 @@
                                     <tbody class="text-center">
                                         <tr>
                                         <td>{{data_reniec.NumDoc}}</td>
-                                        <td>{{data_reniec.Apellido_p}}</td>
+                                        <td>{{Apellido_p}}</td>
                                         <td>{{data_reniec.Apellido_m}}</td>
                                         <td>{{data_reniec.Nombres}}</td>
                                         </tr>
