@@ -93,14 +93,14 @@
                         </div>
                     </div>
                     <div class="row" v-if="!isempty(Apellido_p)">
-                        <div class="col-md-8 text-center">
+                        <div class="col-md-4 text-center">
                             <select name="cboopcionreniec" id="cboopcionreniec" v-model="cboopcionreniec" class="form-control">
                                 <option value="No se consultó, falta de datos">No se consultó, falta de datos</option>
                                 <option value="Consulta: Dato correcto, Actualizar">Consulta: Dato correcto, Actualizar</option>
                                 <option value="Consulta: Dato diferentes">Consulta: Dato diferentes</option>
                             </select>
                         </div>
-                        <div class="col-md-8 text-center">
+                        <div class="col-md-4 text-center">
                             <button type="button" @click="actualiza_reniec()" class="btn btn-success btn-sm">
                                 <i class="fa fa-send"></i> Grabar Datos
                             </button>
