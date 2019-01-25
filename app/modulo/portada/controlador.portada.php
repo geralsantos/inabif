@@ -1626,7 +1626,6 @@ ini_set('session.gc_maxlifetime','1200');*/
     $nivel = $_SESSION["usuario"][0]["NIVEL"];
     require VENDOR;
     try {
-      echo "geral";
       $wsdlurl = "https://ws5.pide.gob.pe/services/ReniecConsultaDni";
      
       $file_get_contents = file_get_contents('https://ws5.pide.gob.pe/Rest/Reniec/Consultar?nuDniConsulta=76934495&nuDniUsuario=45050812&nuRucUsuario=20507920722&password=45050812');
