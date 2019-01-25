@@ -1644,15 +1644,19 @@ ini_set('session.gc_maxlifetime','1200');*/
     $Apellido_p = $_POST["Apellido_p"];
     $Apellido_m = $_POST["Apellido_m"];
     $Nombres = $_POST["Nombres"];
+    $cboopcionreniec = $_POST["cboopcionreniec"];
     $nivel = $_SESSION["usuario"][0]["NIVEL"];
-
-    $wsdlurl = "https://ws5.pide.gob.pe/services/ReniecConsultaDni";
-    $path = 'https://ws5.pide.gob.pe/Rest/Reniec/Consultar?nuDniConsulta='.$dni.'&nuDniUsuario='.NUDNIUSUARIO.'&nuRucUsuario='.NURUCUSUARIO.'&password='.PASSWORD;
-    $xmlfile = file_get_contents($path);
-
-    $res = $modelo->updateData( 'residente',array('nombre'=>$Nombres,'apellido_p'=>$Apellido_p,'apellido_m'=>$Apellido_m),array('id'=>$id_residente));
+    $valores = array();
+    if ($cboopcionreniec=="No se consultó, falta de datos") {
+      $valores = array('pide'=>$cboopcionreniec);
+    }else if($cboopcionreniec=="Consulta: Dato correcto, Actualizar"){
+      $valores = array('nombre'=>$Nombres,'apellido_p'=>$Apellido_p,'apellido_m'=>$Apellido_m,'pide'=>$cboopcionreniec);
+    }else if($cboopcionreniec=="Consulta: Dato correcto, Actualizar"){
+      $valores = array('pide'=>$cboopcionreniec);
+    }
+    $res = $modelo->updateData( 'residente',$valores,array('id'=>$id_residente));
     if ($res) {
-      echo json_encode(array( "data"=>$xmlfile )) ;
+      echo json_encode(array( "resultado"=>true )) ;
     }
      
   }
