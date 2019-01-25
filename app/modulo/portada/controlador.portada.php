@@ -1002,6 +1002,7 @@ class portada extends App{
       }
     $modulos = [$modulos];
   }
+  $html_modulo = "";
 	foreach ($modulos as $key => $modulo)
   {
     if (ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel) {
