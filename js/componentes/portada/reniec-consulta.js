@@ -60,6 +60,7 @@ Vue.component('reniec-consulta', {
             this.nombre_residente=nombre + ' ' + apellido;
             this.coincidencias = [];
             this.bloque_busqueda = false;
+            this.residente_seleccionado=[];
             this.residente_seleccionado.push(coincidencia);
             console.log(coincidencia);
             /*this.$http.post('cargar_datos_residente?view',{tabla:'CarIdentificacionUsuario', residente_id:this.id_residente }).then(function(response){
