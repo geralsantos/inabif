@@ -139,7 +139,7 @@ Vue.component('reniec-consulta', {
         },
         actualiza_reniec(){
             if (!isempty(this.id_residente)) {
-                let where = {dni:this.NumDoc,cboopcionreniec:cboopcionreniec,Apellido_p:this.data_reniec.Apellido_p,Apellido_m:this.data_reniec.Apellido_m,Nombres:this.data_reniec.Nombres,id_residente:this.id_residente};
+                let where = {dni:this.NumDoc,cboopcionreniec:this.data_renieccboopcionreniec,Apellido_p:this.data_reniec.Apellido_p,Apellido_m:this.data_reniec.Apellido_m,Nombres:this.data_reniec.Nombres,id_residente:this.id_residente};
                 this.$http.post('actualiza_reniec?view',where).then(function(response){
                     if( response.body.resultado != undefined){
                         swal("Actualizado", "El residente ha sido actualizado con éxito", "success");
