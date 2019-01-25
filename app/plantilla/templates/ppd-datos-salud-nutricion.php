@@ -222,12 +222,12 @@
 
                             <div class="form-group col-md-2">
                                 <label for="text-input" class=" form-control-label">Peso (Kg.)</label>
-                                <input type="number" step="0.1" v-model="CarPeso" name="CarPeso" placeholder="" class="form-control">
+                                <input type="number" step="0.01" v-model="CarPeso" name="CarPeso" placeholder="" class="form-control">
                             </div>
 
                                 <div class="form-group col-md-2">
                                 <label for="text-input" class=" form-control-label">Talla (m)</label>
-                                <input type="number" step="0.1" v-model="CarTalla" name="CarTalla" placeholder="" class="form-control">
+                                <input type="number" step="0.01" v-model="CarTalla" name="CarTalla" placeholder="" class="form-control">
                             </div>
 
                             <div class="form-group col-md-3">

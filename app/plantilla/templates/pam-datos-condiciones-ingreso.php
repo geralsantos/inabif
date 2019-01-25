@@ -120,6 +120,7 @@
                                 <option value="ONP">ONP</option>
                                 <option value="AFP">AFP</option>
                                 <option value="Otros">Otros</option>
+                                <option value="No tiene">No tiene</option>
                                 </select>
                                 </div>
                             </div>
