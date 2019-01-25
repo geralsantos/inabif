@@ -1630,8 +1630,8 @@ ini_set('session.gc_maxlifetime','1200');*/
       $wsdlurl = "https://ws5.pide.gob.pe/services/ReniecConsultaDni";
      
       $file_get_contents = file_get_contents('https://ws5.pide.gob.pe/Rest/Reniec/Consultar?nuDniConsulta=76934495&nuDniUsuario=45050812&nuRucUsuario=20507920722&password=45050812');
-      $xml_to_array = json_decode(json_encode(simplexml_load_string($file_get_contents)), 1);
-      print_r($xml_to_array);
+      //$xml_to_array = json_decode(json_encode(simplexml_load_string($file_get_contents)), 1);
+      print_r(simplexml_load_string($file_get_contents));
      /* $client = new nusoap_client("https://ws5.pide.gob.pe/services/ReniecConsultaDni");
       $client->call("consultar",array("nuDniConsulta"=>76934495,"nuDniUsuario"=>45050812,"nuRucUsuario"=>20507920722,"password"=>45050812));
 
