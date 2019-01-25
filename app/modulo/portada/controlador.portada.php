@@ -943,8 +943,9 @@ class portada extends App{
   $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
   $anio = date("Y",strtotime($_POST["fecha_inicial"]));
   $mes = date("F",strtotime($_POST["fecha_final"])); 
-  $fecha_inicial = date("d-m-Y",strtotime($_POST["fecha_final"])); 
-  $fecha_final = date("d-m-Y",strtotime($_POST["fecha_final"])); 
+  echo $fecha_inicial = date("d-m-Y",strtotime($_POST["fecha_final"])); 
+  echo $fecha_final = date("d-m-Y",strtotime($_POST["fecha_final"])); 
+  die();
 	$fecha = " BETWEEN UPPER('".$fecha_inicial."') AND UPPER('".$fecha_final."')";
   
   if (ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel) {
