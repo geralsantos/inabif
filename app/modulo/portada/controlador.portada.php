@@ -1651,7 +1651,7 @@ ini_set('session.gc_maxlifetime','1200');*/
       $valores = array('pide'=>$cboopcionreniec);
     }else if($cboopcionreniec=="Consulta: Dato correcto, Actualizar"){
       $valores = array('nombre'=>$Nombres,'apellido_p'=>$Apellido_p,'apellido_m'=>$Apellido_m,'pide'=>$cboopcionreniec);
-    }else if($cboopcionreniec=="Consulta: Dato correcto, Actualizar"){
+    }else if($cboopcionreniec=="Consulta: Dato diferentes"){
       $valores = array('pide'=>$cboopcionreniec);
     }
     $res = $modelo->updateData( 'residente',$valores,array('id'=>$id_residente));
