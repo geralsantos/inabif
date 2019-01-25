@@ -1628,7 +1628,7 @@ ini_set('session.gc_maxlifetime','1200');*/
     try {
       $wsdlurl = "https://ws5.pide.gob.pe/services/ReniecConsultaDni";
       $path = '"https://ws5.pide.gob.pe/Rest/Reniec/Consultar?nuDniConsulta=76934495&nuDniUsuario=45050812&nuRucUsuario=20507920722&password=45050812"';
-
+      $xmlfile = file_get_contents($path);
      /* //read entire file into string
       $xmlfile = file_get_contents($path);
       
@@ -1650,7 +1650,7 @@ ini_set('session.gc_maxlifetime','1200');*/
       $client->soap_defencoding = 'UTF-8';
       $client->decode_utf8 = FALSE;
       $result = $client->call("consultar",array("nuDniConsulta"=>76934495,"nuDniUsuario"=>45050812,"nuRucUsuario"=>20507920722,"password"=>45050812));*/
-      echo $path;
+      echo $xmlfile;
       } catch (SoapFault $exception) {
         echo $exception->getMessage();
       }
