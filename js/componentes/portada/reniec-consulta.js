@@ -144,6 +144,7 @@ Vue.component('reniec-consulta', {
                 this.$http.post('actualiza_reniec?view',where).then(function(response){
                     if( response.body.resultado != undefined){
                         swal("Actualizado", "El residente ha sido actualizado con éxito", "success");
+                        this.inicializar();
                     }else{
                         swal("Error", "Ha ocurrido un error al actualizar al residente", "error")
                     }
