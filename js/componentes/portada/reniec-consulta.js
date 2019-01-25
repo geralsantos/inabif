@@ -113,7 +113,6 @@ Vue.component('reniec-consulta', {
             let apellido = apellido_p + ' ' + apellido_m;
             this.nombre_residente=nombre + ' ' + apellido;
             this.modal_lista = false;
-            console.log(residente);
             this.NumDoc = residente.DNI_RESIDENTE;
             this.residente_seleccionado=[];
             this.residente_seleccionado.push(residente);
@@ -136,10 +135,11 @@ Vue.component('reniec-consulta', {
                             this.data_reniec.Apellido_p = data_reniec.Envelope.Body.consultarResponse.return.datosPersona.apPrimer;
                             this.data_reniec.Apellido_m = data_reniec.Envelope.Body.consultarResponse.return.datosPersona.apSegundo;
                             this.data_reniec.Nombres = data_reniec.Envelope.Body.consultarResponse.return.datosPersona.prenombres;
+                       console.log(this.data_reniec);
+
                         }else{
                             swal("ERROR",(coResultado+" : "+deResultado), "warning")
                         }
-                       console.log(this.data_reniec);
                       
                     }else{
                         swal("", "No existe él residente", "error")
