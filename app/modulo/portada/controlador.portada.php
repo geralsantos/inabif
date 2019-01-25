@@ -1651,7 +1651,6 @@ ini_set('session.gc_maxlifetime','1200');*/
           print_r($error);
 
       }
-      print_r($xmlArr);
      /* $client = new nusoap_client("https://ws5.pide.gob.pe/services/ReniecConsultaDni");
       $client->call("consultar",array("nuDniConsulta"=>76934495,"nuDniUsuario"=>45050812,"nuRucUsuario"=>20507920722,"password"=>45050812));
 
