@@ -1627,7 +1627,7 @@ ini_set('session.gc_maxlifetime','1200');*/
     require VENDOR;
     try {
       $wsdlurl = "https://ws5.pide.gob.pe/services/ReniecConsultaDni";
-      $path = '"https://ws5.pide.gob.pe/Rest/Reniec/Consultar?nuDniConsulta=76934495&nuDniUsuario=45050812&nuRucUsuario=20507920722&password=45050812"';
+      $path = 'https://ws5.pide.gob.pe/Rest/Reniec/Consultar?nuDniConsulta=76934495&nuDniUsuario=45050812&nuRucUsuario=20507920722&password=45050812';
       $xmlfile = file_get_contents($path);
      /* //read entire file into string
       $xmlfile = file_get_contents($path);
