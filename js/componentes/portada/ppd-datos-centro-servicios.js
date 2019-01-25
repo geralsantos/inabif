@@ -79,7 +79,7 @@ Vue.component('ppd-datos-centro-servicios', {
             this.$http.post('buscar_centro?view',{tabla:'centro_atencion' }).then(function(response){
 
                 if( response.body.data != undefined){
-
+                    console.log(response.body.data);
                     let ubigeo =  response.body.data[0]["UBIGEO"];
                     let departamento = ubigeo.substring(0, 2);
                     let provincia = ubigeo.substring(0, 4);
