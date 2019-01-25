@@ -141,6 +141,8 @@ Vue.component('registro-perfiles', {
                     this.cclave=null;
                     this.showModal = true;
                     this.mostrar = true;
+                    this.tipo_centro = null;
+
             }else{
                 console.log(usuario);
  //let  where = {'id':usuario.ID};
@@ -158,7 +160,7 @@ Vue.component('registro-perfiles', {
                     this.clave=usuario.CLAVE;
                     this.cclave=usuario.CLAVE;
                     this.showModal = true;
-                    
+                    this.tipo_centro = usuario.TIPO_CENTRO_ID;
 
                     if(this.nivel_id == 4 || this.nivel_id == 2 || this.nivel_id == 1 || this.nivel_id == 3){
                         this.mostrar = false; 
