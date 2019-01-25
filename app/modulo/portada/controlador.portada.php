@@ -940,7 +940,7 @@ class portada extends App{
   public function descargar_reporte_matriz_rub(){
     $modelo = new modeloPortada();
 	$nivel = $_SESSION["usuario"][0]["NIVEL"];
-
+  $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
   $anio = date("Y",strtotime($_POST["fecha_inicial"]));
   $mes = date("F",strtotime($_POST["fecha_final"])); 
   $fecha_inicial = date("d-m-Y",strtotime($_POST["fecha_final"])); 
