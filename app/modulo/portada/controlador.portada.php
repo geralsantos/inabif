@@ -976,9 +976,6 @@ class portada extends App{
   }
   include 'consultas_preparadas_rub.php';
 
-  $where = " WHERE to_char(da.fecha_edita,'DD-MON-YY') ".$fecha." AND to_char(ceg.fecha_egreso,'DD-MON-YY') ".$fecha;
-  
-
 	foreach ($modulos as $key => $modulo)
   {
     if (ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel) {
