@@ -137,13 +137,10 @@ Vue.component('reniec-consulta', {
                             this.data_reniec.Apellido_m = data_reniec.Envelope.Body.consultarResponse.return.datosPersona.apSegundo;
                             this.data_reniec.Nombres = data_reniec.Envelope.Body.consultarResponse.return.datosPersona.prenombres;
                         }else{
-                            swal("ERROR",(coResultado+" : "+deResultado), "error")
+                            swal("ERROR",(coResultado+" : "+deResultado), "warning")
                         }
                        console.log(this.data_reniec);
-                        //alert(this.data_reniec.Envelope.Body.consultarResponse.return.datosPersona.apPrimer);
-                        this.modal_lista = true;
-                        this.isLoading = false;
-                        this.pacientes = response.body.data;
+                      
                     }else{
                         swal("", "No existe él residente", "error")
                     }

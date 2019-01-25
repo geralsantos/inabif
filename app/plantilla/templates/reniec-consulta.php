@@ -15,7 +15,7 @@
                         </div>
                     </div>
 <br>
-                    <form  class="form-horizontal"  v-on:submit.prevent="guardar">
+                    <form  class="form-horizontal">
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">Buscar Residente <i class="fa fa-search" aria-hidden="true"></i></label>
@@ -67,26 +67,28 @@
                         </div>
                     </form>
                     <div class="row">
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead class="thead-dark text-center">
-                                    <tr>
-                                    <th scope="col">DNI</th>
-                                    <th scope="col">Paterno</th>
-                                    <th scope="col">Materno</th>
-                                    <th scope="col">Nombre</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="text-center">
-                                    <tr>
-                                    <td>{{data_reniec.NumDoc}}</td>
-                                    <td>{{data_reniec.Apellido_p}}</td>
-                                    <td>{{data_reniec.Apellido_m}}</td>
-                                    <td>{{data_reniec.Nombres}}</td>
-                                    </tr>
+                        <div class="col-md-12 text-center">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead class="thead-dark text-center">
+                                        <tr>
+                                        <th scope="col">DNI</th>
+                                        <th scope="col">Paterno</th>
+                                        <th scope="col">Materno</th>
+                                        <th scope="col">Nombre</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-center">
+                                        <tr>
+                                        <td>{{data_reniec.NumDoc}}</td>
+                                        <td>{{data_reniec.Apellido_p}}</td>
+                                        <td>{{data_reniec.Apellido_m}}</td>
+                                        <td>{{data_reniec.Nombres}}</td>
+                                        </tr>
 
-                                </tbody>
-                            </table>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
