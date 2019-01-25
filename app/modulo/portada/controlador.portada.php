@@ -1358,6 +1358,7 @@ ini_set('session.gc_maxlifetime','1200');*/
 			where m.centro_id in (".$centro["TIPO_CENTRO_ID"].") order by ".$orderby;
 		$modulos = $modelo->executeQuery($modulos);
     $html ="";
+    $contar = 0;
     $contar_modulos_2 = 1;
     $fasenombrerepite=array();
 		foreach ($modulos as $key => $modulo)
@@ -1476,6 +1477,11 @@ ini_set('session.gc_maxlifetime','1200');*/
     }
     if ($contar==0) {
       $centro_html = "";
+    }
+    if(empty($grupos)){
+      $contar_modulos =0;
+      $modulo_html = "";
+      $grupo_html = "";
     }
     $html2 .=$centro_html.$html;
 	}
