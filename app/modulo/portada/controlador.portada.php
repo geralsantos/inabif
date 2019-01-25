@@ -975,12 +975,39 @@ class portada extends App{
     }
   }
   include 'consultas_preparadas_rub.php';
-
+  if (ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel) {
+    $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+    /* no afecta en la consulta ya que se listan todos los centros de todos los tipos de centros */
+  }else if (SUPERVISOR == $nivel || USER_SEDE== $nivel){
+    $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+    $modulos = $modulos[$tipo_centro];
+    if ($tipo_centro == PPD) {
+      $modulos = $modulos.' order by cu.residente_id desc';
+      }else if($tipo_centro == PAM){
+      $modulos = $modulos.' order by pdi.residente_id desc';
+      }else if($tipo_centro == NNA){
+      $modulos = $modulos.' order by nir.residente_id desc';
+      }
+      $modulos = [$modulos];
+  }else if (REGISTRADOR == $nivel || RESPONSABLE_INFORMACION== $nivel || USER_CENTRO== $nivel){
+    $centro = $_SESSION["usuario"][0]["CENTRO_ID"];
+    $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+    $modulos = $modulos[$tipo_centro];
+    if ($tipo_centro == PPD) {
+      $modulos = $modulos.' order by cu.residente_id desc';
+      }else if($tipo_centro == PAM){
+      $modulos = $modulos.' order by pdi.residente_id desc';
+      }else if($tipo_centro == NNA){
+      $modulos = $modulos.' order by nir.residente_id desc';
+      }
+    $modulos = [$modulos];
+  }
 	foreach ($modulos as $key => $modulo)
   {
     if (ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel) {
       $modulo = $modulo.$tipo_centro_dependiente[$key].' '.$centro_id_dependiente[$key];
     }
+    echo $modulo;
       $modulo = $modelo->executeQuery($modulo);
       $residentes = array();
       $grupo_html = "";
