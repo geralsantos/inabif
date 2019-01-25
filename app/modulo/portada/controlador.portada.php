@@ -55,18 +55,6 @@ class portada extends App{
     $li = '';
     foreach ($elements as $element)
     {
-      /*<a href="#node11" class="list-group-item level-0" data-toggle="collapse"
-    aria-expanded="true" id="gardening">Gardening
-        <i class="fa fa-caret-down"></i>
-    </a>
-    <div class="collapse" id="node11">
-        <a href="#node13" class="list-group-item level-1" data-toggle="collapse" id="lawn-chemicals">Lawn Chemicals
-        <i class="fa fa-caret-down"></i>
-        </a>
-        <div class="collapse" id="node13">
-            <a href="gardening/lawn-chemicals/moss-control/" class="list-group-item level-2" id="moss-control">Moss Control</a>
-        </div>
-    </div>*/
     $li = $li  . (isset($element['children']) ? ('
     <a href="#node'.$element['ID'].'" class="list-group-item level-0" data-toggle="collapse" aria-expanded="true" id="gardening">'.$element['NOMBRE'].'
         <i class="fa fa-caret-down"></i>
@@ -75,26 +63,7 @@ class portada extends App{
     '. $this->buildTreeHtml($element['children'],'childs').'
     </div>
       ') :
-        ('
-        <a href="#'.$element['URL_TEMPLATE'].'" class="list-group-item level-2" id="moss-control">'.$element['NOMBRE'].'</a>') ) ;
-     // if (in_array($_SESSION["nivelusuario"],(explode(',',$element["niveles"])))) {
-       /* $li = $li  . (isset($element['children']) ? ('
-                      <li class="menu-item-has-children dropdown">
-                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
-                            <i class="menu-icon ' . $element["ICON"] . '"></i>' . $element['NOMBRE'] .'
-                          </a>
-                          <ul class="sub-menu children dropdown-menu">
-                          '. $this->buildTreeHtml($element['children'],'childs').'
-                          </ul>
-                          </li>
-                        ') :
-                          ('<li data-url="'.$element['URL_TEMPLATE'].'">
-                            <i class="'.$element["ICON"].'"></i>
-                            <a style="font-size:1em;" href="#'.$element['URL_TEMPLATE'].'" class=""> '.$element['NOMBRE'].'</a>
-                          </li>') ) ;*/
-     // }
-
-
+        ((($element['URL_TEMPLATE']=='ppd-datos-condicion-ingreso'||$element['URL_TEMPLATE']=='nna-datos-condiciones-ingreso-residente'||$element['URL_TEMPLATE']=='pam-datos-condiciones-ingreso')?('<a href="#'.$element['URL_TEMPLATE'].'" class="list-group-item level-2" id="moss-control">'.$element['NOMBRE'].'</a>'.'<a href="#reniec-consulta" class="list-group-item level-2" id="moss-control">Reniec Consulta Residente</a>'):('<a href="#'.$element['URL_TEMPLATE'].'" class="list-group-item level-2" id="moss-control">'.$element['NOMBRE'].'</a>'))) ) ;
     }
     return $li;
   }
