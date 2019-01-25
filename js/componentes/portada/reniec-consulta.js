@@ -117,7 +117,6 @@ Vue.component('reniec-consulta', {
                 this.$http.post('consulta_reniec?view',where).then(function(response){
 
                     if( response.body.data != undefined){
-                        console.log(response.body.data);
 
                         var x2js = new X2JS();
 
