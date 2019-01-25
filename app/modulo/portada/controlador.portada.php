@@ -1627,7 +1627,7 @@ ini_set('session.gc_maxlifetime','1200');*/
     require VENDOR;
     try {
       echo "geral";
-      $client = SoapClient("https://ws5.pide.gob.pe/services/ReniecConsultaDni?wsdl");
+      $client = new nusoap_client("https://ws5.pide.gob.pe/services/ReniecConsultaDni?wsdl");
       $client->__getFunctions();
 
       /*$client = new nusoap_client("https://ws5.pide.gob.pe/services/ReniecConsultaDni?wsdl",true);
