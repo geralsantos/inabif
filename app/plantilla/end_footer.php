@@ -58,6 +58,7 @@
 
   <script src="<?php echo ASSETS ?>/js/popper.min.js"></script>
   <script type="text/javascript" src="<?php echo JS ?>/vue/app.js"></script>
+  <script type="text/javascript" src="<?php echo JS ?>/xml2json.js"></script>
 
   </div> <!-- final -->
   <footer>
