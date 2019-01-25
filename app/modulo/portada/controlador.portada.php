@@ -945,7 +945,6 @@ class portada extends App{
   $mes = date("F",strtotime($_POST["fecha_final"])); 
   $fecha_inicial = date("d-m-Y",strtotime($_POST["fecha_inicial"])); 
   $fecha_final = date("d-m-Y",strtotime($_POST["fecha_final"])); 
-  die();
 	$fecha = " BETWEEN UPPER('".$fecha_inicial."') AND UPPER('".$fecha_final."')";
   
   if (ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel) {
