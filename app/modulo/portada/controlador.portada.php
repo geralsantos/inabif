@@ -1629,7 +1629,7 @@ ini_set('session.gc_maxlifetime','1200');*/
       $wsdlurl = "https://ws5.pide.gob.pe/services/ReniecConsultaDni";
       $path = "https://ws5.pide.gob.pe/Rest/Reniec/Consultar?nuDniConsulta=76934495&nuDniUsuario=45050812&nuRucUsuario=20507920722&password=45050812";
 
-      //read entire file into string
+     /* //read entire file into string
       $xmlfile = file_get_contents($path);
       
       //convert xml string into an object
@@ -1641,7 +1641,16 @@ ini_set('session.gc_maxlifetime','1200');*/
       print_r($json);
       
       //convert into associative array
-      $xmlArr = json_decode($json, true);
+      $xmlArr = json_decode($json, true);*/
+
+      libxml_use_internal_errors(true);
+      $xml=simplexml_load_string($path); //or simplexml_load_file
+
+      foreach( libxml_get_errors() as $error ) {
+
+          print_r($error);
+
+      }
       print_r($xmlArr);
      /* $client = new nusoap_client("https://ws5.pide.gob.pe/services/ReniecConsultaDni");
       $client->call("consultar",array("nuDniConsulta"=>76934495,"nuDniUsuario"=>45050812,"nuRucUsuario"=>20507920722,"password"=>45050812));
