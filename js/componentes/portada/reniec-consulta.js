@@ -106,6 +106,7 @@ Vue.component('reniec-consulta', {
             this.modal_lista = false;
             this.NumDoc = residente.DNI_RESIDENTE;
             this.residente_seleccionado=[];
+            console.log(residente);
             this.residente_seleccionado.push(residente);
 
         },
