@@ -107,6 +107,10 @@
                                 <option value="ESSALUD">ESSALUD</option>
                                 <option value="FFAA_PNP">FFAA_PNP</option>
                                 <option value="Seguro Privado">Seguro Privado</option>
+                                <option value="Seguro Integral de Salud(SIS)">Seguro Integral de Salud(SIS)</option>
+                                <option value="Otro">Otro</option>
+                                <option value="No tiene">No tiene</option>
+                                
                                 </select>
                                 </div>
                             </div>
