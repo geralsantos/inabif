@@ -1624,38 +1624,37 @@ ini_set('session.gc_maxlifetime','1200');*/
     $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
     $dni = $_POST["dni"];
     $nivel = $_SESSION["usuario"][0]["NIVEL"];
-    require VENDOR;
     try {
       $wsdlurl = "https://ws5.pide.gob.pe/services/ReniecConsultaDni";
       $path = 'https://ws5.pide.gob.pe/Rest/Reniec/Consultar?nuDniConsulta='.$dni.'&nuDniUsuario='.NUDNIUSUARIO.'&nuRucUsuario='.NURUCUSUARIO.'&password='.PASSWORD;
       $xmlfile = file_get_contents($path);
-      echo json_encode(array( "data"=>$xmlfile )) ;
-
-     /* //read entire file into string
-      $xmlfile = file_get_contents($path);
-      
-      //convert xml string into an object
-      $xml = simplexml_load_string($xmlfile);
-      print_r($xml);
-      
-      //convert into json
-      $json  = json_encode($xml);
-      print_r($json);
-      
-      //convert into associative array
-      $xmlArr = json_decode($json, true);*/
-
-     /* $client = new nusoap_client("https://ws5.pide.gob.pe/services/ReniecConsultaDni");
-      $client->call("consultar",array("nuDniConsulta"=>76934495,"nuDniUsuario"=>45050812,"nuRucUsuario"=>20507920722,"password"=>45050812));
-
-      $client = new nusoap_client("https://ws5.pide.gob.pe/services/ReniecConsultaDni?wsdl",true);
-      $client->soap_defencoding = 'UTF-8';
-      $client->decode_utf8 = FALSE;
-      $result = $client->call("consultar",array("nuDniConsulta"=>76934495,"nuDniUsuario"=>45050812,"nuRucUsuario"=>20507920722,"password"=>45050812));*/
+      if ($xmlfile) {
+        echo json_encode(array( "data"=>$xmlfile )) ;
+      }
 
       } catch (SoapFault $exception) {
         echo $exception->getMessage();
       }
+  }
+  public function actualiza_reniec(){
+    $modelo = new modeloPortada();
+    $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+    $id_residente = $_POST["id_residente"];
+    $dni = $_POST["dni"];
+    $Apellido_p = $_POST["Apellido_p"];
+    $Apellido_m = $_POST["Apellido_m"];
+    $Nombres = $_POST["Nombres"];
+    $nivel = $_SESSION["usuario"][0]["NIVEL"];
+
+    $wsdlurl = "https://ws5.pide.gob.pe/services/ReniecConsultaDni";
+    $path = 'https://ws5.pide.gob.pe/Rest/Reniec/Consultar?nuDniConsulta='.$dni.'&nuDniUsuario='.NUDNIUSUARIO.'&nuRucUsuario='.NURUCUSUARIO.'&password='.PASSWORD;
+    $xmlfile = file_get_contents($path);
+
+    $res = $modelo->updateData( 'residente',array('nombre'=>$Nombres,'apellido_p'=>$Apellido_p,'apellido_m'=>$Apellido_m),array('id'=>$id_residente));
+    if ($res) {
+      echo json_encode(array( "data"=>$xmlfile )) ;
+    }
+     
   }
 
 }

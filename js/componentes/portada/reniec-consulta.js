@@ -26,6 +26,11 @@ Vue.component('reniec-consulta', {
      
     },
     methods:{
+        inicializar(){
+            this.id_residente=null;
+            this.residente_seleccionado =[];            this.data_reniec={};
+            this.cboopcionreniec=null;
+        },
         buscar_residente(){
             this.id_residente = null;
 
@@ -66,23 +71,7 @@ Vue.component('reniec-consulta', {
 
             this.residente_seleccionado.push(coincidencia);
             console.log(coincidencia);
-            /*this.$http.post('cargar_datos_residente?view',{tabla:'CarIdentificacionUsuario', residente_id:this.id_residente }).then(function(response){
-
-                if( response.body.atributos != undefined){
-                    this.Ape_Paterno = response.body.atributos[0]["APE_PATERNO"];
-                    this.Ape_Materno = response.body.atributos[0]["APE_MATERNO"];
-                    this.Nom_Usuario = response.body.atributos[0]["NOM_USUARIO"];
-                    this.Pais_Procencia = response.body.atributos[0]["PAIS_PROCENCIA"];
-                    this.Depatamento_Procedencia = response.body.atributos[0]["DEPATAMENTO_PROCEDENCIA"];
-                    this.Provincia_Procedencia = response.body.atributos[0]["PROVINCIA_PROCEDENCIA"];
-                    this.Distrito_Procedencia = response.body.atributos[0]["DISTRITO_PROCEDENCIA"];
-                    this.Sexo = response.body.atributos[0]["SEXO"];
-                    this.Edad = response.body.atributos[0]["EDAD"];
-                    this.Fecha_Nacimiento = moment().subtract(this.Edad,'years').format("YYYY-MM-DD");
-                    this.Lengua_Materna = response.body.atributos[0]["LENGUA_MATERNA"];
-                    this.id = response.body.atributos[0]["RESIDENTE_ID"];
-                }
-             });*/
+           
 
         },mostrar_lista_residentes(){
 
@@ -149,12 +138,12 @@ Vue.component('reniec-consulta', {
         },
         actualiza_reniec(){
             if (!isempty(this.id_residente)) {
-                let where = {dni:this.NumDoc}
+                let where = {dni:this.NumDoc,cboopcionreniec:cboopcionreniec,Apellido_p:this.data_reniec.Apellido_p,Apellido_m:this.data_reniec.Apellido_m,Nombres:this.data_reniec.Nombres,id_residente:this.id_residente};
                 this.$http.post('actualiza_reniec?view',where).then(function(response){
-                    if( response.body.data != undefined){
-                       
+                    if( response.body.resultado != undefined){
+                        swal("Actualizado", "El residente ha sido actualizado con éxito", "success");
                     }else{
-                        swal("", "No existe él residente", "error")
+                        swal("Error", "Ha ocurrido un error al actualizar al residente", "error")
                     }
                 });
             }else{
