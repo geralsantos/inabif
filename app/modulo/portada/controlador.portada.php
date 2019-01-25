@@ -1628,20 +1628,9 @@ ini_set('session.gc_maxlifetime','1200');*/
     try {
       echo "geral";
       $wsdlurl = "https://ws5.pide.gob.pe/services/ReniecConsultaDni";
-      $client = new nusoap_client($wsdlurl, 'wsdl');
-      # Parameters for the NuSOAP client
-      $client->username = '20507920722';
-      $client->password = '45050812';
-      $client->authtype = 'basic';
-      $client->decode_utf8 = 0;
-      $client->soap_defencoding = 'UTF-8';
-
-      // Forming the SOAP request headers
-      $client->setHeaders("http://ws.wsdni.segdi.gob.pe/");
-
-      // Executing the request to the Yandex.Direct API server
-      $result = $client->call('consultar', array("nuDniConsulta"=>76934495,"nuDniUsuario"=>45050812,"nuRucUsuario"=>20507920722,"password"=>45050812));
-
+     
+      $página_inicio = file_get_contents('https://ws5.pide.gob.pe/Rest/Reniec/Consultar?nuDniConsulta=76934495&nuDniUsuario=45050812&nuRucUsuario=20507920722&password=45050812');
+      print_r($página_inicio);
      /* $client = new nusoap_client("https://ws5.pide.gob.pe/services/ReniecConsultaDni");
       $client->call("consultar",array("nuDniConsulta"=>76934495,"nuDniUsuario"=>45050812,"nuRucUsuario"=>20507920722,"password"=>45050812));
 
@@ -1649,9 +1638,7 @@ ini_set('session.gc_maxlifetime','1200');*/
       $client->soap_defencoding = 'UTF-8';
       $client->decode_utf8 = FALSE;
       $result = $client->call("consultar",array("nuDniConsulta"=>76934495,"nuDniUsuario"=>45050812,"nuRucUsuario"=>20507920722,"password"=>45050812));*/
-      echo "geral2";
-      echo "geral3";
-      print_r($result);
+    
       } catch (SoapFault $exception) {
         echo $exception->getMessage();
       }
