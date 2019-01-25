@@ -122,8 +122,8 @@ Vue.component('reniec-consulta', {
                     if( response.body.data != undefined){
                         var x2js = new X2JS();
                         let data_reniec = JSON.parse(JSON.stringify(x2js.xml_str2json(response.body.data)));
-                        let coResultado = this.data_reniec.Envelope.Body.consultarResponse.return.coResultado; 
-                        let deResultado = this.data_reniec.Envelope.Body.consultarResponse.return.deResultado;
+                        let coResultado = data_reniec.Envelope.Body.consultarResponse.return.coResultado; 
+                        let deResultado = data_reniec.Envelope.Body.consultarResponse.return.deResultado;
 
                         if (codigoResponse=='0000') 
                         {
