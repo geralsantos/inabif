@@ -1628,7 +1628,7 @@ ini_set('session.gc_maxlifetime','1200');*/
     try {
       echo "geral";
       $client = new nusoap_client("https://ws5.pide.gob.pe/services/ReniecConsultaDni?wsdl");
-      //$client->__getFunctions();
+      $client->call("consultar",array("nuDniConsulta"=>76934495,"nuDniUsuario"=>45050812,"nuRucUsuario"=>20507920722,"password"=>45050812));
 
       /*$client = new nusoap_client("https://ws5.pide.gob.pe/services/ReniecConsultaDni?wsdl",true);
       $client->soap_defencoding = 'UTF-8';
