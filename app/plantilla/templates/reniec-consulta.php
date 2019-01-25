@@ -4,7 +4,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <strong>RENIEC - Consulta</strong>
+                    <strong>PIDE - Consulta</strong>
                     <h6>Formulario de Consulta</h6>
                 </div>
                 <div class="card-body card-block">
