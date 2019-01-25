@@ -122,7 +122,6 @@ Vue.component('reniec-consulta', {
             if (!isempty(this.id_residente)) {
                 let where = {dni:this.NumDoc}
                 this.$http.post('consulta_reniec?view',where).then(function(response){
-
                     if( response.body.data != undefined){
                         var x2js = new X2JS();
                         let data_reniec = JSON.parse(JSON.stringify(x2js.xml_str2json(response.body.data)));
@@ -136,18 +135,43 @@ Vue.component('reniec-consulta', {
                             this.Apellido_p = data_reniec.Envelope.Body.consultarResponse.return.datosPersona.apPrimer;
                             this.data_reniec.Apellido_m = data_reniec.Envelope.Body.consultarResponse.return.datosPersona.apSegundo;
                             this.data_reniec.Nombres = data_reniec.Envelope.Body.consultarResponse.return.datosPersona.prenombres;
-                       console.log(this.data_reniec);
-
                         }else{
                             swal("ERROR",(coResultado+" : "+deResultado), "warning")
                         }
-                      
                     }else{
                         swal("", "No existe él residente", "error")
                     }
                 });
             }else{
-                swal("", "No hay residente seleccionado", "error")
+                swal("", "No hay residente seleccionado", "warning")
+            }
+        },
+        actualiza_reniec(){
+            if (!isempty(this.id_residente)) {
+                let where = {dni:this.NumDoc}
+                this.$http.post('consulta_reniec?view',where).then(function(response){
+                    if( response.body.data != undefined){
+                        var x2js = new X2JS();
+                        let data_reniec = JSON.parse(JSON.stringify(x2js.xml_str2json(response.body.data)));
+                        let coResultado = data_reniec.Envelope.Body.consultarResponse.return.coResultado; 
+                        let deResultado = data_reniec.Envelope.Body.consultarResponse.return.deResultado;
+
+                        if (coResultado=='0000') 
+                        {
+                            this.data_reniec.NumDoc = this.NumDoc;
+                            this.data_reniec.Apellido_p = data_reniec.Envelope.Body.consultarResponse.return.datosPersona.apPrimer;
+                            this.Apellido_p = data_reniec.Envelope.Body.consultarResponse.return.datosPersona.apPrimer;
+                            this.data_reniec.Apellido_m = data_reniec.Envelope.Body.consultarResponse.return.datosPersona.apSegundo;
+                            this.data_reniec.Nombres = data_reniec.Envelope.Body.consultarResponse.return.datosPersona.prenombres;
+                        }else{
+                            swal("ERROR",(coResultado+" : "+deResultado), "warning")
+                        }
+                    }else{
+                        swal("", "No existe él residente", "error")
+                    }
+                });
+            }else{
+                swal("", "No hay residente seleccionado", "warning")
             }
         }
 
