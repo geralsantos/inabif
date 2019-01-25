@@ -121,10 +121,19 @@ Vue.component('reniec-consulta', {
 
                     if( response.body.data != undefined){
                         var x2js = new X2JS();
-                        this.data_reniec = JSON.parse(JSON.stringify(x2js.xml_str2json(response.body.data)));
-                      /*  if (this.data_reniec.Envelope.Body.consultarResponse.return.coResultado) {
-                            
-                        }*/
+                        let data_reniec = JSON.parse(JSON.stringify(x2js.xml_str2json(response.body.data)));
+                        let coResultado = this.data_reniec.Envelope.Body.consultarResponse.return.coResultado; 
+                        let deResultado = this.data_reniec.Envelope.Body.consultarResponse.return.deResultado;
+
+                        if (codigoResponse=='0000') 
+                        {
+                            this.data_reniec.NumDoc = this.NumDoc;
+                            this.data_reniec.Apellido_p = data_reniec.Envelope.Body.consultarResponse.return.datosPersona.apPrimer;
+                            this.data_reniec.Apellido_m = data_reniec.Envelope.Body.consultarResponse.return.datosPersona.apSegundo;
+                            this.data_reniec.Nombres = data_reniec.Envelope.Body.consultarResponse.return.datosPersona.prenombres;
+                        }else{
+                            swal("ERROR",(coResultado+" : "+deResultado), "error")
+                        }
                        console.log(this.data_reniec);
                         //alert(this.data_reniec.Envelope.Body.consultarResponse.return.datosPersona.apPrimer);
                         this.modal_lista = true;
