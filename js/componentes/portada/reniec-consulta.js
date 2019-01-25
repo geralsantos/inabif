@@ -121,7 +121,7 @@ Vue.component('reniec-consulta', {
                     if( response.body.data != undefined){
                         var x2js = new X2JS();
                         this.data_reniec = JSON.parse(JSON.stringify(x2js.xml_str2json(response.body.data)));
-                       
+                       console.log(this.data_reniec);
                         //alert(this.data_reniec.Envelope.Body.consultarResponse.return.datosPersona.apPrimer);
                         this.modal_lista = true;
                         this.isLoading = false;
