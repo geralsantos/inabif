@@ -35,12 +35,12 @@ and (
         (
             (
                 to_char(ceg.Fecha_Egreso,\'DD-MON-YY\') 
-                BETWEEN UPPER("'.$fecha_inicial.'") AND UPPER("'.$fecha_final.'") 
+                BETWEEN UPPER(\''.$fecha_inicial.'\') AND UPPER("'.$fecha_final.'") 
                 or to_char(cda.Fecha_Reingreso,\'DD-MON-YY\') 
-                BETWEEN UPPER("'.$fecha_inicial.'") AND UPPER("'.$fecha_final.'") 
+                BETWEEN UPPER(\''.$fecha_inicial.'\') AND UPPER(\''.$fecha_final.'\') 
             )
             or (
-                    to_char(cda.Fecha_Ingreso,\'DD-MON-YY\') <= UPPER("'.$fecha_final.'") and to_char(ceg.Fecha_Egreso,\'DD-MON-YY\') >= UPPER("'.$fecha_final.'")
+                    to_char(cda.Fecha_Ingreso,\'DD-MON-YY\') <= UPPER(\''.$fecha_final.'\') and to_char(ceg.Fecha_Egreso,\'DD-MON-YY\') >= UPPER(\''.$fecha_final.'\')
                 )
         )
     ) '.$where.''),
