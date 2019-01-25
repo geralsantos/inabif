@@ -1630,6 +1630,8 @@ ini_set('session.gc_maxlifetime','1200');*/
       $wsdlurl = "https://ws5.pide.gob.pe/services/ReniecConsultaDni";
       $client = new nusoap_client($wsdlurl, 'wsdl');
       # Parameters for the NuSOAP client
+      $client->username = '20507920722';
+      $client->password = '45050812';
       $client->authtype = 'basic';
       $client->decode_utf8 = 0;
       $client->soap_defencoding = 'UTF-8';
