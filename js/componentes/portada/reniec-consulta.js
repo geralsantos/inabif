@@ -27,6 +27,7 @@ Vue.component('reniec-consulta', {
     },
     methods:{
         inicializar(){
+            this.nombre_residente=null;
             this.id_residente=null;
             this.residente_seleccionado =[];            this.data_reniec={};
             this.cboopcionreniec=null;
