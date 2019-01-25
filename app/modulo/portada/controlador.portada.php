@@ -1649,7 +1649,7 @@ ini_set('session.gc_maxlifetime','1200');*/
       $result = $client->call("consultar",array("nuDniConsulta"=>76934495,"nuDniUsuario"=>45050812,"nuRucUsuario"=>20507920722,"password"=>45050812));*/
       echo "geral2";
       echo "geral3";
-      print_r($client);
+      print_r($result);
       } catch (SoapFault $exception) {
         echo $exception->getMessage();
       }
