@@ -125,7 +125,7 @@ Vue.component('reniec-consulta', {
                         let coResultado = data_reniec.Envelope.Body.consultarResponse.return.coResultado; 
                         let deResultado = data_reniec.Envelope.Body.consultarResponse.return.deResultado;
 
-                        if (codigoResponse=='0000') 
+                        if (coResultado=='0000') 
                         {
                             this.data_reniec.NumDoc = this.NumDoc;
                             this.data_reniec.Apellido_p = data_reniec.Envelope.Body.consultarResponse.return.datosPersona.apPrimer;
