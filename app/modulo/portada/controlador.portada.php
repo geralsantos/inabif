@@ -940,23 +940,40 @@ class portada extends App{
   public function descargar_reporte_matriz_rub(){
     $modelo = new modeloPortada();
 	$nivel = $_SESSION["usuario"][0]["NIVEL"];
-	$innner_centro_atencion = "inner join centro_atencion ca on(ca.tipo_centro_id=tc.id) ";
 
-	if (USER_CENTRO == $nivel || SUPERVISOR == $nivel || RESPONSABLE_INFORMACION == $nivel) {
-	$centro_id = $_SESSION["usuario"][0]["CENTRO_ID"];
-	$filtro_centro = "ca.id = ".$centro_id;
-	}else{
-	$tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
-	$filtro_centro = "tc.tipo_centro_id = ".$tipo_centro_id;
-	$innner_centro_atencion = "";
-  }
   $anio = date("Y",strtotime($_POST["fecha_inicial"]));
   $mes = date("F",strtotime($_POST["fecha_final"])); 
   $fecha_inicial = date("d-m-Y",strtotime($_POST["fecha_final"])); 
   $fecha_final = date("d-m-Y",strtotime($_POST["fecha_final"])); 
 	$fecha = " BETWEEN UPPER('".$fecha_inicial."') AND UPPER('".$fecha_final."')";
   
-  
+  if (ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel) {
+    $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+    $tipo_centro_dependiente = array('1'=>'and cu.tipo_centro_id(+)= re.tipo_centro_id and cda.tipo_centro_id(+)= re.tipo_centro_id and cci.tipo_centro_id(+)= re.tipo_centro_id and csn.tipo_centro_id(+)= re.tipo_centro_id and csm.tipo_centro_id(+)= re.tipo_centro_id and ct.tipo_centro_id(+)= re.tipo_centro_id and cac.tipo_centro_id(+)= re.tipo_centro_id and cap.tipo_centro_id(+)= re.tipo_centro_id and cec.tipo_centro_id(+)= re.tipo_centro_id and cts.tipo_centro_id(+)= re.tipo_centro_id and cas.tipo_centro_id(+)= re.tipo_centro_id and cep.tipo_centro_id(+)= re.tipo_centro_id and cee.tipo_centro_id(+)= re.tipo_centro_id and ces.tipo_centro_id(+)= re.tipo_centro_id and ctf.tipo_centro_id(+)= re.tipo_centro_id and cen.tipo_centro_id(+)= re.tipo_centro_id and cets.tipo_centro_id(+)= re.tipo_centro_id and ceg.tipo_centro_id(+)= re.tipo_centro_id and ca.tipo_centro_id=1  and re.tipo_centro_id=1',
+    '2'=>'and pdi.tipo_centro_id(+)= re.tipo_centro_id and pdau.tipo_centro_id(+)= re.tipo_centro_id and pdci.tipo_centro_id(+)= re.tipo_centro_id and pds.tipo_centro_id(+)= re.tipo_centro_id and psm.tipo_centro_id(+)= re.tipo_centro_id and pasc.residente_id(+)=re.id and pap.tipo_centro_id(+)= re.tipo_centro_id and pas.tipo_centro_id(+)= re.tipo_centro_id and pasa.tipo_centro_id(+)= re.tipo_centro_id and pps.tipo_centro_id(+)= re.tipo_centro_id and ps.tipo_centro_id(+)= re.tipo_centro_id and pn.tipo_centro_id(+)= re.tipo_centro_id and pt.tipo_centro_id(+)= re.tipo_centro_id and peu.tipo_centro_id(+)= re.tipo_centro_id and ca.tipo_centro_id=2  and re.tipo_centro_id=2',
+    '3'=>'and nir.tipo_centro_id(+)= re.tipo_centro_id and nar.tipo_centro_id(+)= re.tipo_centro_id and nci.tipo_centro_id(+)= re.tipo_centro_id and nfr.tipo_centro_id(+)= re.tipo_centro_id and nds.tipo_centro_id(+)= re.tipo_centro_id and nts.tipo_centro_id(+)= re.tipo_centro_id and nas.tipo_centro_id(+)= re.tipo_centro_id and ns.tipo_centro_id(+)= re.tipo_centro_id and nn.tipo_centro_id(+)= re.tipo_centro_id and ntol.tipo_centro_id(+)= re.tipo_centro_id and ne.tipo_centro_id(+)= re.tipo_centro_id and nfh.tipo_centro_id(+)= re.tipo_centro_id and np.tipo_centro_id(+)= re.tipo_centro_id and nps.tipo_centro_id(+)= re.tipo_centro_id and nss.tipo_centro_id(+)= re.tipo_centro_id and nns.tipo_centro_id(+)= re.tipo_centro_id and nes.tipo_centro_id(+)= re.tipo_centro_id and ntss.tipo_centro_id(+)= re.tipo_centro_id and neu.tipo_centro_id(+)= re.tipo_centro_id and ca.tipo_centro_id=3  and re.tipo_centro_id=3');
+    $centro_id_dependiente = array('1'=>'and cu.centro_id(+)= re.centro_id and cda.centro_id(+)= re.centro_id and cci.centro_id(+)= re.centro_id and csn.centro_id(+)= re.centro_id and csm.centro_id(+)= re.centro_id and ct.centro_id(+)= re.centro_id and cac.centro_id(+)= re.centro_id and cap.centro_id(+)= re.centro_id and cec.centro_id(+)= re.centro_id and cts.centro_id(+)= re.centro_id and cas.centro_id(+)= re.centro_id and cep.centro_id(+)= re.centro_id and cee.centro_id(+)= re.centro_id and ces.centro_id(+)= re.centro_id and ctf.centro_id(+)= re.centro_id and cen.centro_id(+)= re.centro_id and cets.centro_id(+)= re.centro_id and ceg.centro_id(+)= re.centro_id and ca.id(+)= re.centro_id',
+    '2'=>'and pdi.centro_id(+)= re.centro_id and pdau.centro_id(+)= re.centro_id and pdci.centro_id(+)= re.centro_id and pds.centro_id(+)= re.centro_id and psm.centro_id(+)= re.centro_id and pap.centro_id(+)= re.centro_id and pas.centro_id(+)= re.centro_id and pasa.centro_id(+)= re.centro_id and pps.centro_id(+)= re.centro_id and ps.centro_id(+)= re.centro_id and pn.centro_id(+)= re.centro_id and pt.centro_id(+)= re.centro_id and peu.centro_id(+)= re.centro_id and ca.id(+)= re.centro_id',
+    '3'=>'and nir.centro_id(+)= re.centro_id and nar.centro_id(+)= re.centro_id and nci.centro_id(+)= re.centro_id and nfr.centro_id(+)= re.centro_id and nds.centro_id(+)= re.centro_id and nts.centro_id(+)= re.centro_id and nas.centro_id(+)= re.centro_id and ns.centro_id(+)= re.centro_id and nn.centro_id(+)= re.centro_id and ntol.centro_id(+)= re.centro_id and ne.centro_id(+)= re.centro_id and nfh.centro_id(+)= re.centro_id and np.centro_id(+)= re.centro_id and nps.centro_id(+)= re.centro_id and nss.centro_id(+)= re.centro_id and nns.centro_id(+)= re.centro_id and nes.centro_id(+)= re.centro_id and ntss.centro_id(+)= re.centro_id and neu.centro_id(+)= re.centro_id and  ca.id(+)= re.centro_id');
+  }else if (SUPERVISOR == $nivel || USER_SEDE== $nivel){
+    $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+    if ($tipo_centro == PPD) {
+      $where = " and cu.tipo_centro_id(+)= ".$tipo_centro." and cda.tipo_centro_id(+)= ".$tipo_centro." and cci.tipo_centro_id(+)= ".$tipo_centro." and csn.tipo_centro_id(+)= ".$tipo_centro." and csm.tipo_centro_id(+)= ".$tipo_centro." and ct.tipo_centro_id(+)= ".$tipo_centro." and cac.tipo_centro_id(+)= ".$tipo_centro." and cap.tipo_centro_id(+)= ".$tipo_centro." and cec.tipo_centro_id(+)= ".$tipo_centro." and cts.tipo_centro_id(+)= ".$tipo_centro." and cas.tipo_centro_id(+)= ".$tipo_centro." and cep.tipo_centro_id(+)= ".$tipo_centro." and cee.tipo_centro_id(+)= ".$tipo_centro." and ces.tipo_centro_id(+)= ".$tipo_centro." and ctf.tipo_centro_id(+)= ".$tipo_centro." and cen.tipo_centro_id(+)= ".$tipo_centro." and cets.tipo_centro_id(+)= ".$tipo_centro." and ceg.tipo_centro_id(+)= ".$tipo_centro." and ca.tipo_centro_id(+)= ".$tipo_centro." and re.tipo_centro_id(+)= ".$tipo_centro." ";
+    }else if($tipo_centro == PAM){
+      $where = " and pdi.tipo_centro_id(+)= ".$tipo_centro." and pdau.tipo_centro_id(+)= ".$tipo_centro." and pdci.tipo_centro_id(+)= ".$tipo_centro." and pds.tipo_centro_id(+)= ".$tipo_centro." and psm.tipo_centro_id(+)= ".$tipo_centro." and pasc.residente_id(+)=re.id and pap.tipo_centro_id(+)= ".$tipo_centro." and pas.tipo_centro_id(+)= ".$tipo_centro." and pasa.tipo_centro_id(+)= ".$tipo_centro." and pps.tipo_centro_id(+)= ".$tipo_centro." and ps.tipo_centro_id(+)= ".$tipo_centro." and pn.tipo_centro_id(+)= ".$tipo_centro." and pt.tipo_centro_id(+)= ".$tipo_centro." and peu.tipo_centro_id(+)= ".$tipo_centro." and ca.tipo_centro_id(+)= ".$tipo_centro." and re.tipo_centro_id(+)= ".$tipo_centro." ";
+    }else if($tipo_centro == NNA){
+      $where = " and nir.tipo_centro_id(+)= ".$tipo_centro." and nar.tipo_centro_id(+)= ".$tipo_centro." and nci.tipo_centro_id(+)= ".$tipo_centro." and nfr.tipo_centro_id(+)= ".$tipo_centro." and nds.tipo_centro_id(+)= ".$tipo_centro." and nts.tipo_centro_id(+)= ".$tipo_centro." and nas.tipo_centro_id(+)= ".$tipo_centro." and ns.tipo_centro_id(+)= ".$tipo_centro." and nn.tipo_centro_id(+)= ".$tipo_centro." and ntol.tipo_centro_id(+)= ".$tipo_centro." and ne.tipo_centro_id(+)= ".$tipo_centro." and nfh.tipo_centro_id(+)= ".$tipo_centro." and np.tipo_centro_id(+)= ".$tipo_centro." and nps.tipo_centro_id(+)= ".$tipo_centro." and nss.tipo_centro_id(+)= ".$tipo_centro." and nns.tipo_centro_id(+)= ".$tipo_centro." and nes.tipo_centro_id(+)= ".$tipo_centro." and ntss.tipo_centro_id(+)= ".$tipo_centro." and neu.tipo_centro_id(+)= ".$tipo_centro." and  ca.id(+)= ".$tipo_centro." and re.tipo_centro_id(+)= ".$tipo_centro." ";
+    }
+  }else if (REGISTRADOR == $nivel || RESPONSABLE_INFORMACION== $nivel || USER_CENTRO== $nivel){
+    $centro = $_SESSION["usuario"][0]["CENTRO_ID"];
+    if ($tipo_centro == PPD) {
+      $where = " and cu.centro_id(+)= ".$centro." and cda.centro_id(+)= ".$centro." and cci.centro_id(+)= ".$centro." and csn.centro_id(+)= ".$centro." and ceg.centro_id(+)= ".$centro." and ca.id(+)= ".$centro." and re.centro_id(+)= ".$centro." ";
+    }else if($tipo_centro == PAM){
+      $where = " and pdi.centro_id(+)= ".$centro." and pdau.centro_id(+)= ".$centro." and pdci.centro_id(+)= ".$centro." and pds.centro_id(+)= ".$centro." and psm.centro_id(+)= ".$centro." and pap.centro_id(+)= ".$centro." and pas.centro_id(+)= ".$centro." and pasa.centro_id(+)= ".$centro." and pps.centro_id(+)= ".$centro." and ps.centro_id(+)= ".$centro." and pn.centro_id(+)= ".$centro." and pt.centro_id(+)= ".$centro." and peu.centro_id(+)= ".$centro." and ca.id(+)= ".$centro." and re.centro_id(+)= ".$centro." ";
+    }else if($tipo_centro == NNA){
+      $where = " and nir.centro_id(+)= ".$centro." and nar.centro_id(+)= ".$centro." and nci.centro_id(+)= ".$centro." and nfr.centro_id(+)= ".$centro." and nds.centro_id(+)= ".$centro." and nts.centro_id(+)= ".$centro." and nas.centro_id(+)= ".$centro." and ns.centro_id(+)= ".$centro." and nn.centro_id(+)= ".$centro." and ntol.centro_id(+)= ".$centro." and ne.centro_id(+)= ".$centro." and nfh.centro_id(+)= ".$centro." and np.centro_id(+)= ".$centro." and nps.centro_id(+)= ".$centro." and nss.centro_id(+)= ".$centro." and nns.centro_id(+)= ".$centro." and nes.centro_id(+)= ".$centro." and ntss.centro_id(+)= ".$centro." and neu.centro_id(+)= ".$centro." and  ca.id(+)= ".$centro." and re.centro_id(+)= ".$centro." ";
+    }
+  }
   include 'consultas_preparadas_rub.php';
 
   $where = " WHERE to_char(da.fecha_edita,'DD-MON-YY') ".$fecha." AND to_char(ceg.fecha_egreso,'DD-MON-YY') ".$fecha;

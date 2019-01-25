@@ -31,7 +31,19 @@ from CarIdentificacionUsuario cu
 ,centro_atencion ca 
 ,residente re
 where cu.residente_id(+)=re.id and ca.id(+)= re.centro_id and cda.residente_id(+)=re.id and cci.residente_id(+)=re.id and csn.residente_id(+)=re.id and ceg.residente_id(+)=re.id and re.tipo_centro_id=1 
-and ( (to_char(cu.fecha_creacion(+),\'DD-MON-YY\') '.$fecha.') and (to_char(ca.fecha_creacion(+),\'DD-MON-YY\') '.$fecha.') and (to_char(cda.fecha_creacion(+),\'DD-MON-YY\') '.$fecha.') and (to_char(cci.fecha_creacion(+),\'DD-MON-YY\')) '.$where.''),
+and ( 
+        (
+            (
+                to_char(ceg.Fecha_Egreso,\'DD-MON-YY\') 
+                BETWEEN UPPER("'.$fecha_inicial.'") AND UPPER("'.$fecha_final.'") 
+                or to_char(cda.Fecha_Reingreso,\'DD-MON-YY\') 
+                BETWEEN UPPER("'.$fecha_inicial.'") AND UPPER("'.$fecha_final.'") 
+            )
+            or (
+                    to_char(cda.Fecha_Ingreso,\'DD-MON-YY\') <= UPPER("'.$fecha_final.'") and to_char(ceg.Fecha_Egreso,\'DD-MON-YY\') >= UPPER("'.$fecha_final.'")
+                )
+        )
+    ) '.$where.''),
 
 '2'=>('\''.$anio.'\' as "Año",\''.$mes.'\' as "Periodo",\''.$fecha_inicial.'\' as "FEC_ENVIO",ca.CODIGO_ENTIDAD as "Código de la Entidad",ca.nombre_entidad as "Nombre de la Entidad", ca.codigo_linea as "Código de la Linea" ,ca.linea_intervencion as "Línea de Intervención" , ca.cod_serv as "Código del Servicio" , ca.nom_serv as "Nombre del Servicio", ca.ubigeo as "Ubigeo Según el INEI", (SELECT NOMDEPT FROM ubigeo WHERE CODDIST=ca.ubigeo) as "Departamento Centro Atención", (SELECT NOMPROV FROM ubigeo WHERE CODDIST=ca.ubigeo) as "Provincia Centro Atención", (SELECT NOMDIST FROM ubigeo WHERE CODDIST=ca.ubigeo) as "Distrito Centro Atención",ca.centro_poblado as "C.Poblado centro atención" , ca.area_residencia as "Área de Residencia",ca.cod_ca as "Código Centro Atención",ca.nom_ca as "Nombre Centro Atención",ca.fecha_creacion as "Fecha de Registro",
 
@@ -43,7 +55,7 @@ pds.discapacidad,pds.discapacidad_fisica as "Presenta Discap. Física",\'\' as "
 
 peu.Fecha_Egreso,peu.MotivoEgreso as "Motivo del Egreso",
 
-pdau.Fecha_Reingreso as "Fecha de Reingreso",\'\' as "GRupo Etario", \'\' as "DEtalle motivo Egreso",
+pdau.movimiento_poblacional as "Movimiento Poblacional",\'\' as "GRupo Etario", \'\' as "DEtalle motivo Egreso",
 
 \'\' as "AUS",\'\' as "Partida de NAcimiento",peu.documento_entidad as "DNI",(SELECT nombre FROM pam_nivel_educativo WHERE id = pdci.nivel_educativo and codigo=\'pam\') as "Nivel Educativo",peu.Reinsercion_Familiar as "Reinserción Familiar."
 
