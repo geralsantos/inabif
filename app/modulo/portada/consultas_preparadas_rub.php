@@ -52,7 +52,7 @@ pdi.residente_id as Codigoresidente,pdi.residente_nombre as "Nombre Usuario",pdi
 
 pdau.fecha_ingreso_usuario as "Fecha de Ingreso",(SELECT nombre FROM pam_motivos_ingreso where id =pdau.motivo_ingreso_principal) as "Mótivo de Ingreso Principal",(SELECT nombre FROM pam_instituciones_deriva where id=pdau.institucion_deriva) as "Institución que lo Derivó",
 
-pds.discapacidad,pds.discapacidad_fisica as "Presenta Discap. Física",(CASE WHEN peu.Fecha_Egreso is null OR peu.Fecha_Egreso=\'\' OR (pdau.movimiento_poblacional=\'Reingreso\' and pdau.FEcha_edita>=peu.Fecha_Egreso) THEN \'Activo\' ELSE \'Inactivo\' END) as "EST_USU",
+pds.discapacidad,pds.discapacidad_fisica as "Presenta Discap. Física",(CASE WHEN peu.Fecha_Egreso is null OR peu.Fecha_Egreso=\'\' OR (pdau.movimiento_poblacional=\'Reingreso\' and pdau.fecha_edicion>=peu.Fecha_Egreso) THEN \'Activo\' ELSE \'Inactivo\' END) as "EST_USU",
 
 peu.Fecha_Egreso,peu.MotivoEgreso as "Motivo del Egreso",
 
@@ -74,7 +74,7 @@ and (
         (
             to_char(peu.Fecha_Egreso,\'DD-MON-YY\') 
             BETWEEN UPPER(\''.$fecha_inicial.'\') AND UPPER(\''.$fecha_final.'\') 
-            or (pdau.movimiento_poblacional=\'Reingreso\' and pdau.FEcha_edita>=peu.Fecha_Egreso)
+            or (pdau.movimiento_poblacional=\'Reingreso\' and pdau.fecha_edicion>=peu.Fecha_Egreso)
              or (peu.Fecha_Egreso IS NULL OR peu.Fecha_Egreso =\'\')
         )
         or (
