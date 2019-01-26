@@ -94,7 +94,7 @@ nir.Fecha_Nacimiento as "Fecha de Nacimiento",nir.Edad,nir.Sexo,(SELECT CODDIST 
 
 nar.Fecha_Ingreso as "Fecha de Ingreso",(SELECT nombre FROM nna_perfiles_ingreso where id =nar.Perfil_Ingreso_P) as "Mótivo de Ingreso Principal",(SELECT nombre FROM nna_instituciones where id=nar.Institucion_Derivacion) as "Institución que lo Derivó",
 
-nds.Discapacidad,nds.Discapacidad_Fisica as "Presenta Discap. Física",(CASE neu.Fecha_Egreso is null OR neu.Fecha_Egreso=\'\' OR nar.Fecha_Registro>neu.Fecha_Egreso THEN \'Activo\' ELSE \'Inactivo\') as "EST_USU",
+nds.Discapacidad,nds.Discapacidad_Fisica as "Presenta Discap. Física",(CASE neu.Fecha_Egreso is null OR neu.Fecha_Egreso=\'\' OR nar.Fecha_Registro>neu.Fecha_Egreso THEN \'Activo\' ELSE \'Inactivo\' END) as "EST_USU",
 
 neu.Fecha_Egreso,neu.MotivoEgreso as "Motivo del Egreso",
 
