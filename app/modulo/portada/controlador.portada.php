@@ -345,9 +345,9 @@ class portada extends App{
     $repite_residente=array();
     $response=array();
     foreach ($res as $key => $value) {
-      if(!in_array($value["id"],$repite_residente)){
+      if(!in_array($value["ID"],$repite_residente)){
         $response[]=$value;
-        $repite_residente[]=$value["id"];
+        $repite_residente[]=$value["ID"];
       }
     }
 	  if ($response) {
