@@ -118,7 +118,7 @@ and (
         (
             to_char(neu.Fecha_Egreso,\'DD-MON-YY\') 
             BETWEEN UPPER(\''.$fecha_inicial.'\') AND UPPER(\''.$fecha_final.'\') 
-            or to_char(nar.Fecha_Reingreso,\'DD-MON-YY\') 
+            or to_char(nar.FECHA_REGISTRO,\'DD-MON-YY\') 
             BETWEEN UPPER(\''.$fecha_inicial.'\') AND UPPER(\''.$fecha_final.'\')
              or (neu.Fecha_Egreso IS NULL OR neu.Fecha_Egreso =\'\')
         )
