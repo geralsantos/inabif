@@ -86,7 +86,7 @@ and (
 
 '3'=>('select \''.$anio.'\' as "Año",\''.$mes.'\' as "Periodo",\''.$fecha_inicial.'\' as "FEC_ENVIO",ca.CODIGO_ENTIDAD as "Código de la Entidad",ca.nombre_entidad as "Nombre de la Entidad", ca.codigo_linea as "Código de la Linea" ,ca.linea_intervencion as "Línea de Intervención" , ca.cod_serv as "Código del Servicio" , ca.nom_serv as "Nombre del Servicio", ca.ubigeo as "Ubigeo Según el INEI", (SELECT NOMDEPT FROM ubigeo WHERE CODDIST=ca.ubigeo) as "Departamento Centro Atención", (SELECT NOMPROV FROM ubigeo WHERE CODDIST=ca.ubigeo) as "Provincia Centro Atención", (SELECT NOMDIST FROM ubigeo WHERE CODDIST=ca.ubigeo) as "Distrito Centro Atención",ca.centro_poblado as "C.Poblado centro atención" , ca.area_residencia as "Área de Residencia",ca.cod_ca as "Código Centro Atención",ca.nom_ca as "Nombre Centro Atención",ca.fecha_creacion as "Fecha de Registro",
 
-nir.residente_id as Codigoresidente,nir.Nom_Usuario as "Nombre Usuario",nir.Ape_Paterno as "Apellido Paterno", nir.Ape_Materno as "Apellido Materno", 
+nir.residente_id as "Codigoresidente",nir.Nom_Usuario as "Nombre Usuario",nir.Ape_Paterno as "Apellido Paterno", nir.Ape_Materno as "Apellido Materno", 
 
 nci.Tipo_Doc as "Tipo doc. identidad",nci.Numero_Doc as "Número del documento",
 
@@ -100,7 +100,7 @@ neu.Fecha_Egreso,neu.MotivoEgreso as "Motivo del Egreso",
 
 nar.Fecha_Registro as "Fecha de Reingreso",\'\' as "GRupo Etario", 
 
-neu.Detalle_Motivo as "DEtalle motivo Egreso",neu.Salud_AUS as "Asegura. Univ.l de Salud-AUS",neu.Partida_Naci as "Partida de Nacimiento"
+neu.Detalle_Motivo as "DEtalle motivo Egreso",neu.Salud_AUS as "Asegura. Univ.l de Salud-AUS",neu.Partida_Naci as "Partida de Nacimiento",
 
 \'\' as "AUS",\'\' as "Partida de NAcimiento",neu.documento_entidad as "DNI",(SELECT nombre FROM pam_nivel_educativo WHERE id = pdci.nivel_educativo and codigo=\'pam\') as "Nivel Educativo",neu.Reinsercion_Familiar as "Reinserción Familiar.",neu.DNI as "DNI", neu.Educacion, neu.Reinsecion_Familiar as "Reinseción Familiar"
 
