@@ -1016,7 +1016,6 @@ class portada extends App{
     if (ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel) {
       $modulo = $modulo.$tipo_centro_dependiente[$key].' '.$centro_id_dependiente[$key];
     }
-    echo $modulo;
       $modulo = $modelo->executeQuery($modulo);
       $residentes = array();
       $grupo_html = "";
