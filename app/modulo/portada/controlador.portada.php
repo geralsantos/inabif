@@ -979,7 +979,7 @@ class portada extends App{
     }else if($tipo_centro == PAM){
       $where = " and pdi.centro_id(+)= ".$centro." and pdau.centro_id(+)= ".$centro." and pdci.centro_id(+)= ".$centro." and pds.centro_id(+)= ".$centro." and psm.centro_id(+)= ".$centro." and pap.centro_id(+)= ".$centro." and pas.centro_id(+)= ".$centro." and pasa.centro_id(+)= ".$centro." and pps.centro_id(+)= ".$centro." and ps.centro_id(+)= ".$centro." and pn.centro_id(+)= ".$centro." and pt.centro_id(+)= ".$centro." and peu.centro_id(+)= ".$centro." and ca.id(+)= ".$centro." and re.centro_id(+)= ".$centro." ";
     }else if($tipo_centro == NNA){
-      $where = " and nir.centro_id(+)= ".$centro." and nar.centro_id(+)= ".$centro." and nci.centro_id(+)= ".$centro." and nfr.centro_id(+)= ".$centro." and nds.centro_id(+)= ".$centro." and nts.centro_id(+)= ".$centro." and nas.centro_id(+)= ".$centro." and ns.centro_id(+)= ".$centro." and nn.centro_id(+)= ".$centro." and ntol.centro_id(+)= ".$centro." and ne.centro_id(+)= ".$centro." and nfh.centro_id(+)= ".$centro." and np.centro_id(+)= ".$centro." and nps.centro_id(+)= ".$centro." and nss.centro_id(+)= ".$centro." and nns.centro_id(+)= ".$centro." and nes.centro_id(+)= ".$centro." and ntss.centro_id(+)= ".$centro." and neu.centro_id(+)= ".$centro." and  ca.id(+)= ".$centro." and re.centro_id(+)= ".$centro." ";
+      $where = " and nir.centro_id(+)= ".$centro." and nar.centro_id(+)= ".$centro." and nci.centro_id(+)= ".$centro." and nds.centro_id(+)= ".$centro." and neu.centro_id(+)= ".$centro." and ca.id(+)= ".$centro." and re.centro_id(+)= ".$centro." ";
     }
   }
   include 'consultas_preparadas_rub.php';

@@ -112,7 +112,20 @@ from  NNAInscripcionResidente nir
 
 ,centro_atencion ca 
 ,residente re
-where pdi.residente_id(+)=re.id and ca.id(+)= re.centro_id and pdau.residente_id(+)=re.id and pdci.residente_id(+)=re.id and pds.residente_id(+)=re.id and peu.residente_id(+)=re.id and re.tipo_centro_id=2 
-and ( (to_char(pdi.fecha_creacion(+),\'DD-MON-YY\') '.$fecha.') and (to_char(ca.fecha_creacion(+),\'DD-MON-YY\') '.$fecha.') and (to_char(pdau.fecha_creacion(+),\'DD-MON-YY\') '.$fecha.') and (to_char(pdci.fecha_creacion(+),\'DD-MON-YY\')) '.$where.''));
+where nir.residente_id(+)=re.id and ca.id(+)= re.centro_id and nar.residente_id(+)=re.id and nci.residente_id(+)=re.id and nds.residente_id(+)=re.id and neu.residente_id(+)=re.id and re.tipo_centro_id=3 
+and ( 
+    (
+        (
+            to_char(neu.Fecha_Egreso,\'DD-MON-YY\') 
+            BETWEEN UPPER(\''.$fecha_inicial.'\') AND UPPER(\''.$fecha_final.'\') 
+            or to_char(nar.Fecha_Reingreso,\'DD-MON-YY\') 
+            BETWEEN UPPER(\''.$fecha_inicial.'\') AND UPPER(\''.$fecha_final.'\')
+             or (neu.Fecha_Egreso IS NULL OR neu.Fecha_Egreso =\'\')
+        )
+        or (
+                to_char(nar.Fecha_Ingreso,\'DD-MON-YY\') <= UPPER(\''.$fecha_final.'\') and to_char(neu.Fecha_Egreso,\'DD-MON-YY\') >= UPPER(\''.$fecha_final.'\')
+            )
+    )
+) '.$where.''));
 
 ?>
