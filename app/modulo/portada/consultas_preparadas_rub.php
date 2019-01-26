@@ -100,9 +100,7 @@ neu.Fecha_Egreso,neu.MotivoEgreso as "Motivo del Egreso",
 
 nar.Fecha_Registro as "Fecha de Reingreso",\'\' as "GRupo Etario", 
 
-neu.Detalle_Motivo as "DEtalle motivo Egreso",neu.Salud_AUS as "Asegura. Univ.l de Salud-AUS",neu.Partida_Naci as "Partida de Nacimiento",
-
-\'\' as "AUS",\'\' as "Partida de NAcimiento",neu.documento_entidad as "DNI",(SELECT nombre FROM pam_nivel_educativo WHERE id = pdci.nivel_educativo and codigo=\'pam\') as "Nivel Educativo",neu.Reinsercion_Familiar as "Reinserción Familiar.",neu.DNI as "DNI", neu.Educacion, neu.Reinsecion_Familiar as "Reinseción Familiar"
+neu.Detalle_Motivo as "DEtalle motivo Egreso",neu.Salud_AUS as "Asegura. Univ.l de Salud-AUS",neu.Partida_Naci as "Partida de Nacimiento",neu.DNI as "DNI", neu.Educacion, neu.Reinsecion_Familiar as "Reinserción Familiar"
 
 from  NNAInscripcionResidente nir 
 ,NNAAdmisionResidente nar 
