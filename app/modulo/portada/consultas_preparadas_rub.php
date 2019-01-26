@@ -13,7 +13,7 @@ cu.Fecha_Nacimiento as "Fecha de Nacimiento",cu.Edad,cu.Sexo,(SELECT CODDIST FRO
 
 cda.Fecha_Ingreso as "Fecha de Ingreso",cda.Motivo_Ingreso as "Mótivo de Ingreso(EXP)",(SELECT nombre FROM pam_instituciones where id=cda.Institucion_derivado) as "Institución que lo Derivó",
 
-csn.Discapacidad,csn.Discapacidad_Fisica as "Presenta Discap. Física",\'\' as "EST_USU",
+csn.Discapacidad,csn.Discapacidad_Fisica as "Presenta Discap. Física",(CASE WHEN ceg.Fecha_Egreso is null OR ceg.Fecha_Egreso=\'\' OR cda.Fecha_Ingreso>ceg.Fecha_Egreso THEN \'Activo\' ELSE \'Inactivo\' END) as "EST_USU",
 
 ceg.Fecha_Egreso,ceg.Motivo_Egreso as "Motivo del Egreso",
 
@@ -74,12 +74,11 @@ and (
         (
             to_char(peu.Fecha_Egreso,\'DD-MON-YY\') 
             BETWEEN UPPER(\''.$fecha_inicial.'\') AND UPPER(\''.$fecha_final.'\') 
-            or to_char(cda.Fecha_Reingreso,\'DD-MON-YY\') 
-            BETWEEN UPPER(\''.$fecha_inicial.'\') AND UPPER(\''.$fecha_final.'\')
-             or (ceg.Fecha_Egreso IS NULL OR ceg.Fecha_Egreso =\'\')
+            or (pdau.movimiento_poblacional=\'Reingreso\' and pdau.FEcha_edita>=peu.Fecha_Egreso)
+             or (peu.Fecha_Egreso IS NULL OR peu.Fecha_Egreso =\'\')
         )
         or (
-                to_char(cda.Fecha_Ingreso,\'DD-MON-YY\') <= UPPER(\''.$fecha_final.'\') and to_char(ceg.Fecha_Egreso,\'DD-MON-YY\') >= UPPER(\''.$fecha_final.'\')
+                to_char(pdau.Fecha_Ingreso,\'DD-MON-YY\') <= UPPER(\''.$fecha_final.'\') and to_char(peu.Fecha_Egreso,\'DD-MON-YY\') >= UPPER(\''.$fecha_final.'\')
             )
     )
 ) '.$where.''),
