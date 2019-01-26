@@ -86,7 +86,7 @@ and (
 
 '3'=>('select \''.$anio.'\' as "Año",\''.$mes.'\' as "Periodo",\''.$fecha_inicial.'\' as "FEC_ENVIO",ca.CODIGO_ENTIDAD as "Código de la Entidad",ca.nombre_entidad as "Nombre de la Entidad", ca.codigo_linea as "Código de la Linea" ,ca.linea_intervencion as "Línea de Intervención" , ca.cod_serv as "Código del Servicio" , ca.nom_serv as "Nombre del Servicio", ca.ubigeo as "Ubigeo Según el INEI", (SELECT NOMDEPT FROM ubigeo WHERE CODDIST=ca.ubigeo) as "Departamento Centro Atención", (SELECT NOMPROV FROM ubigeo WHERE CODDIST=ca.ubigeo) as "Provincia Centro Atención", (SELECT NOMDIST FROM ubigeo WHERE CODDIST=ca.ubigeo) as "Distrito Centro Atención",ca.centro_poblado as "C.Poblado centro atención" , ca.area_residencia as "Área de Residencia",ca.cod_ca as "Código Centro Atención",ca.nom_ca as "Nombre Centro Atención",
 
-nir.residente_id as Codigoresidente,nir.Nom_Usuario as "Nombre Usuario",nir.Ape_Paterno as "Apellido Paterno", nir.Ape_Materno as "Apellido Materno", 
+nir.residente_id as Codigoresidente,nir.residente_nombre as "Nombre Usuario",nir.residente_apellido_paterno as "Apellido Paterno", nir.residente_apellido_materno as "Apellido Materno", 
 
 nci.Tipo_Doc as "Tipo doc. identidad",nci.Numero_Doc as "Número del documento",
 
