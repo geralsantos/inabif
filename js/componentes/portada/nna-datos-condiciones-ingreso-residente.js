@@ -67,6 +67,10 @@ Vue.component('nna-datos-condiciones-ingreso-residente', {
                 swal('Error', 'Residente no existe', 'warning');
                 return false;
             }
+            if ((this.Numero_Doc).length>8 || (this.Numero_Doc).length<8) {
+                swal('Error', 'El campo de DNI debe ser de 8 digitos', 'warning');
+                return false;
+            }
             let valores = {
 
                 Tipo_Doc:this.Tipo_Doc,
