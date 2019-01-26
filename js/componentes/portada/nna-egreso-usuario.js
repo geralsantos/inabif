@@ -59,7 +59,7 @@ Vue.component('nna-egreso-usuario', {
             }
             let valores = {
 
-                Fecha_Egreso:moment(this.Fecha_Egreso).format("YY-MMM-DD"),
+                Fecha_Egreso:moment(this.Fecha_Egreso).format("DD-MMM-YY"),
                 MotivoEgreso:this.MotivoEgreso,
                 Detalle_Motivo:this.Detalle_Motivo,
                 Salud_AUS :this.Salud_AUS,
