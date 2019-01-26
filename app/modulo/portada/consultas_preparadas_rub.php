@@ -58,7 +58,7 @@ peu.Fecha_Egreso,peu.MotivoEgreso as "Motivo del Egreso",
 
 pdau.movimiento_poblacional as "Movimiento Poblacional",\'\' as "GRupo Etario", \'\' as "DEtalle motivo Egreso",
 
-\'\' as "AUS",\'\' as "Partida de NAcimiento",peu.documento_entidad as "DNI",(SELECT nombre FROM pam_nivel_educativo WHERE id = pdci.nivel_educativo and codigo=\'pam\') as "Nivel Educativo",peu.Reinsercion_Familiar as "Reinserción Familiar."
+\'\' as "AUS",\'\' as "Partida de NAcimiento",pdci.documento_entidad as "DNI",(SELECT nombre FROM pam_nivel_educativo WHERE id = pdci.nivel_educativo and codigo=\'pam\') as "Nivel Educativo",peu.Reinsercion_Familiar as "Reinserción Familiar."
 
 from     pam_datos_identificacion pdi 
 ,pam_datos_admision_usuario pdau 
