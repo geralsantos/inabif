@@ -78,7 +78,7 @@ and (
              or (peu.Fecha_Egreso IS NULL OR peu.Fecha_Egreso =\'\')
         )
         or (
-                to_char(pdau.Fecha_Ingreso,\'DD-MON-YY\') <= UPPER(\''.$fecha_final.'\') and to_char(peu.Fecha_Egreso,\'DD-MON-YY\') >= UPPER(\''.$fecha_final.'\')
+                to_char(pdau.fecha_ingreso_usuario,\'DD-MON-YY\') <= UPPER(\''.$fecha_final.'\') and to_char(peu.Fecha_Egreso,\'DD-MON-YY\') >= UPPER(\''.$fecha_final.'\')
             )
     )
 ) '.$where.''),
