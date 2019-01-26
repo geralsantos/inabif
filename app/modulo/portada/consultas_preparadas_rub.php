@@ -30,7 +30,7 @@ from CarIdentificacionUsuario cu
 
 ,centro_atencion ca 
 ,residente re
-where cu.residente_id(+)=re.id and ca.id(+)= re.centro_id and cda.residente_id(+)=re.id and cci.residente_id(+)=re.id and csn.residente_id(+)=re.id and ceg.residente_id(+)=re.id and re.tipo_centro_id=1 
+where cu.residente_id(+)=re.id and ca.id(+)= re.centro_id and cda.residente_id(+)=re.id and cci.residente_id(+)=re.id and csn.residente_id(+)=re.id and ceg.residente_id(+)=re.id and re.tipo_centro_id=1 and ca.tipo_centro_id=1 
 and ( 
         (
             (
@@ -68,7 +68,7 @@ from     pam_datos_identificacion pdi
 
 ,centro_atencion ca 
 ,residente re
-where pdi.residente_id(+)=re.id and ca.id(+)= re.centro_id and pdau.residente_id(+)=re.id and pdci.residente_id(+)=re.id and pds.residente_id(+)=re.id and peu.residente_id(+)=re.id and re.tipo_centro_id=2 
+where pdi.residente_id(+)=re.id and ca.id(+)= re.centro_id and pdau.residente_id(+)=re.id and pdci.residente_id(+)=re.id and pds.residente_id(+)=re.id and peu.residente_id(+)=re.id and re.tipo_centro_id=2 and ca.tipo_centro_id=2 
 and ( 
     (
         (
@@ -109,7 +109,7 @@ from  NNAInscripcionResidente nir
 
 ,centro_atencion ca 
 ,residente re
-where nir.residente_id(+)=re.id and ca.id(+)= re.centro_id and nar.residente_id(+)=re.id and nci.residente_id(+)=re.id and nds.residente_id(+)=re.id and neu.residente_id(+)=re.id and re.tipo_centro_id=3 
+where nir.residente_id(+)=re.id and ca.id(+)= re.centro_id and nar.residente_id(+)=re.id and nci.residente_id(+)=re.id and nds.residente_id(+)=re.id and neu.residente_id(+)=re.id and re.tipo_centro_id=3 and ca.tipo_centro_id=3 
 and ( 
     (
         (
