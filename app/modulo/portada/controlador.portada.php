@@ -340,7 +340,7 @@ class portada extends App{
         }else if(ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel){
             $where ="";
         }
-    $sql = "SELECT (re.id) as id,(re.nombre) as nombre,(re.apellido_p) as apellido_p,(re.apellido_m) as apellido_m,(".$campo.") as dni_residente,max(re.pide) as pide FROM Residente re ".$left_join." WHERE  re.ESTADO=1 ".$where." ".$where_join." ORDER BY re.Id desc";
+    $sql = "SELECT (re.id) as id,(re.nombre) as nombre,(re.apellido_p) as apellido_p,(re.apellido_m) as apellido_m,(".$campo.") as dni_residente,(re.pide) as pide FROM Residente re ".$left_join." WHERE  re.ESTADO=1 ".$where." ".$where_join." ORDER BY re.Id desc";
 	  $res = $modelo->executeQuery( $sql );
     $repite_residente=array();
     $response=array();
