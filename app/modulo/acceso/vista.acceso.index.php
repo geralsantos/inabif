@@ -42,5 +42,7 @@
     </div>
 <script>
 document.body.style.backgroundImage = "url('../images/logo3.jpg')";
+document.body.style.backgroundRepeat = "no-repeat";
+document.body.style.backgroundSize  = "auto";
 
 </script>
