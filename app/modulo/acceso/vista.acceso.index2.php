@@ -1,14 +1,5 @@
-<div style="text-align: center; width: 600px;">
-         <br>
-	 <img src="../images/sector.png"  style="width: 100%; text-align: center !important;"/>
-<br>
-<br>
-	 <img src="../images/siger.png">
-
-</div>
-
-<div  class="sufee-login d-flex align-content-center flex-wrap">
-      <div class="container">
+<div class="sufee-login d-flex align-content-center flex-wrap">
+        <div class="container">
             <div class="login-content">
                 <div class="login-logo">
                     <a href="#">
@@ -49,9 +40,3 @@
             </div>
         </div>
     </div>
-<script>
-document.body.style.backgroundImage = "url('../images/fondo.png')";
-document.body.style.backgroundRepeat = "no-repeat";
-document.body.style.backgroundSize  = "100%";
-
-</script>

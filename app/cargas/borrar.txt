@@ -1,0 +1,468 @@
+CREATE TABLE pam_lengua_materna
+( id number(10) NOT NULL,
+  nombre varchar2(50) NOT NULL,
+  Estado                            	int default 1,
+Fecha_Registro            	DATE DEFAULT (sysdate),
+Fecha_Edicion              	DATE DEFAULT (sysdate),
+Usuario_Crea                	number(10),
+Usuario_Edita               	number(10)
+);
+CREATE SEQUENCE pam_seqlengua_materna;
+ 
+ 
+CREATE TABLE pam_tipo_patologia
+( id number(10) NOT NULL,
+  nombre varchar2(50) NOT NULL,
+  Estado                            	int default 1,
+Fecha_Registro            	DATE DEFAULT (sysdate),
+Fecha_Edicion              	DATE DEFAULT (sysdate),
+Usuario_Crea                	number(10),
+Usuario_Edita               	number(10)
+);
+CREATE SEQUENCE pam_seqtipo_patologia;
+CREATE TABLE pam_tipo_transtorno
+( id number(10) NOT NULL,
+  nombre varchar2(50) NOT NULL,
+  Estado                            	number(10),
+Fecha_Registro            	DATE DEFAULT (sysdate),
+Fecha_Edicion              	DATE DEFAULT (sysdate),
+Usuario_Crea                	number(10),
+Usuario_Edita               	number(10)
+);
+CREATE SEQUENCE pam_seqtipo_transtorno;
+
+CREATE TABLE pam_tipo_transtorno_conducta
+( id number(10) NOT NULL,
+ nombre varchar(200) NOT NULL,
+ Estado                                number(10) default 1,
+ fecha_creacion                DATE DEFAULT (sysdate),
+Fecha_Edicion               DATE DEFAULT (sysdate),
+Usuario_Crea                    number(10),
+Usuario_Edita                   number(10)
+)
+CREATE SEQUENCE seq_pam_seqtipo_transtorno;
+
+
+ CREATE TABLE pam_actividades_diaria
+( id number(10) NOT NULL,
+  nombre varchar2(50) NOT NULL,
+  Estado                            	number(10),
+Fecha_Registro            	DATE DEFAULT (sysdate),
+Fecha_Edicion              	DATE DEFAULT (sysdate),
+Usuario_Crea                	number(10),
+Usuario_Edita               	number(10)
+);
+CREATE SEQUENCE seq_pam_actividades_diaria;
+
+
+CREATE TABLE dificultades_cuerpo
+( id int NOT NULL primary key,
+  nombre varchar(200) NOT NULL,
+  Estado                            	int,
+Fecha_Creacion            	DATE ,
+Fecha_Edicion              	timestamp DEFAULT (sysdate),
+Usuario_Crea                	int,
+Usuario_Edita               	int
+);
+CREATE SEQUENCE seq_dificultades_cuerpo;
+create table tipo_centro (
+  id INT NOT NULL primary key,
+  nombre VARCHAR(45) NOT NULL,
+codigo char(6) null,
+  estado INT DEFAULT 1,
+  fecha_creacion date NOT NULL,
+  fecha_edicion TIMESTAMP  DEFAULT SYSDATE,
+  usuario_crea INT NOT NULL,
+  usuario_edita INT NOT NULL
+  );
+CREATE SEQUENCE seq_tipo_centro ;
+CREATE TABLE centro_atencion (
+  id INT NOT NULL PRIMARY KEY,
+  tipo_centro_id INT NOT NULL, 
+  codigo_entidad VARCHAR(45) NULL,
+  nombre_entidad VARCHAR(150) NOT NULL,
+  cod_serv varchar(20) null,
+  ubigeo char(6) null,
+  cod_ca varchar(20) null,
+  nom_ca varchar(250) null,
+ administrador_nombre VARCHAR(250) NULL,
+  nombre_director VARCHAR(250) NULL,
+  telefono VARCHAR(9) NULL,
+  direccion_car varchar(250) null, 
+area_residencia varchar(10) null,
+codigo_linea varchar(20) null,
+linea_intervencion varchar(250) null,
+nom_serv varchar(200) null,  
+  estado INT DEFAULT 1,
+  fecha_creacion TIMESTAMP DEFAULT SYSDATE,
+  fecha_edicion TIMESTAMP DEFAULT SYSDATE,
+  usuario_crea INT NOT NULL,
+  usuario_edita INT NOT NULL
+
+
+
+
+);
+insert into centro_atencion (id,tipo_centro_id,codigo_entidad ,nombre_entidad ,cod_serv ,ubigeo  ,cod_ca ,nom_ca ,administrador_nombre ,nombre_director ,telefono ,direccion_car ,area_residencia ,codigo_linea ,linea_intervencion ,nom_serv  ,usuario_crea ,usuario_edita  ) values(1,1,'cod001','nom 001','codserv 001','140111','codca002','Centro 002','admin nombre','director nombre','3243889','av rosa toro 544','urbano','codlinea001','linea intervencion 001','nomserv 001',1,1)
+
+CREATE TABLE centro_atencion_detalle (
+  id INT NOT NULL PRIMARY KEY,
+  centro_id INT NOT NULL,
+  fecha_cierre date NULL,
+  fecha_matriz date null,
+  estado_completo INT default 0,
+  estado INT DEFAULT 1,
+  fecha_creacion TIMESTAMP DEFAULT SYSDATE,
+  fecha_edicion TIMESTAMP DEFAULT SYSDATE,
+  usuario_crea INT NOT NULL,
+  usuario_edita INT NOT NULL
+);
+
+
+
+create SEQUENCE seq_centro_atencion ;
+-- -----------------------------------------------------
+-- Table residente
+-- -----------------------------------------------------
+create table residente (
+id int,
+ Tipo_Centro_Id                                         	int,
+  rol int,
+  nombre VAntRCHAR(45) NOT NULL,
+  apellido_p VARCHAR(100) NOT NULL,
+  apellido_m VARCHAR(100) NOT NULL,
+pais_id int,
+departamento_naci_cod char(2),
+provincia_naci_cod char(4),
+distrito_naci_cod char(6), 
+sexo char(1),
+fecha_naci date,
+edad int,
+lengua_materna int,
+  documento VARCHAR(100) NULL,
+  estado INT DEFAULT 1,
+  fecha_creacion date NOT NULL,
+  fecha_edicion TIMESTAMP DEFAULT SYSDATE,
+  usuario_crea INT NOT NULL,
+  usuario_edita INT NOT NULL
+
+
+  );
+CREATE SEQUENCE seq_residente ;
+ 
+-- -----------------------------------------------------
+-- Table modulos
+-- -----------------------------------------------------
+create table modulos (
+  id INT NOT NULL primary key,
+  centro_id INT NOT NULL,
+  encargado_id INT NOT NULL,
+parent_id int not null,
+url_template varchar(200),
+icon varchar(100),
+  nombre VARCHAR(100) NOT NULL,
+  estado_completo INT NULL,
+nombre_tabla varchar(100) null,
+  estado INT DEFAULT 1,
+  fecha_creacion date NOT NULL,
+  fecha_edicion TIMESTAMP DEFAULT SYSDATE,
+  usuario_creacion INT NOT NULL,
+  usuario_edicion INT NOT NULL
+  );
+CREATE SEQUENCE seq_modulos;
+create table modulos_detalle(
+  id INT NOT NULL primary key,
+  modulo_id INT NOT NULL,
+  estado_completo INT NULL,
+ Periodo_Mes int,
+Periodo_Anio int,
+  estado INT DEFAULT 1,
+  fecha_creacion TIMESTAMP DEFAULT SYSDATE,
+  fecha_edicion TIMESTAMP DEFAULT SYSDATE,
+  usuario_crea INT NOT NULL,
+  usuario_edita INT NOT NULL
+  );
+ 
+-- -----------------------------------------------------
+-- Table ubigeo
+-- -----------------------------------------------------
+create table ubigeo (
+  id INT NOT NULL primary key,
+  CodDept VARCHAR(10) NOT NULL,
+  NomDept VARCHAR(150) NOT NULL,
+  CodProv VARCHAR(10) NOT NULL,
+  NomProv VARCHAR(150) NOT NULL,
+  CodDist VARCHAR(10) NOT NULL,
+  NomDist VARCHAR(150) NOT NULL,
+  estado INT DEFAULT 1
+  );
+
+-- -----------------------------------------------------
+-- Table instituciones
+-- -----------------------------------------------------
+create table pam_instituciones (
+  id INT NOT NULL primary key,
+  nombre VARCHAR(150) NOT NULL,
+  estado INT DEFAULT 1,
+  fecha_creacion date NOT NULL,
+  fecha_edicion TIMESTAMP DEFAULT SYSDATE,
+  usuario_creacion INT NOT NULL,
+  usuario_edicion INT NOT NULL
+  );CREATE SEQUENCE pam_seq_id INT NOT NULL primary key,
+        nombre VARCHAR(250) NOT NULL,
+        estado INT DEFAULT 1,
+        fecha_creacion TIMESTAMP DEFAULT SYSDATE,
+        fecha_edicion TIMESTAMP DEFAULT SYSDATE,instituciones ;
+  create table cie_10 (
+        
+        )
+
+create table nna_instituciones (
+  id INT NOT NULL primary key,
+  nombre VARCHAR(150) NOT NULL,
+  estado INT DEFAULT 1,
+  fecha_creacion date NOT NULL,
+  fecha_edicion TIMESTAMP DEFAULT SYSDATE,
+  usuario_crea INT NOT NULL,
+  usuario_edita INT NOT NULL
+  );CREATE SEQUENCE seq_nna_instituciones ;
+
+ create table pam_institucion_educativa (
+   id INT NOT NULL primary key,
+   nombre VARCHAR(150) NOT NULL,
+   estado INT DEFAULT 1,
+   fecha_creacion date NOT NULL,
+   fecha_edicion TIMESTAMP DEFAULT SYSDATE,
+   usuario_creacion INT NOT NULL,
+   usuario_edicion INT NOT NULL
+   );
+Create sequence pam_seq_institucion_educativa;
+
+
+ 
+ 
+-- -----------------------------------------------------
+-- Table perfiles
+-- -----------------------------------------------------
+create table pam_perfiles (
+  id INT NOT NULL primary key,
+  nombre VARCHAR(150) NOT NULL,
+  estado INT DEFAULT 1,
+  fecha_creacion date NOT NULL,
+  fecha_edicion TIMESTAMP DEFAULT SYSDATE,
+  usuario_creacion INT NOT NULL,
+  usuario_edicion INT NOT NULL
+  );CREATE SEQUENCE pam_seq_perfiles ;
+ 
+ 
+-- -----------------------------------------------------
+-- Table tipo_documento_ingreso
+-- -----------------------------------------------------
+create table pam_tipo_documento_ingreso (
+  id INT NOT NULL primary key,
+  nombre VARCHAR(150) NOT NULL,
+  estado INT DEFAULT 1,
+  fecha_creacion date NOT NULL,
+  fecha_edicion TIMESTAMP DEFAULT SYSDATE,
+  usuario_creacion INT NOT NULL,
+  usuario_edicion INT NOT NULL
+  );CREATE SEQUENCE pam_seq_tipo_documento_ingreso ;
+ 
+ 
+-- -----------------------------------------------------
+-- Table numero_documento_ingreso
+-- -----------------------------------------------------
+create table pam_numero_documento_ingreso (
+  id INT NOT NULL primary key,
+numero VARCHAR(30) NOT NULL,
+  estado INT DEFAULT 1,
+  fecha_creacion date NOT NULL,
+  fecha_edicion TIMESTAMP DEFAULT SYSDATE,
+  usuario_creacion INT NOT NULL,
+  usuario_edicion INT NOT NULL
+  );CREATE SEQUENCE pam_seq_num_docu_ingreso;
+ 
+-- -----------------------------------------------------
+-- Table tipo_documento_identidad
+-- -----------------------------------------------------
+create table pam_tipo_documento_identidad (
+  id INT NOT NULL primary key,
+  nombre VARCHAR(150) NOT NULL,
+  estado INT DEFAULT 1,
+  fecha_creacion date NOT NULL,
+  fecha_edicion TIMESTAMP  DEFAULT SYSDATE,
+  usuario_creacion INT NOT NULL,
+  usuario_edicion INT NOT NULL
+  );CREATE SEQUENCE pam_seq_tipo_docu_identidad ;
+ 
+
+-- -----------------------------------------------------
+-- Table nivel_educativo
+-- -----------------------------------------------------
+create table pam_nivel_educativo (
+  id INT NOT NULL primary key,
+codigo VARCHAR(20) NULL,
+  nombre VARCHAR(150) NOT NULL,
+  estado INT DEFAULT 1,
+  fecha_creacion date NOT NULL,
+  fecha_edicion TIMESTAMP  DEFAULT SYSDATE,
+  usuario_creacion INT NOT NULL,
+  usuario_edicion INT NOT NULL
+  );CREATE SEQUENCE pam_seq_nivel_educativo ;
+ 
+
+-- -----------------------------------------------------
+-- Table aseguramiento_salud
+-- -----------------------------------------------------
+create table pam_aseguramiento_salud (
+  id INT NOT NULL primary key,
+  nombre VARCHAR(150) NOT NULL,
+  estado INT  DEFAULT 1,
+  fecha_creacion date NOT NULL,
+  fecha_edicion TIMESTAMP DEFAULT SYSDATE,
+  usuario_creacion INT NOT NULL,
+  usuario_edicion INT NOT NULL
+  );CREATE SEQUENCE pam_seq_aseguramiento_salud ;
+ 
+
+ 
+-- -----------------------------------------------------
+-- Table tipo_pension
+-- -----------------------------------------------------
+create table pam_tipo_pension (
+  id INT NOT NULL primary key,
+  nombre VARCHAR(150) NOT NULL,
+  estado INT DEFAULT 1,
+  fecha_creacion date NOT NULL,
+  fecha_edicion TIMESTAMP DEFAULT SYSDATE,
+  usuario_creacion INT NOT NULL,
+  usuario_edicion INT NOT NULL
+  );CREATE SEQUENCE pam_seq_tipo_pension ;
+
+ 
+-- -----------------------------------------------------
+-- Table clasificacion_socioeconomico
+-- -----------------------------------------------------
+create table pam_clasif_socioeconomico (
+  id INT NOT NULL primary key,
+  nombre VARCHAR(150) NOT NULL,
+  estado INT DEFAULT 1,
+  fecha_creacion date NOT NULL,
+  fecha_edicion TIMESTAMP  DEFAULT SYSDATE,
+  usuario_creacion INT NOT NULL,
+  usuario_edicion INT NOT NULL
+  );CREATE SEQUENCE pam_seq_clasif_socioeconomico;
+
+ 
+-- -----------------------------------------------------
+-- Table tipo_parentesco
+-- -----------------------------------------------------
+create table pam_tipo_parentesco (
+  id INT NOT NULL primary key,
+codigo VARCHAR(20) NOT NULL,
+  nombre VARCHAR(150) NOT NULL,
+  estado INT DEFAULT 1,
+  fecha_creacion date NOT NULL,
+  fecha_edicion TIMESTAMP  DEFAULT SYSDATE,
+  Usuario_Crea INT NOT NULL,
+  Usuario_Edita INT NOT NULL
+  );CREATE SEQUENCE pam_seq_tipo_parentesco ;
+
+create table usuarios(
+  id INT NOT NULL primary key,
+ centro_id int,FVVVVVVVVVVOI9
+  nivel int null,
+  nombre VARCHAR(200) NOT NULL,
+  apellido VARCHAR(200) NOT NULL,
+ correo VARCHAR(200) NULL,
+dni varchar(10) null,
+numcel varchar(10) null,
+  usuario VARCHAR(100) NULL,
+  clave VARCHAR(100)  NULL,
+  estado INT DEFAULT 1,
+  fecha_creacion date NOT NULL,
+  fecha_edicion TIMESTAMP DEFAULT SYSDATE,
+  usuario_crea INT NOT NULL,
+  usuario_edita INT NOT NULL
+
+
+)
+;
+create sequence seq_usuarios;
+ 
+CREATE TABLE paises (
+  id int primary key,
+  iso char(2) default NULL,
+  nombre varchar(128) default NULL
+);
+create sequence seq_paises;
+ CREATE TABLE pam_tipo_seguro_salud
+( id int not null primary key,
+  nombre varchar(100) NOT NULL,
+  Estado                            	int default 1,
+Fecha_Registro            	DATE,
+Fecha_Edicion              	timestamp DEFAULT (sysdate),
+Usuario_Crea                	int,
+Usuario_Edita               	int
+);
+CREATE SEQUENCE seq_pam_tipo_seguro_salud
+
+CREATE TABLE pam_tipo_lenguaje_alterna
+( id int not null primary key,
+  nombre varchar(100) NOT NULL,
+  Estado                            	int default 1,
+Fecha_Registro            	DATE,
+Fecha_Edicion              	timestamp DEFAULT (sysdate),
+Usuario_Crea                	int,
+Usuario_Edita               	int
+);
+CREATE SEQUENCE seq_pam_tipo_lenguaje_alterna
+
+CREATE TABLE nna_motivo_ingreso
+( id int not null primary key,
+  nombre varchar(100) NOT NULL,
+  Estado                            	int default 1,
+Fecha_Creacion            	DATE,
+Fecha_Edicion              	timestamp DEFAULT (sysdate),
+Usuario_Crea                	int,
+Usuario_Edita               	int
+);
+CREATE SEQUENCE seq_nna_motivo_ingreso
+
+
+CREATE TABLE nna_perfiles_ingreso
+( id int not null primary key,
+  nombre varchar(100) NOT NULL,
+  Estado                            	int default 1,
+Fecha_Creacion            	DATE,
+Fecha_Edicion              	timestamp DEFAULT (sysdate),
+Usuario_Crea                	int,
+Usuario_Edita               	int
+);
+CREATE SEQUENCE seq_nna_perfiles_ingreso
+
+Create table niveles_usuarios(
+Id int not null primary key,
+Nombre varchar(250),
+Estado             	int default 1,
+Fecha_Creacion     	date,
+Fecha_Edicion      	TIMESTAMP DEFAULT SYSDATE,
+Usuario_Crea       	int,
+Usuario_Edita      	int
+)
+
+
+
+
+CREATE TABLE archivos_adjuntados
+( id int not null primary key,
+  nombre varchar(100) NULL,
+ruta varchar(100) null
+  Estado                            	int default 1,
+Fecha_Registro            	DATE,
+Fecha_Edicion              	timestamp DEFAULT (sysdate),
+Usuario_Crea                	int,
+Usuario_Edita               	int
+);
+CREATE SEQUENCE seq_pam_tipo_seguro_salud
+
