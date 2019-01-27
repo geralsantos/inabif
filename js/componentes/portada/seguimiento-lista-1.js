@@ -27,7 +27,6 @@ Vue.component('seguimiento-lista-1', {
     updated:function(){
     },
     beforeDestroy() {
-        console.log('Main Vue destroyed')
       },
     methods:{
 
@@ -58,8 +57,6 @@ Vue.component('seguimiento-lista-1', {
             this.$http.post('buscar_tipo_centro?view',{}).then(function(response){
 
                 if( response.body.data != undefined){
-                    console.log( response.body.data)
-                    console.log( response.body.data[0]["ESTADO"])
                     if(response.body.data[0]["ESTADO"]==1){
                         this.tipo_centro = true;
                     }else{
@@ -105,10 +102,8 @@ Vue.component('seguimiento-lista-1', {
                         if(isempty(response.body.data[index]["FECHA_MATRIZ"])){
                             this.acceso_generar = false;
                         }
-                        console.log(response.body.data[index]["FECHA_MATRIZ"]);
                        response.body.data[index]["FECHA_MATRIZ"]= (isempty(response.body.data[index]["FECHA_MATRIZ"]))?'': moment(response.body.data[index]["FECHA_MATRIZ"], "YY-MMM-DD").format("DD-MM-YYYY");
                     }
-                    console.log(response.body.data);
                     this.centros = response.body.data;
                 }
 
@@ -118,7 +113,6 @@ Vue.component('seguimiento-lista-1', {
         },
 
         completar_matriz(id_centro){
-            console.log("completar_matriz");
             this.$http.post('completar_matriz?view',{id_centro:id_centro}).then(function(response){
 
                 if( response.body.resultado ){

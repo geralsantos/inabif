@@ -44,10 +44,8 @@ Vue.component('cargar-archivos', {
         },
         listar_archivos_adjuntos(){
             let where = {residente_id:this.id_residente}
-            console.log(where);
             this.archivos = [];
             this.$http.post('cargar_datos?view',{tabla:"archivos_adjuntados",where:where}).then(function(response){
-                console.log(response);
                 if( response.body.atributos ){
                     this.archivos= response.body.atributos;
                 }
@@ -95,7 +93,6 @@ Vue.component('cargar-archivos', {
                     this.showModal = true;
                     this.mostrar = true;
             }else{
-                console.log(usuario);
  //let  where = {'id':usuario.ID};
               //this.$http.post('buscar?view',{where:where}).then(function(response){
                     //this.registro = response.body.atributos[0];
@@ -118,7 +115,6 @@ Vue.component('cargar-archivos', {
             this.showModal = true;
         },
         descargar(archivo){
-            console.log(archivo);
             downloadLink('/inabif/app/cargas/'+archivo.NOMBRE);
         },
         actualizar(coincidencia){

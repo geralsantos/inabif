@@ -90,7 +90,6 @@ Vue.component('ppd-datos-egreso-generales', {
                 Periodo_Anio:moment().format("YYYY")
 
                         }
-                        console.log(valores);
             this.$http.post('insertar_datos?view',{tabla:'CarEgresoGeneral', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){

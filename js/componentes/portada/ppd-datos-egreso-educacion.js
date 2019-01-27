@@ -121,7 +121,6 @@ Vue.component('ppd-datos-egreso-educacion', {
             this.bloque_busqueda = false;
 
             this.$http.post('cargar_datos_residente?view',{tabla:'CarEgresoEducacion', residente_id:this.id_residente }).then(function(response){
-                console.log(response.body);
                 if( response.body.atributos != undefined){
 
                     this.CarIntervencion = response.body.atributos[0]["PLAN_EDUCACION"];

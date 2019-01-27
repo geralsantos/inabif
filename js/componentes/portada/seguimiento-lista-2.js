@@ -41,7 +41,6 @@ Vue.component('seguimiento-lista-2', {
             if ($("#"+id_modulo).is(':checked')) {
                 estado_completo =1;
             }
-            console.log(estado_completo)
 
             this.$http.post('completar_grupo?view',{id_modulo:id_modulo, estado_completo:estado_completo}).then(function(response){
                 if( response.body.resultado ){
@@ -77,7 +76,6 @@ Vue.component('seguimiento-lista-2', {
             document.body.appendChild(input2);
         },
         listar_grupos(){
-            console.log("listar_grupos");
             if(this.mensaje_entre_componentes_1==null){
                 let id_centro = document.getElementById("mensaje_entre_componentes_1").value;
                 this.mensaje_entre_componentes_1 = id_centro;
@@ -91,7 +89,6 @@ Vue.component('seguimiento-lista-2', {
                     this.nivel_usuario = response.body.nivel_usuario;
                     this.nombre_centro = response.body.datos_centro[0]["NOM_CA"];
 
-                    console.log(this.grupos);
                 }else{
                     swal("", "Ha ocurrido un error", "error")
                 }

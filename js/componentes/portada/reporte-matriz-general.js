@@ -19,13 +19,11 @@ Vue.component('reporte-matriz-general', {
     updated:function(){
     },
     beforeDestroy() {
-        console.log('Main Vue destroyed')
       },
     methods:{
         mostrar_matrices(){
             let self = this;
             let obj = {periodo_mes:moment(self.periodo_mes,"M").format("MMM") ,periodo_anio:this.periodo_anio};
-            console.log(obj);
             this.$http.post('mostrar_matrices?view',obj).then(function(response){
 
                 if( response.body.data != undefined){
@@ -38,7 +36,6 @@ Vue.component('reporte-matriz-general', {
         descargar_reporte_matriz_general(matriz_id){
 
             let datos = {periodo_mes:moment(this.periodo_mes,"M").format("MMM"),periodo_anio:this.periodo_anio,matriz_id:matriz_id};
-            console.log(datos);
             this.$http.post('descargar_reporte_matriz_general_2?view',datos).then(function(response){
 
                 if( response.body.data != undefined){

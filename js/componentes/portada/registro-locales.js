@@ -74,10 +74,8 @@ Vue.component('registro-locales', {
                 linea_intervencion :this.linea_intervencion,
                 nom_serv :this.nom_serv,
                 }
-                console.log(valores);
 
                 if (this.id_centro==null) {
-                    console.log(valores);
                     this.$http.post('insertar_datos?view',{tabla:'centro_atencion', valores:valores}).then(function(response){
 
                         if( response.body.resultado ){
@@ -149,7 +147,6 @@ Vue.component('registro-locales', {
                 this.nom_serv=null;
                 this.showModal = true;
             }else{
-                console.log(centro);
  //let  where = {'id':usuario.ID};
               //this.$http.post('buscar?view',{where:where}).then(function(response){
                     //this.registro = response.body.atributos[0];
@@ -225,7 +222,6 @@ Vue.component('registro-locales', {
             });
         },
         mostrar_entidad(){
-            console.log(this.tipo_centro_id)
            this.$http.post('buscar_entidad?view',{tabla:'centro_atencion', tipo_centro_id:this.tipo_centro_id}).then(function(response){
                 if( response.body.data ){
                     this.codigo_entidad= response.body.data[0]["CODIGO_ENTIDAD"];

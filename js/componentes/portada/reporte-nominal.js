@@ -22,7 +22,6 @@ Vue.component('reporte-nominal', {
     updated:function(){
     },
     beforeDestroy() {
-        console.log('Main Vue destroyed')
       },
     methods:{
 
@@ -53,7 +52,6 @@ Vue.component('reporte-nominal', {
             }
         },
         actualizar(coincidencia){
-            console.log(coincidencia);
             this.id_residente = coincidencia.ID;               this.id=coincidencia.ID;
             let nombre=(coincidencia.NOMBRE==undefined)?'':coincidencia.NOMBRE;
 let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
@@ -80,7 +78,6 @@ let apellido = apellido_p + ' ' + apellido_m;
         descargar_reporte_matriz_nominal(){
 
             let datos = {id_residente:this.id_residente};
-            //console.log(datos);
             let self = this
             //window.open(('descargar_reporte_matriz_nominal?view&id_residente='+self.id_residente),'_blank');
             this.$http.post('descargar_reporte_matriz_nominal?view',datos).then(function(response){

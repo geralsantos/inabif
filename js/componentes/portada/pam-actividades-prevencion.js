@@ -90,7 +90,6 @@ Vue.component('pam-actividades-prevencion', {
                 Periodo_Anio:moment().format("YYYY")
 
                         }
-                        console.log(valores)
             this.$http.post('insertar_datos?view',{tabla:'pam_ActividadPrevencion', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){

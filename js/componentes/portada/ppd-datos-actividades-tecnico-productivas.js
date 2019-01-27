@@ -96,9 +96,7 @@ Vue.component('ppd-datos-actividades-tecnico-productivas', {
                 this.coincidencias = [];
                 this.bloque_busqueda = true;
                 this.isLoading = true;
-                console.log(word);
                 this.$http.post('ejecutar_consulta?view',{like:word }).then(function(response){
-                    console.log(response.body);
                     if( response.body.data != undefined){
                         this.isLoading = false;
                         this.coincidencias = response.body.data;
@@ -183,7 +181,6 @@ Vue.component('ppd-datos-actividades-tecnico-productivas', {
             this.modal_lista = false;
 
             this.$http.post('cargar_datos_residente?view',{tabla:'CarActividades', residente_id:this.id_residente }).then(function(response){
-                console.log(response.body);
                 if( response.body.atributos != undefined){
 
                     this.CarNumBiohuerto = response.body.atributos[0]["NUM_BIOHUERTO"];

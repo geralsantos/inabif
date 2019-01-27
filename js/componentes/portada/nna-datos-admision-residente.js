@@ -151,7 +151,6 @@ Vue.component('nna-datos-admision-residente', {
             this.$http.post('cargar_datos_residente?view',{tabla:'NNAAdmisionResidente', residente_id:this.id_residente }).then(function(response){
 
                 if( response.body.atributos != undefined){
-                    console.log(response.body.atributos);
 
                     this.Movimiento_Poblacional = response.body.atributos[0]["MOVIMIENTO_POBLACIONAL"];
                     this.Fecha_Ingreso =  moment(response.body.atributos[0]["FECHA_INGRESO"],"DD-MMM-YY").format("YYYY-MM-DD");
@@ -237,7 +236,6 @@ Vue.component('nna-datos-admision-residente', {
             this.$http.post('cargar_datos_residente?view',{tabla:'NNAAdmisionResidente', residente_id:this.id_residente }).then(function(response){
 
                 if( response.body.atributos != undefined){
-                    console.log(response.body.atributos);
                     this.Movimiento_Poblacional = response.body.atributos[0]["MOVIMIENTO_POBLACIONAL"];
                     this.Fecha_Ingreso =  moment(response.body.atributos[0]["FECHA_INGRESO"],"DD-MMM-YY").format("YYYY-MM-DD");
                     this.Fecha_Registro =  moment(response.body.atributos[0]["FECHA_REGISTRO"],"DD-MMM-YY").format("YYYY-MM-DD");

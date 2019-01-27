@@ -78,7 +78,6 @@ Vue.component('ppd-datos-admision-usuario', {
                 Periodo_Anio:moment().format("YYYY")
 
                         }
-                        console.log(valores)
             this.$http.post('insertar_datos?view',{tabla:'CarDatosAdmision', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){

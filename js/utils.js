@@ -84,7 +84,6 @@ function downloadLink(url_archivo) {
   }
   var searchByName = (items, term, namesearch) => {
     if (term) {
-      console.log(items, term, namesearch);
       return items.filter(item =>{
         return item[namesearch].toLowerCase().indexOf(toLower(term)) > -1;
       })
@@ -195,7 +194,6 @@ jQuery.fn.reverse = [].reverse;
 
 function expandTree() {
   if (currentHistoryIndex < historyHashArray.length) {
-    console.log(historyHashArray[currentHistoryIndex]);
     $('.collapse').removeClass('show'); // resets
     $('#' + historyHashArray[currentHistoryIndex])
       .parents('.collapse')

@@ -43,7 +43,6 @@ Vue.component('seguimiento-lista-3', {
 
 
         listar_campos(){
-            console.log("listar_campos");
             if(this.mensaje_entre_componentes_1==null){
                 let nombre_tabla = document.getElementById("mensaje_entre_componentes_2").value;
                 this.id_centro = document.getElementById("id_centro").value;
@@ -66,8 +65,6 @@ Vue.component('seguimiento-lista-3', {
                     this.campos = arr;
                     this.cabeceras = cabeceras;
                     this.nombre_centro = response.body.datos_centro[0]["NOM_CA"];
-                console.log(this.campos);
-                console.log(cabeceras);
                 this.remover_mensaje_entre_componentes();
                 }else{
                     swal("", "No hay registros hasta la fecha", "error")

@@ -149,7 +149,6 @@ Vue.component('pam-datos-identificacion-residente', {
                         }
                     this.$http.post('insertar_datos?view',{tabla:'residente', valores:valores_residente,lastid:true}).then(function(response){
                         valores.Residente_Id = response.body.lastid;
-                        console.log(response.body.lastid);
                         this.$http.post('insertar_datos?view',{tabla:'pam_datos_identificacion', valores:valores}).then(function(response){
                             if( response.body.resultado ){
                                 this.inicializar();

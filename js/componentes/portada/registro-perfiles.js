@@ -87,8 +87,6 @@ Vue.component('registro-perfiles', {
 
                 }else{
                     let where = {id:this.id_usuario};
-                    console.log(where);
-                    console.log(valores);
                     this.$http.post('update_datos?view',{tabla:'usuarios', valores:valores,where:where}).then(function(response){
                         if( response.body.resultado ){
                             swal('', 'Registro Actualizado', 'success');
@@ -144,7 +142,7 @@ Vue.component('registro-perfiles', {
                     this.tipo_centro = null;
 
             }else{
-                console.log(usuario);
+                (usuario);
  //let  where = {'id':usuario.ID};
               //this.$http.post('buscar?view',{where:where}).then(function(response){
                     //this.registro = response.body.atributos[0];

@@ -71,7 +71,6 @@ Vue.component('pide-consulta', {
             this.NumDoc = coincidencia.DNI_RESIDENTE;
 
             this.residente_seleccionado.push(coincidencia);
-            console.log(coincidencia);
            
 
         },mostrar_lista_residentes(){
@@ -106,7 +105,6 @@ Vue.component('pide-consulta', {
             this.modal_lista = false;
             this.NumDoc = residente.DNI_RESIDENTE;
             this.residente_seleccionado=[];
-            console.log(residente);
             this.residente_seleccionado.push(residente);
 
         },

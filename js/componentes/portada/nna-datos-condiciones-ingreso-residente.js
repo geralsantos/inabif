@@ -137,7 +137,6 @@ Vue.component('nna-datos-condiciones-ingreso-residente', {
             this.$http.post('cargar_datos_residente?view',{tabla:'NNACondicionIResidente', residente_id:this.id_residente }).then(function(response){
 
                 if( response.body.atributos != undefined){
-                    console.log(response.body.atributos)
                     this.Tipo_Doc = response.body.atributos[0]["TIPO_DOC"];
                     this.Numero_Doc = response.body.atributos[0]["NUMERO_DOC"];
                     this.Lee_Escribe = response.body.atributos[0]["LEE_ESCRIBE"];

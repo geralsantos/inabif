@@ -80,7 +80,6 @@ Vue.component('pam-actividades-sociales', {
                 Periodo_Anio:moment().format("YYYY")
 
                         }
-                        console.log(valores)
             this.$http.post('insertar_datos?view',{tabla:'pam_ActividadesSociales', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){

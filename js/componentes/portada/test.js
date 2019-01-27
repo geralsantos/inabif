@@ -21,7 +21,6 @@ Vue.component('modulos',{
       }
   	}),
   	created:()=>{
-     // console.log(this.rowsmodulos_det);
   	},
   	mounted:function(){
       this.modulos_sidenav();
@@ -42,7 +41,6 @@ Vue.component('modulos',{
           this.htmlrender = response.body;
           this.rowsmodulos=response.body;
           
-          console.log(response.body);
         });
   	}
   }
