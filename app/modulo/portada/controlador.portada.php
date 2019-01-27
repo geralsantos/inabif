@@ -1050,8 +1050,10 @@ class portada extends App{
   $table = '<table>'.$html_modulo.'</table>';
   if ($modulos)
   {
-    header("Content-Type: application/vnd.ms-excel");    
+    header("Content-Type: text/csv");    
     header("Content-Disposition: attachment; filename=descarga.xls");  
+    header('Pragma: no-cache');    
+   header('Expires: 0');
     echo $table;
     //echo json_encode(array("data"=>$table) ) ;
     return true;
