@@ -43,6 +43,6 @@
 <script>
 document.body.style.backgroundImage = "url('../images/admin.png')";
 document.body.style.backgroundRepeat = "no-repeat";
-document.body.style.backgroundSize  = "auto";
+document.body.style.backgroundSize  = "100%";
 
 </script>
