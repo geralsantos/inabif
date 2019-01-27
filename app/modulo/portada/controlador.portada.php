@@ -949,10 +949,10 @@ class portada extends App{
     $modelo = new modeloPortada();
 	$nivel = $_SESSION["usuario"][0]["NIVEL"];
   $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
-  $anio = date("Y",strtotime($_POST["fecha_inicial"]));
-  $mes = date("F",strtotime($_POST["fecha_final"])); 
-  $fecha_inicial = date("d-m-Y",strtotime($_POST["fecha_inicial"])); 
-  $fecha_final = date("d-m-Y",strtotime($_POST["fecha_final"])); 
+  $anio = date("Y",strtotime($_REQUEST["fecha_inicial"]));
+  $mes = date("F",strtotime($_REQUEST["fecha_final"])); 
+  $fecha_inicial = date("d-m-Y",strtotime($_REQUEST["fecha_inicial"])); 
+  $fecha_final = date("d-m-Y",strtotime($_REQUEST["fecha_final"])); 
 	$fecha = " BETWEEN UPPER('".$fecha_inicial."') AND UPPER('".$fecha_final."')";
   $where = "";
   if (ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel) {
