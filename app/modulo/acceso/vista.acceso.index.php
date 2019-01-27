@@ -1,6 +1,6 @@
 <div style="text-align: center; width: 100%">
          <br>
-	 <img src="../images/sector.png"  style="width: 100%; text-align: center !important;"/>
+	 <img src="../images/sector.png"  />
 <br>
 <br>
 	 <img src="../images/siger.png">
