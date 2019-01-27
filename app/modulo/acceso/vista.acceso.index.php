@@ -40,3 +40,7 @@
             </div>
         </div>
     </div>
+<script>
+document.body.style.backgroundImage = "url('../../../logo3.jpg')";
+
+</script>
