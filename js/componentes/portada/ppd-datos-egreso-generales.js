@@ -72,7 +72,7 @@ Vue.component('ppd-datos-egreso-generales', {
                 return false;
             }
             let valores = {
-                Fecha_Egreso: (isempty(this.CarFEgreso)?null:moment(this.CarFEgreso).format("YY-MMM-DD")),
+                Fecha_Egreso: (isempty(this.CarFEgreso)?null:moment(this.CarFEgreso).format("DD-MMM-YY")),
                 Motivo_Egreso:this.CarMotivoEgreso || '',
                 Traslado:this.CarTrasladoCar || '',
                 Reinsercion:this.CarReinsercionFamiliar || '',
