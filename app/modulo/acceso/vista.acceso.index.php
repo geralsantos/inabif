@@ -1,4 +1,4 @@
-<div style="text-align: center; width: 600px;">
+<div style="text-align: center; width: 100%">
          <br>
 	 <img src="../images/sector.png"  style="width: 100%; text-align: center !important;"/>
 <br>
