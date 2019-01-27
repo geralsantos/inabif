@@ -954,7 +954,7 @@ class portada extends App{
   $fecha_inicial = date("d-m-Y",strtotime($_POST["fecha_inicial"])); 
   $fecha_final = date("d-m-Y",strtotime($_POST["fecha_final"])); 
 	$fecha = " BETWEEN UPPER('".$fecha_inicial."') AND UPPER('".$fecha_final."')";
-  
+  $where = "";
   if (ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel) {
     $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
     $tipo_centro_dependiente = array('1'=>'and cu.tipo_centro_id(+)= re.tipo_centro_id and cda.tipo_centro_id(+)= re.tipo_centro_id and cci.tipo_centro_id(+)= re.tipo_centro_id and csn.tipo_centro_id(+)= re.tipo_centro_id and ceg.tipo_centro_id(+)= re.tipo_centro_id',
