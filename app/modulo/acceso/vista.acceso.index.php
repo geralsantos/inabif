@@ -1,6 +1,6 @@
 <div style="text-align: center; width: 100%;margin-bottom:-50px;margin-top:50px;">
          <br>
-	 <img src="../images/sector.png"  />
+	 <img src="../images/sector.png" style="width: 40%;" />
 <br>
 <br>
 	 <img src="../images/siger.png">

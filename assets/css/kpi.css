@@ -145,6 +145,7 @@ fieldset.legend-indicador {
   }
 .footer-text{
     text-align: center;
+    margin-top:-25px;
 }
 .tabulacionMenu {
     padding-left: 15px;
