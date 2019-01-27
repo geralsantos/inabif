@@ -1037,7 +1037,7 @@ class portada extends App{
             $grupo_values = array_values($grupo);
             $grupo_html .= "<tr>";
             foreach ($grupo_values as $key => $value) {
-              $grupo_html .="<td style='text-align:left;'>".(string) $value."</td>";
+              $grupo_html .="<td style='text-align:left;'>".$value."</td>";
             }
             $grupo_html .= "</tr>";
             $residentes[] = $grupo["CODIGORESIDENTE"];
