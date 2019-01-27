@@ -41,6 +41,6 @@
         </div>
     </div>
 <script>
-document.body.style.backgroundImage = "url('../../images/logo3.jpg')";
+document.body.style.backgroundImage = "url('../images/logo3.jpg')";
 
 </script>
