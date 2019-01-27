@@ -16,9 +16,11 @@
                                 <div class="col-12 col-md-3">
                                     <input type="date" class="form-control" v-model="fecha_final">
                                 </div>
+                                <!--
                                 <div class="col-12 col-md-1">
                                    <button @click="mostrar_reporte_rub()" class="btn btn-default"><i class="fa fa-send"></i> Buscar</button>
                                 </div>
+                                -->
                             </div>
                             <div class="row">
                                 <div class="col-12 col-md-1">
