@@ -140,7 +140,7 @@
                             
                         </div>
                         <div class="row">
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-12">
                                     <label for="text-input" class=" form-control-label">Problematica Familiar</label>
                                     <div class="form-check">
                                         <label class="form-check-label" for="Violencia">
