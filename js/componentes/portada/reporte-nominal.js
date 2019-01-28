@@ -104,6 +104,18 @@ let apellido = apellido_p + ' ' + apellido_m;
                 this.$http.post('ejecutar_consulta_lista_nominal?view',{}).then(function(response){
 
                     if( response.body.data != undefined){
+                        let data = response.body.data;
+                        data.sort(function (a, b) {
+                            if (a.APELLIDO_P > b.APELLIDO_P) {
+                              return 1;
+                            }
+                            if (a.APELLIDO_P < b.APELLIDO_P) {
+                              return -1;
+                            }
+                            // a must be equal to b
+                            return 0;
+                          });
+                          console.log(data);
                         this.modal_lista = true;
                         this.isLoading = false;
                         this.pacientes = response.body.data;

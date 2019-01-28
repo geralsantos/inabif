@@ -319,6 +319,7 @@ function querySort ($first_Array,$second_Array) {
           $residentes[] = $value["ID"];
         }
       }
+      
 
 	echo json_encode(array( "data"=>($response) )) ;
 	  }else{
