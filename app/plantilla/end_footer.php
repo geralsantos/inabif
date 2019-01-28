@@ -20,7 +20,8 @@
   <script type="text/javascript">
     window['moment-range'].extendMoment(moment);
   </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js"></script>  
     <script src="<?php echo ASSETS ?>/js/filesaver.min.js"></script>
     <script src="<?php echo ASSETS ?>/js/blob.min.js"></script>
     <script src="<?php echo ASSETS ?>/js/xlsx.core.min.js"></script>
@@ -59,6 +60,7 @@
   <script src="<?php echo ASSETS ?>/js/popper.min.js"></script>
   <script type="text/javascript" src="<?php echo JS ?>/vue/app.js"></script>
   <script type="text/javascript" src="<?php echo JS ?>/xml2json.js"></script>
+
 
   </div> <!-- final -->
   <footer>
