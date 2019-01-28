@@ -97,7 +97,7 @@
                             <select name="cboopcionreniec" id="cboopcionreniec" v-model="cboopcionreniec" class="form-control">
                                 <option value="No se consultó, falta de datos">No se consultó, falta de datos</option>
                                 <option value="Consulta: Dato correcto, Actualizar">Consulta: Dato correcto, Actualizar</option>
-                                <option value="Consulta: Dato diferentes">Consulta: Dato diferentes</option>
+                                <option value="Consulta: Datos diferentes">Consulta: Datos diferentes</option>
                             </select>
                         </div>
                         <div class="col-md-4 text-center">
