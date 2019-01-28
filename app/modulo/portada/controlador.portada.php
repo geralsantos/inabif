@@ -277,10 +277,7 @@ class portada extends App{
 }
 function cmp($a, $b)
       {
-        if ($a['APELLIDO_P'] == $b['APELLIDO_P']) {
-          return 0;
-      }
-      return ($a['APELLIDO_P'] > $b['APELLIDO_P']) ? -1 : 1;
+      return strnatcmp($a['APELLIDO_P'], $b['APELLIDO_P']);
       }
     public function ejecutar_consulta_lista_nominal(){
       $modelo = new modeloPortada();
@@ -323,7 +320,7 @@ function cmp($a, $b)
           $residentes[] = $value["ID"];
         }
       }
-      asort($response, array("portada", "cmp"));
+      usort($response, array("portada", "cmp"));
 
 	echo json_encode(array( "data"=>($response) )) ;
 	  }else{
