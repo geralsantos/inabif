@@ -275,7 +275,7 @@ class portada extends App{
 
      }
 }
-public function cmp($a, $b)
+function cmp($a, $b)
       {
           return $b['APELLIDO_P'] - $a['APELLIDO_P'];
       }
