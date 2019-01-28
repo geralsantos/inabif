@@ -323,7 +323,7 @@ function cmp($a, $b)
           $residentes[] = $value["ID"];
         }
       }
-      usort($response, array("portada", "cmp"));
+      asort($response, array("portada", "cmp"));
 
 	echo json_encode(array( "data"=>($response) )) ;
 	  }else{
