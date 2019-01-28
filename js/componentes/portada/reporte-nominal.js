@@ -105,11 +105,18 @@ let apellido = apellido_p + ' ' + apellido_m;
 
                     if( response.body.data != undefined){
                         let data = response.body.data;
-                        var result = data.sort(function(a, b) {
-                            return (a.APELLIDO_P) - (b.APELLIDO_P);  
-                        });
-                        
-                        console.log(result);
+                        var users = [
+                            { 'user': 'fred',   'age': 48 },
+                            { 'user': 'barney', 'age': 36 },
+                            { 'user': 'fred',   'age': 40 },
+                            { 'user': 'barney', 'age': 34 }
+                          ];
+                           
+                          _.sortBy(users, [function(o) { return o.user; }]);
+                          // => objects for [['barney', 36], ['barney', 34], ['fred', 48], ['fred', 40]]
+                           
+                          _.sortBy(users, ['user', 'age']);
+                          console.log(users);
                         this.modal_lista = true;
                         this.isLoading = false;
                         this.pacientes = response.body.data;
