@@ -134,7 +134,10 @@ let apellido = apellido_p + ' ' + apellido_m;
 
             this.id_residente = residente.ID;  this.id=residente.ID;
             let nombre=(residente.NOMBRE==undefined)?'':residente.NOMBRE;
-            let apellido = (residente.APELLIDO==undefined)?'':residente.APELLIDO;
+            let apellido_p = (coincidencia.APELLIDO_P==undefined)?'':coincidencia.APELLIDO_P;
+let apellido_m = (coincidencia.APELLIDO_M==undefined)?'':coincidencia.APELLIDO_M;
+let apellido = apellido_p + ' ' + apellido_m;
+
             this.nombre_residente=nombre + ' ' + apellido;
             this.modal_lista = false;
 
