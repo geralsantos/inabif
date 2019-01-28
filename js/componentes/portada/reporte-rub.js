@@ -39,14 +39,13 @@ Vue.component('reporte-rub', {
         descargar_reporte_matriz_rub(){
             let fecha_inicial = moment(this.fecha_inicial, "YYYY-MM-DD").format("DD-MMM-YY");
             let fecha_final = moment(this.fecha_final, "YYYY-MM-DD").format("DD-MMM-YY");
-            window.open('descargar_reporte_matriz_rub?view&fecha_final='+fecha_final+'&fecha_inicial='+fecha_inicial);
-           /* this.$http.post('descargar_reporte_matriz_rub?view',{fecha_inicial:fecha_inicial, fecha_final:fecha_final}).then(function(response){
+            this.$http.post('descargar_reporte_matriz_rub?view',{fecha_inicial:fecha_inicial, fecha_final:fecha_final}).then(function(response){
                 if( response.body.data != undefined){
-                    //tableToExcel('tbl_temp','ExcelExport',response.body.data);
+                    tableToExcel('tbl_temp','ExcelExport',response.body.data);
                     this.data_reporte_rub = response.body.data;
                     
                 }
-            });*/
+            });
 
         },
      

@@ -949,10 +949,10 @@ class portada extends App{
     $modelo = new modeloPortada();
 	$nivel = $_SESSION["usuario"][0]["NIVEL"];
   $tipo_centro = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
-  $anio = date("Y",strtotime($_REQUEST["fecha_inicial"]));
-  $mes = date("F",strtotime($_REQUEST["fecha_final"])); 
-  $fecha_inicial = date("d-m-Y",strtotime($_REQUEST["fecha_inicial"])); 
-  $fecha_final = date("d-m-Y",strtotime($_REQUEST["fecha_final"])); 
+  $anio = date("Y",strtotime($_POST["fecha_inicial"]));
+  $mes = date("F",strtotime($_POST["fecha_final"])); 
+  $fecha_inicial = date("d-m-Y",strtotime($_POST["fecha_inicial"])); 
+  $fecha_final = date("d-m-Y",strtotime($_POST["fecha_final"])); 
 	$fecha = " BETWEEN UPPER('".$fecha_inicial."') AND UPPER('".$fecha_final."')";
   $where = "";
   if (ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel) {
@@ -1037,7 +1037,7 @@ class portada extends App{
             $grupo_values = array_values($grupo);
             $grupo_html .= "<tr>";
             foreach ($grupo_values as $key => $value) {
-              $grupo_html .="<td style='text-align:left;'> ".($value)."</td>";
+              $grupo_html .="<td style='text-align:left;'>".($value)."</td>";
             }
             $grupo_html .= "</tr>";
             $residentes[] = $grupo["CODIGORESIDENTE"];
@@ -1050,13 +1050,7 @@ class portada extends App{
   $table = '<table>'.$html_modulo.'</table>';
   if ($modulos)
   {
-    header("Content-Type: application/octet-stream");    
-    header("Content-Transfer-Encoding: binary"); 
-
-    header("Content-Disposition: attachment; filename=descarga.xls");  
-    header('Pragma: no-cache');    
-    echo $table;
-    //echo json_encode(array("data"=>$table) ) ;
+    echo json_encode(array("data"=>$table) ) ;
     return true;
   }else{
     return false;
