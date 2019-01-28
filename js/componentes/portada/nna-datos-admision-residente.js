@@ -155,7 +155,7 @@ console.log(valores)
 
                     this.Movimiento_Poblacional = response.body.atributos[0]["MOVIMIENTO_POBLACIONAL"];
                     this.Fecha_Ingreso =  moment(response.body.atributos[0]["FECHA_INGRESO"],"DD-MMM-YY").format("YYYY-MM-DD");
-                    this.Fecha_Registro =  moment(response.body.atributos[0]["FECHA_REGISTRO"],"DD-MMM-YY").format("YYYY-MM-DD");
+                    this.Fecha_Registro = isempty(response.body.atributos[0]["FECHA_REGISTRO"])?null:  moment(response.body.atributos[0]["FECHA_REGISTRO"],"DD-MMM-YY").format("YYYY-MM-DD");
                     this.Institucion_Derivacion = response.body.atributos[0]["INSTITUCION_DERIVACION"];
                     this.Motivo_Ingreso = response.body.atributos[0]["MOTIVO_INGRESO"];
                     this.Perfil_Ingreso_P = response.body.atributos[0]["PERFIL_INGRESO_P"];
@@ -239,7 +239,7 @@ console.log(valores)
                 if( response.body.atributos != undefined){
                     this.Movimiento_Poblacional = response.body.atributos[0]["MOVIMIENTO_POBLACIONAL"];
                     this.Fecha_Ingreso =  moment(response.body.atributos[0]["FECHA_INGRESO"],"DD-MMM-YY").format("YYYY-MM-DD");
-                    this.Fecha_Registro =  moment(response.body.atributos[0]["FECHA_REGISTRO"],"DD-MMM-YY").format("YYYY-MM-DD");
+                    this.Fecha_Registro = isempty(response.body.atributos[0]["FECHA_REGISTRO"])?null: moment(response.body.atributos[0]["FECHA_REGISTRO"],"DD-MMM-YY").format("YYYY-MM-DD");
                     this.Institucion_Derivacion = response.body.atributos[0]["INSTITUCION_DERIVACION"];
                     this.Motivo_Ingreso = response.body.atributos[0]["MOTIVO_INGRESO"];
                     this.Perfil_Ingreso_P = response.body.atributos[0]["PERFIL_INGRESO_P"];
