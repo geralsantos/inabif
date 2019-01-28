@@ -1050,7 +1050,7 @@ class portada extends App{
   $table = '<table>'.$html_modulo.'</table>';
   if ($modulos)
   {
-    header("Content-Type: text/csv");    
+    header("Content-Type: text/html");    
     header("Content-Disposition: attachment; filename=descarga.xls");  
     header('Pragma: no-cache');    
    header('Expires: 0');
