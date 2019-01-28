@@ -40,7 +40,7 @@
                                 <table class="table">
                                     <thead class="thead-dark text-center">
                                         <tr>
-                                            <th scope="col">Nombre</th>
+                                            <th scope="col">Nombres</th>
 
                                             <th scope="col">Descargar</th>
                                         </tr>
