@@ -115,8 +115,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                           _.sortBy(users, [function(o) { return o.user; }]);
                           // => objects for [['barney', 36], ['barney', 34], ['fred', 48], ['fred', 40]]
                            
-                          _.sortBy(users, ['user', 'age']);
-                          console.log(users);
+                          console.log( _.sortBy(users, ['user', 'age']));
                         this.modal_lista = true;
                         this.isLoading = false;
                         this.pacientes = response.body.data;
