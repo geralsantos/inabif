@@ -270,7 +270,7 @@
     if($_SESSION["usuario"][0]["TIPO_CENTRO_ID"]==1){
             $nombre_tipo_centro= 'PPD';
         } elseif($_SESSION["usuario"][0]["TIPO_CENTRO_ID"]==2){
-            $nombre_tipo_centro= 'PAM';
+            $nombre_tipo_centro= 'CARPAM';
         }elseif($_SESSION["usuario"][0]["TIPO_CENTRO_ID"]==3){
             $nombre_tipo_centro= 'NNA';
         }
