@@ -304,11 +304,20 @@ class portada extends App{
 	}else if(ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel){
 	$where ="";
 	}
-    $sql = "SELECT re.apellido_p as apellido_p,(re.id) as id,(re.nombre) as nombre,(re.apellido_m) as apellido_m,(".$campo.") as dni_residente FROM Residente re ".$left_join." WHERE  re.ESTADO=1 ".$where." ".$where_join." order by re.apellido_p asc";
+    $sql = "SELECT re.apellido_p as apellido_p,(re.id) as id,(re.nombre) as nombre,(re.apellido_m) as apellido_m,(".$campo.") as dni_residente FROM Residente re ".$left_join." WHERE  re.ESTADO=1 ".$where." ".$where_join." order by re.id desc";
     $res = $modelo->executeQuery( $sql );
 
 	  if ($res) {
-	echo json_encode(array( "data"=>($res) )) ;
+      $residentes = array();
+      $response = array();
+      foreach ($res[0] as $key => $value) {
+        if (!in_array($value["ID"],$residentes)) {
+          $response[] = $value;
+          $residentes[] = $value["ID"];
+        }
+      }
+      ksort($response);
+	echo json_encode(array( "data"=>($response) )) ;
 	  }else{
 	return false;
 	  }
