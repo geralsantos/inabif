@@ -105,20 +105,12 @@ let apellido = apellido_p + ' ' + apellido_m;
 
                     if( response.body.data != undefined){
                         let data = response.body.data;
-                        var users = [
-                            { 'user': 'fred',   'age': 48 },
-                            { 'user': 'barney', 'age': 36 },
-                            { 'user': 'fred',   'age': 40 },
-                            { 'user': 'barney', 'age': 34 }
-                          ];
-                           
-                          _.sortBy(users, [function(o) { return o.user; }]);
+                       
                           // => objects for [['barney', 36], ['barney', 34], ['fred', 48], ['fred', 40]]
                            
-                          console.log( _.sortBy(users, ['user', 'age']));
                         this.modal_lista = true;
                         this.isLoading = false;
-                        this.pacientes = response.body.data;
+                        this.pacientes = _.sortBy(data, [function(o) { return o.APELLIDO_P; }]);
                     }else{
                         swal("", "No existe ningún residente", "error")
                     }
