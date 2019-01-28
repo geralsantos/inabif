@@ -276,7 +276,7 @@ class portada extends App{
      }
 }
 function querySort ($first_Array,$second_Array) {
-  return strcasecmp($first_Array['apellido_p'],$second_Array['apellido_p']);
+  return strnatcmp($first_Array['apellido_p'],$second_Array['apellido_p']);
 }
     public function ejecutar_consulta_lista_nominal(){
       $modelo = new modeloPortada();
