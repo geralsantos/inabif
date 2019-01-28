@@ -308,7 +308,8 @@ class portada extends App{
     $res = $modelo->executeQuery( $sql );
     
 	  if ($res) {
-	echo json_encode(array( "data"=>ksort($res[0]) )) ;
+      ksort($res[0]);
+	echo json_encode(array( "data"=>ksort($res) )) ;
 	  }else{
 	return false;
 	  }
