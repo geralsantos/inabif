@@ -626,7 +626,7 @@ class portada extends App{
   }
   public function listar_usuarios(){
     $modelo = new modeloPortada();
-    $sql = "select usu.*,nu.nombre as nivel_nombre from usuarios usu left join niveles_usuarios nu on (usu.nivel=nu.id) order by usu.id desc";
+    $sql = "select usu.*,nu.nombre as nivel_nombre from usuarios usu left join niveles_usuarios nu on (usu.nivel=nu.id) order by nu.nombre asc";
 
     $res = $modelo->executeQuery($sql );
     if ($res)
