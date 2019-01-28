@@ -105,17 +105,11 @@ let apellido = apellido_p + ' ' + apellido_m;
 
                     if( response.body.data != undefined){
                         let data = response.body.data;
-                        function sortThings(a, b) {
-                        if (a > b) {
-                            return 1;
-                        } else if (a < b) {
-                            return -1;
-                        } else if (a === b) {
-                            return 0;
-                        }
-                        }
-                        data.sort(sortThings);
-                        console.log(data);
+                        var result = data.sort(function(a, b) {
+                            return (a.APELLIDO_P) - (b.APELLIDO_P);  
+                        });
+                        
+                        console.log(result);
                         this.modal_lista = true;
                         this.isLoading = false;
                         this.pacientes = response.body.data;
