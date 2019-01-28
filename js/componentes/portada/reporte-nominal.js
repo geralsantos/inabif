@@ -106,7 +106,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                     if( response.body.data != undefined){
                         let data = response.body.data;
                           // => objects for [['barney', 36], ['barney', 34], ['fred', 48], ['fred', 40]]
-                           console.log(_.sortBy(data, ['apellido_p']));
+                           console.log(_.sortBy(data.data, ['apellido_p']));
                         this.modal_lista = true;
                         this.isLoading = false;
                         this.pacientes = _.sortBy(data, ['apellido_p']);
