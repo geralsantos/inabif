@@ -105,25 +105,16 @@ let apellido = apellido_p + ' ' + apellido_m;
 
                     if( response.body.data != undefined){
                         let data = response.body.data;
-                        var key, keys = Object.keys(data);
-                        var n = keys.length;
-                        var newobj={}
-                        while (n--) {
-                        key = keys[n];
-                        newobj[key.toLowerCase()] = obj[key];
-                        }
-                        console.log(newobj);
-                        data.sort(function (a, b) {
-                            if (a.APELLIDO_P > b.APELLIDO_P) {
-                              return 1;
-                            }
-                            if (a.APELLIDO_P < b.APELLIDO_P) {
-                              return -1;
-                            }
-                            // a must be equal to b
+                        function sortThings(a, b) {
+                        if (a > b) {
+                            return 1;
+                        } else if (a < b) {
+                            return -1;
+                        } else if (a === b) {
                             return 0;
-                          });
-                          console.log(data);
+                        }
+                        }
+                        data.sort(sortThings);
                         this.modal_lista = true;
                         this.isLoading = false;
                         this.pacientes = response.body.data;
