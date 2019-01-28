@@ -277,7 +277,7 @@ class portada extends App{
 }
 function cmp($a, $b)
       {
-      return strnatcmp($a['APELLIDO_P'], $b['APELLIDO_P']);
+      return strncasecmp($a['APELLIDO_P'], $b['APELLIDO_P']);
       }
     public function ejecutar_consulta_lista_nominal(){
       $modelo = new modeloPortada();
