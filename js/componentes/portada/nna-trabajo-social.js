@@ -10,7 +10,7 @@ Vue.component('nna-trabajo-social', {
         SoporteF_NNA:null,
         Des_SoporteF :null,
         Tipo_Familia :null,
-        Problematica_Fami :null,
+        Problematica_Fami :[],
         NNA_Soporte_Fami:null,
         Familia_SISFOH :null,
         Resultado_Clasificacion :null,
@@ -55,7 +55,7 @@ Vue.component('nna-trabajo-social', {
             this.SoporteF_NNA = null;
             this.Des_SoporteF = null;
             this.Tipo_Familia = null;
-            this.Problematica_Fami = null;
+            this.Problematica_Fami = [];
             this.NNA_Soporte_Fami = null;
             this.Familia_SISFOH = null;
             this.Resultado_Clasificacion = null;
@@ -98,7 +98,7 @@ Vue.component('nna-trabajo-social', {
                 SoporteF_NNA:this.SoporteF_NNA,
                 Des_SoporteF :this.Des_SoporteF,
                 Tipo_Familia :this.Tipo_Familia,
-                Problematica_Fami :this.Problematica_Fami,
+                Problematica_Fami :(this.Problematica_Fami).join("@"),
                 NNA_Soporte_Fami:this.NNA_Soporte_Fami,
                 Familia_SISFOH :this.Familia_SISFOH,
                 Resultado_Clasificacion :this.Resultado_Clasificacion || " ",
@@ -179,7 +179,7 @@ Vue.component('nna-trabajo-social', {
                     this.SoporteF_NNA = response.body.atributos[0]["SOPORTEF_NNA"];
                     this.Des_SoporteF = response.body.atributos[0]["DES_SOPORTEF"];
                     this.Tipo_Familia = response.body.atributos[0]["TIPO_FAMILIA"];
-                    this.Problematica_Fami = response.body.atributos[0]["PROBLEMATICA_FAMI"];
+                    this.Problematica_Fami = (response.body.atributos[0]["PROBLEMATICA_FAMI"]).split(",");
                     this.NNA_Soporte_Fami = response.body.atributos[0]["NNA_SOPORTE_FAMI"];
                     this.Familia_SISFOH = response.body.atributos[0]["FAMILIA_SISFOH"];
                     this.Resultado_Clasificacion = response.body.atributos[0]["RESULTADO_CLASIFICACION"];
@@ -226,7 +226,7 @@ Vue.component('nna-trabajo-social', {
             this.SoporteF_NNA = null;
             this.Des_SoporteF = null;
             this.Tipo_Familia = null;
-            this.Problematica_Fami = null;
+            this.Problematica_Fami = [];
             this.NNA_Soporte_Fami = null;
             this.Familia_SISFOH = null;
             this.Resultado_Clasificacion = null;
@@ -264,7 +264,7 @@ Vue.component('nna-trabajo-social', {
                     this.SoporteF_NNA = response.body.atributos[0]["SOPORTEF_NNA"];
                     this.Des_SoporteF = response.body.atributos[0]["DES_SOPORTEF"];
                     this.Tipo_Familia = response.body.atributos[0]["TIPO_FAMILIA"];
-                    this.Problematica_Fami = response.body.atributos[0]["PROBLEMATICA_FAMI"];
+                    this.Problematica_Fami = (response.body.atributos[0]["PROBLEMATICA_FAMI"]).split(",");
                     this.NNA_Soporte_Fami = response.body.atributos[0]["NNA_SOPORTE_FAMI"];
                     this.Familia_SISFOH = response.body.atributos[0]["FAMILIA_SISFOH"];
                     this.Resultado_Clasificacion = response.body.atributos[0]["RESULTADO_CLASIFICACION"];
