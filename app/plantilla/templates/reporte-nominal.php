@@ -40,7 +40,7 @@
                                 <table class="table">
                                     <thead class="thead-dark text-center">
                                         <tr>
-                                            <th scope="col">Nombres</th>
+                                            <th scope="col">Nombre</th>
 
                                             <th scope="col">Descargar</th>
                                         </tr>
@@ -85,7 +85,7 @@
                                             </thead>
                                             <tbody class="text-center">
                                                 <tr v-for="residente in pacientes">
-                                                    <td>{{residente.NOMBRE}} {{residente.APELLIDO}}</td>
+                                                    <td>{{residente.ID}} {{residente.NOMBRE}} {{residente.APELLIDO_P}} {{residente.APELLIDO_M}}</td>
                                                     <td>{{residente.DNI_RESIDENTE}}</td>
                                                     <td><button class="btn btn-primary" @click="elegir_residente(residente)">Seleccionar</button></td>
 
