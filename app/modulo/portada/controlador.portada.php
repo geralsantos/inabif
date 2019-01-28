@@ -310,7 +310,7 @@ class portada extends App{
 	  if ($res) {
       $residentes = array();
       $response = array();
-      foreach ($res[0] as $key => $value) {
+      foreach ($res as $key => $value) {
         if (!in_array($value["ID"],$residentes)) {
           $response[] = $value;
           $residentes[] = $value["ID"];
