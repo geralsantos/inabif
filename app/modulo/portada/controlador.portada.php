@@ -1087,7 +1087,7 @@ class portada extends App{
     $campos = "";
     switch ($tipo_centro_id) {
       case '1': /*ppd*/
-      $campos = array('DATOS GENERALES DE INGRESO DEL RESIDENTE | CarIdentificacionUsuario'=>
+      $campos = array('I. DATOS GENERALES DE INGRESO DEL RESIDENTE | CarIdentificacionUsuario'=>
 'Ape_Paterno as "Apellido paterno",Ape_Materno as "Apellido materno",
 Nom_Usuario as "Nombre Usuario",
 (SELECT nombre FROM paises WHERE id=CarIdentificacionUsuario.Pais_Procencia) as "Pai­s de procedencia",
@@ -1098,14 +1098,14 @@ Nom_Usuario as "Nombre Usuario",
 Fecha_Nacimiento as "Fecha de Nacimiento",
 (SELECT nombre from pam_lengua_materna WHERE id = CarIdentificacionUsuario.Lengua_Materna) as "Lengua Materna"',
 
-'DATOS GENERALES DE INGRESO DEL RESIDENTE | CarDatosAdmision'=>
+'I. DATOS GENERALES DE INGRESO DEL RESIDENTE | CarDatosAdmision'=>
 'Fecha_Ingreso as "Fecha de ingreso",
 (SELECT nombre FROM pam_instituciones WHERE id=CarDatosAdmision.Institucion_derivado) as "Entidad deriva",
 Motivo_Ingreso  as "Motivo ingreso PRINCIPAL(exp)",
 \'\'  as "Motivo ingreso PRINCIPAL(real)",
 Numero_Documento as "Número documento de ingreso"',
 
-'DATOS GENERALES DE INGRESO DEL RESIDENTE | CarCondicionIngreso'=>
+'I. DATOS GENERALES DE INGRESO DEL RESIDENTE | CarCondicionIngreso'=>
 'DNI as "DNI al ingreso",
 (SELECT nombre FROM pam_tipo_documento_identidad WHERE id=CarCondicionIngreso.Tipo_Documento) as "Tipo documento de identidad",
  Numero_Documento as "Número documento de ingreso",
@@ -1116,7 +1116,7 @@ Numero_Documento as "Número documento de ingreso"',
  (SELECT nombre FROM pam_clasif_socioeconomico where id = CarCondicionIngreso.Clasficacion_Socioeconomica) as "Clasificación Socio. (SISFOH)",\'\' as "Cobertura médica",
  (SELECT nombre FROM pam_tipo_seguro_salud WHERE id=CarCondicionIngreso.Tipo_Seguro) as "Tipo de aseguramiento"',
 
- 'DATOS GENERALES DE INGRESO DEL RESIDENTE | CarSaludNutricion'=>array('Discapacidad as "Discapacidad",
+ 'I. DATOS GENERALES DE INGRESO DEL RESIDENTE | CarSaludNutricion'=>array('Discapacidad as "Discapacidad",
  Discapacidad_Fisica as "Presenta discap. física",
  Discapacidad_Intelectual as "Presenta discap. intelectual",
   Discapacidad_Sensorial as "Presenta discap. sensorial",
@@ -1135,11 +1135,11 @@ Numero_Documento as "Número documento de ingreso"',
    '\'\' as "Cuenta con familiares",
     \'\' as "Tipo de parentesco"',
 
-    'DATOS GENERALES DE INGRESO DEL RESIDENTE | CarSaludMental'=>
+    'I. DATOS GENERALES DE INGRESO DEL RESIDENTE | CarSaludMental'=>
     'Transtorno_Neurologico as "¿Trastornos Neurológicos?",
     (SELECT nombre FROM pam_tipo_transtorno_conducta where id=CarSaludMental.Tipo_Transtorno) as "Tipo de trastorno de conducta"',
 
-   'DATOS DE SEGUIMIENTO DEL RESIDENTE | CarEgresoSalud'=>
+   'II. DATOS DE SEGUIMIENTO DEL RESIDENTE | CarEgresoSalud'=>
    'Plan_Medico as "Plan de intervención",
    Meta_PII as "Meta trazada en el PII",
    Informe_Tecnico as "Posee inf. técnico evolutivo",
@@ -1148,7 +1148,7 @@ Numero_Documento as "Número documento de ingreso"',
    Enfermedades_Cronicas as "Enfermedades crónicas deg.",
    Especificar as "Especificar la enfermedad"',
 
-   'DATOS DE SEGUIMIENTO DEL RESIDENTE | CarEgresoTrabajoSocial'=>
+   'II. DATOS DE SEGUIMIENTO DEL RESIDENTE | CarEgresoTrabajoSocial'=>
    'Plan_Social as "Plan de intervención social",
    Meta_PII as "Meta trazada en el PII",
    Informe_Tecnico as "Posee inf. técnico evolutivo",
@@ -1159,10 +1159,10 @@ Numero_Documento as "Número documento de ingreso"',
    Reinsercion as "Posibilidad de Reinserción",
    Colocacion_Laboral as "Posibilidad Colocación Lab."',
 
-'DATOS DE EGRESO DEL RESIDENTE | CarEgresoGeneral'=>'Fecha_Egreso as "Fecha de Egreso",Motivo_Egreso as "Motivo de Egreso",Retiro_Voluntario as "Retiro Voluntario",Reinsercion, Grado_Parentesco as "Grado de Parentesco", Traslado, Fallecimiento, Restitucion_derechos as "Restitución de Derechos",AUS,Constancia_Naci as "Constancia de Nacimiento",Carnet_CONADIS as "CONADIS",DNI as "Documento de Identidad", Restitucion');
+'III. DATOS DE EGRESO DEL RESIDENTE | CarEgresoGeneral'=>'Fecha_Egreso as "Fecha de Egreso",Motivo_Egreso as "Motivo de Egreso",Retiro_Voluntario as "Retiro Voluntario",Reinsercion, Grado_Parentesco as "Grado de Parentesco", Traslado, Fallecimiento, Restitucion_derechos as "Restitución de Derechos",AUS,Constancia_Naci as "Constancia de Nacimiento",Carnet_CONADIS as "CONADIS",DNI as "Documento de Identidad", Restitucion');
       break;
       case '2': /*pam*/
-      $campos = array('DATOS GENERALES DE INGRESO DEL RESIDENTE | pam_datos_identificacion'=>
+      $campos = array('I. DATOS GENERALES DE INGRESO DEL RESIDENTE | pam_datos_identificacion'=>
       'residente_apellido_paterno as "Apellido paterno",
       residente_apellido_materno as "Apellido materno",
       residente_nombre as "Nombre Usuario",
@@ -1175,7 +1175,7 @@ Numero_Documento as "Número documento de ingreso"',
       (SELECT nombre from pam_lengua_materna WHERE id = pam_datos_identificacion.lengua_materna) as "Lengua Materna"',
 
 
-      'DATOS GENERALES DE INGRESO DEL RESIDENTE | pam_datos_admision_usuario'=>
+      'I. DATOS GENERALES DE INGRESO DEL RESIDENTE | pam_datos_admision_usuario'=>
       'fecha_ingreso_usuario as "Fecha de Ingreso",
       (SELECT nombre FROM pam_instituciones_deriva WHERE id=pam_datos_admision_usuario.institucion_deriva) as "Entidad que lo deriva",
       (SELECT nombre FROM pam_motivos_ingreso WHERE id = pam_datos_admision_usuario.motivo_ingreso_principal) as "Motivo ingreso PRINCIPAL(exp)",
@@ -1183,7 +1183,7 @@ Numero_Documento as "Número documento de ingreso"',
       numero_documento_ingreo_car as "Número documento de ingreso",
       perfil_ingreso as "Perfil de Ingreso"',
 
-      'DATOS GENERALES DE INGRESO DEL RESIDENTE | pam_datosCondicionIngreso'=>array('documento_entidad as "DNI al ingreso",
+      'I. DATOS GENERALES DE INGRESO DEL RESIDENTE | pam_datosCondicionIngreso'=>array('documento_entidad as "DNI al ingreso",
       tipo_documento_entidad as "Tipo documento de identidad",
       numero_documento_ingreso as "Número documento de ingreso",
       \'\' as "Pensión",
@@ -1196,7 +1196,7 @@ Numero_Documento as "Número documento de ingreso"',
       tipo_parentesco as "Tipo de parentesco"'),
 
 
- 'DATOS GENERALES DE INGRESO DEL RESIDENTE | pam_datos_saludnutric'=>array(
+ 'I. DATOS GENERALES DE INGRESO DEL RESIDENTE | pam_datos_saludnutric'=>array(
  'discapacidad as "Discapacidad",
  discapacidad_fisica as "Presenta discap. física",
  discapacidad_intelectual as "Presenta discap. intelectual",
@@ -1212,11 +1212,11 @@ Numero_Documento as "Número documento de ingreso"',
  talla as "Talla (m)",
  estado_nutricional as "Estado Nutricional(IMC)"'),
 
- 'DATOS GENERALES DE INGRESO DEL RESIDENTE | pam_salud_mental'=>
+ 'I. DATOS GENERALES DE INGRESO DEL RESIDENTE | pam_salud_mental'=>
  'trastorno_disociales as "Tras. comport. y/o disociales",
  tipo_trastorno as "Tipo de transtorno"',
 
- 'DATOS DE SEGUIMIENTO DEL RESIDENTE | pam_Salud'=>
+ 'II. DATOS DE SEGUIMIENTO DEL RESIDENTE | pam_Salud'=>
  'Plan_Intervencion as "Plan de intervención",
  Meta_PAI as "Meta trazada en el PAI",
  Informe_Tecnico as "Informe técnico evolutivo",
@@ -1226,14 +1226,14 @@ Numero_Documento as "Número documento de ingreso"',
  EnfermedaCronicasDegenerativas as "Enfermedades crónicas deg.",
  Especificar_Enfermedad as "Especificar"',
 
- 'DATOS DE SEGUIMIENTO DEL RESIDENTE | pam_trabajoSocial'=>
+ 'II. DATOS DE SEGUIMIENTO DEL RESIDENTE | pam_trabajoSocial'=>
  'Plan_Intervencion as "Plan de intervención",
  Meta_PAI as "Meta trazada en el PAI",
  Informe_Tecnico as "Informe técnico evolutivo",
  Des_Informe_Tecnico as "Descripción ",
  Cumple_Intervencion as "Cumplimiento del plan "',
 
- 'DATOS DE EGRESO DEL RESIDENTE | pam_EgresoUsuario'=>
+ 'III. DATOS DE EGRESO DEL RESIDENTE | pam_EgresoUsuario'=>
  'Fecha_Egreso as "Fecha de egreso",
  MotivoEgreso as "Motivo de egreso",
  Retiro_Voluntario as "Retiro Voluntario",
@@ -1247,7 +1247,7 @@ Numero_Documento as "Número documento de ingreso"',
  RestitucionReinsercionFamiliar as "Reinserción Familiar"');
  break;
       case '3':
-      $campos = array('DATOS GENERALES DE INGRESO DEL USUARIO | NNAInscripcionResidente'=>
+      $campos = array('I. DATOS GENERALES DE INGRESO DEL USUARIO | NNAInscripcionResidente'=>
       'residente_apellido_paterno as "Apellido paterno",
       residente_apellido_materno as "Apellido materno",
       residente_nombre as "Nombre usuario",
@@ -1259,7 +1259,7 @@ Numero_Documento as "Número documento de ingreso"',
       fecha_nacimiento as "Fecha de nacimiento" ,
       (SELECT nombre from pam_lengua_materna WHERE id = NNAInscripcionResidente.lengua_materna) as "Lengua materna"',
 
-      'DATOS GENERALES DE INGRESO DEL USUARIO | NNAAdmisionResidente'=>
+      'I. DATOS GENERALES DE INGRESO DEL USUARIO | NNAAdmisionResidente'=>
       'Fecha_Ingreso as "Fecha de Ingreso",
       (SELECT nombre FROM nna_instituciones WHERE id=NNAAdmisionResidente.Institucion_Derivacion) as "Entidad que lo deriva",
       (SELECT nombre FROM nna_motivos_ingreso WHERE id=NNAAdmisionResidente.Motivo_Ingreso)  as "Motivo ingreso PRINCIPAL(exp)",
@@ -1267,7 +1267,7 @@ Numero_Documento as "Número documento de ingreso"',
       Numero_Doc as "Número documento de ingreso",
       Perfil_Ingreso_P as "Perfil de ingreso"',
 
-      'DATOS GENERALES DE INGRESO DEL USUARIO | NNACondicionIResidente'=>
+      'I. DATOS GENERALES DE INGRESO DEL USUARIO | NNACondicionIResidente'=>
       'Numero_Doc as "DNI al ingreso",
       Tipo_Doc as "Tipo documento de identidad",
       \'\' as "Número documento de ingreso",
@@ -1279,7 +1279,7 @@ Numero_Documento as "Número documento de ingreso"',
       \'\' as "Cobertura médica",
       \'\' as "Tipo de aseguramiento"',
 
-      'DATOS GENERALES DE INGRESO DEL USUARIO | NNADatosSaludResi'=>
+      'I. DATOS GENERALES DE INGRESO DEL USUARIO | NNADatosSaludResi'=>
       'Discapacidad as "Discapacidad",
       Discapacidad_Fisica as "Presenta discap. física",
       Discapaciada_Intelectual as "Presenta discap. intelectual",
@@ -1293,21 +1293,21 @@ Numero_Documento as "Número documento de ingreso"',
       \'\' as "Especifique"',
 
 
-      'DATOS GENERALES DE INGRESO DEL USUARIO | NNADatosSaludResi'=>
+      'I. DATOS GENERALES DE INGRESO DEL USUARIO | NNADatosSaludResi'=>
       'Nivel_Hemoglobina as "Nivel de Hemoglobina",
       Peso as "Peso (Kg.)",
       Talla as "Talla (m)",
       Estado_Nutricional1 as "Estado Nutricional (IMC)"',
 
-      'DATOS GENERALES DE INGRESO DEL USUARIO | NNAFamiliaresResidente'=>
+      'I. ATOS GENERALES DE INGRESO DEL USUARIO | NNAFamiliaresResidente'=>
       'Familiares as "Cuenta con familiares",
       Parentesco as "Tipo de parentesco"',
 
-      'DATOS GENERALES DE INGRESO DEL USUARIO | NNADatosSaludResi'=>
+      'I. DATOS GENERALES DE INGRESO DEL USUARIO | NNADatosSaludResi'=>
       'Transtornos_Comportamiento as "Tras. comport. y/o disociales",
       Tipo_Transtorno as "Tipo de transtorno"',
 
-      'DATOS DE SEGUIMIENTO DEL USUARIO | NNASalud_Semestral'=>
+      'II. DATOS DE SEGUIMIENTO DEL USUARIO | NNASalud_Semestral'=>
       'Plan_Intervencion as "Plan de intervención",
       Meta_PAI as "Meta trazada en el PAI",
       Informe_tecnico as "Informe técnico evolutivo",
@@ -1315,7 +1315,7 @@ Numero_Documento as "Número documento de ingreso"',
       Control_CRED as "Control CRED acorde a la Edad",
       Vacunacion as "Esq. de vac. acorde a la Edad"',
 
-      'DATOS DE SEGUIMIENTO DEL USUARIO | NNAtrabajoSocial_Semestral'=>
+      'II. DATOS DE SEGUIMIENTO DEL USUARIO | NNAtrabajoSocial_Semestral'=>
       'Plan_Intervencion as "Plan de Intervención ",
       Meta_PAI as "Meta trazada en el PAI",
       Informe_Tecnico as "Informe técnico evolutivo",
@@ -1324,7 +1324,7 @@ Numero_Documento as "Número documento de ingreso"',
       Reinsercion_Familiar as "Plan de Reinserción familiar",
       FamiliaR_Soporte as "Fam. usa las RSS"',
 
-      'DATOS DE EGRESO DEL USUARIO | NNAEgresoUsuario'=>
+      'III. DATOS DE EGRESO DEL USUARIO | NNAEgresoUsuario'=>
       'Fecha_Egreso as "Fecha de egreso",
       MotivoEgreso as "Motivo de egreso",
       Detalle_Motivo as "Detalle del motivo del egreso",
