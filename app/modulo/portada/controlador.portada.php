@@ -320,8 +320,8 @@ function cmp($a, $b)
           $residentes[] = $value["ID"];
         }
       }
-      
-      usort($response, "cmp");
+portada
+      usort($response, array("portada", "cmp"));
 
 	echo json_encode(array( "data"=>($response) )) ;
 	  }else{
