@@ -144,28 +144,28 @@
                                     <label for="text-input" class=" form-control-label">Problematica Familiar</label>
                                     <div class="form-check">
                                         <label class="form-check-label" for="Violencia">
-                                        <input id="Violencia" class="form-check-input" v-model="Problematica_Fami" type="checkbox" value="Violencia">Violencia</label>
+                                        <input id="Violencia" class="form-check-input" v-model="Problematica_Fami" type="checkbox" value="Violencia">Violencia</label><br>
 
                                         <label class="form-check-label" for="Prostitución">
-                                        <input id="Prostitución" class="form-check-input" v-model="Problematica_Fami" type="checkbox" value="Prostitución">Prostitución</label>
+                                        <input id="Prostitución" class="form-check-input" v-model="Problematica_Fami" type="checkbox" value="Prostitución">Prostitución</label><br>
 
                                         <label class="form-check-label" for="Delincuencia">
-                                        <input id="Delincuencia" class="form-check-input" v-model="Problematica_Fami" type="checkbox" value="Delincuencia">Delincuencia</label>
+                                        <input id="Delincuencia" class="form-check-input" v-model="Problematica_Fami" type="checkbox" value="Delincuencia">Delincuencia</label><br>
 
                                         <label class="form-check-label" for="Privado de su libertad">
-                                        <input id="Privado de su libertad" class="form-check-input" v-model="Problematica_Fami" type="checkbox" value="Privado de su libertad">Privado de su libertad</label>
+                                        <input id="Privado de su libertad" class="form-check-input" v-model="Problematica_Fami" type="checkbox" value="Privado de su libertad">Privado de su libertad</label><br>
 
                                         <label class="form-check-label" for="Salud mental">
-                                        <input id="Salud mental" class="form-check-input" v-model="Problematica_Fami" type="checkbox" value="Salud mental">Salud mental</label>
+                                        <input id="Salud mental" class="form-check-input" v-model="Problematica_Fami" type="checkbox" value="Salud mental">Salud mental</label><br>
 
                                         <label class="form-check-label" for="Multi problemática">
-                                        <input id="Multi problemática" class="form-check-input" v-model="Problematica_Fami" type="checkbox" value="Multi problemática">Multi problemática</label>
+                                        <input id="Multi problemática" class="form-check-input" v-model="Problematica_Fami" type="checkbox" value="Multi problemática">Multi problemática</label><br>
 
                                         <label class="form-check-label" for="Disgregada">
-                                        <input id="Disgregada" class="form-check-input" v-model="Problematica_Fami" type="checkbox" value="Disgregada">Disgregada</label>
+                                        <input id="Disgregada" class="form-check-input" v-model="Problematica_Fami" type="checkbox" value="Disgregada">Disgregada</label><br>
 
                                         <label class="form-check-label" for="Otros">
-                                        <input id="Otros" class="form-check-input" v-model="Problematica_Fami" type="checkbox" value="Otros">Otros</label>
+                                        <input id="Otros" class="form-check-input" v-model="Problematica_Fami" type="checkbox" value="Otros">Otros</label><br>
                                     </div>
                                 </div>
                         </div>
