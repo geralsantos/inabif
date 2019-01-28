@@ -47,7 +47,7 @@
                                     </thead>
                                     <tbody class="text-center">
                                         <tr v-for="residente in residentes">
-                                            <td>{{residente.NOMBRE_RESIDENTE}}</td>
+                                            <td>{{residente.ID}} {{residente.APELLIDO_P}} {{residente.APELLIDO_M}} {{residente.NOMBRE_RESIDENTE}}</td>
 
                                             <td><button class="btn btn-success" @click="descargar_reporte_matriz_nominal(residente)">Descargar</button></td>
 
