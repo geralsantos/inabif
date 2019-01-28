@@ -5,7 +5,7 @@ Vue.component('nna-datos-familiares-sociales-residente', {
         Familiares:null,
         Parentesco:null,
         Tipo_Familia:null,
-        Problematica_Fami:null,
+        Problematica_Fami:[],
         id:null,
 
         problematicas:[],
@@ -36,7 +36,7 @@ Vue.component('nna-datos-familiares-sociales-residente', {
             this.Familiares = null;
             this.Parentesco = null;
             this.Tipo_Familia = null;
-            this.Problematica_Fami = null;
+            this.Problematica_Fami = [];
             this.id = null;
 
             this.problematicas=[];
@@ -72,7 +72,7 @@ Vue.component('nna-datos-familiares-sociales-residente', {
                 Periodo_Anio:moment().format("YYYY")
 
             }
-
+            console.log(valores);return false;
             this.$http.post('insertar_datos?view',{tabla:'NNAFamiliaresResidente', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
