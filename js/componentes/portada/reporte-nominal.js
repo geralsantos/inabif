@@ -105,12 +105,11 @@ let apellido = apellido_p + ' ' + apellido_m;
 
                     if( response.body.data != undefined){
                         let data = response.body.data;
-                       
+                       console.log(data);
                           // => objects for [['barney', 36], ['barney', 34], ['fred', 48], ['fred', 40]]
-                           console.log(_.sortBy(data, ['APELLIDO_P']));
                         this.modal_lista = true;
                         this.isLoading = false;
-                        this.pacientes = _.sortBy(data, ['APELLIDO_P']);
+                        this.pacientes =data;
                     }else{
                         swal("", "No existe ningún residente", "error")
                     }
