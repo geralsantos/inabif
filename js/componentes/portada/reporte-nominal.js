@@ -106,10 +106,24 @@ let apellido = apellido_p + ' ' + apellido_m;
                     if( response.body.data != undefined){
                         let data = response.body.data;
                           // => objects for [['barney', 36], ['barney', 34], ['fred', 48], ['fred', 40]]
-                           console.log(_.sortBy(data, ['apellido_p']));
+                        let new_data = (_.sortBy(data, ['apellido_p']));
                         this.modal_lista = true;
                         this.isLoading = false;
-                        this.pacientes = _.sortBy(data, ['apellido_p']);
+
+                        new_data = new_data.map( function( item ){
+                            for(var key in item){
+                                var upper = key.toUpperCase();
+                                // check if it already wasn't uppercase
+                                if( upper !== key ){ 
+                                    item[ upper ] = item[key];
+                                    delete item[key];
+                                }
+                            }
+                            return item;
+                        });
+                        console.log(new_data)
+                        this.pacientes = new_data;
+
                     }else{
                         swal("", "No existe ningún residente", "error")
                     }

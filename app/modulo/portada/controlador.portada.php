@@ -275,9 +275,7 @@ class portada extends App{
 
      }
 }
-function querySort ($first_Array,$second_Array) {
-  return strnatcmp($first_Array['apellido_p'],$second_Array['apellido_p']);
-}
+
     public function ejecutar_consulta_lista_nominal(){
       $modelo = new modeloPortada();
       $campo="";$left_join;
@@ -319,7 +317,6 @@ function querySort ($first_Array,$second_Array) {
           $residentes[] = $value["ID"];
         }
       }
-      uasort($response, array($this, "querySort"));
 	echo json_encode(array( "data"=>($response) )) ;
 	  }else{
 	return false;
