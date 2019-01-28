@@ -320,7 +320,7 @@ function cmp($a, $b)
           $residentes[] = $value["ID"];
         }
       }
-      uasort($response, array("portada", "cmp"));
+      uasort($response, array($this, "cmp"));
 
 	echo json_encode(array( "data"=>($response) )) ;
 	  }else{
