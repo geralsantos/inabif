@@ -275,10 +275,9 @@ class portada extends App{
 
      }
 }
-function cmp($a, $b)
-      {
-        return strtolower($a['APELLIDO_P'])>strtolower($b['APELLIDO_P']);
-      }
+function querySort ($first_Array,$second_Array) {
+  return strcasecmp($first_Array['APELLIDO_P'],$second_Array['APELLIDO_P']);
+}
     public function ejecutar_consulta_lista_nominal(){
       $modelo = new modeloPortada();
       $campo="";$left_join;
@@ -320,7 +319,7 @@ function cmp($a, $b)
           $residentes[] = $value["ID"];
         }
       }
-      uasort($response, array($this, "cmp"));
+      uasort($response, array($this, "querySort"));
 
 	echo json_encode(array( "data"=>($response) )) ;
 	  }else{
