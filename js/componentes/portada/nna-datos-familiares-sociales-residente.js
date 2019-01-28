@@ -169,7 +169,7 @@ Vue.component('nna-datos-familiares-sociales-residente', {
             this.Familiares = null;
             this.Parentesco = null;
             this.Tipo_Familia = null;
-            this.Problematica_Fami = null;
+            this.Problematica_Fami = [];
             this.id = null;
 
             this.id_residente = residente.ID;  this.id=residente.ID;
