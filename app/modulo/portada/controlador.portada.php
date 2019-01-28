@@ -324,10 +324,11 @@ class portada extends App{
 	  }
     }
     
-    function cmp($a, $b)
+    public function cmp($a, $b)
 {
     return $b['APELLIDO_P'] - $a['APELLIDO_P'];
 }
+
 
 	public function ejecutar_consulta_lista(){
       $modelo = new modeloPortada();
