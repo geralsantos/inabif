@@ -315,11 +315,11 @@ function querySort ($first_Array,$second_Array) {
       $response = array();
       foreach ($res as $key => $value) {
         if (!in_array($value["ID"],$residentes)) {
-          $response[] = $value;
+          $response[] = ($key);
           $residentes[] = $value["ID"];
         }
       }
-      
+      print_r($response);
 
 	echo json_encode(array( "data"=>($response) )) ;
 	  }else{
