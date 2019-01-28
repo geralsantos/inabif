@@ -277,7 +277,7 @@ class portada extends App{
 }
 function cmp($a, $b)
       {
-      return strncasecmp($a['APELLIDO_P'], $b['APELLIDO_P']);
+      return strnatcmp($a['APELLIDO_P'], $b['APELLIDO_P']);
       }
     public function ejecutar_consulta_lista_nominal(){
       $modelo = new modeloPortada();
@@ -320,7 +320,7 @@ function cmp($a, $b)
           $residentes[] = $value["ID"];
         }
       }
-      usort($response, array("portada", "cmp"));
+      uasort($response, array("portada", "cmp"));
 
 	echo json_encode(array( "data"=>($response) )) ;
 	  }else{
