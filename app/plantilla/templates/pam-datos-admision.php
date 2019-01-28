@@ -100,13 +100,21 @@
                                 </div>
                             </div>
                             <div class="form-group col-md-4">
-                                <div class=" "><label for="text-input" class=" form-control-label">Perfil de Ingreso</label>
+                                <label for="text-input" class=" form-control-label">Perfil de Ingreso</label>
+                                <div class="form-check">
+                                        <label class="form-check-label" for="Pobreza o pobreza extrema">
+                                        <input id="Pobreza o pobreza extrema" class="form-check-input" v-model="perfil_ingreso" type="checkbox" value="Pobreza o pobreza extrema">Pobreza o pobreza extrema</label>
+
+                                        <label class="form-check-label" for="Pobreza o pobreza extrema">
+                                        <input id="Victimas de cualquier tipo de violencia" class="form-check-input" v-model="perfil_ingreso" type="checkbox" value="Dependencia o fragilidad">Dependencia o fragilidad</label>
+
+                                        <label class="form-check-label" for="Pobreza o pobreza extrema">
+                                        <input id="Victimas de cualquier tipo de violencia" class="form-check-input" v-model="perfil_ingreso" type="checkbox" value="Victimas de cualquier tipo de violencia">Victimas de cualquier tipo de violencia</label>
+                                    </div>
+                                
                                 <select name="perfil_ingreso" v-model="perfil_ingreso" class="form-control" multiple>
-                                    <option value="Pobreza o pobreza extrema"> Pobreza o pobreza extrema</option>
-                                    <option value="Dependencia o fragilidad">Dependencia o fragilidad</option>
-                                    <option value="Victimas de cualquier tipo de violencia">Víctimas de cualquier tipo de violencia</option>
                                 </select>
-                                </div>
+                                
                             </div>
 
                         </div>
