@@ -93,7 +93,6 @@
                                         <input :id="problematica.ID" class="form-control" v-model="Problematica_Fami" type="checkbox" :value="problematica.ID"> 
                                         <label class="form-check-label" :for="problematica.ID">{{problematica.NOMBRE}}</label>
                                     </div>
-                                output {{Problematica_Fami}}
                                 </div>
                             </div>
                         </div>
