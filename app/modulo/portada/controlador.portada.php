@@ -316,12 +316,19 @@ class portada extends App{
           $residentes[] = $value["ID"];
         }
       }
-      arsort($response);
+      usort($response, "cmp");
+
 	echo json_encode(array( "data"=>($response) )) ;
 	  }else{
 	return false;
 	  }
-	  }
+    }
+    
+    function cmp($a, $b)
+{
+    return $b['APELLIDO_P'] - $a['APELLIDO_P'];
+}
+
 	public function ejecutar_consulta_lista(){
       $modelo = new modeloPortada();
       $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
