@@ -316,7 +316,7 @@ class portada extends App{
           $residentes[] = $value["ID"];
         }
       }
-      asort($response);
+      arsort($response);
 	echo json_encode(array( "data"=>($response) )) ;
 	  }else{
 	return false;
