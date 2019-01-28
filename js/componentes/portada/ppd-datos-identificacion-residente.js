@@ -115,23 +115,23 @@ Vue.component('ppd-datos-identificacion-residente', {
                         return false;
                     }
                 }*/
+
+                var valores_residente = {
+                    nombre : this.Nom_Usuario,
+                    apellido_p : this.Ape_Paterno,
+                    apellido_m : this.Ape_Materno,
+                    pais_id : this.Pais_Procencia,
+                    departamento_naci_cod : this.Depatamento_Procedencia || null,
+                    provincia_naci_cod : this.Provincia_Procedencia || null,
+                    distrito_naci_cod : this.Distrito_Procedencia || null,
+                    sexo: this.Sexo,
+                    fecha_naci :  moment(this.Fecha_Nacimiento, "YYYY-MM-DD").format("YYYY-MM-DD"),
+                    edad: this.Edad,
+                    lengua_materna: this.Lengua_Materna,
+                    //documento :this.Numero_Doc
+                    }
                 if (isempty(this.id_residente)) {
-                    let valores_residente = {
-
-
-                        nombre : this.Nom_Usuario,
-                        apellido_p : this.Ape_Paterno,
-                        apellido_m : this.Ape_Materno,
-                        pais_id : this.Pais_Procencia,
-                        departamento_naci_cod : this.Depatamento_Procedencia || null,
-                        provincia_naci_cod : this.Provincia_Procedencia || null,
-                        distrito_naci_cod : this.Distrito_Procedencia || null,
-                        sexo: this.Sexo,
-                        fecha_naci :  moment(this.Fecha_Nacimiento, "YYYY-MM-DD").format("YYYY-MM-DD"),
-                        edad: this.Edad,
-                        lengua_materna: this.Lengua_Materna,
-                        //documento :this.Numero_Doc
-                        }
+                    
                     this.$http.post('insertar_datos?view',{tabla:'residente', valores:valores_residente,lastid:true}).then(function(response){
                         valores.Residente_Id = response.body.lastid;
                         this.$http.post('insertar_datos?view',{tabla:'CarIdentificacionUsuario', valores:valores}).then(function(response){
@@ -145,14 +145,19 @@ Vue.component('ppd-datos-identificacion-residente', {
                     });
                 }else{
                     valores.Residente_Id = this.id_residente;
-                    this.$http.post('insertar_datos?view',{tabla:'CarIdentificacionUsuario', valores:valores}).then(function(response){
-                        if( response.body.resultado ){
-                            this.inicializar();
-                            swal('', 'Registro Guardado', 'success');
-                        }else{
-                          swal("", "Un error ha ocurrido", "error");
-                        }
+                    let where = {id:this.id_residente};
+                    this.$http.post('update_datos?view',{tabla:'residente', valores:valores_residente,where:where}).then(function(response){
+                        valores.Residente_Id = response.body.lastid;
+                        this.$http.post('insertar_datos?view',{tabla:'CarIdentificacionUsuario', valores:valores}).then(function(response){
+                            if( response.body.resultado ){
+                                this.inicializar();
+                                swal('', 'Registro Guardado', 'success');
+                            }else{
+                              swal("", "Un error ha ocurrido", "error");
+                            }
+                        });
                     });
+                    
                 }
         },
         buscar_residente(){
