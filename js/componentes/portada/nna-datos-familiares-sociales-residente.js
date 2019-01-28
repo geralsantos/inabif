@@ -72,7 +72,6 @@ Vue.component('nna-datos-familiares-sociales-residente', {
                 Periodo_Anio:moment().format("YYYY")
 
             }
-            console.log(valores);return false;
             this.$http.post('insertar_datos?view',{tabla:'NNAFamiliaresResidente', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
@@ -127,7 +126,7 @@ Vue.component('nna-datos-familiares-sociales-residente', {
                     this.Familiares = response.body.atributos[0]["FAMILIARES"];
                     this.Parentesco = response.body.atributos[0]["PARENTESCO"];
                     this.Tipo_Familia = response.body.atributos[0]["TIPO_FAMILIA"];
-                    this.Problematica_Fami = response.body.atributos[0]["PROBLEMATICA_FAMI"];
+                    this.Problematica_Fami = (response.body.atributos[0]["PROBLEMATICA_FAMI"]).split(",");
                     this.id = response.body.atributos[0]["RESIDENTE_ID"];
 
                 }
@@ -187,7 +186,7 @@ Vue.component('nna-datos-familiares-sociales-residente', {
                     this.Familiares = response.body.atributos[0]["FAMILIARES"];
                     this.Parentesco = response.body.atributos[0]["PARENTESCO"];
                     this.Tipo_Familia = response.body.atributos[0]["TIPO_FAMILIA"];
-                    this.Problematica_Fami = response.body.atributos[0]["PROBLEMATICA_FAMI"];
+                    this.Problematica_Fami = (response.body.atributos[0]["PROBLEMATICA_FAMI"]).split(",");
                     this.id = response.body.atributos[0]["RESIDENTE_ID"];
 
                 }
