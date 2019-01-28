@@ -75,8 +75,11 @@
                                 <div class=" "><label for="text-input" class=" form-control-label">Tipo de Documento</label>
                                 <select name="tipo_documento_entidad" v-model="tipo_documento_entidad" class="form-control">
                                 <option value="DNI">DNI</option>
+                                <option value="L.E.">L.E.</option>
                                 <option value="Carnet de extranjería">Carnet de extranjería</option>
                                 <option value="Pasaporte">Pasaporte</option>
+                                <option value="Partida Nacimiento">Partida Nacimiento</option>
+                                <option value="Otros">Otros</option>
                                 </select>
                                 </div>
                             </div>
