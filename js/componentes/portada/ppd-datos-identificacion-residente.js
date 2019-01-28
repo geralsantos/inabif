@@ -146,7 +146,6 @@ Vue.component('ppd-datos-identificacion-residente', {
                 }else{
                     valores.Residente_Id = this.id_residente;
                     let where = {id:this.id_residente};
-                    console.log(valores_residente);
                     this.$http.post('update_datos?view',{tabla:'residente', valores:valores_residente,where:where}).then(function(response){
                         this.$http.post('insertar_datos?view',{tabla:'CarIdentificacionUsuario', valores:valores}).then(function(response){
                             if( response.body.resultado ){
