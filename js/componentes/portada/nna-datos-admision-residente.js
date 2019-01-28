@@ -80,6 +80,7 @@ Vue.component('nna-datos-admision-residente', {
                 swal('Error', 'Residente no existe', 'warning');
                 return false;
             }
+            console.log(this.Fecha_Registro);
             let valores = {
 
                 Movimiento_Poblacional:this.Movimiento_Poblacional,
