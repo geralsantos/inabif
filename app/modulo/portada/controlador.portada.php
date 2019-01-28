@@ -276,7 +276,7 @@ class portada extends App{
      }
 }
 function querySort ($first_Array,$second_Array) {
-  return strcasecmp($first_Array['APELLIDO_P'],$second_Array['APELLIDO_P']);
+  return strcasecmp($first_Array['apellido_p'],$second_Array['apellido_p']);
 }
     public function ejecutar_consulta_lista_nominal(){
       $modelo = new modeloPortada();
@@ -319,8 +319,7 @@ function querySort ($first_Array,$second_Array) {
           $residentes[] = $value["ID"];
         }
       }
-      print_r($response);
-
+      uasort($response, array($this, "querySort"));
 	echo json_encode(array( "data"=>($response) )) ;
 	  }else{
 	return false;
