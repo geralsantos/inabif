@@ -87,14 +87,13 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="form-group col-md-4">
-                                <div class=" "><label for="text-input" class=" form-control-label">Problemática Familiar</label>
+                            <div class="form-group col-md-6">
+                                <label for="text-input" class=" form-control-label">Problemática Familiar</label>
                                     <div v-for="problematica in problematicas" >
                                         <input :id="problematica.ID" class="form-control" v-model="Problematica_Fami" type="checkbox" :value="problematica.ID"> 
                                         <label class="form-check-label" :for="problematica.ID">{{problematica.NOMBRE}}</label>
                                     </div>
                                 output {{Problematica_Fami}}
-                                </div>
                             </div>
                         </div>
 
