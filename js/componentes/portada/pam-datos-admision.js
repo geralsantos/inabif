@@ -43,7 +43,7 @@ Vue.component('pam-datos-admision', {
             this.institucion_deriva = null;
             this.motivo_ingreso_principal = null;
             this.motivo_ingreso_secundario = null;
-            this.perfil_ingreso = null;
+            this.perfil_ingreso = [];
             this.tipo_documento_ingreo_car = null;
             this.numero_documento_ingreo_car = null;
             this.id = null;
@@ -201,7 +201,7 @@ Vue.component('pam-datos-admision', {
             this.institucion_deriva = null;
             this.motivo_ingreso_principal = null;
             this.motivo_ingreso_secundario = null;
-            this.perfil_ingreso = null;
+            this.perfil_ingreso = [];
             this.tipo_documento_ingreo_car = null;
             this.numero_documento_ingreo_car = null;
             this.id = null;

@@ -111,10 +111,6 @@
                                         <label class="form-check-label" for="Pobreza o pobreza extrema">
                                         <input id="Victimas de cualquier tipo de violencia" class="form-check-input" v-model="perfil_ingreso" type="checkbox" value="Victimas de cualquier tipo de violencia">Victimas de cualquier tipo de violencia</label>
                                     </div>
-                                
-                                <select name="perfil_ingreso" v-model="perfil_ingreso" class="form-control" multiple>
-                                </select>
-                                
                             </div>
 
                         </div>
