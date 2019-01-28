@@ -315,7 +315,9 @@ function querySort ($first_Array,$second_Array) {
       $response = array();
       foreach ($res as $key => $value) {
         if (!in_array($value["ID"],$residentes)) {
-          $response[] = ($key);
+          $keys =array_change_key_case(array_keys($value),CASE_LOWER);
+          
+          $response[] = ($keys[$key]);
           $residentes[] = $value["ID"];
         }
       }
