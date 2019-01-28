@@ -277,7 +277,7 @@ class portada extends App{
 }
 function cmp($a, $b)
       {
-        return $a['APELLIDO_P']>$b['APELLIDO_P'];
+        return strtolower($a['APELLIDO_P'])>strtolower($b['APELLIDO_P']);
       }
     public function ejecutar_consulta_lista_nominal(){
       $modelo = new modeloPortada();
