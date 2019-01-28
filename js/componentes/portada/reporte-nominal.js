@@ -105,6 +105,14 @@ let apellido = apellido_p + ' ' + apellido_m;
 
                     if( response.body.data != undefined){
                         let data = response.body.data;
+                        var key, keys = Object.keys(data);
+                        var n = keys.length;
+                        var newobj={}
+                        while (n--) {
+                        key = keys[n];
+                        newobj[key.toLowerCase()] = obj[key];
+                        }
+                        console.log(newobj);
                         data.sort(function (a, b) {
                             if (a.APELLIDO_P > b.APELLIDO_P) {
                               return 1;
