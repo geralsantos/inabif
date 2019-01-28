@@ -105,10 +105,10 @@
                                         <label class="form-check-label" for="Pobreza o pobreza extrema">
                                         <input id="Pobreza o pobreza extrema" class="form-check-input" v-model="perfil_ingreso" type="checkbox" value="Pobreza o pobreza extrema">Pobreza o pobreza extrema</label>
 
-                                        <label class="form-check-label" for="Pobreza o pobreza extrema">
+                                        <label class="form-check-label" for="Victimas de cualquier tipo de violencia">
                                         <input id="Victimas de cualquier tipo de violencia" class="form-check-input" v-model="perfil_ingreso" type="checkbox" value="Dependencia o fragilidad">Dependencia o fragilidad</label>
 
-                                        <label class="form-check-label" for="Pobreza o pobreza extrema">
+                                        <label class="form-check-label" for="Victimas de cualquier tipo de violencia">
                                         <input id="Victimas de cualquier tipo de violencia" class="form-check-input" v-model="perfil_ingreso" type="checkbox" value="Victimas de cualquier tipo de violencia">Victimas de cualquier tipo de violencia</label>
                                     </div>
                             </div>
