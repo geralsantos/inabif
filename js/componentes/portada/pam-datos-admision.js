@@ -6,7 +6,7 @@ Vue.component('pam-datos-admision', {
         institucion_deriva:null,
         motivo_ingreso_principal:null,
         motivo_ingreso_secundario:null,
-        perfil_ingreso:null,
+        perfil_ingreso:[],
         tipo_documento_ingreo_car:null,
         numero_documento_ingreo_car:null,
         id:null,
