@@ -1052,6 +1052,7 @@ class portada extends App{
   {
     header("Content-Type: text/html");    
     header("Content-Disposition: attachment; filename=descarga.xls");  
+    header("Content-Transfer-Encoding: binary"); 
     header('Pragma: no-cache');    
    header('Expires: 0');
     echo $table;
