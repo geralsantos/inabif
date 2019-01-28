@@ -627,10 +627,11 @@ class portada extends App{
   public function listar_usuarios(){
     $modelo = new modeloPortada();
     $sql = "select usu.*,nu.nombre as nivel_nombre from usuarios usu, niveles_usuarios nu where usu.nivel(+)=nu.id order by nu.nombre asc";
-
     $res = $modelo->executeQuery($sql );
+    print_r($res);
     if ($res)
     {
+        ksort($res[0]);
       echo json_encode(array("data"=>$res) ) ;
     }else{
       return false;
