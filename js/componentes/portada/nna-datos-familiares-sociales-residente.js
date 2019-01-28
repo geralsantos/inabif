@@ -65,7 +65,7 @@ Vue.component('nna-datos-familiares-sociales-residente', {
                 Familiares:this.Familiares,
                 Parentesco:this.Parentesco,
                 Tipo_Familia:this.Tipo_Familia,
-                Problematica_Fami:this.Problematica_Fami,
+                Problematica_Fami: (this.Problematica_Fami).join(),
 
                 Residente_Id: this.id_residente,
                 Periodo_Mes: moment().format("MM"),
