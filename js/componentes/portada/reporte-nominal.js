@@ -115,6 +115,7 @@ let apellido = apellido_p + ' ' + apellido_m;
                         }
                         }
                         data.sort(sortThings);
+                        console.log(data);
                         this.modal_lista = true;
                         this.isLoading = false;
                         this.pacientes = response.body.data;
