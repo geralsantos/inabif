@@ -90,8 +90,8 @@
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Problemática Familiar</label>
                                     <div v-for="problematica in problematicas" >
-                                        <input name="Problematica_Fami" :id="problematica.ID" class="form-control" v-model="Problematica_Fami" type="checkbox" :value="problematica.ID">{{problematica.NOMBRE}}</option>
-                                        <label class="form-check-label" :for="problematica.ID">Check me out</label>
+                                        <input name="Problematica_Fami" :id="problematica.ID" class="form-control" v-model="Problematica_Fami" type="checkbox" :value="problematica.ID"> 
+                                        <label class="form-check-label" :for="problematica.ID">problematica.NOMBRE</label>
                                     </div>
                                 
                                 </div>
