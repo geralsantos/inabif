@@ -309,7 +309,7 @@ class portada extends App{
     
 	  if ($res) {
       ksort($res[0]);
-	echo json_encode(array( "data"=>ksort($res) )) ;
+	echo json_encode(array( "data"=>($res) )) ;
 	  }else{
 	return false;
 	  }
