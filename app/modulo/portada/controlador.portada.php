@@ -277,7 +277,11 @@ class portada extends App{
 }
 function cmp($a, $b)
       {
-      return strcasecmp($a['APELLIDO_P'], $b['APELLIDO_P']);
+        $a = $a['APELLIDO_P'];
+        $b = $b['APELLIDO_P'];
+    
+        if ($a == $b) return 0;
+        return ($a < $b) ? -1 : 1;
       }
     public function ejecutar_consulta_lista_nominal(){
       $modelo = new modeloPortada();
