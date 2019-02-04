@@ -350,7 +350,11 @@ class portada extends App{
   endforeach;
 	return $array;
 }
-    
+public function cmp($a, $b)
+{
+    return strcmp($a["nombre"], $b["nombre"]);
+}
+
     
 	public function ejecutar_consulta_lista(){
         $modelo = new modeloPortada();
@@ -393,7 +397,7 @@ class portada extends App{
         }
         if ($response) {
             $response = $this->transformKeys($response);
-            array_multisort($response);
+            usort($response, array($this, 'cmp'));
 
             echo json_encode(array( "data"=>$response )) ;
         } else {
