@@ -62,8 +62,8 @@ Vue.component('ppd-datos-educacion-participacionLaboral', {
                 Insertado_labora:this.CarInsertadoLaboralmente,
                 Des_labora:this.CarDesParticipacionLa,
                 Participa_Actividades:this.CarFortalecimientoHabilidades,
-                Fecha_InicionA: (isempty(this.CarFIActividades)?null:moment(this.CarFIActividades).format("DD-MMM-YY")),
-                Fecha_FinA: (isempty(this.CarFFActividades)?null:moment(this.CarFFActividades).format("DD-MMM-YY")),
+                Fecha_InicionA: (isempty(this.CarFIActividades)?null:moment(this.CarFIActividades,"YYYY-MM-DD").format("YY-MMM-DD")),
+                Fecha_FinA: (isempty(this.CarFFActividades)?null:moment(this.CarFFActividades,"YYYY-MM-DD").format("YY-MMM-DD")),
                 Culmino_Actividades:this.CarNNAConcluyoHP,
                 Logro_Actividades:this.CarNNAFortaliceHP,
                 Residente_Id: this.id_residente,
@@ -125,8 +125,8 @@ Vue.component('ppd-datos-educacion-participacionLaboral', {
                     this.CarInsertadoLaboralmente = response.body.atributos[0]["INSERTADO_LABORA"];
                     this.CarDesParticipacionLa = response.body.atributos[0]["DES_LABORA"];
                     this.CarFortalecimientoHabilidades = response.body.atributos[0]["PARTICIPA_ACTIVIDADES"];
-                    this.CarFIActividades = (isempty(response.body.atributos[0]["FECHA_INICIONA"])?null:moment(response.body.atributos[0]["FECHA_INICIONA"], "DD-MMM-YY").format("YYYY-MM-DD"));
-                    this.CarFFActividades = (isempty(response.body.atributos[0]["FECHA_FINA"])?null:moment(response.body.atributos[0]["FECHA_FINA"], "DD-MMM-YY").format("YYYY-MM-DD"));
+                    this.CarFIActividades = (isempty(response.body.atributos[0]["FECHA_INICIONA"])?null:moment(response.body.atributos[0]["FECHA_INICIONA"], "YY-MMM-DD").format("YYYY-MM-DD"));
+                    this.CarFFActividades = (isempty(response.body.atributos[0]["FECHA_FINA"])?null:moment(response.body.atributos[0]["FECHA_FINA"], "YY-MMM-DD").format("YYYY-MM-DD"));
                     this.CarNNAConcluyoHP = response.body.atributos[0]["CULMINO_ACTIVIDADES"];
                     this.CarNNAFortaliceHP = response.body.atributos[0]["LOGRO_ACTIVIDADES"];
                     this.id = response.body.atributos[0]["RESIDENTE_ID"];
@@ -178,8 +178,8 @@ Vue.component('ppd-datos-educacion-participacionLaboral', {
                     this.CarInsertadoLaboralmente = response.body.atributos[0]["INSERTADO_LABORA"];
                     this.CarDesParticipacionLa = response.body.atributos[0]["DES_LABORA"];
                     this.CarFortalecimientoHabilidades = response.body.atributos[0]["PARTICIPA_ACTIVIDADES"];
-                    this.CarFIActividades = (isempty(response.body.atributos[0]["FECHA_INICIONA"])?null:moment(response.body.atributos[0]["FECHA_INICIONA"], "DD-MMM-YY").format("DD-MM-YYYY"));
-                    this.CarFFActividades = (isempty(response.body.atributos[0]["FECHA_FINA"])?null:moment(response.body.atributos[0]["FECHA_FINA"], "DD-MMM-YY").format("DD-MM-YYYY"));
+                    this.CarFIActividades = (isempty(response.body.atributos[0]["FECHA_INICIONA"])?null:moment(response.body.atributos[0]["FECHA_INICIONA"], "YY-MMM-DD").format("DD-MM-YYYY"));
+                    this.CarFFActividades = (isempty(response.body.atributos[0]["FECHA_FINA"])?null:moment(response.body.atributos[0]["FECHA_FINA"], "YY-MMM-DD").format("DD-MM-YYYY"));
                     this.CarNNAConcluyoHP = response.body.atributos[0]["CULMINO_ACTIVIDADES"];
                     this.CarNNAFortaliceHP = response.body.atributos[0]["LOGRO_ACTIVIDADES"];
                     this.id = response.body.atributos[0]["RESIDENTE_ID"];
