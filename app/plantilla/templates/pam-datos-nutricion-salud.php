@@ -129,8 +129,8 @@
                                 <label for="text-input" class=" form-control-label">Grado Dependencia de la PAM</label>
                                     <select name="selecgrado_dependencia_pamt" v-model="grado_dependencia_pam" class="form-control">
                                         <option value="Autovalente">Autovalente</option>
-                                        <option value="Frágil/Postrada">Frágil/Postrada</option>
-                                        <option value="Geríatrica compleja">Geríatrica compleja</option>
+                                        <option value="Frágil/Postrada">Frágil</option>
+                                        <option value="Geríatrica compleja">Geriátrica compleja</option>
                                     </select>
                             </div>
                             <div class="form-group col-md-4">
