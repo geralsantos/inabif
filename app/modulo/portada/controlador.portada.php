@@ -63,7 +63,7 @@ class portada extends App{
     '. $this->buildTreeHtml($element['children'],'childs').'
     </div>
       ') :
-        ((($element['URL_TEMPLATE']=='ppd-datos-condicion-ingreso'||$element['URL_TEMPLATE']=='nna-datos-condiciones-ingreso-residente'||$element['URL_TEMPLATE']=='pam-datos-condiciones-ingreso')?('<a href="#'.$element['URL_TEMPLATE'].'" class="list-group-item level-2" id="moss-control">'.$element['NOMBRE'].'</a>'.'<a href="#pide-consulta" class="list-group-item level-2" id="moss-control">PIDE CONSULTA RESIDENTE</a>'):('<a href="#'.$element['URL_TEMPLATE'].'" class="list-group-item level-2" id="moss-control">'.$element['NOMBRE'].'</a>'))) ) ;
+        ((($element['URL_TEMPLATE']=='ppd-datos-condicion-ingreso'||$element['URL_TEMPLATE']=='nna-datos-condiciones-ingreso-residente'||$element['URL_TEMPLATE']=='pam-datos-condiciones-ingreso')?('<a href="#'.$element['URL_TEMPLATE'].'" class="list-group-item level-2" id="moss-control">'.ucfirst(strtolower($element['NOMBRE'])).'</a>'.'<a href="#pide-consulta" class="list-group-item level-2" id="moss-control">PIDE CONSULTA RESIDENTE</a>'):('<a href="#'.$element['URL_TEMPLATE'].'" class="list-group-item level-2" id="moss-control">'.ucfirst(strtolower($element['NOMBRE'])).'</a>'))) ) ;
     }
     return $li;
   }
