@@ -106,7 +106,7 @@ Vue.component('pam-datos-identificacion-residente', {
                 provincia_nacimiento_id: this.provincia_nacimiento_id,
                 distrito_nacimiento_id: this.distrito_nacimiento_id,
                 sexo: this.Sexo,
-                fecha_nacimiento:  moment(this.Fecha_Nacimiento, "YYYY-MM-DD").format("DD-MMM-YYYY"),
+                fecha_nacimiento:  moment(this.Fecha_Nacimiento, "YYYY-MM-DD").format("YYYY-MM-DD"),
                 edad: this.Edad,
                 lengua_materna: this.Lengua_Materna,
 
@@ -141,7 +141,7 @@ Vue.component('pam-datos-identificacion-residente', {
                     provincia_naci_cod : this.provincia_nacimiento_id,
                     distrito_naci_cod : this.distrito_nacimiento_id,
                     sexo: this.Sexo,
-                    fecha_naci :  moment(this.Fecha_Nacimiento, "YYYY-MM-DD").format("DD-MMM-YY"),
+                    fecha_naci :  moment(this.Fecha_Nacimiento, "YYYY-MM-DD").format("YYYY-MM-DD"),
                     edad: this.Edad,
                     lengua_materna: this.Lengua_Materna,
                     documento :this.Numero_Doc
@@ -343,7 +343,7 @@ Vue.component('pam-datos-identificacion-residente', {
                     this.distrito_nacimiento_id = response.body.atributos[0]["DISTRITO_NACIMIENTO_ID"];
                     this.Sexo = response.body.atributos[0]["SEXO"];
                     this.Edad = response.body.atributos[0]["EDAD"];
-                    this.Fecha_Nacimiento = moment().subtract(this.Edad,'years').format("YYYY-MM-DD");
+                    this.Fecha_Nacimiento = moment(response.body.atributos[0]["FECHA_NACIMIENTO"],'YYYY-MM-DD').format("YYYY-MM-DD");
                     this.Lengua_Materna = response.body.atributos[0]["LENGUA_MATERNA"];
                     this.id = response.body.atributos[0]["RESIDENTE_ID"];
                 }
