@@ -158,8 +158,7 @@ class portada extends App{
         $modelo = new modeloPortada();
         $select = $modelo->selectData( $_POST["tabla"],$_POST["where"] );
         if ($select) {
-            print_r($select);
-            $ruta_archivo = $select["RUTA"];
+            $ruta_archivo = $select[0]["RUTA"];
             unlink($ruta_archivo);
             $res = $modelo->deleteData( $_POST['tabla'],$_POST["where"]);
             if ($res) {
