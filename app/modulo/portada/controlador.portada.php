@@ -346,7 +346,7 @@ class portada extends App{
             $transformedKey = strtolower(preg_replace('/([a-z])([A-Z])/', '$1_$2', ltrim($key, '!')));
         }
         # Work recursively
-        if (is_array($value)) $this->transformKeys($value);
+        if (is_array($value)) $this->transformKeys($value,$option);
         # Store with new key
         $array[$transformedKey] = $value;      
         # Do not forget to unset references!
