@@ -29,6 +29,7 @@ Vue.component('ppd-datos-educacion-participacionLaboral', {
     mounted:function(){
     },
     updated:function(){
+        console.log(this.CarFIActividades)
     },
     methods:{
         inicializar(){
