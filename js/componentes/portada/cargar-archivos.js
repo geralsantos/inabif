@@ -63,7 +63,7 @@ Vue.component('cargar-archivos', {
               .then((willDelete) => {
                 if (willDelete) {
                     let where = {id:archivo.ID}
-                    this.$http.post('delete_datos?view',{tabla:'archivos_adjuntados',where:where}).then(function(response){
+                    this.$http.post('delete_datos_archivo?view',{tabla:'archivos_adjuntados',where:where}).then(function(response){
                         if( response.body.resultado ){
                             swal("Archivo Eliminado!", {
                                 icon: "success",

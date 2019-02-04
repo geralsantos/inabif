@@ -152,15 +152,20 @@ class portada extends App{
         return false;
       }
     }
-    public function delete_datos(){
+    public function delete_datos_archivo(){
 
       if( $_POST['tabla']){
         $modelo = new modeloPortada();
-        $res = $modelo->deleteData( $_POST['tabla'],$_POST["where"]);
-        if ($res) {
-            echo json_encode(array("resultado"=>true )) ;
-        }else{
-          return false;
+        $select = $modelo->selectData( $_POST["tabla"],$_POST["where"] );
+        if ($select) {
+            $ruta_archivo = $select["RUTA"];
+            unlink($ruta_archivo);
+            $res = $modelo->deleteData( $_POST['tabla'],$_POST["where"]);
+            if ($res) {
+                echo json_encode(array("resultado"=>true )) ;
+            }else{
+              return false;
+            }
         }
       }else{
         return false;
