@@ -122,7 +122,7 @@ Vue.component('ppd-datos-educacion-participacionLaboral', {
 
                 if( response.body.atributos != undefined){
                     console.log(response.body.atributos[0]["FECHA_INICIONA"]);
-            console.log(response.body.atributos[0]["FECHA_FINA"]);
+                    console.log(response.body.atributos[0]["FECHA_FINA"]);
                     this.CarTipoIIEE = response.body.atributos[0]["TIPO_INSTITUCION"];
                     this.CarInsertadoLaboralmente = response.body.atributos[0]["INSERTADO_LABORA"];
                     this.CarDesParticipacionLa = response.body.atributos[0]["DES_LABORA"];
@@ -180,8 +180,8 @@ Vue.component('ppd-datos-educacion-participacionLaboral', {
                     this.CarInsertadoLaboralmente = response.body.atributos[0]["INSERTADO_LABORA"];
                     this.CarDesParticipacionLa = response.body.atributos[0]["DES_LABORA"];
                     this.CarFortalecimientoHabilidades = response.body.atributos[0]["PARTICIPA_ACTIVIDADES"];
-                    this.CarFIActividades = (isempty(response.body.atributos[0]["FECHA_INICIONA"])?null:moment(response.body.atributos[0]["FECHA_INICIONA"], "DD-MM-YY").format("YYYY-MM-DD"));
-                    this.CarFFActividades = (isempty(response.body.atributos[0]["FECHA_FINA"])?null:moment(response.body.atributos[0]["FECHA_FINA"], "DD-MM-YY").format("YYYY-MM-DD"));
+                    this.CarFIActividades = (isempty(response.body.atributos[0]["FECHA_INICIONA"])?null:moment(response.body.atributos[0]["FECHA_INICIONA"], "DD-MMM-YY").format("YYYY-MM-DD"));
+                    this.CarFFActividades = (isempty(response.body.atributos[0]["FECHA_FINA"])?null:moment(response.body.atributos[0]["FECHA_FINA"], "DD-MMM-YY").format("YYYY-MM-DD"));
                     this.CarNNAConcluyoHP = response.body.atributos[0]["CULMINO_ACTIVIDADES"];
                     this.CarNNAFortaliceHP = response.body.atributos[0]["LOGRO_ACTIVIDADES"];
                     this.id = response.body.atributos[0]["RESIDENTE_ID"];
