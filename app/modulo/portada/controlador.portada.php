@@ -330,54 +330,59 @@ class portada extends App{
     
 
 
-
+    function cmp($a, $b)
+    {
+        return $b['avgSearchVolume'] - $a['avgSearchVolume'];
+    }
+    
+    
 	public function ejecutar_consulta_lista(){
-      $modelo = new modeloPortada();
-      $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
-      if ($tipo_centro_id == PPD) {
-        $campo = "nd.Numero_Documento ";
-        $left_join = ", CarCondicionIngreso nd ";
-        $where_join = " and nd.residente_id(+)=re.id ";
-        $orderby = " nd.id";
-
-      }else if($tipo_centro_id == PAM){
-        $campo = "dci.numero_documento_ingreso ";
-        $left_join = ",  pam_datosCondicionIngreso dci ";
-        $where_join = " and dci.residente_id(+)=re.id ";
-        $orderby = " dci.id";
-
-      }else if($tipo_centro_id == NNA){
-        $campo = "cir.Numero_Doc ";
-        $left_join = ", NNACondicionIResidente cir ";
-        $where_join = " and cir.residente_id(+)=re.id ";
-        $orderby = " cir.id";
-      }
+        $modelo = new modeloPortada();
+        $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
+        if ($tipo_centro_id == PPD) {
+            $campo = "nd.Numero_Documento ";
+            $left_join = ", CarCondicionIngreso nd ";
+            $where_join = " and nd.residente_id(+)=re.id ";
+            $orderby = " nd.id";
+        } elseif ($tipo_centro_id == PAM) {
+            $campo = "dci.numero_documento_ingreso ";
+            $left_join = ",  pam_datosCondicionIngreso dci ";
+            $where_join = " and dci.residente_id(+)=re.id ";
+            $orderby = " dci.id";
+        } elseif ($tipo_centro_id == NNA) {
+            $campo = "cir.Numero_Doc ";
+            $left_join = ", NNACondicionIResidente cir ";
+            $where_join = " and cir.residente_id(+)=re.id ";
+            $orderby = " cir.id";
+        }
         $nivel = $_SESSION["usuario"][0]["NIVEL"];
         if (SUPERVISOR == $nivel || USER_SEDE == $nivel) {
             $tipo_centro_id = $_SESSION["usuario"][0]["TIPO_CENTRO_ID"];
             $where = " AND re.tipo_centro_id = ".$tipo_centro;
-        }else if (REGISTRADOR ==$nivel || RESPONSABLE_INFORMACION ==$nivel){
+        } elseif (REGISTRADOR ==$nivel || RESPONSABLE_INFORMACION ==$nivel) {
             $centro_id = $_SESSION["usuario"][0]["CENTRO_ID"];
             $where = " AND re.centro_id = ".$centro_id;
-        }else if(ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel){
+        } elseif (ADMIN_CENTRAL == $nivel || USER_SEDE_GESTION == $nivel) {
             $where ="";
         }
-    $sql = "SELECT (re.id) as id,(re.nombre) as nombre,(re.apellido_p) as apellido_p,(re.apellido_m) as apellido_m,(".$campo.") as dni_residente,(re.pide) as pide FROM Residente re ".$left_join." WHERE  re.ESTADO=1 ".$where." ".$where_join." ORDER BY re.Id,".$orderby." desc";
-	  $res = $modelo->executeQuery( $sql );
-    $repite_residente=array();
-    $response=array();
-    foreach ($res as $key => $value) {
-      if(!in_array($value["ID"],$repite_residente)){
-        $response[]=$value;
-        $repite_residente[]=$value["ID"];
-      }
+        $sql = "SELECT (re.id) as id,(re.nombre) as nombre,(re.apellido_p) as apellido_p,(re.apellido_m) as apellido_m,(".$campo.") as dni_residente,(re.pide) as pide FROM Residente re ".$left_join." WHERE  re.ESTADO=1 ".$where." ".$where_join." ORDER BY re.Id,".$orderby." desc";
+        $res = $modelo->executeQuery($sql);
+        $repite_residente=array();
+        $response=array();
+        foreach ($res as $key => $value) {
+            if (!in_array($value["ID"], $repite_residente)) {
+                $response[]=$value;
+                $repite_residente[]=$value["ID"];
+            }
+        }
+        if ($response) {
+            array_multisort($response);
+
+            echo json_encode(array( "data"=>$response )) ;
+        } else {
+            return false;
+        }
     }
-	  if ($response) {
-	echo json_encode(array( "data"=>$response )) ;
-	  }else{
-	return false;
-	  }
-	  }
     public function cargar_datos_residente(){
       if( $_POST['tabla'] && $_POST['residente_id']){
         $modelo = new modeloPortada();
