@@ -57,6 +57,8 @@ Vue.component('ppd-datos-educacion-participacionLaboral', {
                 swal('Error', 'Residente no existe', 'warning');
                 return false;
             }
+            console.log(this.CarFIActividades);
+            console.log(this.CarFFActividades);
             let valores = {
                 Tipo_Institucion:this.CarTipoIIEE,
                 Insertado_labora:this.CarInsertadoLaboralmente,
