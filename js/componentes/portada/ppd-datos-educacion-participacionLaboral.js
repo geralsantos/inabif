@@ -183,6 +183,7 @@ Vue.component('ppd-datos-educacion-participacionLaboral', {
                     this.CarNNAConcluyoHP = response.body.atributos[0]["CULMINO_ACTIVIDADES"];
                     this.CarNNAFortaliceHP = response.body.atributos[0]["LOGRO_ACTIVIDADES"];
                     this.id = response.body.atributos[0]["RESIDENTE_ID"];
+                    console.log(response.body.atributos[0]["FECHA_INICIONA"]);
                     console.log(this.CarFIActividades);
                 }
              });
