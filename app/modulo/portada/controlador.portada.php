@@ -29,7 +29,7 @@ class portada extends App{
       //$usuario = "SELECT kpi_roles_id FROM kpi_usuarios WHERE id=".$_SESSION['usuario'][0]['id']." and estado = 1 limit 1";
       //$usuario = $modelo->executeQuery( $usuario );
       //$_SESSION["nivelusuario"] = $usuario[0]['kpi_roles_id'];
-      $modulos = "SELECT * as nombre FROM modulos WHERE centro_id=".$tipo_centro_id." and  estado = 1 order by id asc";
+      $modulos = "SELECT * FROM modulos WHERE centro_id=".$tipo_centro_id." and  estado = 1 order by id asc";
       $modulos = $modelo->executeQuery( $modulos );
       $tree = $this->buildTree($modulos);
       $treeHtml = $this->buildTreeHtml($tree);
