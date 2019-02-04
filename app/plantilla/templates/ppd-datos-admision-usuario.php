@@ -110,7 +110,7 @@
                         <div class="row">
                             <div class="form-group col-md-4">
                                 <div class=" "><label for="text-input" class=" form-control-label">Número del documento de ingreso al car</label>
-                                <input type="number" v-model="CarNumDoc" name="CarNumDoc" placeholder="" class="form-control">
+                                <input type="text" v-model="CarNumDoc" name="CarNumDoc" placeholder="" class="form-control">
                                 </div>
                             </div>
 

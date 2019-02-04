@@ -80,7 +80,6 @@ Vue.component('nna-datos-admision-residente', {
                 swal('Error', 'Residente no existe', 'warning');
                 return false;
             }
-            console.log(this.Fecha_Registro);
             let valores = {
 
                 Movimiento_Poblacional:this.Movimiento_Poblacional,
@@ -99,7 +98,6 @@ Vue.component('nna-datos-admision-residente', {
                 Periodo_Anio:moment().format("YYYY")
 
             }
-console.log(valores)
             this.$http.post('insertar_datos?view',{tabla:'NNAAdmisionResidente', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
