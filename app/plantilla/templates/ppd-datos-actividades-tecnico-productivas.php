@@ -112,7 +112,7 @@
                                 <input type="number" min="0" max="31"   v-model="CArNumDinero" name="CArNumMDinero" placeholder="" class="form-control">
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="text-input" class=" form-control-label">N° de veces que participa en activisades para la toma de decisiones con apoyo</label>
+                                <label for="text-input" class=" form-control-label">N° de veces que participa en actividades para la toma de decisiones con apoyo</label>
                                 <input type="number" min="0" max="31"   v-model="CarNumDecisiones" name="CarNumDecisiones" placeholder="" class="form-control">
                             </div>
                         </div>

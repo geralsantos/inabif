@@ -179,7 +179,7 @@ Vue.component('ppd-datos-egreso-educacion', {
             this.nombre_residente=nombre + ' ' + apellido;
             this.modal_lista = false;
 
-            this.$http.post('cargar_datos_residente?view',{tabla:'CarEducacionCapacidades', residente_id:this.id_residente }).then(function(response){
+            this.$http.post('cargar_datos_residente?view',{tabla:'CarEgresoEducacion', residente_id:this.id_residente }).then(function(response){
 
                 if( response.body.atributos != undefined){
 
