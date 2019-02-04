@@ -376,6 +376,7 @@ class portada extends App{
             }
         }
         if ($response) {
+            array_change_key_case($response,CASE_LOWER);
             array_multisort($response);
 
             echo json_encode(array( "data"=>$response )) ;
