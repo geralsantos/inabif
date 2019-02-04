@@ -337,17 +337,17 @@ class portada extends App{
       if ($tipo_centro_id == PPD) {
         $campo = "nd.Numero_Documento ";
         $left_join = " CarCondicionIngreso nd ";
-        $where_join = "and nd.residente_id(+)=re.id ";
+        $where_join = " and nd.residente_id(+)=re.id ";
 
       }else if($tipo_centro_id == PAM){
         $campo = "dci.numero_documento_ingreso ";
         $left_join = "  pam_datosCondicionIngreso dci ";
-        $where_join = "and dci.residente_id(+)=re.id ";
+        $where_join = " and dci.residente_id(+)=re.id ";
 
       }else if($tipo_centro_id == NNA){
         $campo = "cir.Numero_Doc ";
-        $left_join = " NNACondicionIResidente cir";
-        $where_join = "and cir.residente_id(+)=re.id ";
+        $left_join = " NNACondicionIResidente cir ";
+        $where_join = " and cir.residente_id(+)=re.id ";
       }
         $nivel = $_SESSION["usuario"][0]["NIVEL"];
         if (SUPERVISOR == $nivel || USER_SEDE == $nivel) {
