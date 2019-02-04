@@ -57,7 +57,6 @@ Vue.component('ppd-datos-educacion-participacionLaboral', {
                 swal('Error', 'Residente no existe', 'warning');
                 return false;
             }
-            console.log(this.CarFIActividades);
             let valores = {
                 Tipo_Institucion:this.CarTipoIIEE,
                 Insertado_labora:this.CarInsertadoLaboralmente,
@@ -71,7 +70,6 @@ Vue.component('ppd-datos-educacion-participacionLaboral', {
                 Periodo_Mes: moment().format("MM"),
                 Periodo_Anio:moment().format("YYYY")
                         }
-                        console.log(valores);
             this.$http.post('insertar_datos?view',{tabla:'CarEducacionCapacidades', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
@@ -122,8 +120,6 @@ Vue.component('ppd-datos-educacion-participacionLaboral', {
             this.$http.post('cargar_datos_residente?view',{tabla:'CarEducacionCapacidades', residente_id:this.id_residente }).then(function(response){
 
                 if( response.body.atributos != undefined){
-                    console.log(response.body.atributos[0]["FECHA_INICIONA"]);
-                    console.log(response.body.atributos[0]["FECHA_FINA"]);
                     this.CarTipoIIEE = response.body.atributos[0]["TIPO_INSTITUCION"];
                     this.CarInsertadoLaboralmente = response.body.atributos[0]["INSERTADO_LABORA"];
                     this.CarDesParticipacionLa = response.body.atributos[0]["DES_LABORA"];
