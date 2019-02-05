@@ -16,14 +16,18 @@ Vue.component('seguimiento-lista-2', {
 
     }),
     created:function(){
+        console.log('created')
+
     },
     mounted:function(){
         this.listar_grupos();
     },
     updated:function(){
+        console.log('updated')
+
     },
     destroyed:function(){
-
+        console.log('destroyed')
     },
     methods:{
 
