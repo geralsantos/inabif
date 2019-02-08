@@ -1,4 +1,4 @@
-Vue.component('registro-locales', {
+var registro_locales= {
     template:'#registro-locales',
     data:()=>({
         Apellido: this.Apellido,
@@ -241,4 +241,4 @@ Vue.component('registro-locales', {
             });
         }*/
     }
-  })
+  }

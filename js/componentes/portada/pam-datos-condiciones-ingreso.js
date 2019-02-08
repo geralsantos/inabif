@@ -1,4 +1,4 @@
-Vue.component('pam-datos-condiciones-ingreso', {
+var pam_datos_condiciones_ingreso =  {
     template:'#pam-datos-condiciones-ingreso',
     data:()=>({
         documento_entidad:null,
@@ -247,4 +247,4 @@ Vue.component('pam-datos-condiciones-ingreso', {
 
 
     }
-  })
+  }

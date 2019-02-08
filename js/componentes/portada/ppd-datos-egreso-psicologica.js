@@ -1,4 +1,4 @@
-Vue.component('ppd-datos-egreso-psicologica', {
+var ppd_datos_egreso_psicologica= {
     template:'#ppd-datos-egreso-psicologica',
     data:()=>({
         CarPlanIntervencion:null,
@@ -174,4 +174,4 @@ Vue.component('ppd-datos-egreso-psicologica', {
         }
 
     }
-  })
+  }

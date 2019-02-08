@@ -1,4 +1,4 @@
-Vue.component('pam-actividades-prevencion', {
+var pam_actividades_prevencion = {
     template:'#pam-actividades-prevencion',
     data:()=>({
         Atencion_Psicologica:null,
@@ -228,4 +228,4 @@ Vue.component('pam-actividades-prevencion', {
         }
 
     }
-  })
+  }

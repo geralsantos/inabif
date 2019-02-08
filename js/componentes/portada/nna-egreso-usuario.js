@@ -1,4 +1,4 @@
-Vue.component('nna-egreso-usuario', {
+var nna_egreso_usuario = {
     template: '#nna-egreso-usuario',
     data:()=>({
 
@@ -195,4 +195,4 @@ Vue.component('nna-egreso-usuario', {
         }
 
     }
-  })
+  }

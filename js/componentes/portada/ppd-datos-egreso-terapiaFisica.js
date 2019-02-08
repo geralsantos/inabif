@@ -1,4 +1,4 @@
-Vue.component('ppd-datos-egreso-terapiaFisica', {
+var ppd_datos_egreso_terapiaFisica= {
     template:'#ppd-datos-egreso-terapiaFisica',
     data:()=>({
         CarPlanIntervension:null,
@@ -202,4 +202,4 @@ Vue.component('ppd-datos-egreso-terapiaFisica', {
         }
 
     }
-  })
+  }

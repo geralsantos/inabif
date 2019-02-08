@@ -1,4 +1,4 @@
-Vue.component('seguimiento-lista-3', {
+var seguimiento_lista_3= {
     template:'#seguimiento-lista-3',
     data:()=>({
         periodo:moment().format('MMMM YYYY'),
@@ -80,4 +80,4 @@ Vue.component('seguimiento-lista-3', {
           }
 
     }
-  })
+  }

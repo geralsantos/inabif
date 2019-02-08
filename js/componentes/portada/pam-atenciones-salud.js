@@ -1,4 +1,4 @@
-Vue.component('pam-atenciones-salud', {
+var pam_atenciones_salud = {
     template:'#pam-atenciones-salud',
     data:()=>({
         Residente_Salida:null,
@@ -298,4 +298,4 @@ Vue.component('pam-atenciones-salud', {
         }
 
     }
-  })
+  }

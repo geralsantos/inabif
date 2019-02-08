@@ -1,4 +1,4 @@
-Vue.component('pam-actividades-sociales', {
+var pam_actividades_sociales =  {
     template:'#pam-actividades-sociales',
     data:()=>({
         Atencion_Social:null,
@@ -207,4 +207,4 @@ Vue.component('pam-actividades-sociales', {
 
         }
     }
-  })
+  }

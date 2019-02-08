@@ -1,4 +1,4 @@
-Vue.component('pam-actividades-sociorecreativas', {
+var pam_actividades_sociorecreativas = {
     template:'#pam-actividades-sociorecreativas',
     data:()=>({
         Terapia_Fisica_Rehabilitacion:null,
@@ -204,4 +204,4 @@ Vue.component('pam-actividades-sociorecreativas', {
         }
 
     }
-  })
+  }

@@ -1,4 +1,4 @@
-Vue.component('nna-seguimiento-salud', {
+var nna_seguimiento_salud = {
     template: '#nna-seguimiento-salud',
     data:()=>({
 
@@ -550,4 +550,4 @@ Vue.component('nna-seguimiento-salud', {
         }
 
     }
-  })
+  }

@@ -1,4 +1,4 @@
-Vue.component('nna-datos-familiares-sociales-residente', {
+var nna_datos_familiares_sociales_residente = {
     template: '#nna-datos-familiares-sociales-residente',
     data:()=>({
 
@@ -195,4 +195,4 @@ Vue.component('nna-datos-familiares-sociales-residente', {
         }
 
     }
-  })
+  }

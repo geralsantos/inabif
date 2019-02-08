@@ -1,4 +1,4 @@
-Vue.component('pam-datos-psicologico', {
+var pam_datos_psicologico= {
     template:'#pam-datos-psicologico',
     data:()=>({
 
@@ -195,4 +195,4 @@ Vue.component('pam-datos-psicologico', {
         }
 
     }
-  })
+  }

@@ -1,4 +1,4 @@
-Vue.component('nna-datos-condiciones-ingreso-residente', {
+var nna_datos_condiciones_ingreso_residente = {
     template: '#nna-datos-condiciones-ingreso-residente',
     data:()=>({
 
@@ -227,4 +227,4 @@ Vue.component('nna-datos-condiciones-ingreso-residente', {
         }
 
     }
-  })
+  }

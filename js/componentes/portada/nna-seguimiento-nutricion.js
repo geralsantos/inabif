@@ -1,4 +1,4 @@
-Vue.component('nna-seguimiento-nutricion', {
+var nna_seguimiento_nutricion =  {
     template: '#nna-seguimiento-nutricion',
     data:()=>({
 
@@ -169,4 +169,4 @@ Vue.component('nna-seguimiento-nutricion', {
         }
 
     }
-  })
+  }

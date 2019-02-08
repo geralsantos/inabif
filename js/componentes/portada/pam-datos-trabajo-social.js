@@ -1,4 +1,4 @@
-Vue.component('pam-datos-trabajo-social', {
+var pam_datos_trabajo_social = {
     template:'#pam-datos-trabajo-social',
     data:()=>({
 
@@ -178,4 +178,4 @@ Vue.component('pam-datos-trabajo-social', {
         }
 
     }
-  })
+  }

@@ -1,4 +1,4 @@
-Vue.component('pam-datos-nutricion-salud', {
+var pam_datos_nutricion_salud= {
     template:'#pam-datos-nutricion-salud',
     data:()=>({
 
@@ -269,4 +269,4 @@ Vue.component('pam-datos-nutricion-salud', {
 
 
     }
-  })
+  }

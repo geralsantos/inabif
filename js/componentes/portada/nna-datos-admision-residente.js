@@ -1,4 +1,4 @@
-Vue.component('nna-datos-admision-residente', {
+var nna_datos_admision_residente = {
     template:'#nna-datos-admision-residente',
     data:()=>({
 
@@ -253,4 +253,4 @@ Vue.component('nna-datos-admision-residente', {
 
         }
     }
-  })
+  }

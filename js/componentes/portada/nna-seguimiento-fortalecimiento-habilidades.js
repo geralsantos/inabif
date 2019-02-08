@@ -1,4 +1,4 @@
-Vue.component('nna-seguimiento-fortalecimiento-habilidades', {
+var nna_seguimiento_fortalecimiento_habilidades = {
     template: '#nna-seguimiento-fortalecimiento-habilidades',
     data:()=>({
 
@@ -176,4 +176,4 @@ Vue.component('nna-seguimiento-fortalecimiento-habilidades', {
         }
 
     }
-  })
+  }

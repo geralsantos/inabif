@@ -1,4 +1,4 @@
-Vue.component('pam-datos-identificacion-residente', {
+var pam_datos_identificacion_residente = {
     template:'#pam-datos-identificacion-residente',
     data:()=>({
         Ape_Paterno:null,
@@ -352,4 +352,4 @@ Vue.component('pam-datos-identificacion-residente', {
         }
 
     }
-  })
+  }

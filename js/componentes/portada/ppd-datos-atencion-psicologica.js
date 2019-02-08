@@ -1,4 +1,4 @@
-Vue.component('ppd-datos-atencion-psicologica', {
+var ppd_datos_atencion_psicologica= {
     template: '#ppd-datos-atencion-psicologica',
     data:()=>({
         CarNumHabilidadesBasicas:null,
@@ -172,4 +172,4 @@ Vue.component('ppd-datos-atencion-psicologica', {
 
         }
     }
-  })
+  }

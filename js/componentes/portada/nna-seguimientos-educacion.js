@@ -1,4 +1,4 @@
-Vue.component('nna-seguimientos-educacion', {
+var nna_seguimientos_educacion =  {
     template: '#nna-seguimientos-educacion',
     data:()=>({
 
@@ -184,4 +184,4 @@ let apellido = apellido_p + ' ' + apellido_m;
         }
 
     }
-  })
+  }

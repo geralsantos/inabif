@@ -1,4 +1,4 @@
-Vue.component('registro-perfiles', {
+var registro_perfiles= {
     template:'#registro-perfiles',
     data:()=>({
         Apellido: this.Apellido,
@@ -201,4 +201,4 @@ Vue.component('registro-perfiles', {
             }
         }
     }
-  })
+  }

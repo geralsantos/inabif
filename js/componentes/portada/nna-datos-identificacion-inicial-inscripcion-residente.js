@@ -1,4 +1,4 @@
-Vue.component('nna-datos-identificacion-inicial-inscripcion-residente', {
+var nna_datos_identificacion_inicial_inscripcion_residente= {
     template: '#nna-datos-identificacion-inicial-inscripcion-residente',
     data:()=>({
         Ape_Paterno:null,
@@ -361,4 +361,4 @@ Vue.component('nna-datos-identificacion-inicial-inscripcion-residente', {
         }
 
     }
-  })
+  }

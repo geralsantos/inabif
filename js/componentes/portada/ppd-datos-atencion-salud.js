@@ -1,4 +1,4 @@
-Vue.component('ppd-datos-atencion-salud', {
+var ppd_datos_atencion_salud= {
     template: '#ppd-datos-atencion-salud',
     data:()=>({
         CarNumAtencionesMG:null,
@@ -329,4 +329,4 @@ Vue.component('ppd-datos-atencion-salud', {
 
         }
     }
-  })
+  }

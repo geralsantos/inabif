@@ -1,4 +1,4 @@
-Vue.component('ppd-datos-salud-nutricion', {
+var ppd_datos_salud_nutricion= {
     template:'#ppd-datos-salud-nutricion',
     data:()=>({
         CarDiscapacidad:null,
@@ -299,4 +299,4 @@ Vue.component('ppd-datos-salud-nutricion', {
         }
 
     }
-  })
+  }

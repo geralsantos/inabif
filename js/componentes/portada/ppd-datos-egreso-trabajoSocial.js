@@ -1,4 +1,4 @@
-Vue.component('ppd-datos-egreso-trabajoSocial', {
+var ppd_datos_egreso_trabajoSocial= {
     template:'#ppd-datos-egreso-trabajoSocial',
     data:()=>({
         CarIntervencionNutricional:null,
@@ -199,4 +199,4 @@ Vue.component('ppd-datos-egreso-trabajoSocial', {
         }
 
     }
-  })
+  }

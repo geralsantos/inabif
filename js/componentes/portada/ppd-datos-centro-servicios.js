@@ -1,4 +1,4 @@
-Vue.component('ppd-datos-centro-servicios', {
+var ppd_datos_centro_servicios= {
     template: '#ppd-datos-centro-servicios',
     data:()=>({
         CarCodEntidad:null,
@@ -101,4 +101,4 @@ Vue.component('ppd-datos-centro-servicios', {
              });
         },
     }
-  })
+  }

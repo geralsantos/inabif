@@ -1,4 +1,4 @@
-Vue.component('ppd-datos-egreso-educacion', {
+var ppd_datos_egreso_educacion= {
     template:'#ppd-datos-egreso-educacion',
     data:()=>({
         CarIntervencion:null,
@@ -199,4 +199,4 @@ Vue.component('ppd-datos-egreso-educacion', {
         }
 
     }
-  })
+  }

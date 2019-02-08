@@ -1,4 +1,4 @@
-Vue.component('ppd-datos-egreso-nutricion', {
+var ppd_datos_egreso_nutricion= {
     template:'#ppd-datos-egreso-nutricion',
     data:()=>({
         CarPlanIntervencion:null,
@@ -197,4 +197,4 @@ Vue.component('ppd-datos-egreso-nutricion', {
         }
 
     }
-  })
+  }

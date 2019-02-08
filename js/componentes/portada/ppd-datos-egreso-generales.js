@@ -1,4 +1,4 @@
-Vue.component('ppd-datos-egreso-generales', {
+var ppd_datos_egreso_generales= {
     template:'#ppd-datos-egreso-generales',
     data:()=>({
 
@@ -224,4 +224,4 @@ Vue.component('ppd-datos-egreso-generales', {
 
 
     }
-  })
+  }

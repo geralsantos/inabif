@@ -1,4 +1,4 @@
-Vue.component('nna-datos-salud-residente', {
+var nna_datos_salud_residente = {
     template: '#nna-datos-salud-residente',
     data:()=>({
 
@@ -317,4 +317,4 @@ Vue.component('nna-datos-salud-residente', {
         }
 
     }
-  })
+  }

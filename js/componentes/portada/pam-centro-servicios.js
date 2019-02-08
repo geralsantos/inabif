@@ -1,4 +1,4 @@
-Vue.component('pam-centro-servicios', {
+var pam_centro_servicios = {
     template: '#pam-centro-servicios',
     data:()=>({
         CarCodEntidad:null,
@@ -105,4 +105,4 @@ Vue.component('pam-centro-servicios', {
              });
         },
     }
-  })
+  }

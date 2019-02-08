@@ -1,4 +1,4 @@
-Vue.component('pam-datos-generales-egreso', {
+var pam_datos_generales_egreso= {
     template:'#pam-datos-generales-egreso',
     data:()=>({
         Fecha_Egreso:null,
@@ -205,4 +205,4 @@ Vue.component('pam-datos-generales-egreso', {
         }
 
     }
-  })
+  }

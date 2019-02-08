@@ -1,4 +1,4 @@
-Vue.component('pide-consulta', {
+var pide_consulta= {
     template:'#pide-consulta',
     data:()=>({
         Apellido_p:null,
@@ -153,4 +153,4 @@ Vue.component('pide-consulta', {
         }
 
     }
-  })
+  }

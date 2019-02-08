@@ -1,4 +1,4 @@
-Vue.component('ppd-datos-egreso-salud', {
+var ppd_datos_egreso_salud={
     template:'#ppd-datos-egreso-salud',
     data:()=>({
         CarPlanIntervencion:null,
@@ -190,4 +190,4 @@ Vue.component('ppd-datos-egreso-salud', {
         }
 
     }
-  })
+  }

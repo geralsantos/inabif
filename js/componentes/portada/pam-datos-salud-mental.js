@@ -1,4 +1,4 @@
-Vue.component('pam-datos-salud-mental', {
+var pam_datos_salud_mental= {
     template:'#pam-datos-salud-mental',
     data:()=>({
 
@@ -160,4 +160,4 @@ Vue.component('pam-datos-salud-mental', {
         }
 
     }
-  })
+  }

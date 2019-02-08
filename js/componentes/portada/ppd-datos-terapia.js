@@ -1,4 +1,4 @@
-Vue.component('ppd-datos-terapia', {
+var ppd_datos_terapia= {
     template:'#ppd-datos-terapia',
     data:()=>({
         CarNumReeducaion:null,
@@ -261,4 +261,4 @@ let apellido = apellido_p + ' ' + apellido_m;
 
 
     }
-  })
+  }

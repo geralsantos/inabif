@@ -1,4 +1,4 @@
-Vue.component('pam-datos-admision', {
+var pam_datos_admision ={
     template:'#pam-datos-admision',
     data:()=>({
         movimiento_poblacional:null,
@@ -237,4 +237,4 @@ Vue.component('pam-datos-admision', {
 
 
     }
-  })
+  }

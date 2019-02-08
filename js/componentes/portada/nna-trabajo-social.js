@@ -1,4 +1,4 @@
-Vue.component('nna-trabajo-social', {
+var nna_trabajo_social = {
     template: '#nna-trabajo-social',
     data:()=>({
 
@@ -287,4 +287,4 @@ Vue.component('nna-trabajo-social', {
         }
 
     }
-  })
+  }

@@ -1,4 +1,4 @@
-Vue.component('reporte-matriz-general', {
+var reporte_matriz_general= {
     template:'#reporte-matriz-general',
     data:()=>({
        // periodo:moment().format('MMMM YYYY'),
@@ -49,4 +49,4 @@ Vue.component('reporte-matriz-general', {
      
 
     }
-  })
+  }

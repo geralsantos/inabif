@@ -1,4 +1,4 @@
-Vue.component('nna-seguimiento-psicologico', {
+var nna_seguimiento_psicologico =  {
     template: '#nna-seguimiento-psicologico',
     data:()=>({
 
@@ -251,4 +251,4 @@ Vue.component('nna-seguimiento-psicologico', {
 
         }
     }
-  })
+  }

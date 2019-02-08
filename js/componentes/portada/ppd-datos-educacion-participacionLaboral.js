@@ -1,4 +1,4 @@
-Vue.component('ppd-datos-educacion-participacionLaboral', {
+var ppd_datos_educacion_participacionLaboral= {
     template: '#ppd-datos-educacion-participacionLaboral',
     data:()=>({
         CarTipoIIEE:null,
@@ -188,4 +188,4 @@ Vue.component('ppd-datos-educacion-participacionLaboral', {
 
         }
     }
-  })
+  }

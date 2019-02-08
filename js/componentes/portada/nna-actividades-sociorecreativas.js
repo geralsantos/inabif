@@ -1,4 +1,4 @@
-Vue.component('nna-actividades-sociorecreativas', {
+var nna_actividades_sociorecreativas= {
     template:'#nna-actividades-sociorecreativas',
     data:()=>({
 
@@ -209,4 +209,4 @@ Vue.component('nna-actividades-sociorecreativas', {
         }
 
     }
-  })
+  }

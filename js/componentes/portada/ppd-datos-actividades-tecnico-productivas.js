@@ -1,4 +1,4 @@
-Vue.component('ppd-datos-actividades-tecnico-productivas', {
+var ppd_datos_actividades_tecnico_productivas= {
     template:'#ppd-datos-actividades-tecnico-productivas',
     data:()=>({
         CarNumBiohuerto:null,
@@ -200,4 +200,4 @@ Vue.component('ppd-datos-actividades-tecnico-productivas', {
 
         }
     }
-  })
+  }

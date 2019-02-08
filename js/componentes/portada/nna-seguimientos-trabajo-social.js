@@ -1,4 +1,4 @@
-Vue.component('nna-seguimientos-trabajo-social', {
+var nna_seguimientos_trabajo_social ={
     template: '#nna-seguimientos-trabajo-social',
     data:()=>({
 
@@ -189,4 +189,4 @@ Vue.component('nna-seguimientos-trabajo-social', {
         }
 
     }
-  })
+  }

@@ -1,4 +1,4 @@
-Vue.component('ppd-datos-atencion-trabajoSocial', {
+var ppd_datos_atencion_trabajoSocial= {
     template: '#ppd-datos-atencion-trabajoSocial',
     data:()=>({
         CarVisitaF:null,
@@ -216,4 +216,4 @@ Vue.component('ppd-datos-atencion-trabajoSocial', {
 
         }
     }
-  })
+  }

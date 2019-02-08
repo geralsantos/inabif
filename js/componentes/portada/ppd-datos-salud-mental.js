@@ -1,4 +1,4 @@
-Vue.component('ppd-datos-salud-mental', {
+var ppd_datos_salud_mental= {
     template:'#ppd-datos-salud-mental',
     data:()=>({
         CarTrastornosNeurologico:null,
@@ -241,4 +241,4 @@ Vue.component('ppd-datos-salud-mental', {
 
 
     }
-  })
+  }

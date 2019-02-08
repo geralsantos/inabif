@@ -1,4 +1,4 @@
-Vue.component('nna-seguimiento-terapia-ocupacional', {
+var nna_seguimiento_terapia_ocupacional = {
     template: '#nna-seguimiento-terapia-ocupacional',
     data:()=>({
 
@@ -177,4 +177,4 @@ Vue.component('nna-seguimiento-terapia-ocupacional', {
         }
 
     }
-  })
+  }

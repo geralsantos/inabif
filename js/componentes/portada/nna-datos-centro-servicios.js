@@ -1,4 +1,4 @@
-Vue.component('nna-datos-centro-servicios', {
+var nna_datos_centro_servicios = {
     template: '#nna-datos-centro-servicios',
     data:()=>({
 
@@ -101,4 +101,4 @@ Vue.component('nna-datos-centro-servicios', {
         },
 
     }
-  })
+  }

@@ -1,4 +1,4 @@
-Vue.component('nna-seguimiento-educacion', {
+var nna_seguimiento_educacion = {
     template: '#nna-seguimiento-educacion',
     data:()=>({
 
@@ -211,4 +211,4 @@ Vue.component('nna-seguimiento-educacion', {
         }
 
     }
-  })
+  }

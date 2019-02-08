@@ -1,4 +1,4 @@
-Vue.component('ppd-datos-admision-usuario', {
+var ppd_datos_admision_usuario= {
     template:'#ppd-datos-admision-usuario',
     data:()=>({
         CarMPoblacional:null,
@@ -211,4 +211,4 @@ Vue.component('ppd-datos-admision-usuario', {
 
         }
     }
-  })
+  }

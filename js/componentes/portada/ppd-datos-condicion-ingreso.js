@@ -1,4 +1,4 @@
-Vue.component('ppd-datos-condicion-ingreso', {
+var ppd_datos_condicion_ingreso= {
     template: '#ppd-datos-condicion-ingreso',
     data:()=>({
         CarDocIngreso:null,
@@ -316,4 +316,4 @@ Vue.component('ppd-datos-condicion-ingreso', {
 
         }
     }
-  })
+  }

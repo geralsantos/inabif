@@ -1,4 +1,4 @@
-Vue.component('reporte-rub', {
+var reporte_rub= {
     template:'#reporte-rub',
     data:()=>({
        // periodo:moment().format('MMMM YYYY'),
@@ -51,4 +51,4 @@ Vue.component('reporte-rub', {
      
 
     }
-  })
+  }

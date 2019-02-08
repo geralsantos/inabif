@@ -1,4 +1,4 @@
-Vue.component('reporte-nominal', {
+var reporte_nominal= {
     template:'#reporte-nominal',
     data:()=>({
 
@@ -145,4 +145,4 @@ let apellido = apellido_p + ' ' + apellido_m;
 
 
     }
-  })
+  }
