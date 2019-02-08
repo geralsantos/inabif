@@ -31,7 +31,7 @@
                                 </div>
                             </div>
                 </div>
-                    <button class="btn btn-success" v-show="!isempty(id_residente)" @click="mostrar_formulario('')" >Adjuntar Nuevo</button>
+                    <button class="btn btn-success" v-show="!isempty(id_residente)" @click="mostrar_formulario" >Adjuntar Nuevo</button>
 </br>
                 <table id="bootstrap-data-table" class="table table-striped table-bordered text-center">
                     <thead>
