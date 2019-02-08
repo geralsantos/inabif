@@ -109,6 +109,4 @@ var seguimiento_lista_2 = {
           }
 
     }
-  })
-
-  console.log(geral)
+  }
