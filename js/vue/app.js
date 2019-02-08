@@ -1,9 +1,19 @@
 {
   'use strict';
 
+  Vue.use(VueRouter);
   Vue.http.options.emulateJSON=true; // http client
+ 
+  const router = new VueRouter({
+    mode: 'hash',
+    routes: [
+      { path: '/seguimiento-lista-1', component: seguimiento_lista_1 },
+      { path: '/seguimiento-lista-2', component: seguimiento_lista_2 }
+    ]
+});
   var appVue = new Vue({
     el:'#vue_app', /* container vue */
+    router,
     name:'Reveal',
     data: () => ({
       menuVisible: false,

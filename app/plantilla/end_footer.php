@@ -31,6 +31,7 @@
 
   <script type="text/javascript" src="<?php echo JS ?>/vue/vue.min.js"></script>
   <script type="text/javascript" src="<?php echo JS ?>/vue/vue-resources.min.js"></script>
+  <script type="text/javascript" src="<?php echo JS ?>/vue/vuerouter.min.js"></script>
 
   <?php foreach (glob(JS_ROOT . DS . 'componentes' . DS ."portada/*.js") as $filename): ?>
   <script type="text/javascript" src="<?php echo JS . '/componentes/portada/'. basename($filename); ?>"></script>

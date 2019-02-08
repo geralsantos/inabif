@@ -1,4 +1,4 @@
-Vue.component('seguimiento-lista-1', {
+const seguimiento_lista_1 = {
     template:'#seguimiento-lista-1',
     data:()=>({
         periodo:moment().format('MMMM YYYY'),
