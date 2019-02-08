@@ -1429,7 +1429,7 @@ ini_set('session.gc_maxlifetime','1200');*/
     $centro_html .="<tr><td>".$centro["NOMBRE_CENTRO"]."</td><td>".$centro["NOMBRE_TIPO_CENTRO"]." - ".$centro["CODIGO"]."</td></tr>";
     $campos = $this->campos_tipo_centro($centro["TIPO_CENTRO_ID"]);
     $orderby = $centro["TIPO_CENTRO_ID"]=="2"?"m.id asc":"m.parent_id asc";
-	echo $modulos = "select m.parent_id,m.nombre as nombre_modulo,m.nombre_tabla from modulos m
+	$modulos = "select m.parent_id,m.nombre as nombre_modulo,m.nombre_tabla from modulos m
 	where m.centro_id in (".$centro["TIPO_CENTRO_ID"].") order by ".$orderby;
 	$modulos = $modelo->executeQuery($modulos);
     $html ="";
@@ -1508,7 +1508,7 @@ ini_set('session.gc_maxlifetime','1200');*/
             $html .= $modulo_html.$grupo_html;
           }
         }else {
-        $grupos = "select ".$valortabla.",residente_id from ".$modulo["NOMBRE_TABLA"]." where  periodo_mes=".date("n")." and periodo_anio=".date("Y")." and residente_id= ". $id_residente." and centro_id=".$centro["ID"]." order by id desc";
+        echo $grupos = "select ".$valortabla.",residente_id from ".$modulo["NOMBRE_TABLA"]." where  periodo_mes=".date("n")." and periodo_anio=".date("Y")." and residente_id= ". $id_residente." and centro_id=".$centro["ID"]." order by id desc";
           $grupos = $modelo->executeQuery($grupos);
 
           $grupo_html = "";
