@@ -69,6 +69,8 @@
       { path: '/reporte-nominal', component: reporte_nominal },
       { path: '/reporte-rub', component: reporte_rub },
       { path: '/seguimiento-lista-3', component: seguimiento_lista_3 },
+      { path: '/cargar-archivos', component: cargar_archivos },
+      
     ]
 });
   var appVue = new Vue({

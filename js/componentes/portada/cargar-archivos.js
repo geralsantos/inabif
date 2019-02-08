@@ -1,4 +1,4 @@
-Vue.component('cargar-archivos', {
+var cargar_archivos= {
     template:'#cargar-archivos',
     data:()=>({
 
@@ -213,4 +213,4 @@ Vue.component('cargar-archivos', {
         }
 
     }
-  })
+  }
