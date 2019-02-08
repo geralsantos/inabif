@@ -111,7 +111,7 @@
                 <div class="modal-header">
                     <h5 class="modal-title">Formulario de carga</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true" @click="showModal = false">&times;</span>
+                    <span aria-hidden="true" @click="closeModal()">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
@@ -165,7 +165,7 @@
                         </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" @click="showModal = false">Cerrar</button>
+                    <button type="button" class="btn btn-secondary" @click="closeModal()">Cerrar</button>
                 </div>
             </div>
         </div>

@@ -206,6 +206,10 @@ Vue.component('cargar-archivos', {
                 }
              });
 
+        },
+        closeModal(){
+            this.archivo=null;
+            this.showModal = false;
         }
 
     }
