@@ -113,13 +113,14 @@ var nna_datos_identificacion_inicial_inscripcion_residente= {
                 provincia_nacimiento_id: this.provincia_nacimiento_id || null,
                 distrito_nacimiento_id: this.distrito_nacimiento_id || null,
                 sexo: this.Sexo,
-                fecha_nacimiento: moment(this.Fecha_Nacimiento, "YYYY-MM-DD").format("YY-MMM-DD"),
-                edad: this.Edad,
+                fecha_naci : !isempty(this.Fecha_Nacimiento)?moment(this.Fecha_Nacimiento, "YYYY-MM-DD").format("YY-MMM-DD"):null,
+                edad: this.Edad || null,
                 lengua_materna: this.Lengua_Materna,
                 Numero_Doc:Numero_Doc,
                 Periodo_Mes: moment().format("MM"),
                 Periodo_Anio:moment().format("YYYY")
                 }
+                console.log(valores)
                 /*let valores_arr = Object.values(valores);
                 for (let index = 0; index < valores_arr.length; index++) {
                     if (isempty(valores_arr[index])) {
