@@ -170,7 +170,7 @@
                                         </thead>
                                         <tbody class="text-center">
                                             <tr v-for="residente in pacientes">
-                                                <td>{{residente.NOMBRE}} {{residente.APELLIDO}}</td>
+                                                <td>{{residente.NOMBRE}} {{residente.APELLIDO_P}} {{residente.APELLIDO_M}}</td>
                                                 <td>{{residente.DNI_RESIDENTE}}</td>
                                                 <td><button class="btn btn-primary" @click="elegir_residente(residente)">Seleccionar</button></td>
 
