@@ -28,6 +28,7 @@
       { path: '/nna-seguimientos-salud', component: nna_seguimientos_salud },
       { path: '/nna-seguimientos-trabajo-social', component: nna_seguimientos_trabajo_social },
       { path: '/nna-trabajo-social', component: nna_trabajo_social },
+      { path: '/nna-egreso-usuario', component: nna_egreso_usuario },
       { path: '/pam-actividades-prevencion', component: pam_actividades_prevencion },
       { path: '/pam-actividades-sociales', component: pam_actividades_sociales },
       { path: '/pam-actividades-sociorecreativas', component: pam_actividades_sociorecreativas },
