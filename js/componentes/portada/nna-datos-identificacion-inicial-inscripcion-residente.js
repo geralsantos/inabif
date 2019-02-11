@@ -99,7 +99,7 @@ var nna_datos_identificacion_inicial_inscripcion_residente= {
                 Numero_Doc = this.Numero_Doc;
             }
             if ((this.Numero_Doc).length>8 || (this.Numero_Doc).length<8) {
-                swal('Error', 'El campo de DNI debe ser de 8 digitos', 'warning');
+                swal('Error', 'El campo de Número o Código del documento debe ser de 8 digitos', 'warning');
                 return false;
             }
             var valores = {
@@ -113,7 +113,7 @@ var nna_datos_identificacion_inicial_inscripcion_residente= {
                 provincia_nacimiento_id: this.provincia_nacimiento_id || null,
                 distrito_nacimiento_id: this.distrito_nacimiento_id || null,
                 sexo: this.Sexo,
-                fecha_nacimiento:  moment(this.Fecha_Nacimiento, "YYYY-MM-DD").format("YY-MMM-DD"),
+                fecha_nacimiento: moment(this.Fecha_Nacimiento, "YYYY-MM-DD").format("YY-MMM-DD"),
                 edad: this.Edad,
                 lengua_materna: this.Lengua_Materna,
                 Numero_Doc:Numero_Doc,
@@ -140,8 +140,8 @@ var nna_datos_identificacion_inicial_inscripcion_residente= {
                     provincia_naci_cod : this.provincia_nacimiento_id || null,
                     distrito_naci_cod : this.distrito_nacimiento_id || null,
                     sexo: this.Sexo,
-                    fecha_naci :  moment(this.Fecha_Nacimiento, "YYYY-MM-DD").format("YY-MMM-DD"),
-                    edad: this.Edad,
+                    fecha_naci : !isempty(this.Fecha_Nacimiento)?moment(this.Fecha_Nacimiento, "YYYY-MM-DD").format("YY-MMM-DD"):null,
+                    edad: this.Edad || null,
                     lengua_materna: this.Lengua_Materna,
                     documento :Numero_Doc
                     }
