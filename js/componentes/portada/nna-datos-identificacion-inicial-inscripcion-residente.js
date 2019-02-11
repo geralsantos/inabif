@@ -98,10 +98,10 @@ var nna_datos_identificacion_inicial_inscripcion_residente= {
             if(this.Numero_Doc != null){
                 Numero_Doc = this.Numero_Doc;
             }
-            if ((this.Numero_Doc).length>8 || (this.Numero_Doc).length<8) {
+            /*if ((this.Numero_Doc).length>8 || (this.Numero_Doc).length<8) {
                 swal('Error', 'El campo de Número o Código del documento debe ser de 8 digitos', 'warning');
                 return false;
-            }
+            }*/
             var valores = {
 
                 residente_apellido_paterno: this.Ape_Paterno,
