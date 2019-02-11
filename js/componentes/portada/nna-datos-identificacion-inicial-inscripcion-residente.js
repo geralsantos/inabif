@@ -116,7 +116,7 @@ var nna_datos_identificacion_inicial_inscripcion_residente= {
                 fecha_nacimiento : !isempty(this.Fecha_Nacimiento)?moment(this.Fecha_Nacimiento, "YYYY-MM-DD").format("YY-MMM-DD"):null,
                 edad: this.Edad || null,
                 lengua_materna: this.Lengua_Materna,
-                Numero_Doc:Numero_Doc,
+                Numero_Doc:Numero_Doc || null,
                 Periodo_Mes: moment().format("MM"),
                 Periodo_Anio:moment().format("YYYY")
                 }
