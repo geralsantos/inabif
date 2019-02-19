@@ -106,7 +106,7 @@ var pam_datos_identificacion_residente = {
                 provincia_nacimiento_id: this.provincia_nacimiento_id,
                 distrito_nacimiento_id: this.distrito_nacimiento_id,
                 sexo: this.Sexo,
-                fecha_nacimiento:  moment(this.Fecha_Nacimiento, "YYYY-MM-DD").format("YYYY-MM-DD"),
+                fecha_nacimiento:  moment(this.Fecha_Nacimiento, "YYYY-MM-DD").format("YY-MMM-DD"),
                 edad: this.Edad,
                 lengua_materna: this.Lengua_Materna,
 
