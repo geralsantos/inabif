@@ -227,7 +227,11 @@ var nna_datos_identificacion_inicial_inscripcion_residente= {
                     this.distrito_nacimiento_id = response.body.atributos[0]["DISTRITO_NACIMIENTO_ID"];
                     this.Sexo = response.body.atributos[0]["SEXO"];
                     this.Edad = response.body.atributos[0]["EDAD"];
-                    this.Fecha_Nacimiento = isempty(response.body.atributos[0]["FECHA_NACIMIENTO"])?null:moment(response.body.atributos[0]["FECHA_NACIMIENTO"],'DD-MMM-YY').format("YYYY-MM-DD");
+                    var fecha_naci = !isempty(response.body.atributos[0]["FECHA_NACIMIENTO"]);
+                    var da = fecha_naci ? (moment().format("YYYY") )+"-"+moment(response.body.atributos[0]["FECHA_NACIMIENTO"],'DD-MMM').format("MM-DD").toString():null;
+                    this.Fecha_Nacimiento = fecha_naci ? moment(da,"YYYY-MM-DD").subtract(this.Edad,'years').format("YYYY-MM-DD"): null;
+
+                    //this.Fecha_Nacimiento = isempty(response.body.atributos[0]["FECHA_NACIMIENTO"])?null:moment(response.body.atributos[0]["FECHA_NACIMIENTO"],'DD-MMM-YY').format("YYYY-MM-DD");
                     this.Lengua_Materna = response.body.atributos[0]["LENGUA_MATERNA"];
                     this.Numero_Doc = response.body.atributos[0]["NUMERO_DOC"];
                     this.id = response.body.atributos[0]["RESIDENTE_ID"];
@@ -351,7 +355,11 @@ var nna_datos_identificacion_inicial_inscripcion_residente= {
                     this.distrito_nacimiento_id = response.body.atributos[0]["DISTRITO_NACIMIENTO_ID"];
                     this.Sexo = response.body.atributos[0]["SEXO"];
                     this.Edad = response.body.atributos[0]["EDAD"];
-                    this.Fecha_Nacimiento = isempty(response.body.atributos[0]["FECHA_NACIMIENTO"])?null:moment(response.body.atributos[0]["FECHA_NACIMIENTO"],'DD-MMM-YY').format("YYYY-MM-DD");
+                    var fecha_naci = !isempty(response.body.atributos[0]["FECHA_NACIMIENTO"]);
+                    var da = fecha_naci ? (moment().format("YYYY") )+"-"+moment(response.body.atributos[0]["FECHA_NACIMIENTO"],'DD-MMM').format("MM-DD").toString():null;
+                    this.Fecha_Nacimiento = fecha_naci ? moment(da,"YYYY-MM-DD").subtract(this.Edad,'years').format("YYYY-MM-DD"): null;
+
+                    //this.Fecha_Nacimiento = isempty(response.body.atributos[0]["FECHA_NACIMIENTO"])?null:moment(response.body.atributos[0]["FECHA_NACIMIENTO"],'DD-MMM-YY').format("YYYY-MM-DD");
                     this.Lengua_Materna = response.body.atributos[0]["LENGUA_MATERNA"];
                     this.Numero_Doc = response.body.atributos[0]["NUMERO_DOC"];
                     this.id = response.body.atributos[0]["RESIDENTE_ID"];
