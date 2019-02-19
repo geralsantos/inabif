@@ -1,9 +1,6 @@
 {
   'use strict';
   moment().locale('es');
-  moment.parseTwoDigitYear = function(year){
-    return parseInt(year, 10) + 1000;
-  };
   var download = function(filename, text) {
     var element = document.createElement('a');
     element.setAttribute('href', 'data:application/xml;charset=utf-8,' + encodeURIComponent(text));
