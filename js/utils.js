@@ -2,7 +2,7 @@
   'use strict';
   moment().locale('es');
   moment.parseTwoDigitYear = function(year){
-    return parseInt(year, 10) + 2000;
+    return parseInt(year, 10) + 1000;
   };
   var download = function(filename, text) {
     var element = document.createElement('a');
