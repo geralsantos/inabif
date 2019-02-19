@@ -344,7 +344,7 @@ var pam_datos_identificacion_residente = {
                     this.distrito_nacimiento_id = response.body.atributos[0]["DISTRITO_NACIMIENTO_ID"];
                     this.Sexo = response.body.atributos[0]["SEXO"];
                     this.Edad = response.body.atributos[0]["EDAD"];
-                    var da = (moment().format("YYYY") )+"-"+moment(response.body.atributos[0]["FECHA_NACIMIENTO"],'DD-MMM').format("DD-MM").toString();
+                    var da = (moment().format("YYYY") )+"-"+moment(response.body.atributos[0]["FECHA_NACIMIENTO"],'DD-MMM').format("MM-DD").toString();
                     console.log(da);
                     this.Fecha_Nacimiento = moment(da,"YYYY-MM-DD").add(55,'years');
                     //this.Fecha_Nacimiento = isempty(response.body.atributos[0]["FECHA_NACIMIENTO"])?null:moment(response.body.atributos[0]["FECHA_NACIMIENTO"],'DD-MMM-YY').format("YYYY-MM-DD");
