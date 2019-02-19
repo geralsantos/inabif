@@ -344,7 +344,7 @@ var pam_datos_identificacion_residente = {
                     this.Sexo = response.body.atributos[0]["SEXO"];
                     this.Edad = response.body.atributos[0]["EDAD"];
                     this.Fecha_Nacimiento = isempty(response.body.atributos[0]["FECHA_NACIMIENTO"])?null:moment(response.body.atributos[0]["FECHA_NACIMIENTO"],'DD-MMM-YY').format("YYYY-MM-DD");
-                    console.log((this.Fecha_Nacimiento).toDate());
+                    console.log(moment(response.body.atributos[0]["FECHA_NACIMIENTO"],'DD-MMM-YY').toDate());
 
                     this.Lengua_Materna = response.body.atributos[0]["LENGUA_MATERNA"];
                     this.id = response.body.atributos[0]["RESIDENTE_ID"];
