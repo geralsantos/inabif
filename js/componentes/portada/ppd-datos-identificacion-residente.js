@@ -98,7 +98,7 @@ var ppd_datos_identificacion_residente= {
                 Periodo_Anio:moment().format("YYYY")
 
                 }
-
+console.log(valores);
             /*this.$http.post('insertar_datos?view',{tabla:'CarIdentificacionUsuario', valores:valores}).then(function(response){
 
                 if( response.body.resultado ){
