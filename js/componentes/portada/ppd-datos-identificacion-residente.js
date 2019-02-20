@@ -90,7 +90,7 @@ var ppd_datos_identificacion_residente= {
                 Distrito_Procedencia: this.Distrito_Procedencia || null,
                 Sexo: this.Sexo,
                 Fecha_Nacimiento: isempty(this.Fecha_Nacimiento)?null:moment(this.Fecha_Nacimiento, "YYYY-MM-DD").format("YYYY-MM-DD"),
-                Edad: this.Edad,
+                Edad: isempty(this.Edad)?null:this.Edad,
                 Lengua_Materna: this.Lengua_Materna,
 
                 //Residente_Id: this.id_residente,
@@ -126,7 +126,7 @@ var ppd_datos_identificacion_residente= {
                     distrito_naci_cod : this.Distrito_Procedencia || null,
                     sexo: this.Sexo,
                     fecha_naci : isempty(this.Fecha_Nacimiento)?null: moment(this.Fecha_Nacimiento, "YYYY-MM-DD").format("YYYY-MM-DD"),
-                    edad: this.Edad,
+                    edad: isempty(this.Edad)?null:this.Edad,
                     lengua_materna: this.Lengua_Materna,
                     //documento :this.Numero_Doc
                     }
