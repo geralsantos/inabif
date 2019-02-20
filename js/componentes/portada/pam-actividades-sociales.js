@@ -137,9 +137,9 @@ var pam_actividades_sociales =  {
                     this.Nro_Visitas_Amigos = response.body.atributos[0]["NRO_VISITAS_AMIGOS"];
                     this.Descriptivo_Persona_Visita = response.body.atributos[0]["DESCRIPTIVO_PERSONA_VISITA"];
                     this.Aseguramiento_Universal_Salud = response.body.atributos[0]["ASEGURAMIENTO_UNIVERSAL_SALUD"];
-                    this.Fecha_Emision_Obtencion_Seguro = moment(response.body.atributos[0]["FECHA_EMISION_OBTENCION_SEGURO"]).format("YYYY-MM-DD");
+                    this.Fecha_Emision_Obtencion_Seguro = isempty(response.body.atributos[0]["FECHA_EMISION_OBTENCION_SEGURO"])?null: moment(response.body.atributos[0]["FECHA_EMISION_OBTENCION_SEGURO"]).format("YYYY-MM-DD");
                     this.DNI = response.body.atributos[0]["DNI"];
-                    this.Fecha_Emision_DNI = moment(response.body.atributos[0]["FECHA_EMISION_DNI"]).format("YYYY-MM-DD");
+                    this.Fecha_Emision_DNI = isempty(response.body.atributos[0]["FECHA_EMISION_DNI"])?null: moment(response.body.atributos[0]["FECHA_EMISION_DNI"]).format("YYYY-MM-DD");
                     this.id = response.body.atributos[0]["RESIDENTE_ID"];
 
                 }
@@ -197,9 +197,9 @@ var pam_actividades_sociales =  {
                     this.Nro_Visitas_Amigos = response.body.atributos[0]["NRO_VISITAS_AMIGOS"];
                     this.Descriptivo_Persona_Visita = response.body.atributos[0]["DESCRIPTIVO_PERSONA_VISITA"];
                     this.Aseguramiento_Universal_Salud = response.body.atributos[0]["ASEGURAMIENTO_UNIVERSAL_SALUD"];
-                    this.Fecha_Emision_Obtencion_Seguro = moment(response.body.atributos[0]["FECHA_EMISION_OBTENCION_SEGURO"]).format("YYYY-MM-DD");
+                    this.Fecha_Emision_Obtencion_Seguro = isempty(response.body.atributos[0]["FECHA_EMISION_OBTENCION_SEGURO"])?null: moment(response.body.atributos[0]["FECHA_EMISION_OBTENCION_SEGURO"]).format("YYYY-MM-DD");
                     this.DNI = response.body.atributos[0]["DNI"];
-                    this.Fecha_Emision_DNI = moment(response.body.atributos[0]["FECHA_EMISION_DNI"]).format("YYYY-MM-DD");
+                    this.Fecha_Emision_DNI = isempty(response.body.atributos[0]["FECHA_EMISION_DNI"])?null:moment(response.body.atributos[0]["FECHA_EMISION_DNI"]).format("YYYY-MM-DD");
                     this.id = response.body.atributos[0]["RESIDENTE_ID"];
 
                 }
