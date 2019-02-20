@@ -118,6 +118,7 @@
                                 <div class="form-group col-md-4">
                                     <label for="text-input" class=" form-control-label">Intitución Educativa de Procedencia</label>
                                     <select name="CarInstitucionEducativa" v-model="CarInstitucionEducativa" class="form-control">
+                                        <option value="0">Ninguno</option>
                                         <option v-for="institucion in instituciones" :value="institucion.ID">{{institucion.NOMBRE}}</option>
                                     </select>
                                 </div>
@@ -148,6 +149,7 @@
                                 <div class="form-group col-md-4">
                                     <label for="text-input" class=" form-control-label">Tipo de parentesco</label>
                                     <select name="CarTipoParentesco" v-model="CarTipoParentesco" class="form-control">
+                                        <option value="0">Ninguno</option>
                                         <option v-for="parentesco in parentescos" :value="parentesco.ID">{{parentesco.NOMBRE}}</option>
                                     </select>
 
