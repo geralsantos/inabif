@@ -96,7 +96,7 @@
                             <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">Nombre del Servicio</label>
                                 <select name="nom_serv" v-model="nom_serv" class="form-control" >
-                                    <option value="CENTRO DE ACOGIDA RESIDENCIAL DE URGENCIA - USPNNA ">CENTRO DE ACOGIDA RESIDENCIAL DE URGENCIA - USPNNA </option>
+                                    <option value="CENTRO DE ACOGIDA RESIDENCIAL - USPNNA ">CENTRO DE ACOGIDA RESIDENCIAL - USPNNA </option>
                                     <option value="CENTRO DE ATENCIÓN RESIDENCIAL - USPPAM">CENTRO DE ATENCIÓN RESIDENCIAL - USPPAM</option>
                                     <option value="CENTRO DE ACOGIDA RESIDENCIAL - USPPD">CENTRO DE ACOGIDA RESIDENCIAL - USPPD</option>
                                 </select>
