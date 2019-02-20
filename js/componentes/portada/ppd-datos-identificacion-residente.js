@@ -89,7 +89,7 @@ var ppd_datos_identificacion_residente= {
                 Provincia_Procedencia: this.Provincia_Procedencia || null,
                 Distrito_Procedencia: this.Distrito_Procedencia || null,
                 Sexo: this.Sexo,
-                Fecha_Nacimiento:  moment(this.Fecha_Nacimiento, "YYYY-MM-DD").format("YYYY-MM-DD"),
+                Fecha_Nacimiento: isempty(this.Fecha_Nacimiento)?null:moment(this.Fecha_Nacimiento, "YYYY-MM-DD").format("YYYY-MM-DD"),
                 Edad: this.Edad,
                 Lengua_Materna: this.Lengua_Materna,
 
@@ -125,7 +125,7 @@ var ppd_datos_identificacion_residente= {
                     provincia_naci_cod : this.Provincia_Procedencia || null,
                     distrito_naci_cod : this.Distrito_Procedencia || null,
                     sexo: this.Sexo,
-                    fecha_naci :  moment(this.Fecha_Nacimiento, "YYYY-MM-DD").format("YYYY-MM-DD"),
+                    fecha_naci : isempty(this.Fecha_Nacimiento)?null: moment(this.Fecha_Nacimiento, "YYYY-MM-DD").format("YYYY-MM-DD"),
                     edad: this.Edad,
                     lengua_materna: this.Lengua_Materna,
                     //documento :this.Numero_Doc
