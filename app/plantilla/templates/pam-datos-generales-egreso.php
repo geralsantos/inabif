@@ -70,6 +70,7 @@
                             <div class="form-group col-md-6">
                                 <label for="text-input" class=" form-control-label">Motivo del egreso</label>
                                 <select name="MotivoEgreso" v-model="MotivoEgreso" class="form-control">
+                                <option value="">Ninguno</option>
                                     <option value="Retiro voluntario">Retiro voluntario</option>
                                     <option value="Reinserción en entorno familiar">Reinserción en entorno familiar</option>
                                     <option value="Traslado a una entidad de salud">Traslado a una entidad de salud</option>
@@ -102,6 +103,7 @@
                                 <div class="form-group col-md-4">
                                     <label for="text-input" class=" form-control-label">Traslado a una entidad de salud  </label>
                                     <select name="Traslado_Entidad_Salud" v-model="Traslado_Entidad_Salud" class="form-control">
+                                        <option value="">Ninguno</option>
                                         <option value="ESSALUD">ESSALUD</option>
                                         <option value="MINSA">MINSA</option>
                                         <option value="Otros">Otros</option>
@@ -110,6 +112,7 @@
                                 <div class="form-group col-md-4">
                                     <label for="text-input" class=" form-control-label">Traslado a otra Entidad </label>
                                     <select name="Traslado_Otra_Entidad" v-model="Traslado_Otra_Entidad" class="form-control">
+                                        <option value="">Ninguno</option>
                                         <option value="Otro CAR del INABIF">Otro CAR del INABIF</option>
                                         <option value="Otro CAR público">Otro CAR público </option>
                                         <option value="Otro CAR privado">Otro CAR privado</option>
@@ -120,6 +123,7 @@
                             <div class="form-group col-md-4">
                                 <label for="text-input" class=" form-control-label">Fallecimiento</label>
                                 <select name="Fallecimiento" v-model="Fallecimiento" class="form-control">
+                                    <option value="">Ninguno</option>
                                     <option value="Muerte natural">Muerte natural</option>
                                     <option value="Muerte violenta">Muerte violenta</option>
                                     <option value="Muerte súbita">Muerte súbita</option>
