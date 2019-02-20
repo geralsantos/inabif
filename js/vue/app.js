@@ -160,7 +160,7 @@
         this.menuVisible = !this.menuVisible;
       },
       changeview(val){
-     
+        console.log(val);
         this.currentView=val;
         
       }
