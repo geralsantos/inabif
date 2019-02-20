@@ -915,7 +915,7 @@ public function cmp($a, $b)
             $modulo = $modulo.' order by nir.residente_id desc';
             }
           }
-            echo $modulo;
+          //  echo $modulo;
             $modulo = $modelo->executeQuery($modulo);
             $residentes = array();
             $grupo_html = "";
