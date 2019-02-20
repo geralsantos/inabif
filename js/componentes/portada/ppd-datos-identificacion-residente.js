@@ -90,7 +90,7 @@ var ppd_datos_identificacion_residente= {
                 Distrito_Procedencia: this.Distrito_Procedencia || null,
                 Sexo: this.Sexo,
                 Fecha_Nacimiento: isempty(this.Fecha_Nacimiento)?null:moment(this.Fecha_Nacimiento, "YYYY-MM-DD").format("YYYY-MM-DD"),
-                Edad: isempty(this.Edad)?null:this.Edad,
+                Edad: isempty(this.Edad)?0:this.Edad,
                 Lengua_Materna: this.Lengua_Materna,
 
                 //Residente_Id: this.id_residente,
@@ -126,7 +126,7 @@ var ppd_datos_identificacion_residente= {
                     distrito_naci_cod : this.Distrito_Procedencia || null,
                     sexo: this.Sexo,
                     fecha_naci : isempty(this.Fecha_Nacimiento)?null: moment(this.Fecha_Nacimiento, "YYYY-MM-DD").format("YYYY-MM-DD"),
-                    edad: isempty(this.Edad)?null:this.Edad,
+                    edad: isempty(this.Edad)?0:this.Edad,
                     lengua_materna: this.Lengua_Materna,
                     //documento :this.Numero_Doc
                     }
@@ -206,7 +206,7 @@ var ppd_datos_identificacion_residente= {
                     this.Provincia_Procedencia = response.body.atributos[0]["PROVINCIA_PROCEDENCIA"];
                     this.Distrito_Procedencia = response.body.atributos[0]["DISTRITO_PROCEDENCIA"];
                     this.Sexo = response.body.atributos[0]["SEXO"];
-                    this.Edad = isempty(response.body.atributos[0]["EDAD"])?null:response.body.atributos[0]["EDAD"];
+                    this.Edad = isempty(response.body.atributos[0]["EDAD"])?0:response.body.atributos[0]["EDAD"];
 
                     var fecha_naci = !isempty(response.body.atributos[0]["FECHA_NACIMIENTO"]);
                     var da = fecha_naci ? (moment().format("YYYY") )+"-"+moment(response.body.atributos[0]["FECHA_NACIMIENTO"],'DD-MMM').format("MM-DD").toString():null;
@@ -317,7 +317,7 @@ var ppd_datos_identificacion_residente= {
                     this.Provincia_Procedencia = response.body.atributos[0]["PROVINCIA_PROCEDENCIA"];
                     this.Distrito_Procedencia = response.body.atributos[0]["DISTRITO_PROCEDENCIA"];
                     this.Sexo = response.body.atributos[0]["SEXO"];
-                    this.Edad = isempty(response.body.atributos[0]["EDAD"])?null: response.body.atributos[0]["EDAD"];
+                    this.Edad = isempty(response.body.atributos[0]["EDAD"])?0: response.body.atributos[0]["EDAD"];
                     var fecha_naci = !isempty(response.body.atributos[0]["FECHA_NACIMIENTO"]);
                     var da = fecha_naci ? (moment().format("YYYY") )+"-"+moment(response.body.atributos[0]["FECHA_NACIMIENTO"],'DD-MMM').format("MM-DD").toString():null;
                     this.Fecha_Nacimiento = fecha_naci ? moment(da,"YYYY-MM-DD").subtract(this.Edad,'years').format("YYYY-MM-DD"): null;
