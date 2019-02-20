@@ -46,6 +46,7 @@ var ppd_datos_identificacion_residente= {
             this.buscar_provincias();
         },
         Fecha_Nacimiento:function(val){
+            console.log(val);
             this.Edad = moment().diff(val, 'year');
         }
     },
