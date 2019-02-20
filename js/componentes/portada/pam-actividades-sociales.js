@@ -71,9 +71,9 @@ var pam_actividades_sociales =  {
                 Nro_Visitas_Amigos:this.Nro_Visitas_Amigos,
                 Descriptivo_Persona_Visita:this.Descriptivo_Persona_Visita,
                 Aseguramiento_Universal_Salud:this.Aseguramiento_Universal_Salud,
-                Fecha_Emision_Obtencion_Seguro: moment(this.Fecha_Emision_Obtencion_Seguro).format("YY-MMM-DD"),
+                Fecha_Emision_Obtencion_Seguro: isempty(this.Fecha_Emision_Obtencion_Seguro)?null:moment(this.Fecha_Emision_Obtencion_Seguro).format("YY-MMM-DD"),
                 DNI:this.DNI,
-                Fecha_Emision_DNI:moment(this.Fecha_Emision_DNI).format("YY-MMM-DD"),
+                Fecha_Emision_DNI: isempty(this.Fecha_Emision_DNI)?null: moment(this.Fecha_Emision_DNI).format("YY-MMM-DD"),
 
                 Residente_Id: this.id_residente,
                 Periodo_Mes: moment().format("MM"),
