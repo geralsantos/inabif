@@ -206,7 +206,7 @@ var ppd_datos_identificacion_residente= {
                     this.Provincia_Procedencia = response.body.atributos[0]["PROVINCIA_PROCEDENCIA"];
                     this.Distrito_Procedencia = response.body.atributos[0]["DISTRITO_PROCEDENCIA"];
                     this.Sexo = response.body.atributos[0]["SEXO"];
-                    this.Edad = response.body.atributos[0]["EDAD"];
+                    this.Edad = isempty(response.body.atributos[0]["EDAD"])?null:response.body.atributos[0]["EDAD"];
 
                     var fecha_naci = !isempty(response.body.atributos[0]["FECHA_NACIMIENTO"]);
                     var da = fecha_naci ? (moment().format("YYYY") )+"-"+moment(response.body.atributos[0]["FECHA_NACIMIENTO"],'DD-MMM').format("MM-DD").toString():null;
@@ -317,7 +317,7 @@ var ppd_datos_identificacion_residente= {
                     this.Provincia_Procedencia = response.body.atributos[0]["PROVINCIA_PROCEDENCIA"];
                     this.Distrito_Procedencia = response.body.atributos[0]["DISTRITO_PROCEDENCIA"];
                     this.Sexo = response.body.atributos[0]["SEXO"];
-                    this.Edad = response.body.atributos[0]["EDAD"];
+                    this.Edad = isempty(response.body.atributos[0]["EDAD"])?null: response.body.atributos[0]["EDAD"];
                     var fecha_naci = !isempty(response.body.atributos[0]["FECHA_NACIMIENTO"]);
                     var da = fecha_naci ? (moment().format("YYYY") )+"-"+moment(response.body.atributos[0]["FECHA_NACIMIENTO"],'DD-MMM').format("MM-DD").toString():null;
                     this.Fecha_Nacimiento = fecha_naci ? moment(da,"YYYY-MM-DD").subtract(this.Edad,'years').format("YYYY-MM-DD"): null;
