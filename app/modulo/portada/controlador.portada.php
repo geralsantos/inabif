@@ -1736,5 +1736,23 @@ ini_set('session.gc_maxlifetime','1200');*/
     }
      
   }
+  public function delete_datos(){
+
+    if( $_POST['tabla']){
+      $modelo = new modeloPortada();
+      $select = $modelo->selectData( $_POST["tabla"],$_POST["where"] );
+      if ($select) {
+          
+          $res = $modelo->deleteData( $_POST['tabla'],$_POST["where"]);
+          if ($res) {
+              echo json_encode(array("resultado"=>true )) ;
+          }else{
+            return false;
+          }
+      }
+    }else{
+      return false;
+    }
+  }
 
 }
