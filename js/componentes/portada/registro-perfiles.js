@@ -41,6 +41,12 @@ var registro_perfiles= {
                 swal('Error', 'Los campos de clave deben coincidir', 'warning');
                 return false;
             }
+            if (this.nivel_id!=1 && this.nivel_id!=3) {
+                  if (this.tipo_centro==null ) {
+                        swal('Error', 'Debe indicar el tipo de centro', 'warning');
+                        return false;
+                  }
+            }
             if ((this.DNI).length>8 || (this.DNI).length<8) {
                 swal('Error', 'El campo de DNI debe ser de 8 digitos', 'warning');
                 return false;
