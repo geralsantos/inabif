@@ -1559,7 +1559,7 @@ ini_set('session.gc_maxlifetime','1200');*/
 	}
   //$centro_html .=$modulo_html;
  //ob_start();
-    $table = '<table id="geral_table">'.$html2.'</table>';
+    $table = empty($html2) ? '' : '<table id="geral_table">'.$html2.'</table>';
    // ob_end_clean();
     if ($modulos)
     {

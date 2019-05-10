@@ -94,6 +94,8 @@ let apellido = apellido_p + ' ' + apellido_m;
                    tableToExcel('tbl_temp','Reporte Nominal',response.body.data);
                     this.matriz_general = response.body.data;
 
+                }else{
+                    swal("", "El residente no cuenta con registros para este reporte", "error");
                 }
             });
 
