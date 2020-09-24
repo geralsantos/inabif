@@ -31,9 +31,9 @@ class acceso extends App{
           // Creamos el enlace para solicitar la verificación con la API de Google.
           $params = array();  // Array donde almacenar los parámetros de la petición
           if ($_SERVER['HTTP_HOST']=="localhost") {
-            $params['secret'] = '6LdHmIYUAAAAAHVfpV2ip7Yc4Lic-pJut_oYH9lm'; // Clave privada
+            $params['secret'] = ''; // Clave privada
           }else {
-            $params['secret'] = '6LcysIcUAAAAAEKGI89m657mqwqez6coPvn_Mw3w'; // Clave privada
+            $params['secret'] = ''; // Clave privada
           }
           
           if (!empty($_POST) && isset($_POST['g-recaptcha-response'])) {
